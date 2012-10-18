@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate_rtmaps" name="org.eclipse.robotml.generators.acceleo.rtmaps">
-    <property name="ECLIPSE_HOME" value="../../../../../../../eclipse_4.2"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../Users/Nicolas/workspace_4.2_robotml"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../../../../eclipse_4.2"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../../../Users/Nicolas/workspace_4.2_robotml"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.eclipse.robotml.generators.acceleo.rtmaps.libraryclasspath">

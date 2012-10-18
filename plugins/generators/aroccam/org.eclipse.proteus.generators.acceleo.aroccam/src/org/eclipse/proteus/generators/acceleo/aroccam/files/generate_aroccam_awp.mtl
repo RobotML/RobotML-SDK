@@ -1,0 +1,86 @@
+[comment encoding = UTF-8 /]
+[module generate_aroccam_awp('http://www.eclipse.org/uml2/3.0.0/UML')]
+
+[import org::eclipse::proteus::generators::acceleo::mmqueries::ArchitectureQueries /]
+[import org::eclipse::proteus::generators::acceleo::mmqueries::DataTypeQueries /]
+[import org::eclipse::proteus::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::proteus::generators::acceleo::mmqueries::FSMQueries /]
+
+
+[template public generateAroccamAWP(model : Model)]
+
+[file (model.name + 'Application.awp', false, 'UTF-8')]
+<?xml version="1.0"?>
+<project version="2.0" template="templateAppDefault">
+   <name>[model.name/]Application</name>
+	[for (elt: NamedElement | getElementsWithStereotype(model,'CameraSystem'))]
+		<interface model="model_simulated_ros_camera" type="camera">
+      		<name>[elt.name/]</name>
+      		<driver id="driver_ros" configId="all">
+         		<parameter id="topic_name">camera</parameter>
+      		</driver>
+      		<recorder id="recorder_video" configId="avi_video">
+         		<parameter id="bitrate">3000</parameter>
+         		<parameter id="codec">ffvhuff</parameter>
+         		<parameter id="video_format">avi</parameter>
+      		</recorder>
+      		<event bufferSize="10" priority="0" id="image" state="active">
+         		<handler processingChoice="Acquisition + Visualization" state="0">frame[elt.name/]</handler>
+      		</event>
+   		</interface>
+	[/for]
+	[for (elt: NamedElement | getElementsWithStereotype(model,'LidarSystem'))]
+		<interface model="model_simulated_ros_rangefinder" type="rangefinder">
+      		<name>[elt.name/]</name>
+      		<driver id="driver_ros" configId="all">
+         		<parameter id="timeout">1000</parameter>
+         		<parameter id="topic_name">rangefinder</parameter>
+      		</driver>
+      		<event bufferSize="10" priority="0" id="distance" state="active">
+         		<handler processingChoice="Acquisition + Visualization" state="0">frame[elt.name/]</handler>
+      		</event>
+   		</interface>
+	[/for]
+	[for (elt: NamedElement | getElementsWithStereotype(model,'GPSSystem'))]
+   		<interface model="model_simulated_ros_gps" type="gps">
+      		<name>[elt.name/]</name>
+      		<driver id="driver_ros" configId="all">
+         		<parameter id="timeout">2000</parameter>
+         		<parameter id="topic_name">gps</parameter>
+      		</driver>
+      		<recorder id="recorder_nmea_text" configId="all"/>
+      		<event bufferSize="10" priority="0" id="NMEA_GGA" state="active">
+         		<handler processingChoice="Acquisition + Visualization" state="0">frame[elt.name/]_GGA</handler>
+      		</event>
+   		</interface>
+	[/for]
+	[for (elt: NamedElement | getElementsWithStereotype(model,'SensorSystem'))]
+		[if(elt.name.toLower().contains('odometry'))]
+   		<interface model="model_simulated_ros_vipalab" type="vehicle">
+      		<name>[elt.name/]</name>
+      		<driver id="driver_ros" configId="all">
+         		<parameter id="command_topic_name">vipalab_command</parameter>
+         		<parameter id="timeout">1000</parameter>
+         		<parameter id="topic_name">vipalab_odometry</parameter>
+      		</driver>
+      		<event bufferSize="10" priority="0" id="genericodometry" state="active">
+         		<handler processingChoice="Acquisition + Visualization" state="0">frame[elt.name/]_genericodometry</handler>
+      		</event>
+   		</interface>
+		[elseif(elt.name.toLower().contains('imu')) ]
+		<interface model="model_simulated_ros_imu" type="imu">
+			<name>[elt.name/]</name>
+			<driver id="driver_ros" configId="all">
+				<parameter id="timeout">1000</parameter>
+				<parameter id="topic_name">imu</parameter>
+			</driver>
+			<event bufferSize="10" priority="0" id="GLOBAL" state="active">
+				<handler processingChoice="Acquisition" state="0">frame[elt.name/]_GLOBAL</handler>
+			</event>
+		</interface>
+		[/if]
+	[/for]
+</project>
+[/file]
+
+[/template]

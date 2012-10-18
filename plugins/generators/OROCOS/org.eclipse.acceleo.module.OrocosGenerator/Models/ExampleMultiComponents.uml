@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <uml:Model xmi:id="_Y6sOUVsOEeG02c_J397p9Q" name="ProteusModel">
+    <packageImport xmi:id="_ZX5uwFsOEeG02c_J397p9Q">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_wyS6gAH-EeC_ZLzLQhW-TQ"/>
+    </packageImport>
+    <packageImport xmi:id="_ZX5uwVsOEeG02c_J397p9Q">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#__xA6YAHvEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_ZX5uwlsOEeG02c_J397p9Q">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_Df4_4AHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_ZX5uw1sOEeG02c_J397p9Q">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_Go5_QAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_ZX5uxFsOEeG02c_J397p9Q">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_JSoakAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_ZX5uxVsOEeG02c_J397p9Q">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_MlyNYAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_ZX5uxlsOEeG02c_J397p9Q">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_QJC2AKxYEeCJD46GtDsABA"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oWfN8FsOEeG02c_J397p9Q" name="LidarSystem1"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4EUYwFsOEeG02c_J397p9Q" name="ComponentA">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_RC6kUFsPEeG02c_J397p9Q" name="portConnexion1" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_xg4rgFsPEeG02c_J397p9Q" name="portConnexion2" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_7eWaMFsPEeG02c_J397p9Q" name="outportA" type="_zDleoFtiEeGV2Ip-1hWK6A" aggregation="composite"/>
+      <ownedAttribute xmi:id="_QD9LQFsbEeGiBe-qI12T0Q" name="inputValue">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QEjoMVsbEeGiBe-qI12T0Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QEjoMFsbEeGiBe-qI12T0Q" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Hd54oFthEeGV2Ip-1hWK6A" name="outputValue">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_He9BgVthEeGV2Ip-1hWK6A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_He9BgFthEeGV2Ip-1hWK6A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ODwyUFthEeGV2Ip-1hWK6A" name="tmp">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ODwyUlthEeGV2Ip-1hWK6A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ODwyUVthEeGV2Ip-1hWK6A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_U-6mkFthEeGV2Ip-1hWK6A" name="limit">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_U-6mklthEeGV2Ip-1hWK6A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U-6mkVthEeGV2Ip-1hWK6A" value="1"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_GKUTAFsjEeGiBe-qI12T0Q"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_HawXQFsPEeG02c_J397p9Q" name="ComponentB">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_OZX5wFsQEeG02c_J397p9Q" name="portConnexion2" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_Oys_wFsQEeG02c_J397p9Q" name="portConnexion3" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_S2BqQFsbEeGiBe-qI12T0Q" name="a">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S2LbQVsbEeGiBe-qI12T0Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_S2LbQFsbEeGiBe-qI12T0Q" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_gOy_YFthEeGV2Ip-1hWK6A" name="inputValue">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gOy_YlthEeGV2Ip-1hWK6A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gOy_YVthEeGV2Ip-1hWK6A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ismekFthEeGV2Ip-1hWK6A" name="outputValue">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ismeklthEeGV2Ip-1hWK6A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ismekVthEeGV2Ip-1hWK6A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_jshqgFthEeGV2Ip-1hWK6A" name="tmp">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jshqglthEeGV2Ip-1hWK6A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jshqgVthEeGV2Ip-1hWK6A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lzO4UFthEeGV2Ip-1hWK6A" name="limit">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lzO4UlthEeGV2Ip-1hWK6A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lzO4UVthEeGV2Ip-1hWK6A" value="1"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_hYjl8FsjEeGiBe-qI12T0Q"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Izj9QFsPEeG02c_J397p9Q" name="ComponentC">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_fVIQQFsQEeG02c_J397p9Q" name="portConnexion3" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_l61Y8FsQEeG02c_J397p9Q" name="portConnexion1" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_p1eCgFsQEeG02c_J397p9Q" name="inportC" type="_k2nCkFtiEeGV2Ip-1hWK6A" aggregation="composite"/>
+      <ownedAttribute xmi:id="_FrpbYFtiEeGV2Ip-1hWK6A" name="inputValue">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FrpbYltiEeGV2Ip-1hWK6A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FrpbYVtiEeGV2Ip-1hWK6A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_GybdQFtiEeGV2Ip-1hWK6A" name="outputValue">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GybdQltiEeGV2Ip-1hWK6A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GybdQVtiEeGV2Ip-1hWK6A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_IldhIFtiEeGV2Ip-1hWK6A" name="tmp">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IldhIltiEeGV2Ip-1hWK6A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IldhIVtiEeGV2Ip-1hWK6A" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_JlYtEFtiEeGV2Ip-1hWK6A" name="limit">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JlYtEltiEeGV2Ip-1hWK6A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JlYtEVtiEeGV2Ip-1hWK6A" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uLwCEFsXEeGeaZHdIw4Yfg" name="RoboticSystem1">
+      <ownedAttribute xmi:id="_u9g2MFsXEeGeaZHdIw4Yfg" name="Property1" type="_HawXQFsPEeG02c_J397p9Q"/>
+      <ownedAttribute xmi:id="_xHpygFsXEeGeaZHdIw4Yfg" name="Property2" type="_Izj9QFsPEeG02c_J397p9Q"/>
+      <ownedAttribute xmi:id="_xldI0FsXEeGeaZHdIw4Yfg" name="Property3" type="_4EUYwFsOEeG02c_J397p9Q"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_k2nCkFtiEeGV2Ip-1hWK6A" name="sensor_msgs::Range">
+      <ownedComment xmi:id="_tHc3YFtiEeGV2Ip-1hWK6A">
+        <body>sensor_msgs::Range</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_zDleoFtiEeGV2Ip-1hWK6A" name="geometry_msgs::Twist"/>
+    <profileApplication xmi:id="_ZMbekFsOEeG02c_J397p9Q">
+      <eAnnotations xmi:id="_ZMbekVsOEeG02c_J397p9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://Proteus_PROFILES/ProteusProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
+    </profileApplication>
+  </uml:Model>
+  <RobotML:LidarSystem xmi:id="_pP3F8FsOEeG02c_J397p9Q" base_Class="_oWfN8FsOEeG02c_J397p9Q"/>
+  <RobotML:RoboticSystem xmi:id="_4EnTsFsOEeG02c_J397p9Q" base_Class="_4EUYwFsOEeG02c_J397p9Q"/>
+  <RobotML:RoboticSystem xmi:id="_Ha5hMFsPEeG02c_J397p9Q" base_Class="_HawXQFsPEeG02c_J397p9Q"/>
+  <RobotML:RoboticSystem xmi:id="_IztuQFsPEeG02c_J397p9Q" base_Class="_Izj9QFsPEeG02c_J397p9Q"/>
+  <RobotML:DataFlowPort xmi:id="_RGyXsFsPEeG02c_J397p9Q" base_Port="_RC6kUFsPEeG02c_J397p9Q"/>
+  <RobotML:DataFlowPort xmi:id="_xhLmcFsPEeG02c_J397p9Q" base_Port="_xg4rgFsPEeG02c_J397p9Q" direction="out"/>
+  <RobotML:DataFlowPort xmi:id="_7ep8MFsPEeG02c_J397p9Q" base_Port="_7eWaMFsPEeG02c_J397p9Q" direction="out"/>
+  <RobotML:DataFlowPort xmi:id="_OZq0sFsQEeG02c_J397p9Q" base_Port="_OZX5wFsQEeG02c_J397p9Q"/>
+  <RobotML:DataFlowPort xmi:id="_Oy_6sFsQEeG02c_J397p9Q" base_Port="_Oys_wFsQEeG02c_J397p9Q" direction="out"/>
+  <RobotML:DataFlowPort xmi:id="_fVSBQFsQEeG02c_J397p9Q" base_Port="_fVIQQFsQEeG02c_J397p9Q"/>
+  <RobotML:DataFlowPort xmi:id="_l6_J8FsQEeG02c_J397p9Q" base_Port="_l61Y8FsQEeG02c_J397p9Q" direction="out"/>
+  <RobotML:DataFlowPort xmi:id="_p1nzjFsQEeG02c_J397p9Q" base_Port="_p1eCgFsQEeG02c_J397p9Q"/>
+  <RobotML:RoboticSystem xmi:id="_uPLJgFsXEeGeaZHdIw4Yfg" base_Class="_uLwCEFsXEeGeaZHdIw4Yfg"/>
+</xmi:XMI>

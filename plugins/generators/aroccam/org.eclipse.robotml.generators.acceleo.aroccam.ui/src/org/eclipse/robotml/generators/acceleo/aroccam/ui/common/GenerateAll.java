@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.proteus.generators.acceleo.aroccam.ui.common;
+package org.eclipse.robotml.generators.acceleo.aroccam.ui.common;
 
 import java.io.IOException;
 import java.net.URL;
@@ -79,17 +79,17 @@ public class GenerateAll {
 			targetFolder.getLocation().toFile().mkdirs();
 		}
 		
-		// final URI template0 = getTemplateURI("org.eclipse.proteus.generators.acceleo.aroccam", new Path("/org/eclipse/proteus/generators/acceleo/aroccam/main/generate_aroccam.emtl"));
-		// org.eclipse.proteus.generators.acceleo.aroccam.main.Generate_aroccam gen0 = new org.eclipse.proteus.generators.acceleo.aroccam.main.Generate_aroccam(modelURI, targetFolder.getLocation().toFile(), arguments) {
+		// final URI template0 = getTemplateURI("org.eclipse.robotml.generators.acceleo.aroccam", new Path("/org/eclipse/robotml/generators/acceleo/aroccam/main/generate_aroccam.emtl"));
+		// org.eclipse.robotml.generators.acceleo.aroccam.main.Generate_aroccam gen0 = new org.eclipse.robotml.generators.acceleo.aroccam.main.Generate_aroccam(modelURI, targetFolder.getLocation().toFile(), arguments) {
 		//	protected URI createTemplateURI(String entry) {
 		//		return template0;
 		//	}
 		//};
 		//gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		monitor.subTask("Loading...");
-		org.eclipse.proteus.generators.acceleo.aroccam.Generate_aroccam gen0 = new org.eclipse.proteus.generators.acceleo.aroccam.Generate_aroccam(modelURI, targetFolder.getLocation().toFile(), arguments);
+		org.eclipse.robotml.generators.acceleo.aroccam.Generate_aroccam gen0 = new org.eclipse.robotml.generators.acceleo.aroccam.Generate_aroccam(modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
-		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.eclipse.proteus.generators.acceleo.aroccam", "org.eclipse.proteus.generators.acceleo.aroccam.main.Generate_aroccam", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.eclipse.robotml.generators.acceleo.aroccam", "org.eclipse.robotml.generators.acceleo.aroccam.main.Generate_aroccam", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 			

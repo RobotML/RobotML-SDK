@@ -11,7 +11,7 @@
  *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.proteus.generators.acceleo.aroccam.ui.handler;
+package org.eclipse.robotml.generators.acceleo.aroccam.ui.handler;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +22,7 @@ import org.eclipse.papyrus.ui.toolbox.notification.Type;
 import org.eclipse.papyrus.ui.toolbox.notification.builders.CombinedPopupAndViewBuilder;
 import org.eclipse.papyrus.ui.toolbox.notification.builders.NotificationBuilder;
 import org.eclipse.papyrus.widgets.util.FileUtil;
-import org.eclipse.proteus.generators.acceleo.aroccam.Generate_aroccam;
+import org.eclipse.robotml.generators.acceleo.aroccam.Generate_aroccam;
 
 
 // TODO: Auto-generated Javadoc

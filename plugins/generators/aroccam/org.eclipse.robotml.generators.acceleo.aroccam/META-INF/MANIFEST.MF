@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Aroccam Module Runtime Plug-in
-Bundle-SymbolicName: org.eclipse.proteus.generators.acceleo.aroccam;singleton:=true
+Bundle-SymbolicName: org.eclipse.robotml.generators.acceleo.aroccam;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: org.eclipse.proteus.generators.acceleo.aroccam.Activator
+Bundle-Activator: org.eclipse.robotml.generators.acceleo.aroccam.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.7.0",
  org.eclipse.emf.ecore;bundle-version="2.7.0",
@@ -17,12 +17,12 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.7.0",
  org.eclipse.acceleo.engine;bundle-version="3.1.1",
  org.eclipse.uml2.uml;bundle-version="3.2.100",
  org.eclipse.core.resources;bundle-version="3.7.100",
- org.eclipse.papyrus.proteus;bundle-version="0.8.0",
- org.eclipse.proteus.generators.acceleo;bundle-version="1.0.0"
+ org.eclipse.papyrus.robotml;bundle-version="0.8.0",
+ org.eclipse.robotml.generators.acceleo;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: org.eclipse.proteus.generators.acceleo.aroccam;
+Export-Package: org.eclipse.robotml.generators.acceleo.aroccam;
   uses:="org.eclipse.emf.ecore.resource,
    org.eclipse.emf.ecore,
    org.eclipse.emf.common.util,

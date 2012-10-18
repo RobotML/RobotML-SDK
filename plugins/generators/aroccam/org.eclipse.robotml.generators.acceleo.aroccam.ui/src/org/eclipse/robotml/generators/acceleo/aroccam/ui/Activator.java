@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.proteus.generators.acceleo.aroccam.ui;
+package org.eclipse.robotml.generators.acceleo.aroccam.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -21,7 +21,7 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * The plug-in ID.
 	 */
-	public static final String PLUGIN_ID = "org.eclipse.proteus.generators.acceleo.aroccam.ui";
+	public static final String PLUGIN_ID = "org.eclipse.robotml.generators.acceleo.aroccam.ui";
 
 	/**
 	 * The shared instance.

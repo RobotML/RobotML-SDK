@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.proteus.generators.acceleo.aroccam.feature"
+      id="org.eclipse.robotml.generators.acceleo.aroccam.feature"
       label="Aroccam code generators"
       version="1.0.0.qualifier"
       provider-name="Effidence">
 
    <description url="http://www.effidence.com">
-      Aroccam code generators for RobotML DSL from the PROTEUS project.
+      Aroccam code generators for RobotML DSL from the ROBOTML project.
    </description>
 
    <copyright>
@@ -65,14 +65,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
    
 
    <plugin
-         id="org.eclipse.proteus.generators.acceleo.aroccam"
+         id="org.eclipse.robotml.generators.acceleo.aroccam"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.proteus.generators.acceleo.aroccam.ui"
+         id="org.eclipse.robotml.generators.acceleo.aroccam.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

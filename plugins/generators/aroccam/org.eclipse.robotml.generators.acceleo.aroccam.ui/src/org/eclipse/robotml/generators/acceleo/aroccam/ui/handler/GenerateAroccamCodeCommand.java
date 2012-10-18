@@ -11,7 +11,7 @@
  *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.proteus.generators.acceleo.aroccam.ui.handler; 
+package org.eclipse.robotml.generators.acceleo.aroccam.ui.handler; 
 
 import java.util.Collections;
 

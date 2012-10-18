@@ -1,11 +1,11 @@
 [comment encoding = UTF-8 /]
 [module generate_aroccam_readme('http://www.eclipse.org/uml2/3.0.0/UML')]
 
-[import org::eclipse::proteus::generators::acceleo::mmqueries::ArchitectureQueries /]
-[import org::eclipse::proteus::generators::acceleo::mmqueries::DataTypeQueries /]
-[import org::eclipse::proteus::generators::acceleo::mmqueries::DeploymentQueries /]
-[import org::eclipse::proteus::generators::acceleo::mmqueries::GeneralQueries /]
-[import org::eclipse::proteus::generators::acceleo::mmqueries::FSMQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::DeploymentQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::FSMQueries /]
 
 
 [template public generateAroccamReadme(model : Model)]
@@ -67,7 +67,7 @@ effibox -a libApplicationName
 [for (elt: NamedElement | getElementsWithStereotype(model,'DataType'))]
     DataType: [elt.name/] Qualifier: [elt.qualifiedName/] Label: [elt.getLabel()/]
 [/for]
-[for (elt: NamedElement | getProteusComponentModels(model))]
+[for (elt: NamedElement | getRobotMLComponentModels(model))]
 	[elt.name/] Qualifier: [elt.qualifiedName/] Label: [elt.getLabel()/]
 [/for]
 
@@ -88,7 +88,7 @@ struct [elt.name/]
 	[/for]
 
 -----Composants:
-	[for (elt: NamedElement | getProteusComponentModels(model))]
+	[for (elt: NamedElement | getRobotMLComponentModels(model))]
 		[let c: Class = elt.oclAsType(Class)]
 
 Classe [c.name/] : macro-component: [c.isMacroComponent()/]
@@ -131,7 +131,7 @@ Classe [c.name/] : macro-component: [c.isMacroComponent()/]
 	[/for]
 
 ----Connectors
-	[for (elt: NamedElement | getProteusComponentModels(model))]
+	[for (elt: NamedElement | getRobotMLComponentModels(model))]
 		[let c: Class = elt.oclAsType(Class)]
 [c.name/] :
 		[for (conn : Connector | getInternalConnectors(c)) before('\t//internal connexions\n')]

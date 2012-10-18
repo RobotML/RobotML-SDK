@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.proteus.generators.acceleo.aroccam.ui.popupMenus;
+package org.eclipse.robotml.generators.acceleo.aroccam.ui.popupMenus;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -28,8 +28,8 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.proteus.generators.acceleo.aroccam.ui.Activator;
-import org.eclipse.proteus.generators.acceleo.aroccam.ui.common.GenerateAll;
+import org.eclipse.robotml.generators.acceleo.aroccam.ui.Activator;
+import org.eclipse.robotml.generators.acceleo.aroccam.ui.common.GenerateAll;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionDelegate;

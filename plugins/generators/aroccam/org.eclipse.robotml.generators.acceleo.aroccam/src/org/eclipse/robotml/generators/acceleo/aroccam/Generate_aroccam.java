@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.proteus.generators.acceleo.aroccam;
+package org.eclipse.robotml.generators.acceleo.aroccam;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,17 +35,17 @@ import org.eclipse.uml2.uml.resource.UMLResource;
  */
 public class Generate_aroccam extends AbstractAcceleoGenerator {
 
-	public static final String PROFILES_PATHMAP = "pathmap://Proteus_PROFILES/"; //$NON-NLS-1$
+	public static final String PROFILES_PATHMAP = "pathmap://RobotML_PROFILES/"; //$NON-NLS-1$
 
-	public static final String PROTEUS_PROFILE_URI = PROFILES_PATHMAP
-			+ "ProteusProfile.profile.uml"; //$NON-NLS-1$
+	public static final String ROBOTML_PROFILE_URI = PROFILES_PATHMAP
+			+ "RobotMLProfile.profile.uml"; //$NON-NLS-1$
 
 	/**
 	 * The name of the module.
 	 * 
 	 * @generated
 	 */
-	public static final String MODULE_FILE_NAME = "/org/eclipse/proteus/generators/acceleo/aroccam/generate_aroccam";
+	public static final String MODULE_FILE_NAME = "/org/eclipse/robotml/generators/acceleo/aroccam/generate_aroccam";
 
 	/**
 	 * The name of the templates that are to be generated.
@@ -379,8 +379,8 @@ public class Generate_aroccam extends AbstractAcceleoGenerator {
 		//
 		
 		try {
-			//URI uri = URI.createURI(PROTEUS_PROFILE_URI);
-			File fmodel = new File("../S2.3.5-PROTEUS-Modeling-Platform/org.eclipse.papyrus.proteus/model/ProteusProfile.profile.uml");
+			//URI uri = URI.createURI(ROBOTML_PROFILE_URI);
+			File fmodel = new File("../S2.3.5-ROBOTML-Modeling-Platform/org.eclipse.papyrus.robotml/model/RobotMLProfile.profile.uml");
 			URI uri = URI.createFileURI(fmodel.getAbsolutePath());
 			
 			Resource res = resourceSet.getResource(uri, true);

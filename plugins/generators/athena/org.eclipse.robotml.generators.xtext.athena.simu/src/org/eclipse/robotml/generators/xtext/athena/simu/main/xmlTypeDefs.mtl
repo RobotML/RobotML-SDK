@@ -1,0 +1,110 @@
+[comment encoding = UTF-8 /]
+[module xmlTypeDefs('http://www.xtext.org/AthenaDSL')/]
+
+[import org::eclipse::robotml::generators::xtext::athena::simu::main::jqueries /]
+
+[template public xmlTypeDefs(project : Project)]
+	
+[file ('TypeDefs_XML.h', false, 'UTF-8')] 
+
+#ifndef _TypeDefs_XML_h_
+#define _TypeDefs_XML_h_
+
+// 
+// Includes ----------------------------------------------------------------------
+// 
+
+#include "TypeDefs.h"
+#include "xml.h"
+
+using namespace AthenaV3;
+ 
+//
+// Data type definitions ----------------------------------------------------------
+//
+
+	[for (type : DataType | project.types)]
+// -------------------------------------------------------- [type.name/]
+ 
+		[if (isBasicType(type))]
+[processBasicType(type.oclAsType(basicType))/]
+		[elseif (isArrayType(type))]
+[processArrayType(type.oclAsType(arrayType))/]
+		[elseif (isVectorType(type))] 
+[processVectorType(type.oclAsType(vectorType))/]
+		[elseif (isMapType(type))]
+[processMapType(type.oclAsType(mapType))/]
+		[elseif (isStructType(type))]
+[processStructType(type.oclAsType(structType))/]
+		[elseif (isDefineType(type))]
+[processDefineType(type.oclAsType(defineType))/]
+		[elseif (isUnionType(type))]
+[processUnionType(type.oclAsType(unionType))/]
+		[else]
+///
+/// ERROR [type.name/] is unrecognized by the generator - [type.eClass()/]
+///
+		[/if]
+		
+	[/for]
+
+#endif
+
+
+[/file]
+	
+[/template]
+
+
+[template public processBasicType(type : basicType)]
+	[let cpp : languageDecl = getCPPLanguageDecl(type) ]
+// basic type [type.name/]	
+XmlNode* [type.name/]_toXML(const [type.name/]& _val);
+[type.name/] [type.name/]_fromXML(XmlNode* _node, const [type.name/]& _initialValue = [cpp.value/]);
+	[/let]
+[/template]
+
+
+[template public processArrayType(array : arrayType)]
+// [array.name/] is an array of [getArrayDatatypeName(array)/]
+XmlNode* [array.name/]_toXML(const [array.name/]& _val);
+void [array.name/]_fromXML(XmlNode* _node,[array.name/]& _val);
+[/template]
+
+
+[template public processVectorType(vector : vectorType)]
+// [vector.name/] is a vector of [getVectorDatatypeName(vector)/]
+XmlNode* [vector.name/]_toXML(const [vector.name/]& _val); 
+[vector.name/] [vector.name/]_fromXML(XmlNode* _node);
+[/template]
+
+
+[template public processMapType(map : mapType)]
+// [map.name/] is a map with key type [getMapKeyTypeName(map)/] and value type [getMapValueTypeName(map)/]
+XmlNode* [map.name/]_toXML(const [map.name/]& _val);
+[map.name/] [map.name/]_fromXML(XmlNode* _node);
+[/template]
+
+
+[template public processStructType(struct : structType)]
+// [struct.name/] is a structure
+XmlNode* [struct.name/]_toXML(const [struct.name/]& _val) ;
+void [struct.name/]_fromXML(XmlNode* _node, [struct.name/]& _val);
+[/template]
+
+
+[template public processDefineType(define : defineType)]
+// [define.name/] is a [getDefineTypeName(define)/]
+// Not processed
+[/template]
+
+
+[template public processUnionType(union : unionType)]
+// [union.name/] is a union
+// Not processed
+[/template]
+
+
+
+
+

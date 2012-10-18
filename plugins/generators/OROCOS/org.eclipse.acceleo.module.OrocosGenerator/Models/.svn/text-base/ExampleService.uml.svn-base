@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <uml:Model xmi:id="_xkZzgFwVEeGWIPP7kCiUzQ" name="ExampleService">
+    <packageImport xmi:id="_xspwkFwVEeGWIPP7kCiUzQ">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_wyS6gAH-EeC_ZLzLQhW-TQ"/>
+    </packageImport>
+    <packageImport xmi:id="_xspwkVwVEeGWIPP7kCiUzQ">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#__xA6YAHvEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_xsqXoFwVEeGWIPP7kCiUzQ">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_Df4_4AHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_xsqXoVwVEeGWIPP7kCiUzQ">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_Go5_QAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_xsqXolwVEeGWIPP7kCiUzQ">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_JSoakAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_xsqXo1wVEeGWIPP7kCiUzQ">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_MlyNYAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_xsqXpFwVEeGWIPP7kCiUzQ">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_QJC2AKxYEeCJD46GtDsABA"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_TNdNwFwWEeGWIPP7kCiUzQ" name="ComponentRequired">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_Ik5owFwYEeGWIPP7kCiUzQ" name="serviceRequired" type="_DtZjwFwXEeGWIPP7kCiUzQ" aggregation="composite"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_DtZjwFwXEeGWIPP7kCiUzQ" name="InterfaceService">
+      <ownedOperation xmi:id="_JzXccFwXEeGWIPP7kCiUzQ" name="helloWorld" visibility="protected">
+        <ownedParameter xmi:id="_OqdHMFwXEeGWIPP7kCiUzQ" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_bYfgEFwXEeGWIPP7kCiUzQ" name="helloFriend" visibility="protected">
+        <ownedParameter xmi:id="_fxrG0FwXEeGWIPP7kCiUzQ" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_iSBjsFwXEeGWIPP7kCiUzQ" name="sentence">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iSCx0FwXEeGWIPP7kCiUzQ" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iSCKwFwXEeGWIPP7kCiUzQ" value="1"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_oY7QgFwXEeGWIPP7kCiUzQ" name="answer">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oY9FsFwXEeGWIPP7kCiUzQ" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oY8eoFwXEeGWIPP7kCiUzQ" value="1"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_2BJZsFwXEeGWIPP7kCiUzQ" name="ComponentProvided">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_9HGvwFwXEeGWIPP7kCiUzQ" name="serviceProvided" type="_DtZjwFwXEeGWIPP7kCiUzQ" aggregation="composite"/>
+    </packagedElement>
+    <profileApplication xmi:id="_xoYUkFwVEeGWIPP7kCiUzQ">
+      <eAnnotations xmi:id="_xoYUkVwVEeGWIPP7kCiUzQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://Proteus_PROFILES/ProteusProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
+    </profileApplication>
+  </uml:Model>
+  <RobotML:RoboticSystem xmi:id="_TN8V8FwWEeGWIPP7kCiUzQ" base_Class="_TNdNwFwWEeGWIPP7kCiUzQ"/>
+  <RobotML:RoboticSystem xmi:id="_2BjpYFwXEeGWIPP7kCiUzQ" base_Class="_2BJZsFwXEeGWIPP7kCiUzQ"/>
+  <RobotML:ServicePort xmi:id="_9JVkYFwXEeGWIPP7kCiUzQ" base_Port="_9HGvwFwXEeGWIPP7kCiUzQ"/>
+  <RobotML:ServicePort xmi:id="_IlNx0FwYEeGWIPP7kCiUzQ" base_Port="_Ik5owFwYEeGWIPP7kCiUzQ" kind="required"/>
+</xmi:XMI>

@@ -1,0 +1,174 @@
+[comment encoding = UTF-8 /]
+[module CPPObjectHeader('http://www.xtext.org/AthenaDSL')/]
+
+[import org::eclipse::robotml::generators::xtext::athena::simu::main::jqueries /]
+
+[template public CPPObjectHeader(project : Project)]
+
+
+
+[for (proto : prototypeDeclaration | project.prototypes)]
+[let fname : String = getPrototypeFileName(proto,'.h')] 
+[file (fname, false, 'UTF-8')] 
+#ifndef _[proto.name/]_h_
+#define _[proto.name/]_h_
+
+// Include files
+#include <string>
+#include <boost/function.hpp>
+#include "PredefinedTypes.h"
+#include "TypeDefs.h"
+#include "AthenaComponent.h" 
+#include "Connector.h"
+#include "ParameterTemplate.h"
+
+// Namespace
+namespace generated {
+using namespace generated;
+using namespace AthenaV3;
+
+//----------------------------------------------------------------
+// Definition
+//----------------------------------------------------------------
+
+class [proto.name/] : public AthenaComponent 
+{
+
+		// references ----------------------------------------------------------------------------------------------
+		
+	private:	
+
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isReference(elt))]
+			[let ref : referenceDeclaration = elt.oclAsType(referenceDeclaration)]
+		IParameter<[ref.typeName.name/]>* [getReferenceName(ref)/];
+		const [ref.typeName.name/]& get_[getReferenceName(ref)/](const long& icycle);
+		[ref.typeName.name/]& get_[getReferenceName(ref)/]_write(const long& icycle);
+		void set_[getReferenceName(ref)/](const long& icycle, const [ref.typeName.name/]& data);
+				
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+		// parameters ----------------------------------------------------------------------------------------------
+
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isParameter(elt))]
+	private:
+			[let param : parameterDeclaration = elt.oclAsType(parameterDeclaration)]
+				[if (isArrayType(param.typeName))]
+					[if (isDynamicArray(param.typeName.oclAsType(arrayType)))]
+		ArrayParameter<[param.typeName.name/]> [param.name/] ;
+					[else]
+		PointerParameter<[param.typeName.name/]> [param.name/] ;
+					[/if]
+				[else]
+		ConcreteParameter<[param.typeName.name/]> [param.name/];		
+				[/if]
+	public:
+		IParameter<[param.typeName.name/]>* get_[param.name/]()  { return &[param.name/]; }
+		const [param.typeName.name/]& get_[param.name/](const long& icycle)  { return [param.name/].getRead(icycle); }
+		[param.typeName.name/]& get_[param.name/]_write(const long& icycle)  { return [param.name/].getWrite(icycle); }
+		void set_[param.name/](const long& icycle, const [param.typeName.name/]& data) { [param.name/].write(icycle,data); }
+				
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+		// signals ----------------------------------------------------------------------------------------------
+
+	private:	
+
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isSignal(elt))]
+			[let signal : signalDeclaration = elt.oclAsType(signalDeclaration)]
+		Signal [signal.name/] ;
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+		// events --------------------------------------------------------------------------------------------------
+
+	private:
+
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isEvent(elt))]
+			[let event : eventDeclaration = elt.oclAsType(eventDeclaration)]
+		bool event_[event.name/](const long& icycle);
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+		// statesets -----------------------------------------------------------------------------------------------
+
+	private:
+
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isStateSet(elt))]
+			[let stateset : statesetDeclaration = elt.oclAsType(statesetDeclaration)]
+		enum stateset_[stateset.name/] { [getStateSetStates(stateset)/] }; 
+		ConcreteParameter<stateset_[stateset.name/]> [stateset.name/] ;
+		stateset_[stateset.name/] get_[stateset.name/](const long& icycle) { return [stateset.name/].getRead(icycle); }
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+		// interactions --------------------------------------------------------------------------------------------
+
+	private:
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isAnInteraction(elt))]
+			[let interaction : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
+				[for (call : interactionCall | interaction.icalls)]
+		void interaction_[call.fctName.name/](const long& icycle);
+		boost::function<void ([getFunctorDeclaration(call.fctName)/])> _[call.fctName.name/];
+				[/for]
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+		// general -------------------------------------------------------------------------------------------------
+	
+	public:
+
+		[proto.name/](XmlNode* config);
+		virtual ~[proto.name/]();
+		virtual void doInit();
+		virtual void doConnect();
+		virtual void doStep(const long& icycle);
+
+};
+
+
+} // Namespace generated
+#endif
+[/file]
+[/let]
+[/for]
+	
+[/template]
+

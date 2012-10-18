@@ -1,0 +1,57 @@
+[comment encoding = UTF-8 /]
+[module generateProcessings('http://www.eclipse.org/uml2/3.0.0/UML', 'http://www.eclipse.org/papyrus/alf/Alf')/]
+
+[import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries/]
+[import org::eclipse::robotml::generators::acceleo::alf::main::AlfServices/]
+
+[comment]Search all processing in the model (including imported package)[/comment]
+[template public generateProcessings(model : Model)]
+[comment] Processing is an operation with behaviral method [/comment]
+	[let processings : Sequence(NamedElement) = getProcessingFromModel(model)]
+		[for(processing : NamedElement | processings)]
+[generateProcessingDecl(model, processing)/]
+		[/for]
+	[/let]
+	
+[/template]
+
+[comment]Generate the processing header[/comment]
+[template private generateProcessingDecl(model : Model, processing : NamedElement)]
+//[processing.name/]
+	[for(comm : Comment | processing.ownedComment)]
+//[comm._body/]
+	[/for]
+	[let proc : Operation = processing.oclAsType(Operation)]
+processing [processing.name/] [if(proc.ownedParameter->isEmpty() =(true))]( ) begin[else](
+		[for(param : Parameter | proc.ownedParameter)]
+	[param.direction/] [param.type.name/] [param.name/][if(proc.ownedParameter->indexOf(param) = proc.ownedParameter->size())] ) begin[/if]		
+		[/for]
+		[/if]
+[comment]	[generateProcessingBody(model, proc)/][/comment]
+end
+	[/let]
+[/template]
+
+
+[template private generateProcessingBody(model : Model, proc : Operation)]
+ [comment]Find connection with an opaque behavior to define the processing body	
+ Processing body is defined by Afl description (OpaqueExpression)[/comment] 
+	[let elts : Sequence(NamedElement) = getAllOpaqueBehaviorFromModel(model)]
+		[for(elt : NamedElement | elts)]
+			[let behavior : OpaqueBehavior = elt.oclAsType(OpaqueBehavior)]
+				[if((behavior.specification = null) =(false))]
+					[if(behavior.specification.name = proc.name)]
+						[let bloc : alf::Block = createAlfBlockFromUML(behavior.oclAsType(NamedElement))]
+							[if((bloc = null) =(false))]
+[translateAlfBlocTo_Athena(bloc)/]
+							[else]
+/* Can't generate Alf bloc code for this element
+[behavior._body.toString()/] */
+							[/if]
+						[/let]
+					[/if]
+				[/if]
+			[/let]
+		[/for]
+	[/let]
+[/template]

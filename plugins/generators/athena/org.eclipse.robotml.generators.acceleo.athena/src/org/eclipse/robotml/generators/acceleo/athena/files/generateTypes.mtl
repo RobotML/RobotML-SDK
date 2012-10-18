@@ -1,0 +1,147 @@
+[comment encoding = UTF-8 /]
+[module generateTypes('http://www.eclipse.org/uml2/3.0.0/UML')/]
+
+[import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries /]
+
+[template public generateTypes(model : Model)]
+[comment @main /]
+[generateBasicType(model)/]
+[generateEnumerationType(model)/]
+[generateStructuratedType(model)/]
+[generateContainerType(model)/]
+[generateUnionType(model)/]
+[generateDefine(model)/]
+[generateValidity(model)/]
+[comment][generateUnknownType(model)/][/comment]
+[/template]
+
+[comment]Browse model to search basic datatype[/comment]
+[template private generateBasicType(model : Model)]
+	[let types : Sequence(NamedElement) = getAllBasicDataTypes(model)]
+		[if(types->notEmpty())]
+//
+// base Types (predefined)
+//
+			[for(elt : NamedElement | types)]
+				[let dt : DataType = elt.oclAsType(DataType)]
+// [dt.name/]
+					[if(hasComment(dt))]
+[getCommentFromElement(elt)/]
+					[/if]
+basic [dt.name/] begin
+	[getAthenaDataTypeDeclaration(dt)/]
+end
+				[/let]
+			[/for]
+		[/if]
+	[/let]
+[/template]
+
+[comment]Browse model to search enumeration[/comment]
+[template private generateEnumerationType(model : Model)]
+	[let enums : Sequence(NamedElement) = getAllEnumeration(model)]
+		[if(enums->notEmpty())]
+//
+// Enumerations
+//
+			[for(elt : NamedElement | enums)]
+				[let enum : Enumeration = elt.oclAsType(Enumeration)]
+// [enum.name/]
+					[if(hasComment(enum))]
+[getCommentFromElement(enum)/]
+					[/if]
+basic [enum.name/] begin
+	language CPP : "enum { 
+					[let literals : OrderedSet(EnumerationLiteral) = enum.ownedLiteral]
+						[for(literal : EnumerationLiteral | literals)]
+	[literal.name/]=[if((literal.specification = null) =(false) )][literal.specification.integerValue()/][/if][if(enums->indexOf(enum) < enums->size())],[/if]
+						[/for]
+	}" = "[literals->first().name/]"
+					[/let]
+	lexicalCast CPP : "unsigned int"
+end
+				[/let]			
+			[/for]
+		[/if]
+	[/let]
+[/template]
+
+[comment]Browse model to search structured datatypes[/comment]
+[template private generateStructuratedType(model : Model)]
+	[let types : Sequence(DataType) = getAllStructuredDataTypes(model)]
+		[if(types->notEmpty())]
+//
+// Structured types
+//
+			[for (elt: NamedElement | types)]
+				[let dt : DataType = elt.oclAsType(DataType) ]
+// [dt.name/]
+					[if(hasComment(elt))]
+[getCommentFromElement(elt)/]
+					[/if]
+struct [dt.name/] begin
+					[for (prop : Property | dt.eAllContents(Property))]
+	[prop.type.name/] [prop.name/]
+					[/for]
+end
+				[/let]
+			[/for]
+		[/if]
+	[/let]
+[/template]
+
+[template private generateUnknownType(model : Model)]
+	[let types : Sequence(NamedElement) = getUnknownDataTypes(model)]
+		[for(type : NamedElement | types)]
+			[let data : DataType = type.oclAsType(DataType)]
+// [data.name/] == > unknown type !!!
+			[/let]
+		[/for]
+	[/let]
+[/template]
+
+[template private generateContainerType(model : Model)]
+	[let types : Sequence(NamedElement) = getContainerDataTypes(model)]
+		[for(type : NamedElement | types)]
+			[if(hasComment(type))]
+[getCommentFromElement(type)/]
+			[/if]
+[getContainerTypeDeclaration(type)/]
+		[/for]
+	[/let]
+[/template]
+
+[template private generateDefine(model : Model)]
+	[let types : Sequence(NamedElement) = getDefineType(model)]
+		[for(type: NamedElement | types)]
+			[if(hasComment(type))]
+[getCommentFromElement(type)/]
+			[/if]
+			[let dt : DataType = type.oclAsType(DataType)]
+				[for(prop : Property | dt.attribute)]
+define [type.name/] is [prop.type.name/]
+				[/for]
+			[/let]
+		[/for]
+	[/let]
+[/template]
+
+[template private generateValidity(model : Model)]
+	[let types : Sequence(DataType) = getAllModelDataTypes(model)]
+		[for(dt : DataType | types)]
+			[if(hasDataTypeValidity(dt.oclAsType(NamedElement)))]
+validity [dt.name/] [getDataTypeValidity(dt.oclAsType(NamedElement))/]
+			[/if]
+		[/for]
+	[/let]
+[/template]
+
+[template private generateUnionType(model : Model)]
+	[let types : Sequence(DataType) = getUnionType(model)]
+		[for(dt : DataType | types)]
+union [dt.name/] begin
+	
+end
+		[/for]
+	[/let]
+[/template]

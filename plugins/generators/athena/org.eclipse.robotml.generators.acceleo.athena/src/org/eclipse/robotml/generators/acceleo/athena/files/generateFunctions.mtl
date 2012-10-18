@@ -1,0 +1,32 @@
+[comment encoding = UTF-8 /]
+[module generateFunctions('http://www.eclipse.org/uml2/3.0.0/UML')/]
+
+[import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries /]
+[import org::eclipse::proteus::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::proteus::generators::acceleo::mmqueries::ArchitectureQueries /]
+
+[template public generateFunctions(model : Model)]
+
+[comment]We search the funtions in the model (including imported package)[/comment]
+[let operations : Sequence(NamedElement) = getOperationsFromModel(model)]
+	[for(elt : NamedElement | operations)]
+		[let op : Operation = elt.oclAsType(Operation)]
+[generateFunctionBody(op)/]
+		[/let]
+	[/for]
+[/let]
+[/template]
+
+[comment]generate the function body[/comment]
+[template private generateFunctionBody(op : Operation)]
+//[op.name/]
+	[for( com : Comment | op.ownedComment)]
+//[com._body/]
+	[/for]
+function [op.name/] < CPP > (
+	[for(param : Parameter | op.ownedParameter)]
+		[for(comm : Comment | param.ownedComment)]//[comm._body/][/for]
+	[param.direction/] [param.type.name/] [param.name/]			
+	[/for])
+
+[/template]

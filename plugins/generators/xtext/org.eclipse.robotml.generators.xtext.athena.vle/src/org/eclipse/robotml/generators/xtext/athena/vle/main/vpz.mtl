@@ -1,0 +1,37 @@
+[comment encoding = UTF-8 /]
+[module vpz('http://www.xtext.org/AthenaDSL')]
+
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::DSLQueries /]
+
+[template public vpz(project : Project)]
+[vpzconfig(project)/]
+[vpzcmake(project)/]
+[/template]
+
+[template public vpzconfig(project : Project)]
+[file ('exp/config.vpz', false, 'UTF-8')]
+<?xml version="1.0" encoding="UTF-8" ?>
+<vle_project version="0.5" date="mar, 18 nov 2008" author="Eric Ramat">
+ <structures>
+  <model name="m" type="coupled" x="0" y="0" width="1000" height="800" >
+[createInstances(project)/]
+  </model>
+ </structures>
+ <dynamics>
+[for (proto : prototypeDeclaration | project.prototypes)]
+  <dynamic name="[proto.name/]" library="[proto.name/]" package="generated" type="local" />
+[/for]
+ </dynamics>
+<experiment name="exp" duration="10.0" begin="0.0" combination="linear" seed="1" >
+<views>
+</views>
+</experiment>
+</vle_project>
+[/file]
+[/template]
+
+[template public vpzcmake(project : Project)]
+[file ('exp/CMakeLists.txt', false, 'UTF-8')]
+INSTALL(FILES config.vpz DESTINATION exp)
+[/file]
+[/template]

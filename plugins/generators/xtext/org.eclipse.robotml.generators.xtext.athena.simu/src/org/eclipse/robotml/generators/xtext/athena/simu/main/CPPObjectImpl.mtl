@@ -1,0 +1,357 @@
+[comment encoding = UTF-8 /]
+[module CPPObjectImpl('http://www.xtext.org/AthenaDSL')/]
+
+[import org::eclipse::robotml::generators::xtext::athena::simu::main::jqueries /]
+
+[template public CPPObjectImpl(project : Project)]
+	
+[for (proto : prototypeDeclaration | project.prototypes)]
+[let fname : String = getPrototypeFileName(proto,'.cc')]
+[file (fname, false, 'UTF-8')] 
+
+//----------------------------------------------------------------
+// Include files
+//---------------------------------------------------------------- 
+#include "Compatibility.h"
+#include "timeCheck.h"
+#include "TypeDefs_XML.h"
+#include <iostream>
+#include "tests.h"
+#include "[getPrototypeFileName(proto,'.h')/]"
+
+using namespace std;
+
+extern "C" __IMPORT__ void* getUserFunction(const std::string& name);
+
+namespace generated {
+using namespace generated; 
+
+//----------------------------------------------------------------
+// Constructor
+//----------------------------------------------------------------
+[proto.name/]::[proto.name/](XmlNode* _config): AthenaComponent()
+{
+
+	// Memorize configuration
+	set_config(*_config);
+
+	// name of this component
+	set_name("noname");
+
+}
+
+
+//----------------------------------------------------------------
+// do Init
+//----------------------------------------------------------------
+void [proto.name/]::doInit()
+{
+
+	// Parameter initialisation
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isParameter(elt))]
+			[let param : parameterDeclaration = elt.oclAsType(parameterDeclaration)]
+	// [param.name/], [param.typeName.name/]
+	add_parameter<[param.typeName.name/]>("[param.name/]", &[param.name/]);
+	init_[param.typeName.name/]([param.name/]['['/]0[']'/]);
+	init_[param.typeName.name/]([param.name/]['['/]1[']'/]);
+	[param.name/].set_name("[proto.name/].[param.name/]");
+				[if(param.hasNbW)]
+	[param.name/].set_nb_writers([getParameterNbWriters(param)/]);
+				[elseif(param.hasInfiniteWriter)]
+	[param.name/].set_nb_writers(2147483647);
+				[else]
+	[param.name/].set_nb_writers(1);
+				[/if]	
+				[if (hasInitValue(param.typeName))]
+	[param.name/].init((long)0,[getInitValue(param.typeName.oclAsType(basicType))/]) ;
+				[/if]
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+	// Parameters initialisation from config file
+
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isParameter(elt))]
+			[let param : parameterDeclaration = elt.oclAsType(parameterDeclaration)]
+				[if (isArrayType(param.typeName))]
+					[if isDynamicArray(param.typeName.oclAsType(arrayType))]
+	// Allocate [param.name/], [param.typeName.name/]
+	try {
+		[param.name/]['['/]0[']'/]=[param.typeName.name/]_allocate([getArrayAllocationCall(param.name, param.typeName.oclAsType(arrayType))/]) ;
+		[param.name/]['['/]1[']'/]=[param.typeName.name/]_allocate([getArrayAllocationCall(param.name, param.typeName.oclAsType(arrayType))/]) ;
+	}
+	catch (...) { __FAIL("error creating [param.name/] in [proto.name/]"); }
+	
+					[/if]
+				[elseif (isStructType(param.typeName))]
+					[if (hasDynamicArrayElements(param.typeName.oclAsType(structType)))]
+	// Allocate [param.name/], [param.typeName.name/]
+	try {
+		[param.name/]['['/]0[']'/].allocate([getDynamicAllocationForStruct(param.name, param.typeName.oclAsType(structType))/]);
+	 	[param.name/]['['/]1[']'/].allocate([getDynamicAllocationForStruct(param.name, param.typeName.oclAsType(structType))/]);
+	}
+	catch (...) { __FAIL("error creating [param.name/] in [proto.name/]"); }
+	
+					[/if]
+				[/if]
+				[if (param.hasConfig or param.hasConfigWithDefaultValue)]
+	// from XML [param.name/], [param.typeName.name/]
+	try {
+					[if (isArrayType(param.typeName))]
+		[param.typeName.name/]_fromXML(get_config()->get("[param.name/]"), [param.name/]['['/]0[']'/]);
+		[param.typeName.name/]_fromXML(get_config()->get("[param.name/]"), [param.name/]['['/]1[']'/]);
+					[elseif (isStructType(param.typeName))]
+		[param.typeName.name/]_fromXML(get_config()->get("[param.name/]"), [param.name/]['['/]0[']'/]);
+		[param.typeName.name/]_fromXML(get_config()->get("[param.name/]"), [param.name/]['['/]1[']'/]);
+					[else]
+		[param.name/]['['/]0[']'/] =[param.typeName.name/]_fromXML(get_config()->get("[param.name/]"));
+		[param.name/]['['/]1[']'/] =[param.typeName.name/]_fromXML(get_config()->get("[param.name/]"));
+					[/if]
+	}
+	catch (...) { __FAIL("error reading [param.name/] from XML in [proto.name/]"); }
+	
+				[/if]
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+	// Functors initialisation
+	try {
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isAnInteraction(elt))]
+			[let interaction : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
+				[for (call : interactionCall | interaction.icalls)]
+		_[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) getUserFunction("[call.fctName.name/]");
+				[/for]
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+	} catch(...) {
+		cout << "Problem loading functors for instance [proto.name/]" << endl;
+		exit(-1);
+	}
+
+	// StateSets initialisation
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isStateSet(elt))]
+			[let stateset : statesetDeclaration = elt.oclAsType(statesetDeclaration)]
+	[stateset.name/].init((long)0, [stateset._init.name/]);
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+}
+
+//----------------------------------------------------------------
+// References connection
+//----------------------------------------------------------------
+void [proto.name/]::doConnect() {
+
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isReference(elt))]
+			[let ref : referenceDeclaration = elt.oclAsType(referenceDeclaration)]
+	// reference [getReferenceName(ref)/], up? =  [ref.upway/], path = [getStringFromQualifiedName(ref.name)/]
+	[getReferenceName(ref)/] = NULL;
+				[if (ref.upway)] 
+	[getReferenceName(ref)/] = lookUpForParameter<[ref.typeName.name/]>("[getStringFromQualifiedName(ref.name)/]"); 
+				[else] 
+	[getReferenceName(ref)/] = lookDownForParameter<[ref.typeName.name/]>("[getStringFromQualifiedName(ref.name)/]");
+				[/if]
+	if ([getReferenceName(ref)/] == 0) cout << "In an instance of [proto.name/], connection to parameter @[ref.name/]@ failed !!" << endl;
+	__REQUIRE([getReferenceName(ref)/] != 0);
+
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+}
+
+//----------------------------------------------------------------
+// Destructor
+//----------------------------------------------------------------
+[proto.name/]::~[proto.name/]() {
+
+	// Instances destruction
+	delete_children();
+
+}
+
+//----------------------------------------------------------------
+// Simulation Step
+//----------------------------------------------------------------
+void [proto.name/]::doStep(const long& icycle)
+{
+
+	// Transitions for each stateset
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isStateSet(elt))]
+			[let stateset : statesetDeclaration = elt.oclAsType(statesetDeclaration)]
+				[for (trans : transitionDeclaration | stateset.transitions)]
+	if ( ([stateset.name/].getRead(icycle) == [trans.from/] ) && event_[trans.evt/](icycle) ) {
+		[stateset.name/].write(icycle,[trans.to/]);
+					[if (trans.raise)]
+		[trans.sig/].raise(icycle);
+					[/if]
+	}
+				[/for]
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+	// Interactions
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isAnInteraction(elt))]
+			[let interaction : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
+				[for (call : interactionCall | interaction.icalls)]
+	interaction_[call.fctName.name/](icycle);
+				[/for]
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+}
+
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isAnInteraction(elt))]
+			[let interaction : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
+				[for (call : interactionCall | interaction.icalls)]
+//----------------------------------------------------------------
+// Interaction [call.fctName.name/]
+//----------------------------------------------------------------
+void [proto.name/]::interaction_[call.fctName.name/](const long& icycle) {
+
+	// Time measurement
+	AthenaV3::getStaticTimeMap().startRecordSample("[proto.name/]::[call.fctName.name/]");
+
+	[if (interaction.wwhen)]
+	if ([interaction.stateset/].getRead(icycle) == [interaction.wstate/])
+	[/if]
+	[if (interaction.iif)]
+	if (event_[interaction.event/](icycle))
+	[/if]
+   {
+		// Access to arguments
+[getArgumentDeclaration(project, proto, call)/]		
+		// Function call
+		AthenaV3::getStaticTimeMap().startRecordSample("[proto.name/]::[call.fctName.name/], call function");
+		try {
+			_[call.fctName.name/]([getFunctionCallSignature(call)/]);
+		}
+		catch(...) { __FAIL("error calling user function [call.fctName.name/] in [proto.name/] called from interaction [call.fctName.name/]."); }
+		AthenaV3::getStaticTimeMap().endRecordSample("[proto.name/]::[call.fctName.name/], call function");
+		
+	}
+
+	// Time measurement
+	AthenaV3::getStaticTimeMap().endRecordSample("[proto.name/]::[call.fctName.name/]");
+
+}
+
+				[/for]
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+//----------------------------------------------------------------
+// Events
+//----------------------------------------------------------------
+
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isEvent(elt))]
+			[let event : eventDeclaration = elt.oclAsType(eventDeclaration)]
+bool [proto.name/]::event_[event.name/](const long& icycle) {
+	bool result = true;
+	[for (cond : eventCondition | event.conditions)]
+	result = result && [getCondition(cond)/];
+	[/for]
+	return result;
+}
+
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+//----------------------------------------------------------------
+// References
+//----------------------------------------------------------------
+
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isReference(elt))]
+			[let ref : referenceDeclaration = elt.oclAsType(referenceDeclaration)]
+
+// reference [getReferenceName(ref)/]
+// up? =  [ref.upway/], path = [getStringFromQualifiedName(ref.name)/]
+
+//
+const [ref.typeName.name/]& [proto.name/]::get_[getReferenceName(ref)/](const long& icycle)
+{
+	return [getReferenceName(ref)/]->getRead(icycle);
+}
+
+//
+[ref.typeName.name/]& [proto.name/]::get_[getReferenceName(ref)/]_write(const long& icycle)
+{
+	return [getReferenceName(ref)/]->getWrite(icycle);
+}
+
+//
+void [proto.name/]::set_[getReferenceName(ref)/](const long& icycle, const [ref.typeName.name/]& data)
+{
+	[getReferenceName(ref)/]->write(icycle,data);
+}
+
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+	
+} // Namespace generated
+
+
+[/file]
+[/let]
+[/for]
+
+[/template]
+
+

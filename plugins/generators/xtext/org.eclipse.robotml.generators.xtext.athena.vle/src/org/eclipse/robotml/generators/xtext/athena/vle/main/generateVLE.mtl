@@ -1,0 +1,21 @@
+[comment encoding = UTF-8 /]
+[module generateVLE('http://www.xtext.org/AthenaDSL')]
+
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::cppTypeDefs]
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::cppTypeImpls]
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::valueTypeDefs]
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::valueTypeImpls]
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::models /]
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::vpz /]
+
+[template public generateElement(project : Project)]
+[comment @main /]
+
+[cppTypeDefs(project)/]              
+[cppTypeImpls(project)/]            
+[valueTypeDefs(project)/]             
+[valueTypeImpls(project)/]                
+[models(project)/]
+[vpz(project)/]
+
+[/template]

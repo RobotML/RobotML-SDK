@@ -1,0 +1,122 @@
+[comment encoding = UTF-8 /]
+[module generateAthena('http://www.eclipse.org/uml2/3.0.0/UML', 'http://Papyrus/RobotML/1')/]
+
+[import org::eclipse::proteus::generators::acceleo::mmqueries::ArchitectureQueries/]
+
+[import org::eclipse::robotml::generators::acceleo::athena::files::generateImport/]
+[import org::eclipse::robotml::generators::acceleo::athena::files::generateTypes/]
+[import org::eclipse::robotml::generators::acceleo::athena::files::generateFunctions/]
+[import org::eclipse::robotml::generators::acceleo::athena::files::generateProcessings/]
+[import org::eclipse::robotml::generators::acceleo::athena::files::generatePrototypes/]
+[import org::eclipse::robotml::generators::acceleo::athena::files::configGenerator/]
+
+[import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries /]
+
+[template public generateAthena(model : Model)]
+[comment @main /] 
+	[comment][sortUsedDataType(model)/][/comment]
+	[searchUsedDataType(model)/]
+	[if (isAutomaticGeneration(null))]
+		[file(model.name + '.adl', false, 'UTF-8')]
+//
+//	Model [model.name/]
+//
+
+language CPP
+language VLE
+language MATLAB
+
+[if (createDataTypesFile(null))]
+	[file ('datatypes.adl', false, 'UTF-8')]
+[generateTypes(model)/]
+	[/file]
+[/if]
+
+//
+//	Imports
+//
+[generateImport(model)/]
+
+//
+// Functions
+//
+[generateFunctions(model)/]
+
+//
+// Processings 
+//
+[generateProcessings(model)/]
+
+//
+// Prototypes
+//
+[generatePrototypes(model)/]
+
+//
+// Wrapper
+//
+[generateWrapper(model)/]
+		[/file]
+	[elseif (isModelNameSelected(model))]
+		[file(model.name + '.adl', false, 'UTF-8')]
+//
+//	Model [model.name/]
+//
+
+language CPP
+language VLE
+language MATLAB
+
+[generateTypes(model)/]
+
+//
+// Functions
+//
+[generateFunctions(model)/]
+
+//
+// Processings 
+//
+[generateProcessings(model)/]
+
+//
+// Prototypes
+//
+[generatePrototypes(model)/]
+
+//
+// Wrapper
+//
+[generateWrapper(model)/]
+		[/file]
+	[/if]
+[/template]
+
+[comment]Generate wrapper for externals librairies[/comment]
+[template private generateWrapper(model : Model)]
+	[let classes : Sequence(Class) = getModelClasses(model)]
+//classes size : [classes->size()/]
+		[for(classe : Class | classes)]
+			[if(isExternalLibrairy(classe))]
+wrapper [classe.name/] begin
+		
+	link-library { "[generateWrapperString(classe)/]" }
+[comment]			[let lib : AlgorithmLibrary = classe.oclAsType(AlgorithmLibrary)][/comment]
+[comment]		link-library { [lib.path.toString()/] }[/comment]
+					[let ops : Sequence(Operation) = classe.eAllContents(Operation)]
+	implements-functions {
+						[for(op : Operation | ops)]
+							[op.name/][if(ops->indexOf(op) < ops->size())],[/if]
+						[/for]
+	}
+					[/let]
+	external-objects {  }
+	external-libraries {  }
+	test-apps {  } 
+[comment]				[/let][/comment]
+end
+			[/if]
+		[/for]
+	[/let]
+[/template]
+

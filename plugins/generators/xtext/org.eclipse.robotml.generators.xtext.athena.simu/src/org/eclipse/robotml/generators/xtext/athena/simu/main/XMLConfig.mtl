@@ -1,0 +1,92 @@
+[comment encoding = UTF-8 /]
+[module XMLConfig('http://www.xtext.org/AthenaDSL')/]
+
+[import org::eclipse::robotml::generators::xtext::athena::simu::main::jqueries /]
+
+
+[template public XMLConfig(project : Project)]
+[file ('configTemplate.xml', false, 'UTF-8')] 
+<config>
+
+	<!-- User libraries ++++++++++++++++++++++++++++++++++++++++++++ -->
+	<user-libraries>
+		<library>?????</library>
+	</user-libraries>
+
+	<!-- Matlab configuration ++++++++++++++++++++++++++++++++++++++++++++ -->
+	<Matlab initString="">
+		<add2path>.</add2path>
+	</Matlab>
+
+	<!-- Environment configuration ++++++++++++++++++++++++++++++++++++++++++++ -->
+	<Environment>terrain/locals.xml</Environment>
+
+	[doInstance('Root', getRootPrototype(project), project)/]
+
+</config>
+[/file]
+[/template]
+
+
+[template public doInstance(instance : String, proto : prototypeDeclaration, project : Project)]
+<!-- [instance/] : [proto.name/] ++++++++++++++++++++++++++++++++++++++++++++ -->
+<instance proto="[proto.name/]" name="[instance/]">
+	
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isParameter(elt))]
+			[let param : parameterDeclaration = elt.oclAsType(parameterDeclaration)]
+				[if(param.hasConfig or param.hasConfigWithDefaultValue)]
+	[xmlType(param.name, param.typeName)/]
+				[/if]
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+	
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isInstance(elt))]
+			[let inst : instanceDeclaration = elt.oclAsType(instanceDeclaration)]
+	[doInstance(inst.name, inst.typeName, project)/]
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+	
+</instance> 
+<!-- eof [instance/] : [proto.name/] -->
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+[/template]
+
+[template public xmlType(name : String, itype : DataType)]
+[let type : DataType = getBaseType(itype)]
+[if (isArrayType(type) and isDynamicArray(type.oclAsType(arrayType)))]
+<[name/] type="[type.name/]" [getXmlArrayDims(type.oclAsType(arrayType))/]><[type.name/]>
+[elseif (isStructType(type) and hasDynamicArrayElements(type.oclAsType(structType)))]
+<[name/] type="[type.name/]" [getXmlStructDims(type.oclAsType(structType))/]><[type.name/]>
+[else]
+<[name/]><[type.name/]>
+[/if]
+[if (isStructType(type))]
+	[for (s : structElement | type.oclAsType(structType).parameters)]
+	[xmlType(s.name, s.typename)/]	
+	[/for]
+[elseif (isVectorType(type))]
+	[xmlType('val', type.oclAsType(vectorType).typename)/]
+[elseif (isMapType(type))]
+	[xmlType('val', type.oclAsType(mapType).valtype)/]
+[elseif (isArrayType(type))]
+	[xmlType('val', type.oclAsType(arrayType).typename)/]
+[else]1
+[/if]
+</[type.name/]></[name/]>
+[/let]
+[/template]
+
+

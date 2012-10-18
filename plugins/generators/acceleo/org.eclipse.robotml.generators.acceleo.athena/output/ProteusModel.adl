@@ -1,0 +1,311 @@
+	
+	//
+	// Model ProteusModel
+	//
+	
+	language CPP
+	
+	//
+	// Data Types description
+	//
+	
+	//
+	// base Types (predefined)
+	//
+	
+	basic int64 begin
+		language < CPP > "long int" = "0"
+	end
+	
+	basic int32 begin
+		language < CPP > "int" = "0"
+	end
+	
+	basic int16 begin
+		language < CPP > "short int" = "0"
+	end
+	
+	basic int8 begin
+		language < CPP > "char" = "0"
+	end
+	
+	basic uint64 begin
+		language < CPP > "unsigned long int" = "0"
+	end
+	
+	basic uint32 begin
+		language < CPP > "unsigned int" = "0"
+	end
+	
+	basic uint16 begin
+		language < CPP > "unsigned short int" = "0"
+	end
+	
+	basic uint8 begin
+		language < CPP > "unsigned char" = "0"
+	end
+	
+	basic real32 begin
+		language < CPP > "float" = "0"
+	end
+	
+	basic real64 begin
+		language < CPP > "double" = "0"
+	end
+	
+	//
+	// User defined types
+	//
+	
+	// EntityState
+	//   ** attribute position Float64MultiArray 
+	//   ** attribute id UInt32 org.eclipse.uml2.uml.internal.impl.StereotypeImpl@b0b563 (name: EDataType, visibility: <unset>) (isLeaf: false, isAbstract: false) (isActive: false)
+	// EmitterState
+	// EmitterBeam
+	
+			
+	
+	//
+	// Functions
+	//
+		
+		
+	
+	//
+	// Processings 
+	//
+		
+		
+	
+	//
+	// Prototypes
+	//
+			
+	//
+	// Prototypes generiques
+	// 
+	
+	//
+	prototype System begin
+	
+	end
+	
+	//
+	prototype Sensor is System begin 
+	
+	end
+	
+	//
+	prototype Actuator is System begin
+	
+	end
+	
+	// Function
+	// NavigationManagementSystem
+	// LocalizationManagementSystem
+	// SensorManagementFunction
+	// MissionManagementSystem
+	// SensorFunction
+	// RadarSensor
+	// EOIRSensorFunction
+	// SARSensor
+	// Emitter
+	// Entity
+	// Aircraft
+	// WeaponsManagementSystem
+	
+	
+	// Function ProteusModel
+	prototype Function is System begin
+		// references
+		
+		// Parameters
+	
+		// StateSets
+	
+		// Instances
+	
+	end 
+	
+	
+	// NavigationManagementSystem ProteusModel
+	prototype NavigationManagementSystem is Function begin
+		// references
+		
+		// Parameters
+	
+		// StateSets
+		// StateMachine1
+		stateset StateMachine1 {INIT, RUNNING } = RUNNING begin
+			transition from INIT to RUNNING on initializing //raise test2
+		end
+	
+	
+		// Instances
+	
+	end 
+	
+	
+	// LocalizationManagementSystem ProteusModel
+	prototype LocalizationManagementSystem is Function begin
+		// references
+		
+		// Parameters
+	
+		// StateSets
+	
+		// Instances
+	
+	end 
+	
+	
+	// SensorManagementFunction ProteusModel
+	prototype SensorManagementFunction is Function begin
+		// references
+		
+		// Parameters
+	
+		// StateSets
+	
+		// Instances
+		instance <SensorFunction[]> sensorList
+	
+	end 
+	
+	
+	// MissionManagementSystem ProteusModel
+	prototype MissionManagementSystem is Function begin
+		// references
+		
+		// Parameters
+	
+		// StateSets
+	
+		// Instances
+	
+	end 
+	
+	
+	// SensorFunction ProteusModel
+	prototype SensorFunction is Function begin
+		// references
+		
+		// Parameters
+	
+		// StateSets
+	
+		// Instances
+	
+	end 
+	
+	
+	// RadarSensor ProteusModel
+	prototype RadarSensor is SensorFunction begin
+		// references
+		
+		// Parameters
+	
+		// StateSets
+	
+		// Instances
+	
+	end 
+	
+	
+	// EOIRSensorFunction ProteusModel
+	prototype EOIRSensorFunction is SensorFunction begin
+		// references
+		
+		// Parameters
+	
+		// StateSets
+	
+		// Instances
+	
+	end 
+	
+	
+	// SARSensor ProteusModel
+	prototype SARSensor is SensorFunction begin
+		// references
+		
+		// Parameters
+	
+		// StateSets
+	
+		// Instances
+	
+	end 
+	
+	
+	// Emitter ProteusModel
+	prototype Emitter  begin
+		// references
+		// Output dataflow port emitters
+		parameter <EmitterState> emitters
+		// Unconnected dataflow port emitters
+		
+		// Parameters
+	
+		// StateSets
+	
+		// Instances
+	
+	end 
+	
+	
+	// Entity ProteusModel
+	prototype Entity is System begin
+		// references
+		// Output dataflow port entityState
+		parameter <EntityState> entityState
+		// Unconnected dataflow port entityStates
+		
+		// Parameters
+	
+		// StateSets
+		// ExecutionState
+		stateset ExecutionState { INIT, RUNNING } = INIT  begin
+			transition from INIT to RUNNING on initializing raise test2
+		end
+	
+	
+		// Instances
+	
+	end 
+	
+	
+	// Aircraft ProteusModel
+	prototype Aircraft is Entity begin
+		// references
+		// Output dataflow port entityState
+		parameter <EntityState> entityState
+		// Output dataflow port emitters
+		parameter <EmitterState> emitters
+		// Unconnected dataflow port emitters
+		// Unconnected dataflow port entityStates
+		
+		// Parameters
+	
+		// StateSets
+	
+		// Instances
+	
+	end 
+	
+	
+	// WeaponsManagementSystem ProteusModel
+	prototype WeaponsManagementSystem  begin
+		// references
+		
+		// Parameters
+	
+		// StateSets
+	
+		// Instances
+	
+	end 
+	
+	
+	
+	

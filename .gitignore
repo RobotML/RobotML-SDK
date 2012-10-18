@@ -4,3 +4,7 @@
 *.jar
 *.war
 *.ear
+*.emtl
+plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo/bin/*
+plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo.rtmaps/bin/*
+plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo.rtmaps/tasks/*

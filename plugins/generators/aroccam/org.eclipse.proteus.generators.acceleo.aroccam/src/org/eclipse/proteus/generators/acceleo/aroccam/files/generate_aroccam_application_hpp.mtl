@@ -1,0 +1,81 @@
+[comment encoding = UTF-8 /]
+[module generate_aroccam_application_hpp('http://www.eclipse.org/uml2/3.0.0/UML')]
+
+[import org::eclipse::proteus::generators::acceleo::mmqueries::ArchitectureQueries /]
+[import org::eclipse::proteus::generators::acceleo::mmqueries::DataTypeQueries /]
+[import org::eclipse::proteus::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::proteus::generators::acceleo::mmqueries::FSMQueries /]
+
+
+[template public generateAroccamApplicationHpp(model : Model)]
+
+[file ('src/' + model.name + 'Application/' + model.name + 'Application.hpp', false, 'UTF-8')]
+#ifndef __EFFIBOX_[model.name/]Application_HPP__
+#define __EFFIBOX_[model.name/]Application_HPP__
+
+//effibox
+#include <effibox/application/application.hpp>
+
+//local includes
+#include "Datatypes/all.hpp"
+[let main_comp : Class = getRootClassForModel(model)]
+	[for (prop: Property | getLevel1SubComponentsForComponent(main_comp))]
+		[let sub_c : Class = prop.type.oclAsType(Class)]
+			[if (sub_c.getStereotype().contains('Software'))]
+#include "[sub_c.getStereotype()/]/[sub_c.name/]/[sub_c.name/].hpp"
+			[/if]
+		[/let]
+	[/for]
+[/let]
+
+class [model.name/]Application: public Application
+{
+	APPLICATION_DECLARATION([model.name/]Application)
+
+public:
+	void initialization(const std::string & inParameters);
+	void finalization();
+
+	//cameras event callbacks
+	[for (elt: NamedElement | getElementsWithStereotype(model,'CameraSystem'))]
+		void frame[elt.name/](const effibox::FramePtr & f);
+	[/for]
+
+	//rangefinder event callbacks
+	[for (elt: NamedElement | getElementsWithStereotype(model,'LidarSystem'))]
+		void frame[elt.name/](const effibox::FramePtr & f);
+	[/for]
+
+	//gps events callbacks
+	[for (elt: NamedElement | getElementsWithStereotype(model,'GPSSystem'))]
+		void frame[elt.name/]_GGA(const effibox::FramePtr & f);
+	[/for]
+
+	//other sensors events callback
+	[for (elt: NamedElement | getElementsWithStereotype(model,'SensorSystem'))]
+		[if(elt.name.toLower().contains('odometry'))]
+		void frame[elt.name/]_genericodometry(const effibox::FramePtr & f);
+		[elseif(elt.name.toLower().contains('imu'))]
+		void frame[elt.name/]_GLOBAL(const effibox::FramePtr & f);
+		[/if]
+	[/for]
+
+	void frameError(const effibox::FramePtr & f);
+
+	//sub-components
+	[comment] TODO ICI, GERER LA PARTIE DEPLOIEMENT POUR INSTANCIER LES BONS COMPOSANTS !!
+	[let main_comp : Class = getRootClassForModel(model)]
+		[for (prop: Property | getLevel1SubComponentsForComponent(main_comp))]
+			[if prop.oclAsType(Class).getStereotype().contains('Software') = true]
+		[prop.type.name/] [prop.name/];
+			[/if]
+		[/for]
+	[/let]
+	[/comment]
+
+};
+
+#endif
+[/file]
+
+[/template]

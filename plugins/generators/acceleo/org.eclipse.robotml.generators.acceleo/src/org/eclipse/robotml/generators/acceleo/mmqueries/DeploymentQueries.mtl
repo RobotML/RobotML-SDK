@@ -1,0 +1,12 @@
+[comment encoding = UTF-8 /]
+[module DeploymentQueries('http://www.eclipse.org/uml2/3.0.0/UML')]
+
+[comment] 
+- Ces fonctions sont implémentées dans le fichier 'org.eclipse.robotml.generators.acceleo.mmqueries.DeployementQueries'
+[/comment]
+[query public getInstanceSpecifications(elt : Model) : Sequence(InstanceSpecification) =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getInstanceSpecificationsInModel(org.eclipse.uml2.uml.Model)', Sequence{elt})
+/]
+[query public getParentName(inst : InstanceSpecification) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getParentName(org.eclipse.uml2.uml.InstanceSpecification)', Sequence{inst})
+/]

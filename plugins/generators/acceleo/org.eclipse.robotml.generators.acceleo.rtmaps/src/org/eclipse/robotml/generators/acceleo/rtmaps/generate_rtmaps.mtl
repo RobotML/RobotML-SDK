@@ -1,0 +1,48 @@
+[comment encoding = UTF-8 /]
+[module generate_rtmaps('http://www.eclipse.org/uml2/3.0.0/UML')]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_component_cpp /]
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_component_hpp /]
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_robotml_primitive_datatypes_h /]
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_robotml_datatypes_h /]
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_model_datatypes_h /]
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_macrocomponent_rtmc /]
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_diagram_rtd /]
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_makefile /]
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_pckinfo /]
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_vc2005_project_vcproj /] 
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_vc2005_solution_sln /]
+
+[template public generateRTMapsDiagram(model : Model)]
+[comment @main/]
+
+[comment]RTMaps main diagram generation[/comment]
+	[if (isRootModel(model))]
+		[generateRTMapsDiagramRTD(model)/]
+	
+		[generateRTMapsMakefile(model) /]
+	
+		[generateRTMapsPckInfo(model) /]
+	
+		[generateRTMapsVC2005ProjectVCPROJ(model) /]
+	
+		[generateRTMapsVC2005SolutionSLN(model) /]
+	
+		[generateRTMapsRobotMLPrimitiveDataTypes(model)/]
+		[generateRTMapsRobotMLDataTypes(model) /]
+		[generateRTMapsModelDataTypes(model) /]
+
+		[comment]For all classes in the model, generate either a component cpp and h source code, or a macro-component.[/comment]
+		[for (elt: NamedElement | getComponentModels(model))]
+			[let c : Class = elt.oclAsType(Class)]
+			[if (isMacroComponent(c) = false)]
+				[generateRTMapsComponentHpp(c,model)/]
+				[generateRTMapsComponentCpp(c,model)/]
+			[/if]
+			[/let]
+		[/for]
+
+		[generateRTMapsMacroComponentPackage(model)/]
+	[/if]
+[/template]

@@ -1,0 +1,16 @@
+// 20/10/2011
+
+import "types_1.adl"
+import "functions_1.adl"
+
+/*
+ * 
+ * 
+ */
+wrapper BasicFlying begin
+	link-library { "hello" } 
+	implements-functions { advanceTime, initBasicFlying, stepBasicFlying }
+	external-objects {  }
+	external-libraries {   }
+	test-apps {  }
+end

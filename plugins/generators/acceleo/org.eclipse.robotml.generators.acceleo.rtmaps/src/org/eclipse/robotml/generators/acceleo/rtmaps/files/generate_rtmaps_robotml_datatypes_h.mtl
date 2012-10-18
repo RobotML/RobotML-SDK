@@ -1,0 +1,63 @@
+[comment encoding = UTF-8 /]
+[module generate_rtmaps_robotml_datatypes_h('http://www.eclipse.org/uml2/3.0.0/UML')]
+
+[import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
+
+[template public generateRTMapsRobotMLDataTypes(root_model : Model)]
+[file ('user_sdk/include/robotml/maps_robotml_datatypes_all.h', false, 'UTF-8')]
+#ifndef __MAPS_ROBOTML_DATATYPES_H__
+#define __MAPS_ROBOTML_DATATYPES_H__
+
+#include "robotml/maps_robotml_primitive_datatypes.h"
+
+
+/*******************************************/
+/* COMPOSED DATA TYPES FORWARD DECLARATIONS*/
+/*******************************************/
+
+[for (datatype : DataType | getMetamodelComposedDataTypes(root_model.oclAsType(Element)))]
+class [datatype.name/];
+[/for]
+
+/*******************************************/
+/* COMPOSED DATA TYPES INCLUDE FILES*/
+/*******************************************/
+[for (datatype : DataType | getMetamodelComposedDataTypes(root_model.oclAsType(Element)))]
+#include "robotml/[datatype.name/].h"
+	[file ('user_sdk/include/robotml/' + datatype.name + '.h', false, 'UTF-8'))]
+#ifndef ___[datatype.name/]_H__
+#define ___[datatype.name/]_H__
+
+[for (prop : Property | datatype.getAllAttributes())]
+[if (isPrimitiveType(prop.type.oclAsType(Element)) = false)]
+#include "robotml/[prop.type.name/].h"
+[/if]
+[/for]
+
+[getCppClassForDatatType(datatype)/]
+
+#endif //___[datatype.name/]_H__
+	[/file]
+[/for]
+
+#endif //__MAPS_ROBOTML_DATATYPES_H__
+[/file]
+
+[file ('user_sdk/include/robotml/maps_robotml_datatype_filters.h', false, 'UTF-8')]
+#ifndef __MAPS_ROBOTML_DATATYPE_FILTERS_H__
+#define __MAPS_ROBOTML_DATATYPE_FILTERS_H__
+
+#include "maps.hpp"
+
+const MAPSTypeFilterBase MAPSFilterRobotMLString = MAPS_FILTER_USER_STRUCTURE(MAPSRobotMLString);
+
+[for (datatype : DataType | getMetamodelComposedDataTypes(root_model.oclAsType(Element)))]
+
+// The RTMaps input filter for the structure [datatype.name/]
+const MAPSTypeFilterBase MAPSFilter[datatype.name/] = MAPS_FILTER_USER_STRUCTURE([datatype.name/]);
+
+[/for]
+
+#endif //__MAPS_ROBOTML_DATATYPE_FILTERS_H__
+[/file]
+[/template]

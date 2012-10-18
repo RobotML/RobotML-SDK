@@ -1,0 +1,58 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.Parameter com.cea.papyrus.gen.cpp.core.CppStereo com.cea.papyrus.gen.cpp.core.utils.GenUtils" 
+	class			=	"CppParameter" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	// Retrieve the Parameter
+	Parameter currentParameter	= (Parameter) argument;
+		
+	String parameterName		= currentParameter.getName();
+
+	String typeName			= "";
+	String suffix			= "";
+	String ptr				= "";
+	String ref				= "";
+	String array			= "";
+	String isConst			= "";
+	
+	if (currentParameter.getType() == null) {
+		typeName	= "undefined";
+	} else {
+		typeName	= GenUtils.qualifiedName (currentParameter.getType());
+	}
+	
+	// Pointer
+	if (GenUtils.hasStereotype(currentParameter, CppStereo.ptr)) {
+		ptr = GenUtils.getTaggedValue(currentParameter, CppStereo.ptr, "declaration");
+	}
+	
+	// Ref
+	if (GenUtils.hasStereotype(currentParameter, CppStereo.ref)) {
+		ref = GenUtils.getTaggedValue(currentParameter, CppStereo.ref, "declaration");
+	}
+	
+	// Array
+	if (GenUtils.hasStereotype(currentParameter, CppStereo.array)) {
+		array = GenUtils.getTaggedValue(currentParameter, CppStereo.array, "definition");
+	}
+	
+	// Initial value
+	if (GenUtils.hasStereotype(currentParameter, CppStereo.default_)) {
+		suffix		= " = "+GenUtils.getTaggedValue(currentParameter, CppStereo.default_, "value");
+	}
+
+	// Const
+	if (GenUtils.hasStereotype(currentParameter, CppStereo.const_)) {
+		isConst		= "const ";
+	}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////
+%><%= isConst %><%= typeName %><%= ptr %><%= ref %> <%= parameterName %><%= array %><%= suffix %>

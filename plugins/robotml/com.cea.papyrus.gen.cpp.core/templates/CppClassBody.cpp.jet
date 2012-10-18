@@ -1,0 +1,84 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet" 
+	skeleton        =   "generator.skeleton" 
+	imports			=	"com.cea.papyrus.gen.cpp.core.utils.* org.eclipse.emf.common.util.EList com.cea.papyrus.gen.cpp.core.CppStereo org.eclipse.uml2.uml.Class org.eclipse.uml2.uml.Package org.eclipse.uml2.uml.* com.cea.papyrus.gen.cpp.core.jet.util.* com.cea.papyrus.gen.cpp.core.Activator" 
+ 	class			=	"CppClassBody" 
+ %>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+	
+	// Retrieve the class
+	Classifier currentClass	= (Classifier) argument;
+	
+	// Get the package name
+	String className	= currentClass.getName();
+	String classFullName= GenUtils.getFullName (currentClass);
+	String classFULLNAME= classFullName.toUpperCase(); 
+	String openNS = GenUtils.openNS (currentClass);
+	String closeNS = GenUtils.closeNS (currentClass);
+	
+	// Retrieve header file suffix
+	String headerFileSuffix = Activator.getDefault().getPluginPreferences().getString("headSuffix");
+	
+	// Include declaration "CppInclude"
+	String bodyDecl		= "";
+	if (GenUtils.hasStereotype(currentClass, CppStereo.include)) {
+		bodyDecl			= GenUtils.getTaggedValue(currentClass, CppStereo.include, "body") + "\n\n";
+	}
+	EList<Classifier> deps = GenUtils.getDependencies (currentClass);
+	bodyDecl += GenIncludeDecl.createIncludeDecl (deps, currentClass);
+		
+	// TODO - Prepare static attribute
+	String staticAttributes = "";
+
+	// Retrieve owner Package
+	Package owner		= currentClass.getPackage();
+	String  fullPath	= "";
+	String  separ		= "";
+	
+	if (owner != null) {
+		fullPath		= GenUtils.getFullPath(owner);
+		separ			= "/";
+	} // else fullPath == ""
+	
+		// Prepare attributes and Methods declarations
+	String allOperations	= "";
+	
+	// Methods
+	CppClassOperationsImplementation jetClassOp
+							= new CppClassOperationsImplementation();
+	allOperations			= jetClassOp.generate(currentClass);
+	
+	// Prepare static attributes declaration
+	CppStaticClassAttributesImplementation jetStaticAtts
+							= new CppStaticClassAttributesImplementation();
+	staticAttributes		= jetStaticAtts.generate(currentClass);
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+#define <%= classFULLNAME %>_BODY
+
+/************************************************************
+              <%= className %> class body
+ ************************************************************/
+
+/* Header include                                           */
+#include <<%= fullPath %><%= separ %><%= className %>.<%= headerFileSuffix %>>
+
+/* Include from CppInclude declaration                      */
+<%= bodyDecl %>
+
+<%= openNS%>
+
+<%= staticAttributes %>
+
+<%= allOperations %>
+
+<%= closeNS%>
+
+/************************************************************
+              End of <%= className %> class body
+ ************************************************************/
+

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="RobotML_Libraries" nsURI="http:///RobotML_Libraries.ecore" nsPrefix="RobotML_Libraries">
+  <eSubpackages name="DataTypes_Library" nsURI="http:///RobotML_Libraries/DataTypes_Library.ecore"
+      nsPrefix="RobotML_Libraries.DataTypes_Library">
+    <eSubpackages name="RobotML_PrimitiveTypes" nsURI="http:///RobotML_Libraries/DataTypes_Library/RobotML_PrimitiveTypes.ecore"
+        nsPrefix="RobotML_Libraries.DataTypes_Library.RobotML_PrimitiveTypes">
+      <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="String"/>
+      <eClassifiers xsi:type="ecore:EDataType" name="Number" instanceClassName="Number"/>
+      <eClassifiers xsi:type="ecore:EDataType" name="Boolean" instanceClassName="Boolean"/>
+      <eClassifiers xsi:type="ecore:EDataType" name="Character" instanceClassName="Character"/>
+      <eClassifiers xsi:type="ecore:EDataType" name="Real" instanceClassName="Real">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="Number"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="Integer">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="Number"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="FloatingPointNumber" instanceClassName="FloatingPointNumber">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="Real"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="FixedPointNumber" instanceClassName="FixedPointNumber">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="Real"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Float64" instanceClassName="Float64">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="FloatingPointNumber"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Float32" instanceClassName="Float32">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="FloatingPointNumber"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Uint64" instanceClassName="Uint64">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="Integer"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Int64" instanceClassName="Int64">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="Integer"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Int32" instanceClassName="Int32">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="Integer"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Int16" instanceClassName="Int16">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="Integer"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Int8" instanceClassName="Int8">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="Integer"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Uint32" instanceClassName="Uint32">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="Integer"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Unit16" instanceClassName="Unit16">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="Integer"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="Uint8" instanceClassName="Uint8">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="baseType" value="Integer"/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EDataType" name="DateTime" instanceClassName="DateTime"/>
+    </eSubpackages>
+    <eSubpackages name="RobotML_PhysicalData" nsURI="http:///RobotML_Libraries/DataTypes_Library/RobotML_PhysicalData.ecore"
+        nsPrefix="RobotML_Libraries.DataTypes_Library.RobotML_PhysicalData">
+      <eClassifiers xsi:type="ecore:EClass" name="Acceleration"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Angle"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Date"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Distance"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Duration"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ElectricalCurrent"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Weight"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Wavelength"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Voltage"/>
+      <eClassifiers xsi:type="ecore:EClass" name="MagneticField"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ElectricalField"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Torque"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Energy"/>
+      <eClassifiers xsi:type="ecore:EClass" name="RotationRate"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Force"/>
+      <eClassifiers xsi:type="ecore:EClass" name="InstantPower"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Luminosity"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Humidity"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Temperature"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Pressure"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Speed"/>
+      <eClassifiers xsi:type="ecore:EClass" name="WaveLength"/>
+    </eSubpackages>
+    <eSubpackages name="RobotML_Collection" nsURI="http:///RobotML_Libraries/DataTypes_Library/RobotML_Collection.ecore"
+        nsPrefix="RobotML_Libraries.DataTypes_Library.RobotML_Collection"/>
+    <eSubpackages name="RobotML_ComposedData" nsURI="http:///RobotML_Libraries/DataTypes_Library/RobotML_ComposedData.ecore"
+        nsPrefix="RobotML_Libraries.DataTypes_Library.RobotML_ComposedData">
+      <eClassifiers xsi:type="ecore:EClass" name="Position2DCartesian">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Real"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Real"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="GPS">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps_UTC_time" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/DateTime"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps_altitude_1" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Real"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps_altitude_2" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Real"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps_heading" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Real"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps_latitude" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Real"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps_longitude" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Real"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps_nb_sats" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Real"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps_quality_indicator"
+            ordered="false" lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Real"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps_speed_east" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Real"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps_speed_north" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Real"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps_speed_up" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Real"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="LaserScan"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Message"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Image">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_coding" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/String"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="_image_depth" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Uint8"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_height" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Uint8"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_nb_channels"
+            ordered="false" lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Uint8"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_size" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Uint8"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="image_width" ordered="false"
+            lowerBound="1" eType="#//DataTypes_Library/RobotML_PrimitiveTypes/Uint8"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

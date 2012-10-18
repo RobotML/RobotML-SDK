@@ -1,0 +1,23 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.doc" 
+	skeleton        =   "../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.Parameter com.cea.papyrus.gen.cpp.core.utils.GenUtils" 
+ 	class			=	"CppParamDoc" 
+ %>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+	
+	// Retrieve the element
+	Parameter currentElt		= (Parameter) argument;
+
+	String paramName = currentElt.getName();
+	String paramDoc  = GenUtils.getComments(currentElt);
+	
+	paramDoc	= paramDoc.replaceAll(NL, NL+" *	");
+	
+	
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+@param <%= paramName %> <%= paramDoc %>

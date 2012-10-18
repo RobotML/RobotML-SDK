@@ -1,0 +1,74 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.* com.cea.papyrus.gen.cpp.core.jet.doc.* com.cea.papyrus.gen.cpp.core.CppStereo com.cea.papyrus.gen.cpp.core.utils.GenUtils" 
+	class			=	"CppAttributeImplementation" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	// Retrieve the property
+	Property currentAttribute			= (Property) argument;
+	
+	String attributeName	= currentAttribute.getName();
+//	String className		= currentAttribute.getOwner().getName();
+	String typeName			= "";
+	String scopeName		= "";
+//	String prefix			= "";
+	String suffix			= "";
+	String multiple			= "";
+	String ptr				= "";
+	String ref				= "";
+	String array			= "";
+	
+	// For property documentation
+	String propDoc		= "";
+	
+	// Retrieve enum doc
+	CppElementDoc jDoc		= new CppElementDoc();
+	propDoc					= jDoc.generate(currentAttribute);	
+	propDoc					= propDoc.replaceAll(NL, NL+"	");
+	
+	if (currentAttribute.getType() == null) {
+		typeName	= "undefined";
+	}
+	else {	
+		Type type = currentAttribute.getType();
+		typeName	= GenUtils.qualifiedName (type);
+		/*
+		// If type is owned by a class add the scope
+		if (type.getOwner() instanceof Class) {
+			scopeName	= ((Class) type.getOwner()).getName();
+			typeName	= scopeName+"::"+typeName;
+		}
+		*/
+	}
+	
+	// Multiple
+	// TODO? need to evaluate limitMultiplicity stereotype?
+	int upper = currentAttribute.getUpper();
+	if ((upper == -1) || (upper > 1)) {
+		multiple	= "*";
+	}
+	
+	// Pointer
+	if (GenUtils.hasStereotype(currentAttribute, CppStereo.ptr)) {
+		ptr = GenUtils.getTaggedValue(currentAttribute, CppStereo.ptr, "declaration");
+	}
+	
+	// Ref
+	if (GenUtils.hasStereotype(currentAttribute, CppStereo.ref)) {
+		ptr = GenUtils.getTaggedValue(currentAttribute, CppStereo.ref, "declaration");
+	}
+	
+	// Array
+	if (GenUtils.hasStereotype(currentAttribute, CppStereo.array)) {
+		array = GenUtils.getTaggedValue(currentAttribute, CppStereo.array, "definition");
+	}
+			
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+	<%= propDoc %>
+	<%= typeName %><%= multiple %><%= ptr %><%= ref %> <%= attributeName %><%= array %><%= suffix %>;

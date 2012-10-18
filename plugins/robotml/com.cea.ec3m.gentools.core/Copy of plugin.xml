@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="language" name="languageSupport" schema="schema/language.exsd"/>
+   <extension-point id="instanceConfig" name="instanceConfigName" schema="schema/instanceConfig.exsd"/>
+   <extension-point id="externalGenerator" name="externalGenerator" schema="schema/externalGenerator.exsd"/>
+   <extension
+         point="org.eclipse.papyrus.core.modelListener">
+      <listener
+            name="eC3M.modelListener"
+            realization="com.cea.ec3m.gentools.core.listeners.ModelListener">
+      </listener>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="com.cea.ec3m.gentools.core.handlers.CreateDepPlanHandler"
+            description="Create deployment plan"
+            id="com.cea.ec3m.gentools.core.menuActions.CreateDepPlanCmd"
+            name="dummy">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="com.cea.ec3m.gentools.core.handlers.CreatePlatformHandler"
+            description="Create platform definition"
+            id="com.cea.ec3m.gentools.core.menuActions.CreatePlatformCmd"
+            name="dummy">
+      </command>
+      <!--command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="com.cea.ec3m.gentools.core.handlers.InstantiateDepPlanHandler"
+            description="Generate deployment models and code from plan"
+            id="com.cea.ec3m.gentools.core.menuActions.InstantiateDepPlanAction"
+            name="dummy">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="com.cea.ec3m.gentools.core.handlers.SyncHandler"
+            description="Synchronize derived elements"
+            id="com.cea.ec3m.gentools.core.menuActions.SyncCmd"
+            name="dummy">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="com.cea.ec3m.gentools.core.handlers.SelectConnectorHandler"
+            description="Choose connector type and implementation"
+            id="com.cea.ec3m.gentools.core.menuActions.SelectionConnectorCmd"
+            name="dummy">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="com.cea.ec3m.gentools.core.handlers.SelectContainerHandler"
+            description="Choose container properties"
+            id="com.cea.ec3m.gentools.core.menuActions.SelectionContainerCmd"
+            name="dummy">
+      </command-->
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="com.cea.ec3m.gentools.core.handlers.ConfigureInstanceHandler"
+            description="Configure instance"
+            id="com.cea.ec3m.gentools.core.menuActions.ConfigureInstanceCmd"
+            name="dummy">
+      </command>
+      <!--command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="com.cea.ec3m.gentools.core.handlers.ConfigurePortHandler"
+            description="Configure ports"
+            id="com.cea.ec3m.gentools.core.menuActions.ConfigurePortsCmd"
+            name="dummy">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="com.cea.ec3m.gentools.core.handlers.AddProfileAndModelLibsHandler"
+            description="Add eC3M profiles and model libraries"
+            id="com.cea.ec3m.gentools.core.menuActions.AddProfileAndModelLibsCmd"
+            name="dummy">
+      </command-->
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="com.cea.ec3m.gentools.core.handlers.AllocateHandler"
+            description="Allocate to node"
+            id="com.cea.ec3m.gentools.core.menuActions.AllocateCmd"
+            name="dummy">
+      </command>
+      <!--command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="com.cea.ec3m.gentools.core.handlers.TestAcceleoHandler"
+            description="Test Acceleo Template"
+            id="com.cea.ec3m.gentools.core.menuActions.TestAcceleoCmd"
+            name="dummy">
+      </command-->
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.papyrus.modelexplorer.modelexplorer.popup">
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.CreateDepPlanCmd"
+               icon="icons/depPlan.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.CreateDepPlanMenu"
+               label="Create deployment plan"
+               mnemonic="d"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.CreatePlatformCmd"
+               icon="icons/depPlan.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.CreatePlatformMenu"
+               label="Create platform definition"
+               mnemonic="d"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <!--command
+               commandId="com.cea.ec3m.gentools.core.menuActions.SyncCmd"
+               icon="icons/sync.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.SyncMenu"
+               label="Synchronize derived elements"
+               mnemonic="s"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.InstantiateDepPlanAction"
+               icon="icons/deploy.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.CreateDepPlanMenu"
+               label="Generate deployment models and code from plan"
+               mnemonic="g"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+          <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.SelectionConnectorCmd"
+               icon="icons/selConnector.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.SelectionConnectorMenu"
+               label="Show / choose connector type and implementation"
+               mnemonic="C"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.SelectionContainerCmd"
+               icon="icons/selContainer.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.SelectionContainerMenu"
+               label="Show / choose container properties"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command-->
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.ConfigureInstanceCmd"
+               icon="icons/selContainer.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.ConfigureInstanceMenu"
+               label="Configure instance properties"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <!--command
+               commandId="com.cea.ec3m.gentools.core.menuActions.ConfigurePortsCmd"
+               icon="icons/selContainer.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.ConfigurePortsMenu"
+               label="Configure ports"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.AddProfileAndModelLibsCmd"
+               icon="icons/Stereotype.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.AddProfileAndModelLibsMenu"
+               label="Add profiles and model libraries"
+               mnemonic="P"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command-->
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.AllocateCmd"
+               icon="icons/allocation.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.AllocateMenu"
+               label="Allocate to node"
+               mnemonic="A"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <!--command
+               commandId="com.cea.ec3m.gentools.core.menuActions.TestAcceleoCmd"
+               icon="icons/allocation.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.TestAcceleoMenu"
+               label="Test Acceleo template"
+               mnemonic="T"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command-->
+	  </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.CreateDepPlanCmd"
+               icon="icons/depPlan.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.CreateDepPlanMenu"
+               label="Create deployment plan"
+               mnemonic="d"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.CreatePlatformCmd"
+               icon="icons/depPlan.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.CreatePlatformMenu"
+               label="Create platform definition"
+               mnemonic="d"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <!--command
+               commandId="com.cea.ec3m.gentools.core.menuActions.SyncCmd"
+               icon="icons/sync.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.SyncMenu"
+               label="Synchronize derived elements"
+               mnemonic="s"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.InstantiateDepPlanAction"
+               icon="icons/deploy.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.CreateDepPlanMenu"
+               label="Generate deployment models and code from plan"
+               mnemonic="g"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.SelectionConnectorCmd"
+               icon="icons/selConnector.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.SelectionConnectorMenu"
+               label="Show / choose connector type and implementation"
+               mnemonic="C"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.SelectionContainerCmd"
+               icon="icons/selContainer.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.SelectionContainerMenu"
+               label="Show / choose container properties"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command-->
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.ConfigureInstanceCmd"
+               icon="icons/selContainer.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.ConfigureInstanceMenu"
+               label="Configure instance properties"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <!--command
+               commandId="com.cea.ec3m.gentools.core.menuActions.ConfigurePortsCmd"
+               icon="icons/selContainer.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.ConfigurePortsMenu"
+               label="Configure ports"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.AddProfileAndModelLibsCmd"
+               icon="icons/Stereotype.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.AddProfileAndModelLibsMenu"
+               label="Add profiles and model libraries"
+               mnemonic="P"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command-->
+         <command
+               commandId="com.cea.ec3m.gentools.core.menuActions.AllocateCmd"
+               icon="icons/allocation.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.AllocateMenu"
+               label="Allocate to node"
+               mnemonic="A"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command>
+         <!--command
+               commandId="com.cea.ec3m.gentools.core.menuActions.TestAcceleoCmd"
+               icon="icons/allocation.gif"
+               id="com.cea.ec3m.gentools.core.menuActions.TestAcceleoMenu"
+               label="Test Acceleo template"
+               mnemonic="A"
+               mode="FORCE_TEXT"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+            </visibleWhen>
+         </command-->
+      </menuContribution>
+	</extension>
+	<extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.eclipse.papyrus.preferences.generalcategory"
+            class="com.cea.ec3m.gentools.core.preferences.EC3MPreferencePage"
+            id="com.cea.ec3m.gentools.core.preferences.EC3MPreferencePage_ID"
+            name="eC3M preferences">
+      </page>
+    </extension>
+    <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.cea.ec3m.gentools.core.preferences.EC3MPreferenceInitializer">
+      </initializer>
+    </extension>
+</plugin>

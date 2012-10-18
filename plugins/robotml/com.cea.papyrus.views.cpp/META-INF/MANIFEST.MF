@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus Cpp View
+Bundle-SymbolicName: com.cea.papyrus.views.cpp;singleton:=true
+Bundle-Version: 0.9.0.vqualifier
+Bundle-Activator: com.cea.papyrus.views.cpp.Activator
+Bundle-Vendor: CEA LIST
+Require-Bundle: org.eclipse.uml2.uml,
+ org.eclipse.emf.ecore.edit,
+ org.eclipse.gmf.runtime.notation;bundle-version="1.4.0",
+ org.eclipse.gef;bundle-version="3.6.0",
+ com.cea.profiles.cpp;bundle-version="0.7.0",
+ org.eclipse.papyrus.infra.core;bundle-version="0.9.1",
+ org.eclipse.gmf.runtime.emf.commands.core;bundle-version="1.4.0",
+ org.eclipse.jface.text;bundle-version="3.8.0"
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Export-Package: com.cea.papyrus.views.cpp;
+  uses:="org.eclipse.ui.plugin,
+   org.eclipse.swt.graphics,
+   org.osgi.framework,
+   org.eclipse.emf.transaction",
+ com.cea.papyrus.views.cpp.views;
+  uses:="org.eclipse.ui,
+   com.cea.papyrus.views.panels,
+   org.eclipse.jface.viewers,
+   org.eclipse.ui.part,
+   org.eclipse.uml2.uml,
+   org.eclipse.swt.widgets"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

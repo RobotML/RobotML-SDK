@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<di2:Diagram xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di2="http://www.papyrusuml.org" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_iJcPEP-7Edu6PaGZTLCuZQ" isVisible="true" fontFamily="Arial" lineStyle="solid" fontColor="255:255:255" foregroundColor="255:255:255" backgroundColor="255:255:255" borderColor="255:255:255" position="0:0" name="DefaultDiagram">
+  <owner xsi:type="di2:Uml1SemanticModelBridge" xmi:id="_iJcPEf-7Edu6PaGZTLCuZQ">
+    <element xsi:type="uml:Profile" href="PapyrusCpp.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+  </owner>
+</di2:Diagram>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.cea.papyrus.gen.cpp.core.preferences.PapyrusCppPreferencePage"
+            id="com.cea.papyrus.gen.cpp.core.preferences.PapyrusCppPreferencePage"
+            name="Papyrus C++"/>
+      <page
+            category="com.cea.papyrus.gen.cpp.core.preferences.PapyrusCppPreferencePage"
+            class="com.cea.papyrus.gen.cpp.core.preferences.CodegenPreferencePage"
+            id="com.cea.papyrus.gen.cpp.core.preferences.CodeGenPreferencePage"
+            name="Code generation"/>
+   </extension>
+
+</plugin>

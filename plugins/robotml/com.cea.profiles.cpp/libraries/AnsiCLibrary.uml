@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PapyrusCpp="http:///schemas/PapyrusCpp/0" xmlns:com.cea.papyrus.profiles="http://www.eclipse.org/uml2/schemas/Standard/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xsi:schemaLocation="http:///schemas/PapyrusCpp/0 PapyrusCpp.profile.uml#_hWUTkf-8Eduoic9kPBhuRg">
+  <uml:Model xmi:id="_DV8nkBv8EduZN5aJJITI5w" name="AnsiCLibrary">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_5lVhgBydEduyofBvg4RL2w" name="char"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_6j0jABydEduyofBvg4RL2w" name="double"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_7W3wkBydEduyofBvg4RL2w" name="float"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_7wRIABydEduyofBvg4RL2w" name="int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_8I6RgBydEduyofBvg4RL2w" name="void"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_8heigBydEduyofBvg4RL2w" name="long"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_DLNPkByeEduyofBvg4RL2w" name="long double"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_K-lFQByeEduyofBvg4RL2w" name="short"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_LTZesByeEduyofBvg4RL2w" name="uint"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_V5vyUByeEduyofBvg4RL2w" name="ushort"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_YYWiwByeEduyofBvg4RL2w" name="uchar"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_a1wZUByeEduyofBvg4RL2w" name="ulong"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_vAIV4I7PEdySGvm5GN66HA" name="bool"/>
+    <profileApplication xmi:id="_a7EN4CAREdu9HM4q-Epbgg">
+      <eAnnotations xmi:id="_a7EN4SAREdu9HM4q-Epbgg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/schemas/Standard/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusCpp:CppType xmi:id="_-jdlEB4hEduEFJbgtvfoZA" base_primitivetype="_8I6RgBydEduyofBvg4RL2w"/>
+  <PapyrusCpp:CppType xmi:id="__Voo4B4hEduEFJbgtvfoZA" base_primitivetype="_5lVhgBydEduyofBvg4RL2w"/>
+  <PapyrusCpp:CppType xmi:id="__8RyIB4hEduEFJbgtvfoZA" base_primitivetype="_K-lFQByeEduyofBvg4RL2w"/>
+  <PapyrusCpp:CppType xmi:id="_Apju4B4iEduEFJbgtvfoZA" base_primitivetype="_7wRIABydEduyofBvg4RL2w"/>
+  <PapyrusCpp:CppType xmi:id="_BV0_AB4iEduEFJbgtvfoZA" base_primitivetype="_8heigBydEduyofBvg4RL2w"/>
+  <PapyrusCpp:CppType xmi:id="_B9HBcB4iEduEFJbgtvfoZA" base_primitivetype="_a1wZUByeEduyofBvg4RL2w"/>
+  <PapyrusCpp:CppType xmi:id="_CjBK4B4iEduEFJbgtvfoZA" base_primitivetype="_LTZesByeEduyofBvg4RL2w"/>
+  <PapyrusCpp:CppType xmi:id="_DNH30B4iEduEFJbgtvfoZA" base_primitivetype="_V5vyUByeEduyofBvg4RL2w"/>
+  <PapyrusCpp:CppType xmi:id="_D5DJsB4iEduEFJbgtvfoZA" base_primitivetype="_YYWiwByeEduyofBvg4RL2w"/>
+  <PapyrusCpp:CppType xmi:id="_Ecyv8B4iEduEFJbgtvfoZA" base_primitivetype="_7W3wkBydEduyofBvg4RL2w"/>
+  <PapyrusCpp:CppType xmi:id="_FDx3cB4iEduEFJbgtvfoZA" base_primitivetype="_DLNPkByeEduyofBvg4RL2w"/>
+  <PapyrusCpp:CppType xmi:id="_Fx0pMB4iEduEFJbgtvfoZA" base_primitivetype="_6j0jABydEduyofBvg4RL2w"/>
+  <com.cea.papyrus.profiles:ModelLibrary xmi:id="_c2eKoCAREdu9HM4q-Epbgg" base_Package="_DV8nkBv8EduZN5aJJITI5w"/>
+</xmi:XMI>

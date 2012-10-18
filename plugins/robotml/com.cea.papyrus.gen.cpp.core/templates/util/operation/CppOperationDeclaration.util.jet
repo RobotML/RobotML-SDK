@@ -1,0 +1,99 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.* com.cea.papyrus.gen.cpp.core.jet.doc.* com.cea.papyrus.gen.cpp.core.CppStereo com.cea.papyrus.gen.cpp.core.StdStereo com.cea.papyrus.gen.cpp.core.utils.GenUtils" 
+	class			=	"CppOperationDeclaration" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	// Retrieve the Operation
+	Operation currentOperation	= (Operation) argument;
+		
+	String operationName		= currentOperation.getName();
+
+	String opParameters			= "";
+	
+	String returnTypeName		= "void";
+	String pVirtualSuffix		= "";
+	String prefix				= "";
+	String constOp				= "";
+
+	
+	String opDoc = "";
+	
+	// Doc for the template
+	CppOperationDoc jDoc		= new CppOperationDoc();
+	opDoc						= GenUtils.indent (jDoc.generate(currentOperation), "\t");
+	
+	// Prepare return type
+	CppOperationReturnType jetRT = new CppOperationReturnType();
+	returnTypeName	= jetRT.generate(currentOperation);	
+	if (!returnTypeName.equals ("")) {
+		returnTypeName += " ";
+	}
+	
+	boolean isInterface = currentOperation.getOwner () instanceof Interface;
+		
+	// Static attribute
+	if (currentOperation.isStatic()) {
+		prefix				= prefix+"static"+" ";
+	}
+	
+	// Inline attribute
+	if (GenUtils.hasStereotype(currentOperation, CppStereo.inline)) {
+		prefix				= prefix+"inline"+" ";
+	}		
+		
+	// Creator / Destructor / Musclor - Be carefull stereotype is Create and not create
+	// TODO: Fully qualified name ?
+	if (GenUtils.hasStereotype(currentOperation, StdStereo.create)) {
+		returnTypeName		= "";
+	}
+	if (GenUtils.hasStereotype(currentOperation, StdStereo.destroy)) {
+		returnTypeName		= "";
+		operationName		= "~"+operationName;
+	}
+	
+	// Const attribute on operation
+	if (GenUtils.hasStereotype(currentOperation, CppStereo.const_)) {
+		constOp				= "const";
+	}	
+	
+	// Virtual attribute on operation
+	if (GenUtils.hasStereotype(currentOperation, CppStereo.virtual)) {
+		prefix				= "virtual "+prefix;
+	}	
+	
+	// Pure Virtual attribute on operation
+	if (GenUtils.hasStereotype(currentOperation, CppStereo.pureVirtual) || isInterface || currentOperation.isAbstract ()) {
+		prefix				= "virtual "+prefix;
+		pVirtualSuffix		= " = 0";
+	}
+	
+	// Friend attribute on operation
+	if (GenUtils.hasStereotype(currentOperation, CppStereo.friend)) {
+		prefix				= "friend "+prefix;
+	}	
+	
+	// Prepare parameters
+	CppOperationParameters	jetParams	= new CppOperationParameters();
+	opParameters						= jetParams.generate(currentOperation);	
+	
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template only if current operation is not main
+//	else nothing is return...
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	if (!operationName.equals("main")) { 
+
+//////////////////////////////////////////////////////////////////////////////////////////%>
+
+	<%= opDoc %>
+	<%= prefix %><%= returnTypeName %><%= operationName %> (<%= opParameters %>)<%= constOp %><%= pVirtualSuffix %>
+<%//////////////////////////////////////////////////////////////////////////////////////////
+
+	} // else nothing done
+	
+//////////////////////////////////////////////////////////////////////////////////////////%>

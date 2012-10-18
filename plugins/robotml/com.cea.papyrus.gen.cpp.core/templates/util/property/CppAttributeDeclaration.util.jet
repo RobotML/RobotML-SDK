@@ -1,0 +1,97 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.Property com.cea.papyrus.gen.cpp.core.jet.doc.* com.cea.papyrus.gen.cpp.core.CppStereo com.cea.papyrus.gen.cpp.core.utils.GenUtils" 
+	class			=	"CppAttributeDeclaration" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	// Retrieve the property
+	Property currentAttribute			= (Property) argument;
+	
+	String attributeName	= currentAttribute.getName();
+	String typeName			= "";
+	String prefix			= "";
+	String suffix			= "";
+	String multiple			= "";
+	String ptr				= "";
+	String ref				= "";
+	String array			= "";
+	String isConst			= "";
+	
+	
+	// For property documentation
+	String propDoc		= "";
+	
+	// Retrieve enum doc
+	CppElementDoc jDoc		= new CppElementDoc();
+	propDoc					= jDoc.generate(currentAttribute);	
+	propDoc					= propDoc.replaceAll(NL, NL+"	");
+	
+	if (currentAttribute.getType() == null) {
+		typeName	= "undefined";
+	} else {
+		typeName	= GenUtils.qualifiedName (currentAttribute.getType());
+	}
+	
+	// Static attribute
+	if (currentAttribute.isStatic()) {
+		prefix		= "static"+" ";
+	}
+	
+	// Pointer
+	if (GenUtils.hasStereotype(currentAttribute, CppStereo.ptr)) {
+		ptr = GenUtils.getTaggedValue(currentAttribute, CppStereo.ptr, "declaration");
+	}
+	
+	// Ref
+	if (GenUtils.hasStereotype(currentAttribute, CppStereo.ref)) {
+		ptr = GenUtils.getTaggedValue(currentAttribute, CppStereo.ref, "declaration");
+	}
+	
+	// Array
+	if (GenUtils.hasStereotype(currentAttribute, CppStereo.array)) {
+		array = GenUtils.getTaggedValue(currentAttribute, CppStereo.array, "definition");
+	}
+	
+	// Const
+	if (GenUtils.hasStereotype(currentAttribute, CppStereo.const_)) {
+		isConst = "const ";
+	}
+	
+	// Treat multiplicity for association attributes
+	int multiplicity = currentAttribute.getUpper();
+	if (multiplicity == 1) {
+		multiple = "";
+	} else if (multiplicity == -1) {
+		multiple = "*";
+	} else {
+		multiple = "";
+		array = "["+multiplicity+"]";
+	}
+	
+	// If attribute is aggregation
+	if (GenUtils.isAggregation(currentAttribute)) {
+		// attributeName	= "(*"+attributeName+")"; // this produce a pointer on a tab
+		attributeName = "*"+attributeName;      // this produce a tab of pointers
+	}
+	
+	
+	if (GenUtils.hasStereotype(currentAttribute, CppStereo.const_) && currentAttribute.isStatic()) {
+		// const & static attributes may be initialized within class declaration
+		// check if initial value UML or profile
+		if (currentAttribute.getDefaultValue() != null) {
+			suffix = " = " + currentAttribute.getDefaultValue().stringValue();
+		}
+		else if (GenUtils.hasStereotype(currentAttribute, CppStereo.default_)) {
+			suffix = " = "+GenUtils.getTaggedValue(currentAttribute, CppStereo.default_, "value");
+		}
+	}
+			
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+	<%= propDoc %>
+	<%= prefix %><%= isConst %><%= typeName %><%= multiple %><%= ptr %><%= ref %> <%= attributeName %><%= array %><%= suffix %>;

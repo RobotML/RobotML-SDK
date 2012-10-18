@@ -1,0 +1,54 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.Classifier org.eclipse.uml2.uml.Generalization java.util.Iterator com.cea.papyrus.gen.cpp.core.CppStereo com.cea.papyrus.gen.cpp.core.utils.GenUtils" 
+	class			=	"CppInterfaceInheritedDeclarations" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	// Retrieve the interface
+	Classifier currentClass		= (Classifier) argument;
+	String decl				= "";
+	String visibility		= "";
+	
+	// Get generalization and implementation relationships
+	Iterator<Generalization> genIt = currentClass.getGeneralizations().iterator();
+	
+	// Parse generalizations
+	while (genIt.hasNext()) {
+		
+		Generalization currentGen = genIt.next();
+		
+		// get visibility and target name
+		if (GenUtils.hasStereotype(currentGen, CppStereo.visibility)) {
+			visibility	= GenUtils.getTaggedValue(currentGen, CppStereo.visibility, "value");
+		} else {
+			visibility	= "public";
+		}
+			
+		// If not <NoCodeGen>
+		Classifier tmpClassifier = currentGen.getGeneral();
+		if (!GenUtils.hasStereotype(tmpClassifier, CppStereo.noCodeGen)) {
+		
+			String targetName = tmpClassifier.getName();
+		
+			if (!decl.equals("")) {
+				decl = decl + ", ";
+			}
+			decl = decl+visibility+" "+targetName;
+		}	
+	}
+	
+	// ":" only if decl not empty
+	String prefix = "";
+	if (!decl.equals("")) {
+		prefix	= ": ";
+		visibility = "public ";
+	}	
+	
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+<%= prefix %><%= decl %>

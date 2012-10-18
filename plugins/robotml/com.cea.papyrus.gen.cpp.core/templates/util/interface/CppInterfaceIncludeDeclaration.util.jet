@@ -1,0 +1,29 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.NamedElement org.eclipse.uml2.uml.Package com.cea.papyrus.gen.cpp.core.Activator com.cea.papyrus.gen.cpp.core.CppStereo com.cea.papyrus.gen.cpp.core.utils.GenUtils"
+	class			=	"CppInterfaceIncludeDeclaration" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	
+	// Retrieve header file suffix
+	String headerFileSuffix = Activator.getDefault().getPluginPreferences().getString("headSuffix");
+
+	// Retrieve the interface
+	NamedElement currentNE	= (NamedElement) argument;
+	String iInterfacePath = "";
+	Package	nearestPkg = currentNE.getNearestPackage();
+	String iInterfaceName = currentNE.getName();
+	
+	if ( //!(nearestPkg.getUml2Package() instanceof org.eclipse.uml2.uml.Model)  
+			/*&&*/ !(GenUtils.hasStereotype(nearestPkg, CppStereo.root))) {
+		iInterfacePath = GenUtils.getFullPath (nearestPkg) + "/";	
+	}
+		
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+#include <<%= iInterfacePath %><%= iInterfaceName %>.<%= headerFileSuffix %>>

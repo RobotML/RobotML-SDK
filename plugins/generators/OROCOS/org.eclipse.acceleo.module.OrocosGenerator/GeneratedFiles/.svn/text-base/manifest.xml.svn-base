@@ -1,0 +1,13 @@
+
+<package>
+  <author> LIP6 </author>
+  <license>LIP6</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/</url>
+  <depend package="rtt"/>
+  <depend package="rtt_geometry_msgs"/>
+  <depend package="rtt_sensor_msgs"/>
+  <depend package="rtt_std_msgs"/>
+  <depend package="rtt_nav_msgs"/>
+</package>
+

@@ -1,0 +1,35 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generatorTwoArgs.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.* java.util.Iterator com.cea.papyrus.gen.cpp.core.utils.GenUtils com.cea.papyrus.gen.cpp.core.CppStereo" 
+	class			=	"CppClassOperationsDeclaration" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	// Retrieve the class
+	Classifier currentClass = (Classifier) argument1;
+	String opDecl = "";
+	
+	// Retrieve attributes
+	Iterator<Operation> operations = currentClass.getOperations().iterator();
+	while (operations.hasNext()) {
+		Operation operation = operations.next();
+		if (!GenUtils.hasStereotype (operation, CppStereo.noCodeGen)) {
+			if (operation.getVisibility() == argument2) {
+				CppOperationDeclaration jetOpDecl = new CppOperationDeclaration();
+				String cOpDecl = jetOpDecl.generate(operation);
+		
+				// if main cOpDecl = "";
+				if (!cOpDecl.equals("")) {
+					opDecl = opDecl+"\t"+cOpDecl+";";
+				}
+			}
+		}
+	}
+			
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+<%= opDecl %>

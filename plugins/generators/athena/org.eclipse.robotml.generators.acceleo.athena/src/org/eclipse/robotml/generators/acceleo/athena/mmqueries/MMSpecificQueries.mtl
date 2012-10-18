@@ -1,0 +1,126 @@
+[comment encoding = UTF-8 /]
+[module MMSpecificQueries('http://www.eclipse.org/uml2/3.0.0/UML')]
+
+[comment][query public sortUsedDataType(ne : NamedElement) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'sortUsedDataType(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/][/comment]
+
+[query public searchUsedDataType(elt : Model) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'searchUsedDataType(org.eclipse.uml2.uml.Model)', Sequence{elt})
+/]
+
+[query public getModelClasses(elt : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getModelClasses(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+[query public getAllDataTypes(elt : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getAllDataTypes(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+[query public getAllBasicDataTypes(ne : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getAllBasicDataTypes(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public getAllStructuredDataTypes(ne : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getAllStructuredDataTypes(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public getAllEnumeration(ne : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getAllEnumeration(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public getUnknownDataTypes(elt : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getUnknownDataTypes(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+[query public getSuperClass(elt : Class) : Class = 
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getSuperClass(org.eclipse.uml2.uml.Class)', Sequence{elt}) 
+/]
+
+[query public getSubModels(elt : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getSubModels(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+[query public getOperationsFromModel(elt : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getOperationsFromModel(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+[query public hasDefaultValue(prop : Property) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'hasDefaultValue(org.eclipse.uml2.uml.Property)', Sequence{prop})
+/]
+
+[query public getProcessingFromModel(elt : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getProcessingFromModel(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+[query public isProcessing(op : Operation) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isProcessing(org.eclipse.uml2.uml.Operation)', Sequence{op})
+/]
+
+[query public getCommentFromElement(elt : NamedElement) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getCommentFromElement(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+[query public hasComment(elt : NamedElement) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'hasComment(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+[query public getAthenaDataTypeDeclaration(elt : NamedElement) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getAthenaDataTypeDeclaration(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+[query public isExternalLibrairy(class : Class) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isExternalLibrairy(org.eclipse.uml2.uml.Class)', Sequence{class})
+/]
+
+[query public hasValidStates(fsm : StateMachine) : Boolean = 
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'hasValidStates(org.eclipse.uml2.uml.StateMachine)', Sequence{fsm})
+/]
+
+[query public hasValidTransition(fsm : StateMachine) : Boolean = 
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'hasValidTransition(org.eclipse.uml2.uml.StateMachine)', Sequence{fsm})
+/]
+
+[query public hasValidFSMDeclaration(class : Class) : Boolean = 
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'hasValidFSMDeclaration(org.eclipse.uml2.uml.Class)', Sequence{class})
+/]
+
+[query public getAllOpaqueBehaviorFromModel(elt : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getAllOpaqueBehaviorFromModel(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+[query public generateWrapperString(classe : Class) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'generateWrapperString(org.eclipse.uml2.uml.Class)', Sequence{classe})
+/]
+
+[query public generateOperationStateString(vertex : Vertex) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'generateOperationStateString(org.eclipse.uml2.uml.Vertex)', Sequence{vertex})
+/]
+
+[query public getContainerDataTypes(ne : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getContainerDataTypes(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public getContainerTypeDeclaration(ne : NamedElement) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getContainerTypeDeclaration(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public getDefineType(ne : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getDefineType(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public getAllModelDataTypes(ne : NamedElement) : Sequence(DataType) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getAllModelDataTypes(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/] 
+
+[query public hasDataTypeValidity(ne : NamedElement) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'hasDataTypeValidity(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public getDataTypeValidity(ne : NamedElement) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getDataTypeValidity(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public getUnionType(ne : NamedElement) : Sequence(NamedElement) = 
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getUnionType(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]

@@ -1,0 +1,33 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generator.skeleton" 
+	imports			=	"com.cea.papyrus.gen.cpp.core.CppStereo com.cea.papyrus.gen.cpp.core.utils.GenUtils org.eclipse.uml2.uml.TemplateParameter" 
+	class			=	"CppTemplateParameter" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+	// Retrieve the TemplateParameter
+	TemplateParameter currentTParam	= (TemplateParameter) argument;
+		
+	String parameterName	= "";
+	String typeName			= "";
+	
+	
+	if (GenUtils.getType(currentTParam) == "") {
+		typeName = "undefined";
+	} else {
+		typeName = GenUtils.getType(currentTParam); //.getName();
+	}
+	
+	// Retrieve name under stereotype CppTemplateParameter/name
+		if (GenUtils.hasStereotype(currentTParam, CppStereo.templateParameter)) {
+			parameterName = GenUtils.getTaggedValue(currentTParam, CppStereo.templateParameter, "name");
+		} 
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////
+%><%= typeName %> <%= parameterName %>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:j="clr-namespace:java.lang"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets" xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<Group text="Angular">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor view="ProteusLibraries:Single Vector3"
+				property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:geometry_datatypes:Twist:angular"
+				input="{Binding}"></ppe:ViewEditor>
+		</Group>
+		<Group text="Linear">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor view="ProteusLibraries:Single Vector3"
+				property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:geometry_datatypes:Twist:linear"
+				input="{Binding}"></ppe:ViewEditor>
+		</Group>
+	</Composite>
+</Composite>

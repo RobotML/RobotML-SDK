@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <uml:Model xmi:id="_9N0RsWcNEeG_WKDdL3OYmg" name="ProteusModel">
+    <packageImport xmi:id="_9gyRAGcNEeG_WKDdL3OYmg">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_wyS6gAH-EeC_ZLzLQhW-TQ"/>
+    </packageImport>
+    <packageImport xmi:id="_9gyRAWcNEeG_WKDdL3OYmg">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#__xA6YAHvEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_9gy4EGcNEeG_WKDdL3OYmg">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_Df4_4AHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_9gy4EWcNEeG_WKDdL3OYmg">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_Go5_QAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_9gy4EmcNEeG_WKDdL3OYmg">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_JSoakAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_9gzfIGcNEeG_WKDdL3OYmg">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_MlyNYAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_9gzfIWcNEeG_WKDdL3OYmg">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_QJC2AKxYEeCJD46GtDsABA"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CXDcYGcOEeG_WKDdL3OYmg" name="AvoidObstacles" classifierBehavior="_RnoDcGcOEeG_WKDdL3OYmg">
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_RnoDcGcOEeG_WKDdL3OYmg" name="FSMAvoid">
+        <region xmi:id="_TH7YkGcOEeG_WKDdL3OYmg" name="Region1">
+          <subvertex xmi:type="uml:State" xmi:id="_mfN9YGcOEeG_WKDdL3OYmg" name="standby"/>
+          <subvertex xmi:type="uml:State" xmi:id="_4H2oAGcOEeG_WKDdL3OYmg" name="decisionNeeded"/>
+          <subvertex xmi:type="uml:State" xmi:id="_D0IB4GcPEeG_WKDdL3OYmg" name="withObstacles"/>
+          <subvertex xmi:type="uml:State" xmi:id="_MYU3kGcPEeG_WKDdL3OYmg" name="withoutObstacles"/>
+          <transition xmi:id="_qDLzYGcOEeG_WKDdL3OYmg" name="listenMsgs" source="_mfN9YGcOEeG_WKDdL3OYmg" target="_mfN9YGcOEeG_WKDdL3OYmg"/>
+          <transition xmi:id="_8_Rp8GcOEeG_WKDdL3OYmg" name="msgReceived" source="_mfN9YGcOEeG_WKDdL3OYmg" target="_4H2oAGcOEeG_WKDdL3OYmg"/>
+          <transition xmi:id="_WlhrYGcPEeG_WKDdL3OYmg" name="noObstacle" source="_4H2oAGcOEeG_WKDdL3OYmg" target="_MYU3kGcPEeG_WKDdL3OYmg"/>
+          <transition xmi:id="_auMw8GcPEeG_WKDdL3OYmg" name="obstacle" source="_4H2oAGcOEeG_WKDdL3OYmg" target="_D0IB4GcPEeG_WKDdL3OYmg"/>
+          <transition xmi:id="_fXepMGcPEeG_WKDdL3OYmg" name="toTheRight" source="_MYU3kGcPEeG_WKDdL3OYmg" target="_mfN9YGcOEeG_WKDdL3OYmg"/>
+          <transition xmi:id="_hkmBAGcPEeG_WKDdL3OYmg" name="toTheLeft" source="_MYU3kGcPEeG_WKDdL3OYmg" target="_mfN9YGcOEeG_WKDdL3OYmg"/>
+          <transition xmi:id="_qbyEIGcPEeG_WKDdL3OYmg" name="go" source="_D0IB4GcPEeG_WKDdL3OYmg" target="_mfN9YGcOEeG_WKDdL3OYmg"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <profileApplication xmi:id="_9ZQssGcNEeG_WKDdL3OYmg">
+      <eAnnotations xmi:id="_9ZSh4GcNEeG_WKDdL3OYmg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://Proteus_PROFILES/ProteusProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
+    </profileApplication>
+  </uml:Model>
+  <RobotML:RoboticSystem xmi:id="_CgTfAGcOEeG_WKDdL3OYmg" base_Class="_CXDcYGcOEeG_WKDdL3OYmg"/>
+  <RobotML:State xmi:id="_mgK_oGcOEeG_WKDdL3OYmg" base_State="_mfN9YGcOEeG_WKDdL3OYmg"/>
+  <RobotML:Transition xmi:id="_qEOVMGcOEeG_WKDdL3OYmg" base_Transition="_qDLzYGcOEeG_WKDdL3OYmg"/>
+  <RobotML:State xmi:id="_4IYMcGcOEeG_WKDdL3OYmg" base_State="_4H2oAGcOEeG_WKDdL3OYmg"/>
+  <RobotML:Transition xmi:id="_8_3f0GcOEeG_WKDdL3OYmg" base_Transition="_8_Rp8GcOEeG_WKDdL3OYmg"/>
+  <RobotML:State xmi:id="_D0kt0GcPEeG_WKDdL3OYmg" base_State="_D0IB4GcPEeG_WKDdL3OYmg"/>
+  <RobotML:State xmi:id="_MYwVYGcPEeG_WKDdL3OYmg" base_State="_MYU3kGcPEeG_WKDdL3OYmg"/>
+  <RobotML:Transition xmi:id="_Wl5e0GcPEeG_WKDdL3OYmg" base_Transition="_WlhrYGcPEeG_WKDdL3OYmg"/>
+  <RobotML:Transition xmi:id="_aukkYGcPEeG_WKDdL3OYmg" base_Transition="_auMw8GcPEeG_WKDdL3OYmg"/>
+  <RobotML:Transition xmi:id="_fYBbwGcPEeG_WKDdL3OYmg" base_Transition="_fXepMGcPEeG_WKDdL3OYmg"/>
+  <RobotML:Transition xmi:id="_hlR9gGcPEeG_WKDdL3OYmg" base_Transition="_hkmBAGcPEeG_WKDdL3OYmg"/>
+  <RobotML:Transition xmi:id="_qcZIIGcPEeG_WKDdL3OYmg" base_Transition="_qbyEIGcPEeG_WKDdL3OYmg"/>
+</xmi:XMI>

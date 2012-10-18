@@ -1,0 +1,28 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.NamedElement com.cea.papyrus.gen.cpp.core.utils.GenUtils com.cea.papyrus.gen.cpp.core.CppStereo" 
+	class			=	"CppClassIncludeClassDeclaration" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	// Retrieve the class
+	NamedElement currentNE		= (NamedElement) argument;
+	String cClassName 			= currentNE.getName();	
+	String isTemplate			= "";
+	String openNS				= GenUtils.openNS (currentNE); 
+	String closeNS				= GenUtils.closeNS (currentNE); 
+	
+	if (GenUtils.hasStereotype(currentNE, CppStereo.template)) {
+		isTemplate = "template ";
+	}
+		
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+
+<%= openNS %>
+<%= isTemplate %>class <%= cClassName %>;
+<%= closeNS %>

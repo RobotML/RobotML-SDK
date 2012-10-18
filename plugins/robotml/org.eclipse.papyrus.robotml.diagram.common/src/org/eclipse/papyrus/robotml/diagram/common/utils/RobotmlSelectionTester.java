@@ -1,0 +1,95 @@
+/*****************************************************************************
+ * Copyright (c) 2012 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the CeCILL-C Free Software License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
+ *
+ * Contributors:
+ *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
+ *
+ *****************************************************************************/
+package org.eclipse.papyrus.robotml.diagram.common.utils;
+
+import org.eclipse.core.expressions.PropertyTester;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.infra.core.resource.NotFoundException;
+import org.eclipse.papyrus.infra.core.resource.uml.UmlModel;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.core.utils.ServiceUtilsForActionHandlers;
+import org.eclipse.papyrus.RobotML.RobotMLPackage;
+import org.eclipse.papyrus.editor.PapyrusMultiDiagramEditor;
+import org.eclipse.papyrus.robotml.diagram.common.Activator;
+
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Profile;
+import org.eclipse.uml2.uml.util.UMLUtil;
+
+/**
+ * This class is a Property tester used to check if current model (meaning the model currently opened in Papyrus) is a Proteus Model.
+ * This class is used in order to create test for deciding whether a diagram creation command should be visible or not.
+ * This property tester assumes that currently active editor is Papyrus, it should be used with care (simultaneously with a test to ensure Papyrus is
+ * currently opened and active).
+ * 
+ */
+public class RobotmlSelectionTester extends PropertyTester {
+
+	/** Tester ID for UML Model nature */
+	public final static String IS_ROBOTML_MODEL = "isRobotmlModel"; //$NON-NLS-N$
+
+	
+
+	//public static String ROBOTML_ID = "RobotML";
+
+	/** Default constructor */
+	public RobotmlSelectionTester() {
+	}
+
+	/** Test the receiver against the selected property */
+	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
+
+		// Ensure Papyrus is the active editor
+		IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
+		if((editor == null) || (!(editor instanceof PapyrusMultiDiagramEditor))) {
+			return false;
+		}
+		Object currentValue = null;
+		if(IS_ROBOTML_MODEL.equals(property)) {
+			currentValue = testRobotmlModelNature(receiver);
+			return (currentValue == expectedValue);
+		}
+
+		return false;
+	}
+
+	/** True is root object is a UML Model with Proteus Profile (and sub profiles) applied */
+	protected boolean testRobotmlModelNature(Object receiver) {
+		boolean isRobotmlModel = false;
+
+		try {
+			ServiceUtilsForActionHandlers serviceUtils = new ServiceUtilsForActionHandlers();
+			UmlModel openedModel = (UmlModel)serviceUtils.getModelSet().getModel(UmlModel.MODEL_ID);
+			if(openedModel != null) {
+
+				EObject root = openedModel.lookupRoot();
+				if(root instanceof Package) {
+					Profile robotml = UMLUtil.getProfile(RobotMLPackage.eINSTANCE, root);
+					if(((Package)root).isProfileApplied(robotml)) {
+						isRobotmlModel = true;
+					}
+				}
+			}
+
+		} catch (ServiceException e) {
+			Activator.log.error(e);
+		} catch (NotFoundException e) {
+			Activator.log.error(e);
+		}
+
+		return isRobotmlModel;
+	}
+}

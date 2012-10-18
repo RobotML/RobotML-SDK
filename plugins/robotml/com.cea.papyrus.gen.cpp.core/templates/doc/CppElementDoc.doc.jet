@@ -1,0 +1,27 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.doc" 
+	skeleton        =   "../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.Element com.cea.papyrus.gen.cpp.core.utils.GenUtils" 
+ 	class			=	"CppElementDoc" 
+ %>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+	
+	// Retrieve the element
+	Element currentElt		= (Element) argument;
+	String eltDoc			= "";
+	
+	
+	// Doc for the element
+	eltDoc	= GenUtils.getComments(currentElt);
+	eltDoc	= eltDoc.replaceAll(NL, NL+" * ");
+	
+	
+	
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+/**
+ * <%= eltDoc %>
+ */

@@ -1,0 +1,221 @@
+[comment encoding = UTF-8 /]
+[module models('http://www.xtext.org/AthenaDSL')]
+
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::DSLQueries /]
+
+[template public models(project : Project)]
+[src_cmake(project)/]
+[for (proto : prototypeDeclaration | project.prototypes)]
+[let fname : String = 'src/'.concat(getPrototypeFileName(proto,'.cpp'))]
+[file (fname, false, 'UTF-8')]
+[modelImplementation(project, proto)/]
+[/file]
+[/let]
+[/for]
+[/template]
+
+[template public src_cmake(project : Project)]
+[let fname : String = 'src/CMakeLists.txt']
+[file (fname, false, 'UTF-8')]
+
+cmake_minimum_required(VERSION 2.8)
+
+set(VLE_INCLUDE_DIRS /usr/include/vle-1.1/)
+set(Boost_INCLUDE_DIRS /usr/include/boost)
+
+include_directories(/usr/include/glib-2.0/)
+include_directories(/usr/lib/i386-linux-gnu/glib-2.0/include)
+include_directories(/usr/include/libxml2)
+
+INCLUDE_DIRECTORIES(
+  ${CMAKE_SOURCE_DIR}
+  ${VLE_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIRS})
+
+LINK_DIRECTORIES(
+  ${VLE_LIBRARY_DIRS}
+  ${Boost_LIBRARY_DIRS})
+
+[for (proto : prototypeDeclaration | project.prototypes)]
+ADD_LIBRARY([proto.name/] SHARED [getPrototypeFileName(proto,'.cpp')/] TypeDefs.cc TypeDefs_Values.cc )
+TARGET_LINK_LIBRARIES([proto.name/] ${VLE_LIBRARIES} ${Boost_LIBRARIES} )
+
+[/for]
+
+[for (proto : prototypeDeclaration | project.prototypes)]
+[/for]
+
+INSTALL(TARGETS
+[for (proto : prototypeDeclaration | project.prototypes)]
+  [proto.name/]
+[/for]
+  RUNTIME DESTINATION "plugins/simulator"
+  LIBRARY DESTINATION "plugins/simulator"
+  ARCHIVE DESTINATION "plugins/simulator")
+[/file]
+[/let]
+[/template]
+
+[template public modelImplementation(project: Project, proto : prototypeDeclaration)]
+#include <vle/value.hpp>
+#include <vle/devs.hpp>
+#include <TypeDefs.h>
+#include <TypeDefs_Values.h>
+
+namespace vd = vle::devs;
+namespace vv = vle::value;
+
+namespace generated {
+
+class [proto.name/] : public vd::Dynamics
+{
+private:
+
+	// references ----------------------------------------------------------------------------------------------
+		
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isReference(elt))]
+			[let ref : referenceDeclaration = elt.oclAsType(referenceDeclaration)]
+	[ref.typeName.name/] [getReferenceName(ref)/];
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+	// parameters ----------------------------------------------------------------------------------------------
+
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isParameter(elt))]
+			[let param : parameterDeclaration = elt.oclAsType(parameterDeclaration)]
+	[param.typeName.name/] [param.name/];		
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+
+public:
+
+	/**
+	 *
+	 */
+    [proto.name/](const vd::DynamicsInit& init, const vd::InitEventList& events)
+        : vd::Dynamics(init, events)
+    {
+    }
+
+	/**
+	 *
+	 */
+    virtual ~[proto.name/]()
+    {
+    }
+
+	/**
+	 *
+	 */
+    virtual vd::Time init(const vd::Time& /*time*/)
+    {
+        return vd::Time(1);
+    }
+
+	/**
+	 *
+	 */
+    virtual void output(const vd::Time& /*time*/,
+                        vd::ExternalEventList& /*output*/) const
+    {
+    }
+
+	/**
+	 *
+	 */
+    virtual vd::Time timeAdvance() const
+    {
+        return vd::Time(1);
+    }
+
+	/**
+	 *
+	 */
+    virtual void internalTransition(const vd::Time& /*time*/)
+    {
+    }
+
+	/**
+	 *
+	 */
+    virtual void externalTransition(const vd::ExternalEventList& eventList,
+                                    const vd::Time& /*time*/)
+    {
+        vd::ExternalEventList::const_iterator it = eventList.begin();
+        for (;it != eventList.end(); it++)
+        {
+			const vd::ExternalEvent& event = *(*it);
+	[for (p : prototypeDeclaration | project.prototypes)]
+	[if (isAnAncestorOf(proto, p))]
+	[for (elt : architectureElement | p.definitions)]
+		[if (isReference(elt))]
+			[let ref : referenceDeclaration = elt.oclAsType(referenceDeclaration)]
+            // 
+            if (event.onPort("[getReferenceName(ref)/]"))
+            {
+			    const vv::Value& val = event.getAttributeValue("hello");
+				[if(isStructType(ref.typeName))]
+				[ref.typeName.name/]_fromValue(&val, [getReferenceName(ref)/]);
+				[else]
+				[getReferenceName(ref)/] = [ref.typeName.name/]_fromValue(&val);
+				[/if]
+            }
+			[/let]
+		[/if]
+	[/for]
+	[/if]
+	[/for]
+		}
+    }
+
+	/**
+	 *
+	 */
+    virtual void confluentTransitions(const vd::Time& time,
+                                      const vd::ExternalEventList& events)
+    {
+        internalTransition(time);
+        externalTransition(events, time);
+    }
+
+	/**
+	 *
+	 */
+    virtual void request(const vd::RequestEvent& /*event*/,
+                         const vd::Time& /*time*/,
+                         vd::ExternalEventList& /*output*/) const
+    {
+    }
+
+	/**
+	 *
+	 */
+    virtual vv::Value* observation(const vd::ObservationEvent& /*event*/) const
+    {
+        return 0;
+    }
+
+	/**
+	 *
+	 */
+    virtual void finish()
+    {
+    }
+
+};
+} // namespace generated
+
+DECLARE_DYNAMICS(generated::[proto.name/])
+[/template]

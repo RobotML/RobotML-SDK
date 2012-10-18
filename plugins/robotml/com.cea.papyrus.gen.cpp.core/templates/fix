@@ -1,0 +1,18 @@
+for file in `find . -type f -name "*.jet"`; do
+	#sed -e "s/VM_Library\/V_/OS_AL\//g" $file > $file.tmp
+	#sed -e "s/ACCORD_Lib\/A_/ACCORD_Lib\//g" $file > $file.tmp
+	sed -e "s/hasStereotype(\"Cpp/hasStereotype(xy, CppStereo.cpp/g"\
+		-e "s/com.cea.papyrus.umlutils/org.eclipse.uml2.uml/g" $file > $file.tmp
+	#sed -e "s/ACCORD_Lib_A_/ACCORD_Lib_/g" $file > $file.tmp
+	if (diff $file.tmp $file > /dev/null); then
+		echo "no change: " $file
+		rm $file.tmp
+	else
+		if `test -s $file.tmp`; then
+			echo "change: " $file
+			mv $file.tmp $file
+		else
+			echo "new file has 0 length??"
+		fi
+	fi
+done

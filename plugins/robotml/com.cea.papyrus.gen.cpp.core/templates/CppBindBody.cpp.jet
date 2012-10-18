@@ -1,0 +1,91 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet" 
+	skeleton        =   "generator.skeleton" 
+	imports			=	"com.cea.papyrus.gen.cpp.core.utils.* com.cea.papyrus.gen.cpp.core.CppStereo org.eclipse.uml2.uml.Class org.eclipse.uml2.uml.Package org.eclipse.uml2.uml.* org.eclipse.emf.common.util.EList com.cea.papyrus.gen.cpp.core.jet.util.* java.util.* com.cea.papyrus.gen.cpp.core.Activator" 
+ 	class			=	"CppBindBody" 
+ %>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+	
+		// Retrieve the class
+		Class currentClass		= (Class) argument;
+
+		// Get the package name
+		String className		= currentClass.getName();
+		String classFullName	= GenUtils.getFullName (currentClass); 
+		String classFULLNAME	= classFullName.toUpperCase(); 
+		String parentClass      = "";
+		String namespace = GenUtils.getNamespace (currentClass);
+
+		// Retrieve header file suffix
+		String headerFileSuffix = Activator.getDefault().getPluginPreferences().getString("headSuffix");
+
+		// Include declaration "CppInclude"
+		String bodyDecl		= "";
+		if (GenUtils.hasStereotype (currentClass, CppStereo.include)) {
+			bodyDecl			= GenUtils.getTaggedValue(currentClass, CppStereo.include, "body");
+		}
+		EList<Classifier> deps = GenUtils.getDependencies (currentClass);
+		bodyDecl += GenIncludeDecl.createIncludeDecl (deps, currentClass);
+		
+		
+		// Retrieve owner Package
+		Package owner		= currentClass.getPackage();
+		String  fullPath	= "";
+		String  separ		= "";
+
+		if (owner != null) {
+			fullPath		= GenUtils.getFullPath(owner);
+			separ			= "/";
+		} // else fullPath == ""
+
+		org.eclipse.uml2.uml.TemplateBinding tb = GenUtils.getTemplateBindings(currentClass);;
+
+		//prepare parent class declaration
+		EList<org.eclipse.uml2.uml.Element> templates = tb.getTargets();
+		Class templateClass = (Class) ((TemplateSignature) templates.get(0)).getOwner();	
+		parentClass		= GenUtils.qualifiedName (templateClass);               	
+
+
+		// Prepare bindings parameter declaration
+
+		String tParamDecl="";
+		TemplateParameterSubstitution paramSub;
+		Iterator<TemplateParameterSubstitution> tps = tb.getParameterSubstitutions().iterator();
+		while(tps.hasNext()) {
+			paramSub	=	(TemplateParameterSubstitution)tps.next();
+
+			CppTemplateBindingParameter	jetTParam = new CppTemplateBindingParameter();
+			tParamDecl			= tParamDecl+jetTParam.generate (paramSub);
+
+			if (tps.hasNext()) {
+				tParamDecl			= tParamDecl+", ";
+			}
+		}
+	
+	
+	
+	
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+#define <%= classFULLNAME %>_BODY
+
+/************************************************************
+              <%= className %> template binding body
+ ************************************************************/
+
+/* Header include                                           */
+#include <<%= fullPath %><%= separ %><%= className %>.<%= headerFileSuffix %>>
+<%= namespace%>
+
+/* Include from CppInclude declaration                      */
+<%= bodyDecl %>
+/************************************************************/
+template class <%= parentClass %> <<%= tParamDecl %>>;
+
+/************************************************************
+              End of <%= className %> template binding body
+ ************************************************************/
+;

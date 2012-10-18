@@ -1,0 +1,98 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.* com.cea.papyrus.gen.cpp.core.jet.doc.* com.cea.papyrus.gen.cpp.core.CppStereo com.cea.papyrus.gen.cpp.core.utils.GenUtils" 
+	class			=	"CppOperationImplementation" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	// Retrieve the Operation
+	Operation currentOperation	= (Operation) argument;
+		
+	String body					= "";
+	String className			= "";
+	String operationName		= currentOperation.getName();
+	String opParameters			= "";
+	String returnTypeName		= "void";
+	String isInline				= "";
+	String isConst				= "";
+	String constInit			= "";
+
+	String opDoc = "";
+
+	// Doc for the template
+	CppOperationDoc jDoc = new CppOperationDoc();
+	opDoc = jDoc.generate(currentOperation);
+
+	// Retrieve class name. Operation may belong to a class or datatype, thus use
+	// generic getOwner function
+	Element opOwner = currentOperation.getOwner();
+	className = (opOwner instanceof NamedElement) ? ((NamedElement) opOwner).getName() : "";
+
+	// Retrieve body content
+	body = GenUtils.getBody (currentOperation, "C/C++");
+	
+	// Prepare return type
+	CppOperationReturnType jetRT = new CppOperationReturnType();
+	returnTypeName = jetRT.generate(currentOperation);	
+	
+	// Creator / Destructor / Musclor - be carefull stereotype is Create and not create
+	if (GenUtils.hasStereotype(currentOperation, "Standard::Create")) {
+		returnTypeName = "";
+	}
+	if (GenUtils.hasStereotype(currentOperation, "Standard::Destroy")) {
+		returnTypeName = "";
+		operationName = "~"+operationName;
+	}
+	
+	// If is inline operation
+	if (GenUtils.hasStereotype(currentOperation, CppStereo.inline)) {
+		isInline = "inline ";
+	}
+
+	// Const op
+	if (GenUtils.hasStereotype(currentOperation, CppStereo.const_)) {
+		isConst	= " const";
+	}
+
+	// Constructor init list
+	if (GenUtils.hasStereotype(currentOperation, CppStereo.constInit)
+				&& GenUtils.hasStereotype(currentOperation, "Standard::Create")) {
+		constInit = ": "+GenUtils.getTaggedValue(currentOperation, CppStereo.constInit, "initialisation");
+	}
+
+	// Prepare parameters
+	CppOperationParametersWithoutDefaultValue jetParams = new CppOperationParametersWithoutDefaultValue();
+	opParameters = jetParams.generate(currentOperation);
+	
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template two cases main operation or classical
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// main 
+	if (operationName.equals("main")) {
+	
+//////////////////////////////////////////////////////////////////////////////////////////%>
+
+<%= opDoc %>
+<%= returnTypeName %> <%= operationName %> (<%= opParameters %>) {
+<%= body %>
+}
+
+<%//////////////////////////////////////////////////////////////////////////////////////////
+
+	}
+	else {
+
+//////////////////////////////////////////////////////////////////////////////////////////%>	
+
+<%= opDoc %>
+<%= isInline %><%= returnTypeName %> <%= className %>::<%= operationName %> (<%= opParameters %>) <%= isConst %><%= constInit %> {
+<%= body %>
+}
+
+<%//////////////////////////////////////////////////////////////////////////////////////////
+	}
+//////////////////////////////////////////////////////////////////////////////////////////%>	

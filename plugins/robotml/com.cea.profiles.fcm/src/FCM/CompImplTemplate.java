@@ -1,0 +1,86 @@
+/*****************************************************************************
+ * Copyright (c) 2012 CEA LIST.
+ *
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the CeCILL-C Free Software License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
+ *
+ *
+ *****************************************************************************/
+package FCM;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Comp Impl Template</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link FCM.CompImplTemplate#getTemplateDefs <em>Template Defs</em>}</li>
+ *   <li>{@link FCM.CompImplTemplate#getBase_Class <em>Base Class</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see FCM.FCMPackage#getCompImplTemplate()
+ * @model
+ * @generated
+ */
+public interface CompImplTemplate extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Template Defs</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Template Defs</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Template Defs</em>' attribute.
+	 * @see #setTemplateDefs(String)
+	 * @see FCM.FCMPackage#getCompImplTemplate_TemplateDefs()
+	 * @model unique="false" ordered="false"
+	 * @generated
+	 */
+	String getTemplateDefs();
+
+	/**
+	 * Sets the value of the '{@link FCM.CompImplTemplate#getTemplateDefs <em>Template Defs</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Template Defs</em>' attribute.
+	 * @see #getTemplateDefs()
+	 * @generated
+	 */
+	void setTemplateDefs(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Base Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Base Class</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Base Class</em>' reference.
+	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
+	 * @see FCM.FCMPackage#getCompImplTemplate_Base_Class()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	org.eclipse.uml2.uml.Class getBase_Class();
+
+	/**
+	 * Sets the value of the '{@link FCM.CompImplTemplate#getBase_Class <em>Base Class</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Base Class</em>' reference.
+	 * @see #getBase_Class()
+	 * @generated
+	 */
+	void setBase_Class(org.eclipse.uml2.uml.Class value);
+
+} // CompImplTemplate

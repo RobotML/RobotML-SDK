@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[module generateImport('http://www.eclipse.org/uml2/3.0.0/UML')]
+
+[import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries/]
+
+[template public generateImport(model : Model)]
+
+//base and user data types
+import "datatypes.adl"
+
+[for(nm : NamedElement | getSubModels(model) )]
+//[nm.name/] model
+import "[nm.name/].adl"
+[/for]
+
+[/template]

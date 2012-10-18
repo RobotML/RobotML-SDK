@@ -1,0 +1,47 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.NamedElement org.eclipse.uml2.uml.Package com.cea.papyrus.gen.cpp.core.Activator com.cea.papyrus.gen.cpp.core.utils.GenUtils com.cea.papyrus.gen.cpp.core.CppStereo"
+	class			=	"CppClassIncludeDeclaration" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	
+	// Retrieve header file suffix
+	String headerFileSuffix = Activator.getDefault().getPluginPreferences().getString("headSuffix");
+	
+	
+	// Retrieve the class
+	NamedElement currentNE	= (NamedElement) argument;
+	String cClassPath		= "";
+	Package	nearestPkg		= currentNE.getNearestPackage();
+	String cClassName = currentNE.getName();
+	
+	if ( //!(nearestPkg.getUml2Package() instanceof org.eclipse.uml2.uml.Model)  
+			/*&& */!(GenUtils.hasStereotype(nearestPkg, CppStereo.root))) {
+		cClassPath 	= GenUtils.getFullPath(nearestPkg)+"/";	
+	}
+		
+	
+	// If an external class is referred
+	if (GenUtils.hasStereotype(currentNE, CppStereo.externClass)) {
+		cClassPath = "";
+		cClassName = GenUtils.getTaggedValue(currentNE, CppStereo.externClass, "name");
+		if (cClassName.equals ("")) {
+			// default value
+			cClassName = currentNE.getQualifiedName ().replace ("::", "/") + "." + headerFileSuffix;
+			// strip model name
+			cClassName = cClassName.substring (currentNE.getModel ().getName ().length () + 1);
+		}
+	} else if (GenUtils.hasStereotype(currentNE, CppStereo.template)) {
+		cClassPath = "";
+		cClassName = GenUtils.getTaggedValue(currentNE, CppStereo.template, "declaration");	
+	}
+	else cClassName=cClassName+"."+headerFileSuffix;
+		
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+#include <<%= cClassPath %><%= cClassName %>>

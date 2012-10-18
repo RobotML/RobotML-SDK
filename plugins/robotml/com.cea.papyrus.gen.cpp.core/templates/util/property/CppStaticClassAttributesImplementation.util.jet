@@ -1,0 +1,33 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.* java.util.Iterator com.cea.papyrus.gen.cpp.core.CppStereo com.cea.papyrus.gen.cpp.core.utils.GenUtils" 
+	class			=	"CppStaticClassAttributesImplementation" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	// Retrieve the class
+	Classifier currentClass	= (Classifier) argument;
+	String attrSDecl		= "";
+		
+	CppStaticAttributeImplementation jetSAttDecl = new CppStaticAttributeImplementation();
+								
+	Iterator<Property> attributesIt = currentClass.getAttributes().iterator();
+	while (attributesIt.hasNext()) {
+		Property attribute = (Property) attributesIt.next();
+		
+		// just check that this property is not a static const
+		// in that case it declared and defined in the header file
+
+		// Static and not constant (constant static attributes are declared within the class declaration) 
+		if (attribute.isStatic() && !GenUtils.hasStereotype(attribute, CppStereo.const_)) {
+			attrSDecl		= attrSDecl+jetSAttDecl.generate(attribute);
+		}
+	}
+		
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+<%= attrSDecl %>

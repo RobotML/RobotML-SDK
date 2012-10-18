@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1409/trunk/Tools/EC3M/trunk/com.cea.ec3m.gentools.validation
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/815/trunk/Tools/EC3M/trunk/com.cea.ec3m.gentools.validation/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/815/trunk/Tools/EC3M/trunk/com.cea.ec3m.gentools.validation/.project
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/815/trunk/Tools/EC3M/trunk/com.cea.ec3m.gentools.validation/build.properties
+END
+plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/815/trunk/Tools/EC3M/trunk/com.cea.ec3m.gentools.validation/plugin.xml
+END

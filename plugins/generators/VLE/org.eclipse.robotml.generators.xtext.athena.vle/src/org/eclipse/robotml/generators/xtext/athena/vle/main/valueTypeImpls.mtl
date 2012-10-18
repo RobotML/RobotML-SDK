@@ -1,0 +1,306 @@
+[comment encoding = UTF-8 /]
+[module valueTypeImpls('http://www.xtext.org/AthenaDSL')/]
+
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::DSLQueries /]
+
+[template public valueTypeImpls(project : Project)]
+	
+[file ('src/TypeDefs_Values.cc', false, 'UTF-8')] 
+// 
+// Includes ----------------------------------------------------------------------
+// 
+
+#include <sstream>
+#include <iomanip>
+#include <boost/lexical_cast.hpp>
+#include <iostream>
+
+#include "TypeDefs_Values.h"
+
+using namespace std;
+
+//
+namespace generated
+{
+
+//  
+// Data type implementations ----------------------------------------------------------
+//
+
+	[for (type : DataType | project.types)]
+// -------------------------------------------------------- [type.name/]
+		[if (isBasicType(type))]
+[processBasicType(type.oclAsType(basicType))/]
+		[elseif (isArrayType(type))]
+[processArrayType(type.oclAsType(arrayType))/]
+		[elseif (isVectorType(type))] 
+[processVectorType(type.oclAsType(vectorType))/]
+		[elseif (isMapType(type))]
+[processMapType(type.oclAsType(mapType))/]
+		[elseif (isStructType(type))]
+[processStructType(type.oclAsType(structType))/]
+		[elseif (isDefineType(type))]
+[processDefineType(type.oclAsType(defineType))/]
+		[else]
+///
+/// ERROR [type.name/] is unrecognized by the generator - [type.eClass()/]
+///
+		[/if]
+		
+	[/for]
+
+// 
+// ------------------------------------------------------------------------------------
+//
+} // eof namespace generated
+
+[/file]
+	
+[/template]
+
+
+[template public processBasicType(type : basicType)]
+// basic type [type.name/]
+value::Value* [type.name/]_toValue(const [type.name/]& _val) {
+	[if(hasVLELanguage(type))]
+		[let lng : languageDecl = getVLELanguageDecl(type) ]
+	value::Value* xn = value::[lng.trans/]::create(_val);
+		[/let]
+	[elseif(hasCPPLanguage(type))]
+		[let lng : languageDecl = getCPPLanguageDecl(type) ]
+			[if(needPointerCast(type))]
+	value::Value* xn = (value::Value*)_val;
+			[else]
+	value::Value* xn = [lng.trans/](_val);		
+			[/if]
+		[/let]
+	[/if]
+	return xn;
+}
+
+[type.name/] [type.name/]_fromValue(const value::Value* _node, const [type.name/]& _initialValue) {
+	[if(hasVLELanguage(type))]
+		[let lng : languageDecl = getVLELanguageDecl(type) ]
+	if(_node != NULL)
+		[if(isEnumeration(type))]
+		return static_cast<[type.name/]>(_node->to[lng.trans/]().value());
+		[else]
+		return _node->to[lng.trans/]().value();
+		[/if]
+	else
+		return _initialValue;		
+		[/let]
+	[elseif(hasCPPLanguage(type))]
+		[let lng : languageDecl = getCPPLanguageDecl(type) ]
+			[if(needPointerCast(type))]
+	return ([lng.trans/])_initialValue;
+			[else]
+	if(node != NULL)
+				[if(hasCPPLexicalCast(type))]
+					[if(isEnumeration(type))]
+		return static_cast<[getCPPLexicalCast(type)/]>(_node);
+					[else]
+		return boost::lexical_cast<[getCPPLexicalCast(type)/]>(_node);
+					[/if]
+				[else]
+		return _node->to[lng.trans/]().value;
+				[/if]
+	else
+		return _initialValue;
+			[/if]
+		[/let]
+	[else]
+	/* not language define */
+	return _initialValue;
+	[/if]
+}
+[/template]
+
+
+[template public processArrayType(array : arrayType)]
+// [array.name/] is an array of [getArrayDatatypeName(array)/]
+[let type : DataType = getBaseType(array.typename)]
+value::Value* [array.name/]_toValue(const [array.name/]& _val) {
+	value::Set* xn = value::Set::create();
+	[if (isAOneDimensionArray(array))]
+	for(unsigned int _i=0; _i<[getArraySizeOperator(array)/]; _i++) {
+		[if (isStructType(type)) ]
+		xn->add([type.name/]_toValue((*_val)['['/]_i[']'/])) ;
+		[else]
+		xn->add([type.name/]_toValue([if (isDynamicArray(array))](*_val)[else]_val[/if]['['/]_i[']'/])) ;
+		[/if]
+	}
+	[else]
+	// Conversion to Value: only one dimension arrays are accepted !
+	[/if]
+	return xn;
+}
+void [array.name/]_fromValue(const value::Value* _node,[array.name/]& _val) {
+	[if (isAOneDimensionArray(array))]
+	const value::Set& _xn = _node->toSet();
+	for(unsigned int _i=0; _i<[getArraySizeOperator(array)/]; _i++) {
+		[if (isStructType(type)) ]
+		(*_val)['['/]_i[']'/].fromXML(_xn.get(_i)) ; 
+		[else]
+		[if (isDynamicArray(array))](*_val)[else]_val[/if]['['/]_i[']'/] = [type.name/]_fromValue(_xn.get(_i)) ;
+		[/if]
+	}
+	[else]
+	// Conversion from Value: only one dimension arrays are accepted !
+	[/if]
+
+}
+[/let]
+[/template]
+
+
+[template public processVectorType(vector : vectorType)]
+// [vector.name/] is a vector of [getVectorDatatypeName(vector)/]
+value::Value* [vector.name/]_toValue(const [vector.name/]& _val) {
+	[let typename : String = getVectorDatatypeName(vector)]
+	value::Set* _xn = value::Set::create();
+	[vector.name/]::const_iterator it = _val.begin();
+	for (;it != _val.end(); it++) {
+		_xn->add([typename/]_toValue(*it)) ;
+	}
+	return _xn;
+	[/let]
+}
+
+void [vector.name/]_fromValue(const value::Value* _node, [vector.name/]& vect) {
+	[let typename : String = getVectorDatatypeName(vector)]
+	vect.clear();
+	const value::Set& _xn = _node->toSet();
+	for (unsigned int _i=0; _i<_xn.size(); _i++) {
+		const value::Value* _n = _xn.get(_i);
+		[typename/] _val;
+		[typename/]_fromValue(_n, _val) ;
+		vect.push_back(_val);
+	}
+	[/let]
+}
+
+[comment][vector.name/] [vector.name/]_fromValue(const value::Value* _node) {
+	[let typename : String = getVectorDatatypeName(vector)]
+	[vector.name/] _[vector.name/];
+	const value::Set& _xn = _node->toSet();
+	for (unsigned int _i=0; _i<_xn.size(); _i++) {
+		const value::Value* _n = _xn.get(_i);
+		[typename/] _val;
+		[if (isStructType(vector.typename))]
+		[typename/]_fromValue(_n, _val) ;
+		[else]
+		_val = [typename/]_fromValue(_n) ;
+  		[/if]	
+		_[vector.name/].push_back(_val);
+	}
+	return _[vector.name/];
+	[/let]
+}[/comment]
+[/template]
+
+
+[template public processMapType(map : mapType)]
+// [map.name/] is a map with key type [getMapKeyTypeName(map)/] and value type [getMapValueTypeName(map)/]
+	[let keytypename : String = getMapKeyTypeName(map)]
+	[let datatypename : String = getMapValueTypeName(map)]
+value::Value* [map.name/]_toValue(const [map.name/]& _val) {
+	value::Map* _xn = value::Map::create();
+	[map.name/]::const_iterator it = _val.begin();
+	for (;it != _val.end(); it++) {
+		const std::string& key = boost::lexical_cast<std::string>((*it).first);
+		const value::Value& val = *[datatypename/]_toValue((*it).second);
+		_xn->add(key, val);
+	}
+	return _xn;
+
+}
+
+void [map.name/]_fromValue(const value::Value* _node, [map.name/]& map) {
+[comment]	[map.name/] _[map.name/];[/comment]
+	const value::Map& _xn = _node->toMap();
+	for (value::Map::const_iterator it=_xn.begin(); it!=_xn.end(); it++) {
+		const [map.keytype.name/]& key = static_cast<[map.keytype.name/]>(_xn.getInt((*it).first));
+		const value::Value* _n = (*it).second;
+
+		[datatypename/]_fromValue(_n, map['['/]key[']'/]);
+	}
+[comment]	return _[map.name/];[/comment]
+}
+
+[comment][map.name/] [map.name/]_fromValue(const value::Value* _node) {
+	[map.name/] _[map.name/];
+	const value::Map& _xn = _node->toMap();
+	for (value::Map::const_iterator it=_xn.begin(); it!=_xn.end(); it++) {
+[comment]		const std::string& key = (*it).first;[/comment]
+		const [map.keytype.name/]& key = static_cast<[map.keytype.name/]>(_xn.getInt((*it).first));
+		const value::Value* _n = (*it).second;
+[comment]		_[map.name/]['['/]key[']'/]=[datatypename/]_fromValue(_n);[/comment]
+		[comment][if(isContainer(map.valtype))]
+		_[map.name/]['['/]key[']'/]=[datatypename/]_fromValue(_n);
+		[else][/comment]
+		[datatypename/]_fromValue(_n, _[map.name/]['['/]key[']'/]);
+		[comment][/if][/comment]
+	}
+	return _[map.name/];
+}[/comment]
+	[/let]
+	[/let]
+[/template]
+
+
+[template public processStructType(struct : structType)]
+// [struct.name/] is a structure
+value::Value* [struct.name/]_toValue(const [struct.name/]& _val) {
+	value::Map* xn = value::Map::create();
+	[for (param : structElement | struct.parameters)]
+	[if (isUnionType(param.typename))]
+	// unauthorized union type for [param.name/]
+	[else]
+	xn->add("[param.name/]",[param.typename.name/]_toValue(_val.[param.name/]));
+	[/if]
+	[/for]
+	return xn;
+}
+
+void [struct.name/]_fromValue(const value::Value* _node, [struct.name/]& _val) {
+	const value::Map& _xn = _node->toMap();
+	[for (param : structElement | struct.parameters)]
+		[let ptype : DataType = getBaseType(param.typename)]
+			[if (isBasicType(ptype))]
+				[if (param.hasInitValue)]
+	_val.[param.name/] = [ptype.name/]_fromValue(_xn.get("[param.name/]"), [param.initValue/]);
+				[else]
+	_val.[param.name/] = [ptype.name/]_fromValue(_xn.get("[param.name/]"));
+				[/if]
+			[elseif (isArrayType(ptype) or isStructType(ptype))]
+	[ptype.name/]_fromValue(_xn.get("[param.name/]"), _val.[param.name/]);
+			[elseif (isUnionType(ptype))]
+	// unauthorized union type for [param.name/]
+			[else]
+	_val.[param.name/] = [ptype.name/]_fromValue(_xn.get("[param.name/]"));
+			[/if]
+		[/let]
+	[/for]
+}
+[/template]
+
+[template public processDefineType(define : defineType)]
+// [define.name/] is a [getDefineTypeName(define)/]
+[let type : DataType = getBaseType(define)]
+value::Value* [define.name/]_toValue(const [define.name/]& _val) {
+	return [type.name/]_toValue(_val);
+}
+[if (isStructType(type) or isArrayType(type))]
+void [define.name/]_fromValue(const value::Value* _node, [define.name/]& _val) {
+	[type.name/]_fromValue(_node, _val);
+[else]
+[define.name/] [define.name/]_fromValue(const value::Value* _node) {
+	return [type.name/]_fromValue(_node);
+[/if]
+}
+[/let]
+[/template]
+
+
+

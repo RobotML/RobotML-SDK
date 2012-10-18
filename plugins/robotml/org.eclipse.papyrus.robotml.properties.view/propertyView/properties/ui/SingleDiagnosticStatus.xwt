@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:j="clr-namespace:java.lang"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets" xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:diagnostic_datatypes:DiagnosticStatus:WARN"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:diagnostic_datatypes:DiagnosticStatus:level"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:diagnostic_datatypes:DiagnosticStatus:ERROR"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:diagnostic_datatypes:DiagnosticStatus:hardware_id"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:diagnostic_datatypes:DiagnosticStatus:OK"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:diagnostic_datatypes:DiagnosticStatus:name"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:diagnostic_datatypes:DiagnosticStatus:message"></ppe:StringEditor>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<Group text="Values">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor view="ProteusLibraries:Single KeyValue"
+				property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:diagnostic_datatypes:DiagnosticStatus:values"
+				input="{Binding}"></ppe:ViewEditor>
+		</Group>
+	</Composite>
+</Composite>

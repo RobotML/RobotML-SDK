@@ -1,0 +1,166 @@
+[comment encoding = UTF-8 /]
+[module generatePrototypes('http://www.eclipse.org/uml2/3.0.0/UML', 'http://Papyrus/RobotML/1')/]
+
+[import org::eclipse::proteus::generators::acceleo::mmqueries::ArchitectureQueries /] 
+[import org::eclipse::proteus::generators::acceleo::mmqueries::FSMQueries /]
+[import org::eclipse::proteus::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries /]
+
+[template public generatePrototypes(model : Model)]
+		
+//
+// Prototypes generiques
+// 
+
+//
+prototype System begin
+
+end
+
+//
+prototype Sensor is System begin 
+
+end
+
+//
+prototype Actuator is System begin
+
+end
+
+[for (nm : NamedElement | getModelClasses(model))]
+[generatePrototype(nm.oclAsType(Class)) /]
+[/for]
+
+
+[/template]
+
+[template public generatePrototype(class : Class)]
+[comment]If the class are an external librairy, it will be ignored[/comment]
+	[if(isExternalLibrairy(class) =(false))]
+// [class.name/]
+		[let superClass : Class = getSuperClass(class)]
+prototype [class.name/] [if((superClass = null) =(false))] is [superClass.name/][/if] begin
+			[let ports : Sequence(Port) = class.eAllContents(Port)]
+				[if(ports->isEmpty() =(false))]
+	[generateReferenceFromInputPort(ports)/]
+	[generateParameterFromOutputPort(ports)/]
+				[/if]
+			[/let]		
+			[let properties : Sequence(Property) = class.eAllContents(Property)]
+				[if(properties->isEmpty() =(false))]
+	[generateParameterFromProperties(properties)/]
+	[generateInstancesFromProperties(properties)/]
+				[/if]
+			[/let]
+			[let fsms : Sequence(StateMachine) = class.eAllContents(StateMachine)]
+				[if(hasValidFSMDeclaration(class))]
+	[generateFSM(fsms)/]
+				[/if]
+	[generateInteractions(fsms)/]
+			[/let]
+end
+		[/let]
+	[/if]	
+[/template]
+
+[comment]Generate the prototype's reference (input port)[/comment]
+[template private generateReferenceFromInputPort(ports : Sequence(Port))]
+[for(port : Port | ports)]
+	[if(port.isDataFlowPort() and port.isAnInputPort())]
+		[if(hasComment(port))]
+	[getCommentFromElement(port)/]
+		[/if]
+		[if(isPortConnected(port))]
+	reference < [port.type.name/] > [port.name/]
+		[else]
+	//unconnected port => [port.name/]
+		[/if]
+	[/if]
+[/for]
+[/template] 
+
+[comment]Generate the prototype's parameters (output port) [/comment]
+[template private generateParameterFromOutputPort(ports : Sequence(Port))]
+	[for(port : Port | ports)]
+		[if(port.isDataFlowPort() and port.isAnOutputPort())]
+			[if(hasComment(port))]
+	[getCommentFromElement(port)/]
+			[/if]
+			[if(port.getInstanceMultiplicity() = '[]')]
+	parameter [port.type.name/]! [port.name/][if(port.hasDefaultValue())] = "[port.default/]"[/if]
+			[else]
+	parameter [port.type.name/] [port.name/][if(port.hasDefaultValue())] = "[port.default/]"[/if]
+			[/if]
+		[/if]
+	[/for]
+[/template]
+
+[comment]Generate the prototype's parameters (property)[/comment]
+[template private generateParameterFromProperties(properties :Sequence(Property))]
+[for(prop : Property | properties)]
+	[if(isDataType(prop))]
+		[if(hasComment(prop))]
+	[getCommentFromElement(prop)/]
+		[/if]
+		[if(prop.getInstanceMultiplicity() = '[]')]
+	parameter [prop.type.name/]! [prop.name/][if(prop.hasDefaultValue())] = "[prop.default/]"[/if]
+		[else]
+	parameter [prop.type.name/] [prop.name/][if(prop.hasDefaultValue())] = "[prop.default/]"[/if]
+		[/if]
+	[/if]
+[/for]
+[/template]
+
+[comment]Generate the prototype's instance (property)[/comment]
+[template private generateInstancesFromProperties(properties : Sequence(Property))]
+[for(prop : Property | properties)]
+	[if(isClass(prop.type))]
+		[if(hasComment(prop))]
+	[getCommentFromElement(prop)/] 
+		[/if]
+	instance [prop.type.name/][getInstanceMultiplicity(prop)/] [prop.name/]
+	[/if]
+[/for]
+[/template]
+
+[comment]Generate the prototype's statemachine declaration[/comment]
+[template private generateFSM(fsms : Sequence(StateMachine))]
+	[for (sm : StateMachine | fsms)]
+	//[sm.name/]
+		[let states : Sequence(Vertex) = getStates(sm)]
+	stateset [sm.name/] { [for(state : Vertex | states)][state.name/][if(states->indexOf(state) < states->size())], [/if][/for] } = [states->first().name/] begin
+		[/let]
+		
+[comment]		[if(hasValidTransition(sm))][/comment]
+			[for(transition : Transition | getTransitions(sm))]
+				[if((transition.guard = null) =(false))]
+					[if((transition.effect = null) =(false))]
+		transition from [transition.source.name/] to [transition.target.name/] on [transition.guard.name/] raise [transition.effect.name/]
+					[else]
+		transition from [transition.source.name/] to [transition.target.name/] on [transition.guard.name/]
+					[/if]
+				[/if] 
+			[/for]
+[comment]		[/if][/comment]
+	end
+	[/for]
+[/template]
+
+[comment]Generate prototype's interactions[/comment]
+[template private generateInteractions(fsms : Sequence(StateMachine))]
+	[for(sm : StateMachine | fsms)]
+[comment]		[if(hasValidStates(sm))][/comment]
+		[let objs : Sequence(Vertex) = getStates(sm)]
+			[for(obj : Vertex | objs)]
+				[let str : String = generateOperationStateString(obj)]
+//[str/]
+					[if((str='') =(false))]
+	when ( [sm.name/] :: [obj.name/] ) begin
+		[str/]
+	end
+					[/if]
+				[/let]
+			[/for]			
+		[/let]
+	[/for]
+[/template]

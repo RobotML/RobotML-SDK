@@ -1,0 +1,69 @@
+<%@ jet package		=	"com.cea.papyrus.gen.cpp.core.jet.util" 
+	skeleton        =   "../../generator.skeleton" 
+	imports			=	"org.eclipse.uml2.uml.* com.cea.papyrus.gen.cpp.core.CppStereo com.cea.papyrus.gen.cpp.core.utils.GenUtils" 
+	class			=	"CppStaticAttributeImplementation" 
+%>
+<%
+//////////////////////////////////////////////////////////////////////////////////////////
+// Java preparation
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	// Retrieve the property
+	Property currentAttribute			= (Property) argument;
+	
+	String attributeName	= currentAttribute.getName();
+	String className		= GenUtils.qualifiedName (currentAttribute.getClass_());
+	String typeName			= "";
+	String suffix			= "";
+	String multiple			= "";
+	String ptr				= "";
+	String ref				= "";
+	String array			= "";
+	String isAgg			= ""; // attribute is an aggregation or association
+	
+	
+	if (currentAttribute.getType() == null) {
+		typeName	= "undefined"+" ";
+	} else {
+		typeName	= GenUtils.qualifiedName (currentAttribute.getType()) + " ";
+	}
+	
+	// Multiple
+	// if (currentAttribute.isMultiple()) {
+		// multiple	= "*";
+	// }
+	
+	// If attribute is aggregation then generate a pointer
+	if (GenUtils.isAggregation(currentAttribute)) {
+		// attributeName	= "(*"+attributeName+")"; // this produce a pointer on a tab
+		isAgg	= "*";      // this produce a tab of pointers
+	}
+	
+	// Pointer
+	if (GenUtils.hasStereotype(currentAttribute, CppStereo.ptr)) {
+		ptr = GenUtils.getTaggedValue(currentAttribute, CppStereo.ptr, "declaration");
+	}
+	
+	// Ref
+	if (GenUtils.hasStereotype(currentAttribute, CppStereo.ref)) {
+		ptr = GenUtils.getTaggedValue(currentAttribute, CppStereo.ref, "declaration");
+	}
+	
+	// Array
+	if (GenUtils.hasStereotype(currentAttribute, CppStereo.array)) {
+		array = GenUtils.getTaggedValue(currentAttribute, CppStereo.array, "definition");
+	}
+	
+	// Initial value
+	if (currentAttribute.getDefaultValue() != null) {
+		// via UML
+		suffix = " = " + currentAttribute.getDefaultValue().stringValue();
+	}
+	else if (GenUtils.hasStereotype(currentAttribute, CppStereo.default_)) {
+		suffix = " = "+GenUtils.getTaggedValue(currentAttribute, CppStereo.default_,"value");
+	}
+			
+//////////////////////////////////////////////////////////////////////////////////////////
+// The following part contains the template
+//////////////////////////////////////////////////////////////////////////////////////////%>
+	<%= typeName %><%= multiple %><%= ptr %><%= isAgg %><%= ref %><%= className %>::<%= attributeName %><%= array %><%= suffix %>;

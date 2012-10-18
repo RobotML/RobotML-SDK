@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
+  <uml:Model xmi:id="_e-cG4BhzEeKHf7LDjhXK2A" name="RobotMLModel">
+    <packageImport xmi:id="_NcQSABkBEeKekNJ7-Al7Zw">
+      <importedPackage href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_zRh3sAHrEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_NcQ5EBkBEeKekNJ7-Al7Zw">
+      <importedPackage href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_dt_y4AHtEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="__ESB8BhzEeKHf7LDjhXK2A" name="Infrared">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_dBjuABh0EeKHf7LDjhXK2A" name="InfraredLeftOutport" visibility="public" aggregation="composite">
+        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_OHg8QAKoEeCQReIOIWJ0nA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eHRY4Bh0EeKHf7LDjhXK2A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eHTOEBh0EeKHf7LDjhXK2A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_eHUcMBh0EeKHf7LDjhXK2A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_UBGIMBh2EeKHf7LDjhXK2A" name="InfraredRightOutport" visibility="public" aggregation="composite">
+        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_OHg8QAKoEeCQReIOIWJ0nA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UU2xsBh2EeKHf7LDjhXK2A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UU3YwBh2EeKHf7LDjhXK2A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_UU3_0Bh2EeKHf7LDjhXK2A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_VlWbIBh0EeKHf7LDjhXK2A" name="Navigation">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_Urm6QBh1EeKHf7LDjhXK2A" name="leftSensorPort" visibility="public" aggregation="composite">
+        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_OHg8QAKoEeCQReIOIWJ0nA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VMFxIBh1EeKHf7LDjhXK2A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VMG_QBh1EeKHf7LDjhXK2A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_VMINYBh1EeKHf7LDjhXK2A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_cQV3ABh1EeKHf7LDjhXK2A" name="NavOutport" visibility="public" aggregation="composite">
+        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_C5BXoAK1EeCsG_V0R865wA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dCSRUBh1EeKHf7LDjhXK2A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dCTfcBh1EeKHf7LDjhXK2A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_dCVUoBh1EeKHf7LDjhXK2A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_i-f7oBh2EeKHf7LDjhXK2A" name="rightSensorPort" visibility="public" aggregation="composite">
+        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_OHg8QAKoEeCQReIOIWJ0nA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jbTMYBh2EeKHf7LDjhXK2A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jbVBkBh2EeKHf7LDjhXK2A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_jbWPsBh2EeKHf7LDjhXK2A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_YgxqcBh0EeKHf7LDjhXK2A" name="Wheels">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_hqRwIBh1EeKHf7LDjhXK2A" name="actionPort" visibility="public" aggregation="composite">
+        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_C5BXoAK1EeCsG_V0R865wA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iQhQwBh1EeKHf7LDjhXK2A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iQjF8Bh1EeKHf7LDjhXK2A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_iQjtABh1EeKHf7LDjhXK2A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_txzioBh1EeKHf7LDjhXK2A" name="Wifibot">
+      <ownedAttribute xmi:id="_vXuXkBh1EeKHf7LDjhXK2A" name="InfraredLeft" visibility="public" type="__ESB8BhzEeKHf7LDjhXK2A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zcVcgBh1EeKHf7LDjhXK2A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zcWDkBh1EeKHf7LDjhXK2A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_zcX4wBh1EeKHf7LDjhXK2A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_wR_ncBh1EeKHf7LDjhXK2A" name="InfraredRight" visibility="public" type="__ESB8BhzEeKHf7LDjhXK2A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1EK9ABh1EeKHf7LDjhXK2A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1ELkEBh1EeKHf7LDjhXK2A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_1EMyMBh1EeKHf7LDjhXK2A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_GwSZcBh2EeKHf7LDjhXK2A" name="ObstacleAvoidance" type="_VlWbIBh0EeKHf7LDjhXK2A"/>
+      <ownedAttribute xmi:id="_FjziwBh3EeKHf7LDjhXK2A" name="Actuator" type="_YgxqcBh0EeKHf7LDjhXK2A"/>
+      <ownedConnector xmi:id="_OkkYoBh3EeKHf7LDjhXK2A" name="Connector1">
+        <end xmi:id="_OklmwBh3EeKHf7LDjhXK2A" partWithPort="_vXuXkBh1EeKHf7LDjhXK2A" role="_dBjuABh0EeKHf7LDjhXK2A">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OklmwRh3EeKHf7LDjhXK2A" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Oklmwhh3EeKHf7LDjhXK2A" value="1"/>
+        </end>
+        <end xmi:id="_Okm04Bh3EeKHf7LDjhXK2A" partWithPort="_GwSZcBh2EeKHf7LDjhXK2A" role="_Urm6QBh1EeKHf7LDjhXK2A">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Okm04Rh3EeKHf7LDjhXK2A" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Okm04hh3EeKHf7LDjhXK2A" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedConnector xmi:id="_POKIMBh3EeKHf7LDjhXK2A" name="Connector2">
+        <end xmi:id="_POKvQBh3EeKHf7LDjhXK2A" partWithPort="_wR_ncBh1EeKHf7LDjhXK2A" role="_UBGIMBh2EeKHf7LDjhXK2A">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_POKvQRh3EeKHf7LDjhXK2A" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_POKvQhh3EeKHf7LDjhXK2A" value="1"/>
+        </end>
+        <end xmi:id="_POLWUBh3EeKHf7LDjhXK2A" partWithPort="_GwSZcBh2EeKHf7LDjhXK2A" role="_i-f7oBh2EeKHf7LDjhXK2A">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_POLWURh3EeKHf7LDjhXK2A" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_POLWUhh3EeKHf7LDjhXK2A" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedConnector xmi:id="_P3qYMBh3EeKHf7LDjhXK2A" name="Connector3">
+        <end xmi:id="_P3q_QBh3EeKHf7LDjhXK2A" partWithPort="_GwSZcBh2EeKHf7LDjhXK2A" role="_cQV3ABh1EeKHf7LDjhXK2A">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_P3q_QRh3EeKHf7LDjhXK2A" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P3q_Qhh3EeKHf7LDjhXK2A" value="1"/>
+        </end>
+        <end xmi:id="_P3rmUBh3EeKHf7LDjhXK2A" partWithPort="_FjziwBh3EeKHf7LDjhXK2A" role="_hqRwIBh1EeKHf7LDjhXK2A">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_P3rmURh3EeKHf7LDjhXK2A" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P3rmUhh3EeKHf7LDjhXK2A" value="1"/>
+        </end>
+      </ownedConnector>
+    </packagedElement>
+    <profileApplication xmi:id="_e_Ni8BhzEeKHf7LDjhXK2A">
+      <eAnnotations xmi:id="_e_QmQBhzEeKHf7LDjhXK2A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://Robotml_PROFILES/ProteusProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
+    </profileApplication>
+  </uml:Model>
+  <RobotML:SensorSystem xmi:id="__SdA0BhzEeKHf7LDjhXK2A" base_Class="__ESB8BhzEeKHf7LDjhXK2A"/>
+  <RobotML:RoboticSystem xmi:id="_VlchwBh0EeKHf7LDjhXK2A" base_Class="_VlWbIBh0EeKHf7LDjhXK2A"/>
+  <RobotML:ActuatorSystem xmi:id="_Yg93sBh0EeKHf7LDjhXK2A" base_Class="_YgxqcBh0EeKHf7LDjhXK2A"/>
+  <RobotML:DataFlowPort xmi:id="_dCFScBh0EeKHf7LDjhXK2A" base_Port="_dBjuABh0EeKHf7LDjhXK2A" direction="out"/>
+  <RobotML:DataFlowPort xmi:id="_Urx5YBh1EeKHf7LDjhXK2A" base_Port="_Urm6QBh1EeKHf7LDjhXK2A"/>
+  <RobotML:DataFlowPort xmi:id="_cQhdMBh1EeKHf7LDjhXK2A" base_Port="_cQV3ABh1EeKHf7LDjhXK2A" direction="out"/>
+  <RobotML:DataFlowPort xmi:id="_hqd9YBh1EeKHf7LDjhXK2A" base_Port="_hqRwIBh1EeKHf7LDjhXK2A"/>
+  <RobotML:Robot xmi:id="_tyL9IBh1EeKHf7LDjhXK2A" base_Class="_txzioBh1EeKHf7LDjhXK2A"/>
+  <RobotML:DataFlowPort xmi:id="_UBP5MBh2EeKHf7LDjhXK2A" base_Port="_UBGIMBh2EeKHf7LDjhXK2A" direction="out"/>
+  <RobotML:DataFlowPort xmi:id="_i-vzQBh2EeKHf7LDjhXK2A" base_Port="_i-f7oBh2EeKHf7LDjhXK2A"/>
+</xmi:XMI>

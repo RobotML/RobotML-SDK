@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <uml:Model xmi:id="_pjclQVAWEeGWB7Rj66bb9g" name="ProteusModel">
+    <packageImport xmi:id="_qBkrsFAWEeGWB7Rj66bb9g">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_wyS6gAH-EeC_ZLzLQhW-TQ"/>
+    </packageImport>
+    <packageImport xmi:id="_qBlSwFAWEeGWB7Rj66bb9g">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#__xA6YAHvEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_qBlSwVAWEeGWB7Rj66bb9g">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_Df4_4AHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_qBl50FAWEeGWB7Rj66bb9g">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_Go5_QAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_qBl50VAWEeGWB7Rj66bb9g">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_JSoakAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_qBmg4FAWEeGWB7Rj66bb9g">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_MlyNYAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:id="_qBmg4VAWEeGWB7Rj66bb9g">
+      <importedPackage href="pathmap://Proteus_LIBRARIES/ProteusPlatformLibraries.uml#_QJC2AKxYEeCJD46GtDsABA"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_yXa8UFAWEeGWB7Rj66bb9g" name="StateMachine1">
+      <region xmi:id="_01BnMFAWEeGWB7Rj66bb9g" name="Region1">
+        <subvertex xmi:type="uml:State" xmi:id="_2r0JsFAWEeGWB7Rj66bb9g" name="ping"/>
+        <subvertex xmi:type="uml:State" xmi:id="_4kqhsFAWEeGWB7Rj66bb9g" name="pong"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_9NNaIFAWEeGWB7Rj66bb9g" name="initialstate"/>
+        <transition xmi:id="_B7SS0FAXEeGWB7Rj66bb9g" name="init()" source="_9NNaIFAWEeGWB7Rj66bb9g" target="_2r0JsFAWEeGWB7Rj66bb9g"/>
+        <transition xmi:id="_FHM1MFAXEeGWB7Rj66bb9g" name="e_pong" source="_2r0JsFAWEeGWB7Rj66bb9g" target="_4kqhsFAWEeGWB7Rj66bb9g"/>
+        <transition xmi:id="_IV5l0FAXEeGWB7Rj66bb9g" name="e_ping" source="_4kqhsFAWEeGWB7Rj66bb9g" target="_2r0JsFAWEeGWB7Rj66bb9g"/>
+      </region>
+    </packagedElement>
+    <profileApplication xmi:id="_p674MFAWEeGWB7Rj66bb9g">
+      <eAnnotations xmi:id="_p6-UcFAWEeGWB7Rj66bb9g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://Proteus_PROFILES/ProteusProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
+    </profileApplication>
+  </uml:Model>
+  <RobotML:State xmi:id="_2x8m4FAWEeGWB7Rj66bb9g" base_State="_2r0JsFAWEeGWB7Rj66bb9g"/>
+  <RobotML:State xmi:id="_4lGmkFAWEeGWB7Rj66bb9g" base_State="_4kqhsFAWEeGWB7Rj66bb9g"/>
+  <RobotML:Transition xmi:id="_B9PaoFAXEeGWB7Rj66bb9g" base_Transition="_B7SS0FAXEeGWB7Rj66bb9g"/>
+  <RobotML:Transition xmi:id="_FHuZoFAXEeGWB7Rj66bb9g" base_Transition="_FHM1MFAXEeGWB7Rj66bb9g"/>
+  <RobotML:Transition xmi:id="_IWajMFAXEeGWB7Rj66bb9g" base_Transition="_IV5l0FAXEeGWB7Rj66bb9g"/>
+</xmi:XMI>

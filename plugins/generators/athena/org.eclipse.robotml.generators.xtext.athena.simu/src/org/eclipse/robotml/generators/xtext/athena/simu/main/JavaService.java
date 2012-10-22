@@ -890,13 +890,13 @@ public class JavaService {
 		String str = "";
 		try {
 			boolean first = true;
-			int i = 0;
+//			int i = 0;
 			for (farg a : call.getArguments()) {
 				if (!first)
 					str += ", ";
 				str += a.getVarName();
 				first = false;
-				i++;
+//				i++;
 			}
 		} catch (Exception e) {
 			System.out.println(call);

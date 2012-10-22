@@ -21,7 +21,7 @@ public class Activator extends Plugin {
     /**
      * The plug-in ID.
      */
-    public static final String PLUGIN_ID = "org.eclipse.proteus.generators.xtext.athena.vle";
+    public static final String PLUGIN_ID = "org.eclipse.robotml.generators.xtext.athena.vle";
 
     /**
      * The shared instance.

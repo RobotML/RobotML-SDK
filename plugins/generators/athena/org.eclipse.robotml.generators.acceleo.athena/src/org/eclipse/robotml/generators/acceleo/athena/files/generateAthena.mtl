@@ -1,7 +1,7 @@
 [comment encoding = UTF-8 /]
 [module generateAthena('http://www.eclipse.org/uml2/3.0.0/UML', 'http://Papyrus/RobotML/1')/]
 
-[import org::eclipse::proteus::generators::acceleo::mmqueries::ArchitectureQueries/]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries/]
 
 [import org::eclipse::robotml::generators::acceleo::athena::files::generateImport/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::generateTypes/]

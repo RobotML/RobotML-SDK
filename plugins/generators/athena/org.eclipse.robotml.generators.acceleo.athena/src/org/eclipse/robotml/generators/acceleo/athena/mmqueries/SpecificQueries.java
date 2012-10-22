@@ -10,11 +10,12 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.papyrus.RobotML.Algorithm;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.Transition;
-import org.eclipse.proteus.generators.acceleo.mmqueries.FSMQueries;
-import org.eclipse.proteus.generators.acceleo.mmqueries.GeneralQueries;
+import org.eclipse.robotml.generators.acceleo.mmqueries.FSMQueries;
+import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
 import org.eclipse.robotml.generators.acceleo.athena.files.configGenerator;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehavioralFeature;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
@@ -30,6 +31,8 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Vertex;
+
+import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
 
 public class SpecificQueries {
 
@@ -647,13 +650,11 @@ public class SpecificQueries {
 			if(obj instanceof State)
 			{
 				State state = (State)obj;
-				Class<org.eclipse.papyrus.RobotML.State> stereo = org.eclipse.papyrus.RobotML.State.class;
-				for(Stereotype inst : state.getAppliedStereotypes())
+				
+				org.eclipse.papyrus.RobotML.State robotml_state = ElementUtil.getStereotypeApplication(state, org.eclipse.papyrus.RobotML.State.class);
+				if(robotml_state != null)
 				{
-					if(stereo.isInstance(inst))
-					{
-						result |= (inst.getOperations().size() > 0);
-					}
+					result |= (robotml_state.getOperation() != null);
 				}
 			}
 		}
@@ -1130,6 +1131,64 @@ public class SpecificQueries {
 	static public List<NamedElement> getUnionType(NamedElement ne)
 	{
 		return new LinkedList<NamedElement>(SpecificQueries._unionTypeUsed);
+	}
+	
+	/**
+	 * Return all class's stereotypes used in the model
+	 * @param ne
+	 * @return
+	 */
+	static public List<String> getStereotypeComponentUsedInModel(NamedElement ne)
+	{
+		LinkedList<String> result = new LinkedList<String>();
+		
+		HashSet<Class> classes = getAllModelClasses(ne);
+		for(Class classe : classes)
+		{
+			for(Stereotype stereo : classe.getAppliedStereotypes())
+			{
+				if(!result.contains(stereo.getName()))
+					result.add(stereo.getName());
+			}
+		}
+		
+		return result;
+	}
+
+	/**
+	 * Retrun the transition guard
+	 * @param transition
+	 * @return
+	 */
+	static public Algorithm getTransitionGuard(Transition transition)
+	{
+		Algorithm result = null;
+		
+		org.eclipse.papyrus.RobotML.Transition robotml_transition = ElementUtil.getStereotypeApplication(transition, org.eclipse.papyrus.RobotML.Transition.class);
+		
+		if(robotml_transition != null)
+		{
+			result = robotml_transition.getGuard();
+		}		
+		return result;
+	}
+	
+	/**
+	 * Return the transition effect
+	 * @param transition
+	 * @return
+	 */
+	static public Algorithm getTransitionEffect(Transition transition)
+	{
+		Algorithm result = null;
+		
+		org.eclipse.papyrus.RobotML.Transition robotml_transition = ElementUtil.getStereotypeApplication(transition, org.eclipse.papyrus.RobotML.Transition.class);
+		
+		if(robotml_transition != null)
+		{
+			result = robotml_transition.getEffect();
+		}		
+		return result;
 	}
 	
 }

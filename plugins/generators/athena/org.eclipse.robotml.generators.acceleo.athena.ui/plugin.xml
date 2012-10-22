@@ -6,14 +6,14 @@
             adaptable="true"
             objectClass="org.eclipse.core.resources.IFile"
             nameFilter="*.uml"
-            id="org.eclipse.proteus.generators.acceleo.athena.ui.popupMenus.contribution.IFile">
+            id="org.eclipse.robotml.generators.acceleo.athena.ui.popupMenus.contribution.IFile">
          <menu id="org.eclipse.acceleo.module.menu" label="Proteus UML Model" path="additionsAcceleo">
                <groupMarker name="acceleo"/> 
          </menu>
          <action
                class="org.eclipse.robotml.generators.acceleo.athena.ui.popupMenus.AcceleoGenerateAthenaAction"
                enablesFor="+"
-               id="org.eclipse.proteus.generators.acceleo.athena.ui.popupMenus.acceleoGenerateAthenaAction"
+               id="org.eclipse.robotml.generators.acceleo.athena.ui.popupMenus.acceleoGenerateAthenaAction"
                icon="icons/default.gif"
                label="Generate to Athena ADL"
                menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
@@ -34,7 +34,7 @@
                tooltip="Generate code to Athena">
             <!--visibleWhen>
                <reference
-                     definitionId="org.eclipse.papyrus.proteus.diagram.common.IsPapyrusActiveWithProteus">
+                     definitionId="org.eclipse.papyrus.robotml.diagram.common.IsPapyrusActiveWithProteus">
                </reference>
             </visibleWhen-->
          </command>

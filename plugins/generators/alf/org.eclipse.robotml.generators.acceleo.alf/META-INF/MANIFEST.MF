@@ -24,5 +24,7 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: org.eclipse.robotml.generators.acceleo.alf.main
+Export-Package: org.eclipse.robotml.generators.acceleo.alf,
+ org.eclipse.robotml.generators.acceleo.alf.generation,
+ org.eclipse.robotml.generators.acceleo.alf.main
 

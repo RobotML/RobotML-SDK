@@ -3,16 +3,19 @@ package org.eclipse.robotml.generators.acceleo.alf.main;
 import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.uml.alf.AlfStandaloneSetupGenerated;
 import org.eclipse.papyrus.uml.alf.alf.Block;
-import org.eclipse.papyrus.operation.editor.xtext.OperationStandaloneSetupGenerated;
+import org.eclipse.papyrus.uml.alf.parser.antlr.AlfParser;
+//import org.eclipse.papyrus.operation.editor.xtext.OperationStandaloneSetupGenerated;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.OpaqueBehavior;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.papyrus.operation.editor.xtext.operation.impl.OperationDefinitionOrStubImpl;
-import org.eclipse.papyrus.operation.editor.xtext.parser.antlr.OperationParser;
+
+//import org.eclipse.papyrus.operation.editor.xtext.operation.impl.OperationDefinitionOrStubImpl;
+//import org.eclipse.papyrus.operation.editor.xtext.parser.antlr.OperationParser;
 import org.eclipse.robotml.generators.acceleo.alf.generation.AlfBlock;
 import org.eclipse.robotml.generators.acceleo.alf.generation.Athena_AlfGenerator;
 import org.eclipse.robotml.generators.acceleo.alf.generation.CPP_AlfGenerator;
@@ -55,18 +58,30 @@ public class AlfServices
 		
 		if(str.isEmpty() == false)
 		{
-			//parse alf string
-			OperationStandaloneSetupGenerated setup = new OperationStandaloneSetupGenerated();
-			Injector injector = setup.createInjectorAndDoEMFRegistration();
-			IParser parser = injector.getInstance(IParser.class);
-			OperationParser opParser = (OperationParser)parser;
 			
-			IParseResult pResult = opParser.doParse(str);
+			AlfStandaloneSetupGenerated setup = new AlfStandaloneSetupGenerated();
+			Injector inj = setup.createInjectorAndDoEMFRegistration();
+			IParser parser = inj.getInstance(IParser.class);
+			AlfParser alfParser = (AlfParser)parser;
+			
+//			//parse alf string
+//			OperationStandaloneSetupGenerated setup = new OperationStandaloneSetupGenerated();
+//			Injector injector = setup.createInjectorAndDoEMFRegistration();
+//			IParser parser = injector.getInstance(IParser.class);
+//			OperationParser opParser = (OperationParser)parser;
+//			
+			
+//			IParseResult pResult = opParser.doParse(str);
+			IParseResult pResult = alfParser.doParse(str);
 			if(pResult.hasSyntaxErrors() == false)
 			{
 				EObject eRoot = pResult.getRootASTElement();
-				OperationDefinitionOrStubImpl ope = (OperationDefinitionOrStubImpl) eRoot;
-				bloc = ope.getBody();
+				if(eRoot != null)
+				{
+					
+				}
+//				OperationDefinitionOrStubImpl ope = (OperationDefinitionOrStubImpl) eRoot;
+//				bloc = ope.getBody();
 			}
 		}
 		

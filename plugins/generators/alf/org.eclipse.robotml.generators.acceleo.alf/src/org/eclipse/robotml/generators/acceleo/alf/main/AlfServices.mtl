@@ -3,13 +3,13 @@
 
 
 [query public createAlfBlockFromUML(ne : NamedElement) : alf::Block
-	= invoke('org.eclipse.proteus.generators.acceleo.alf.main.AlfServices', 'createAlfBlockFromUML(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+	= invoke('org.eclipse.robotml.generators.acceleo.alf.main.AlfServices', 'createAlfBlockFromUML(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
 /]
 
 [query public translateAlfBlocTo_CPP(bloc : Block) : String =
-	invoke('org.eclipse.proteus.generators.acceleo.alf.main.AlfServices', 'translateAlfBlocTo_CPP(org.eclipse.papyrus.alf.alf.Block)', Sequence{bloc})
+	invoke('org.eclipse.robotml.generators.acceleo.alf.main.AlfServices', 'translateAlfBlocTo_CPP(org.eclipse.papyrus.alf.alf.Block)', Sequence{bloc})
 /]
 
 [query public translateAlfBlocTo_Athena(bloc : Block) : String =
-	invoke('org.eclipse.proteus.generators.acceleo.alf.main.AlfServices', 'translateAlfBlocTo_Athena(org.eclipse.papyrus.alf.alf.Block)', Sequence{bloc})
+	invoke('org.eclipse.robotml.generators.acceleo.alf.main.AlfServices', 'translateAlfBlocTo_Athena(org.eclipse.papyrus.alf.alf.Block)', Sequence{bloc})
 /]

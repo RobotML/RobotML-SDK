@@ -166,7 +166,7 @@ public:
             if (event.onPort("[getReferenceName(ref)/]"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				[if(isStructType(ref.typeName))]
+				[if(isStructType(ref.typeName) or isArrayType(ref.typeName) or isVectorType(ref.typeName) or isMapType(ref.typeName))]
 				[ref.typeName.name/]_fromValue(&val, [getReferenceName(ref)/]);
 				[else]
 				[getReferenceName(ref)/] = [ref.typeName.name/]_fromValue(&val);

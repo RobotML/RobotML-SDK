@@ -273,7 +273,7 @@ void [struct.name/]_fromValue(const value::Value* _node, [struct.name/]& _val) {
 				[else]
 	_val.[param.name/] = [ptype.name/]_fromValue(_xn.get("[param.name/]"));
 				[/if]
-			[elseif (isArrayType(ptype) or isStructType(ptype))]
+			[elseif (isArrayType(ptype) or isStructType(ptype) or isVectorType(ptype) or isMapType(ptype))]
 	[ptype.name/]_fromValue(_xn.get("[param.name/]"), _val.[param.name/]);
 			[elseif (isUnionType(ptype))]
 	// unauthorized union type for [param.name/]

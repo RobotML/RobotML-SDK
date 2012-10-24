@@ -15,9 +15,9 @@
 [template public generateAthena(model : Model)]
 [comment @main /] 
 	[comment][sortUsedDataType(model)/][/comment]
-	[searchUsedDataType(model)/]
-	[if (isAutomaticGeneration(null))]
-		[file(model.name + '.adl', false, 'UTF-8')]
+[searchUsedDataType(model)/]
+[if (isAutomaticGeneration(null))]
+[file(model.name + '.adl', false, 'UTF-8')]
 //
 //	Model [model.name/]
 //
@@ -27,9 +27,9 @@ language VLE
 language MATLAB
 
 [if (createDataTypesFile(null))]
-	[file ('datatypes.adl', false, 'UTF-8')]
+[file ('datatypes.adl', false, 'UTF-8')]
 [generateTypes(model)/]
-	[/file]
+[/file]
 [/if]
 
 //
@@ -56,9 +56,9 @@ language MATLAB
 // Wrapper
 //
 [generateWrapper(model)/]
-		[/file]
-	[elseif (isModelNameSelected(model))]
-		[file(model.name + '.adl', false, 'UTF-8')]
+[/file]
+[elseif (isModelNameSelected(model))]
+[file(model.name + '.adl', false, 'UTF-8')]
 //
 //	Model [model.name/]
 //
@@ -88,35 +88,34 @@ language MATLAB
 // Wrapper
 //
 [generateWrapper(model)/]
-		[/file]
-	[/if]
+[/file]
+[/if]
 [/template]
 
 [comment]Generate wrapper for externals librairies[/comment]
 [template private generateWrapper(model : Model)]
-	[let classes : Sequence(Class) = getModelClasses(model)]
+[let classes : Sequence(Class) = getModelClasses(model)]
 //classes size : [classes->size()/]
-		[for(classe : Class | classes)]
-			[if(isExternalLibrairy(classe))]
+[for(classe : Class | classes)]
+[if(isExternalLibrairy(classe))]
 wrapper [classe.name/] begin
 		
 	link-library { "[generateWrapperString(classe)/]" }
 [comment]			[let lib : AlgorithmLibrary = classe.oclAsType(AlgorithmLibrary)][/comment]
 [comment]		link-library { [lib.path.toString()/] }[/comment]
-					[let ops : Sequence(Operation) = classe.eAllContents(Operation)]
+[let ops : Sequence(Operation) = classe.eAllContents(Operation)]
 	implements-functions {
-						[for(op : Operation | ops)]
+[for(op : Operation | ops)]
 							[op.name/][if(ops->indexOf(op) < ops->size())],[/if]
-						[/for]
+[/for]
 	}
-					[/let]
+[/let]
 	external-objects {  }
 	external-libraries {  }
 	test-apps {  } 
 [comment]				[/let][/comment]
 end
-			[/if]
-		[/for]
-	[/let]
+[/if]
+[/for]
+[/let]
 [/template]
-

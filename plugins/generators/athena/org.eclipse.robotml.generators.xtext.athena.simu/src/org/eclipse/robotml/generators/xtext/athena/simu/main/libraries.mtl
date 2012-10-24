@@ -119,7 +119,7 @@ __EXPORT__ void [stub.name/]([getCPPFunctionSignature(stub)/])
 	// [protected ('wrapper')]
 	static unsigned int [stub.name/]_count = 0;
 	[stub.name/]_count ++;
-	std::cout << "***\t[stub.name/] called:\t" << [stub.name/]_count << std::endl;
+	std::cout << "***\t[stub.name/] called:\t" << [stub.name/]_count << " at " << getCurrentTime() << std::endl;
 	// [/protected]
 }
 

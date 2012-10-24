@@ -136,3 +136,31 @@
 [query public getTransitionEffect(transition : Transition) : Algorithm =
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getTransitionEffect(org.eclipse.uml2.uml.Transition)', Sequence{transition})
 /]
+
+[query public getSortedDataType(ne : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getSortedDataType(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public isBasicType(ne : NamedElement) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isBasicType(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public isEnumerationType(ne : NamedElement) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isEnumerationType(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public isStructuredType(ne : NamedElement) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isStructuredType(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public isContainerType(ne : NamedElement) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isContainerType(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public isDefineType(ne : NamedElement) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isDefineType(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public isUnionType(ne : NamedElement) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isUnionType(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]

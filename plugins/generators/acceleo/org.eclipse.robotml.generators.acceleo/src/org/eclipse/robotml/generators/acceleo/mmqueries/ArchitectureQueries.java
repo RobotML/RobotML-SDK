@@ -348,6 +348,23 @@ public class ArchitectureQueries {
 		return found_input_ports;
 	}
 	
+	static public List<org.eclipse.uml2.uml.Property> getOnPort(org.eclipse.uml2.uml.Parameter param)
+	{
+		LinkedList<org.eclipse.uml2.uml.Property> result = new LinkedList<org.eclipse.uml2.uml.Property>();
+		for(Stereotype st : param.getAppliedStereotypes())
+		{
+			if(st.getName().contains("OnPort"))
+			{
+				for(Property p: st.getAttributes())
+				{
+					result.add((Property)p);
+				}
+			}
+		}
+		
+		return result;
+	}
+	
 	/**
 	 * Retrieves all the component models available inside a RobotML model.
 	 */

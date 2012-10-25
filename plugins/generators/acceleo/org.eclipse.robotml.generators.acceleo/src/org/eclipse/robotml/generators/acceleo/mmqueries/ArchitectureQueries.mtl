@@ -47,6 +47,9 @@
 [query public getInputPortsForElement(elt : Element) : Sequence(Port) =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'getInputPortsForElement(org.eclipse.uml2.uml.Element)', Sequence{elt})
 /]
+[query public getOnPort(param : Parameter) : Sequence(Property) =
+	invoke('org.eclipse.proteus.generators.acceleo.mmqueries.ArchitectureQueries', 'getOnPort(org.eclipse.uml2.uml.Parameter)', Sequence{param})
+/]
 [query public getComponentModels(model : Model) : Sequence(NamedElement) =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'getComponentModels(org.eclipse.uml2.uml.Model)', Sequence{model})
 /]

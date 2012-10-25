@@ -3,7 +3,7 @@
 	<name>org.eclipse.robotml.generators.acceleo.athena</name>
 	<comment></comment>
 	<projects>
-		<project>org.eclipse.proteus.generators.acceleo</project>
+		<project>org.eclipse.robotml.generators.acceleo</project>
 		<project>org.xtext.AthenaDSL</project>
 	</projects>
 	<buildSpec>

@@ -1,8 +1,5 @@
 package org.eclipse.robotml.generators.xtext.athena.vle.main;
 
-import java.awt.Dimension;
-import java.util.Vector;
-
 import org.eclipse.emf.common.util.EList;
 import org.xtext.athenaDSL.DataType;
 import org.xtext.athenaDSL.FuncProc;

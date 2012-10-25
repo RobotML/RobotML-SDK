@@ -10,11 +10,12 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.papyrus.RobotML.Algorithm;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.Transition;
-import org.eclipse.proteus.generators.acceleo.mmqueries.FSMQueries;
-import org.eclipse.proteus.generators.acceleo.mmqueries.GeneralQueries;
+import org.eclipse.robotml.generators.acceleo.mmqueries.FSMQueries;
+import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
 import org.eclipse.robotml.generators.acceleo.athena.files.configGenerator;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehavioralFeature;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
@@ -30,6 +31,8 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Vertex;
+
+import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
 
 public class SpecificQueries {
 
@@ -50,7 +53,7 @@ public class SpecificQueries {
 	static private HashSet<NamedElement> _containerTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _structTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _defineTypeUsed = new HashSet<NamedElement>();
-	static private HashSet<NamedElement> _unionTypeUsed = new HashSet<NamedElement>();	
+	static private HashSet<NamedElement> _unionTypeUsed = new HashSet<NamedElement>();
 	
 	static private void initDeclarationMap()
 	{
@@ -59,83 +62,83 @@ public class SpecificQueries {
 			String decl = "";
 			//Int64
 			decl = "language CPP : \"long int\" = \"0\"\r\n";
-			decl += "\tlanguage VLE : \"Integer\" = \"0\"";
+			decl += "language VLE : \"Integer\" = \"0\"";
 			SpecificQueries._mapDeclaration.put("Int64", decl);
 			//Int32
 			decl = "language CPP : \"int\" = \"0\"\r\n";
-			decl += "\tlanguage VLE : \"Integer\" = \"0\"";
+			decl += "language VLE : \"Integer\" = \"0\"";
 			SpecificQueries._mapDeclaration.put("Int32", decl);
 			//Int16
 			decl = "language CPP : \"short int\" = \"0\"\r\n";
-			decl += "\tlanguage VLE : \"Integer\" = \"0\"";
+			decl += "language VLE : \"Integer\" = \"0\"";
 			SpecificQueries._mapDeclaration.put("Int16", decl);
 			//Int8
 			decl = "language CPP : \"char\" = \"0\"\r\n";
-			decl += "\tlanguage VLE : \"Integer\" = \"0\"";
+			decl += "language VLE : \"Integer\" = \"0\"";
 			SpecificQueries._mapDeclaration.put("Int8", decl);
 			//UInt64
 			decl = "language CPP : \"unsigned long int\" = \"0\"\r\n";
-			decl += "\tlanguage VLE : \"Integer\" = \"0\"";
+			decl += "language VLE : \"Integer\" = \"0\"";
 			SpecificQueries._mapDeclaration.put("UInt64", decl);
 			//UInt32
 			decl = "language CPP : \"unsigned int\" = \"0\"\r\n";
-			decl += "\tlanguage VLE : \"Integer\" = \"0\"";
+			decl += "language VLE : \"Integer\" = \"0\"";
 			SpecificQueries._mapDeclaration.put("UInt32", decl);
 			//UInt16
 			decl = "language CPP : \"unsigned short int\" = \"0\"\r\n";
-			decl += "\tlanguage VLE : \"Integer\" = \"0\"";
+			decl += "language VLE : \"Integer\" = \"0\"";
 			SpecificQueries._mapDeclaration.put("UInt16", decl);
 			//UInt8
 			decl = "language CPP : \"unsigned char\" = \"0\"\r\n";
-			decl += "\tlanguage VLE : \"Integer\" = \"0\"";
+			decl += "language VLE : \"Integer\" = \"0\"";
 			SpecificQueries._mapDeclaration.put("UInt8", decl);
 			//Float32
 			decl = "language CPP : \"float\" = \"0.f\"\r\n";
-			decl += "\tlanguage VLE : \"Double\" = \"0.0\"";
+			decl += "language VLE : \"Double\" = \"0.0\"";
 			SpecificQueries._mapDeclaration.put("Float32", decl);
 			//Float64
 			decl = "language CPP : \"double\" = \"0.\"\r\n";
-			decl += "\tlanguage VLE : \"Double\" = \"0.0\"";
+			decl += "language VLE : \"Double\" = \"0.0\"";
 			SpecificQueries._mapDeclaration.put("Float64", decl);
 			//String
 			decl = "include MATLAB : \"matrix.h\"\r\n";
-			decl += "\tinclude CPP : \"string\"\r\n";
-			decl += "\tlanguage MATLAB : \"java.lang.String\" = '\"\"'\r\n";
-			decl += "\tlanguage CPP : \"std::string\" = '\"\"'\r\n";
-			decl += "\tlanguage VLE : \"String\" = \"0\"";
+			decl += "include CPP : \"string\"\r\n";
+			decl += "language MATLAB : \"java.lang.String\" = '\"\"'\r\n";
+			decl += "language CPP : \"std::string\" = '\"\"'\r\n";
+			decl += "language VLE : \"String\" = \"0\"";
 			SpecificQueries._mapDeclaration.put("String", decl);
 			//Pointer
 			decl = "include MATLAB : \"matrix.h\"\r\n";
-			decl += "\tlanguage MATLAB : \"mxINT32_CLASS\" = \"NULL\"\r\n";
-			decl += "\tlanguage CPP : \"void*\" = \"NULL\"";
+			decl += "language MATLAB : \"mxINT32_CLASS\" = \"NULL\"\r\n";
+			decl += "language CPP : \"void*\" = \"NULL\"";
 			SpecificQueries._mapDeclaration.put("Pointer", decl);
 			//Logical
 			decl = "include MATLAB : \"matrix.h\"\r\n";
-			decl += "\tlanguage MATLAB : \"mxINT8_CLASS\" = \"0\"\r\n";
-			decl += "\tlanguage CPP : \"bool\" = \"false\"\r\n";
-			decl += "\tlanguage VLE : \"Boolean\" = \"false\"";
+			decl += "language MATLAB : \"mxINT8_CLASS\" = \"0\"\r\n";
+			decl += "language CPP : \"bool\" = \"false\"\r\n";
+			decl += "language VLE : \"Boolean\" = \"false\"";
 			SpecificQueries._mapDeclaration.put("Logical", decl);
 			//Int
 			decl = "include MATLAB : \"matrix.h\"\r\n";
-			decl += "\tlanguage MATLAB : \"mxINT32_CLASS\" = \"0\"\r\n";
-			decl += "\tlanguage CPP : \"int\" = \"0\"\r\n";
-			decl += "\tlanguage VLE : \"Integer\" = \"0\"";
+			decl += "language MATLAB : \"mxINT32_CLASS\" = \"0\"\r\n";
+			decl += "language CPP : \"int\" = \"0\"\r\n";
+			decl += "language VLE : \"Integer\" = \"0\"";
 			SpecificQueries._mapDeclaration.put("Int", decl);
 			//Long
 			decl = "include MATLAB : \"matrix.h\"\r\n";
-			decl += "\tlanguage MATLAB : \"mxINT32_CLASS\" = \"0\"\r\n";
-			decl += "\tlanguage CPP : \"long\" = \"0\"\r\n";
-			decl += "\tlanguage VLE : \"Integer\" = \"0\"";
+			decl += "language MATLAB : \"mxINT32_CLASS\" = \"0\"\r\n";
+			decl += "language CPP : \"long\" = \"0\"\r\n";
+			decl += "language VLE : \"Integer\" = \"0\"";
 			SpecificQueries._mapDeclaration.put("Long", decl);
 			//Real
 			decl = "include MATLAB : \"matrix.h\"\r\n";
-			decl += "\tlanguage MATLAB : \"mxDOUBLE_CLASS\" = \"0\"\r\n";
-			decl += "\tlanguage CPP : \"double\" = \"0.\"\r\n";
+			decl += "language MATLAB : \"mxDOUBLE_CLASS\" = \"0\"\r\n";
+			decl += "language CPP : \"double\" = \"0.\"\r\n";
 			decl += "language VLE : \"Double\" = \"0.0\"";
 			SpecificQueries._mapDeclaration.put("Real", decl);
 			//Time
 			decl = "include CPP : \"time.h\"\r\n";
-			decl += "\tlanguage CPP : \"_time*\" = \"NULL\"";
+			decl += "language CPP : \"_time*\" = \"NULL\"";
 			SpecificQueries._mapDeclaration.put("Time", decl);
 		}
 	}
@@ -647,13 +650,11 @@ public class SpecificQueries {
 			if(obj instanceof State)
 			{
 				State state = (State)obj;
-				Class<org.eclipse.papyrus.RobotML.State> stereo = org.eclipse.papyrus.RobotML.State.class;
-				for(Stereotype inst : state.getAppliedStereotypes())
+				
+				org.eclipse.papyrus.RobotML.State robotml_state = ElementUtil.getStereotypeApplication(state, org.eclipse.papyrus.RobotML.State.class);
+				if(robotml_state != null)
 				{
-					if(stereo.isInstance(inst))
-					{
-						result |= (inst.getOperations().size() > 0);
-					}
+					result |= (robotml_state.getOperation() != null);
 				}
 			}
 		}
@@ -818,7 +819,7 @@ public class SpecificQueries {
 	 * @param ne
 	 * @return
 	 */
-	static private Boolean isContainerType(NamedElement ne)
+	static public Boolean isContainerType(NamedElement ne)
 	{
 		Boolean result = false;
 		for(Comment comment : ne.getOwnedComments())
@@ -880,13 +881,13 @@ public class SpecificQueries {
 	 * @param dt
 	 * @return
 	 */
-	static private Boolean isDefine(DataType dt)
+	static public Boolean isDefineType(NamedElement ne)
 	{
 		/*
 		 * Datatype have 1 attribute with the same name.
 		 */
 		Boolean result = false;
-		
+		DataType dt = (DataType) ne;
 		if(dt.getAttributes().size() == 1 &&
 				dt.getAllAttributes().get(0).getType() != null)
 		{
@@ -896,10 +897,11 @@ public class SpecificQueries {
 		return result;
 	}
 	
-	static private Boolean isUnion(DataType dt)
+	static public Boolean isUnionType(NamedElement ne)
 	{
 		Boolean result = false;
 		
+		DataType dt = (DataType) ne;
 		if(dt.getAllAttributes().size() > 0)
 		{
 			for(Property prop : dt.getAllAttributes())
@@ -1075,6 +1077,8 @@ public class SpecificQueries {
 		
 		SpecificQueries.sortDataType(usedType);
 		
+		
+		
 		return Boolean.TRUE;
 	}
 	
@@ -1105,11 +1109,11 @@ public class SpecificQueries {
 			}
 			else if(dt.getAllAttributes().size() > 0)
 			{
-				if(SpecificQueries.isDefine(dt))
+				if(SpecificQueries.isDefineType(dt))
 				{
 					SpecificQueries._defineTypeUsed.add(ne);
 				}
-				else if(SpecificQueries.isUnion(dt))
+				else if(SpecificQueries.isUnionType(dt))
 				{
 					SpecificQueries._unionTypeUsed.add(dt);
 				}
@@ -1130,6 +1134,96 @@ public class SpecificQueries {
 	static public List<NamedElement> getUnionType(NamedElement ne)
 	{
 		return new LinkedList<NamedElement>(SpecificQueries._unionTypeUsed);
+	}
+	
+	/**
+	 * Return all class's stereotypes used in the model
+	 * @param ne
+	 * @return
+	 */
+	static public List<String> getStereotypeComponentUsedInModel(NamedElement ne)
+	{
+		LinkedList<String> result = new LinkedList<String>();
+		
+		HashSet<Class> classes = getAllModelClasses(ne);
+		for(Class classe : classes)
+		{
+			for(Stereotype stereo : classe.getAppliedStereotypes())
+			{
+				if(!result.contains(stereo.getName()))
+					result.add(stereo.getName());
+			}
+		}
+		
+		return result;
+	}
+
+	/**
+	 * Retrun the transition guard
+	 * @param transition
+	 * @return
+	 */
+	static public Algorithm getTransitionGuard(Transition transition)
+	{
+		Algorithm result = null;
+		
+		org.eclipse.papyrus.RobotML.Transition robotml_transition = ElementUtil.getStereotypeApplication(transition, org.eclipse.papyrus.RobotML.Transition.class);
+		
+		if(robotml_transition != null)
+		{
+			result = robotml_transition.getGuard();
+		}		
+		return result;
+	}
+	
+	/**
+	 * Return the transition effect
+	 * @param transition
+	 * @return
+	 */
+	static public Algorithm getTransitionEffect(Transition transition)
+	{
+		Algorithm result = null;
+		
+		org.eclipse.papyrus.RobotML.Transition robotml_transition = ElementUtil.getStereotypeApplication(transition, org.eclipse.papyrus.RobotML.Transition.class);
+		
+		if(robotml_transition != null)
+		{
+			result = robotml_transition.getEffect();
+		}		
+		return result;
+	}
+	
+	
+	static public LinkedList<NamedElement> getSortedDataType(NamedElement ne)
+	{
+		DataTypeCollection collection = new DataTypeCollection();
+		collection.addAll(_basicTypeUsed);
+		collection.addAll(_enumTypeUsed);
+		collection.addAll(_structTypeUsed);
+		collection.addAll(_containerTypeUsed);
+		collection.addAll(_defineTypeUsed);
+		collection.addAll(_unionTypeUsed);
+		
+		collection.sortDataType();
+		
+		
+		return new LinkedList<NamedElement>(collection);
+	}
+	
+	static public Boolean isBasicType(NamedElement ne)
+	{
+		return SpecificQueries._basicTypeUsed.contains(ne);
+	}
+	
+	static public Boolean isEnumerationType(NamedElement ne)
+	{
+		return SpecificQueries._enumTypeUsed.contains(ne);
+	}
+	
+	static public Boolean isStructuredType(NamedElement ne)
+	{
+		return SpecificQueries._structTypeUsed.contains(ne);
 	}
 	
 }

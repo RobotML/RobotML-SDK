@@ -21,7 +21,7 @@ public class Activator extends Plugin {
 	/**
 	 * The plug-in ID.
 	 */
-	public static final String PLUGIN_ID = "org.eclipse.proteus.generators.acceleo.athena";
+	public static final String PLUGIN_ID = "org.eclipse.robotml.generators.acceleo.athena";
 
 	/**
 	 * The shared instance.

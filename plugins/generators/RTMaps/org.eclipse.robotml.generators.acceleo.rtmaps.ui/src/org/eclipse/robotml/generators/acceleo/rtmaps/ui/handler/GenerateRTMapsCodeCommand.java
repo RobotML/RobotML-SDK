@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.robotml.generators.acceleo.rtmaps.ui.handler; 
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -22,6 +23,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.jface.dialogs.ProgressMonitorDialog;
+import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
+import org.omg.CORBA.UNKNOWN;
 
 
 // TODO: Auto-generated Javadoc
@@ -76,8 +82,30 @@ public class GenerateRTMapsCodeCommand extends AbstractTransactionalCommand {
 
 
 		System.err.println("Model Exlorer generation menu RTMaps");
-		AcceleoRTMapsCodeGenerator codeGenerator = new AcceleoRTMapsCodeGenerator();
-		codeGenerator.runAcceleoTransformation(selectedElement, rtmapsTargetFolderPath);
+		
+		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+		final ProgressMonitorDialog monitordialog = new ProgressMonitorDialog(shell);
+		try {
+			monitordialog.run(true, true, new IRunnableWithProgress() {
+
+				public void run(IProgressMonitor monitor)
+						throws InvocationTargetException, InterruptedException {
+					monitor.beginTask("Generating Acceleo files", 100);
+					AcceleoRTMapsCodeGenerator codeGenerator = new AcceleoRTMapsCodeGenerator();
+					codeGenerator.runAcceleoTransformation(selectedElement, rtmapsTargetFolderPath);
+					monitor.done();
+				}
+				
+			});
+			
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 
 		return CommandResult.newOKCommandResult();
 	}

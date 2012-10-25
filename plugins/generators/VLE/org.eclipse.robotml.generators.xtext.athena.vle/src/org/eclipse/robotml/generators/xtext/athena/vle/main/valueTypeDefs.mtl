@@ -82,14 +82,14 @@ void [array.name/]_fromValue(const value::Value* _node,[array.name/]& _val);
 [template public processVectorType(vector : vectorType)]
 // [vector.name/] is a vector of [getVectorDatatypeName(vector)/]
 value::Value* [vector.name/]_toValue(const [vector.name/]& _val); 
-[vector.name/] [vector.name/]_fromValue(const value::Value* _node);
+void [vector.name/]_fromValue(const value::Value* _node, [vector.name/]& _val);
 [/template]
 
 
 [template public processMapType(map : mapType)]
 // [map.name/] is a map with key type [getMapKeyTypeName(map)/] and value type [getMapValueTypeName(map)/]
 value::Value* [map.name/]_toValue(const [map.name/]& _val);
-[map.name/] [map.name/]_fromValue(const value::Value* _node);
+void [map.name/]_fromValue(const value::Value* _node, [map.name/]& _val);
 [/template]
 
 

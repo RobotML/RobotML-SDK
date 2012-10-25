@@ -27,7 +27,7 @@ processing [processing.name/] [if(proc.ownedParameter->isEmpty() =(true))]( ) be
 	[param.direction/] [param.type.name/] [param.name/][if(proc.ownedParameter->indexOf(param) = proc.ownedParameter->size())] ) begin[/if]		
 		[/for]
 		[/if]
-[comment]	[generateProcessingBody(model, proc)/][/comment]
+	[generateProcessingBody(model, proc)/]
 end
 	[/let]
 [/template]

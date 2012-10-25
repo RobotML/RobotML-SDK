@@ -1,40 +1,37 @@
 [comment encoding = UTF-8 /]
-[module generatePrototypes('http://www.eclipse.org/uml2/3.0.0/UML', 'http://Papyrus/RobotML/1')/]
+[module generatePrototypes('http://www.eclipse.org/uml2/3.0.0/UML', 'http://Papyrus/RobotML/1', 'http://www.eclipse.org/papyrus/alf/Alf')/]
 
-[import org::eclipse::proteus::generators::acceleo::mmqueries::ArchitectureQueries /] 
-[import org::eclipse::proteus::generators::acceleo::mmqueries::FSMQueries /]
-[import org::eclipse::proteus::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /] 
+[import org::eclipse::robotml::generators::acceleo::mmqueries::FSMQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries /]
+[import org::eclipse::robotml::generators::acceleo::alf::main::AlfServices/]
 
 [template public generatePrototypes(model : Model)]
 		
 //
 // Prototypes generiques
 // 
+[generateGenericPrototype(model)/]
 
 //
-prototype System begin
-
-end
-
+// Prototypes specifique
 //
-prototype Sensor is System begin 
-
-end
-
-//
-prototype Actuator is System begin
-
-end
-
-[for (nm : NamedElement | getModelClasses(model))]
-[generatePrototype(nm.oclAsType(Class)) /]
-[/for]
-
-
+	[for (nm : NamedElement | getModelClasses(model))]
+[generatePrototype(nm.oclAsType(Class), model) /]
+	[/for]
 [/template]
 
-[template public generatePrototype(class : Class)]
+[template private generateGenericPrototype(model : Model)]
+	[let stereotypes : Sequence(String) = getStereotypeComponentUsedInModel(model)]
+		[for(stereo : String | stereotypes)]
+prototype [stereo/] begin
+end
+		[/for]
+	[/let]
+[/template]
+
+[template public generatePrototype(class : Class, model : Model)]
 [comment]If the class are an external librairy, it will be ignored[/comment]
 	[if(isExternalLibrairy(class) =(false))]
 // [class.name/]
@@ -54,7 +51,7 @@ prototype [class.name/] [if((superClass = null) =(false))] is [superClass.name/]
 			[/let]
 			[let fsms : Sequence(StateMachine) = class.eAllContents(StateMachine)]
 				[if(hasValidFSMDeclaration(class))]
-	[generateFSM(fsms)/]
+	[generateFSM(fsms, model)/]
 				[/if]
 	[generateInteractions(fsms)/]
 			[/let]
@@ -124,25 +121,29 @@ end
 [/template]
 
 [comment]Generate the prototype's statemachine declaration[/comment]
-[template private generateFSM(fsms : Sequence(StateMachine))]
+[template private generateFSM(fsms : Sequence(StateMachine), model : Model)]
 	[for (sm : StateMachine | fsms)]
 	//[sm.name/]
+[generateFSMGuard(sm, model)/]
+[generateFSMEffect(sm)/]
 		[let states : Sequence(Vertex) = getStates(sm)]
-	stateset [sm.name/] { [for(state : Vertex | states)][state.name/][if(states->indexOf(state) < states->size())], [/if][/for] } = [states->first().name/] begin
+stateset [sm.name/] { [for(state : Vertex | states)][state.name/][if(states->indexOf(state) < states->size())], [/if][/for] } = [states->first().name/] begin
 		[/let]
 		
-[comment]		[if(hasValidTransition(sm))][/comment]
-			[for(transition : Transition | getTransitions(sm))]
-				[if((transition.guard = null) =(false))]
-					[if((transition.effect = null) =(false))]
-		transition from [transition.source.name/] to [transition.target.name/] on [transition.guard.name/] raise [transition.effect.name/]
-					[else]
-		transition from [transition.source.name/] to [transition.target.name/] on [transition.guard.name/]
-					[/if]
+		[for(transition : Transition | getTransitions(sm))]
+			[let guard : Algorithm = getTransitionGuard(transition)]
+				[if((guard = null) =(false))]
+					[let effect : Algorithm = getTransitionEffect(transition)]
+						[if((effect = null) =(false))]
+	transition from [transition.source.name/] to [transition.target.name/] on [guard.base_Operation.name/] raise [effect.base_Operation.name/]
+						[else]
+	transition from [transition.source.name/] to [transition.target.name/] on [guard.base_Operation.name/]
+						[/if]
+					[/let]
 				[/if] 
-			[/for]
-[comment]		[/if][/comment]
-	end
+			[/let]
+		[/for]
+end
 	[/for]
 [/template]
 
@@ -163,4 +164,42 @@ end
 			[/for]			
 		[/let]
 	[/for]
+[/template]
+
+[template private generateFSMGuard(fsm : StateMachine, model : Model)]
+	[let transitions : Sequence(Transition) = getTransitions(fsm)]
+		[for(transition : Transition | transitions)]
+			[let guard : Algorithm = getTransitionGuard(transition)]
+				[if((guard = null) =(false))]
+					[let behaviors : Sequence(OpaqueBehavior) = getAllOpaqueBehaviorFromModel(model)]
+						[for( behavior : OpaqueBehavior | behaviors)]
+							[if((behavior.specification = null) =(false))]
+								[if(behavior.specification.name.equalsIgnoreCase(guard.base_Operation.name))]
+									[let bloc : alf::Block = createAlfBlockFromUML(behavior.oclAsType(NamedElement))]
+										[if((bloc = null) =(false))]
+event [guard.base_Operation.name/] { [translateAlfBlocTo_Athena(bloc)/] }
+										[else]
+event [guard.base_Operation.name/] { /* [behavior._body/] */ }
+										[/if]
+									[/let]
+								[/if]
+							[/if]
+						[/for] 
+					[/let]
+				[/if]
+			[/let]
+		[/for]
+	[/let]
+[/template]
+
+[template private generateFSMEffect(fsm : StateMachine)]
+	[let transitions : Sequence(Transition) = getTransitions(fsm)]
+		[for(transition : Transition | transitions)]
+			[let effect : Algorithm = getTransitionEffect(transition)]
+				[if((effect = null) =(false))] 
+signal [effect.base_Operation.name/]			
+				[/if]		
+			[/let]
+		[/for]
+	[/let]
 [/template]

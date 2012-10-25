@@ -6,14 +6,14 @@
             adaptable="true"
             objectClass="org.eclipse.core.resources.IFile"
             nameFilter="*.adl"
-            id="org.eclipse.proteus.generators.xtext.athena.vle.ui.popupMenus.contribution.IFile">
+            id="org.eclipse.robotml.generators.xtext.athena.vle.ui.popupMenus.contribution.IFile">
          <menu id="org.eclipse.acceleo.module.menu" label="Athena" path="additionsAcceleo">
                <groupMarker name="acceleo"/> 
          </menu>
          <action
                class="org.eclipse.robotml.generators.xtext.athena.vle.ui.popupMenus.AcceleoGenerategenerateVleAction"
                enablesFor="+"
-               id="org.eclipse.proteus.generators.xtext.athena.vle.ui.popupMenus.acceleoGenerategenerateVleAction"
+               id="org.eclipse.robotml.generators.xtext.athena.vle.ui.popupMenus.acceleoGenerategenerateVleAction"
                icon="icons/default.gif"
                label="Generate  to VLE Simulation"
                menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>

@@ -4,6 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.xtext.AthenaDSL"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.proteus.generators.acceleo"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.robotml.generators.acceleo"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

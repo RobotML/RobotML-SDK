@@ -21,7 +21,7 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * The plug-in ID.
 	 */
-	public static final String PLUGIN_ID = "org.eclipse.proteus.generators.xtext.athena.simu.ui";
+	public static final String PLUGIN_ID = "org.eclipse.robtoml.generators.xtext.athena.simu.ui";
 
 	/**
 	 * The shared instance.

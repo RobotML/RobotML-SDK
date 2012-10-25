@@ -111,13 +111,6 @@ http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.papyrus.robotml.table.datatypes"
-         download-size="0"
-         install-size="0"
-         version="0.9.1.qualifier"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.papyrus.robotml.properties.view"
          download-size="0"
          install-size="0"

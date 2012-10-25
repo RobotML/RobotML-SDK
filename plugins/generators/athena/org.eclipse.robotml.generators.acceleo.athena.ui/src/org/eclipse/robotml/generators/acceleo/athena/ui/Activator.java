@@ -21,7 +21,7 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * The plug-in ID.
 	 */
-	public static final String PLUGIN_ID = "org.eclipse.proteus.generators.acceleo.athena.ui";
+	public static final String PLUGIN_ID = "org.eclipse.robotml.generators.acceleo.athena.ui";
 
 	/**
 	 * The shared instance.

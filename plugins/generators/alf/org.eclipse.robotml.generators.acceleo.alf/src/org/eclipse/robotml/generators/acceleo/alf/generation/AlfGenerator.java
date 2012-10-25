@@ -105,7 +105,7 @@ public abstract class AlfGenerator implements IAlfGenerator {
 
 	
 	/* (non-Javadoc)
-	 * @see org.eclipse.proteus.generators.acceleo.alf.main.IAlfGenerator#generateAlfBlock()
+	 * @see org.eclipse.robotml.generators.acceleo.alf.main.IAlfGenerator#generateAlfBlock()
 	 */
 	public void generate(AlfBlock bloc) {
 		bloc.setCodeTranslation(generateStatementSequence(bloc.getBlock().getSequence()));
@@ -539,6 +539,7 @@ public abstract class AlfGenerator implements IAlfGenerator {
 		return generateConditionalTestExpression((ConditionalTestExpression)aTupleElement.getArgument());
 	}
 
+	// TODO a faire...
 //	/**
 //	 * Generate operation call expression without '.'
 //	 * @param aOperationCallExpressionWithoutDot : Alf::OperationCallExpressionWithoutDot
@@ -1057,7 +1058,8 @@ public abstract class AlfGenerator implements IAlfGenerator {
 	protected String generateQualifiedNameWithBinding(QualifiedNameWithBinding aQualifiedNameWithBinding) {
 		return "";
 	}
-
+	
+	//TODO : A faire ...
 //	/**
 //	 * Generate sequence construction completion
 //	 * @param aSequenceConstructionCompletion : Alf::SequenceConstructionCompletion
@@ -1215,8 +1217,9 @@ public abstract class AlfGenerator implements IAlfGenerator {
 		String result = "";
 		if(aLinkOperationExpression != null)
 		{
-			result += generateLinkOperationKind(aLinkOperationExpression.getKind());
-			result += generateLinkOperationTuple(aLinkOperationExpression.getTuple());
+			//TODO : a faire ...
+//			result += generateLinkOperationKind((aLinkOperationExpression).getKind());
+//			result += generateLinkOperationTuple(aLinkOperationExpression.getTuple());
 		}
 		return result;
 	}

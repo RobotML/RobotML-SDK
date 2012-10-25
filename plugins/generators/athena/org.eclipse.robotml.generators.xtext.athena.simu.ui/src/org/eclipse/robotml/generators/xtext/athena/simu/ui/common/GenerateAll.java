@@ -95,7 +95,7 @@ public class GenerateAll {
     	org.xtext.athenaDSL.impl.AthenaDSLPackageImpl.init();
     	System.out.println("=========== DSL athena initialized ============");
     	
-		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.eclipse.proteus.generators.xtext.athena.simu", "org.eclipse.proteus.generators.xtext.athena.simu.main.GenerateAthena", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.eclipse.robotml.generators.xtext.athena.simu", "org.eclipse.proteus.generators.xtext.athena.simu.main.GenerateAthena", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 			

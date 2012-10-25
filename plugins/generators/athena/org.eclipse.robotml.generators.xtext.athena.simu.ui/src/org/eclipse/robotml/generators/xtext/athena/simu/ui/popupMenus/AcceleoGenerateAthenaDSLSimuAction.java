@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.proteus.generators.xtext.athena.simu.ui.popupMenus;
+package org.eclipse.robotml.generators.xtext.athena.simu.ui.popupMenus;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;

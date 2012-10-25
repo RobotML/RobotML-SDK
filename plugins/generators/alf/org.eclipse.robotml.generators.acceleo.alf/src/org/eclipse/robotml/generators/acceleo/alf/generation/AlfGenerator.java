@@ -1218,8 +1218,7 @@ public abstract class AlfGenerator implements IAlfGenerator {
 		if(aLinkOperationExpression != null)
 		{
 			//TODO : a faire ...
-			
-//			result += generateLinkOperationKind(aLinkOperationExpression.getKind());
+//			result += generateLinkOperationKind((aLinkOperationExpression).getKind());
 //			result += generateLinkOperationTuple(aLinkOperationExpression.getTuple());
 		}
 		return result;

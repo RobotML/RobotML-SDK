@@ -20,7 +20,8 @@ Require-Bundle: org.eclipse.core.runtime,
  com.google.guava;bundle-version="10.0.1",
  org.eclipse.uml2.uml;bundle-version="3.2.100",
  com.google.inject;bundle-version="2.0.0",
- org.eclipse.xtext;bundle-version="2.0.1"
+ org.eclipse.xtext;bundle-version="2.0.1",
+ org.eclipse.papyrus.uml.textedit.operation.xtext;bundle-version="0.9.2"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true

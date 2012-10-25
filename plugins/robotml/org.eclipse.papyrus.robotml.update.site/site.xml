@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.eclipse.papyrus.robotml.feature_0.9.1.201210171425.jar" id="org.eclipse.papyrus.robotml.feature" version="0.9.1.201210171425">
+   <feature url="features/org.eclipse.papyrus.robotml.feature_0.9.1.201210251159.jar" id="org.eclipse.papyrus.robotml.feature" version="0.9.1.201210251159">
       <category name="RobotML Modelling Tools"/>
    </feature>
-   <feature url="features/com.cea.papyrus.gendoc2.feature_0.9.0.201210171425.jar" id="com.cea.papyrus.gendoc2.feature" version="0.9.0.201210171425">
+   <feature url="features/com.cea.papyrus.gendoc2.feature_0.9.0.201210251159.jar" id="com.cea.papyrus.gendoc2.feature" version="0.9.0.201210251159">
       <category name="Documentation Generator"/>
    </feature>
    <category-def name="RobotML Modelling Tools" label="RobotML Modelling  Tools"/>

@@ -19,7 +19,8 @@
             sourceFolder="${target.folder}"
             outputFolder="${target.folder}"
             dependencies="${target.folder}/../../org.eclipse.robotml.generators.acceleo;"
-            binaryResource="false">
+            binaryResource="false"
+            packagesToRegister="">
         </acceleoCompiler>
     </target>    
 </project>

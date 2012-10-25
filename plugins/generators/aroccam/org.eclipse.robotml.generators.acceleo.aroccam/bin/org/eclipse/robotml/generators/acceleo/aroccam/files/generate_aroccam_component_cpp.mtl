@@ -1,0 +1,158 @@
+[comment encoding = UTF-8 /]
+[module generate_aroccam_component_cpp('http://www.eclipse.org/uml2/3.0.0/UML')]
+
+[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::FSMQueries /]
+
+[template public generateAroccamComponentCpp(c : Class, root_model : Model)]
+[file ('src/' + root_model.name + 'Application/' + c.getStereotype() + '/' + c.name + '/' + c.name + '.cpp', false, 'UTF-8')]
+#include "[c.name/].hpp"
+
+//boost
+#include <boost/bind.hpp>
+
+[comment]Constructor[/comment]
+[c.name/]::[c.name/]()
+{
+
+[comment]Ouput ports connexions[/comment]
+[if c.isMacroComponent()]
+	[for (port : Port | getOutputPortsForElement(c.oclAsType(Element))) before('\t//macrocomponent output ports initializations\n')]
+		[for (conn: Connector | getExternalOutputConnectors(c))]
+			[if (conn.getDestPortName().contains(port.name))]
+	[port.name/] = [conn.getSourceComponentForConnector().name/].[conn.getSourcePortName()/];
+			[/if]
+		[/for]
+	[/for]
+[else]
+	[for (port : Port | getOutputPortsForElement(c.oclAsType(Element))) before('\t//ports initializations\n')]
+	[port.name/] = new effitools::TaskBuffer<[port.type.name/]>();
+	[/for]
+[/if]
+
+[comment]Input ports connexions[/comment]
+[for (conn : Connector | getInternalConnectors(c)) before('\t//inner components connexions\n')]
+	[conn.getSourceComponentInstanceNameForConnector()/].[conn.getSourcePortName()/]->addFunctionToExecute(boost::bind(&[conn.getDestComponentForConnector().type.name/]::[conn.getDestPortName()/], &[conn.getDestComponentForConnector().name/], _1));
+[/for]
+
+[comment]FSM Initialization[/comment]
+[for (sm: StateMachine | c.getStateMachines()) before('\t//initialize FSM state\n')]
+	[comment]recherche de l'etat initial (on suppose qu'il y en a qu'un sinon pas de sens)[/comment]
+	[for (s: Vertex | sm.getStates())]
+		[if s.oclIsTypeOf(Pseudostate)]
+	currentStateIn[sm.name/] = [s.name/];
+		[/if]
+	[/for] 
+[/for]
+}
+
+void [c.name/]::evaluateFSMTransitions()
+{
+	[comment]for each FSM[/comment]
+	[for (sm: StateMachine | c.getStateMachines())]
+
+		[comment]for each state[/comment]
+	switch(currentStateIn[sm.name/])
+	{
+		[for (state: Vertex | getStates(sm))]
+	case [state.name/]:
+			[for (tr : Transition | sm.getTransitions())]
+				[if tr.source.name = state.name]
+		//if([tr.guard/]) //TODO recuperer l'operation associe au guard et l'appeler
+		{
+			//[tr.effect/] //TODO recuperer l'operation associe a l'effect et l'appeler
+			currentStateIn[sm.name/] = [tr.target.name/];
+			return;
+		}
+				[/if]
+			[/for]
+	break;
+		[/for]
+	};
+	[/for]
+}
+
+
+[let elt : Element = c.oclAsType(Element)]
+[comment]Input port implementation[/comment]
+	[for (port : Port | getInputPortsForElement(elt))]
+void [c.name/]::[port.name/]([port.type.name/] const& data)
+{
+		[for (conn: Connector | getExternalInputConnectors(c)) before('\t//external input connexions\n') after('\n')]
+			[if (conn.getSourcePortName().contains(port.name))]
+	[conn.getDestComponentForConnector().name/].[conn.getDestPortName()/](data);
+			[/if]
+		[/for]
+	
+		evaluateFSMTransitions();
+
+		[comment]find associated operations[/comment]
+		[for (op : Operation | c.getAllOperations()) before('\t//operations\n')]
+			[if (op.method->size() > 0)]
+				[for (m : Behavior | op.method)]
+					[for( param: Parameter | op.ownedParameter)]
+						[for( p: Property | param.getOnPort())]//TODO recuperer les operations à appeler selon l'etat courant
+								//Type: [p.type.name/] Name: [p.name/]
+								//Contains1:
+								[for( pro: Property | p.type.ownedElement)]
+									//Type: [pro.type.name/] Name: [pro.name/]
+									//Contains2:
+									[for( pr: Property | pro.type.ownedElement)]
+										//Type: [pr.type.name/] Name: [pr.name/]										
+									[/for]
+									//End2
+								[/for]
+								//End1
+						[/for]
+					[/for]
+				[/for]
+			[else]
+				[for( param: Parameter | op.ownedParameter)]
+						[for( p: Property | param.getOnPort())]
+								//Type: [p.type.name/] Name: [p.name/]
+								//Contains1:
+								[for( pro: Property | p.type.ownedElement)]
+									//Type: [pro.type.name/] Name: [pro.name/]
+									//Contains2:
+									[for( pr: Property | pro.type.ownedElement)]
+										//Type: [pr.type.name/] Name: [pr.name/]										
+									[/for]
+									//End2
+								[/for]
+								//End1
+						[/for]
+				[/for]
+			[/if]
+		[/for]
+
+	//to complete
+}
+	[/for]
+
+[comment]Operation implementation[/comment]
+	[for (op : Operation | c.getAllOperations())]
+		[if (op.method->size() > 0)]
+			[for (m : Behavior | op.method)]
+bool [c.name/]::[m.name/]([for( param: Parameter | op.ownedParameter) separator(',')][param.type.name/] [if (param.direction.toString() = 'in')]const[/if]& [param.name/][/for])
+{
+	/*[m.oclAsType(OpaqueBehavior)._body/]*/
+}
+			[/for]
+		[else]
+bool [c.name/]::[op.name/]([for( param: Parameter | op.ownedParameter) separator(',')][param.type.name/] [if (param.direction.toString() = 'in')]const[/if]& [param.name/][/for])
+{
+	//to complete
+}
+		[/if]
+	[/for]
+[/let]
+
+[comment][for (prop: Property | getLevel1SubComponentsForComponent(c))][/comment]
+[comment][let sub_c : Class = prop.type.oclAsType(Class)][/comment]
+[comment]	[generateAroccamComponentCpp(sub_c,root_model)/][/comment]
+[comment][/let][/comment]
+[comment][/for][/comment]
+[/file]
+[/template]

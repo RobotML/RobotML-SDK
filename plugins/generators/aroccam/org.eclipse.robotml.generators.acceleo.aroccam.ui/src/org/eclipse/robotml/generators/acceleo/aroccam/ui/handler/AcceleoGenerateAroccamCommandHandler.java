@@ -13,13 +13,13 @@
  *****************************************************************************/
 package org.eclipse.robotml.generators.acceleo.aroccam.ui.handler;
 
+import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.papyrus.modelexplorer.handler.AbstractCommandHandler;
-
-
+import org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler;
 
 
 // TODO: Auto-generated Javadoc
@@ -49,6 +49,18 @@ public class AcceleoGenerateAroccamCommandHandler extends AbstractCommandHandler
 		return new org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper(new GenerateAroccamCodeCommand("Generate Aroccam code command", editingDomain, selectedObject, targetPath + aroccamFolder));
 
 	}
+@Override
+public boolean isEnabled() {
+	// TODO Auto-generated method stub
+	return super.isEnabled();
+}
 
+@Override
+public Object execute(ExecutionEvent event) throws ExecutionException {
+	// TODO Auto-generated method stub
+	getCommand().execute();
+	return null;
+	
+}
 
 }

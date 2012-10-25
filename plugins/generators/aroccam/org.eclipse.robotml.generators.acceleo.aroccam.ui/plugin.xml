@@ -7,7 +7,7 @@
             objectClass="org.eclipse.core.resources.IFile"
             nameFilter="*.uml"
             id="org.eclipse.robotml.generators.acceleo.aroccam.ui.popupMenus.contribution.IFile">
-         <menu id="org.eclipse.acceleo.module.menu" label="RobotML UML Model" path="additionsAcceleo">
+         <menu id="org.eclipse.acceleo.module.menu" label="RobotML Generators" path="additionsAcceleo">
                <groupMarker name="acceleo"/> 
          </menu>
          <action
@@ -30,7 +30,7 @@
                icon="icons/default.gif"
                id="org.eclipse.robotML.generateAroccam"
                label="Generate to Aroccam"
-               style="radio"
+               style="push"
                tooltip="Generate code to Aroccam middleware">
             <visibleWhen>
                <reference

@@ -5,7 +5,7 @@
 
 [template public cppTypeDefs(project : Project)]
 
-[file ('src/TypeDefs.h', false, 'UTF-8')] 
+[file ('generated/src/TypeDefs.h', false, 'UTF-8')] 
 
 #ifndef _TypeDefs_h_
 #define _TypeDefs_h_

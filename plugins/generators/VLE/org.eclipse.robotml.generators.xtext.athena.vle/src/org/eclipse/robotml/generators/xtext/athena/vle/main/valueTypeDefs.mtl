@@ -5,7 +5,7 @@
 
 [template public valueTypeDefs(project : Project)]
 	
-[file ('src/TypeDefs_Values.h', false, 'UTF-8')] 
+[file ('generated/src/TypeDefs_Values.h', false, 'UTF-8')] 
 
 #ifndef _TypeDefs_Values_h_
 #define _TypeDefs_Values_h_

@@ -5,7 +5,7 @@
 
 [template public valueTypeImpls(project : Project)]
 	
-[file ('src/TypeDefs_Values.cc', false, 'UTF-8')] 
+[file ('generated/src/TypeDefs_Values.cc', false, 'UTF-8')] 
 // 
 // Includes ----------------------------------------------------------------------
 // 

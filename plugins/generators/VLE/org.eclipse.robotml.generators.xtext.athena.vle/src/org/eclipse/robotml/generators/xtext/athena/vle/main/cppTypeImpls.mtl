@@ -5,7 +5,7 @@
 
 [template public cppTypeImpls(project : Project)]
 	
-[file ('src/TypeDefs.cc', false, 'UTF-8')] 
+[file ('generated/src/TypeDefs.cc', false, 'UTF-8')] 
 // 
 // Includes ----------------------------------------------------------------------
 // 
@@ -74,17 +74,17 @@ void init_[type.name/]([type.name/]& data) {
 	return new boost::multi_array<[getArrayDatatypeName(array)/], [getArrayNumberOfDimension(array)/]>(boost::extents [getDynamicAllocationFunctionArgumentsCall(array)/]);
 }
 	[/if]
-void init_[array.name/]([array.name/]& data) {}
+void init_[array.name/]([array.name/]& /*data*/) {}
 [/template]
 
 
 [template public processVectorType(vector : vectorType)]
-void init_[vector.name/]([vector.name/]& data) {}
+void init_[vector.name/]([vector.name/]& /*data*/) {}
 [/template]
 
 
 [template public processMapType(map : mapType)]
-void init_[map.name/]([map.name/]& data) {}
+void init_[map.name/]([map.name/]& /*data*/) {}
 [/template]
 
 
@@ -160,7 +160,7 @@ const [type.name/]* [union.name/]::get_[type.name/]() {
 	[/for]
 	return *this;
 }
-void init_[union.name/]([union.name/]& data) { }
+void init_[union.name/]([union.name/]& /*data*/) { }
 [/template]
 
  

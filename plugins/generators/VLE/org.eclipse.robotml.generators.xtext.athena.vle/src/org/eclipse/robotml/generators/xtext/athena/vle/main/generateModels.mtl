@@ -1,62 +1,19 @@
 [comment encoding = UTF-8 /]
-[module models('http://www.xtext.org/AthenaDSL')]
+[module generateModels('http://www.xtext.org/AthenaDSL')]
 
 [import org::eclipse::robotml::generators::xtext::athena::vle::main::DSLQueries /]
 
-[template public models(project : Project)]
-[src_cmake(project)/]
+[template public generateModels(project : Project)]
 [for (proto : prototypeDeclaration | project.prototypes)]
-[let fname : String = 'src/'.concat(getPrototypeFileName(proto,'.cpp'))]
+[let fname : String = 'generated/src/'.concat(getPrototypeFileName(proto,'.cpp'))]
 [file (fname, false, 'UTF-8')]
-[modelImplementation(project, proto)/]
+[generateModelImplementation(project, proto)/]
 [/file]
 [/let]
 [/for]
 [/template]
 
-[template public src_cmake(project : Project)]
-[let fname : String = 'src/CMakeLists.txt']
-[file (fname, false, 'UTF-8')]
-
-cmake_minimum_required(VERSION 2.8)
-
-set(VLE_INCLUDE_DIRS /usr/include/vle-1.1/)
-set(Boost_INCLUDE_DIRS /usr/include/boost)
-
-include_directories(/usr/include/glib-2.0/)
-include_directories(/usr/lib/i386-linux-gnu/glib-2.0/include)
-include_directories(/usr/include/libxml2)
-
-INCLUDE_DIRECTORIES(
-  ${CMAKE_SOURCE_DIR}
-  ${VLE_INCLUDE_DIRS}
-  ${Boost_INCLUDE_DIRS})
-
-LINK_DIRECTORIES(
-  ${VLE_LIBRARY_DIRS}
-  ${Boost_LIBRARY_DIRS})
-
-[for (proto : prototypeDeclaration | project.prototypes)]
-ADD_LIBRARY([proto.name/] SHARED [getPrototypeFileName(proto,'.cpp')/] TypeDefs.cc TypeDefs_Values.cc )
-TARGET_LINK_LIBRARIES([proto.name/] ${VLE_LIBRARIES} ${Boost_LIBRARIES} )
-
-[/for]
-
-[for (proto : prototypeDeclaration | project.prototypes)]
-[/for]
-
-INSTALL(TARGETS
-[for (proto : prototypeDeclaration | project.prototypes)]
-  [proto.name/]
-[/for]
-  RUNTIME DESTINATION "plugins/simulator"
-  LIBRARY DESTINATION "plugins/simulator"
-  ARCHIVE DESTINATION "plugins/simulator")
-[/file]
-[/let]
-[/template]
-
-[template public modelImplementation(project: Project, proto : prototypeDeclaration)]
+[template public generateModelImplementation(project: Project, proto : prototypeDeclaration)]
 #include <vle/value.hpp>
 #include <vle/devs.hpp>
 #include <TypeDefs.h>

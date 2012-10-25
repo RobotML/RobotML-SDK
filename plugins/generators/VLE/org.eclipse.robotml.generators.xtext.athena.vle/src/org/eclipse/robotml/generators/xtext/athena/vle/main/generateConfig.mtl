@@ -1,15 +1,10 @@
 [comment encoding = UTF-8 /]
-[module vpz('http://www.xtext.org/AthenaDSL')]
+[module generateConfig('http://www.xtext.org/AthenaDSL')]
 
 [import org::eclipse::robotml::generators::xtext::athena::vle::main::DSLQueries /]
 
-[template public vpz(project : Project)]
-[vpzconfig(project)/]
-[vpzcmake(project)/]
-[/template]
-
-[template public vpzconfig(project : Project)]
-[file ('exp/config.vpz', false, 'UTF-8')]
+[template public generateConfig(project : Project)]
+[file ('generated/exp/config.vpz', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8" ?>
 <vle_project version="0.5" date="mar, 18 nov 2008" author="Eric Ramat">
  <structures>
@@ -30,8 +25,3 @@
 [/file]
 [/template]
 
-[template public vpzcmake(project : Project)]
-[file ('exp/CMakeLists.txt', false, 'UTF-8')]
-INSTALL(FILES config.vpz DESTINATION exp)
-[/file]
-[/template]

@@ -1,10 +1,10 @@
 *.class
 
 # Package Files #
-*.jar
 *.war
 *.ear
 *.emtl
 plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo/bin/*
+plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo.athena/bin/*
 plugins/generators/RTMaps/org.eclipse.robotml.generators.acceleo.rtmaps/bin/*
 plugins/generators/RTMaps/org.eclipse.robotml.generators.acceleo.rtmaps.ui/bin/*

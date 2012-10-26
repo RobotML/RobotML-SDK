@@ -1,0 +1,96 @@
+[comment encoding = UTF-8 /]
+[module generate_aroccam_application_cpp('http://www.eclipse.org/uml2/3.0.0/UML')]
+
+[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::FSMQueries /]
+
+
+[template public generateAroccamApplicationCpp(model : Model)]
+
+[file ('src/' + model.name + 'Application/' + model.name + 'Application.cpp', false, 'UTF-8')]
+#include "[model.name/]Application.hpp"
+
+//stl
+#include <iostream>
+
+#include <effibox/interfaces/camera/all.hpp>
+#include <effibox/interfaces/rangefinder/all.hpp>
+#include <effibox/interfaces/gps/all.hpp>
+#include <effibox/interfaces/vehicle/all.hpp>
+#include <effibox/interfaces/imu/all.hpp>
+#include <effibox/interfaces/timer/all.hpp>
+#include <effibox/interfaces/thread/all.hpp>
+
+#include <effibox/interface/frameerror.hpp>
+
+#include <effiqtviewer/all.hpp>
+
+using namespace effibox;
+using namespace qtviewer;
+
+void [model.name/]Application::initialization(const std::string &)
+{
+[let main_comp : Class = getRootClassForModel(model)]
+	[for (conn : Connector | getInternalConnectors(main_comp))]
+	//[conn.getSourceComponentInstanceNameForConnector()/].[conn.getSourcePortName()/].addFunctionToExecute([getDestComponentInstanceNameForConnector(conn)/]);
+	[/for]
+[/let]
+}
+void [model.name/]Application::finalization()
+{
+}
+
+//cameras event callbacks
+[for (elt: NamedElement | getElementsWithStereotype(model,'CameraSystem'))]
+void [model.name/]Application::frame[elt.name/](const effibox::FramePtr & f)
+{
+  camera::FrameCameraImagePtr frame = frame_cast<camera::FrameCameraImage>(f);
+  qtviewer::ShowFrame("[elt.name/]", frame);
+}
+[/for]
+
+//rangefinder event callbacks
+[for (elt: NamedElement | getElementsWithStereotype(model,'LidarSystem'))]
+void [model.name/]Application::frame[elt.name/](const effibox::FramePtr & f)
+{
+  rangefinder::FrameRangefinderDistancePtr frame = frame_cast<rangefinder::FrameRangefinderDistance>(f);
+  qtviewer::ShowFrame("[elt.name/]", frame);
+}
+[/for]
+
+//gps events callbacks
+[for (elt: NamedElement | getElementsWithStereotype(model,'GPSSystem'))]
+void [model.name/]Application::frame[elt.name/]_GGA(const effibox::FramePtr & f)
+{
+  gps::FrameGpsGGAPtr frame = frame_cast<gps::FrameGpsGGA>(f);
+  qtviewer::ShowFrame("[elt.name/]", frame);
+}
+[/for]
+
+//other sensors events callback
+[for (elt: NamedElement | getElementsWithStereotype(model,'SensorSystem'))]
+	[if(elt.name.toLower().contains('odometry'))]
+void [model.name/]Application::frame[elt.name/]_genericodometry(const effibox::FramePtr & f)
+{
+  vehicle::FrameOdometryPtr frame = frame_cast<vehicle::FrameOdometry>(f);
+  qtviewer::ShowFrame("[elt.name/]", frame);
+}
+	[elseif(elt.name.toLower().contains('imu'))]
+void [model.name/]Application::frame[elt.name/]_GLOBAL(const effibox::FramePtr & f)
+{
+  imu::FrameIMUPtr frame = frame_cast<imu::FrameIMU>(f);
+  qtviewer::ShowFrame("[elt.name/]", frame);
+}
+	[/if]
+[/for]
+
+void [model.name/]Application::frameError(const FramePtr & f)
+{
+  effibox::FrameErrorPtr frame = frame_cast<FrameError>(f);
+  std::cerr << "Frame error " << frame->getErrorMessage() << " occured at " << frame->getDate() << "!" << std::endl;
+}
+[/file]
+
+[/template]

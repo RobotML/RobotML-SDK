@@ -14,12 +14,16 @@
 			<name>org.eclipse.acceleo.ide.ui.acceleoBuilder</name>
 			<arguments>
 				<dictionary>
+					<key>compilation.kind</key>
+					<value>compilation.absolute.path</value>
+				</dictionary>
+				<dictionary>
 					<key>compliance</key>
 					<value>pragmatic</value>
 				</dictionary>
 				<dictionary>
 					<key>resource.kind</key>
-					<value>binary</value>
+					<value>xmi</value>
 				</dictionary>
 			</arguments>
 		</buildCommand>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate_cycabtk" name="org.eclipse.robotml.generators.acceleo.cycabtk">
-    <property name="ECLIPSE_HOME" value="../../../../../../apps/eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../.."/>
+    <property name="ECLIPSE_HOME" value="../../../../../../../apps/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.eclipse.robotml.generators.acceleo.cycabtk.libraryclasspath">

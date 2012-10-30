@@ -242,32 +242,32 @@
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_y9-r4ipMEeG6s9S7mBw2fQ" name="Float32" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_y9-r4ypMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_zCAQQipMEeG6s9S7mBw2fQ" name="Point32" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_zCAQQypMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
+            <references xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_zSsXoipMEeG6s9S7mBw2fQ" name="String" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_zSsXoypMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
+            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_z1tlIipMEeG6s9S7mBw2fQ" name="UInt32" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_z1tlIypMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
+            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_z2mV8ipMEeG6s9S7mBw2fQ" name="LaserScan" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_z2mV8ypMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
+            <references xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_z4iPoipMEeG6s9S7mBw2fQ" name="Bool" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_z4iPoypMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
+            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
           </eAnnotations>
         </eClassifiers>
       </contents>
@@ -836,32 +836,32 @@
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_AjQasiWrEeG_-sWkIeldHw" name="Float32" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_AjQasyWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_AnbJAiWrEeG_-sWkIeldHw" name="Point32" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_AnbJAyWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
+            <references xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_A30VciWrEeG_-sWkIeldHw" name="String" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_A30VcyWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
+            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_Bib_wiWrEeG_-sWkIeldHw" name="UInt32" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_Bib_wyWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
+            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_BjehkiWrEeG_-sWkIeldHw" name="LaserScan" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_BjehkyWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
+            <references xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_BmTzIiWrEeG_-sWkIeldHw" name="Bool" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_BmTzIyWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
+            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
           </eAnnotations>
         </eClassifiers>
       </contents>
@@ -1114,32 +1114,32 @@
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_GIkIQCWpEeGy06XMF1Yb0w" name="Float32" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_GIkIQSWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_GNVTgiWpEeGy06XMF1Yb0w" name="Point32" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_GNVTgyWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
+            <references xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_GdR0AiWpEeGy06XMF1Yb0w" name="String" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_GdR0AyWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
+            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_HIMZQiWpEeGy06XMF1Yb0w" name="UInt32" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_HIMZQyWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
+            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_HIy2MiWpEeGy06XMF1Yb0w" name="LaserScan" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_HIy2MyWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
+            <references xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
           </eAnnotations>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EDataType" xmi:id="_HMN9oiWpEeGy06XMF1Yb0w" name="Bool" instanceClassName="java.lang.String">
           <eAnnotations xmi:id="_HMN9oyWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
+            <references xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
           </eAnnotations>
         </eClassifiers>
       </contents>
@@ -1289,7 +1289,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packageImport xmi:id="__-CpgAB2EeGXJOJtWKn8jQ">
-      <importedPackage href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_dt_y4AHtEeCQQOKrhO_fIQ"/>
+      <importedPackage href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_dt_y4AHtEeCQQOKrhO_fIQ"/>
     </packageImport>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_EdnYoPcJEd-J06U5HM_o-Q" name="Robot">
       <generalization xmi:id="_qrbLcF7bEeCGhLTjEDkxfg" general="_GopFwPcJEd-J06U5HM_o-Q"/>
@@ -1300,7 +1300,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_hwEK0BtYEeGZBqQLK2tPRA" name="UGV" value="UGV"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_bffbsBEzEeGe5al0SANhXQ" name="mass" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eH3zMBEzEeGe5al0SANhXQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eIKuIBEzEeGe5al0SANhXQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_eInaEBEzEeGe5al0SANhXQ" name="">
@@ -1308,7 +1308,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_ktjtwBEzEeGe5al0SANhXQ" name="width" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_m7Q7cBEzEeGe5al0SANhXQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m7ascBEzEeGe5al0SANhXQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_m8AiUBEzEeGe5al0SANhXQ">
@@ -1438,10 +1438,10 @@ to have access to the operation defined in the AlgorithmLibrary</body>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_KTsPIF7bEeCGhLTjEDkxfg" name="SensorSystem">
       <generalization xmi:id="_oNd7QF7bEeCGhLTjEDkxfg" general="_Y5HAIACcEeGXJOJtWKn8jQ"/>
       <ownedAttribute xmi:id="_qCZ48ENvEeGMZOSJIfa0gg" name="frequency">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_8XDjUE2nEeG3qZod3aTpUA" name="identifier">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <icon xmi:id="_s2gmQA-QEeGRWcrf-KxbKw" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%2%0%0%0%-112%-111%104%54%0%0%0%25%116%69%88%116%83%111%102%116%119%97%114%101%0%65%100%111%98%101%32%73%109%97%103%101%82%101%97%100%121%113%-55%101%60%0%0%1%-43%73%68%65%84%120%-38%98%-23%61%117%-117%-123%-111%-15%-9%-65%-1%127%-1%-1%103%96%96%96%102%100%100%98%100%-4%-49%0%98%67%0%35%3%-29%-65%-1%-1%-127%-126%-97%127%-1%-71%-12%-28%41%35%67%-15%92%6%86%22%6%38%70%-122%-65%-1%-96%74%-2%-3%103%-8%-9%-113%1%27%-80%98%122%-58%2%-94%127%-1%65%-105%-31%100%99%-112%18%102%120%-10%-106%-31%-5%47%100%-31%-89%103%79%-80%96%53%9%-88%-6%127%-90%39%-112%-34%126%-17%-123%-41%-58%-109%12%79%-33%66%-124%-65%124%-7%-52%-124%69%-75%-78%36%-61%-5%47%-70%-85%14%-41%30%-66%102%33%41%-12%-65%-48%95%-57%76%21%34%-13%-117%-119%-123%9%-39%25%53%-2%22%-1%123%-110%64%102%11%-14%92%14%-77%77%-48%-111%-117%-35%115%-2%-12%-77%119%64%54%-125%-76%48%80%9%19%15%47%19%92%-11%-87%76%-81%102%91%45%40%-9%-39%91%-96%13%-17%-66%-1%-38%-30%107%-34%120%-10%-10%-5%-17%-65%-106%-72%25%0%-123%-1%-78%-79%67%53%-92%-39%-23%-104%74%9%33%108%-5%-2%-21%-54%-87%-37%102%-45%-73%1%-115%-97%104%-93%-35%119%-26%78%-76%-74%60%-48%80%-26%63%127%-95%26%58%108%-96%102%79%60%115%-121%-79%127%35%-56%27%96%109%73%71%-82%42%11%-14%108%120%-2%22%18%18%63%-1%-1%-121%-122%-110%32%48%28%-63%-96%96%-53%-87%119%-27%33%64%46%-48%73%64%75%-82%92%126%-56%-8%-10%11%48%12%24%-89%111%7%-70%-109%-99%-111%17%35%88%-71%-40%63%-4%-4%13%-47%-65%45%-53%11%34%6%10%-39%-69%-49%-127%-116%-113%-65%127%67%53%0%-67%5%81%-28%-83%41%-93%52%127%15%3%7%-37%4%83%85%79%37%9%88%-124%-67%-123%25%-57%3%-43%80%113%-28%26%-48%27%66%11%-10%2%-43%1%67%6%-39%74%96%108%32%56%108%-84%80%79%-49%-38%121%-18%-50%-5%47%105%42%-110%-7%38%42%-56%-86%-127%-95%-44%-78%-21%28%-100%43%-64%-56%-128%-120%56%-77%-66%13%16%-73%-63%29%-103%-66%-5%2%48%100%-111%-109%19%-45%-17%95%-32%-44%74%52%96%-67%-79%27%32%-64%0%-1%8%-67%-38%96%-78%14%-115%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus" location="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/07_sensor_driver.png">
         <eAnnotations xmi:id="_s2gmQQ-QEeGRWcrf-KxbKw" source="image_papyrus">
@@ -1463,16 +1463,16 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_O6UI8EN9EeGMZOSJIfa0gg" name="period">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_UJ5MMEN9EeGMZOSJIfa0gg" name="priority">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_6NJfkAKnEeCQReIOIWJ0nA"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_6NJfkAKnEeCQReIOIWJ0nA"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_ggQE4EN9EeGMZOSJIfa0gg" name="deadline">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_VINHMEOAEeGMZOSJIfa0gg" name="wcet">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <icon xmi:id="_zG1ScA1EEeKPVNsMgVLxnw" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%2%0%0%0%-112%-111%104%54%0%0%0%25%116%69%88%116%83%111%102%116%119%97%114%101%0%65%100%111%98%101%32%73%109%97%103%101%82%101%97%100%121%113%-55%101%60%0%0%1%-115%73%68%65%84%120%-38%98%-20%61%117%-117%-123%-111%-15%-9%-65%-1%127%-1%-1%103%96%96%96%102%100%100%98%100%-4%-49%0%98%67%0%35%3%-29%-65%-1%-1%-127%-126%-97%127%-1%-71%-12%-28%41%35%67%-15%92%6%86%22%6%38%70%-122%-65%-1%-96%74%-2%-3%103%-8%-9%-113%1%27%-80%98%122%-58%2%-94%127%-1%97%32%14%60%61%123%-126%5%93%76%89%114%-126%-87%-86%-102%16%15%-112%121%-21%-35%-105%-126%-45%-73%25%-18%62%-121%75%126%-7%-14%25%73%3%39%-37%4%127%-117%124%19%21%-72%-128%-89%18%67%-100%-74%-36%-94%-85%-113%10%54%-98%96%-8%-2%11%40%-14%-117%-119%-123%9%46%-115%-90%26%2%-124%-6%55%-18%126%-2%22%40%5%-31%50%-15%-16%-78%-64%93%-126%-84%-6%-12%-77%119%64%-14%-40%-77%119%58%42%18%-117%93%12%5%57%-39%32%110%-5%-53%-58%14%-43%0%116%55%92%-75%-18%-86%-61%87%-18%-68%-128%56%-14%127%-95%63%92%65%-63%-35%-25%-52%127%-2%66%-99%4%-15%37%-60%108%-96%-22%59%-103%-98%-17%-128%74%-65%-1%-38%126%-17%5%-78%-126%-97%-64%8%-63%21%-126%-17%126%-4%-62%20%100%103%100%-124%58%9%24%-126%-64%48%1%2%83%41%33%-96%75%84%-90%111%7%-78%-127%30%-16%84%-110%-128%43%0%-110%31%127%-1%-122%106%0%-6%9%-24%-23%-9%-33%127%9%-83%60%50%-63%86%-37%74%74%-24%-51%-113%95%112%-43%16%5%32%-118%-117%7%22%74%119%-97%47%-67%-6%112%57%-48%-59%-33%127%98%6%-18%-60%51%119%-96%-47%-57%-58%-118%-16%67%-52%-118%-61%-111%74%18%-17%18%-100%49%85%-125%34%14%12%4%24%25%-112%98%-6%-5%-81%-104%-7%123%-15%39%13%-90%-33%-65%48%-46%-46%-35%-25%5%72%42%-48%-64%-25%127%-1%1%2%12%0%-20%-46%-85%72%-102%-48%-57%-34%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus" location="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/18_software.png">
         <eAnnotations xmi:id="_zy8KgA1EEeKPVNsMgVLxnw" source="image_papyrus">
@@ -1542,7 +1542,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_O99Z4BtcEeGZBqQLK2tPRA" name="maxEngineForce" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PP10EBtcEeGZBqQLK2tPRA" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PQIvABtcEeGZBqQLK2tPRA" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_PQ4V4BtcEeGZBqQLK2tPRA">
@@ -1550,7 +1550,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_TUA0IBtcEeGZBqQLK2tPRA" name="maxBreakingForce" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zYy_QBtcEeGZBqQLK2tPRA" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zZGhQBtcEeGZBqQLK2tPRA" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_zZ2IIBtcEeGZBqQLK2tPRA">
@@ -1558,7 +1558,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Q3IskBtdEeGZBqQLK2tPRA" name="maxAllowedSteering" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SFOQUBtdEeGZBqQLK2tPRA" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SFhLQBtdEeGZBqQLK2tPRA" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_SGQyIBtdEeGZBqQLK2tPRA">
@@ -1566,7 +1566,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_UAAiABtdEeGZBqQLK2tPRA" name="maxAllowedVelocity" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VR9SEBtdEeGZBqQLK2tPRA" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VSQ0EBtdEeGZBqQLK2tPRA" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_VStgABtdEeGZBqQLK2tPRA">
@@ -1574,7 +1574,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_e-BeIENyEeGMZOSJIfa0gg" name="gear_ration">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <icon xmi:id="_oiiPoA-QEeGRWcrf-KxbKw" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%2%0%0%0%-112%-111%104%54%0%0%0%25%116%69%88%116%83%111%102%116%119%97%114%101%0%65%100%111%98%101%32%73%109%97%103%101%82%101%97%100%121%113%-55%101%60%0%0%0%-32%73%68%65%84%120%-38%-108%-111%49%14%1%65%20%-122%-1%55%-42%10%-111%-48%-86%-35%-62%17%92%-126%-72%-126%75%-120%-48%82%57%-128%86%97%15%-96%17%-119%-126%82%66%101%-47%40%100%21%-20%-20%-52%51%-101%-107%37%98%-117%-7%-117%127%-34%-68%-4%95%-34%75%30%13%87%59%-121%72%106%86%-52%0%114%68%-126%-120%17%-41%-119%8%-92%-103%77%51%-112%-47%-10%-24%59%-35%-23%2%121%7%-126%-96%-12%59%-94%25%90%-29%-97%26%-30%36%-30%87%70%120%74%68%-118%123%-83%-40%-5%109%-45%-29%65%39%-11%84%-2%122%41%96%-93%-5%61%-8%2%-22%-75%76%47%-70%73%36%20%14%-95%59%73%62%63%-45%-65%69%99%15%-5%-77%41%42%-101%-103%-35%74%-54%45%-40%1%-71%72%-39%1%79%115%16%43%-96%96%-50%106%5%-36%-92%-76%3%80%42%127%0%-17%112%-55%-12%71%-8%14%-71%-7%15%-48%28%-51%51%-35%-65%38%-103%42%-63%110%37%33%67%-15%123%-47%127%-98%42%-48%-4%18%96%0%65%-98%101%-9%-38%0%-69%-117%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus" location="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/14_engine_system.png">
         <eAnnotations xmi:id="_oiiPoQ-QEeGRWcrf-KxbKw" source="image_papyrus">
@@ -1585,7 +1585,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_z1PlYP-qEeCPK4YnMRh6Aw" name="WheelSystem">
       <generalization xmi:id="_72xcsBtSEeGZBqQLK2tPRA" general="_HlVygF7bEeCGhLTjEDkxfg"/>
       <ownedAttribute xmi:id="_qbtckACOEeGXJOJtWKn8jQ" name="wheelRadius" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uPWGQACOEeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uPf3QACOEeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_uPyyMACOEeGXJOJtWKn8jQ">
@@ -1593,7 +1593,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_4d7IMACQEeGXJOJtWKn8jQ" name="wheelWidth" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-B6VMACQEeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-CEGMACQEeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_-CgyIACQEeGXJOJtWKn8jQ">
@@ -1601,7 +1601,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_-gw0YACQEeGXJOJtWKn8jQ" name="suspensionRestLength" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CrMNcACREeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CrV-cACREeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_CryqYACREeGXJOJtWKn8jQ">
@@ -1609,7 +1609,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_D-C8cACREeGXJOJtWKn8jQ" name="wheelConnectionHeight" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_G_AzEACREeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_G_KkEACREeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_G_nQAACREeGXJOJtWKn8jQ">
@@ -1617,7 +1617,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_HabjwACREeGXJOJtWKn8jQ" name="typeOfWheel" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_K7vuYACREeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_K744UACREeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_K8VkQACREeGXJOJtWKn8jQ">
@@ -1625,7 +1625,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_MjAnIACREeGXJOJtWKn8jQ" name="wheelVelocityPIDkp" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QBoqIACREeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QCYRAACREeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_QC088ACREeGXJOJtWKn8jQ">
@@ -1633,7 +1633,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_QnCdQACREeGXJOJtWKn8jQ" name="wheelVelocityPIDki" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Sj5ykACREeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SkDjkACREeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_SkgPgACREeGXJOJtWKn8jQ">
@@ -1641,7 +1641,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_TL_tUACREeGXJOJtWKn8jQ" name="wheelVelocityPIDkd" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Vnjw0ACREeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Vnth0ACREeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_VoAcwACREeGXJOJtWKn8jQ">
@@ -1649,7 +1649,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_jWb7oACREeGXJOJtWKn8jQ" name="wheelSteeringPIDkp" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nJn5YACREeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nJxqYACREeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_nKOWUACREeGXJOJtWKn8jQ">
@@ -1657,7 +1657,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_oqoZIACREeGXJOJtWKn8jQ" name="wheelSteeringPIDkd" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_swTOAACREeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_swcX8ACREeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_swv58ACREeGXJOJtWKn8jQ">
@@ -1665,7 +1665,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_fsUoEACWEeGXJOJtWKn8jQ" name="wheelFriction" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_h7YgoACWEeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_h7hqkACWEeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_h70lgACWEeGXJOJtWKn8jQ">
@@ -1673,7 +1673,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_jT5LsACWEeGXJOJtWKn8jQ" name="suspensionStiffness" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mJPoMACWEeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mJYyIACWEeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_mJsUIACWEeGXJOJtWKn8jQ">
@@ -1681,7 +1681,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_m9GHAACWEeGXJOJtWKn8jQ" name="suspensionDamping" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pS2dcACWEeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pS2dcQCWEeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_pTTJYACWEeGXJOJtWKn8jQ">
@@ -1689,7 +1689,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_rVr34ACWEeGXJOJtWKn8jQ" name="suspensionCompression" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_t1uywACWEeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_t138sACWEeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_t2eZoACWEeGXJOJtWKn8jQ">
@@ -1697,10 +1697,10 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_POZ_wBtTEeGZBqQLK2tPRA" name="wheelVelocityPIDmaxSum">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Vyn6sBtTEeGZBqQLK2tPRA" name="wheelVelocityPIDmaxVal" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WfLesBtTEeGZBqQLK2tPRA" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WfeZoBtTEeGZBqQLK2tPRA" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_WgE2kBtTEeGZBqQLK2tPRA">
@@ -1724,13 +1724,13 @@ to have access to the operation defined in the AlgorithmLibrary</body>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_fea8gAB2EeGXJOJtWKn8jQ" name="CameraSystem">
       <generalization xmi:id="_gw0_kAB2EeGXJOJtWKn8jQ" general="_ZeQw4AB2EeGXJOJtWKn8jQ"/>
       <ownedAttribute xmi:id="_sDpswAB4EeGXJOJtWKn8jQ" name="width" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vOwW0AB4EeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vOwW0QB4EeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VTJokAt9EeGG0dvmRn5y7Q" name=""/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_xOA40AB4EeGXJOJtWKn8jQ" name="height" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2x2U0AB4EeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2yJ20AB4EeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_2ymiwAB4EeGXJOJtWKn8jQ">
@@ -1738,7 +1738,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_4CxKIAB4EeGXJOJtWKn8jQ" name="alpha_u" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7Nk5QAB4EeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7NuDMAB4EeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_7OKvIAB4EeGXJOJtWKn8jQ">
@@ -1746,7 +1746,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_9ZMcQAB4EeGXJOJtWKn8jQ" name="alpha_v" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_992ogAB4EeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9-JjcAB4EeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_9-dFcAB4EeGXJOJtWKn8jQ">
@@ -1754,10 +1754,10 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_CGWu8AB5EeGXJOJtWKn8jQ" name="u0">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_FGISwAB5EeGXJOJtWKn8jQ" name="v0" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_InvYUAB5EeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_In4iQAB5EeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_IoVOMAB5EeGXJOJtWKn8jQ">
@@ -1765,7 +1765,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Jx8hoAB5EeGXJOJtWKn8jQ" name="frequency" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Kv7z4AB5EeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Kv7z4QB5EeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_KwOu0AB5EeGXJOJtWKn8jQ">
@@ -1773,7 +1773,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_MWdFwAB5EeGXJOJtWKn8jQ" name="color_format" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NEWGgAB5EeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NEf3gAB5EeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_NE8jcAB5EeGXJOJtWKn8jQ">
@@ -1806,7 +1806,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
       <generalization xmi:id="_J4wpYAB7EeGXJOJtWKn8jQ" general="_g7blsAB5EeGXJOJtWKn8jQ"/>
       <generalization xmi:id="_Kh5F8AB7EeGXJOJtWKn8jQ" general="_KJ_YwAB6EeGXJOJtWKn8jQ"/>
       <ownedAttribute xmi:id="_OdQ9EACAEeGXJOJtWKn8jQ" name="nbLayers" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RvXnAACAEeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RvhYAACAEeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_Rv-D8ACAEeGXJOJtWKn8jQ">
@@ -1814,7 +1814,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_DkPvoACBEeGXJOJtWKn8jQ" name="layerAngleMin" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HfePEACBEeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HfoAEACBEeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_Hf67AACBEeGXJOJtWKn8jQ">
@@ -1822,7 +1822,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_IAaY8ACBEeGXJOJtWKn8jQ" name="layerAngleStep" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LtV9sACBEeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LtfHoACBEeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_Lt7zkACBEeGXJOJtWKn8jQ">
@@ -1830,7 +1830,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_MnTrkACBEeGXJOJtWKn8jQ" name="noise" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PGwJgACBEeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PG5TcACBEeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_PHV_YACBEeGXJOJtWKn8jQ">
@@ -1838,7 +1838,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_QxSYsACBEeGXJOJtWKn8jQ" name="sigmaNoise" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SyyWYACBEeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SzFRUACBEeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_Szh9QACBEeGXJOJtWKn8jQ">
@@ -1846,22 +1846,22 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_suBGcEN2EeGMZOSJIfa0gg" name="angle_min">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_WxCcUEN3EeGMZOSJIfa0gg" name="angle_max">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_rw-AoEN8EeGMZOSJIfa0gg" name="time_increment ">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_vUOE8EN8EeGMZOSJIfa0gg" name="scan_time  ">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_y-diEEN8EeGMZOSJIfa0gg" name="range_min">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_1D-dEEN8EeGMZOSJIfa0gg" name="range_max">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
       <icon xmi:id="_11su0A-QEeGRWcrf-KxbKw" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%2%0%0%0%-112%-111%104%54%0%0%0%25%116%69%88%116%83%111%102%116%119%97%114%101%0%65%100%111%98%101%32%73%109%97%103%101%82%101%97%100%121%113%-55%101%60%0%0%1%-122%73%68%65%84%120%-38%98%-20%61%117%-117%-123%-111%-15%-9%-65%-1%127%-1%-1%103%96%96%96%102%100%100%98%100%-4%-49%0%98%67%0%35%3%-29%-65%-1%-1%-127%-126%-97%127%-1%-71%-12%-28%41%75%-15%-54%-61%12%-84%44%12%76%-116%12%127%-1%65%-107%-4%-5%-49%-16%-17%31%3%54%96%-59%-12%-116%5%68%-1%-2%-125%46%35%-60%11%34%-33%125%70%19%126%122%-10%4%19%86%-109%-46%76%85%-127%8%83%-4%-53%-105%-49%-40%53%-96%0%78%54%56%-13%23%19%11%-118%-122%26%127%11%6%105%97%16%98%96%-80%-109%18%4%57%76%90%120%91%-94%11%92%1%19%15%47%11%-78%-122%-106%93%-25%-128%-46%-17%-66%-1%124%-13%-3%119%-76%-74%124%-52%-95%107%-37%-36%13%-67%-26%-17%-127%43%-8%-53%-58%-114%-22%36%78%118%-81%-115%39%-123%56%-39%-13%77%84%-18%-66%-1%-14%46%-63%25%34%8%-105%103%-2%-13%-105%37%-51%-35%8%-50%-41%18%-28%-127%40%5%-78%-107%5%121%-34%127%-1%117%-20%-23%59%-72%-17%103%-19%60%-9%19%24%33%-56%22%92%123%-1%101%-14%-39%-69%64%-91%112%-111%102%91%45%45%36%46%59%35%35%11%80%31%66%-121%-76%-16%114%119%-61%-35%-9%95%-102%72%8%10%114%-78%-35%121%-1%-59%108%-63%73%-122%103%111%25%-66%-1%-126%-56%127%-4%-3%27%-43%15%-17%62%-13%115%-80%-71%109%56%1%84%61%-15%-52%29%-96%0%-48%-45%40%10%-72%120%80%66%9%24%68%64%79%3%-51%3%-86%6%58%-81%96%-41%121%80%36%0%3%-9%-23%91%-88%10%54%86%20%13%94%43%14%67%-110%-61%53%-80%-65%49%-109%-122%0%35%3%-70%-109%-16%71%58%-45%-17%95%44%88%37%102%-99%-66%-115%85%-4%-13%-65%-1%0%1%6%0%67%17%-110%-49%-1%-75%-11%47%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus" location="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/09_lidar_system.png">
         <eAnnotations xmi:id="_11su0Q-QEeGRWcrf-KxbKw" source="image_papyrus">
@@ -1880,7 +1880,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_58HD0ACYEeGXJOJtWKn8jQ" name="GPSSystem">
       <generalization xmi:id="_wfr6wACaEeGXJOJtWKn8jQ" general="_2AIWcACYEeGXJOJtWKn8jQ"/>
       <ownedAttribute xmi:id="_OjnTUACZEeGXJOJtWKn8jQ" name="originPosition" visibility="public">
-        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RZHg0ACZEeGXJOJtWKn8jQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RZQqwACZEeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_RZtWsACZEeGXJOJtWKn8jQ">
@@ -1896,7 +1896,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_Y5HAIACcEeGXJOJtWKn8jQ" name="RoboticSystem">
       <generalization xmi:id="_C_GxgACdEeGXJOJtWKn8jQ" general="_GopFwPcJEd-J06U5HM_o-Q"/>
       <ownedAttribute xmi:id="_A9jwUBtTEeGZBqQLK2tPRA" name="localPosition" visibility="public">
-        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B9VLQBtTEeGZBqQLK2tPRA" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B9e8QBtTEeGZBqQLK2tPRA" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_B-YUIBtTEeGZBqQLK2tPRA">
@@ -1904,7 +1904,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_DJe1UBtTEeGZBqQLK2tPRA" name="localOrientation" visibility="public">
-        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EcLzUBtTEeGZBqQLK2tPRA" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EceuQBtTEeGZBqQLK2tPRA" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_Ec7aMBtTEeGZBqQLK2tPRA">
@@ -2154,12 +2154,12 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GK3xUE2pEeG3qZod3aTpUA" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_3ckOYEaYEeG1RvxKgcDZmw" name="timeStep">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_G_UtEE2pEeG3qZod3aTpUA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_G_xZAE2pEeG3qZod3aTpUA" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_7Eun4EaYEeG1RvxKgcDZmw" name="timeFactor">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HrlWIE2pEeG3qZod3aTpUA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HsCCEE2pEeG3qZod3aTpUA" value="1"/>
       </ownedAttribute>
@@ -2182,7 +2182,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DkIYkE2pEeG3qZod3aTpUA" value="1"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_vZK_UE2hEeG3qZod3aTpUA" name="gravity">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EUQ1AE2pEeG3qZod3aTpUA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EUtg8E2pEeG3qZod3aTpUA" value="1"/>
       </ownedAttribute>

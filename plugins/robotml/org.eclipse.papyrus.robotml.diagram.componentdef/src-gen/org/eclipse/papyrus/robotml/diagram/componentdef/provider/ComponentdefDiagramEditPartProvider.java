@@ -32,6 +32,10 @@ public class ComponentdefDiagramEditPartProvider extends AbstractEditPartProvide
 			if(ComponentdefDiagramEditPart.DIAGRAM_ID.equals(view.getType())) {
 				return true;
 			}
+			
+//			nodeMap.put(AppliedStereotypeConpartmentEditPart.ID, AppliedStereotypeConpartmentEditPart.class);
+//		    nodeMap.put(AppliedStereotypePropertyEditPart.ID, AppliedStereotypeMultilinePropertyEditPart.class);
+
 		}
 
 		return false;

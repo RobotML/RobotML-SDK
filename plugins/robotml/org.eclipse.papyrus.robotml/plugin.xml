@@ -18,7 +18,7 @@
             description="UML profile for robotic systems"
             iconpath="icons/32x32/robotml_32_32.png"
             name="RobotML"
-            path="pathmap://Robotml_PROFILES/ProteusProfile.profile.uml"
+            path="pathmap://Robotml_PROFILES/RobotMLProfile.profile.uml"
             provider="CEA List">
       </profile>
    </extension>
@@ -28,7 +28,7 @@
             description="RobotML DataTypes Libarary (v0.1)"
             iconpath="icons/32x32/robotml_32_32.png"
             name="RobotML_Libraries"
-            path="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml"
+            path="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml"
             provider="CEA LIST">
       </library>
    </extension>
@@ -74,7 +74,7 @@
    <extension
          point="org.eclipse.uml2.uml.generated_package">
       <profile
-            location="pathmap://Robotml_PROFILES/ProteusProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"
+            location="pathmap://Robotml_PROFILES/RobotMLProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"
             uri="http://Papyrus/RobotML/1">
       </profile>
    </extension>

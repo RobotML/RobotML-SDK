@@ -38,5 +38,14 @@
             name="A basic model with RobotML dataTypes library"
             notation_file="resource/BasicRobotMLModel.notation">
       </template>
+      <template
+            di_file="resource/TALC-Challenge.di"
+            file="resource/TALC-Challenge.uml"
+            id="org.eclipse.papyrus.templaterepository.Model-TALC-Challenge"
+            language="robotML"
+            name="A RobotML Model with TALC challenge basic architecture"
+            notation_file="resource/TALC-Challenge.notation"
+            >
+      </template>
    </extension>
 </plugin>

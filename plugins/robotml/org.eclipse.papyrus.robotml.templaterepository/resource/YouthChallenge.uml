@@ -2,7 +2,7 @@
 <xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Blocks="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks http://www.eclipse.org/papyrus/0.7.0/SysML#//blocks">
   <uml:Model xmi:id="_1YYu3aeoEeCu-MoaA7J4zQ" name="YouthChallengeModel">
     <packageImport xmi:id="_k0WvEBwEEeGcec5y3O28dw">
-      <importedPackage href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_dt_y4AHtEeCQQOKrhO_fIQ"/>
+      <importedPackage href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_dt_y4AHtEeCQQOKrhO_fIQ"/>
     </packageImport>
     <packagedElement xmi:type="uml:Package" xmi:id="_1YYu36eoEeCu-MoaA7J4zQ" name="YouthChallenge DataTypes">
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_UZ0NMKeuEeCu-MoaA7J4zQ" name="Mission_Type">
@@ -126,7 +126,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_hSzGQKe4EeCO3eNPITm2sw" name="Velocity_Linear">
         <ownedAttribute xmi:id="_tmQb8Ke4EeCO3eNPITm2sw" name="value" visibility="public" isUnique="false">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_MeI3UKukEeCWFJzWkfhPHg"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MeI3UKukEeCWFJzWkfhPHg"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zKkZEKe4EeCO3eNPITm2sw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zKkZEae4EeCO3eNPITm2sw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_zKkZEqe4EeCO3eNPITm2sw">
@@ -157,7 +157,7 @@
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:id="_kR8A0KfMEeCO3eNPITm2sw" name="sample_time" visibility="public" isUnique="false">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_gyt4YAH-EeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_gyt4YAH-EeC_ZLzLQhW-TQ"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ljw1EKfMEeCO3eNPITm2sw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ljw1EafMEeCO3eNPITm2sw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_ljw1EqfMEeCO3eNPITm2sw">
@@ -197,7 +197,7 @@
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:id="_ZKdqwLIMEeCwJ8JKZfJS1Q" name="position" visibility="public" isUnique="false">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_lZ5bYKlhEeC0sZu-_Vgeyw"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_lZ5bYKlhEeC0sZu-_Vgeyw"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a5mtILIMEeCwJ8JKZfJS1Q"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a5pJYLIMEeCwJ8JKZfJS1Q" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_a5q-kLIMEeCwJ8JKZfJS1Q">
@@ -205,7 +205,7 @@
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:id="_ydenILIMEeCwJ8JKZfJS1Q" name="position_error" visibility="public" isUnique="false">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_lZ5bYKlhEeC0sZu-_Vgeyw"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_lZ5bYKlhEeC0sZu-_Vgeyw"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4YmhwLIMEeCwJ8JKZfJS1Q"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4Yo-ALIMEeCwJ8JKZfJS1Q" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_4YraQLIMEeCwJ8JKZfJS1Q">
@@ -250,7 +250,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_G_Q-QLIPEeCwJ8JKZfJS1Q" name="Distance">
         <ownedAttribute xmi:id="_IsbqsLIPEeCwJ8JKZfJS1Q" name="value" visibility="public" isUnique="false">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LxVmILIPEeCwJ8JKZfJS1Q" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LxYCYLIPEeCwJ8JKZfJS1Q" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_LxZ3kLIPEeCwJ8JKZfJS1Q">
@@ -260,7 +260,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_plUMQLIPEeCwJ8JKZfJS1Q" name="Metric">
         <ownedAttribute xmi:id="_plUMQbIPEeCwJ8JKZfJS1Q" name="value" visibility="public" isUnique="false">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_plUMQ7IPEeCwJ8JKZfJS1Q" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_plUMQrIPEeCwJ8JKZfJS1Q" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_plUMRLIPEeCwJ8JKZfJS1Q">
@@ -270,7 +270,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_8jd4ULIPEeCwJ8JKZfJS1Q" name="Angular">
         <ownedAttribute xmi:id="_8jd4UbIPEeCwJ8JKZfJS1Q" name="value" visibility="public" isUnique="false">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8jd4U7IPEeCwJ8JKZfJS1Q" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8jd4UrIPEeCwJ8JKZfJS1Q" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_8jd4VLIPEeCwJ8JKZfJS1Q">
@@ -292,7 +292,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_pN2DQLIWEeCwJ8JKZfJS1Q" name="Velocity_Angular">
         <ownedAttribute xmi:id="_pN2DQbIWEeCwJ8JKZfJS1Q" name="value" visibility="public" isUnique="false">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pN2DQ7IWEeCwJ8JKZfJS1Q" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pN2DQrIWEeCwJ8JKZfJS1Q" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_pN2DRLIWEeCwJ8JKZfJS1Q">
@@ -318,7 +318,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_g2KwMLIiEeCMZ_jG2EiYOw" name="Nombre_Pos">
         <ownedAttribute xmi:id="_g2KwMbIiEeCMZ_jG2EiYOw" name="value" visibility="public" isUnique="false">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g2KwM7IiEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_g2KwMrIiEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_g2KwNLIiEeCMZ_jG2EiYOw">
@@ -344,7 +344,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_HIwhYLIjEeCMZ_jG2EiYOw" name="Speed_Tics">
         <ownedAttribute xmi:id="_HIwhYbIjEeCMZ_jG2EiYOw" name="value" visibility="public" isUnique="false">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_MeI3UKukEeCWFJzWkfhPHg"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MeI3UKukEeCWFJzWkfhPHg"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HIwhY7IjEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HIwhYrIjEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_HIwhZLIjEeCMZ_jG2EiYOw">
@@ -354,7 +354,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_su4OILIjEeCMZ_jG2EiYOw" name="Odometer_Tics">
         <ownedAttribute xmi:id="_su4OIbIjEeCMZ_jG2EiYOw" name="value" visibility="public" isUnique="false">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_MeI3UKukEeCWFJzWkfhPHg"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MeI3UKukEeCWFJzWkfhPHg"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_su4OI7IjEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_su4OIrIjEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_su4OJLIjEeCMZ_jG2EiYOw">
@@ -396,7 +396,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_iHProLIkEeCMZ_jG2EiYOw" name="Percent">
         <ownedAttribute xmi:id="_iHProbIkEeCMZ_jG2EiYOw" name="value" visibility="public" isUnique="false">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iHPro7IkEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iHProrIkEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_iHPrpLIkEeCMZ_jG2EiYOw">
@@ -406,7 +406,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_2yl5ULIkEeCMZ_jG2EiYOw" name="Milli_Amp">
         <ownedAttribute xmi:id="_2yl5UbIkEeCMZ_jG2EiYOw" name="value" visibility="public" isUnique="false">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2yl5U7IkEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2yl5UrIkEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_2yl5VLIkEeCMZ_jG2EiYOw">
@@ -533,23 +533,23 @@ et d'un solide d'une couleur </body>
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_BeKx8EdkEeGeJYjOSnIFrg" name="Map">
         <ownedAttribute xmi:id="_IIbqgEdkEeGeJYjOSnIFrg" name="map_meta_data">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_F5N8wAK2EeCsG_V0R865wA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_F5N8wAK2EeCsG_V0R865wA"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_P_cqEEdkEeGeJYjOSnIFrg" name="position">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_v8Ks8GFQEeG-n8ZSwRkhMg" name="Attribute_robot">
         <ownedAttribute xmi:id="_3iPtgGFQEeG-n8ZSwRkhMg" name="voie">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_3DITIGFREeG-n8ZSwRkhMg" name="voie" value="0.226"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_-08fEGFQEeG-n8ZSwRkhMg" name="empatement">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_hTzf8GFREeG-n8ZSwRkhMg" name="empatement" value="0.17"/>
         </ownedAttribute>
         <ownedAttribute xmi:id="_AOWiAGFREeG-n8ZSwRkhMg" name="diam_roue">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_vviJsGFREeG-n8ZSwRkhMg" name="diam_roue" value="0.144"/>
         </ownedAttribute>
       </packagedElement>
@@ -896,7 +896,7 @@ the origine is the entry zone of the robot.</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_eLWK4LIxEeCMZ_jG2EiYOw" name="gps" visibility="public" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ezAn0LIxEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ezDrILIxEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_ezHVgLIxEeCMZ_jG2EiYOw">
@@ -909,7 +909,7 @@ the origine is the entry zone of the robot.</body>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_tx4FAGFjEeGB57pVRRYyrA" name="loc_map" type="_BeKx8EdkEeGeJYjOSnIFrg" aggregation="composite"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_vBAKkGFjEeGB57pVRRYyrA" name="position" type="_P2tjgKewEeCu-MoaA7J4zQ" aggregation="composite"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_w2H5IGFjEeGB57pVRRYyrA" name="gps" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_BQ9T4GFkEeGB57pVRRYyrA" name="glob_map" type="_BeKx8EdkEeGeJYjOSnIFrg" aggregation="composite"/>
         <ownedConnector xmi:id="_8aabsGFjEeGB57pVRRYyrA" name="Connector1">
@@ -978,7 +978,7 @@ It place also all the amer on it map.</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_SVOG4LIwEeCMZ_jG2EiYOw" name="accel_girat" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SlD5sLIwEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SlILILIwEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_SlL1gLIwEeCMZ_jG2EiYOw">
@@ -993,7 +993,7 @@ It place also all the amer on it map.</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_jG1C4LIwEeCMZ_jG2EiYOw" name="gps" visibility="public" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kFu7ILIwEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kFylgLIwEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_kF1BwLIwEeCMZ_jG2EiYOw">
@@ -1036,10 +1036,10 @@ It place also all the amer on it map.</body>
         <ownedAttribute xmi:id="_nexZABwnEeGLkp-G70uDww" name="local_Map" type="_JZgwILIwEeCMZ_jG2EiYOw"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_24oqoGFiEeGB57pVRRYyrA" name="proxi_map" type="_BeKx8EdkEeGeJYjOSnIFrg" aggregation="composite"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_7gauEGFiEeGB57pVRRYyrA" name="gps" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="__tFi0GFiEeGB57pVRRYyrA" name="accel_girat" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_DQxsAGFjEeGB57pVRRYyrA" name="velocity" type="_otC2wLIrEeCMZ_jG2EiYOw" aggregation="composite"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_F0F9UGFjEeGB57pVRRYyrA" name="position" type="_P2tjgKewEeCu-MoaA7J4zQ" aggregation="composite"/>
@@ -1163,7 +1163,7 @@ we call it &quot;Super&quot;-DKM because we not only use odometry speed, but als
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_2celwLIsEeCMZ_jG2EiYOw" name="gps" visibility="public" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3I0HULIsEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3I9RQLIsEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_3I9RQbIsEeCMZ_jG2EiYOw">
@@ -1171,7 +1171,7 @@ we call it &quot;Super&quot;-DKM because we not only use odometry speed, but als
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_G4dQALItEeCMZ_jG2EiYOw" name="accel_girat" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HZoqcLItEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HZoqcbItEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_HZx0YLItEeCMZ_jG2EiYOw">
@@ -1198,7 +1198,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_ZHfhYLIvEeCMZ_jG2EiYOw" name="laser_scan" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Zot_ILIvEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZoyQkLIvEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_Zo1T4LIvEeCMZ_jG2EiYOw">
@@ -1212,7 +1212,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
           <body>This Module is able to find a amer in a image, and, using the CameraInfo of the cam, give a position of it, relatively from the robot. it delivers also the shape of the amer, and it color.</body>
         </ownedComment>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_2JXqQLIxEeCMZ_jG2EiYOw" name="video" visibility="public" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_mJDa8AKuEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_mJDa8AKuEeCQReIOIWJ0nA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2uESwLIxEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2uH9ILIxEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_2uLngLIxEeCMZ_jG2EiYOw">
@@ -1227,7 +1227,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_ACwS0GFNEeG-n8ZSwRkhMg" name="calibrate" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_5d_eEAKoEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_5d_eEAKoEeCQReIOIWJ0nA"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_XEmoMbIlEeCMZ_jG2EiYOw" name="P2_Proximetry">
@@ -1249,7 +1249,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_0QCjYLIsEeCMZ_jG2EiYOw" name="gps" visibility="public" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_01-iALIsEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_02Hr8LIsEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_02Hr8bIsEeCMZ_jG2EiYOw">
@@ -1257,7 +1257,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_D0hk8LItEeCMZ_jG2EiYOw" name="accel_girat" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EUp2gLItEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EUp2gbItEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_EUp2grItEeCMZ_jG2EiYOw">
@@ -1265,7 +1265,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_XSAmcLIvEeCMZ_jG2EiYOw" name="laser_scan" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_X3n08LIvEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_X3q4QLIvEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_X3uioLIvEeCMZ_jG2EiYOw">
@@ -1276,10 +1276,10 @@ Only measures from sensors are directly print on this map : no memory !</body>
         <ownedAttribute xmi:id="_7d7VMGEqEeG-n8ZSwRkhMg" name="proximetric_Map" type="__4DPsLIpEeCMZ_jG2EiYOw"/>
         <ownedAttribute xmi:id="_TVD3gGEtEeG-n8ZSwRkhMg" name="amer_Identif" type="_u7twwLIxEeCMZ_jG2EiYOw"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_mR2UAGFhEeGB57pVRRYyrA" name="video" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_mJDa8AKuEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_mJDa8AKuEeCQReIOIWJ0nA"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_qNrQYGFhEeGB57pVRRYyrA" name="calibrate" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_5d_eEAKoEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_5d_eEAKoEeCQReIOIWJ0nA"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_4ZKesGFhEeGB57pVRRYyrA" name="position" type="_P2tjgKewEeCu-MoaA7J4zQ" aggregation="composite"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_9Uw2AGFhEeGB57pVRRYyrA" name="velocity" type="_otC2wLIrEeCMZ_jG2EiYOw" aggregation="composite"/>
@@ -1478,7 +1478,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_Y81YQLIpEeCMZ_jG2EiYOw" name="GPS_Haicom204">
         <ownedAttribute xmi:type="uml:Port" xmi:id="_ttO9sLIsEeCMZ_jG2EiYOw" name="gps" visibility="public" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ulxvQLIsEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ulxvQbIsEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_ulxvQrIsEeCMZ_jG2EiYOw">
@@ -1488,7 +1488,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_bJ33kLIpEeCMZ_jG2EiYOw" name="IMU_VectorNav100">
         <ownedAttribute xmi:type="uml:Port" xmi:id="_663coLIsEeCMZ_jG2EiYOw" name="accel_girat" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_99m04LIsEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_99wl4LIsEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_99wl4bIsEeCMZ_jG2EiYOw">
@@ -1498,7 +1498,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_feS6ILIpEeCMZ_jG2EiYOw" name="LaserRange_Hokuyo30">
         <ownedAttribute xmi:type="uml:Port" xmi:id="_nO0d4LIuEeCMZ_jG2EiYOw" name="laser_scan" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1xBjELIuEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1xEmYLIuEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_1xHpsLIuEeCMZ_jG2EiYOw">
@@ -1506,12 +1506,12 @@ Only measures from sensors are directly print on this map : no memory !</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_eCtKUGFLEeG-n8ZSwRkhMg" name="status" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_qG6UsAILEeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_qG6UsAILEeC_ZLzLQhW-TQ"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_5lwyQLIpEeCMZ_jG2EiYOw" name="Camera_FireWire">
         <ownedAttribute xmi:type="uml:Port" xmi:id="_2wDFMLIwEeCMZ_jG2EiYOw" name="video" visibility="public" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_mJDa8AKuEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_mJDa8AKuEeCQReIOIWJ0nA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3ocFwLIwEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3ofJELIwEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_3oiMYLIwEeCMZ_jG2EiYOw">
@@ -1519,7 +1519,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_7cF7oGFKEeG-n8ZSwRkhMg" name="calibrate" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_5d_eEAKoEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_5d_eEAKoEeCQReIOIWJ0nA"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_OqfikLIlEeCMZ_jG2EiYOw" name="P1_Sensors">
@@ -1538,7 +1538,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_xqv8ILIsEeCMZ_jG2EiYOw" name="gps" visibility="public" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MwvvoKlGEeCDX-R4upxIpg"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yZdcQLIsEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yZdcQbIsEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_yZnNQLIsEeCMZ_jG2EiYOw">
@@ -1546,7 +1546,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_BZWjALItEeCMZ_jG2EiYOw" name="accel_girat" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B6FRgLItEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B6FRgbItEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_B6FRgrItEeCMZ_jG2EiYOw">
@@ -1554,7 +1554,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_WT2VELIvEeCMZ_jG2EiYOw" name="laser_scan" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_W5mGcLIvEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_W5qX4LIvEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_W5tbMLIvEeCMZ_jG2EiYOw">
@@ -1568,13 +1568,13 @@ Only measures from sensors are directly print on this map : no memory !</body>
         <ownedAttribute xmi:id="_uv__YBwxEeGLkp-G70uDww" name="LaserRange" type="_feS6ILIpEeCMZ_jG2EiYOw"/>
         <ownedAttribute xmi:id="_12zC8BwxEeGLkp-G70uDww" name="camera_FireWire" type="_5lwyQLIpEeCMZ_jG2EiYOw"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_5GGIEGFfEeGB57pVRRYyrA" name="calibrate" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_5d_eEAKoEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_5d_eEAKoEeCQReIOIWJ0nA"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_94nb4GFfEeGB57pVRRYyrA" name="video" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_mJDa8AKuEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_mJDa8AKuEeCQReIOIWJ0nA"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_FP8OwGFgEeGB57pVRRYyrA" name="status" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_qG6UsAILEeC_ZLzLQhW-TQ"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_qG6UsAILEeC_ZLzLQhW-TQ"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_hs27UGFgEeGB57pVRRYyrA" name="batt_level" type="_iHProLIkEeCMZ_jG2EiYOw" aggregation="composite"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_mYEtQGFgEeGB57pVRRYyrA" name="current_level" type="_2yl5ULIkEeCMZ_jG2EiYOw" aggregation="composite"/>
@@ -1755,7 +1755,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_qbeOoLIDEeCwJ8JKZfJS1Q" name="path" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_p3vEcAK0EeCsG_V0R865wA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_p3vEcAK0EeCsG_V0R865wA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r-jK8LIDEeCwJ8JKZfJS1Q" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r-jK8bIDEeCwJ8JKZfJS1Q" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_r-jK8rIDEeCwJ8JKZfJS1Q">
@@ -1773,7 +1773,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_og_7cLICEeCwJ8JKZfJS1Q" name="A4_PathPlanner">
         <ownedAttribute xmi:type="uml:Port" xmi:id="_vqDzYLIDEeCwJ8JKZfJS1Q" name="path" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_p3vEcAK0EeCsG_V0R865wA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_p3vEcAK0EeCsG_V0R865wA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yrwp0LIDEeCwJ8JKZfJS1Q" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yr6a0LIDEeCwJ8JKZfJS1Q" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_yr6a0bIDEeCwJ8JKZfJS1Q">
@@ -1845,7 +1845,7 @@ Only measures from sensors are directly print on this map : no memory !</body>
 It must reach the various waypoints, considering the obstacles placed in the local map (loc_map)</body>
         </ownedComment>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_MLCWALIDEeCwJ8JKZfJS1Q" name="path" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_p3vEcAK0EeCsG_V0R865wA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_p3vEcAK0EeCsG_V0R865wA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QYwToLIDEeCwJ8JKZfJS1Q" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QY6EoLIDEeCwJ8JKZfJS1Q" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_QZD1oLIDEeCwJ8JKZfJS1Q">
@@ -1883,7 +1883,7 @@ It must reach the various waypoints, considering the obstacles placed in the loc
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_kgqSgLICEeCwJ8JKZfJS1Q" name="A3_Navigator">
         <ownedAttribute xmi:type="uml:Port" xmi:id="_zb0NwLIDEeCwJ8JKZfJS1Q" name="path" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_p3vEcAK0EeCsG_V0R865wA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_p3vEcAK0EeCsG_V0R865wA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0duWsLIDEeCwJ8JKZfJS1Q" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0duWsbIDEeCwJ8JKZfJS1Q" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_0duWsrIDEeCwJ8JKZfJS1Q">
@@ -1996,7 +1996,7 @@ But the pilot must react to obstacles 'seen' in the proximetric map (prox_map), 
           </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_u9C4YLIvEeCMZ_jG2EiYOw" name="accel_girat" visibility="public" isUnique="false" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xYLeELIvEeCMZ_jG2EiYOw" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xYOhYLIvEeCMZ_jG2EiYOw" value="1"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_xYSLwLIvEeCMZ_jG2EiYOw">
@@ -2045,7 +2045,7 @@ transform the velocities from the operational space to the articular space (left
         <ownedAttribute xmi:type="uml:Port" xmi:id="_y6tOwGFdEeGB57pVRRYyrA" name="position" type="_P2tjgKewEeCu-MoaA7J4zQ" aggregation="composite"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_7Qd_0GFdEeGB57pVRRYyrA" name="velocity" type="_otC2wLIrEeCMZ_jG2EiYOw" aggregation="composite"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="__tYQAGFdEeGB57pVRRYyrA" name="accel_girat" aggregation="composite">
-          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/ProteusPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_cgWYIAKqEeCQReIOIWJ0nA"/>
         </ownedAttribute>
         <ownedConnector xmi:id="_oUhYMCGsEeGQX8znJ6UhJw" name="Connector0">
           <end xmi:id="_oUqiICGsEeGQX8znJ6UhJw" partWithPort="_athi0BwhEeGLkp-G70uDww" role="_i-jCsLIGEeCwJ8JKZfJS1Q">
@@ -2181,7 +2181,7 @@ transform the velocities from the operational space to the articular space (left
       <eAnnotations xmi:id="_1YYu5aeoEeCu-MoaA7J4zQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
       </eAnnotations>
-      <appliedProfile href="pathmap://Robotml_PROFILES/ProteusProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
+      <appliedProfile href="pathmap://Robotml_PROFILES/RobotMLProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
     </profileApplication>
   </uml:Model>
   <RobotML:Software xmi:id="_9d4GEEXTEeG16PyxfiNe2w" base_Class="_7RFAYLIwEeCMZ_jG2EiYOw"/>

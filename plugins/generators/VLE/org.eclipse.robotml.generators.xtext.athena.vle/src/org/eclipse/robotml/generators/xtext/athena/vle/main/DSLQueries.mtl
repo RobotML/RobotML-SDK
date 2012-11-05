@@ -196,3 +196,15 @@
 [query public isEnumeration(type : athenaDSL::basicType) : Boolean =
 	invoke('org.eclipse.robotml.generators.xtext.athena.vle.main.DSLQueries', 'isEnumeration(org.xtext.athenaDSL.basicType)', Sequence{type})
 /]
+
+[query public getClassNeeded(prototype : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::prototypeDeclaration) =
+ invoke('org.eclipse.robotml.generators.xtext.athena.vle.main.DSLQueries', 'getClassNeeded(org.xtext.athenaDSL.prototypeDeclaration)', Sequence{prototype})
+/]
+
+[query public isInstanciated(prototype : athenaDSL::prototypeDeclaration, project : athenaDSL::Project) : Boolean =
+	invoke('org.eclipse.robotml.generators.xtext.athena.vle.main.DSLQueries', 'isInstanciated(org.xtext.athenaDSL.prototypeDeclaration, org.xtext.athenaDSL.Project)', Sequence{prototype, project})
+/]
+
+[query public hasInstance(prototype : athenaDSL::prototypeDeclaration) : Boolean =
+	invoke('org.eclipse.robotml.generators.xtext.athena.vle.main.DSLQueries', 'hasInstance(org.xtext.athenaDSL.prototypeDeclaration)', Sequence{prototype})
+/]

@@ -13,7 +13,11 @@
 [/for]
 [/template]
 
-[template public generateModelImplementation(project: Project, proto : prototypeDeclaration)]
+
+[comment][template private generateModelImplementation(project: Project, proto : prototypeDeclaration)]
+#include <vle/utils/Tools.hpp>
+#include <vle/utils/Trace.hpp>
+#include <vle/utils/DateTime.hpp>
 #include <vle/value.hpp>
 #include <vle/devs.hpp>
 #include <TypeDefs.h>
@@ -21,6 +25,331 @@
 
 namespace vd = vle::devs;
 namespace vv = vle::value;
+namespace vu = vle::utils;
+
+namespace generated {
+
+
+
+[if((proto.superType = null) =(true))]
+class [proto.name/] : public vd::Dynamics
+[else]
+class [proto.superType.name/];
+
+class [proto.name/] : public [proto.superType.name/]
+[/if]
+{
+protected:
+
+	// references ----------------------------------------------------------------------------------------------
+	[generateReferences(proto)/]
+
+	// parameters ----------------------------------------------------------------------------------------------
+	[generateParameters(proto)/]
+	
+public:
+
+	[generateConstructor(proto)/]
+	[generateDestructor(proto)/]
+	[generateInitMethod(proto)/]
+	[generateOutputMethod(proto)/]
+	[generateAdvanceTimeMethod(proto)/]
+	[generateInternalTransitionMethod(proto)/]
+	[generateExternalTransitionMethod(proto)/]
+	[generateConfluentTransitionMethod(proto)/]
+	[generateRequestMethod(proto)/]
+	[generateObservationMethod(proto)/]
+	[generateFinishMethod(proto)/]
+};
+} // namespace generated
+
+DECLARE_DYNAMICS(generated::[proto.name/])
+[/template]
+
+[template private generateReferences(prototype : prototypeDeclaration)]
+[for (elt : architectureElement | prototype.definitions)]
+	[if (isReference(elt))]
+		[let ref : referenceDeclaration = elt.oclAsType(referenceDeclaration)]
+[ref.typeName.name/] [getReferenceName(ref)/];
+		[/let]
+	[/if]
+[/for]
+[/template]
+
+[template private generateParameters(prototype : prototypeDeclaration)]
+[for (elt : architectureElement | prototype.definitions)]
+	[if (isParameter(elt))]
+		[let param : parameterDeclaration = elt.oclAsType(parameterDeclaration)]
+[param.typeName.name/] [param.name/];		
+		[/let]
+	[/if]
+[/for]
+[/template]
+
+[template private generateConstructor(prototype : prototypeDeclaration)]
+/**
+ * Constructor
+ */
+[if((prototype.superType = null) =(true))]
+[prototype.name/](const vd::DynamicsInit& init, const vd::InitEventList& events)
+    : vd::Dynamics(init, events)
+[else]
+[prototype.name/](const vd::DynamicsInit& init, const vd::InitEventList& events)
+    : [prototype.superType.name/](init, events)
+[/if]
+{
+	TraceAlways(vu::DateTime::currentDate() + " [prototype.name/] contructor ");
+}
+[/template]
+
+[template private generateDestructor(prototype: prototypeDeclaration)]
+/**
+* Destructor
+*/
+virtual ~[prototype.name/]() { }
+[/template]
+
+[template private generateInitMethod(prototype : prototypeDeclaration)]
+[let parameterStr : String = '/*time*/']
+[let superTypeStr : String = 'vd']
+[let argumentStr : String = '1']
+[let returnMethod : String ='Time']
+[if((prototype.superType = null) =(false))]
+[parameterStr.substituteAll('*', 'time')/]
+[superTypeStr = prototype.superType.name/]
+[argumentStr = parameterStr/]
+[returnMethod = 'init'/]
+[/if]
+/**
+* Initialize
+*/
+virtual vd::Time init(const vd::Time& [parameterStr/])
+{
+	TraceAlways(vu::DateTime::currentDate() + " [prototype.name/]::init at time: " + vu::toString(this->time));
+	return [superTypeStr/]::[returnMethod/]([argumentStr/]);
+}
+[/let]
+[/let]
+[/let]
+[/let]
+[/template]
+
+[template private generateOutputMethod(prototype : prototypeDeclaration)]
+[let superTypeStr : String = '']
+[let timeParameter : String = '/*time*/']
+[let eventListParameter : String = '/*output*/']
+[if((prototype.superType = null) =(false))]
+[superTypeStr = prototype.superType.name/]
+[timeParameter = 'time'/]
+[eventListParameter = 'output'/]
+[/if]
+/**
+ * Output
+ */
+virtual void output(const vd::Time& [timeParameter/],
+                    vd::ExternalEventList& [eventListParameter/]) const
+{
+	TraceAlways(vu::DateTime::currentDate() + " [prototype.name/]::output at time: " + vu::toString(this->time));
+[if(superTypeStr->isEmpty() =(false))]
+	[superTypeStr/]::output([timeParameter/], [eventListParameter/]);
+[/if]
+}
+[/let]
+[/let]
+[/let]
+[/template]
+
+[template private generateAdvanceTimeMethod(prototype : prototypeDeclaration)]
+[let superTypeStr : String = 'vd']
+[let argumentStr : String = '1']
+[let returnMethod : String = 'Time']
+[if((prototype.superType = null) =(false))]
+[superTypeStr = prototype.superType.name/]
+[argumentStr = ''/]
+[returnMethod = 'timeAdvance'/]
+[/if]
+/**
+* time advance
+*/
+virtual vd::Time timeAdvance() const
+{
+	TraceAlways(vu::DateTime::currentDate() + " [prototype.name/]::timeAdvance at time: " + vu::toString(this->time));
+	return [superTypeStr/]::[returnMethod/]([argumentStr/]);
+}
+[/let]
+[/let]
+[/let]
+[/template]
+
+[template private generateInternalTransitionMethod(prototype : prototypeDeclaration)]
+[let superTypeStr : String = '']
+[let timeParameter : String = '/*time*/']
+[if((prototype.superType = null) =(false))]
+[superTypeStr = prototype.superType.name/]
+[timeParameter = 'time'/]
+[/if]
+/**
+ * Internal transition
+ */
+virtual void internalTransition(const vd::Time& [timeParameter/])
+{
+	TraceAlways(vu::DateTime::currentDate() + " [prototype.name/]::internalTransition at time: " + vu::toString(this->time));
+[if(superTypeStr->isEmpty() =(false))]
+	[superTypeStr/]::internalTransition([timeParameter/]);
+[/if]
+}
+[/let]
+[/let]
+[/template]
+
+[template private generateExternalTransitionMethod(prototype :prototypeDeclaration)]
+[let superTypeStr : String = '']
+[let timeParameter : String = '/*time*/']
+[if((prototype.superType = null) =(false))]
+[superTypeStr = prototype.superType.name/]
+[timeParameter = 'time'/]
+[/if]
+/**
+ * External transition
+ */
+virtual void externalTransition(const vd::ExternalEventList& eventList,
+                                const vd::Time& [timeParameter/])
+{
+	TraceAlways(vu::DateTime::currentDate() + " [prototype.name/]::externalTransition at time: " + vu::toString(this->time));
+    vd::ExternalEventList::const_iterator it = eventList.begin();
+    for (;it != eventList.end(); it++)
+    {
+		const vd::ExternalEvent& event = *(*it);
+[for (elt : architectureElement | prototype.definitions)]
+	[if (isReference(elt))]
+		[let ref : referenceDeclaration = elt.oclAsType(referenceDeclaration)]
+        // 
+        if (event.onPort("[getReferenceName(ref)/]"))
+        {
+			TraceAlways(vu::DateTime::currentDate() + " event on [getReferenceName(ref)/] at time: " + vu::toString(this->time));
+		    const vv::Value& val = event.getAttributeValue("hello");
+			[if(isStructType(ref.typeName) or isArrayType(ref.typeName) or isVectorType(ref.typeName) or isMapType(ref.typeName))]
+			[ref.typeName.name/]_fromValue(&val, [getReferenceName(ref)/]);
+			[else]
+			[getReferenceName(ref)/] = [ref.typeName.name/]_fromValue(&val);
+			[/if]
+        }
+		[/let]
+	[/if]
+[/for]
+	}
+[if(superTypeStr->isEmpty() =(false))]
+	[superTypeStr/]::externalTransition([timeParameter/]);
+[/if]
+}
+[/let]
+[/let]
+[/template]
+
+[template private generateConfluentTransitionMethod(prototype : prototypeDeclaration)]
+[let superTypeStr : String = '']
+[if((prototype.superType = null) =(false))]
+[superTypeStr = prototype.superType.name/]
+[/if]
+/**
+ * Confluent transition
+ */
+virtual void confluentTransitions(const vd::Time& time,
+                                  const vd::ExternalEventList& events)
+{
+	TraceAlways(vu::DateTime::currentDate() + " [prototype.name/]::confluentTransitions at time: " + vu::toString(this->time));
+[if(superTypeStr->isEmpty() =(false))]
+	[superTypeStr/]::confluentTransition(time, events);
+[else]
+	internalTransition(time);
+    externalTransition(events, time);
+[/if]
+}
+[/let]
+[/template]
+
+[template private generateRequestMethod(prototype : prototypeDeclaration)]
+[let superTypeStr : String = '']
+[let reqEventParameter : String = '/*event*/']
+[let timeParameter : String = '/*time*/']
+[let eventListParameter : String = '/*output*/']
+[if((prototype.superType = null) =(false))]
+[superTypeStr = prototype.superType.name/]
+[reqEventParameter = 'event'/]
+[timeParameter = 'time'/]
+[eventListParameter = 'output'/]
+[/if]
+/**
+ * Request
+ */
+virtual void request(const vd::RequestEvent& [reqEventParameter/],
+                     const vd::Time& [timeParameter/],
+                     vd::ExternalEventList& [eventListParameter/]) const
+{
+	TraceAlways(vu::DateTime::currentDate() + " [prototype.name/]::request at time: " + vu::toString(this->time));
+[if(superTypeStr->isEmpty() =(false))]
+	[superTypeStr/]::request([reqEventParameter/], [timeParameter/], [eventListParameter/]);
+[/if]
+}
+[/let]
+[/let]
+[/let]
+[/let]
+[/template]
+
+[template private generateObservationMethod(prototype : prototypeDeclaration)]
+[let superTypeStr : String = '']
+[let eventParameter : String = '/*event*/']
+[if((prototype.superType = null) =(false))]
+[superTypeStr = prototype.superType.name/]
+[eventParameter = 'event'/]
+[/if]
+/**
+ * Observation
+ */
+virtual vv::Value* observation(const vd::ObservationEvent& [eventParameter/]) const
+{
+	TraceAlways(vu::DateTime::currentDate() + " [prototype.name/]::observation at time: " + vu::toString(this->time));
+[if(superTypeStr->isEmpty() =(false))]
+	return [superTypeStr/]::observation([eventParameter/]);
+[else]
+	return 0;
+[/if]
+}
+[/let]
+[/let]
+[/template]
+
+[template private generateFinishMethod(prototype : prototypeDeclaration)]
+[let superTypeStr : String = '']
+[if((prototype.superType = null) =(false))]
+[superTypeStr = prototype.superType.name/]
+[/if]
+/**
+ *
+ */
+virtual void finish()
+{
+	TraceAlways(vu::DateTime::currentDate() + " [prototype.name/]::finish at time: " + vu::toString(this->time));
+[if(superTypeStr->isEmpty() =(false))]
+	return [superTypeStr/]::finish();
+[/if]
+}
+[/let]
+[/template][/comment]
+
+[template public generateModelImplementation(project: Project, proto : prototypeDeclaration)]
+#include <vle/utils/Tools.hpp>
+#include <vle/utils/Trace.hpp>
+#include <vle/utils/DateTime.hpp>
+#include <vle/value.hpp>
+#include <vle/devs.hpp>
+#include <TypeDefs.h>
+#include <TypeDefs_Values.h>
+
+namespace vd = vle::devs;
+namespace vv = vle::value;
+namespace vu = vle::utils;
 
 namespace generated {
 
@@ -64,6 +393,7 @@ public:
     [proto.name/](const vd::DynamicsInit& init, const vd::InitEventList& events)
         : vd::Dynamics(init, events)
     {
+		TraceAlways(vu::DateTime::currentDate() + " [proto.name/] contructor ");
     }
 
 	/**
@@ -78,6 +408,7 @@ public:
 	 */
     virtual vd::Time init(const vd::Time& /*time*/)
     {
+		TraceAlways(vu::DateTime::currentDate() + " [proto.name/]::init at time: " + vu::toString(this->time));
         return vd::Time(1);
     }
 
@@ -87,6 +418,7 @@ public:
     virtual void output(const vd::Time& /*time*/,
                         vd::ExternalEventList& /*output*/) const
     {
+		TraceAlways(vu::DateTime::currentDate() + " [proto.name/]::output at time: " + vu::toString(this->time));
     }
 
 	/**
@@ -94,6 +426,7 @@ public:
 	 */
     virtual vd::Time timeAdvance() const
     {
+		TraceAlways(vu::DateTime::currentDate() + " [proto.name/]::timeAdvance at time: " + vu::toString(this->time));
         return vd::Time(1);
     }
 
@@ -102,6 +435,7 @@ public:
 	 */
     virtual void internalTransition(const vd::Time& /*time*/)
     {
+		TraceAlways(vu::DateTime::currentDate() + " [proto.name/]::internalTransition at time: " + vu::toString(this->time));
     }
 
 	/**
@@ -110,6 +444,7 @@ public:
     virtual void externalTransition(const vd::ExternalEventList& eventList,
                                     const vd::Time& /*time*/)
     {
+		TraceAlways(vu::DateTime::currentDate() + " [proto.name/]::externalTransition at time: " + vu::toString(this->time));
         vd::ExternalEventList::const_iterator it = eventList.begin();
         for (;it != eventList.end(); it++)
         {
@@ -122,6 +457,7 @@ public:
             // 
             if (event.onPort("[getReferenceName(ref)/]"))
             {
+				TraceAlways(vu::DateTime::currentDate() + " event on [getReferenceName(ref)/] at time: " + vu::toString(this->time));
 			    const vv::Value& val = event.getAttributeValue("hello");
 				[if(isStructType(ref.typeName) or isArrayType(ref.typeName) or isVectorType(ref.typeName) or isMapType(ref.typeName))]
 				[ref.typeName.name/]_fromValue(&val, [getReferenceName(ref)/]);
@@ -143,6 +479,7 @@ public:
     virtual void confluentTransitions(const vd::Time& time,
                                       const vd::ExternalEventList& events)
     {
+		TraceAlways(vu::DateTime::currentDate() + " [proto.name/]::confluentTransitions at time: " + vu::toString(this->time));
         internalTransition(time);
         externalTransition(events, time);
     }
@@ -154,6 +491,7 @@ public:
                          const vd::Time& /*time*/,
                          vd::ExternalEventList& /*output*/) const
     {
+		TraceAlways(vu::DateTime::currentDate() + " [proto.name/]::request at time: " + vu::toString(this->time));
     }
 
 	/**
@@ -161,6 +499,7 @@ public:
 	 */
     virtual vv::Value* observation(const vd::ObservationEvent& /*event*/) const
     {
+		TraceAlways(vu::DateTime::currentDate() + " [proto.name/]::observation at time: " + vu::toString(this->time));
         return 0;
     }
 
@@ -169,6 +508,7 @@ public:
 	 */
     virtual void finish()
     {
+		TraceAlways(vu::DateTime::currentDate() + " [proto.name/]::finish at time: " + vu::toString(this->time));
     }
 
 };

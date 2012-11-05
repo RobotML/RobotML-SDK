@@ -186,7 +186,6 @@ public class RTMapsDataTypeQueries {
 	
 	public String getPckOutputDir(String dummy) {
 		String os = System.getProperty("os.name");
-		System.out.println("OS : " + os);
 		if (os.toLowerCase().startsWith("linux"))
 			return "packages/linux_x86/";
 		else

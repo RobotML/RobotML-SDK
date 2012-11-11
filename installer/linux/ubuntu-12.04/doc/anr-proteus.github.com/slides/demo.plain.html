@@ -1,0 +1,471 @@
+<h1>Demonstration: MORSE &amp; ROS</h1>
+
+<p>Pierrick Koch - <a href="https://www.greyc.fr/">GREYC</a> - <a href="http://www.cnrs.fr/">CNRS</a></p>
+
+<p><a href="http://anr-proteus.fr/">anr-proteus.fr</a></p>
+
+<p>Objectif: First step with ROS and MORSE.</p>
+
+<hr />
+
+<h1>ROS</h1>
+
+<p>Robot Operating System (ROS) can be seen as 2 main parts:</p>
+
+<ul>
+<li>A communication <a href="http://en.wikipedia.org/wiki/Middleware">middleware</a>,
+with related APIs (C++, Python, Java),</li>
+<li>A set of Robotic software (hardware abstraction, drivers, libs).</li>
+</ul>
+
+<p><a href="http://ros.org/wiki/roscore">roscore</a>: run a
+<a href="http://ros.org/wiki/Master">master</a> <a href="http://ros.org/wiki/Nodes">node</a></p>
+
+<pre><code>roscore
+</code></pre>
+
+<p><em>TIP</em>: to stop <code>roscore</code>: press Ctrl+C in the terminal</p>
+
+<p>Basic commands:</p>
+
+<p><a href="http://ros.org/wiki/roscd">roscd</a>: change directory within ROS environment</p>
+
+<pre><code>Usage: roscd [package]
+</code></pre>
+
+<p><a href="http://ros.org/wiki/roslaunch">roslaunch</a>:
+launching ROS nodes via <code>.launch</code> files</p>
+
+<pre><code>Usage: roslaunch [options] [package] &lt;filename&gt; [arg_name:=value...]
+</code></pre>
+
+<p>cf. <a href="http://ros.org/wiki/ROS/Tutorials">Tutorials</a></p>
+
+<hr />
+
+<h1>rostopic</h1>
+
+<pre><code>rostopic
+rostopic is a command-line tool for printing information about ROS Topics.
+
+Commands:
+  rostopic bw    display bandwidth used by topic
+  rostopic echo  print messages to screen
+  rostopic find  find topics by type
+  rostopic hz    display publishing rate of topic
+  rostopic info  print information about active topic
+  rostopic list  list active topics
+  rostopic pub   publish data to topic
+  rostopic type  print topic type
+
+Type rostopic &lt;command&gt; -h for more detailed usage, e.g. 'rostopic echo -h'
+</code></pre>
+
+<hr />
+
+<h1>rostopic: exemple</h1>
+
+<p>Publish &amp; print a message on ROS bus:</p>
+
+<pre><code>rostopic pub /test std_msgs/String "Bonjour Proteus"
+rostopic echo /test
+</code></pre>
+
+<p><a href="http://ros.org/wiki/rostopic"><img src="http://anr-proteus.github.com/slides/misc/screenshot-rostopic.png" alt="rostopic" title="rostopic" /></a></p>
+
+<hr />
+
+<h1>MORSE</h1>
+
+<p>Developped at LAAS/CNRS in Toulouse (France), MORSE is a generic robotic
+simulation platform based on Blender. Blender is a free and open source 3D
+modelisation platform. Which integrates differents methods for 3D rendering,
+animating, and a game engine used by MORSE for the simulation, as well as the
+physic engine Bullet. MORSE allow to build a robotic simulation by using Blender
+GUI / API.</p>
+
+<p>Blender 2.5 introduced a new API allowing to interact with all scene-data
+through the Blender Python API, aka. <code>bpy</code>.</p>
+
+<p><a href="http://www.blender.org/development/release-logs/blender-256-beta/data-access"><img src="http://anr-proteus.github.com/slides/misc/blender-data-api.jpg" alt="blender-data-api" title="blender-data-api" /></a></p>
+
+<p><a href="http://download.blender.org/release/"><img src="http://anr-proteus.github.com/slides/misc/blender-roadmap.jpg" alt="blender-roadmap" title="blender-roadmap" /></a></p>
+
+<hr />
+
+<h1>MORSE</h1>
+
+<p><a href="http://morse.openrobots.org"><img src="http://anr-proteus.github.com/slides/misc/screenshot-morse.png" alt="morse" title="morse" /></a></p>
+
+<hr />
+
+<h1>MORSE GLSL</h1>
+
+<p>MORSE is <a href="http://www.openrobots.org/morse/doc/latest/user/installation.html#hardware">meant</a>
+to run with a graphic card compatible <a href="http://en.wikipedia.org/wiki/GLSL">OpenGL Shading Language</a></p>
+
+<h1>ATI/AMD Radeon <a href="http://support.amd.com/us/gpudownload/linux/Pages/radeon_linux.aspx"><img src="http://support.amd.com/Style%20Library/Images/AMD/AMD_logo.png" alt="AMD" title="AMD" /></a></h1>
+
+<h3>9x00, Xx00, X1x00, HD2x00, HD3x00 &amp; +</h3>
+
+<p><code>sudo apt-get install</code> <a href="http://apt.ubuntu.com/p/xserver-xorg-video-radeon"><code>xserver-xorg-video-radeon</code></a></p>
+
+<h1>nVidia <a href="http://www.nvidia.com/object/unix.html"><img src="http://www.nvidia.com/content/includes/images/redesign08/nvidia_logo.png" alt="nvidia" title="nvidia" /></a></h1>
+
+<h3>Geforce FX, 6x00, 7x00, 8x00, 9x00, GTX 2x0 &amp; +</h3>
+
+<p><code>sudo apt-get install</code> <a href="http://apt.ubuntu.com/p/nvidia-current"><code>nvidia-current</code></a></p>
+
+<p>cf. <a href="http://www.blender.org/features-gallery/requirements/">Blender System Requirements</a>
+<a href="http://www.blender.org/development/release-logs/blender-248/realtime-glsl-materials/">Blender 2.48 Realtime GLSL Materials</a></p>
+
+<hr />
+
+<h1>MORSE config</h1>
+
+<ul>
+<li>Coordinates: <a href="http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Understanding_Coordinates">main droite</a></li>
+</ul>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Rechte-hand-regel.jpg/200px-Rechte-hand-regel.jpg" alt="right" title="right" /></p>
+
+<ul>
+<li>Units: metric, angle: degree in UI, radian in simulation</li>
+<li>ROS: <a href="http://ros.org/reps/rep-0103.html">ROS Standard Units of Measure and Coordinate Conventions</a></li>
+</ul>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/screenshot-morse-metric.png" alt="metric" title="metric" /></p>
+
+<hr />
+
+<h1>MORSE &amp; ROS</h1>
+
+<ul>
+<li><p>Naming convention of <a href="http://www.openrobots.org/morse/doc/latest/user/middlewares/ros.html#generation-of-ros-node-and-topics">topics</a></p>
+
+<p><code>/Robot/Composant</code> alphanumeric CamelCase</p></li>
+</ul>
+
+<h3>ie.</h3>
+
+<pre><code>rostopic list -v
+
+Published topics:
+ * /ATRV/CameraMain [sensor_msgs/Image] 1 publisher
+ * /rosout [rosgraph_msgs/Log] 1 publisher
+ * /ATRV/Pose_sensor [nav_msgs/Odometry] 1 publisher
+ * /rosout_agg [rosgraph_msgs/Log] 1 publisher
+ * /ATRV/Odometry [geometry_msgs/Twist] 1 publisher
+ * /ATRV/Sick [sensor_msgs/LaserScan] 1 publisher
+
+Subscribed topics:
+ * /rosout [rosgraph_msgs/Log] 1 subscriber
+ * /ATRV/Motion_Controller [geometry_msgs/Twist] 1 subscriber
+</code></pre>
+
+<hr />
+
+<h1>MORSE CLI</h1>
+
+<p>Once installed, MORSE is launch by the command <code>morse {check,edit,run} [scene]</code>,
+it accept differents parameters:</p>
+
+<ul>
+<li>.blend file (simulation scene)</li>
+<li>.py file (scene builder script)</li>
+</ul>
+
+<p>ie:</p>
+
+<pre><code>morse edit my_builder_script.py
+
+morse edit my_saved_scene.blend
+</code></pre>
+
+<p>... respectively result in:</p>
+
+<ol>
+<li>edit a scene build through a script in Blender GUI.</li>
+<li>edit a scene saved in a .blend file in Blender GUI.</li>
+</ol>
+
+<hr />
+
+<h1>MORSE: simulation loop</h1>
+
+<p><a href="http://www.openrobots.org/morse/doc/latest/dev/dev_overview.html#morse-execution-loop"><img src="http://anr-proteus.github.com/slides/misc/morse_main_loop.png" alt="morse-main-loop" title="morse-main-loop" /></a></p>
+
+<hr />
+
+<h1>MORSE: scene builder API</h1>
+
+<p><a href="http://www.openrobots.org/morse/doc/latest/dev/builder.html"><img src="http://anr-proteus.github.com/slides/misc/morsebuilder_uml.png" alt="morse-builder" title="morse-builder" /></a></p>
+
+<p>cf. <a href="http://www.openrobots.org/morse/doc/latest/dev/builder.html">openrobots.org/morse/doc/latest/dev/builder.html</a></p>
+
+<hr />
+
+<h1>Demo: intro</h1>
+
+<h1>robot made of one controler (v, ω)</h1>
+
+<pre><code>!python
+from morse.builder import *
+
+# Add the robot
+simplebot = Robot('atrv')
+
+# Add a motion controler
+motion = Actuator('v_omega')
+motion.translate(z=0.3)
+# Connect the controler to the robot
+simplebot.append(motion)
+
+# Configure the controler with the ROS middleware
+motion.configure_mw('ros')
+
+# Setup the environment
+env = Environment('indoors-1/indoor-1')
+env.aim_camera([1.0470, 0, 0.7854])
+</code></pre>
+
+<p>(<a href="https://github.com/anr-proteus/proteus/blob/master/proteus_demo/data/wifibot.py">code</a>)</p>
+
+<hr />
+
+<h1>Demo: intro (2)</h1>
+
+<h1>commands to run</h1>
+
+<h2>start a ROS master node</h2>
+
+<pre><code>roscore
+</code></pre>
+
+<h2>start MORSE with a builder script (in another Terminal)</h2>
+
+<pre><code>morse edit /usr/local/share/morse/examples/scenarii/ros_example.py
+</code></pre>
+
+<h3>⌨ Press "<code>P</code>" in the 3D view to start the simulation (Game Engine)</h3>
+
+<h3>⌨ Use "<code>CTRL</code>" + mouse, and "<code>Z, Q/A, S, D/W</code>" to move the camera</h3>
+
+<h2>publish a message on the controler topic (in another Terminal)</h2>
+
+<pre><code>rostopic pub -1 /ATRV/Motion_Controller geometry_msgs/Twist [1,0,0] [0,0,1]
+</code></pre>
+
+<hr />
+
+<h1>Demo: intro (video)</h1>
+
+<iframe src="http://player.vimeo.com/video/22116926?portrait=0" width="800" height="500" frameborder="0" allowfullscreen></iframe>
+
+<p>(<a href="http://vimeo.com/22116926">video</a>)</p>
+
+<hr />
+
+<h1>ROS Python3 support</h1>
+
+<p>If you installed ROS through the PROTEUS Debian repository, aka.
+<a href="http://apt.ubuntu.com/p/proteus-base"><code>proteus-base</code></a>, you won't need this
+patch, you can ignore this slide and jump to the next one. If not you will need
+to patch ROS due to a regression in their Python3 compatibility, as:</p>
+
+<pre><code>wget http://anr-proteus.github.com/slides/rospy3k.patch
+sudo patch -Np0 &lt; rospy3k.patch
+</code></pre>
+
+<p><em>TIP</em>: if ROS is not in <code>/opt/ros</code>, patch as:</p>
+
+<pre><code>roscd common_msgs
+wget http://anr-proteus.github.com/slides/rospy3k.patch -O - | patch -Np5
+</code></pre>
+
+<hr />
+
+<h1>Demo: advanced</h1>
+
+<h1>obstacles avoidance w/ laser</h1>
+
+<pre><code>mkdir -p ~/work/ros-addons
+rosinstall ~/work/ros-addons /opt/ros/electric/ \
+    http://anr-proteus.github.com/proteus.rosinstall
+source ~/work/ros-addons/setup.bash
+roscd proteus_demo &amp;&amp; git pull &amp;&amp; cd data
+morse run wifibot.py
+</code></pre>
+
+<h2>run the master node (in another Terminal)</h2>
+
+<pre><code>roscore
+</code></pre>
+
+<h2>launch our node to control the robot (in another Terminal)</h2>
+
+<pre><code>source ~/work/ros-addons/setup.bash
+roslaunch proteus_demo AvoidObstacleLaser.launch
+</code></pre>
+
+<p><em>TIP</em>: if <code>rosinstall</code> is not recognized, install it as:</p>
+
+<pre><code>sudo pip install -U rosinstall
+</code></pre>
+
+<hr />
+
+<h1>Demo: advanced (video)</h1>
+
+<iframe src="http://player.vimeo.com/video/24550587?portrait=0" width="800" height="500" frameborder="0" allowfullscreen></iframe>
+
+<p>(<a href="http://vimeo.com/24550587">video</a>)</p>
+
+<hr />
+
+<h1>Demo: advanced (code)</h1>
+
+<pre><code>!python
+# callback for each laser scan
+def handle_sick(msg):
+    mid = len(msg.ranges) // 2
+    cmd = Twist()
+    # stop if an object is less than 2m in a 30deg angle
+    halt=False
+    for distance_to_object in msg.ranges[mid-15:mid+15]:
+        if distance_to_object &lt; 2:
+            halt=True
+            break
+    if halt:
+        # rotate on the wider scanned side
+        if sum(msg.ranges[:mid]) &gt; sum(msg.ranges[mid:]):
+            cmd.angular.z = -1
+        else:
+            cmd.angular.z = 1
+    else:
+        cmd.linear.x = 1
+    # publie the command to the controler (Twist msg)
+    topic.publish(cmd)
+
+if __name__ == '__main__':
+    rospy.init_node('wander')
+    topic=rospy.Publisher('/ATRV/Motion_Controller', Twist)
+    rospy.Subscriber('/ATRV/Sick', LaserScan, handle_sick)
+    rospy.spin()
+
+# http://ros.org/doc/api/sensor_msgs/html/msg/LaserScan.html
+# http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html
+</code></pre>
+
+<p>(<a href="https://github.com/anr-proteus/proteus/blob/master/proteus_demo/nodes/AvoidObstacleLaser.py">code</a>)</p>
+
+<hr />
+
+<h1>Demo: Orocos</h1>
+
+<p>The example's code is available on <a href="https://github.com/anr-proteus/proteus/tree/master/proteus_orocos_obstaclelaser">GitHub</a></p>
+
+<pre><code>roscd proteus_demo/data
+morse run wifibot.py
+
+rosmake proteus_orocos_obstaclelaser
+roslaunch proteus_orocos_obstaclelaser AvoidObstacleLaser.launch
+</code></pre>
+
+<p><a href="https://github.com/anr-proteus/proteus/tree/master/proteus_orocos_obstaclelaser"><img src="http://anr-proteus.github.com/slides/misc/screenshot-morse-orocos.png" alt="morse-orocos" title="morse-orocos" /></a></p>
+
+<hr />
+
+<h1>RViz (video)</h1>
+
+<iframe src="http://player.vimeo.com/video/23244699?portrait=0" width="800" height="375" frameborder="0" allowfullscreen></iframe>
+
+<pre><code>rosrun rviz rviz
+</code></pre>
+
+<h2>launch rviz with a configuration file</h2>
+
+<pre><code>roscd proteus_demo/data
+rosrun rviz rviz -d rviz.vcg
+</code></pre>
+
+<p>(<a href="http://vimeo.com/23244699">video</a>)</p>
+
+<hr />
+
+<h1>Outdoor (video)</h1>
+
+<iframe src="http://player.vimeo.com/video/26054198?portrait=0" width="800" height="350" frameborder="0" allowfullscreen></iframe>
+
+<pre><code>roscd proteus_demo/data
+morse run wifibot.py
+</code></pre>
+
+<p>(<a href="http://vimeo.com/26054198">video</a>)</p>
+
+<hr />
+
+<h1>Exploration (Bosch demo w/ Stage)</h1>
+
+<pre><code>sudo apt-get install ros-electric-bosch-common
+roslaunch explore_stage explore.launch
+
+roscd explore_stage
+rosrun rviz rviz -d explore.vcg
+</code></pre>
+
+<p><a href="http://ros.org/wiki/explore_stage"><img src="http://anr-proteus.github.com/slides/misc/screenshot-explor.png" alt="exploration" title="exploration" /></a></p>
+
+<hr />
+
+<h1>Exploration (Bosch demo w/ MORSE)</h1>
+
+<iframe src="http://www.youtube.com/embed/videoseries?list=PL289431A5B18BD997&amp;hd=1&amp;rel=0" width="800" height="500" frameborder="0" allowfullscreen></iframe>
+
+<hr />
+
+<h1>RTMaps</h1>
+
+<p><a href="http://intempora.com"><img src="http://anr-proteus.github.com/slides/misc/screenshot-morse-rtmaps.png" alt="rtmaps" title="rtmaps" /></a></p>
+
+<hr />
+
+<h1>TIPS</h1>
+
+<p>MORSE create cache files in the current directory,</p>
+
+<pre><code>rm scene.*.blend
+</code></pre>
+
+<p>allow you to delete those files.</p>
+
+<h1>Resources</h1>
+
+<p>Blender Cookie: <a href="http://cgcookie.com/blender/">cgcookie.com/blender</a></p>
+
+<p>Blend Swap: <a href="http://www.blendswap.com/">blendswap.com</a>
+(ie. <a href="http://www.blendswap.com/3D-models/vehicles/rover/">Rover model</a> )</p>
+
+<p>Blender Wiki: <a href="http://wiki.blender.org/">wiki.blender.org</a></p>
+
+<hr />
+
+<h1>Build a robot</h1>
+
+<iframe src="http://www.youtube.com/embed/videoseries?list=PLDC1FC34E5AC69429&amp;hd=1&amp;rel=0" width="800" height="500" frameborder="0" allowfullscreen></iframe>
+
+<hr />
+
+<h1>That's all Folks!</h1>
+
+<p>short link to this presentation: <a href="http://bit.ly/proteus2">bit.ly/proteus2</a></p>
+
+<p><img src="http://bit.ly/proteus2.qrcode" alt="proteus-morse-demo" title="proteus-morse-demo" /></p>
+
+<p>1 page doc: <a href="http://bit.ly/proteus2md">bit.ly/proteus2md</a></p>
+
+<p>sources on GitHub: <a href="http://bit.ly/proteus-src">bit.ly/proteus-src</a></p>
+
+<p><em>made with</em> <a href="https://github.com/adamzap/landslide">landslide</a></p>
+
+<p><a href="http://www.printfriendly.com/print/v2?url=http%3A%2F%2Fanr-proteus.github.com%2Fslides%2Fdemo.plain.html"><img src="http://cdn.printfriendly.com/pf-button-both.gif" alt="printfriendly" title="pdf" /></a></p>

@@ -1,0 +1,10 @@
+Package: proteus-cycabtk
+Version: 0.1
+Section: devel
+Priority: optional
+Architecture: i386
+Maintainer: pierrick.koch@gmail.com
+Depends: cycabtksimulator
+Homepage: http://anr-proteus.fr
+Description: CycabTk for PROTEUS
+

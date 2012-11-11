@@ -1,0 +1,92 @@
+--- _CameraInfo.py   2012-03-26 15:08:12.005986748 +0700
++++ /opt/ros/electric/stacks/common_msgs/sensor_msgs/src/sensor_msgs/msg/_CameraInfo.py    2012-03-26 15:09:06.937986738 +0700
+@@ -254,12 +254,12 @@
+       buff.write(_struct_3I.pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
+       _x = self.header.frame_id
+       length = len(_x)
+-      buff.write(struct.pack('<I%ss'%length, length, _x))
++      buff.write(struct.pack('<I%ss'%length, length, _x.encode("utf-8")))
+       _x = self
+       buff.write(_struct_2I.pack(_x.height, _x.width))
+       _x = self.distortion_model
+       length = len(_x)
+-      buff.write(struct.pack('<I%ss'%length, length, _x))
++      buff.write(struct.pack('<I%ss'%length, length, _x.encode("utf-8")))
+       length = len(self.D)
+       buff.write(_struct_I.pack(length))
+       pattern = '<%sd'%length
+--- _Imu.py   2012-03-26 15:08:05.169986749 +0700
++++ /opt/ros/electric/stacks/common_msgs/sensor_msgs/src/sensor_msgs/msg/_Imu.py    2012-03-26 15:09:08.057986738 +0700
+@@ -125,7 +125,7 @@
+       buff.write(_struct_3I.pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
+       _x = self.header.frame_id
+       length = len(_x)
+-      buff.write(struct.pack('<I%ss'%length, length, _x))
++      buff.write(struct.pack('<I%ss'%length, length, _x.encode("utf-8")))
+       _x = self
+       buff.write(_struct_4d.pack(_x.orientation.x, _x.orientation.y, _x.orientation.z, _x.orientation.w))
+       buff.write(_struct_9d.pack(*self.orientation_covariance))
+--- _Image.py	2011-11-06 12:58:52.000000000 +0700
++++ /opt/ros/electric/stacks/common_msgs/sensor_msgs/src/sensor_msgs/msg/_Image.py	2011-11-17 11:29:08.250389571 +0700
+@@ -115,12 +115,12 @@
+       buff.write(_struct_3I.pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
+       _x = self.header.frame_id
+       length = len(_x)
+-      buff.write(struct.pack('<I%ss'%length, length, _x))
++      buff.write(struct.pack('<I%ss'%length, length, _x.encode("utf-8")))
+       _x = self
+       buff.write(_struct_2I.pack(_x.height, _x.width))
+       _x = self.encoding
+       length = len(_x)
+-      buff.write(struct.pack('<I%ss'%length, length, _x))
++      buff.write(struct.pack('<I%ss'%length, length, _x.encode("utf-8")))
+       _x = self
+       buff.write(_struct_BI.pack(_x.is_bigendian, _x.step))
+       _x = self.data
+--- _LaserScan.py	2011-11-06 12:58:53.000000000 +0700
++++ /opt/ros/electric/stacks/common_msgs/sensor_msgs/src/sensor_msgs/msg/_LaserScan.py	2011-11-17 11:35:48.198389504 +0700
+@@ -126,7 +126,7 @@
+       buff.write(_struct_3I.pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
+       _x = self.header.frame_id
+       length = len(_x)
+-      buff.write(struct.pack('<I%ss'%length, length, _x))
++      buff.write(struct.pack('<I%ss'%length, length, _x.encode("utf-8")))
+       _x = self
+       buff.write(_struct_7f.pack(_x.angle_min, _x.angle_max, _x.angle_increment, _x.time_increment, _x.scan_time, _x.range_min, _x.range_max))
+       length = len(self.ranges)
+--- _Range.py	2011-12-15 08:26:20.285745805 +0700
++++ /opt/ros/electric/stacks/common_msgs/sensor_msgs/src/sensor_msgs/msg/_Range.py	2011-12-15 08:27:29.469745780 +0700
+@@ -119,7 +119,7 @@
+       buff.write(_struct_3I.pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
+       _x = self.header.frame_id
+       length = len(_x)
+-      buff.write(struct.pack('<I%ss'%length, length, _x))
++      buff.write(struct.pack('<I%ss'%length, length, _x.encode("utf-8")))
+       _x = self
+       buff.write(_struct_B4f.pack(_x.radiation_type, _x.field_of_view, _x.min_range, _x.max_range, _x.range))
+     except struct.error as se: self._check_types(se)
+--- _Odometry.py	2011-12-15 08:35:05.297745605 +0700
++++ /opt/ros/electric/stacks/common_msgs/nav_msgs/src/nav_msgs/msg/_Odometry.py	2011-12-15 08:36:12.433745581 +0700
+@@ -146,10 +146,10 @@
+       buff.write(_struct_3I.pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
+       _x = self.header.frame_id
+       length = len(_x)
+-      buff.write(struct.pack('<I%ss'%length, length, _x))
++      buff.write(struct.pack('<I%ss'%length, length, _x.encode("utf-8")))
+       _x = self.child_frame_id
+       length = len(_x)
+-      buff.write(struct.pack('<I%ss'%length, length, _x))
++      buff.write(struct.pack('<I%ss'%length, length, _x.encode("utf-8")))
+       _x = self
+       buff.write(_struct_7d.pack(_x.pose.pose.position.x, _x.pose.pose.position.y, _x.pose.pose.position.z, _x.pose.pose.orientation.x, _x.pose.pose.orientation.y, _x.pose.pose.orientation.z, _x.pose.pose.orientation.w))
+       buff.write(_struct_36d.pack(*self.pose.covariance))
+--- _String.py 2012-05-04 10:49:35.554067005 +0700
++++ /opt/ros/electric/stacks/ros_comm/messages/std_msgs/src/std_msgs/msg/_String.py    2012-02-04 03:07:38.000000000 +0700
+@@ -50,7 +50,7 @@
+     try:
+       _x = self.data
+       length = len(_x)
+-      buff.write(struct.pack('<I%ss'%length, length, _x))
++      buff.write(struct.pack('<I%ss'%length, length, _x.encode("utf-8")))
+     except struct.error as se: self._check_types(se)
+     except TypeError as te: self._check_types(te)

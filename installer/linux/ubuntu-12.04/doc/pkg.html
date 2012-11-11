@@ -1,0 +1,61 @@
+<h1>PROTEUS Packaging</h1>
+
+<h2>DEBIAN folder</h2>
+
+<p>mendatory</p>
+
+<h3>control file</h3>
+
+<p>mendatory</p>
+
+<h3>postinst file</h3>
+
+<p>optionnal, executed after installing the package</p>
+
+<p><img src="misc/screenshot-dpkg.png" alt="screenshot" title="screenshot" /></p>
+
+<h2>reprepro tool</h2>
+
+<p>Create debian repository:</p>
+
+<pre><code>repo=path/to/debian/repository
+
+mkdir -p $repo/conf
+cat &gt; $repo/conf/distributions &lt;&lt; EOF
+Origin: Proteus
+Label: Proteus
+Suite: stable
+Codename: stable
+Version: all
+Architectures: i386
+Components: main
+Description: Proteus repository
+EOF
+</code></pre>
+
+<p>Create debian package:</p>
+
+<pre><code>name=proteus-all # folder / software name
+package=$name.deb # file name (.deb)
+fakeroot dpkg -b $name $package
+</code></pre>
+
+<p>Include a package in the repository:</p>
+
+<pre><code>reprepro -S main -P optional -Vb $repo includedeb stable $package
+</code></pre>
+
+<p>Remove a package in the repository:</p>
+
+<pre><code>reprepro -Vb $repo remove stable $name
+</code></pre>
+
+<p>see: <code>../install/pkg/pkg.sh</code></p>
+
+<h2>debtree</h2>
+
+<p>TBD</p>
+
+<p><img src="misc/proteus-all-2.png" alt="proteus" title="proteus" /></p>
+
+<p><img src="misc/proteus-all-3.png" alt="proteus" title="proteus" /></p>

@@ -1,0 +1,29 @@
+
+--- tcpros_pubsub.py	2012-07-11 17:31:19.373647464 +0700
++++ /opt/ros/fuerte/lib/python2.7/dist-packages/rospy/impl/tcpros_pubsub.py	2012-07-11 17:31:31.941647985 +0700
+@@ -37,7 +37,10 @@
+ import socket
+ import threading
+ import time
+-import xmlrpclib
++try:
++    import xmlrpclib # Python2
++except ImportError:
++    import xmlrpc.client as xmlrpclib # Python3
+
+ from rospy.core import logwarn, logerr, logdebug, rospyerr
+ import rospy.exceptions
+--- masterapi.py	2012-07-11 17:29:39.317643316 +0700
++++ /opt/ros/fuerte/lib/python2.7/dist-packages/rosgraph/masterapi.py	2012-07-11 17:30:48.725646193 +0700
+@@ -37,7 +37,10 @@
+ the Master API is changed.
+ """
+
+-import xmlrpclib
++try:
++    import xmlrpclib # Python2
++except ImportError:
++    import xmlrpc.client as xmlrpclib # Python3
+
+ from . names import make_caller_id
+ from . rosenv import get_master_uri

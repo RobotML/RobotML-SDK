@@ -1,0 +1,10 @@
+Package: proteus-urbi
+Version: 0.1
+Section: devel
+Priority: optional
+Architecture: i386
+Maintainer: pierrick.koch@gmail.com
+Depends: gcc
+Homepage: http://anr-proteus.fr
+Description: Urbi for PROTEUS
+

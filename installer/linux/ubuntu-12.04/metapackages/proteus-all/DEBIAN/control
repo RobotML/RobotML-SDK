@@ -1,0 +1,10 @@
+Package: proteus-all
+Version: 0.1
+Section: devel
+Priority: optional
+Architecture: i386
+Maintainer: pierrick.koch@gmail.com
+Depends: proteus-challenge1, proteus-challenge2, proteus-challenge3, proteus-challenge4, proteus-base-eclipse, proteus-base-protege
+Homepage: http://anr-proteus.fr
+Description: All packages of PROTEUS
+

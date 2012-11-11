@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+   <head>
+       <title>Installation des outils du projet Proteus</title>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   </head>
+   <body>
+<h1><p style="text-align:center">Installation des outils du projet Proteus</p></h1>
+
+<p>Systéme d'exploitation requis sur la machine : <strong>Ubuntu 10.04 LTS Lucid Lynx</strong><br />
+<p>Pour plus d'informations concernant l'installation d'Ubuntu (documentation du site officiel) :
+<a href="http://doc.ubuntu-fr.org/tutoriel/obtenir_cd_ubuntu">http://doc.ubuntu-fr.org/tutoriel/obtenir_cd_ubuntu</a></p></p>
+
+<h2>1°) Préparation</h2>
+
+<p>Tout d'abord, veuillez exécuter le script shell nommé « init-proteus.sh » en tapant la commande suivante dans le terminal : <pre>source init-proteus.sh</pre></p>
+<p>Dès le début de l'exécution du script, vous serez amené à indiquer votre mot de passe super-utilisateur afin de :
+<ul>
+<li>pouvoir <strong>installer les outils</strong> indispensables à l'installation si ceux-ci sont absents,</li>
+<li><strong>ajouter les dépôts</strong> contenant les outils inhérents au projet Proteus comme sources de logiciels de votre système (avec les clés d'authentification associées à ses dépôts). <strong>Votre login et votre mot de passe</strong> vous seront demandés pour accéder au dépot,</li>
+<li>conclure par une <strong>mise à jour</strong> de la liste des fichiers disponibles dans les sources de logiciel de votre système d'exploitation.</li>
+</ul>
+</p>
+
+
+<h2>2°) Installation des outils souhaités</h2>
+
+<p>L'organisation des outils suit le modèle suivant :
+<ul>
+<li><em>proteus-base</em> :  l'IDE (Environnement de développement intégré) Eclipse et Tom ainsi que les stacks ROS et les paquets debian minimaux nécessaires au bon fonctionnement</li>
+<li>Tous les autres ensembles sont des ajouts à proteus-base et contiennent les stacks ROS et les paquets debian nécessaires au fonctionnement des outils qu'ils installent.</li>
+<li><em>simu-morse</em> : le logiciel de simulation Morse (http://www.openrobots.org/wiki/morse)</li>
+<li><em>simu-cycabtk</em> :  le logiciel de simulation CycabTK (https://gforge.inria.fr/projects/cycabtk/)</li>
+<li><em>simu-vle</em> : le logiciel de simulation Vle (http://www.vle-project.org)</li>
+<li><em>mw-orocos</em> : le middleware Orocos (http://www.orocos.org)</li>
+<li><em>mw-aroccam</em> : le middleware Aroccam (http://effistore.effidence.com)</li>
+<li><em>mw-urbiscript</em> : le middleware Urbiscript (http://www.gostai.com)</li>
+<li><em>proteus-full</em> : installe tous les logiciels cités précédemment, l'installation la plus complète de Proteus</li>
+</ul></p>
+
+<p>La ligne de commande permettant l'installation de chacun de ses ensembles :
+<pre>rosinstall 'chemin du répertoire' 'fichier .rosinstall'</pre>
+
+'chemin du répertoire' : il s'agit simplement du dossier dans lequel les stacks ROS seront installées<br />
+'fichier .rosinstall' : c'est un fichier pointant vers les dépots (Github, Svn, Bazaar, Mercurial) contenant les stacks. Dans le cas de Proteus, il s'agit de dépots Github.</p>
+
+<p>Exemple : pour l'installation de <em>proteus-base</em> :<br />
+<pre>rosinstall ~/workspace https://github.com/anr-proteus/rosinstall/raw/master/proteus-base.rosinstall</pre>
+
+Voici donc les adresses des fichiers .rosinstall à indiquer pour chacun des ensembles :
+<ul>
+<li><a href="https://github.com/anr-proteus/rosinstall/raw/master/proteus-base.rosinstall">https://github.com/anr-proteus/rosinstall/raw/master/proteus-base.rosinstall</a></li>
+<li><a href="https://github.com/anr-proteus/rosinstall/raw/master/simu-morse.rosinstall">https://github.com/anr-proteus/rosinstall/raw/master/simu-morse.rosinstall</a></li>
+<li><a href="https://github.com/anr-proteus/rosinstall/raw/master/simu-cycabtk.rosinstall">https://github.com/anr-proteus/rosinstall/raw/master/simu-cycabtk.rosinstall</a></li>
+<li><a href="https://github.com/anr-proteus/rosinstall/raw/master/simu-vle.rosinstall">https://github.com/anr-proteus/rosinstall/raw/master/simu-vle.rosinstall</a></li>
+<li><a href="https://github.com/anr-proteus/rosinstall/raw/master/mw-orocos.rosinstall">https://github.com/anr-proteus/rosinstall/raw/master/mw-orocos.rosinstall</a></li>
+<li><a href="https://github.com/anr-proteus/rosinstall/raw/master/mw-aroccam.rosinstall">https://github.com/anr-proteus/rosinstall/raw/master/mw-aroccam.rosinstall</a></li>
+<li><a href="https://github.com/anr-proteus/rosinstall/raw/master/mw-urbiscript.rosinstall">https://github.com/anr-proteus/rosinstall/raw/master/mw-urbiscript.rosinstall</a></li>
+<li><a href="https://github.com/anr-proteus/rosinstall/raw/master/proteus-full.rosinstall">https://github.com/anr-proteus/rosinstall/raw/master/proteus-full.rosinstall</a></li>
+</ul></p>
+
+<h2>3°) Dernière étape : résolution des dépendances</h2>
+
+<p>Cette dernière étape va résoudre les dépendances, c'est-à-dire installer les logiciels dépendants de ce que vous aviez demandé avec la commande rosinstall. Ces logiciels sont contenus dans ce qu'on appelle <strong>des paquets debian</strong> stockés dans le dépot Proteus. Un paquet debian est une archive contenant tous les fichiers nécessaires à l'installation et à la configuration du logiciel. Pour les installer, il suffit de :
+<ul>
+<li>se déplacer dans le répertoire proteus-base :
+<pre>cd proteus-base</pre></li>
+<li>lancer le script de résolution des dépendances :
+<pre>source installation.sh</pre></li>
+</ul></p>
+
+<p>Les logiciels seront alors installés dans le système d'exploitation de la machine, la durée de cette dernière étape peut varier en fonction de ce qui est installé.</p>
+<p>Une fois cette étape achevée, les outils que vous souhaitiez sont donc installés et prêts a l'emploi.</p>
+
+<h2>Liste des logiciels disponibles</h2>
+
+<ul>
+<li>blender</li>
+<li>bullet</li>
+<li>cycabtk-applications</li>
+<li>cycabtk-simulator</li>
+<li>cycabtk-structures-dev</li>
+<li>cycabtk-utils</li>
+<li>cycabtk-webplugins</li>
+<li>eclipse-papyrus</li>
+<li>hugr</li>
+<li>hugr-iplimage_</li>
+<li>hugroscope</li>
+<li>inria-ra-outdoor</li>
+<li>mgengine</li>  
+<li>mgengine-doc</li>
+<li>mgengine-dev</li>
+<li>openrobots-morse</li>
+<li>pavin</li>
+<li>protege</li>
+<li>proteus-cycabtk</li>
+<li>proteusdoc</li>
+<li>pyyaml</li>
+<li>tom</li>
+<li>urbi</li>
+<li>vle</li>
+</ul>
+
+   </body>
+</html>
+

@@ -1,0 +1,10 @@
+Package: proteus-base-eclipse
+Version: 0.1
+Section: devel
+Priority: optional
+Architecture: i386
+Maintainer: pierrick.koch@gmail.com
+Depends: sun-java6-jdk | openjdk-6-jdk, eclipse-proteus
+Homepage: http://anr-proteus.fr
+Description: Eclipse for PROTEUS
+

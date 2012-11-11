@@ -1,0 +1,15 @@
+LICENSE intempora rtmaps_core 2012.12 31-dec-2012 uncounted hostid=ANY
+  start=20-dec-2011 customer=PROTEUS contract=PROTEUS
+  disable=TerminalServer _ck=731ea921fd sig="c2S25g2rPixsH82y26Gk=hz=
+  C6WTFIooqo8m9WN3igHPV4ccIaHCGVtK1wqbEZ8"
+  
+LICENSE intempora rtmaps_studio 2012.12 31-dec-2012 uncounted
+  hostid=ANY start=20-dec-2011 customer=PROTEUS contract=PROTEUS
+  disable=TerminalServer _ck=621ea93500 sig="c2S25g2h5ywpkGP1iN*IU5Cb
+  S4V09Dg+x08msZQfwTTL95MkfqZNLHoIQtIS~6F"
+  
+LICENSE intempora rtmaps_sdk 2012.12 31-dec-2012 uncounted hostid=ANY
+  start=20-dec-2011 customer=PROTEUS contract=PROTEUS
+  disable=TerminalServer _ck=0c1ea9b358 sig="c2S25g2qGTv2++bgwg9UWK9D
+  Xc0mSVxkxg8m57YS1Ca~Ixnw7HIjZDJKtSqiuvc"
+  

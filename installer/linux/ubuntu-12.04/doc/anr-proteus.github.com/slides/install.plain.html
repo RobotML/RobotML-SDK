@@ -1,0 +1,411 @@
+<h1>Install PROTEUS distribution</h1>
+
+<p>Pierrick Koch - <a href="https://www.greyc.fr/">GREYC</a> - <a href="http://www.cnrs.fr/">CNRS</a></p>
+
+<p>This presentation aims at helping you to install PROTEUS tools and related
+software.</p>
+
+<p><a href="http://anr-proteus.fr/">anr-proteus.fr</a></p>
+
+<hr />
+
+<h1>Introduction</h1>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/proteus.svg" alt="proteus" title="proteus" /></p>
+
+<hr />
+
+<h1>Introduction (2)</h1>
+
+<p>PROTEUS distribution is a set of tools developped or selected within the
+project. They are available as Debian packages for the selected project's
+operating system Ubuntu Linux distribution.</p>
+
+<p>Those tools are up-to-date on PROTEUS APT repository hosted by
+<a href="http://proteus.bourges.univ-orleans.fr">univ-orleans.fr</a>.</p>
+
+<p>The repository's access is secured, as some software are not free, every member
+has credentials to install and update his distribution.</p>
+
+<hr />
+
+<h1>PROTEUS tools</h1>
+
+<ul>
+<li>Main tools
+<ul>
+<li><a href="http://www.ros.org">ROS</a> Robot Operating System</li>
+<li><a href="http://eclipse.org">Eclipse</a>/<a href="http://eclipse.org/papyrus">Papyrus</a></li>
+<li><a href="http://protege.stanford.edu">Protege</a></li>
+</ul></li>
+<li>Simulation plateform
+<ul>
+<li><a href="http://cycabtk.gforge.inria.fr">CycabTK</a></li>
+<li><a href="http://morse.openrobots.org">MORSE</a></li>
+<li><a href="http://www.vle-project.org">VLE</a></li>
+</ul></li>
+<li>Robotic framework
+<ul>
+<li><a href="http://effidence.com/fr/effibox/decouvrir.html">Arrocam</a></li>
+<li><a href="http://intempora.com/technology/rtmaps-software">RTMaps</a></li>
+<li><a href="http://gostai.com/products/urbi">Urbi</a></li>
+<li><a href="http://orocos.org">Orocos</a></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h1>Installation: Ubuntu</h1>
+
+<p>Within PROTEUS project, in order to harmonize software integration, we choosed
+to work on Ubuntu Linux distribuition.</p>
+
+<p>We started with the version 10.04, we are currently using the 11.04, and we will
+switch to the latest <a href="https://wiki.ubuntu.com/LTS">LTS</a>, the 12.04, in June. LTS
+stands for Long Term Support (5 years), meaning for the 12.04, untill 2017!</p>
+
+<p><a href="http://releases.ubuntu.com/11.04/ubuntu-11.04-desktop-i386.iso">Download Ubuntu 11.04 (Natty)</a>
+(image CD ISO ~700 MB)</p>
+
+<p><em>nb</em>: allow at least 10 GB for your installation (15 should be enough)</p>
+
+<hr />
+
+<h1>Installation: base tools</h1>
+
+<p>Run <code>proteus.run</code> in:</p>
+
+<ul>
+<li><a href="https://dassault3.ddo.net/svn/proteus-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run">svn-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run</a></li>
+</ul>
+
+<p>with the following command in a terminal (do not <code>sudo</code>):</p>
+
+<pre><code>sh proteus.run
+</code></pre>
+
+<p>You will need to provided you login and password for the
+<a href="https://packages.greyc.fr/proteus">repository</a>. And your root pass as well to
+install the packages.</p>
+
+<p><em>nb</em>: in case of download or network failure, you can restart this script when
+you want. It will overwrite the configuration without re-downloading what was
+already done.</p>
+
+<hr />
+
+<h1>Installation tool: Run in Terminal</h1>
+
+<p>download: <a href="https://dassault3.ddo.net/svn/proteus-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run">svn-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run</a></p>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/screenshots/Screenshot0runterm.png" alt="install-runterm" title="install-runterm" /></p>
+
+<p>Click on "<code>Run in Terminal</code>"</p>
+
+<hr />
+
+<h1>Installation tool: login</h1>
+
+<p>download: <a href="https://dassault3.ddo.net/svn/proteus-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run">svn-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run</a></p>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/screenshots/Screenshot1login.png" alt="install-login" title="install-login" /></p>
+
+<p>Login and password for the <a href="https://packages.greyc.fr/proteus">repository</a></p>
+
+<hr />
+
+<h1>Installation tool: next</h1>
+
+<p>download: <a href="https://dassault3.ddo.net/svn/proteus-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run">svn-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run</a></p>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/screenshots/Screenshot2loginnext.png" alt="install-loginnext" title="install-loginnext" /></p>
+
+<p>Next...</p>
+
+<hr />
+
+<h1>Installation tool: choose apps</h1>
+
+<p>download: <a href="https://dassault3.ddo.net/svn/proteus-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run">svn-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run</a></p>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/screenshots/Screenshot3selectapp.png" alt="install-selectapp" title="install-selectapp" /></p>
+
+<p>Choose your packages</p>
+
+<hr />
+
+<h1>Installation tool: install</h1>
+
+<p>download: <a href="https://dassault3.ddo.net/svn/proteus-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run">svn-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run</a></p>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/screenshots/Screenshot4install.png" alt="install-install" title="install-install" /></p>
+
+<p>Install...</p>
+
+<hr />
+
+<h1>Installation tool: checking password</h1>
+
+<p>download: <a href="https://dassault3.ddo.net/svn/proteus-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run">svn-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run</a></p>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/screenshots/Screenshot5checklogin.png" alt="install-checklogin" title="install-checklogin" /></p>
+
+<p>Checking your password for <a href="https://packages.greyc.fr/proteus/">packages.greyc.fr/proteus</a></p>
+
+<hr />
+
+<h1>Installation tool: root</h1>
+
+<p>download: <a href="https://dassault3.ddo.net/svn/proteus-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run">svn-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run</a></p>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/screenshots/Screenshot6rootpw.png" alt="install-rootpw" title="install-rootpw" /></p>
+
+<p>Give your <code>root</code> password (aka. super user)</p>
+
+<hr />
+
+<h1>VirtualBox</h1>
+
+<p>If you install PROTEUS tools through a virtual machine, remember that 3D
+simulation software wont work well since they need OpenGL, which is not
+supported by VirtualBox. You will need to change some default settings:</p>
+
+<ul>
+<li>Activate PEA/NX</li>
+<li>Activate 3D acceleration</li>
+<li>Add video memory</li>
+</ul>
+
+<p>Once Ubuntu installation is over, go to "Devices > Install the Guest Additions",
+then activate the VirtualBox video driver.</p>
+
+<p>In MORSE, it is recomanded to use the "WIREFRAME" mode for your simultaion. cf.
+<a href="https://github.com/laas/morse/blob/0.5.1/src/morse/builder/morsebuilder.py#L401">morsebuilder.py#L401</a>:</p>
+
+<pre><code>env.set_viewport(viewport_shade = 'WIREFRAME')
+</code></pre>
+
+<hr />
+
+<h1>VirtualBox Settings</h1>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/screenshots/vb1.png" alt="vb-settings" title="vb-settings" /></p>
+
+<hr />
+
+<h1>VirtualBox PEA/NX</h1>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/screenshots/vb2.png" alt="vb-peanx" title="vb-peanx" /></p>
+
+<hr />
+
+<h1>VirtualBox 3D</h1>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/screenshots/vb3.png" alt="vb-3d" title="vb-3d" /></p>
+
+<hr />
+
+<h1>Demo / Tests</h1>
+
+<p>A MORSE presentaiton containing examples and video is available at:
+<a href="http://bit.ly/proteus2">bit.ly/proteus2</a></p>
+
+<p><a href="http://anr-proteus.github.com/slides/demo.html#slide14"><img src="http://anr-proteus.github.com/slides/misc/screenshots/demo-slides.png" alt="demo-slides" title="demo-slides" /></a></p>
+
+<hr />
+
+<h1>Installation: Eclipse</h1>
+
+<p>version: Eclipse Modeling Indigo (3.7) &amp; Papyrus 0.8.2</p>
+
+<p><code>sudo apt-get install</code> <a href="http://apt.ubuntu.com/p/proteus-base-eclipse"><code>proteus-base-eclipse</code></a></p>
+
+<h2>Test install</h2>
+
+<p>Run the following command in a terminal:</p>
+
+<pre><code>eclipse
+</code></pre>
+
+<h2>Update</h2>
+
+<p><img src="http://anr-proteus.github.com/slides/misc/screenshots/screen-eclipse-update.png" alt="eclipse-update" title="eclipse-update" /></p>
+
+<hr />
+
+<h1>Installation: CycabTK</h1>
+
+<p>version: 2.0</p>
+
+<p><code>sudo apt-get install</code> <a href="http://apt.ubuntu.com/p/proteus-cycabtk"><code>proteus-cycabtk</code></a></p>
+
+<hr />
+
+<h1>Installation: MORSE</h1>
+
+<p>version: 0.4</p>
+
+<p><code>sudo apt-get install</code> <a href="http://apt.ubuntu.com/p/proteus-morse"><code>proteus-morse</code></a></p>
+
+<h2>Test install</h2>
+
+<p>Run the following command in a terminal:</p>
+
+<pre><code>morse check
+</code></pre>
+
+<p>see <a href="https://github.com/laas/morse#readme">MORSE README</a></p>
+
+<hr />
+
+<h1>Installation: RTMaps</h1>
+
+<p>version: 4.0.1</p>
+
+<p><code>sudo apt-get install</code> <a href="http://apt.ubuntu.com/p/proteus-rtmaps"><code>proteus-rtmaps</code></a></p>
+
+<h2>Test install</h2>
+
+<p>Run the following command in a terminal:</p>
+
+<pre><code>rtmaps /opt/rtmaps/samples/demo_lidar_linux.rtd
+</code></pre>
+
+<hr />
+
+<h1>Installation: RTMaps (2)</h1>
+
+<p><a href="http://intempora.com/technology/rtmaps-software"><img src="http://anr-proteus.github.com/slides/misc/screenshots/demo_rtmaps.png" alt="demo-rtmaps" title="demo-rtmaps" /></a></p>
+
+<hr />
+
+<h1>Installation: Urbi</h1>
+
+<p>version: 2.7.1</p>
+
+<p><code>sudo apt-get install</code> <a href="http://apt.ubuntu.com/p/proteus-urbi"><code>proteus-urbi</code></a></p>
+
+<hr />
+
+<h1>Installation: VLE</h1>
+
+<p>version: 1.0</p>
+
+<p><code>sudo apt-get install</code> <a href="http://apt.ubuntu.com/p/proteus-vle"><code>proteus-vle</code></a></p>
+
+<hr />
+
+<h1>Installation: Orocos</h1>
+
+<p>version: 0.4</p>
+
+<p><code>sudo apt-get install</code> <a href="http://apt.ubuntu.com/p/proteus-orocos"><code>proteus-orocos</code></a></p>
+
+<hr />
+
+<h1>Installation: Effibox</h1>
+
+<p>version: XXX</p>
+
+<p><code>sudo apt-get install</code> <a href="http://apt.ubuntu.com/p/proteus-aroccam"><code>proteus-aroccam</code></a></p>
+
+<hr />
+
+<h1>Installation: Protege</h1>
+
+<p>version: 4.1</p>
+
+<p><code>sudo apt-get install</code> <a href="http://apt.ubuntu.com/p/proteus-base-protege"><code>proteus-base-protege</code></a></p>
+
+<hr />
+
+<h1>Update the distribution</h1>
+
+<p>First, you need to update the repositories list:</p>
+
+<pre><code>sudo apt-get update
+</code></pre>
+
+<p>Then, upgrade your packages:</p>
+
+<pre><code>sudo apt-get upgrade
+</code></pre>
+
+<hr />
+
+<h1>Remove a package</h1>
+
+<pre><code>sudo apt-get remove vle
+</code></pre>
+
+<p>and autoremove to clean the former dependencies:</p>
+
+<pre><code>sudo apt-get autoremove
+</code></pre>
+
+<hr />
+
+<h1>SVN</h1>
+
+<h3>Install SVN (Ubuntu)</h3>
+
+<p><code>sudo apt-get install</code> <a href="http://apt.ubuntu.com/p/subversion"><code>subversion</code></a></p>
+
+<h3>Get the workspace from a server with your login</h3>
+
+<pre><code>svn checkout --username USERNAME URI LOCALDIR
+</code></pre>
+
+<h3>Update your local copy</h3>
+
+<pre><code>svn update
+</code></pre>
+
+<h3>Commit your changes to the server</h3>
+
+<pre><code>svn commit
+</code></pre>
+
+<p><a href="http://svnbook.red-bean.com/en/1.7"><img src="http://covers.oreilly.com/images/9780596004484/cat.gif" alt="svn" title="svn" /> svnbook.red-bean.com</a></p>
+
+<hr />
+
+<h1>Proxy</h1>
+
+<p>To update root's proxy settings:</p>
+
+<pre><code>sudo gnome-network-properties
+</code></pre>
+
+<p>or see <code>sudo -i</code>:</p>
+
+<pre><code>The -i (simulate initial login) option runs the shell specified in the
+passwd(5) entry of the target user as a login shell.  This means that
+login-specific resource files such as .profile or .login will be read by
+the shell.  If a command is specified, it is passed to the shell for
+execution.  Otherwise, an interactive shell is executed.  sudo attempts to
+change to that user's home directory before running the shell.  It also
+initializes the environment, leaving DISPLAY and TERM unchanged, setting
+HOME, MAIL, SHELL, USER, LOGNAME, and PATH, as well as the contents of
+/etc/environment on Linux and AIX systems.  All other environment
+variables are removed.
+</code></pre>
+
+<p>or with <code>pip --proxy</code>:</p>
+
+<pre><code>sudo pip --proxy=http://myproxy:8080 -U rosinstall
+</code></pre>
+
+<hr />
+
+<h1>That's all Folks!</h1>
+
+<p>short link to this presentation: <a href="http://bit.ly/proteus1">bit.ly/proteus1</a></p>
+
+<p><img src="http://bit.ly/proteus1.qrcode" alt="proteus-install" title="proteus-install" /></p>
+
+<p>1 page doc: <a href="http://bit.ly/proteus1md">bit.ly/proteus1md</a></p>
+
+<p>sources on GitHub: <a href="http://bit.ly/proteus-src">bit.ly/proteus-src</a></p>
+
+<p><a href="http://www.printfriendly.com/print/v2?url=http%3A%2F%2Fanr-proteus.github.com%2Fslides%2Finstall.plain.html"><img src="http://cdn.printfriendly.com/pf-button-both.gif" alt="printfriendly" title="pdf" /></a></p>

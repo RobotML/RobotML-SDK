@@ -10,3 +10,4 @@ The other folders are only for the sake of future data
 
   - tests: is to be linked to the work done by OARPS / challenge
   - examples: is also to be linked to above folder
+  - documents: it is necessary to load error files or other data useful for the different issues

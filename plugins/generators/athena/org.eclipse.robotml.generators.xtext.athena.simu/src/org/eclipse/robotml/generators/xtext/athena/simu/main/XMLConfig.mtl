@@ -10,7 +10,9 @@
 
 	<!-- User libraries ++++++++++++++++++++++++++++++++++++++++++++ -->
 	<user-libraries>
-		<library>?????</library>
+[for(wrap : wrapperDeclaration | project.wrappers)]
+		<library>lib[wrap.name/].so</library>
+[/for]
 	</user-libraries>
 
 	<!-- Matlab configuration ++++++++++++++++++++++++++++++++++++++++++++ -->

@@ -20,9 +20,14 @@ import org.eclipse.acceleo.engine.generation.strategy.IAcceleoGenerationStrategy
 import org.eclipse.acceleo.engine.service.AbstractAcceleoGenerator;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * Entry point of the 'GenerateAthena' generation module.
@@ -409,4 +414,20 @@ public class GenerateAthena extends AbstractAcceleoGenerator {
         // resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
     }
     
+    
+    private void checkForUnresolvedProxies(Resource res) {
+    	  TreeIterator<EObject> allContent = EcoreUtil.getAllContents(res, true);
+    	  while (allContent.hasNext()) {
+    	    EObject next = allContent.next();
+    	    if (next.eIsProxy()) {
+    	      throw new RuntimeException("Unresolved proxy : " + ((InternalEObject)next).eProxyURI());
+    	    }
+    	    for (EObject crossReference : next.eCrossReferences()) {
+    	      if (crossReference.eIsProxy()) {
+    	        throw new RuntimeException("Unresolved proxy : " + ((InternalEObject)crossReference).eProxyURI());
+    	      }
+    	    }
+    	  }
+    	}
+
 }

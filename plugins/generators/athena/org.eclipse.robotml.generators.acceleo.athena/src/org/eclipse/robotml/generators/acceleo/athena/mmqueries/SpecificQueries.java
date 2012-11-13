@@ -672,8 +672,8 @@ public class SpecificQueries {
 		Boolean result = false;
 		
 		FSMQueries queries = new FSMQueries();
-		List<Transition> transitions = queries.getTransitions(fsm);
-		for(Transition transition : transitions)
+		List<org.eclipse.papyrus.RobotML.Transition> transitions = queries.getTransitions(fsm);
+		for(org.eclipse.papyrus.RobotML.Transition transition : transitions)
 		{
 			result |= (transition.getGuard() != null);
 			result |= (transition.getEffect() != null);
@@ -729,7 +729,7 @@ public class SpecificQueries {
 	 * @param ne
 	 * @return
 	 */
-	static public List<NamedElement> getAllOpaqueBehaviorFromModel(NamedElement ne)
+	static private List<NamedElement> getAllOpaqueBehaviorFromModel(NamedElement ne)
 	{
 		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
 		
@@ -752,6 +752,20 @@ public class SpecificQueries {
 					res.addAll(SpecificQueries.getAllOpaqueBehaviorFromModel((NamedElement)elt));
 				}
 			}
+		}
+		
+		return res;
+	}
+	
+	static public List<NamedElement> getOpaqueBehaviorFromModel(NamedElement ne)
+	{
+		List<NamedElement> res = getAllOpaqueBehaviorFromModel(ne);
+		FSMQueries query = new FSMQueries();
+		List<StateMachine> sms = query.getStateMachines(ne);
+		
+		for(StateMachine sm : sms)
+		{
+			res.removeAll(SpecificQueries.getFSMOpaqueBehavior((Model)ne, sm));
 		}
 		
 		return res;
@@ -1226,4 +1240,32 @@ public class SpecificQueries {
 		return SpecificQueries._structTypeUsed.contains(ne);
 	}
 	
+	
+	static public List<OpaqueBehavior> getFSMOpaqueBehavior(Model model, StateMachine sm)
+	{
+		LinkedList<OpaqueBehavior> res = new LinkedList<OpaqueBehavior>();
+		
+		FSMQueries query = new FSMQueries();
+		HashSet<String> funcName = new HashSet<String>();
+		List<org.eclipse.papyrus.RobotML.Transition> transitions = query.getTransitions(sm);
+		for(org.eclipse.papyrus.RobotML.Transition transition : transitions)
+		{
+			if(transition.getGuard() != null)
+				funcName.add(transition.getGuard().getBase_Operation().getName());
+			
+			if(transition.getEffect()  != null)
+				funcName.add(transition.getEffect().getBase_Operation().getName());
+		}
+		
+		List<NamedElement> behaviors = getAllOpaqueBehaviorFromModel(model);
+		for(NamedElement behavior : behaviors)
+		{
+			String op_name = ((OpaqueBehavior)behavior).getSpecification().getName();
+			if(funcName.contains(op_name))
+			{
+				res.add((OpaqueBehavior)behavior);
+			}
+		}
+		return res;
+	}
 }

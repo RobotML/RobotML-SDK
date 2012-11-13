@@ -152,7 +152,7 @@ public:
 	static const unsigned int __[type.name/];
 	void set_[type.name/](const [type.name/]& d);
 	const [type.name/]* get_[type.name/]();
-	const bool is_[type.name/]() { return (type == __[type.name/]); }
+	bool is_[type.name/]() const { return (type == __[type.name/]); }
 	[/for]
 	[union.name/](const [union.name/]& _[union.name/]);
 	~[union.name/]();

@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Acceleo GlobalGenerator Module IDE Plug-in
+Bundle-SymbolicName: org.eclipse.robotml.generators.generator.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.robotml.generators.generator.ui.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.robotml.generators.acceleo.athena,
+ org.eclipse.robotml.generators.xtext.athena.simu,
+ org.eclipse.robotml.generators.xtext.athena.vle,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.model,
+ org.eclipse.acceleo.engine,
+ org.xtext.AthenaDSL;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.gmfdiag.commands,
+ org.eclipse.gmf.runtime.emf.commands.core;bundle-version="1.4.0",
+ org.eclipse.uml2.uml;bundle-version="4.0.1"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
+Import-Package: org.eclipse.emf.transaction,
+ org.eclipse.gmf.runtime.common.core.command,
+ org.eclipse.gmf.runtime.emf.commands.core.command,
+ org.eclipse.papyrus.infra.widgets.util,
+ org.eclipse.papyrus.views.modelexplorer.handler

@@ -1,8 +1,5 @@
 package org.eclipse.robotml.generators.xtext.athena.vle.main;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import org.xtext.athenaDSL.DataType;
 import org.xtext.athenaDSL.LanguageDeclaration;
 import org.xtext.athenaDSL.Project;
@@ -13,7 +10,6 @@ import org.xtext.athenaDSL.defineType;
 import org.xtext.athenaDSL.functionDeclaration;
 import org.xtext.athenaDSL.includeDecl;
 import org.xtext.athenaDSL.index;
-import org.xtext.athenaDSL.instanceDeclaration;
 import org.xtext.athenaDSL.languageDecl;
 import org.xtext.athenaDSL.lexicalCastDecl;
 import org.xtext.athenaDSL.mapType;
@@ -737,74 +733,39 @@ public class DSLQueries
 		return(type instanceof vectorType) || (type instanceof mapType) || (type instanceof arrayType);
 	}
 	
-	/**
-	 * Return all the needed class for the prototype
-	 * @param prototype
-	 * @return
-	 */
-	public static List<prototypeDeclaration> getClassNeeded(prototypeDeclaration prototype)
-	{
-		LinkedList<prototypeDeclaration> result = new LinkedList<prototypeDeclaration>();
-		if(prototype.getSuperType() != null)
-		{
-			result.add(prototype.getSuperType());
-			result.addAll(DSLQueries.getClassNeeded(prototype.getSuperType()));
-		}
-		return result;
-	}
-	
-	/**
-	 * Search if the prototype is instanciate
-	 * @param prototype
-	 * @param project
-	 * @return
-	 */
-	public static Boolean isInstanciated(prototypeDeclaration prototype, Project project)
+	public static Boolean hasReference(Project project, prototypeDeclaration prototype)
 	{
 		Boolean result = false;
 		
 		for(prototypeDeclaration proto : project.getPrototypes())
 		{
-			for(architectureElement elt : proto.getDefinitions())
+			if(DSLQueries.isAnAncestorOf(prototype, proto))
 			{
-				if(elt instanceof instanceDeclaration)
+				for(architectureElement elt : proto.getDefinitions())
 				{
-					instanceDeclaration inst = (instanceDeclaration)elt;
-					String instType = inst.getTypeName().getName();
-					String protoType = prototype.getName(); 
-					if(protoType.equals(instType))
-					{
-						result = true;
-						break;
-					}
+					result |= DSLQueries.isReference(elt);
 				}
-			}
-			
-			if(result == true)
-			{
-				break;
 			}
 		}
 		
 		return result;
 	}
 	
-	/**
-	 * Search if the prototype has instance
-	 * @param prototype
-	 * @return
-	 */
-	public static Boolean hasInstance(prototypeDeclaration prototype)
+	public static Boolean hasParameter(Project project, prototypeDeclaration prototype)
 	{
 		Boolean result = false;
-		for(architectureElement elt : prototype.getDefinitions())
+		
+		for(prototypeDeclaration proto : project.getPrototypes())
 		{
-			if(elt instanceof instanceDeclaration)
+			if(DSLQueries.isAnAncestorOf(prototype, proto))
 			{
-				result = true;
-				break;
+				for(architectureElement elt : proto.getDefinitions())
+				{
+					result |= DSLQueries.isParameter(elt);
+				}
 			}
 		}
+		
 		return result;
 	}
 }

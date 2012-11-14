@@ -85,6 +85,11 @@ public class AlfServices
 		return bloc;
 	}
 	
+	public static Boolean canConvertToAlfBlock(NamedElement ne)
+	{
+		return (AlfServices.createAlfBlockFromUML(ne) != null);
+	}
+	
 //	/**
 //	 * Transcoding on string a class declaration
 //	 * @param classe

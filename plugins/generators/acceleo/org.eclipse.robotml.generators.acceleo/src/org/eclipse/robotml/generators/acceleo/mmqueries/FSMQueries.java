@@ -3,6 +3,7 @@ package org.eclipse.robotml.generators.acceleo.mmqueries;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.StateMachine;
 
@@ -29,13 +30,20 @@ public class FSMQueries {
 	 * @return a list of transitions
      * @todo a valider par Nicolas 
 	 */
-	public List<org.eclipse.uml2.uml.Transition> getTransitions(StateMachine sm)
+	public List<org.eclipse.papyrus.RobotML.Transition> getTransitions(StateMachine sm)
 	{
-		LinkedList<org.eclipse.uml2.uml.Transition> res = new LinkedList<org.eclipse.uml2.uml.Transition>();
+		LinkedList<org.eclipse.papyrus.RobotML.Transition> res = new LinkedList<org.eclipse.papyrus.RobotML.Transition>();
 		for (org.eclipse.uml2.uml.Region region : sm.getRegions())
+		{
 			for(org.eclipse.uml2.uml.Transition transition : region.getTransitions())
-				res.add(transition);
-		
+			{
+				org.eclipse.papyrus.RobotML.Transition robotml_transition = ElementUtil.getStereotypeApplication(transition, org.eclipse.papyrus.RobotML.Transition.class); 
+				if(robotml_transition != null)
+				{
+					res.add(robotml_transition);
+				}
+			}
+		}
 		return res;
 	}
 	

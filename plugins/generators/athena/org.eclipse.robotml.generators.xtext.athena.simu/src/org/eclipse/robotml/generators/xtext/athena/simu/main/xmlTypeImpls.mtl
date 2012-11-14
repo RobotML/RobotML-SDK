@@ -218,7 +218,7 @@ XmlNode* [map.name/]_toXML(const [map.name/]& _val) {
 [template public processStructType(struct : structType)]
 // [struct.name/] is a structure
 XmlNode* [struct.name/]_toXML(const [struct.name/]& _val) {
-	XmlNode* xn = new XmlNode("@type.name@");
+	XmlNode* xn = new XmlNode("[struct.name/]");
 	[for (param : structElement | struct.parameters)]
 	[if (isUnionType(param.typename))]
 	[else]

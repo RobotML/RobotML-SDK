@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:l2="http://www.eclipse.org/uml2/4.0.0/UML/Profile/L2" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
-  <uml:Model xmi:id="__GIkwALIEeCtYMXppfqLMw" name="ProteusLibraries">
+  <uml:Model xmi:id="__GIkwALIEeCtYMXppfqLMw" name="RobotMLLibraries">
     <packagedElement xmi:type="uml:Package" xmi:id="_zRh3sAHrEeCQQOKrhO_fIQ" name="RobotML_ModelLibrary">
       <packagedElement xmi:type="uml:Package" xmi:id="_dt_y4AHtEeCQQOKrhO_fIQ" name="RobotML_DataTypes">
         <packagedElement xmi:type="uml:Package" xmi:id="_wyS6gAH-EeC_ZLzLQhW-TQ" name="std_datatypes">
@@ -1061,26 +1061,273 @@
             <body>stereo_msgs contains messages specific to stereo processing, such as disparity images.</body>
           </ownedComment>
         </packagedElement>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_J-AhoAOXEeC2H4l56ZAZpA" name="interface0_interface1_0" memberEnd="_J-AhpAOXEeC2H4l56ZAZpA _J-AhoQOXEeC2H4l56ZAZpA">
-        <ownedEnd xmi:id="_J-AhoQOXEeC2H4l56ZAZpA" name="interface1" association="_J-AhoAOXEeC2H4l56ZAZpA">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J-AhowOXEeC2H4l56ZAZpA" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J-AhogOXEeC2H4l56ZAZpA" value="1"/>
-        </ownedEnd>
-        <ownedEnd xmi:id="_J-AhpAOXEeC2H4l56ZAZpA" name="interface0" association="_J-AhoAOXEeC2H4l56ZAZpA">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J-AhpgOXEeC2H4l56ZAZpA" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J-AhpQOXEeC2H4l56ZAZpA" value="1"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_UU1LgAOXEeC2H4l56ZAZpA" name="interface0_interface1_1" memberEnd="_UU1LhAOXEeC2H4l56ZAZpA _UU1LgQOXEeC2H4l56ZAZpA">
-        <ownedEnd xmi:id="_UU1LgQOXEeC2H4l56ZAZpA" name="interface1" association="_UU1LgAOXEeC2H4l56ZAZpA">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UU1LgwOXEeC2H4l56ZAZpA" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UU1LggOXEeC2H4l56ZAZpA" value="1"/>
-        </ownedEnd>
-        <ownedEnd xmi:id="_UU1LhAOXEeC2H4l56ZAZpA" name="interface0" association="_UU1LgAOXEeC2H4l56ZAZpA">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UU1LhgOXEeC2H4l56ZAZpA" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UU1LhQOXEeC2H4l56ZAZpA" value="1"/>
-        </ownedEnd>
+        <packagedElement xmi:type="uml:Package" xmi:id="_GCnKgCM_EeKwed7FEEF-4Q" name="oarps_datatypes">
+          <packagedElement xmi:type="uml:Model" xmi:id="_cutLICNDEeKwed7FEEF-4Q" name="oarp1_datatypes">
+            <packagedElement xmi:type="uml:DataType" xmi:id="_cutLKiNDEeKwed7FEEF-4Q" name="CarLikeOdometry">
+              <ownedAttribute xmi:id="_cutLKyNDEeKwed7FEEF-4Q" name="rearLeftWheel">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cutLLCNDEeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cutLLSNDEeKwed7FEEF-4Q" value="1"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_cutLLiNDEeKwed7FEEF-4Q" name="rearRightWheel">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cutLLyNDEeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cutLMCNDEeKwed7FEEF-4Q" value="1"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_cutLMSNDEeKwed7FEEF-4Q" name="motorSpeed">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cutLMiNDEeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cutLMyNDEeKwed7FEEF-4Q" value="1"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_cutLNCNDEeKwed7FEEF-4Q" name="steeringAngle">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cutLNSNDEeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cutLNiNDEeKwed7FEEF-4Q" value="1"/>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_cutLNyNDEeKwed7FEEF-4Q" name="CarLikeCommand">
+              <ownedAttribute xmi:id="_cutLOCNDEeKwed7FEEF-4Q" name="velocity">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cutLOSNDEeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cutLOiNDEeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_cutLOyNDEeKwed7FEEF-4Q" name="defaultSpeed"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_cutLPCNDEeKwed7FEEF-4Q" name="steeringAngle">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cutLPSNDEeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cutLPiNDEeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_cutLPyNDEeKwed7FEEF-4Q" name="defaultSteering"/>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_cutLQCNDEeKwed7FEEF-4Q" name="MultiLayerLidarScan">
+              <ownedAttribute xmi:id="_cutLQSNDEeKwed7FEEF-4Q" name="layers" type="_cutLQyNDEeKwed7FEEF-4Q"/>
+              <ownedAttribute xmi:id="_cutLQiNDEeKwed7FEEF-4Q" name="nbLayer">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_6NJfkAKnEeCQReIOIWJ0nA"/>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_cutLQyNDEeKwed7FEEF-4Q" name="ExtentedLidarScan">
+              <ownedAttribute xmi:id="_cutLRCNDEeKwed7FEEF-4Q" name="scan">
+                <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_cutLRSNDEeKwed7FEEF-4Q" name="layerId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_6NJfkAKnEeCQReIOIWJ0nA"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_cutLRiNDEeKwed7FEEF-4Q" name="layerAngle">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+              </ownedAttribute>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_A3LTsCN8EeKwed7FEEF-4Q" name="oarp4_datatypes">
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LT9SN8EeKwed7FEEF-4Q" name="Velocity_Linear">
+              <ownedAttribute xmi:id="_A3LT9iN8EeKwed7FEEF-4Q" name="value" visibility="public" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MeI3UKukEeCWFJzWkfhPHg"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LT9yN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LT-CN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LT-SN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUDyN8EeKwed7FEEF-4Q" name="Art_Set_Point">
+              <ownedAttribute xmi:id="_A3LUECN8EeKwed7FEEF-4Q" name="omega_left" visibility="public" type="_A3LUUiN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUESN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUEiN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUEyN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_A3LUFCN8EeKwed7FEEF-4Q" name="omega_right" visibility="public" type="_A3LUUiN8EeKwed7FEEF-4Q">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUFSN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUFiN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUFyN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUOSN8EeKwed7FEEF-4Q" name="Distance">
+              <ownedAttribute xmi:id="_A3LUOiN8EeKwed7FEEF-4Q" name="value" visibility="public" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUOyN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUPCN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUPSN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUPiN8EeKwed7FEEF-4Q" name="Metric">
+              <ownedAttribute xmi:id="_A3LUPyN8EeKwed7FEEF-4Q" name="value" visibility="public" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUQCN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUQSN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUQiN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUQyN8EeKwed7FEEF-4Q" name="Angular">
+              <ownedAttribute xmi:id="_A3LURCN8EeKwed7FEEF-4Q" name="value" visibility="public" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LURSN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LURiN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LURyN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUUiN8EeKwed7FEEF-4Q" name="Velocity_Angular">
+              <ownedAttribute xmi:id="_A3LUUyN8EeKwed7FEEF-4Q" name="value" visibility="public" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUVCN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUVSN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUViN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUVyN8EeKwed7FEEF-4Q" name="Op_Set_Point">
+              <ownedAttribute xmi:id="_A3LUWCN8EeKwed7FEEF-4Q" name="velocity" visibility="public" type="_A3LT9SN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUWSN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUWiN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUWyN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_A3LUXCN8EeKwed7FEEF-4Q" name="orientation" visibility="public" type="_A3LUQyN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUXSN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUXiN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUXyN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUZSN8EeKwed7FEEF-4Q" name="Speed_Tics_Left_Right">
+              <ownedAttribute xmi:id="_A3LUZiN8EeKwed7FEEF-4Q" name="speed_tics_left" visibility="public" type="_A3LUbiN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUZyN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUaCN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUaSN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_A3LUaiN8EeKwed7FEEF-4Q" name="speed_tics_right" visibility="public" type="_A3LUbiN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUayN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUbCN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUbSN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUbiN8EeKwed7FEEF-4Q" name="Speed_Tics">
+              <ownedAttribute xmi:id="_A3LUbyN8EeKwed7FEEF-4Q" name="value" visibility="public" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MeI3UKukEeCWFJzWkfhPHg"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUcCN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUcSN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUciN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUcyN8EeKwed7FEEF-4Q" name="Odometer_Tics">
+              <ownedAttribute xmi:id="_A3LUdCN8EeKwed7FEEF-4Q" name="value" visibility="public" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_MeI3UKukEeCWFJzWkfhPHg"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUdSN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUdiN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUdyN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUeCN8EeKwed7FEEF-4Q" name="Odometer_Tics_Left_Right">
+              <ownedAttribute xmi:id="_A3LUeSN8EeKwed7FEEF-4Q" name="odometer_tics_left" visibility="public" type="_A3LUcyN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUeiN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUeyN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUfCN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_A3LUfSN8EeKwed7FEEF-4Q" name="odometer_tics_right" visibility="public" type="_A3LUcyN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUfiN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUfyN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUgCN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUgSN8EeKwed7FEEF-4Q" name="Proxi_Left_Right">
+              <ownedAttribute xmi:id="_A3LUgiN8EeKwed7FEEF-4Q" name="proxi_left" visibility="public" type="_A3LUOSN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUgyN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUhCN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUhSN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_A3LUhiN8EeKwed7FEEF-4Q" name="proxi_right" visibility="public" type="_A3LUOSN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUhyN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUiCN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUiSN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUjyN8EeKwed7FEEF-4Q" name="Milli_Amp">
+              <ownedAttribute xmi:id="_A3LUkCN8EeKwed7FEEF-4Q" name="value" visibility="public" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUkSN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUkiN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUkyN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUlCN8EeKwed7FEEF-4Q" name="Odometer_Linear_Left_Right">
+              <ownedAttribute xmi:id="_A3LUlSN8EeKwed7FEEF-4Q" name="odometer_linear_left" visibility="public" type="_A3LUPiN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUliN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUlyN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUmCN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_A3LUmSN8EeKwed7FEEF-4Q" name="odometer_linear_right" visibility="public" type="_A3LUPiN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUmiN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUmyN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUnCN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUnSN8EeKwed7FEEF-4Q" name="Velocity_Angular_Left_Right">
+              <ownedAttribute xmi:id="_A3LUniN8EeKwed7FEEF-4Q" name="velocity_angular_left" visibility="public" type="_A3LUUiN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUnyN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUoCN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUoSN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_A3LUoiN8EeKwed7FEEF-4Q" name="velocity_angular_right" visibility="public" type="_A3LUUiN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUoyN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUpCN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUpSN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+            <packagedElement xmi:type="uml:DataType" xmi:id="_A3LUpiN8EeKwed7FEEF-4Q" name="Velocity">
+              <ownedAttribute xmi:id="_A3LUqCN8EeKwed7FEEF-4Q" name="velocity_linear" visibility="public" type="_A3LT9SN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUqSN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUqiN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUqyN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_A3LUrCN8EeKwed7FEEF-4Q" name="velocity_angular" visibility="public" type="_A3LUUiN8EeKwed7FEEF-4Q" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A3LUrSN8EeKwed7FEEF-4Q" value="1"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A3LUriN8EeKwed7FEEF-4Q" value="1"/>
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_A3LUryN8EeKwed7FEEF-4Q">
+                  <value xsi:nil="true"/>
+                </defaultValue>
+              </ownedAttribute>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="__iYKQCHWEeKDtOxlgk7bNA" name="RobotML_Components">
         <packagedElement xmi:type="uml:Package" xmi:id="_IPr4oCHXEeKDtOxlgk7bNA" name="sensors"/>
@@ -1096,7 +1343,7 @@
       <eAnnotations xmi:id="_ZLPMYDYaEeGUydwEzczV4w" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/4.0.0/UML/Profile/L2#/"/>
       </eAnnotations>
-      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+      <appliedProfile href="pathmap://UML_PROFILES/StandardL2.profile.uml#_0"/>
     </profileApplication>
   </uml:Model>
   <l2:ModelLibrary xmi:id="_1bVAUAHsEeCQQOKrhO_fIQ" base_Package="_zRh3sAHrEeCQQOKrhO_fIQ"/>

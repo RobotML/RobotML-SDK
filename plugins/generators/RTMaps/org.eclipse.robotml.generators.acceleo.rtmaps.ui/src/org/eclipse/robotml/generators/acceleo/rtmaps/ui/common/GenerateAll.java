@@ -24,7 +24,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.osgi.framework.Bundle;
-
+import org.eclipse.robotml.generators.acceleo.rtmaps.*;
 
 /**
  * Main entry point of the 'RTMaps' generation module.
@@ -87,7 +87,7 @@ public class GenerateAll {
 		//};
 		//gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		monitor.subTask("Loading...");
-		org.eclipse.robotml.generators.acceleo.rtmaps.Generate_rtmaps gen0 = new org.eclipse.robotml.generators.acceleo.rtmaps.Generate_rtmaps(modelURI, targetFolder.getLocation().toFile(), arguments);
+		Generate_rtmaps gen0 = new Generate_rtmaps(modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
 		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.eclipse.robotml.generators.acceleo.rtmaps", "org.eclipse.robotml.generators.acceleo.rtmaps.main.Generate_rtmaps", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
@@ -107,7 +107,7 @@ public class GenerateAll {
 	 * @throws IOException
 	 * @generated
 	 */
-	@SuppressWarnings({ "unchecked", "unused" })
+	@SuppressWarnings({ "unused" })
 	private URI getTemplateURI(String bundleID, IPath relativePath) throws IOException {
 		Bundle bundle = Platform.getBundle(bundleID);
 		if (bundle == null) {

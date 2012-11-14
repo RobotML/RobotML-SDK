@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator.ui/src/org/eclipse/acceleo/module/OrocosGenerator/ui/handler
+END
+AcceleoOrocosCodeGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 201
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator.ui/src/org/eclipse/acceleo/module/OrocosGenerator/ui/handler/AcceleoOrocosCodeGenerator.java
+END
+AcceleoGenerateOrocosCommandHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 210
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator.ui/src/org/eclipse/acceleo/module/OrocosGenerator/ui/handler/AcceleoGenerateOrocosCommandHandler.java
+END
+GenerateOrocosCodeCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator.ui/src/org/eclipse/acceleo/module/OrocosGenerator/ui/handler/GenerateOrocosCodeCommand.java
+END

@@ -81,7 +81,7 @@ public class GenerateRTMapsCodeCommand extends AbstractTransactionalCommand {
 		// TODO Auto-generated method stub
 
 
-		System.err.println("Model Exlorer generation menu RTMaps");
+		//System.err.println("Model Exlorer generation menu RTMaps");
 		
 		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 		final ProgressMonitorDialog monitordialog = new ProgressMonitorDialog(shell);

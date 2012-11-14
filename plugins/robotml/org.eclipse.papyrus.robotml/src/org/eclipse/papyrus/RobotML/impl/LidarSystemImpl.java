@@ -3,11 +3,8 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.papyrus.RobotML.LidarSystem;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
@@ -29,6 +26,7 @@ import org.eclipse.papyrus.RobotML.RobotMLPackage;
  *   <li>{@link org.eclipse.papyrus.RobotML.impl.LidarSystemImpl#getScan_time <em>Scan time</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotML.impl.LidarSystemImpl#getRange_min <em>Range min</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotML.impl.LidarSystemImpl#getRange_max <em>Range max</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.LidarSystemImpl#getNbRays <em>Nb Rays</em>}</li>
  * </ul>
  * </p>
  *
@@ -254,6 +252,26 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * @ordered
 	 */
 	protected float range_max = RANGE_MAX_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNbRays() <em>Nb Rays</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbRays()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long NB_RAYS_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getNbRays() <em>Nb Rays</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbRays()
+	 * @generated
+	 * @ordered
+	 */
+	protected long nbRays = NB_RAYS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -510,6 +528,27 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public long getNbRays() {
+		return nbRays;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNbRays(long newNbRays) {
+		long oldNbRays = nbRays;
+		nbRays = newNbRays;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.LIDAR_SYSTEM__NB_RAYS, oldNbRays, nbRays));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -535,6 +574,8 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 				return getRange_min();
 			case RobotMLPackage.LIDAR_SYSTEM__RANGE_MAX:
 				return getRange_max();
+			case RobotMLPackage.LIDAR_SYSTEM__NB_RAYS:
+				return getNbRays();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -579,6 +620,9 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 				return;
 			case RobotMLPackage.LIDAR_SYSTEM__RANGE_MAX:
 				setRange_max((Float)newValue);
+				return;
+			case RobotMLPackage.LIDAR_SYSTEM__NB_RAYS:
+				setNbRays((Long)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -625,6 +669,9 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 			case RobotMLPackage.LIDAR_SYSTEM__RANGE_MAX:
 				setRange_max(RANGE_MAX_EDEFAULT);
 				return;
+			case RobotMLPackage.LIDAR_SYSTEM__NB_RAYS:
+				setNbRays(NB_RAYS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -659,6 +706,8 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 				return range_min != RANGE_MIN_EDEFAULT;
 			case RobotMLPackage.LIDAR_SYSTEM__RANGE_MAX:
 				return range_max != RANGE_MAX_EDEFAULT;
+			case RobotMLPackage.LIDAR_SYSTEM__NB_RAYS:
+				return nbRays != NB_RAYS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -695,6 +744,8 @@ public class LidarSystemImpl extends ObjectDetectionSensorSystemImpl implements 
 		result.append(range_min);
 		result.append(", range_max: ");
 		result.append(range_max);
+		result.append(", nbRays: ");
+		result.append(nbRays);
 		result.append(')');
 		return result.toString();
 	}

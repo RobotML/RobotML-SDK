@@ -195,13 +195,22 @@ public interface RobotMLPackage extends EPackage {
 	int SYSTEM__LIBRARY_PATH = 2;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__LIBRARY_COMPONENT_NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = 3;
+	int SYSTEM_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.PhysicalObjectImpl <em>Physical Object</em>}' class.
@@ -239,6 +248,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int PHYSICAL_OBJECT__LIBRARY_PATH = SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHYSICAL_OBJECT__LIBRARY_COMPONENT_NAME = SYSTEM__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
@@ -303,6 +321,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int AGENT__LIBRARY_PATH = PHYSICAL_OBJECT__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__LIBRARY_COMPONENT_NAME = PHYSICAL_OBJECT__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
@@ -376,6 +403,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROBOT__LIBRARY_PATH = AGENT__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROBOT__LIBRARY_COMPONENT_NAME = AGENT__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
@@ -487,6 +523,15 @@ public interface RobotMLPackage extends EPackage {
 	int ENVIRONMENT__LIBRARY_PATH = SYSTEM__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__LIBRARY_COMPONENT_NAME = SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The number of structural features of the '<em>Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -531,6 +576,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SURFACE__LIBRARY_PATH = PHYSICAL_OBJECT__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SURFACE__LIBRARY_COMPONENT_NAME = PHYSICAL_OBJECT__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
@@ -735,6 +789,15 @@ public interface RobotMLPackage extends EPackage {
 	int ROBOTIC_SYSTEM__LIBRARY_PATH = SYSTEM__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROBOTIC_SYSTEM__LIBRARY_COMPONENT_NAME = SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -799,6 +862,15 @@ public interface RobotMLPackage extends EPackage {
 	int ACTUATOR_SYSTEM__LIBRARY_PATH = ROBOTIC_SYSTEM__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTUATOR_SYSTEM__LIBRARY_COMPONENT_NAME = ROBOTIC_SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -861,6 +933,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SENSOR_SYSTEM__LIBRARY_PATH = ROBOTIC_SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME = ROBOTIC_SYSTEM__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
@@ -945,6 +1026,15 @@ public interface RobotMLPackage extends EPackage {
 	int HARDWARE__LIBRARY_PATH = SYSTEM__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE__LIBRARY_COMPONENT_NAME = SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The number of structural features of the '<em>Hardware</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -989,6 +1079,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SOFTWARE__LIBRARY_PATH = SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE__LIBRARY_COMPONENT_NAME = SYSTEM__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is Periodic</b></em>' attribute.
@@ -1203,6 +1302,15 @@ public interface RobotMLPackage extends EPackage {
 	int ENGINE_SYSTEM__LIBRARY_PATH = ACTUATOR_SYSTEM__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENGINE_SYSTEM__LIBRARY_COMPONENT_NAME = ACTUATOR_SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1319,6 +1427,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int WHEEL_SYSTEM__LIBRARY_PATH = ACTUATOR_SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHEEL_SYSTEM__LIBRARY_COMPONENT_NAME = ACTUATOR_SYSTEM__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
@@ -1529,6 +1646,15 @@ public interface RobotMLPackage extends EPackage {
 	int IMAGE_SENSOR_SYSTEM__LIBRARY_PATH = SENSOR_SYSTEM__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME = SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1609,6 +1735,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int CAMERA_SYSTEM__LIBRARY_PATH = IMAGE_SENSOR_SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAMERA_SYSTEM__LIBRARY_COMPONENT_NAME = IMAGE_SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
@@ -1756,6 +1891,15 @@ public interface RobotMLPackage extends EPackage {
 	int OBJECT_DETECTION_SENSOR_SYSTEM__LIBRARY_PATH = SENSOR_SYSTEM__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_DETECTION_SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME = SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1838,6 +1982,15 @@ public interface RobotMLPackage extends EPackage {
 	int OBJECT_TRACKING_SENSOR_SYSTEM__LIBRARY_PATH = SENSOR_SYSTEM__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_TRACKING_SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME = SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1918,6 +2071,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int LIDAR_SYSTEM__LIBRARY_PATH = OBJECT_DETECTION_SENSOR_SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIDAR_SYSTEM__LIBRARY_COMPONENT_NAME = OBJECT_DETECTION_SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
@@ -2055,13 +2217,22 @@ public interface RobotMLPackage extends EPackage {
 	int LIDAR_SYSTEM__RANGE_MAX = OBJECT_DETECTION_SENSOR_SYSTEM_FEATURE_COUNT + 10;
 
 	/**
+	 * The feature id for the '<em><b>Nb Rays</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIDAR_SYSTEM__NB_RAYS = OBJECT_DETECTION_SENSOR_SYSTEM_FEATURE_COUNT + 11;
+
+	/**
 	 * The number of structural features of the '<em>Lidar System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LIDAR_SYSTEM_FEATURE_COUNT = OBJECT_DETECTION_SENSOR_SYSTEM_FEATURE_COUNT + 11;
+	int LIDAR_SYSTEM_FEATURE_COUNT = OBJECT_DETECTION_SENSOR_SYSTEM_FEATURE_COUNT + 12;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.LocalizationSensorSystemImpl <em>Localization Sensor System</em>}' class.
@@ -2099,6 +2270,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOCALIZATION_SENSOR_SYSTEM__LIBRARY_PATH = SENSOR_SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCALIZATION_SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME = SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
@@ -2181,6 +2361,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int GPS_SYSTEM__LIBRARY_PATH = LOCALIZATION_SENSOR_SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GPS_SYSTEM__LIBRARY_COMPONENT_NAME = LOCALIZATION_SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
@@ -2272,6 +2461,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SIMULATED_SYSTEM__LIBRARY_PATH = SOFTWARE__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMULATED_SYSTEM__LIBRARY_COMPONENT_NAME = SOFTWARE__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is Periodic</b></em>' attribute.
@@ -2466,6 +2664,15 @@ public interface RobotMLPackage extends EPackage {
 	int SENSOR_DRIVER__LIBRARY_PATH = SOFTWARE__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_DRIVER__LIBRARY_COMPONENT_NAME = SOFTWARE__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Is Periodic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2557,6 +2764,15 @@ public interface RobotMLPackage extends EPackage {
 	int BUILDING__LIBRARY_PATH = PHYSICAL_OBJECT__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUILDING__LIBRARY_COMPONENT_NAME = PHYSICAL_OBJECT__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2619,6 +2835,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int PLANET__LIBRARY_PATH = PHYSICAL_OBJECT__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLANET__LIBRARY_COMPONENT_NAME = PHYSICAL_OBJECT__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
@@ -2685,6 +2910,15 @@ public interface RobotMLPackage extends EPackage {
 	int GROUND__LIBRARY_PATH = SURFACE__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUND__LIBRARY_COMPONENT_NAME = SURFACE__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2747,6 +2981,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int LAND_SURFACE__LIBRARY_PATH = GROUND__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LAND_SURFACE__LIBRARY_COMPONENT_NAME = GROUND__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
@@ -2813,6 +3056,15 @@ public interface RobotMLPackage extends EPackage {
 	int FLOOR__LIBRARY_PATH = GROUND__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOOR__LIBRARY_COMPONENT_NAME = GROUND__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2877,6 +3129,15 @@ public interface RobotMLPackage extends EPackage {
 	int WATER_SURFACE__LIBRARY_PATH = SURFACE__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WATER_SURFACE__LIBRARY_COMPONENT_NAME = SURFACE__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2939,6 +3200,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int HUMAN__LIBRARY_PATH = AGENT__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HUMAN__LIBRARY_COMPONENT_NAME = AGENT__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
@@ -3014,6 +3284,15 @@ public interface RobotMLPackage extends EPackage {
 	int PEDESTRIAN__LIBRARY_PATH = HUMAN__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PEDESTRIAN__LIBRARY_COMPONENT_NAME = HUMAN__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3087,6 +3366,15 @@ public interface RobotMLPackage extends EPackage {
 	int STAIRS__LIBRARY_PATH = GROUND__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAIRS__LIBRARY_COMPONENT_NAME = GROUND__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Eveloves In</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3151,6 +3439,15 @@ public interface RobotMLPackage extends EPackage {
 	int PLATFORM__LIBRARY_PATH = SYSTEM__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLATFORM__LIBRARY_COMPONENT_NAME = SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Base Node</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3204,6 +3501,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROBOTIC_MIDDLEWARE__LIBRARY_PATH = PLATFORM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROBOTIC_MIDDLEWARE__LIBRARY_COMPONENT_NAME = PLATFORM__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Base Node</b></em>' reference.
@@ -3270,6 +3576,15 @@ public interface RobotMLPackage extends EPackage {
 	int ROBOTIC_SIMULATOR__LIBRARY_PATH = PLATFORM__LIBRARY_PATH;
 
 	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROBOTIC_SIMULATOR__LIBRARY_COMPONENT_NAME = PLATFORM__LIBRARY_COMPONENT_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Base Node</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3323,6 +3638,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int CYCAB_TK__LIBRARY_PATH = ROBOTIC_SIMULATOR__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCAB_TK__LIBRARY_COMPONENT_NAME = ROBOTIC_SIMULATOR__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Base Node</b></em>' reference.
@@ -3405,6 +3729,15 @@ public interface RobotMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int BLENDER_MORSE__LIBRARY_PATH = ROBOTIC_SIMULATOR__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLENDER_MORSE__LIBRARY_COMPONENT_NAME = ROBOTIC_SIMULATOR__LIBRARY_COMPONENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Base Node</b></em>' reference.
@@ -3799,6 +4132,17 @@ public interface RobotMLPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSystem_LibraryPath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotML.System#getLibraryComponentName <em>Library Component Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Library Component Name</em>'.
+	 * @see org.eclipse.papyrus.RobotML.System#getLibraryComponentName()
+	 * @see #getSystem()
+	 * @generated
+	 */
+	EAttribute getSystem_LibraryComponentName();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.Agent <em>Agent</em>}'.
@@ -4713,6 +5057,17 @@ public interface RobotMLPackage extends EPackage {
 	EAttribute getLidarSystem_Range_max();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotML.LidarSystem#getNbRays <em>Nb Rays</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nb Rays</em>'.
+	 * @see org.eclipse.papyrus.RobotML.LidarSystem#getNbRays()
+	 * @see #getLidarSystem()
+	 * @generated
+	 */
+	EAttribute getLidarSystem_NbRays();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.LocalizationSensorSystem <em>Localization Sensor System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5405,6 +5760,14 @@ public interface RobotMLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SYSTEM__LIBRARY_PATH = eINSTANCE.getSystem_LibraryPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Library Component Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYSTEM__LIBRARY_COMPONENT_NAME = eINSTANCE.getSystem_LibraryComponentName();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.AgentImpl <em>Agent</em>}' class.
@@ -6131,6 +6494,14 @@ public interface RobotMLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LIDAR_SYSTEM__RANGE_MAX = eINSTANCE.getLidarSystem_Range_max();
+
+		/**
+		 * The meta object literal for the '<em><b>Nb Rays</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LIDAR_SYSTEM__NB_RAYS = eINSTANCE.getLidarSystem_NbRays();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.LocalizationSensorSystemImpl <em>Localization Sensor System</em>}' class.

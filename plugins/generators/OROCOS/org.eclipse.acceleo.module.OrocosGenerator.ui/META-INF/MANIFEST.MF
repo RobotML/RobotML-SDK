@@ -15,14 +15,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ocl.ecore,
  org.eclipse.acceleo.model,
  org.eclipse.acceleo.engine,
- org.eclipse.gmf.runtime.emf.commands.core;bundle-version="1.4.0"
+ org.eclipse.gmf.runtime.emf.commands.core;bundle-version="1.4.0",
+ org.eclipse.acceleo.module.OrocosGenerator;bundle-version="1.0.0",
+ org.eclipse.papyrus.views.modelexplorer,
+ org.eclipse.papyrus.infra.widgets.toolbox;bundle-version="0.9.1",
+ org.eclipse.papyrus.infra.widgets;bundle-version="0.9.1"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Import-Package: org.eclipse.gmf.runtime.emf.commands.core.command,
- org.eclipse.papyrus.commands,
- org.eclipse.papyrus.commands.wrappers,
- org.eclipse.papyrus.modelexplorer.handler,
- org.eclipse.papyrus.ui.toolbox.notification,
- org.eclipse.papyrus.ui.toolbox.notification.builders,
- org.eclipse.papyrus.widgets.util

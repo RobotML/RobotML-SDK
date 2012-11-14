@@ -16,16 +16,17 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.osgi.framework.Bundle;
-
+import org.eclipse.acceleo.module.OrocosGenerator.main.Generate_config_file;
+import org.eclipse.acceleo.module.OrocosGenerator.main.Generate_mapping_file;
 
 /**
  * Main entry point of the 'OrocosGenerator' generation module.
@@ -87,8 +88,8 @@ public class GenerateAll {
 		//	}
 		//};
 		//gen0.doGenerate(BasicMonitor.toMonitor(monitor));
-		monitor.subTask("Loading...");
-		org.eclipse.acceleo.module.OrocosGenerator.main.Generate_config_file gen0 = new org.eclipse.acceleo.module.OrocosGenerator.main.Generate_config_file(modelURI, targetFolder.getLocation().toFile(), arguments);
+		monitor.subTask("Loading..."); 
+		Generate_config_file gen0 = new org.eclipse.acceleo.module.OrocosGenerator.main.Generate_config_file(modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
 		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.eclipse.acceleo.module.OrocosGenerator", "org.eclipse.acceleo.module.OrocosGenerator.main.Generate_config_file", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
@@ -106,7 +107,7 @@ public class GenerateAll {
 			//gen1.doGenerate(BasicMonitor.toMonitor(monitor));
 			
 			monitor.subTask("Loading...");
-			org.eclipse.acceleo.module.OrocosGenerator.main.Generate_mapping_file gen1 = new org.eclipse.acceleo.module.OrocosGenerator.main.Generate_mapping_file(model, targetFolder.getLocation().toFile(), arguments);
+			Generate_mapping_file gen1 = new org.eclipse.acceleo.module.OrocosGenerator.main.Generate_mapping_file(model, targetFolder.getLocation().toFile(), arguments);
 			monitor.worked(1);
 			generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.eclipse.acceleo.module.OrocosGenerator", "org.eclipse.acceleo.module.OrocosGenerator.main.Generate_mapping_file", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 			gen1.setGenerationID(generationID);

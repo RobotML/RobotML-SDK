@@ -232,7 +232,7 @@
             <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
           </ownedAttribute>
         </packagedElement>
-        <packagedElement xmi:type="uml:DataType" xmi:id="_rye5YB8mEeG4gPCEznVNOA" name="VipalabOdometryMessage">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_rye5YB8mEeG4gPCEznVNOA" name="CarLikeOdometry">
           <ownedAttribute xmi:id="_9y7AAB8mEeG4gPCEznVNOA" name="rearLeftWheel">
             <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9zBtsB8mEeG4gPCEznVNOA" value="1"/>
@@ -254,7 +254,7 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V11mcB8nEeG4gPCEznVNOA" value="1"/>
           </ownedAttribute>
         </packagedElement>
-        <packagedElement xmi:type="uml:DataType" xmi:id="_n122UB8nEeG4gPCEznVNOA" name="VipalabInputMessage">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_n122UB8nEeG4gPCEznVNOA" name="CarLikeCommand">
           <ownedAttribute xmi:id="_uKPlgB8nEeG4gPCEznVNOA" name="velocity">
             <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uKSBwB8nEeG4gPCEznVNOA" value="1"/>

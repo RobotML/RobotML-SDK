@@ -71,6 +71,9 @@
         <children>
           <emfPageIdentifier href="YouthChallenge.notation#_8T8XQBwKEeGcec5y3O28dw"/>
         </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_1YYu5qeoEeCu-MoaA7J4zQ"/>
+        </children>
       </children>
     </windows>
   </sashModel>

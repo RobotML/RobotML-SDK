@@ -1,0 +1,8 @@
+PROTEUS install tool TODO
+=========================
+
+  * log: sh install.sh > "proteus.$(date +%s).log"
+  * fix: echo X | gksudo
+  * see: `software-center proteus-challenge1 proteus-challenge2 proteus-challenge3 proteus-challenge4`
+  * UI: find a better icon !
+

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="GenerateAthena" name="org.eclipse.robotml.generators.xtext.athena.simu">
     <property name="ECLIPSE_HOME" value="../../../../../../../Applications/eclipse/eclipse_juno"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../.."/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../WorkspaceGenerators-Git"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.eclipse.robotml.generators.xtext.athena.simu.libraryclasspath">

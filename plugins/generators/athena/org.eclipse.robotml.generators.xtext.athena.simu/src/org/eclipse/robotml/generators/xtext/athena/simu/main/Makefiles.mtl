@@ -51,6 +51,8 @@ libCPPInterface.so: stubCPP.o
 simu.exe: $(OBJS) 
 	g++ $(EXE_OPTIONS) -o simu.exe $(OBJS) $(BASE)/base/xml.a $(LIBS) -ldl
 	cp simu.exe $(TARGET)
+	cp configTemplate.xml $(TARGET)
+	cp ./run.sh $(TARGET)
 [/file]	
 
 [/template]

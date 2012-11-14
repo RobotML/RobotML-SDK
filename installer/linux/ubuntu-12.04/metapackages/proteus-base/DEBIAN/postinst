@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+
+#
+# this patch has been merged in ROS and is no more needed
+#sh /opt/proteus/patch/patch.sh
+#

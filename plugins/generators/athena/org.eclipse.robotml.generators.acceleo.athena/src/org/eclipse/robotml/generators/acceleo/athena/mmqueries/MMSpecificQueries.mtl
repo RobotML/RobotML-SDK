@@ -85,8 +85,8 @@
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'hasValidFSMDeclaration(org.eclipse.uml2.uml.Class)', Sequence{class})
 /]
 
-[query public getAllOpaqueBehaviorFromModel(elt : NamedElement) : Sequence(NamedElement) =
-	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getAllOpaqueBehaviorFromModel(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+[query public getOpaqueBehaviorFromModel(elt : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getOpaqueBehaviorFromModel(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
 /]
 
 [query public generateWrapperString(classe : Class) : String =
@@ -163,4 +163,8 @@
 
 [query public isUnionType(ne : NamedElement) : Boolean =
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isUnionType(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public getFSMOpaqueBehavior(model : Model, sm : StateMachine) : Sequence(OpaqueBehavior) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getFSMOpaqueBehavior(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.StateMachine)', Sequence{model, sm})
 /]

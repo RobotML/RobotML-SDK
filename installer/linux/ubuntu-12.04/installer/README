@@ -1,0 +1,23 @@
+PROTEUS install tool
+====================
+
+# Run
+
+Double click on proteus.run and chose "Run in a terminal", or in a terminal:
+
+    sh proteus.run
+
+---
+
+  * http://www.youtube.com/watch?v=KM7Zvm-AvDA
+  * https://docs.google.com/drawings/d/1GX8gh76JjQvhwDzLEFKsbdq7LHqLQmvfBty3Lv9R-Uo/edit
+  * http://pygtk.org
+  * sync Spinner
+      * multiprocessing.Process
+      * gobject.idle_add
+  * self extract:
+    * https://github.com/megastep/makeself 
+    * http://www.linuxjournal.com/node/1005818
+
+---
+

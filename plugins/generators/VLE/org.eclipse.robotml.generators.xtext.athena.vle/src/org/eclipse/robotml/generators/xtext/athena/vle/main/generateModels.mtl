@@ -16,11 +16,14 @@
 [template public generateModelImplementation(project: Project, proto : prototypeDeclaration)]
 #include <vle/value.hpp>
 #include <vle/devs.hpp>
+#include <vle/utils/DateTime.hpp>
+#include <vle/utils/Trace.hpp>
 #include <TypeDefs.h>
 #include <TypeDefs_Values.h>
 
 namespace vd = vle::devs;
 namespace vv = vle::value;
+namespace vu = vle::utils;
 
 namespace generated {
 
@@ -64,6 +67,7 @@ public:
     [proto.name/](const vd::DynamicsInit& init, const vd::InitEventList& events)
         : vd::Dynamics(init, events)
     {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - Constructor"); 
     }
 
 	/**
@@ -71,22 +75,73 @@ public:
 	 */
     virtual ~[proto.name/]()
     {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - Destructor");
     }
 
 	/**
 	 *
 	 */
-    virtual vd::Time init(const vd::Time& /*time*/)
+    virtual vd::Time init(const vd::Time& time)
     {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - Init at time : " + time.toString());
+	//TODO : Initialize this component attribute here.
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for (elt : architectureElement | p.definitions)]
+	[if(elt.isParameter())]
+		[let param : parameterDeclaration = elt.oclAsType(parameterDeclaration)]
+			[if(param.hasConfigWithDefaultValue)]
+		this->[param.name/] = [param.value/];
+		TraceModel(vu::DateTime::simpleCurrentDate() + " - Initialize parameter \"[param.name/]\" to \"[param.value/]\" at time : " + time.toString());
+			[/if]
+		[/let]
+	[elseif(elt.isReference())]
+		[let ref : referenceDeclaration = elt.oclAsType(referenceDeclaration)]
+			[if(ref.typeName.hasInitValue())]
+	this->[getReferenceName(ref)/] = [getInitValue(ref.typeName.oclAsType(basicType))/];
+	TraceModel(vu::DateTime::simpleCurrentDate() + " - Initialize reference \"[getReferenceName(ref)/]\" to \"[getInitValue(ref.typeName.oclAsType(basicType))/]\" at time : " + time.toString());
+			[/if]
+		[/let]
+	[/if]
+[/for]
+[/if]
+[/for]
         return vd::Time(1);
     }
 
 	/**
 	 *
 	 */
-    virtual void output(const vd::Time& /*time*/,
-                        vd::ExternalEventList& /*output*/) const
+    virtual void output(const vd::Time& time,
+                        vd::ExternalEventList& output) const
     {
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - Output at time : " + time.toString());
+		//TODO : Send event on external port (port "OUT")
+[if(hasParameter(project, proto))]
+		vd::ExternalEvent* evt = NULL;
+[/if]
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for (elt : architectureElement | p.definitions)]
+	[if (isParameter(elt))]
+		[let param : parameterDeclaration = elt.oclAsType(parameterDeclaration)]
+		evt = new vd::ExternalEvent("[param.name/]");
+		if(evt != NULL)
+		{
+			vv::Value* val = [param.typeName.name/]_toValue(this->[param.name/]);
+			if(val != NULL)
+			{
+				
+				evt << vd::attribute("[param.name/]", val);
+				output.addEvent(evt);
+				TraceModel(vu::DateTime::simpleCurrentDate() + " - Output port [param.name/] is changed to " + val->writeToString() + " at time " + time.toString());
+			}
+		} 
+		[/let]
+	[/if]
+[/for]
+[/if]
+[/for]
     }
 
 	/**
@@ -94,22 +149,27 @@ public:
 	 */
     virtual vd::Time timeAdvance() const
     {
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - timeAdvance");
         return vd::Time(1);
     }
 
 	/**
 	 *
 	 */
-    virtual void internalTransition(const vd::Time& /*time*/)
+    virtual void internalTransition(const vd::Time& time)
     {
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - internalTransition at time : " + time.toString());
     }
 
 	/**
 	 *
 	 */
     virtual void externalTransition(const vd::ExternalEventList& eventList,
-                                    const vd::Time& /*time*/)
+                                    const vd::Time& time)
     {
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - externalTransition at time : " + time.toString());
+[if(hasReference(project, proto))]
+		//TODO : On update les ports "IN" 
         vd::ExternalEventList::const_iterator it = eventList.begin();
         for (;it != eventList.end(); it++)
         {
@@ -122,12 +182,31 @@ public:
             // 
             if (event.onPort("[getReferenceName(ref)/]"))
             {
-			    const vv::Value& val = event.getAttributeValue("hello");
-				[if(isStructType(ref.typeName) or isArrayType(ref.typeName) or isVectorType(ref.typeName) or isMapType(ref.typeName))]
-				[ref.typeName.name/]_fromValue(&val, [getReferenceName(ref)/]);
-				[else]
-				[getReferenceName(ref)/] = [ref.typeName.name/]_fromValue(&val);
-				[/if]
+				TraceModel(vu::DateTime::simpleCurrentDate() + " - Trying to update \"[getReferenceName(ref)/]\" port");
+				if(event.existAttributeValue("[getReferenceName(ref)/]"))
+				{
+				    const vv::Value& val = event.getAttributeValue("[getReferenceName(ref)/]");
+					
+					[if(isStructType(ref.typeName) or isArrayType(ref.typeName) or isVectorType(ref.typeName) or isMapType(ref.typeName))]
+					[ref.typeName.name/]_fromValue(&val, this->[getReferenceName(ref)/]);
+					[else]
+					this->[getReferenceName(ref)/] = [ref.typeName.name/]_fromValue(&val);
+					[/if]
+					
+					if(val.isNull() == false)
+					{
+						TraceModel(vu::DateTime::simpleCurrentDate() + " - Update \"[getReferenceName(ref)/]\" input port to \"" + val.writeToString() + "\" at time " + time.toString());
+					}
+					else
+					{
+						TraceModel(vu::DateTime::simpleCurrentDate() + " - NULL value for  \"[getReferenceName(ref)/]\" input port at time " + time.toString());
+					}
+					
+				}
+				else
+				{
+					TraceModel(vu::DateTime::simpleCurrentDate() + " - Unknown attribute value \"[getReferenceName(ref)/]\" for the port \"[getReferenceName(ref)/]\"");
+				}
             }
 			[/let]
 		[/if]
@@ -135,6 +214,7 @@ public:
 	[/if]
 	[/for]
 		}
+[/if]
     }
 
 	/**
@@ -143,6 +223,7 @@ public:
     virtual void confluentTransitions(const vd::Time& time,
                                       const vd::ExternalEventList& events)
     {
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - confluentTransition at time : " + time.toString());
         internalTransition(time);
         externalTransition(events, time);
     }
@@ -151,9 +232,10 @@ public:
 	 *
 	 */
     virtual void request(const vd::RequestEvent& /*event*/,
-                         const vd::Time& /*time*/,
+                         const vd::Time& time,
                          vd::ExternalEventList& /*output*/) const
     {
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - request at time : " + time.toString());
     }
 
 	/**
@@ -161,6 +243,7 @@ public:
 	 */
     virtual vv::Value* observation(const vd::ObservationEvent& /*event*/) const
     {
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - observation");
         return 0;
     }
 
@@ -169,6 +252,7 @@ public:
 	 */
     virtual void finish()
     {
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - finish");
     }
 
 };

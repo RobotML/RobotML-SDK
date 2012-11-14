@@ -1,0 +1,175 @@
+#!/bin/sh
+
+#
+# Proteus install
+# http://anr-proteus.fr
+#
+
+if [ 3 -gt $# ]; then
+  echo "usage: $0 unused login password [pkg...]"
+  echo "  packages.greyc.fr - anr-proteus.fr"
+  exit 1
+fi
+
+WORKING_DIR=${1}
+shift
+LOGIN=${1}
+shift
+PASSW=${1}
+shift
+PACKG=$@
+
+DISTRIBUTION=$(lsb_release -sc)
+if [ ! -d ~/.proteus ]; then
+    mkdir ~/.proteus
+fi
+if [ ! -f ~/.proteus/setup.sh ]; then
+    echo "#!/bin/bash" > ~/.proteus/setup.sh
+    echo "[ -f ~/.proteus/setup.sh ] && . ~/.proteus/setup.sh" >> ~/.bashrc
+fi
+
+echo "
+-------------------------------------------------------------------------------
+Hello ${LOGIN}, welcome on PROTEUS ! $(lsb_release -sd)
+( ${PACKG} )"
+
+if [ "$DISTRIBUTION" != "natty"  ]; then
+    read -p "[WARNING] Could not detect Natty (Ubuntu 11.04), continue anyway? [y/N]: " CONT
+    if [ "$CONT" != "y"  ]; then
+        exit 1
+    fi
+fi
+
+# check if the current DISTRIBUTION fit ros repo
+if ! echo "lucid maverick natty oneiric precise" | grep -q $DISTRIBUTION; then
+    echo "[WARNING] $DISTRIBUTION not available in ros repository, taking precise"
+    DISTRIBUTION="precise"
+fi
+# see http://www.ros.org/wiki/electric/Installation/Ubuntu
+
+# check if you can access the server
+echo "[INFO] Login packages.greyc.fr ..."
+wget https://packages.greyc.fr/proteus/ --http-user=${LOGIN} --http-password=${PASSW} --no-cache --spider -q
+if [ 0 -ne $? ]; then
+    read -p "[WARNING] Can't access packages.greyc.fr, continue anyway? [y/N]: " CONT
+    if [ "$CONT" != "y"  ]; then
+        exit 1
+    fi
+else
+    echo "[INFO] Login packages.greyc.fr : OK"
+fi
+
+echo "
+-------------------------------------------------------------------------------
+Note that the install can be long, in case of problem, you can restart this app
+safely, packages are downloaded in /var/cache/apt/archives
+Enter your root password to continue (aka. super-user or administrator)
+-------------------------------------------------------------------------------"
+
+echo "deb http://packages.ros.org/ros/ubuntu ${DISTRIBUTION} main
+" | sudo tee /etc/apt/sources.list.d/ros-latest.list > /dev/null
+
+echo "# PROTEUS repositories ( http://anr-proteus.fr )
+deb https://${LOGIN}:${PASSW}@packages.greyc.fr/proteus-precise stable main
+deb http://downloads.effidence.com/repository/projects/201004-Proteus natty universe
+" | sudo tee /etc/apt/sources.list.d/proteus.list > /dev/null
+
+# proteus.list contains the pass, only root should read it
+#sudo chown root /etc/apt/sources.list.d/proteus.list
+#sudo chmod 0600 /etc/apt/sources.list.d/proteus.list
+# was messing up with apt-cache & packages listing
+
+echo "[INFO] Add Intempora (RTMaps) repository and GPG key"
+wget -q http://dl.intempora.com/linux/support_at_intempora.com.gpg.key -O - | sudo apt-key add -
+wget -q http://dl.intempora.com/linux/debs/intempora.list -O - | sudo tee /etc/apt/sources.list.d/intempora.list > /dev/null
+
+echo "[INFO] Add ROS GPG key"
+wget -q http://packages.ros.org/ros.key -O - | sudo apt-key add -
+
+mkdir -p ~/.gnupg
+
+echo "[INFO] Add Effidence GPG key"
+if ! apt-key list | grep -q "contact@effidence.com"; then
+    # XXX keys.gnupg.net is weak
+    if ping -c 1 -w 5 keys.gnupg.net &> /dev/null; then
+        gpg -q --keyserver keys.gnupg.net --recv-keys A41212AD
+        gpg -q --export A41212AD | sudo apt-key add -
+    else
+        echo "[WARNING] keys.gnupg.net timed out, use packages.greyc.fr"
+        wget -q http://packages.greyc.fr/contact.effidence.com.gpg -O - | sudo apt-key add -
+    fi
+fi
+
+echo "
+-------------------------------------------------------------------------------
+[INFO] Update APT cache
+-------------------------------------------------------------------------------"
+# update repo
+sudo apt-get update
+if [ 0 -ne $? ]; then
+    read -p "[WARNING] It seems that APT could not update, continue anyway? [y/N]: " CONT
+    if [ "$CONT" != "y"  ]; then
+        exit 1
+    fi
+fi
+
+echo "
+-------------------------------------------------------------------------------
+[INFO] Upgrade
+-------------------------------------------------------------------------------"
+#sudo apt-get -q --force-yes -y upgrade
+sudo apt-get upgrade
+# check reboot required
+if [ -f /var/run/reboot-required ]; then
+    echo "[WARNING] You might need to reboot (if you updated your kernel for instance)"
+    echo "after rebooting, you can re-launch this app"
+    echo "you won't need to download what you already did."
+    read -p "[WARNING] continue anyway? [y/N]: " CONT
+    if [ "$CONT" != "y"  ]; then
+        exit 1
+    fi
+fi
+
+echo "
+-------------------------------------------------------------------------------
+[INFO] Install
+-------------------------------------------------------------------------------"
+# install
+sudo apt-get --force-yes -y install python-dev python-pip libyaml-dev python-yaml ${PACKG}
+# python-setuptools : easy_install
+# python-yaml : rosinstall
+echo "
+-------------------------------------------------------------------------------
+[INFO] Install: apt-get install done
+-------------------------------------------------------------------------------"
+
+if ! grep -q "/opt/ros/electric/setup.bash" ~/.proteus/setup.sh; then
+    echo "[ -f /opt/ros/electric/setup.bash ] && . /opt/ros/electric/setup.bash" >> ~/.proteus/setup.sh
+fi
+
+if ! grep -q "/opt/ros/fuerte/setup.bash" ~/.proteus/setup.sh; then
+    echo "[ -f /opt/ros/fuerte/setup.bash ] && . /opt/ros/fuerte/setup.bash" >> ~/.proteus/setup.sh
+fi
+
+if ! grep -q "/usr/local/lib/python3/dist-packages" ~/.proteus/setup.sh; then
+    echo "export PYTHONPATH=/usr/local/lib/python3/dist-packages:\$PYTHONPATH" >> ~/.proteus/setup.sh
+fi
+
+echo "[INFO] check for rosinstall tool"
+if ! which rosinstall &> /dev/null; then
+    sudo pip install -U rosinstall
+fi
+
+echo "
+-------------------------------------------------------------------------------
+                                Done
+
+    visit: http://anr-proteus.github.com/slides/demo.html for demo
+
+                        http://anr-proteus.fr
+-------------------------------------------------------------------------------"
+
+xdg-open http://bit.ly/proteus2
+
+exit 0
+

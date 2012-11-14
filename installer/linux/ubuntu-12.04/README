@@ -1,0 +1,11 @@
+
+ * install: PROTEUS install app packed in install/proteus.run
+
+TODO
+
+ * secure APT repo credentials stored in /etc/apt/auth.conf
+
+machine packages.greyc.fr/proteus
+login user
+password pass
+

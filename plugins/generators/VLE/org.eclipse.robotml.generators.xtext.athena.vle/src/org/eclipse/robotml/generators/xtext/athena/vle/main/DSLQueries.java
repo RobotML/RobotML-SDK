@@ -732,4 +732,40 @@ public class DSLQueries
 	{
 		return(type instanceof vectorType) || (type instanceof mapType) || (type instanceof arrayType);
 	}
+	
+	public static Boolean hasReference(Project project, prototypeDeclaration prototype)
+	{
+		Boolean result = false;
+		
+		for(prototypeDeclaration proto : project.getPrototypes())
+		{
+			if(DSLQueries.isAnAncestorOf(prototype, proto))
+			{
+				for(architectureElement elt : proto.getDefinitions())
+				{
+					result |= DSLQueries.isReference(elt);
+				}
+			}
+		}
+		
+		return result;
+	}
+	
+	public static Boolean hasParameter(Project project, prototypeDeclaration prototype)
+	{
+		Boolean result = false;
+		
+		for(prototypeDeclaration proto : project.getPrototypes())
+		{
+			if(DSLQueries.isAnAncestorOf(prototype, proto))
+			{
+				for(architectureElement elt : proto.getDefinitions())
+				{
+					result |= DSLQueries.isParameter(elt);
+				}
+			}
+		}
+		
+		return result;
+	}
 }

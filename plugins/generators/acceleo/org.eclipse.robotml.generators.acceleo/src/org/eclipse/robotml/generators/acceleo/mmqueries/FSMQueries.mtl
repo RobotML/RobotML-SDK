@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module FSMQueries('http://www.eclipse.org/uml2/3.0.0/UML')]
+[module FSMQueries('http://Papyrus/RobotML/1', 'http://www.eclipse.org/uml2/3.0.0/UML')]
 
 
 [query public getStateMachines(elt : Element) : Sequence(StateMachine) =

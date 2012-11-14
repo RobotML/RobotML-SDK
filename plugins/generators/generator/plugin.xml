@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.papyrus.robotML.modelexplorer.popupmenu.generate">
+         <command
+               commandId="org.eclipse.robotml.generateGlobalCommand"
+               icon="icons/default.gif"
+               id="org.eclipse.robotml.generateGlobal"
+               label="Global generation"
+               style="push"
+               tooltip="Execute all registred generator">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            description="Execute all registred generators"
+            id="org.eclipse.robotml.generateGlobalCommand"
+            name="Global generation">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.eclipse.robotml.generators.generator.ui.handler.AcceleoGenerateGlobalCommandHandler"
+            commandId="org.eclipse.robotml.generateGlobalCommand">
+      </handler>
+   </extension>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.*"
+            id="org.eclipse.robotml.generators.generator.ui.popupMenus.contribution.IFile">
+         <menu id="org.eclipse.acceleo.module.menu" label="Acceleo Model to Text" path="additionsAcceleo">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               class="org.eclipse.robotml.generators.generator.ui.popupMenus.AcceleoGenerateGlobalGeneratorAction"
+               enablesFor="+"
+               id="org.eclipse.robotml.generators.generator.ui.popupMenus.acceleoGenerateGlobalGeneratorAction"
+               icon="icons/default.gif"
+               label="Generate GlobalGenerator"
+               menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
+      </objectContribution>
+   </extension>
+</plugin>

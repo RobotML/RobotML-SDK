@@ -64,7 +64,7 @@ public interface Robot extends Agent, org.eclipse.papyrus.RobotML.System {
 	 * @return the value of the '<em>Mass</em>' attribute.
 	 * @see #setMass(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getRobot_Mass()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getMass();
@@ -90,7 +90,7 @@ public interface Robot extends Agent, org.eclipse.papyrus.RobotML.System {
 	 * @return the value of the '<em>Width</em>' attribute.
 	 * @see #setWidth(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getRobot_Width()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWidth();

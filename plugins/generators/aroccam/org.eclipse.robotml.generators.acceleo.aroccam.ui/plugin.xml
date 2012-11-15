@@ -32,11 +32,6 @@
                label="Generate to Aroccam"
                style="push"
                tooltip="Generate code to Aroccam middleware">
-            <visibleWhen>
-               <reference
-                     definitionId="org.eclipse.papyrus.robotml.diagram.common.IsPapyrusActiveWithRobotML">
-               </reference>
-            </visibleWhen>
          </command>
       </menuContribution>
    </extension>

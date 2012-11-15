@@ -7,33 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage;
-
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl;
-
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesPackage;
-
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.impl.Diagnostic_datatypesPackageImpl;
-
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
-
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.Geometry_datatypesPackageImpl;
-
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage;
-
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl;
-
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
-
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl;
-
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage;
-
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl;
-
 import org.eclipse.papyrus.RobotML.ActuatorSystem;
 import org.eclipse.papyrus.RobotML.Agent;
 import org.eclipse.papyrus.RobotML.Algorithm;
@@ -92,9 +66,23 @@ import org.eclipse.papyrus.RobotML.UGVKind;
 import org.eclipse.papyrus.RobotML.UnitKind;
 import org.eclipse.papyrus.RobotML.WaterSurface;
 import org.eclipse.papyrus.RobotML.WheelSystem;
-
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.impl.Diagnostic_datatypesPackageImpl;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.Geometry_datatypesPackageImpl;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.Oarp1_datatypesPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Oarp4_datatypesPackageImpl;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl;
 import org.eclipse.uml2.types.TypesPackage;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -558,6 +546,8 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		Nav_datatypesPackageImpl theNav_datatypesPackage = (Nav_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Nav_datatypesPackage.eNS_URI) instanceof Nav_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Nav_datatypesPackage.eNS_URI) : Nav_datatypesPackage.eINSTANCE);
 		Sensor_datatypesPackageImpl theSensor_datatypesPackage = (Sensor_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Sensor_datatypesPackage.eNS_URI) instanceof Sensor_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Sensor_datatypesPackage.eNS_URI) : Sensor_datatypesPackage.eINSTANCE);
 		Actionlib_datatypesPackageImpl theActionlib_datatypesPackage = (Actionlib_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI) instanceof Actionlib_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI) : Actionlib_datatypesPackage.eINSTANCE);
+		Oarp1_datatypesPackageImpl theOarp1_datatypesPackage = (Oarp1_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Oarp1_datatypesPackage.eNS_URI) instanceof Oarp1_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Oarp1_datatypesPackage.eNS_URI) : Oarp1_datatypesPackage.eINSTANCE);
+		Oarp4_datatypesPackageImpl theOarp4_datatypesPackage = (Oarp4_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Oarp4_datatypesPackage.eNS_URI) instanceof Oarp4_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Oarp4_datatypesPackage.eNS_URI) : Oarp4_datatypesPackage.eINSTANCE);
 		Std_datatypesPackageImpl theStd_datatypesPackage = (Std_datatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI) instanceof Std_datatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(Std_datatypesPackage.eNS_URI) : Std_datatypesPackage.eINSTANCE);
 
 		// Create package meta-data objects
@@ -567,6 +557,8 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		theNav_datatypesPackage.createPackageContents();
 		theSensor_datatypesPackage.createPackageContents();
 		theActionlib_datatypesPackage.createPackageContents();
+		theOarp1_datatypesPackage.createPackageContents();
+		theOarp4_datatypesPackage.createPackageContents();
 		theStd_datatypesPackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -576,6 +568,8 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		theNav_datatypesPackage.initializePackageContents();
 		theSensor_datatypesPackage.initializePackageContents();
 		theActionlib_datatypesPackage.initializePackageContents();
+		theOarp1_datatypesPackage.initializePackageContents();
+		theOarp4_datatypesPackage.initializePackageContents();
 		theStd_datatypesPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -747,6 +741,15 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	 */
 	public EAttribute getSystem_LibraryPath() {
 		return (EAttribute)systemEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSystem_LibraryComponentName() {
+		return (EAttribute)systemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1519,6 +1522,15 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLidarSystem_NbRays() {
+		return (EAttribute)lidarSystemEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLocalizationSensorSystem() {
 		return localizationSensorSystemEClass;
 	}
@@ -2013,6 +2025,7 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		createEReference(systemEClass, SYSTEM__BASE_CLASS);
 		createEAttribute(systemEClass, SYSTEM__NATIVE);
 		createEAttribute(systemEClass, SYSTEM__LIBRARY_PATH);
+		createEAttribute(systemEClass, SYSTEM__LIBRARY_COMPONENT_NAME);
 
 		agentEClass = createEClass(AGENT);
 		createEReference(agentEClass, AGENT__MOVES_OVER);
@@ -2121,6 +2134,7 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		createEAttribute(lidarSystemEClass, LIDAR_SYSTEM__SCAN_TIME);
 		createEAttribute(lidarSystemEClass, LIDAR_SYSTEM__RANGE_MIN);
 		createEAttribute(lidarSystemEClass, LIDAR_SYSTEM__RANGE_MAX);
+		createEAttribute(lidarSystemEClass, LIDAR_SYSTEM__NB_RAYS);
 
 		localizationSensorSystemEClass = createEClass(LOCALIZATION_SENSOR_SYSTEM);
 
@@ -2293,6 +2307,7 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		initEReference(getSystem_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, org.eclipse.papyrus.RobotML.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSystem_Native(), theTypesPackage.getBoolean(), "native", null, 1, 1, org.eclipse.papyrus.RobotML.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSystem_LibraryPath(), theTypesPackage.getString(), "libraryPath", null, 1, 1, org.eclipse.papyrus.RobotML.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSystem_LibraryComponentName(), theTypesPackage.getString(), "libraryComponentName", null, 1, 1, org.eclipse.papyrus.RobotML.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(agentEClass, Agent.class, "Agent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAgent_MovesOver(), this.getSurface(), null, "movesOver", null, 0, -1, Agent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2401,6 +2416,7 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		initEAttribute(getLidarSystem_Scan_time(), theStd_datatypesPackage.getFloat32(), "scan_time", null, 1, 1, LidarSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLidarSystem_Range_min(), theStd_datatypesPackage.getFloat32(), "range_min", null, 1, 1, LidarSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLidarSystem_Range_max(), theStd_datatypesPackage.getFloat32(), "range_max", null, 1, 1, LidarSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getLidarSystem_NbRays(), theStd_datatypesPackage.getUInt32(), "nbRays", null, 1, 1, LidarSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(localizationSensorSystemEClass, LocalizationSensorSystem.class, "LocalizationSensorSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

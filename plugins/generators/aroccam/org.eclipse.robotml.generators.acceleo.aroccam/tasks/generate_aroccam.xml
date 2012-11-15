@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate_aroccam" name="org.eclipse.robotml.generators.acceleo.aroccam">
-    <property name="ECLIPSE_HOME" value="../../../../../../../eclipse/eclipse-juno"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../eclipse/eclipse-juno/workspace"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../../Produits/eclipse-modeling-juno-RC3-win32/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../runtime-Juno-RobotML-tmp"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.eclipse.robotml.generators.acceleo.aroccam.libraryclasspath">
@@ -18,7 +18,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.8.0.v20120911-0500.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.8.0.v20120911-0500.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl_3.2.1.v20120917-1739.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl_3.2.0.v20120611-1210.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.common_1.0.0.v20120516-1543.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.ecore_3.2.0.v20120522-1637.jar"/>
@@ -29,13 +29,12 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.engine_3.3.1.v20120831-0923.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.8.1.v20120917-0436.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.8.0.v20120917-0436.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.uml_4.0.1.v20120913-1441.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.common_1.7.0.v20120913-1441.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.types_1.0.0.v20120913-1441.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.uml_4.0.100.v20120830-1546.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.common_1.7.0.v20120830-1546.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.types_1.0.0.v20120830-1546.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.mapping.ecore2xml_2.7.0.v20120917-0436.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.validation_1.4.0.v20100428-2315.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.8.0.v20120522-2034.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.papyrus.robotml_0.9.1.201210171425.jar"/>
     </path>
 
     <path id="org.eclipse.robotml.generators.acceleo.aroccam.classpath">

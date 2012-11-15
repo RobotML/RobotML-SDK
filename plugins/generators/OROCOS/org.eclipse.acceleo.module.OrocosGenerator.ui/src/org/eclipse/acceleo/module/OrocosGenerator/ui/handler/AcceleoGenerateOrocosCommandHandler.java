@@ -17,7 +17,8 @@ import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.papyrus.uml.modelexplorer.handler.AbstractCommandHandler;
+import org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler;
+
 import org.eclipse.papyrus.commands.wrappers.*;
 
 

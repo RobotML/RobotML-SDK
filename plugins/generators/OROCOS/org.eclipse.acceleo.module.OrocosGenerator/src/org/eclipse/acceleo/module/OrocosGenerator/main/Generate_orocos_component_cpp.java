@@ -300,7 +300,7 @@ public class Generate_orocos_component_cpp extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated
+     * @generated NOT
      */
     @Override
     public void registerPackages(ResourceSet resourceSet) {
@@ -308,7 +308,9 @@ public class Generate_orocos_component_cpp extends AbstractAcceleoGenerator {
         if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
         }
-        
+        if (!isInWorkspace(org.eclipse.papyrus.RobotML.RobotMLPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.eclipse.papyrus.RobotML.RobotMLPackage.eINSTANCE.getNsURI(), org.eclipse.papyrus.RobotML.RobotMLPackage.eINSTANCE);
+        }
         /*
          * TODO If you need additional package registrations, you can register them here. The following line
          * (in comment) is an example of the package registration for UML. If you want to change the content

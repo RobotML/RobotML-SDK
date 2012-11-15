@@ -32,7 +32,7 @@ public interface SensorSystem extends RoboticSystem {
 	 * @return the value of the '<em>Frequency</em>' attribute.
 	 * @see #setFrequency(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSensorSystem_Frequency()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getFrequency();
@@ -58,7 +58,7 @@ public interface SensorSystem extends RoboticSystem {
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSensorSystem_Identifier()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.String" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.String" required="true" ordered="false"
 	 * @generated
 	 */
 	String getIdentifier();

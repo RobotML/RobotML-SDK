@@ -27,7 +27,7 @@
             locationURI="popup:org.eclipse.papyrus.robotML.modelexplorer.popupmenu.generate">
          <command
                commandId="org.eclipse.robotML.generateRTMapsCommand"
-               icon="icons/default.gif"
+               icon="icons/rtmaps_icon.gif"
                id="org.eclipse.robotML.generateRTMapsCommand"
                label="Generate to RTMaps"
                style="push"

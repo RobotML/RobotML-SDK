@@ -38,37 +38,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       <discovery label="Effidence" url="http://www.effidence.com"/>
    </url>
 
-   <requires>
-      <import plugin="org.eclipse.core.runtime" version="3.7.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.ecore" version="2.7.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.ecore.xmi" version="2.7.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ocl" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ocl.ecore" version="3.1.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.common" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.parser" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.model" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.profiler" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.engine" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.uml2.uml" version="3.2.100" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.resources" version="3.7.100" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.gmf.runtime.emf.commands.core" version="1.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.gmf.runtime.common.ui" version="1.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.editor" version="0.9.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.infra.widgets" version="0.9.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.uml.modelexplorer" version="0.9.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.infra.widgets.toolbox"/>
-      <import plugin="org.eclipse.papyrus.uml.modelexplorer.widgets" version="0.9.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.infra.core"/>
-      <import plugin="org.eclipse.robotml.generators.acceleo.aroccam" version="1.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.transaction"/>
-      <import plugin="org.eclipse.gmf.runtime.common.core"/>
-      <import plugin="org.eclipse.papyrus.infra.gmfdiag.commands"/>
-      <import plugin="org.eclipse.papyrus.extensionpoints.editors"/>
-      <import plugin="org.eclipse.robotml.generators.acceleo" version="1.0.0" match="greaterOrEqual"/>
-   </requires>
-
-   
+    
 
    <plugin
          id="org.eclipse.robotml.generators.acceleo.aroccam"

@@ -14,6 +14,7 @@
 #include <iomanip>
 #include <boost/lexical_cast.hpp>
 #include <iostream>
+#include <vle/utils/Tools.hpp>
 
 #include "TypeDefs_Values.h"
 
@@ -64,18 +65,18 @@ namespace generated
 value::Value* [type.name/]_toValue(const [type.name/]& _val) {
 	[if(hasVLELanguage(type))]
 		[let lng : languageDecl = getVLELanguageDecl(type) ]
-	value::Value* xn = value::[lng.trans/]::create(_val);
+			[if(needPointerCast(type))]
+	value::Value* val = value::[lng.trans/]::create((int)_val);
+			[else]
+	value::Value* val = value::[lng.trans/]::create(_val);
+			[/if]
 		[/let]
 	[elseif(hasCPPLanguage(type))]
 		[let lng : languageDecl = getCPPLanguageDecl(type) ]
-			[if(needPointerCast(type))]
-	value::Value* xn = (value::Value*)_val;
-			[else]
-	value::Value* xn = [lng.trans/](_val);		
-			[/if]
+	value::Value* val = [lng.trans/](_val);		
 		[/let]
 	[/if]
-	return xn;
+	return val;
 }
 
 [type.name/] [type.name/]_fromValue(const value::Value* _node, const [type.name/]& _initialValue) {
@@ -85,17 +86,18 @@ value::Value* [type.name/]_toValue(const [type.name/]& _val) {
 		[if(isEnumeration(type))]
 		return static_cast<[type.name/]>(_node->to[lng.trans/]().value());
 		[else]
+			[if(needPointerCast(type))]
+		return ([type.name/])_node->to[lng.trans/]().value();
+			[else]
 		return _node->to[lng.trans/]().value();
+			[/if]
 		[/if]
 	else
 		return _initialValue;		
 		[/let]
 	[elseif(hasCPPLanguage(type))]
 		[let lng : languageDecl = getCPPLanguageDecl(type) ]
-			[if(needPointerCast(type))]
-	return ([lng.trans/])_initialValue;
-			[else]
-	if(node != NULL)
+	if(_node != NULL)
 				[if(hasCPPLexicalCast(type))]
 					[if(isEnumeration(type))]
 		return static_cast<[getCPPLexicalCast(type)/]>(_node);
@@ -107,7 +109,6 @@ value::Value* [type.name/]_toValue(const [type.name/]& _val) {
 				[/if]
 	else
 		return _initialValue;
-			[/if]
 		[/let]
 	[else]
 	/* not language define */
@@ -120,33 +121,69 @@ value::Value* [type.name/]_toValue(const [type.name/]& _val) {
 [template public processArrayType(array : arrayType)]
 // [array.name/] is an array of [getArrayDatatypeName(array)/]
 [let type : DataType = getBaseType(array.typename)]
-value::Value* [array.name/]_toValue(const [array.name/]& _val) {
-	value::Set* xn = value::Set::create();
+value::Value* [array.name/]_toValue(const [array.name/]& _val) {	
 	[if (isAOneDimensionArray(array))]
-	for(unsigned int _i=0; _i<[getArraySizeOperator(array)/]; _i++) {
-		[if (isStructType(type)) ]
-		xn->add([type.name/]_toValue((*_val)['['/]_i[']'/])) ;
-		[else]
-		xn->add([type.name/]_toValue([if (isDynamicArray(array))](*_val)[else]_val[/if]['['/]_i[']'/])) ;
-		[/if]
+	value::Set* set = value::Set::create();
+	if(set != NULL) 
+	{
+		for(unsigned int i = 0; i < [getArraySizeOperator(array)/]; i++) 
+		{
+			[if (isStructType(type)) ]
+			set->add([type.name/]_toValue((*_val)['['/]i[']'/])) ;
+			[else]
+			set->add([type.name/]_toValue([if (isDynamicArray(array))](*_val)[else]_val[/if]['['/]i[']'/])) ;
+			[/if]
+		}
 	}
+	return set;
 	[else]
-	// Conversion to Value: only one dimension arrays are accepted !
+	value::Map* map = value::Map::create();
+	if(map != NULL)
+	{
+		for(unsigned int cpt = 0; cpt < [array.indices->size()/]; cpt ++)
+		{
+			value::Set* set = value::Set::create();
+			if(set != NULL)
+			{
+				for(unsigned int index = 0; index < [getArraySizeOperator(array)/]; index ++)
+				{
+					set->add([type.name/]_toValue((*_val)['['/]cpt[']'/]['['/]index[']'/])) ;
+				}
+				map->add(utils::toString(cpt), set);
+			}
+		}
+	}
+	return map;
 	[/if]
-	return xn;
 }
+
 void [array.name/]_fromValue(const value::Value* _node,[array.name/]& _val) {
 	[if (isAOneDimensionArray(array))]
-	const value::Set& _xn = _node->toSet();
-	for(unsigned int _i=0; _i<[getArraySizeOperator(array)/]; _i++) {
+	const value::Set& set = _node->toSet();
+	for(unsigned int i = 0; i < [getArraySizeOperator(array)/]; i++) {
 		[if (isStructType(type)) ]
-		(*_val)['['/]_i[']'/].fromXML(_xn.get(_i)) ; 
+		(*_val)['['/]i[']'/].fromXML(set.get(i)) ; 
 		[else]
-		[if (isDynamicArray(array))](*_val)[else]_val[/if]['['/]_i[']'/] = [type.name/]_fromValue(_xn.get(_i)) ;
+		[if (isDynamicArray(array))](*_val)[else]_val[/if]['['/]i[']'/] = [type.name/]_fromValue(set.get(i)) ;
 		[/if]
 	}
 	[else]
-	// Conversion from Value: only one dimension arrays are accepted !
+	const value::Map& map = _node->toMap();
+	for(unsigned int cpt = 0; cpt < [array.indices->size()/]; cpt ++)
+	{
+		std::string key = utils::toString(cpt);
+		if(map.exist(key))
+		{
+			const value::Set& set = map.get(key)->toSet();
+			for(unsigned int index = 0; index < [getArraySizeOperator(array)/]; index ++) {
+				[if (isStructType(type)) ]
+				(*_val)['['/]cpt[']'/]['['/]index[']'/].fromXML(set.get(index)) ; 
+				[else]
+				(*_val)['['/]cpt[']'/]['['/]index[']'/] = [type.name/]_fromValue(set.get(index)) ;
+				[/if]
+			}
+		}
+	}
 	[/if]
 
 }
@@ -158,23 +195,26 @@ void [array.name/]_fromValue(const value::Value* _node,[array.name/]& _val) {
 // [vector.name/] is a vector of [getVectorDatatypeName(vector)/]
 value::Value* [vector.name/]_toValue(const [vector.name/]& _val) {
 	[let typename : String = getVectorDatatypeName(vector)]
-	value::Set* _xn = value::Set::create();
-	[vector.name/]::const_iterator it = _val.begin();
-	for (;it != _val.end(); it++) {
-		_xn->add([typename/]_toValue(*it)) ;
+	value::Set* set = value::Set::create();
+	if(set != NULL)
+	{
+		[vector.name/]::const_iterator it = _val.begin();
+		for (;it != _val.end(); it++) {
+			set->add([typename/]_toValue(*it)) ;
+		}
 	}
-	return _xn;
+	return set;
 	[/let]
 }
 
 void [vector.name/]_fromValue(const value::Value* _node, [vector.name/]& vect) {
 	[let typename : String = getVectorDatatypeName(vector)]
 	vect.clear();
-	const value::Set& _xn = _node->toSet();
-	for (unsigned int _i=0; _i<_xn.size(); _i++) {
-		const value::Value* _n = _xn.get(_i);
+	const value::Set& set = _node->toSet();
+	for (unsigned int i = 0; i < set.size(); i++) {
+		const value::Value* val = set.get(i);
 		[typename/] _val;
-		[typename/]_fromValue(_n, _val) ;
+		[typename/]_fromValue(val, _val) ;
 		vect.push_back(_val);
 	}
 	[/let]
@@ -205,25 +245,28 @@ void [vector.name/]_fromValue(const value::Value* _node, [vector.name/]& vect) {
 	[let keytypename : String = getMapKeyTypeName(map)]
 	[let datatypename : String = getMapValueTypeName(map)]
 value::Value* [map.name/]_toValue(const [map.name/]& _val) {
-	value::Map* _xn = value::Map::create();
-	[map.name/]::const_iterator it = _val.begin();
-	for (;it != _val.end(); it++) {
-		const std::string& key = boost::lexical_cast<std::string>((*it).first);
-		const value::Value& val = *[datatypename/]_toValue((*it).second);
-		_xn->add(key, val);
+	value::Map* map = value::Map::create();
+	if(map != NULL)
+	{
+		[map.name/]::const_iterator it = _val.begin();
+		for (;it != _val.end(); it++) {
+			const std::string& key = boost::lexical_cast<std::string>((*it).first);
+			const value::Value& val = *[datatypename/]_toValue((*it).second);
+			map->add(key, val);
+		}
 	}
-	return _xn;
+	return map;
 
 }
 
-void [map.name/]_fromValue(const value::Value* _node, [map.name/]& map) {
+void [map.name/]_fromValue(const value::Value* _node, [map.name/]& _map) {
 [comment]	[map.name/] _[map.name/];[/comment]
-	const value::Map& _xn = _node->toMap();
-	for (value::Map::const_iterator it=_xn.begin(); it!=_xn.end(); it++) {
-		const [map.keytype.name/]& key = static_cast<[map.keytype.name/]>(_xn.getInt((*it).first));
-		const value::Value* _n = (*it).second;
+	const value::Map& map = _node->toMap();
+	for (value::Map::const_iterator it = map.begin(); it != map.end(); it++) {
+		const [map.keytype.name/]& key = static_cast<[map.keytype.name/]>(map.getInt((*it).first));
+		const value::Value* val = (*it).second;
 
-		[datatypename/]_fromValue(_n, map['['/]key[']'/]);
+		[datatypename/]_fromValue(val, _map['['/]key[']'/]);
 	}
 [comment]	return _[map.name/];[/comment]
 }
@@ -252,33 +295,36 @@ void [map.name/]_fromValue(const value::Value* _node, [map.name/]& map) {
 [template public processStructType(struct : structType)]
 // [struct.name/] is a structure
 value::Value* [struct.name/]_toValue(const [struct.name/]& _val) {
-	value::Map* xn = value::Map::create();
+	value::Map* map = value::Map::create();
+	if(map != NULL)
+	{
 	[for (param : structElement | struct.parameters)]
 	[if (isUnionType(param.typename))]
-	// unauthorized union type for [param.name/]
+		// unauthorized union type for [param.name/]
 	[else]
-	xn->add("[param.name/]",[param.typename.name/]_toValue(_val.[param.name/]));
+		map->add("[param.name/]",[param.typename.name/]_toValue(_val.[param.name/]));
 	[/if]
 	[/for]
-	return xn;
+	}
+	return map;
 }
 
 void [struct.name/]_fromValue(const value::Value* _node, [struct.name/]& _val) {
-	const value::Map& _xn = _node->toMap();
+	const value::Map& map = _node->toMap();
 	[for (param : structElement | struct.parameters)]
 		[let ptype : DataType = getBaseType(param.typename)]
 			[if (isBasicType(ptype))]
 				[if (param.hasInitValue)]
-	_val.[param.name/] = [ptype.name/]_fromValue(_xn.get("[param.name/]"), [param.initValue/]);
+	_val.[param.name/] = [ptype.name/]_fromValue(map.get("[param.name/]"), [param.initValue/]);
 				[else]
-	_val.[param.name/] = [ptype.name/]_fromValue(_xn.get("[param.name/]"));
+	_val.[param.name/] = [ptype.name/]_fromValue(map.get("[param.name/]"));
 				[/if]
 			[elseif (isArrayType(ptype) or isStructType(ptype) or isVectorType(ptype) or isMapType(ptype))]
-	[ptype.name/]_fromValue(_xn.get("[param.name/]"), _val.[param.name/]);
+	[ptype.name/]_fromValue(map.get("[param.name/]"), _val.[param.name/]);
 			[elseif (isUnionType(ptype))]
 	// unauthorized union type for [param.name/]
 			[else]
-	_val.[param.name/] = [ptype.name/]_fromValue(_xn.get("[param.name/]"));
+	_val.[param.name/] = [ptype.name/]_fromValue(map.get("[param.name/]"));
 			[/if]
 		[/let]
 	[/for]

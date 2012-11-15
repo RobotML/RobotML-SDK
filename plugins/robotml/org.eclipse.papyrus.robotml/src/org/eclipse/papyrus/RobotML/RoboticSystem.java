@@ -2,7 +2,7 @@
  */
 package org.eclipse.papyrus.RobotML;
 
-import org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Point32;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Point32;
 
 /**
  * <!-- begin-user-doc -->

@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/proteus-wp2/!svn/ver/1314/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main
+END
+Generate_config_file.java
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/Generate_config_file.java
+END
+generate_Datatype_file.mtl
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/generate_Datatype_file.mtl
+END
+generate_config_file.mtl
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/generate_config_file.mtl
+END
+generate_manifest_xml.mtl
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/generate_manifest_xml.mtl
+END
+Generate_orocos_component_cpp.java
+K 25
+svn:wc:ra_dav:version-url
+V 195
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/Generate_orocos_component_cpp.java
+END
+generate_ops_file.mtl
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/generate_ops_file.mtl
+END
+generate_FSM.mtl
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/generate_FSM.mtl
+END
+generate_mapping_file.mtl
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/generate_mapping_file.mtl
+END
+main.mtl
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/proteus-wp2/!svn/ver/1318/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/main.mtl
+END
+generate_orocos_component_lua.mtl
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/generate_orocos_component_lua.mtl
+END
+Main.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/Main.java
+END
+Generate_mapping_file.java
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/Generate_mapping_file.java
+END
+generate_orocos_interface_cpp.mtl
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/generate_orocos_interface_cpp.mtl
+END
+generate_makefile_file.mtl
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/generate_makefile_file.mtl
+END
+generate_orocos_component_cpp.mtl
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/proteus-wp2/!svn/ver/1309/trunk/S2.2.6-OROCOS-Generator-Juno/org.eclipse.acceleo.module.OrocosGenerator/src/org/eclipse/acceleo/module/OrocosGenerator/main/generate_orocos_component_cpp.mtl
+END

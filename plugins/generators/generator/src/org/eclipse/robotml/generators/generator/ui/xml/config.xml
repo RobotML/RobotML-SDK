@@ -1,0 +1,13 @@
+<robotml>
+	<domain_list>
+		<domain name="athenaDSL">
+			<implementation class="org.xtext.athenaDSL.impl.AthenaDSLFactoryImpl" method="init"/>
+			<implementation class="org.xtext.athenaDSL.impl.AthenaDSLPackageImpl" method="init"/>
+		</domain>
+	</domain_list>
+	<generator_list>
+		<generator name="athena" id="org.eclipse.robotml.generators.acceleo.athena" class="org.eclipse.robotml.generators.acceleo.athena.files.GenerateAthena" src-type="model" target-folder="athena"/>
+		<generator name="vle" id="org.eclipse.robotml.generators.xtext.athena.vle" class="org.eclipse.robotml.generators.xtext.athena.vle.main.GenerateVLE" src-type="file" src-ext="adl" target-folder="vle-generated-src" src-generator="athena"/>
+		<generator name="athena-simu" id="org.eclipse.robotml.generators.xtext.athena.simu" class="org.eclipse.robotml.generators.xtext.athena.simu.main.GenerateAthena" src-type="file" src-ext="adl" target-folder="simu-athena-generated-src" src-generator="athena"/>
+	</generator_list>
+</robotml>

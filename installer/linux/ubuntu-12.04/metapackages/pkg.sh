@@ -14,6 +14,15 @@ else
     pkgs="$@"
 fi
 
+if [ ! -d "$REP_DEB" ]; then
+    mkdir $REP_DEB
+fi
+
+if [ ! -d "$REP_PKG" ]; then
+    mkdir -p $REP_PKG/conf
+    cp distributions $REP_PKG/conf
+fi
+
 echo "${pkgs}"
 
 
@@ -28,7 +37,7 @@ for p in ${pkgs}; do
     fi
 done
 
-dpkg-deb --build eclipse-proteus deb/eclipse-proteus_0.1_i386.deb
+# dpkg-deb --build eclipse-proteus deb/eclipse-proteus_0.1_i386.deb
 
 echo "==== additional package ======"
 

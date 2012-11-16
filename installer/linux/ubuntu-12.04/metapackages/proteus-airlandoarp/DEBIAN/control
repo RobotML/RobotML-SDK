@@ -1,10 +1,10 @@
-Package: proteus-challenge2
+Package: proteus-airlandoarp
 Version: 0.1
 Section: devel
 Priority: optional
 Architecture: i386
-Maintainer: pierrick.koch@gmail.com
+Maintainer: clement.fouque@lasmea.univ-bpclermont.fr
 Depends: proteus-base, proteus-morse, proteus-rtmaps, proteus-orocos
 Homepage: http://anr-proteus.fr
-Description: PROTEUS Challenge n2
+Description: PROTEUS Air-Land OARP
 

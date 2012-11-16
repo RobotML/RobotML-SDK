@@ -1,5 +1,8 @@
 package org.eclipse.robotml.generators.xtext.athena.simu.main;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.eclipse.emf.common.util.EList;
 import org.xtext.athenaDSL.DataType;
 import org.xtext.athenaDSL.FuncProc;
@@ -967,5 +970,125 @@ public class JavaService {
 		throw(new Exception());
 		
 	}
+	
+	public List<DataType> getSortedDataTypes(Project project)
+	{
+		DataTypeCollection list_type = new DataTypeCollection(project.getTypes());
+		list_type.Sort();
+		return list_type.getTypes();
+	}
 
+	public List<prototypeDeclaration> getPrototypes(Project project)
+	{
+		return project.getPrototypes();
+	}
+	
+	public List<parameterDeclaration> getParameters(Project project, prototypeDeclaration current_proto)
+	{
+		LinkedList<parameterDeclaration> res = new LinkedList<parameterDeclaration>();
+		List<prototypeDeclaration> protos = project.getPrototypes();
+		for(prototypeDeclaration proto : protos)
+		{
+			if(isAnAncestorOf(current_proto, proto) == true)
+			{
+				for(architectureElement elt : proto.getDefinitions())
+				{
+					if(isParameter(elt))
+						res.add((parameterDeclaration)elt);
+				}
+			}
+		}
+		return res;
+	}
+	
+	public List<referenceDeclaration> getReferences(Project project, prototypeDeclaration current_proto)
+	{
+		LinkedList<referenceDeclaration> res = new LinkedList<referenceDeclaration>();
+		List<prototypeDeclaration> protos = project.getPrototypes();
+		for(prototypeDeclaration proto : protos)
+		{
+			if(isAnAncestorOf(current_proto, proto) == true)
+			{
+				for(architectureElement elt : proto.getDefinitions())
+				{
+					if(isReference(elt))
+						res.add((referenceDeclaration)elt);
+				}
+			}
+		}
+		return res;
+	}
+	
+	public List<eventDeclaration> getEvents(Project project, prototypeDeclaration current_proto)
+	{
+		LinkedList<eventDeclaration> res = new LinkedList<eventDeclaration>();
+		List<prototypeDeclaration> protos = project.getPrototypes();
+		for(prototypeDeclaration proto : protos)
+		{
+			if(isAnAncestorOf(current_proto, proto) == true)
+			{
+				for(architectureElement elt : proto.getDefinitions())
+				{
+					if(isEvent(elt))
+						res.add((eventDeclaration)elt);
+				}
+			}
+		}
+		return res;
+	}
+	
+	public List<signalDeclaration> getSignals(Project project, prototypeDeclaration current_proto)
+	{
+		LinkedList<signalDeclaration> res = new LinkedList<signalDeclaration>();
+		List<prototypeDeclaration> protos = project.getPrototypes();
+		for(prototypeDeclaration proto : protos)
+		{
+			if(isAnAncestorOf(current_proto, proto) == true)
+			{
+				for(architectureElement elt : proto.getDefinitions())
+				{
+					if(isSignal(elt))
+						res.add((signalDeclaration)elt);
+				}
+			}
+		}
+		return res;
+	}
+	
+	public List<statesetDeclaration> getStateSets(Project project, prototypeDeclaration current_proto)
+	{
+		LinkedList<statesetDeclaration> res = new LinkedList<statesetDeclaration>();
+		List<prototypeDeclaration> protos = project.getPrototypes();
+		for(prototypeDeclaration proto : protos)
+		{
+			if(isAnAncestorOf(current_proto, proto) == true)
+			{
+				for(architectureElement elt : proto.getDefinitions())
+				{
+					if(isStateSet(elt))
+						res.add((statesetDeclaration)elt);
+				}
+			}
+		}
+		return res;
+	}
+	
+	public List<interactionDeclaration> getInteractions(Project project, prototypeDeclaration current_proto)
+	{
+		LinkedList<interactionDeclaration> res = new LinkedList<interactionDeclaration>();
+		List<prototypeDeclaration> protos = project.getPrototypes();
+		for(prototypeDeclaration proto : protos)
+		{
+			if(isAnAncestorOf(current_proto, proto) == true)
+			{
+				for(architectureElement elt : proto.getDefinitions())
+				{
+					if(isAnInteraction(elt))
+						res.add((interactionDeclaration)elt);
+				}
+			}
+		}
+		return res;
+	}
+	
 }

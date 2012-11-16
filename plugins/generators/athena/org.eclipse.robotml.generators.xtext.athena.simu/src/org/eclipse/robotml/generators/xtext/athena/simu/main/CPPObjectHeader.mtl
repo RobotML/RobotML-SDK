@@ -4,12 +4,17 @@
 [import org::eclipse::robotml::generators::xtext::athena::simu::main::jqueries /]
 
 [template public CPPObjectHeader(project : Project)]
-
-
-
 [for (proto : prototypeDeclaration | project.prototypes)]
 [let fname : String = getPrototypeFileName(proto,'.h')] 
 [file (fname, false, 'UTF-8')] 
+[generatePrototypeHeader(project, proto)/]
+[/file]
+[/let]
+[/for]
+	
+[/template]
+
+[template private generatePrototypeHeader(project : Project, proto : prototypeDeclaration)]
 #ifndef _[proto.name/]_h_
 #define _[proto.name/]_h_
 
@@ -33,142 +38,113 @@ using namespace AthenaV3;
 
 class [proto.name/] : public AthenaComponent 
 {
+[generateReferences(project, proto)/]
+[generateParameters(project, proto)/]
+[generateSignals(project, proto)/]
+[generateEvents(project, proto)/]
+[generateStateSets(project, proto)/]
+[generateInteractions(project, proto)/]
 
-		// references ----------------------------------------------------------------------------------------------
-		
-	private:	
-
-	[for (p : prototypeDeclaration | project.prototypes)]
-	[if (isAnAncestorOf(proto, p))]
-	[for (elt : architectureElement | p.definitions)]
-		[if (isReference(elt))]
-			[let ref : referenceDeclaration = elt.oclAsType(referenceDeclaration)]
-		IParameter<[ref.typeName.name/]>* [getReferenceName(ref)/];
-		const [ref.typeName.name/]& get_[getReferenceName(ref)/](const long& icycle);
-		[ref.typeName.name/]& get_[getReferenceName(ref)/]_write(const long& icycle);
-		void set_[getReferenceName(ref)/](const long& icycle, const [ref.typeName.name/]& data);
-				
-			[/let]
-		[/if]
-	[/for]
-	[/if]
-	[/for]
-
-		// parameters ----------------------------------------------------------------------------------------------
-
-	[for (p : prototypeDeclaration | project.prototypes)]
-	[if (isAnAncestorOf(proto, p))]
-	[for (elt : architectureElement | p.definitions)]
-		[if (isParameter(elt))]
-	private:
-			[let param : parameterDeclaration = elt.oclAsType(parameterDeclaration)]
-				[if (isArrayType(param.typeName))]
-					[if (isDynamicArray(param.typeName.oclAsType(arrayType)))]
-		ArrayParameter<[param.typeName.name/]> [param.name/] ;
-					[else]
-		PointerParameter<[param.typeName.name/]> [param.name/] ;
-					[/if]
-				[else]
-		ConcreteParameter<[param.typeName.name/]> [param.name/];		
-				[/if]
-	public:
-		IParameter<[param.typeName.name/]>* get_[param.name/]()  { return &[param.name/]; }
-		const [param.typeName.name/]& get_[param.name/](const long& icycle)  { return [param.name/].getRead(icycle); }
-		[param.typeName.name/]& get_[param.name/]_write(const long& icycle)  { return [param.name/].getWrite(icycle); }
-		void set_[param.name/](const long& icycle, const [param.typeName.name/]& data) { [param.name/].write(icycle,data); }
-				
-			[/let]
-		[/if]
-	[/for]
-	[/if]
-	[/for]
-
-		// signals ----------------------------------------------------------------------------------------------
-
-	private:	
-
-	[for (p : prototypeDeclaration | project.prototypes)]
-	[if (isAnAncestorOf(proto, p))]
-	[for (elt : architectureElement | p.definitions)]
-		[if (isSignal(elt))]
-			[let signal : signalDeclaration = elt.oclAsType(signalDeclaration)]
-		Signal [signal.name/] ;
-			[/let]
-		[/if]
-	[/for]
-	[/if]
-	[/for]
-
-		// events --------------------------------------------------------------------------------------------------
-
-	private:
-
-	[for (p : prototypeDeclaration | project.prototypes)]
-	[if (isAnAncestorOf(proto, p))]
-	[for (elt : architectureElement | p.definitions)]
-		[if (isEvent(elt))]
-			[let event : eventDeclaration = elt.oclAsType(eventDeclaration)]
-		bool event_[event.name/](const long& icycle);
-			[/let]
-		[/if]
-	[/for]
-	[/if]
-	[/for]
-
-		// statesets -----------------------------------------------------------------------------------------------
-
-	private:
-
-	[for (p : prototypeDeclaration | project.prototypes)]
-	[if (isAnAncestorOf(proto, p))]
-	[for (elt : architectureElement | p.definitions)]
-		[if (isStateSet(elt))]
-			[let stateset : statesetDeclaration = elt.oclAsType(statesetDeclaration)]
-		enum stateset_[stateset.name/] { [getStateSetStates(stateset)/] }; 
-		ConcreteParameter<stateset_[stateset.name/]> [stateset.name/] ;
-		stateset_[stateset.name/] get_[stateset.name/](const long& icycle) { return [stateset.name/].getRead(icycle); }
-			[/let]
-		[/if]
-	[/for]
-	[/if]
-	[/for]
-
-		// interactions --------------------------------------------------------------------------------------------
-
-	private:
-	[for (p : prototypeDeclaration | project.prototypes)]
-	[if (isAnAncestorOf(proto, p))]
-	[for (elt : architectureElement | p.definitions)]
-		[if (isAnInteraction(elt))]
-			[let interaction : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
-				[for (call : interactionCall | interaction.icalls)]
-		void interaction_[call.fctName.name/](const long& icycle);
-		boost::function<void ([getFunctorDeclaration(call.fctName)/])> _[call.fctName.name/];
-				[/for]
-			[/let]
-		[/if]
-	[/for]
-	[/if]
-	[/for]
-
-		// general -------------------------------------------------------------------------------------------------
-	
-	public:
-
-		[proto.name/](XmlNode* config);
-		virtual ~[proto.name/]();
-		virtual void doInit();
-		virtual void doConnect();
-		virtual void doStep(const long& icycle);
-
-};
-
-
-} // Namespace generated
-#endif
-[/file]
-[/let]
-[/for]
-	
+// ---------------------------- GENERAL ------------------------------------
+public:
+	[proto.name/](XmlNode* config);
+	virtual ~[proto.name/]();
+	virtual void doInit();
+	virtual void doConnect();
+	virtual void doStep(const long& icycle);
+}
+#endif /* _[proto.name/]_h_ */
 [/template]
 
+[template private generateReferences(project : Project, current_proto : prototypeDeclaration)]
+[let refs : Sequence(referenceDeclaration) = getReferences(project, current_proto)]
+[if(refs->isEmpty() = false)]
+// ---------------------------- REFERENCES ------------------------------------
+private:
+[for(ref : referenceDeclaration | refs)]
+	IParameter<[ref.typeName.name/]>* [getReferenceName(ref)/];
+	const [ref.typeName.name/]& get_[getReferenceName(ref)/](const long& icycle);
+	[ref.typeName.name/]& get_[getReferenceName(ref)/]_write(const long& icycle);
+	void set_[getReferenceName(ref)/](const long& icycle, const [ref.typeName.name/]& data);
+[/for]
+[/if]
+[/let]
+[/template]
+
+[template private generateParameters(project : Project, current_proto : prototypeDeclaration)]
+[let params : Sequence(parameterDeclaration) = getParameters(project, current_proto)]
+[if(params->isEmpty() = false)]
+// ---------------------------- PARAMETERS ------------------------------------
+[for(param : parameterDeclaration | params)]
+private:
+[if (isArrayType(param.typeName))]
+[if (isDynamicArray(param.typeName.oclAsType(arrayType)))]
+	ArrayParameter<[param.typeName.name/]> [param.name/] ;
+[else]
+	PointerParameter<[param.typeName.name/]> [param.name/] ;
+[/if]
+[else]
+	ConcreteParameter<[param.typeName.name/]> [param.name/];		
+[/if]
+public:
+	IParameter<[param.typeName.name/]>* get_[param.name/]()  { return &[param.name/]; }
+	const [param.typeName.name/]& get_[param.name/](const long& icycle)  { return [param.name/].getRead(icycle); }
+	[param.typeName.name/]& get_[param.name/]_write(const long& icycle)  { return [param.name/].getWrite(icycle); }
+	void set_[param.name/](const long& icycle, const [param.typeName.name/]& data) { [param.name/].write(icycle,data); }
+[/for]
+[/if]
+[/let]
+[/template]
+
+[template private generateSignals(project : Project, current_proto : prototypeDeclaration)]
+[let signals : Sequence(signalDeclaration) = getSignals(project, current_proto)]
+[if(signals->isEmpty() = false)]
+// ---------------------------- SIGNALS ------------------------------------
+private:
+[for(signal : signalDeclaration | signals)]
+	Signal [signal.name/];
+[/for]
+[/if]
+[/let]
+[/template]
+
+[template private generateEvents(project : Project, current_proto : prototypeDeclaration)]
+[let events : Sequence(eventDeclaration) = getEvents(project, current_proto)]
+[if(events->isEmpty() = false)]
+// ---------------------------- EVENTS ------------------------------------
+private:
+[for(event : eventDeclaration | events)]
+ bool event_[event.name/](const long& icycle);
+[/for]
+[/if]
+[/let]
+[/template]
+
+[template private generateStateSets(project : Project, current_proto : prototypeDeclaration)]
+[let statesets : Sequence(statesetDeclaration) = getStateSets(project, current_proto)]
+[if(statesets->isEmpty() = false)]
+// ---------------------------- STATESETS ------------------------------------
+private:
+[for(stateset : statesetDeclaration | statesets)]
+	enum stateset_[stateset.name/] { [getStateSetStates(stateset)/] }; 
+	ConcreteParameter<stateset_[stateset.name/]> [stateset.name/] ;
+	stateset_[stateset.name/] get_[stateset.name/](const long& icycle) { return [stateset.name/].getRead(icycle); }
+[/for]
+[/if]
+[/let]
+[/template]
+
+[template private generateInteractions(project : Project, current_proto : prototypeDeclaration)]
+[let interactions : Sequence(interactionDeclaration) = getInteractions(project, current_proto)]
+[if(interactions->isEmpty() = false)]
+// ---------------------------- INTERACTIONS ------------------------------------
+private:
+[for(interaction : interactionDeclaration | interactions)]
+[for (call : interactionCall | interaction.icalls)]
+	void interaction_[call.fctName.name/](const long& icycle);
+	boost::function<void ([getFunctorDeclaration(call.fctName)/])> _[call.fctName.name/];
+[/for]
+[/for]
+[/if]
+[/let]
+[/template]

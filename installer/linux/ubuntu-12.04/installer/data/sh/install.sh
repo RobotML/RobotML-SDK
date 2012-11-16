@@ -129,6 +129,8 @@ if [ -f /var/run/reboot-required ]; then
     fi
 fi
 
+echo ${PACKG}
+
 echo "
 -------------------------------------------------------------------------------
 [INFO] Install

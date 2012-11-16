@@ -1,0 +1,9 @@
+Origin: Proteus
+Label: Proteus
+Suite: stable
+Codename: stable
+Version: all
+Architectures: i386
+Components: main
+Description: depot de paquets du projet Proteus
+

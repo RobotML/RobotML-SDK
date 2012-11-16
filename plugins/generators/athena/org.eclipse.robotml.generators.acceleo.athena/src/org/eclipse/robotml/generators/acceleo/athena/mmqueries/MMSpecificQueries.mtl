@@ -168,3 +168,15 @@
 [query public getFSMOpaqueBehavior(model : Model, sm : StateMachine) : Sequence(OpaqueBehavior) =
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getFSMOpaqueBehavior(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.StateMachine)', Sequence{model, sm})
 /]
+
+[query public getFSMStates(sm : StateMachine) : Sequence(Vertex) = 
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getFSMStates(org.eclipse.uml2.uml.StateMachine)', Sequence{sm})
+/]
+
+[query public isStartingState(state : Vertex) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isStartingState(org.eclipse.uml2.uml.Vertex)', Sequence{state})
+/]
+
+[query public isConnectedToOwner(port : Port, classe : Class) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isConnectedToOwner(org.eclipse.uml2.uml.Port, org.eclipse.uml2.uml.Class)', Sequence{port, classe})
+/]

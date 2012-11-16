@@ -18,6 +18,7 @@ import org.eclipse.uml2.uml.BehavioralFeature;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.DataType;
+import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Interval;
@@ -47,6 +48,7 @@ public class SpecificQueries {
 	static final private String _arrayKeyword = "array";
 	static final private String _mapKeyword = "map";
 	static final private String _vectorKeyword = "vector";
+	static final private String _unionKeyword = "union";
 	
 	static private HashSet<NamedElement> _basicTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _enumTypeUsed = new HashSet<NamedElement>();
@@ -138,8 +140,18 @@ public class SpecificQueries {
 			SpecificQueries._mapDeclaration.put("Real", decl);
 			//Time
 			decl = "include CPP : \"time.h\"\r\n";
-			decl += "language CPP : \"_time*\" = \"NULL\"";
+			decl += "language CPP : \"time_t*\" = \"NULL\"";
 			SpecificQueries._mapDeclaration.put("Time", decl);
+			//Real64
+			decl = "include MATLAB : \"matrix.h\"\r\n";
+			decl += "language MATLAB : \"mxDOUBLE_CLASS\" = \"0\"\r\n";
+			decl += "language CPP : \"double\" = \"0.\"\r\n";
+			decl += "language VLE : \"Double\" = \"0.0\"";
+			SpecificQueries._mapDeclaration.put("Real64", decl);
+			//Real32
+			decl = "language CPP : \"float\" = \"0.f\"\r\n";
+			decl += "language VLE : \"Double\" = \"0.0\"";
+			SpecificQueries._mapDeclaration.put("Real32", decl);
 		}
 	}
 	
@@ -511,7 +523,8 @@ public class SpecificQueries {
 		{
 			if(SpecificQueries.isProcessing((Operation)elt) == false)
 			{
-				buffer.add(elt);
+				if(SpecificQueries.getFSMOperation((Model)model).contains((Operation)elt) == false)
+					buffer.add(elt);
 			}
 		}
 		list.removeAll(buffer);
@@ -528,7 +541,7 @@ public class SpecificQueries {
 		Boolean result = false;
 		//System.out.println(op.getOwner().toString());
 		if(op.getOwner() instanceof org.eclipse.uml2.uml.Class)
-		{
+		{	
 			/*
 			 * Check if the operation is in the behavior specification then it's a processing
 			 */
@@ -781,7 +794,15 @@ public class SpecificQueries {
 		String result = "";
 		if(SpecificQueries.isExternalLibrairy(classe))
 		{
-			result = classe.getValue(classe.getAppliedStereotypes().get(0), SpecificQueries._pathProperty).toString(); 
+			Stereotype stereo = classe.getAppliedStereotypes().get(0);
+			if(stereo != null)
+			{
+				Object obj = classe.getValue(stereo, SpecificQueries._pathProperty);
+				if(obj != null)
+				{
+					result = obj.toString();
+				}
+			}
 		}
 		return result;
 	}
@@ -879,11 +900,14 @@ public class SpecificQueries {
 		
 		for(Comment comment : ne.getOwnedComments())
 		{
-			if(comment.getBody().startsWith(_arrayKeyword) == true ||
-					comment.getBody().startsWith(_mapKeyword) == true ||
-					comment.getBody().startsWith(_vectorKeyword) == true)
+			if(comment.getBody() != null)
 			{
-				result = comment.getBody();
+				if(comment.getBody().startsWith(_arrayKeyword) == true ||
+						comment.getBody().startsWith(_mapKeyword) == true ||
+						comment.getBody().startsWith(_vectorKeyword) == true)
+				{
+					result = comment.getBody();
+				}
 			}
 		}
 		
@@ -915,21 +939,36 @@ public class SpecificQueries {
 	{
 		Boolean result = false;
 		
-		DataType dt = (DataType) ne;
-		if(dt.getAllAttributes().size() > 0)
+		/*
+		 * For type "container", declaration is tsocked in the comment
+		 * Format : <type> <<template>> <name> <dimension>;
+		 */
+		
+		for(Comment comment : ne.getOwnedComments())
 		{
-			for(Property prop : dt.getAllAttributes())
+			if(comment.getBody() != null)
 			{
-				if(prop.getName().equals(dt.getName()))
+				if(comment.getBody().startsWith(_unionKeyword) == true)
 				{
-					if(prop.getType() == null)
-						result = true;
+					result = true;
 				}
-				
-				if(result == true)
-					break;
 			}
 		}
+//		DataType dt = (DataType) ne;
+//		if(dt.getAllAttributes().size() > 0)
+//		{
+//			for(Property prop : dt.getAllAttributes())
+//			{
+//				if(prop.getName().equals(dt.getName()))
+//				{
+//					if(prop.getType() == null)
+//						result = true;
+//				}
+//				
+//				if(result == true)
+//					break;
+//			}
+//		}
 		
 		return result;
 	}
@@ -1060,6 +1099,7 @@ public class SpecificQueries {
 		
 		for(DataType dt :datatypes)
 		{	
+			System.out.println("DataType : " + dt.getName());
 			if(usedType.contains(dt) || 
 					SpecificQueries.isDataTypeUsed(model, dt))
 			{
@@ -1078,6 +1118,7 @@ public class SpecificQueries {
 							else
 							{
 								usedType.add(prop.getType());
+								System.out.println("Add : " + prop.getType().getName());
 							}
 						}
 					}
@@ -1219,7 +1260,7 @@ public class SpecificQueries {
 		collection.addAll(_defineTypeUsed);
 		collection.addAll(_unionTypeUsed);
 		
-		collection.sortDataType();
+		collection.sort();
 		
 		
 		return new LinkedList<NamedElement>(collection);
@@ -1240,6 +1281,25 @@ public class SpecificQueries {
 		return SpecificQueries._structTypeUsed.contains(ne);
 	}
 	
+	static private List<Operation> getFSMOperation(Model model)
+	{
+		LinkedList<Operation> res = new LinkedList<Operation>();
+		FSMQueries queries = new FSMQueries();
+		List<StateMachine> sms = queries.getStateMachines(model);
+		for(StateMachine sm : sms)
+		{
+			List<org.eclipse.papyrus.RobotML.Transition> transitions = queries.getTransitions(sm);
+			for(org.eclipse.papyrus.RobotML.Transition transition : transitions)
+			{
+				if(transition.getGuard() != null)
+					res.add(transition.getGuard().getBase_Operation());
+				
+				if(transition.getEffect()  != null)
+					res.add(transition.getEffect().getBase_Operation());
+			}
+		}
+		return res;
+	}
 	
 	static public List<OpaqueBehavior> getFSMOpaqueBehavior(Model model, StateMachine sm)
 	{
@@ -1268,4 +1328,70 @@ public class SpecificQueries {
 		}
 		return res;
 	}
+	
+	
+	static public List<Vertex> getFSMStates(StateMachine sm)
+	{
+		LinkedList<Vertex> res = new LinkedList<Vertex>();
+		
+		FSMQueries query = new FSMQueries();
+		int index = 0;
+		for(Vertex elt : query.getStates(sm))
+		{
+			if(elt.getIncomings().size() > 0)
+			{
+				res.add(index, elt);
+				index ++;
+			}
+		}
+		
+		return res;
+	}
+	
+	/**
+	 * Check if state of statemachine is the initial state
+	 * WARNING !!! The intial state is the first state after the state with INITIAL kind
+	 * @param state
+	 * @return
+	 */
+	static public Boolean isStartingState(Vertex state)
+	{
+		Boolean isInitial = false;
+		for(Transition transition : state.getIncomings())
+		{
+			Vertex src = transition.getSource();
+			if(src != state)
+			{
+				List<Transition> tmp = src.getIncomings();
+				if(tmp.size() == 0)
+					isInitial = true;
+			}
+		}
+		
+		return isInitial;
+	}
+	
+	static public Boolean isConnectedToOwner(Port port, Class classe)
+	{
+		Boolean result = false;
+		
+		for(DirectedRelationship dir : port.getSourceDirectedRelationships())
+		{
+			for(Element elt : dir.getSources())
+			{
+				if(elt instanceof Port)
+				{
+					Port tmp_port = (Port)elt;
+					if(tmp_port != classe)
+					{
+						result = classe.getSuperClasses().contains(tmp_port.getOwner());
+					}
+				}
+			}
+		}
+		
+		
+		return result;
+	}
+	
 }

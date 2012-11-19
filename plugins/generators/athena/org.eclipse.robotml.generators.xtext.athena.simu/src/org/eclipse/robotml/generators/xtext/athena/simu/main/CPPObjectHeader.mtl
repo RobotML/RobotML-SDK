@@ -52,6 +52,7 @@ public:
 	virtual void doInit();
 	virtual void doConnect();
 	virtual void doStep(const long& icycle);
+};
 }
 #endif /* _[proto.name/]_h_ */
 [/template]

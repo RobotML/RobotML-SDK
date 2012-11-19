@@ -32,7 +32,7 @@ extern "C" __IMPORT__ void* getUserFunction(const std::string& name);
 
 namespace generated 
 {
-	using namespace generated;
+	//using namespace generated;
 	
 	[generateConstructor(proto)/]
 	[generateDestructor(proto)/]
@@ -50,8 +50,11 @@ namespace generated
 //******************************
 // Constructor
 //******************************
-[proto.name/]::[proto.name/]()
+[proto.name/]::[proto.name/](XmlNode* config)
 {
+	if(config != NULL)
+	{
+	}
 } 
 [/template]
 
@@ -106,7 +109,7 @@ void [current_proto.name/]::doConnect()
 //******************************
 // doStep
 //******************************
-void [proto.name/]::doStep()
+void [proto.name/]::doStep(const long& icycle)
 {
 	[generateTransitionStep(project, proto)/]
 	[generateInteractionsStep(project, proto)/]
@@ -208,14 +211,14 @@ try
 	_[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) getUserFunction("[call.fctName.name/]");
 [/for]
 [/for]
-[/if]
-[/let]
 }
 catch(...)
 {
 	cout << "Problem loading functors for instance [current_proto.name/]" << endl;
 	exit(-1);
 }
+[/if]
+[/let]
 [/template]
 
 

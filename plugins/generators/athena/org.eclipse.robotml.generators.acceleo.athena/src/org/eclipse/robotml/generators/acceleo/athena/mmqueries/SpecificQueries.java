@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.papyrus.RobotML.Algorithm;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.Transition;
+import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.FSMQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
 import org.eclipse.robotml.generators.acceleo.athena.files.configGenerator;
@@ -17,6 +18,8 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehavioralFeature;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Element;
@@ -1371,27 +1374,215 @@ public class SpecificQueries {
 		return isInitial;
 	}
 	
-	static public Boolean isConnectedToOwner(Port port, Class classe)
+	static public List<Port> getReferences(Model model, Class classe)
 	{
-		Boolean result = false;
-		
-		for(DirectedRelationship dir : port.getSourceDirectedRelationships())
+		LinkedList<Port> res = new LinkedList<Port>();
+		HashSet<Class> classes = getAllModelClasses(model);
+		for(Class elt : classes)
 		{
-			for(Element elt : dir.getSources())
+			List<Port> in_ports = ArchitectureQueries.getInputPortsForElement(classe) ;
+			if(ArchitectureQueries.isAnAncestorOf(classe, elt))
 			{
-				if(elt instanceof Port)
+				List<Port> in_ports_child = ArchitectureQueries.getInputPortsForElement(elt);
+				for(Port port : in_ports)
 				{
-					Port tmp_port = (Port)elt;
-					if(tmp_port != classe)
+					if(in_ports_child.contains(port) == true &&
+							res.contains(port) == false)
 					{
-						result = classe.getSuperClasses().contains(tmp_port.getOwner());
+						if(ArchitectureQueries.isPortConnected(port))
+						{
+							res.add(port);
+						}
 					}
 				}
 			}
 		}
 		
 		
+		return res;
+	}
+	
+	static private Boolean hasChildren(Model model, Class classe)
+	{
+		return !SpecificQueries.getChildren(model, classe).isEmpty();
+	}
+	
+	static private List<NamedElement> getChildren(Model model, Class classe)
+	{
+		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
+		HashSet<Class> classes = SpecificQueries.getAllModelClasses(model);
+		for(Class class_tmp : classes)
+		{
+			if(class_tmp != classe)
+			{
+				List<Class> super_classes = class_tmp.getSuperClasses();
+				if(super_classes.contains(classe))
+				{
+					res.add(class_tmp);
+					res.addAll(getChildren(model, class_tmp));
+				}
+			}
+		}
+		return res;
+	}
+	
+	static private List<NamedElement> getParentsInstanciation(Model model, Class classe)
+	{
+		LinkedList<NamedElement> parents = new LinkedList<NamedElement>();
+		LinkedList<NamedElement> classes = new LinkedList<NamedElement>();
+		classes.add(classe);
+		if(SpecificQueries.hasChildren(model, classe));
+		{
+			classes.addAll(SpecificQueries.getChildren(model, classe));
+		}
+		
+		HashSet<Class> components = SpecificQueries.getAllModelClasses(model);
+		for(Class comp : components)
+		{
+			
+			List<Property> subComponents = comp.getAllAttributes();
+			for(Property prop : subComponents)
+			{
+				if(classes.contains(prop.getType()))
+				{
+					parents.add(comp);
+					break;
+				}
+			}
+		}
+		return parents;
+	}
+	
+	static public List<NamedElement> getOriginsPort(Model model, Class classe_dest, Port port)
+	{
+		LinkedList<NamedElement> result = new LinkedList<NamedElement>();
+		List<NamedElement> tmp = SpecificQueries.getPortOtherSide(port);
+		/*
+		 * Check in object instance the origin port
+		 */
+		for(Property prop : classe_dest.getAllAttributes()){
+			if(prop.getType() != classe_dest)
+			{
+				if(tmp.contains(prop.getType()))
+				{
+					result.add(prop);
+					System.out.println("Class " + classe_dest.getName() + " for port => " + port.getName() + " from " + prop.getName());
+				}
+			}
+		}
+		
+		if(result.isEmpty())
+		{
+			/*
+			 * Get the parent instance, and check if the port is link with an other instance than the classe destination
+			 */
+			List<NamedElement> parents = SpecificQueries.getParentsInstanciation(model, classe_dest);
+			
+			if(parents.isEmpty() == false)
+			{
+				
+				for(NamedElement parent : parents)
+				{
+					for(Property prop : ((Class)parent).getAllAttributes())
+					{
+						if(tmp.contains(prop.getType()))
+						{
+							result.add(prop.getType());
+							System.out.println("Parent class "+ parent.getName() + " *** Class " + classe_dest.getName() + " for port => " + port.getName() + " from " + prop.getName());
+						}
+					}
+				}
+				
+			}
+		}
 		return result;
 	}
 	
+	static private List<NamedElement> getPortOtherSide(Port port)
+	{
+		/*
+		 * Get all element are in other side the port
+		 */
+		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
+		for(ConnectorEnd end : port.getEnds())
+		{
+			if(end.getOwner() != null && end.getOwner()!= port)
+			{
+				Connector connector = (Connector)end.getOwner();
+				if((connector != null))
+				{
+					if(connector.getOwner() != null)
+					{
+						if(res.contains(connector.getOwner()) == false)
+						{
+							res.add((NamedElement) connector.getOwner());
+						}
+					}
+				}
+			}
+		}
+		return res;
+	}
+	
+	static public Boolean isConnectedToOwner(Port port, Class classe, Model model)
+	{
+		Boolean result = false;
+		
+		List<NamedElement> parents = SpecificQueries.getParentsInstanciation(model, classe);
+		if(parents.isEmpty() == false)
+		{
+			List<NamedElement> tmp = SpecificQueries.getPortOtherSide(port);
+			for(NamedElement elt : tmp)
+			{
+				result |= parents.contains(elt);
+				if(parents.contains(elt))
+				{
+					System.out.println("Port " + port.getName() + " from class " + classe.getName() + " is connected to " + elt.getName());
+				}
+			}
+		}	
+		return result;
+	}
+
+	static public Boolean hasValidConnection(Port port)
+	{
+		Boolean result = false;
+		result = (port.getOwner() != null);
+		for(ConnectorEnd end : port.getEnds())
+		{
+			if(end.getOwner() != null && end.getOwner()!= port)
+			{
+				Connector connector = (Connector)end.getOwner();
+				if((port.getOwner() != null) && (connector != null))
+				{
+					result = true;
+					break;
+				}
+			}
+			
+		}
+		
+		return result;
+	}
+	
+	static public Boolean isConnected(Port port)
+	{
+		Boolean result = false;
+		
+		System.out.println("*** Port : " + port.getName());
+		for(ConnectorEnd connector : port.getEnds())
+		{
+			System.out.println("PORT OWNER : " + port.getOwner().toString());
+			System.out.println("ROLE : " + connector.getRole());
+			if(connector.getPartWithPort() != null)
+			{
+				System.out.println("PART WITH PORT : " + connector.getPartWithPort());
+			}
+				
+			//System.out.println("OWNER : " + connector.getOwner());
+			Connector con = (Connector)connector.getOwner();
+			System.out.println("OTHER SIDE : " + con.getOwner().toString());
+		}
+		return result;
+	}
 }

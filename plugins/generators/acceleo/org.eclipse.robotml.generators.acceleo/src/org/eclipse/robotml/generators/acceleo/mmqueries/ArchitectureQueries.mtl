@@ -101,3 +101,7 @@
 [query public getRootClassForModel(model : Model) : Class =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries','getRootClassForModel(org.eclipse.uml2.uml.Model)', Sequence{model})
 /]
+
+[query public isAnAncestorOf(current_class : Class, other_class : Class) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'isAnAncestorOf(org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Class)', Sequence{current_class, other_class})
+/]

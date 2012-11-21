@@ -82,15 +82,19 @@ LINK_DIRECTORIES(
 [for (proto : prototypeDeclaration | project.prototypes)]
 ADD_LIBRARY([proto.name/] SHARED [getPrototypeFileName(proto,'.cpp')/] TypeDefs.cc TypeDefs_Values.cc )
 TARGET_LINK_LIBRARIES([proto.name/] ${VLE_LIBRARIES} ${Boost_LIBRARIES} )
-
 [/for]
 
-[for (proto : prototypeDeclaration | project.prototypes)]
+[for (wrapper : wrapperDeclaration | project.wrappers)]
+ADD_LIBRARY(libStub_[wrapper.name/] SHARED Stub_[wrapper.name/].cpp TypeDefs.cc)
+TARGET_LINK_LIBRARIES(libStub_[wrapper.name/] ${VLE_LIBRARIES} ${Boost_LIBRAIRIES})
 [/for]
 
 INSTALL(TARGETS
 [for (proto : prototypeDeclaration | project.prototypes)]
   [proto.name/]
+[/for]
+[for (wrapper : wrapperDeclaration | project.wrappers)]
+  libStub_[wrapper.name/]
 [/for]
   RUNTIME DESTINATION lib
   LIBRARY DESTINATION lib

@@ -1,0 +1,113 @@
+[comment encoding = UTF-8 /]
+[module generateLibraries('http://www.xtext.org/AthenaDSL')]
+
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::DSLQueries/]
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::kqueries/]
+
+[template public generateLibraries(project : Project)]
+[generateCompatibility(project)/]
+[for (wrapper : wrapperDeclaration | project.wrappers)]
+[file('generated/src/Stub_'.concat(wrapper.name).concat('.cpp'), false, 'UTF-8')]
+[generateStub(project, wrapper)/]
+[/file]
+[/for]
+[/template]
+
+[template private generateCompatibility(project : Project)]
+[file('generated/src/Compatibility.hpp', false,'UTF-8')]
+#ifndef Compatibility_H
+#define Compatibility_H
+#ifdef WIN32
+#define __IMPORT__ __declspec(dllimport)
+#define __EXPORT__ __declspec(dllexport)
+#else
+#include <cstring>
+#define __IMPORT__ 
+#define __EXPORT__
+#define __WHICHPORT__
+#endif /* WIN32 */
+#endif /* Compatibility_H */
+[/file]
+[/template]
+
+
+[template private generateStub(project : Project, wrapper : wrapperDeclaration)]
+#ifndef Stub_[wrapper.name/]_H
+#define Stub_[wrapper.name/]_H
+[generateIncludes(project)/]
+[generateFunctionDeclaration(project)/]
+[generateStubDeclaration(project, wrapper)/]
+[generateStubFunction(project, wrapper)/]
+#endif /* Stub_[wrapper.name/]_H */
+[/template]
+
+[template private generateIncludes(project : Project)]
+//----------------------------------------------------------------
+//	INCLUDES FILES
+//----------------------------------------------------------------
+#include <vle/utils/DateTime.hpp>
+#include <vle/utils/Trace.hpp>
+#include "Compatibility.hpp"
+#include "TypeDefs.h"
+
+using namespace generated;
+namespace vu = vle::utils;
+[/template]
+
+[template private generateFunctionDeclaration(project : Project)]
+//----------------------------------------------------------------
+//	USER FUNCTIONS DECLARATION
+//----------------------------------------------------------------
+[for(func : functionDeclaration | project.functions)]
+[if(isCPPFunction(func))]
+__EXPORT__ void [func.name/]([getCPPFunctionSignature(func)/]);
+[/if]
+[/for]
+[/template]
+
+[template private generateStubDeclaration(project : Project, wrapper : wrapperDeclaration)]
+//----------------------------------------------------------------
+// User Function To Directory
+//----------------------------------------------------------------
+
+extern "C" __IMPORT__ void declareUserFunction(const std::string&, void*);
+
+namespace generated {
+class Stub_[wrapper.name/] {
+public:
+	Stub_[wrapper.name/]() {
+[for (func : functionDeclaration | project.functions)]
+	[if (isCPPFunction(func))]
+		declareUserFunction("[func.name/]", (void*)&[func.name/]);
+	[/if]	
+[/for]
+	}
+};
+Stub_[wrapper.name/] Stub_[wrapper.name/]_Obj;
+}
+[/template]
+
+[template private generateStubFunction(project : Project, wrapper : wrapperDeclaration)]
+//----------------------------------------------------------------
+// User Function Wrapper Implementations
+//----------------------------------------------------------------
+[for (func : String | wrapper.functions)]
+[for (stub : functionDeclaration | project.functions)]
+[if (isCPPFunction(stub) and (stub.name.equalsIgnoreCase(func)))]
+/**
+ *
+ */
+__EXPORT__ void [stub.name/]([getCPPFunctionSignature(stub)/])
+{
+	// [protected ('wrapper')]
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " [wrapper.name/]::[stub.name/] BEGIN"); 
+
+	
+
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " [wrapper.name/]::[stub.name/] END");
+	// [/protected]
+}
+[/if]	
+[/for]
+[/for]
+[/template]

@@ -9,6 +9,7 @@
 [import org::eclipse::robotml::generators::xtext::athena::vle::main::generateConfig/]
 [import org::eclipse::robotml::generators::xtext::athena::vle::main::generateCMake/]
 [import org::eclipse::robotml::generators::xtext::athena::vle::main::generateScript/]
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::generateLibraries/]
 
 [template public generateVLEPackage(project : Project)]
 [comment @main /]
@@ -20,6 +21,8 @@
 [valueTypeImpls(project)/]                
 [comment]Generate model element[/comment]
 [generateModels(project)/]
+[comment]Generate stub function[/comment]
+[generateLibraries(project)/]
 [comment]Generate the VPZ configuration file[/comment]
 [generateConfig(project)/]
 [comment]Generate the cmake files[/comment]

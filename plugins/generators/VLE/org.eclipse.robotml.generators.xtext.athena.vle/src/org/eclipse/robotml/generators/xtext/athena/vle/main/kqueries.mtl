@@ -112,3 +112,7 @@
 	invoke('org.eclipse.robotml.generators.xtext.athena.vle.main.JavaService', 'getProcessingSignature(org.xtext.athenaDSL.ProcessingDeclaration)', Sequence{proc}) 
 /]
 
+[query public hasStateSet(proto : prototypeDeclaration) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.vle.main.JavaService', 'hasStateSet(org.xtext.athenaDSL.prototypeDeclaration)', Sequence{proto}) 
+/]
+

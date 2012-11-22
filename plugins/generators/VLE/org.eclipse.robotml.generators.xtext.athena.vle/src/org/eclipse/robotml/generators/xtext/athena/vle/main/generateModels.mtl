@@ -308,11 +308,15 @@ DECLARE_DYNAMICS(generated::[proto.name/])
 #include <vle/extension/fsa/Statechart.hpp>
 #include <TypeDefs.h>
 #include <TypeDefs_Values.h>
+#include <boost/function.hpp>
+#include "Compatibility.hpp"
 
 namespace vd = vle::devs;
 namespace vv = vle::value;
 namespace vu = vle::utils;
 namespace vf = vle::extension::fsa;
+
+extern "C" __EXPORT__ void* getUserFunction(const std::string&);
 
 namespace generated {
 class [proto.name/] : public vf::Statechart {
@@ -321,6 +325,7 @@ private:
 	[generateReferences(project, proto)/]
 	[generateParameters(project, proto)/]
 	[generateStatesDeclaration(project, proto)/]
+	[generateFunctionsPtrDeclaration(project, proto)/]
 	[generateInteractions(project, proto)/]
 	[generateEvent(proto)/]
 
@@ -406,20 +411,14 @@ enum EState {
 [for(call : interactionCall | action.icalls)]
 void interaction_[call.fctName.name/](const vd::Time& time) {
 	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/]::interaction_[call.fctName.name/] - request at time : " + time.toString());
-[for(fct : functionDeclaration | project.functions)]
-[if(fct.name.equalsIgnoreCase(call.fctName.name))]
-	// TODO : call operation with boost::functor
-	//[call.fctName.name/]([for(argument : arg | call.fctName.args.arguments)]this->[argument.name/][if(call.fctName.args.arguments->indexOf(argument) < call.fctName.args.arguments->size())],[/if][/for]);
-[/if]
-[/for]
-[for(proc : ProcessingDeclaration | project.processings)]
-[if(proc.name.equalsIgnoreCase(call.fctName.name))]
-[if((call.fctName.args = null) =(false))]
-	// TODO : call operation with boost::functor
-	//[call.fctName.name/]([for(argument : arg | call.fctName.args.arguments)]this->[argument.name/][if(call.fctName.args.arguments->indexOf(argument) < call.fctName.args.arguments->size())],[/if][/for]);
-[/if]
-[/if]
-[/for]
+	try
+	{
+		_[call.fctName.name/]([for(argument : farg | call.arguments)]this->[argument.varName/][if(call.arguments->indexOf(argument) < call.arguments->size())],[/if][/for]);
+	}
+	catch(...)
+	{
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/]::interaction_[call.fctName.name/] - Error in calling function [call.fctName.name/] at time : " + time.toString());
+	}
 }
 [/for]
 [/let]
@@ -648,3 +647,45 @@ initialState(Initial);
 timeStep(1.0);
 [/if]
 [/template]
+
+[template private generateFunctionsPtrDeclaration(project : Project, proto : prototypeDeclaration)]
+
+// function pointers ----------------------------------------------------------------------------------------------
+
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for(elt : architectureElement | p.definitions)]
+[if(elt.oclIsKindOf(interactionDeclaration))]
+[let action : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
+[for(call : interactionCall | action.icalls)]
+	boost::function<void ([getFunctorDeclaration(call.fctName)/])> _[call.fctName.name/];
+[/for]
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+[/template]
+
+[template private generateFunctionsPtrInit(project : Project , proto : prototypeDeclaration)]
+try
+{
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for(elt : architectureElement | p.definitions)]
+[if(elt.oclIsKindOf(interactionDeclaration))]
+[let action : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
+[for(call : interactionCall | action.icalls)]
+	_[call.fctName.name/] = (void(*)([getFunctorDeclaration(call.fctName)/])) getUserFunction("[call.fctName.name/]");
+[/for]
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+}
+catch(...)
+{
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - Problem on loading function pointers.");
+}
+[/template] 

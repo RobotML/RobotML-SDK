@@ -36,10 +36,13 @@
 #define Stub_[wrapper.name/]_H
 [generateIncludes(project)/]
 [generateFunctionDeclaration(project)/]
+[generateProcessDeclaration(project)/]
 [generateStubDeclaration(project, wrapper)/]
 [generateStubFunction(project, wrapper)/]
+[generateStubProcessing(project, wrapper)/]
 #endif /* Stub_[wrapper.name/]_H */
 [/template]
+
 
 [template private generateIncludes(project : Project)]
 //----------------------------------------------------------------
@@ -47,6 +50,7 @@
 //----------------------------------------------------------------
 #include <vle/utils/DateTime.hpp>
 #include <vle/utils/Trace.hpp>
+#include <boost/function.hpp>
 #include "Compatibility.hpp"
 #include "TypeDefs.h"
 
@@ -65,12 +69,22 @@ __EXPORT__ void [func.name/]([getCPPFunctionSignature(func)/]);
 [/for]
 [/template]
 
+[template private generateProcessDeclaration(project : Project)]
+//----------------------------------------------------------------
+//	USER PROCESSING DECLARATION
+//----------------------------------------------------------------
+[for(processing : ProcessingDeclaration | project.processings)]
+__EXPORT__ void [processing.name/]([getProcessingSignature(processing)/]);
+[/for]
+[/template]
+
 [template private generateStubDeclaration(project : Project, wrapper : wrapperDeclaration)]
 //----------------------------------------------------------------
 // User Function To Directory
 //----------------------------------------------------------------
 
 extern "C" __IMPORT__ void declareUserFunction(const std::string&, void*);
+extern "C" __EXPORT__ void* getUserFunction(const std::string&);
 
 namespace generated {
 class Stub_[wrapper.name/] {
@@ -80,6 +94,9 @@ public:
 	[if (isCPPFunction(func))]
 		declareUserFunction("[func.name/]", (void*)&[func.name/]);
 	[/if]	
+[/for]
+[for (processing : ProcessingDeclaration | project.processings)]
+		declareUserFunction("[processing.name/]", (void*)&[processing.name/]);
 [/for]
 	}
 };
@@ -110,4 +127,114 @@ __EXPORT__ void [stub.name/]([getCPPFunctionSignature(stub)/])
 [/if]	
 [/for]
 [/for]
+[/template]
+
+[template private generateStubProcessing(project : Project, wrapper : wrapperDeclaration)]
+//----------------------------------------------------------------
+// User Function Wrapper Implementations
+//----------------------------------------------------------------
+[for (func : String | wrapper.functions)]
+[for (stub : ProcessingDeclaration | project.processings)]
+[if (stub.name.equalsIgnoreCase(func))]
+/**
+*
+*/
+__EXPORT__ void [stub.name/]([getProcessingSignature(stub)/])
+{
+	// [protected ('wrapper')]
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " [wrapper.name/]::[stub.name/] BEGIN");
+	[generateLocalParameters(stub)/]
+	[generateLocalEvents(stub)/]
+[for(bloc : statement | stub.statements)]
+	[generateStatement(bloc)/]
+[/for]
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " [wrapper.name/]::[stub.name/] END");
+	// [/protected]
+}
+[/if]
+[/for]
+[/for]
+[/template]
+
+[template private generateLocalParameters(processing : ProcessingDeclaration)]
+[for(param : localParameterDeclaration | processing.localParameters)]
+[if((param.type = null) =(false))][param.type.name/][/if] [if((param.name = null) =(false))][param.name/][/if][if(param.hasValue and ((param.value = null) =(false)))][param.value/][/if];
+[/for]
+[/template]
+
+[template private generateLocalEvents(processing : ProcessingDeclaration)]
+[for(event : localEventDeclaration | processing.localEvents)]
+[let evt : eventDeclaration = event.oclAsType(eventDeclaration)]
+bool [evt.name/] = [generateCondition(evt)/];
+[/let]
+[/for]
+[/template]
+
+[template private generateStatement(bloc : statement)]
+[if(bloc.oclIsKindOf(functionCall))]
+[generateFunctionCall(bloc.oclAsType(functionCall))/]
+[elseif(bloc.oclIsKindOf(ifblock))]
+if [generateIfBloc(bloc.oclAsType(ifblock))/]
+[elseif(bloc.oclIsKindOf(whileblock))]
+while [generateWhileBloc( bloc.oclAsType(whileblock))/]
+[elseif(bloc.oclIsKindOf(statement))]
+[if((bloc.call = null) =(false))]
+[if(bloc.call.oclIsKindOf(functionCall))]
+[generateFunctionCall(bloc.call.oclAsType(functionCall))/]
+[elseif(bloc.call.oclIsKindOf(interactionCall))]eventDeclaration
+[generateInteractionCall(bloc.call.oclAsType(interactionCall))/]
+[/if]
+[/if]
+[/if]
+[/template]
+
+[template private generateInteractionCall(call : interactionCall)]
+//[call.fctName.name/]
+try
+{
+	boost::function<void ([getFunctorDeclaration(call.fctName)/])> _[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) getUserFunction("[call.fctName.name/]");
+	_[call.fctName.name/]([for(argument : farg | call.arguments)][argument.varName/][if(call.arguments->indexOf(argument) < call.arguments->size())], [/if][/for]);
+}
+catch(...)
+{
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " !!!!! Problem on loading function [call.fctName.name/] !!!!!");
+}
+[/template]
+
+[template private generateFunctionCall(call : functionCall)]
+//[call.name.name/]
+try
+{
+	boost::function<void ([getFunctorDeclaration(call.name)/])> _[call.name.name/] = (void (*)([getFunctorDeclaration(call.name)/])) getUserFunction("[call.name.name/]");
+	_[call.name.name/]([for(argument : farg | call.arguments)][argument.varName/][if(call.arguments->indexOf(argument) < call.arguments->size())], [/if][/for]);
+}
+catch(...)
+{
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " !!!!! Problem on loading function [call.name.name/] !!!!!");
+}
+[/template]
+
+[template private generateCondition(eventDecl : eventDeclaration)]
+[for(condition : eventCondition | eventDecl.conditions)]
+([condition.leftPart/][condition.cond/][if((condition.rightPartI = null) =(false))][condition.rightPartI/][elseif((condition.rightPartN = null) = (false))][condition.rightPartN/][elseif((condition.rightPartS = null) =(false))][condition.rightPartS/][/if]) [if(eventDecl.conditions->indexOf(condition) < eventDecl.conditions->size())]&&[/if]
+[/for]
+[/template]
+
+[template private generateIfBloc(ifbloc : ifblock)]
+[if((ifbloc.eventName = null) =(false))]([ifbloc.eventName.oclAsType(eventDeclaration).name/])[/if] {
+[for(bloc : statement | ifbloc.ifBlocks)]
+	[generateStatement(bloc)/]
+[/for]
+}
+[if(ifbloc.hasElse)]
+else [for(bloc : statement | ifbloc.elseBlocks)][generateStatement(bloc)/][/for]
+[/if]
+[/template] 
+
+[template private generateWhileBloc( while : whileblock)]
+[if((while.eventName = null) =(false))]([while.eventName.oclAsType(eventDeclaration).name/])[/if] {
+[for(bloc : statement | while.blocks)]
+	[generateStatement(bloc)/]
+[/for]
+}
 [/template]

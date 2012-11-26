@@ -1460,6 +1460,9 @@ public class GeneralQueries {
 	}
 
 	
+	
+	
+	
 	/**
 	 * Get root model for the current model
 	 * @param model input model
@@ -1594,6 +1597,8 @@ public class GeneralQueries {
 		}
 		return found_elts;
 	}
+
+	
 
 	public Boolean isSensorSystem(Class myClass) {		
 		for (Stereotype st : myClass.getAppliedStereotypes())				

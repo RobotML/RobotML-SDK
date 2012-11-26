@@ -66,10 +66,6 @@
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'getOppositePort(org.eclipse.uml2.uml.Port)', Sequence{port}) 
 /]
 
-[query public getNameSpace(model : Model) : String =
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'getNameSpace(org.eclipse.uml2.uml.Model)', Sequence{model})
-/]
-
 [query public getSensors(model : Model) : Sequence(NamedElement) =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'getSensors(org.eclipse.uml2.uml.Model)', Sequence{model})
 /]
@@ -84,12 +80,15 @@
 [query public getRootModel(model : Model) : Model =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries','getRootModel(org.eclipse.uml2.uml.Model)', Sequence{model})
 /]
+[query public getNameSpace(model : Model) : String =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries','getNameSpace(org.eclipse.uml2.uml.Model)', Sequence{model})
+/]
 
 [query public isServicePortProvided(sp : Port) : Boolean =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'isInterfaceProvided(org.eclipse.uml2.uml.Port)', Sequence{sp})
 /]
 [query public getOppositeComponents(elt : Element) :  Sequence(String) =
-        invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries','getOppositeComponents(org.eclipse.uml2.uml.Element)', Sequence{elt})
+    invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries','getOppositeComponents(org.eclipse.uml2.uml.Element)', Sequence{elt})
 /]
 [query public isSystem(c : Class) : Boolean =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'isSystem(org.eclipse.uml2.uml.Class)', Sequence{c})
@@ -127,11 +126,11 @@
 /]
 
 [query public setRttLibraries(class : Element) : String =
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'setRttLibraries(org.eclipse.uml2.uml.Element)', Sequence{class})
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'setRttLibraries(org.eclipse.uml2.uml.Element)', Sequence{class})
 /]
 
 [query public setLibraries(class : Element) : String =
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'setLibraries(org.eclipse.uml2.uml.Element)', Sequence{class})
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'setLibraries(org.eclipse.uml2.uml.Element)', Sequence{class})
 /] 
 
 [comment  

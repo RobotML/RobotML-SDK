@@ -35,6 +35,7 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.FunctionBehavior;
 import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
@@ -52,7 +53,7 @@ public class OrocosQueries {
 	LinkedList<java.lang.String> dataTypes = new LinkedList<String>();
 	LinkedList<java.lang.String> alldata=new LinkedList<String>();
 	LinkedList<java.lang.String> rttData = new LinkedList<String>();
-
+	boolean includePort= false;
 	/**
 	 * Returns all the ports used in the model
 	 */
@@ -221,6 +222,26 @@ public class OrocosQueries {
 		}
 		return res;
 	}
+
+	/**
+	 * Get root model for the current model
+	 * @param model input model
+	 * @return root model of this model, if not, return the model itself
+	 */
+	public Model getRootModel(Model model) {
+		if(ArchitectureQueries.isRootModel(model))
+			return model;
+		else{
+		for (Element ne : model.getOwnedElements()) {
+			if (ne instanceof org.eclipse.uml2.uml.Model) {
+				return getRootModel((org.eclipse.uml2.uml.Model)ne);
+			}
+		}
+		}
+	return null;
+	}
+	
+	
 	
 	/**
 	 * Le type de l'interface du service port : Requit ou Fournit 
@@ -507,7 +528,6 @@ public class OrocosQueries {
 
 public LinkedList<java.lang.String> setLibraries(Element c){		
 		LinkedList<Element>	allelem =new LinkedList<Element>();
-		boolean includePort= false;
 		boolean includeOperation= false;
 		boolean includeDataTypes = false;
 		for(Element elt: c.allOwnedElements()){

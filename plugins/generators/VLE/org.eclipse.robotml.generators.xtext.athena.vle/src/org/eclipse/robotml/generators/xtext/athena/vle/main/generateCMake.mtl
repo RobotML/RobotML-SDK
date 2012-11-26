@@ -86,8 +86,14 @@ TARGET_LINK_LIBRARIES([proto.name/] ${VLE_LIBRARIES} ${Boost_LIBRARIES} )
 
 [for (wrapper : wrapperDeclaration | project.wrappers)]
 ADD_LIBRARY(libStub_[wrapper.name/] SHARED Stub_[wrapper.name/].cpp TypeDefs.cc)
-TARGET_LINK_LIBRARIES(libStub_[wrapper.name/] ${VLE_LIBRARIES} ${Boost_LIBRAIRIES})
+TARGET_LINK_LIBRARIES(libStub_[wrapper.name/] ${VLE_LIBRARIES} ${Boost_LIBRARIES})
 [/for]
+
+ADD_LIBRARY(libExternalFunction SHARED FunctionDirectory.cpp FunctionLibrary.cpp)
+TARGET_LINK_LIBRARIES(libExternalFunction ${VLE_LIBRARIES} ${BOOST_LIBRARIES})
+
+ADD_LIBRARY(libXML SHARED xml.cpp expatpp.cpp xmlparse.c xmlrole.c xmltok.c xmltok_impl.c)
+TARGET_LINK_LIBRARIES(libXML ${VLE_LIBRARIES} ${BOOST_LIBRARIES})
 
 INSTALL(TARGETS
 [for (proto : prototypeDeclaration | project.prototypes)]
@@ -96,6 +102,8 @@ INSTALL(TARGETS
 [for (wrapper : wrapperDeclaration | project.wrappers)]
   libStub_[wrapper.name/]
 [/for]
+  libExternalFunction
+  libXML
   RUNTIME DESTINATION lib
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib)

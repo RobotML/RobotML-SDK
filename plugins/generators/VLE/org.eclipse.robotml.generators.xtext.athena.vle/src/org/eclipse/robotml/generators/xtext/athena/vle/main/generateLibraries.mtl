@@ -52,6 +52,7 @@
 #include <vle/utils/Trace.hpp>
 #include <boost/function.hpp>
 #include "Compatibility.hpp"
+#include "FunctionDirectory.hpp"
 #include "TypeDefs.h"
 
 using namespace generated;
@@ -83,8 +84,8 @@ __EXPORT__ void [processing.name/]([getProcessingSignature(processing)/]);
 // User Function To Directory
 //----------------------------------------------------------------
 
-extern "C" __IMPORT__ void declareUserFunction(const std::string&, void*);
-extern "C" __EXPORT__ void* getUserFunction(const std::string&);
+[comment]//extern "C" __IMPORT__ void declareUserFunction(const std::string&, void*);
+//extern "C" __EXPORT__ void* getUserFunction(const std::string&);[/comment]
 
 namespace generated {
 class Stub_[wrapper.name/] {
@@ -92,11 +93,13 @@ public:
 	Stub_[wrapper.name/]() {
 [for (func : functionDeclaration | project.functions)]
 	[if (isCPPFunction(func))]
-		declareUserFunction("[func.name/]", (void*)&[func.name/]);
+[comment]		//declareUserFunction("[func.name/]", (void*)&[func.name/]);[/comment]
+		FunctionDirectory::getInstance()->addFunction("[func.name/]", (void*)&[func.name/]);
 	[/if]	
 [/for]
 [for (processing : ProcessingDeclaration | project.processings)]
-		declareUserFunction("[processing.name/]", (void*)&[processing.name/]);
+[comment]		//declareUserFunction("[processing.name/]", (void*)&[processing.name/]);[/comment]
+		FunctionDirectory::getInstance()->addFunction("[processing.name/]", (void*)&[processing.name/]);
 [/for]
 	}
 };
@@ -192,7 +195,8 @@ while [generateWhileBloc( bloc.oclAsType(whileblock))/]
 //[call.fctName.name/]
 try
 {
-	boost::function<void ([getFunctorDeclaration(call.fctName)/])> _[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) getUserFunction("[call.fctName.name/]");
+[comment]	//boost::function<void ([getFunctorDeclaration(call.fctName)/])> _[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) getUserFunction("[call.fctName.name/]");[/comment]
+	boost::function<void ([getFunctorDeclaration(call.fctName)/])> _[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) FunctionDirectory::getinstance()->getFunction("[call.fctName.name/]");
 	_[call.fctName.name/]([for(argument : farg | call.arguments)][argument.varName/][if(call.arguments->indexOf(argument) < call.arguments->size())], [/if][/for]);
 }
 catch(...)
@@ -205,7 +209,8 @@ catch(...)
 //[call.name.name/]
 try
 {
-	boost::function<void ([getFunctorDeclaration(call.name)/])> _[call.name.name/] = (void (*)([getFunctorDeclaration(call.name)/])) getUserFunction("[call.name.name/]");
+	[comment]boost::function<void ([getFunctorDeclaration(call.name)/])> _[call.name.name/] = (void (*)([getFunctorDeclaration(call.name)/])) getUserFunction("[call.name.name/]");[/comment]
+boost::function<void ([getFunctorDeclaration(call.name)/])> _[call.name.name/] = (void (*)([getFunctorDeclaration(call.name)/])) FunctionDirectory::getInstance()->getFunction("[call.name.name/]");
 	_[call.name.name/]([for(argument : farg | call.arguments)][argument.varName/][if(call.arguments->indexOf(argument) < call.arguments->size())], [/if][/for]);
 }
 catch(...)

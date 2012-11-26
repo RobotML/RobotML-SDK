@@ -35,6 +35,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.mapping.ecore2xml_2.7.0.v20120917-0436.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.validation_1.4.0.v20100428-2315.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.8.0.v20120522-2034.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.papyrus.robotml_0.9.1.201210171425.jar"/>
     </path>
 
     <path id="org.eclipse.robotml.generators.acceleo.rtmaps.classpath">

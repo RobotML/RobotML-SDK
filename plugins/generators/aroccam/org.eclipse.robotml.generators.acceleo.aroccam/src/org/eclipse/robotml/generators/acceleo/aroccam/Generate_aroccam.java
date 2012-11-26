@@ -358,6 +358,9 @@ public class Generate_aroccam extends AbstractAcceleoGenerator {
 			resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
 			factoryRegistry.getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
 		}
+		 if (!isInWorkspace(org.eclipse.papyrus.RobotML.RobotMLPackage.class)) {
+	            resourceSet.getPackageRegistry().put(org.eclipse.papyrus.RobotML.RobotMLPackage.eINSTANCE.getNsURI(), org.eclipse.papyrus.RobotML.RobotMLPackage.eINSTANCE);
+	        }
 
 		/*
 		 * TODO If you need additional package registrations, you can register them here. The following line
@@ -380,17 +383,17 @@ public class Generate_aroccam extends AbstractAcceleoGenerator {
 
 		//
 		
-		try {
-			URI uri = URI.createPlatformPluginURI("org.eclipse.papyrus.robotml/model/ProteusProfile.profile.uml", true);
-			
-			Resource res = resourceSet.getResource(uri, true);
-			Profile profile = (Profile)res.getContents().get(0);
-			EPackage epackage = profile.getDefinition();
-			packageRegistry.put(epackage.getNsURI(), epackage);
-		} catch (Exception e) {
-			System.out.println("---- error loading profile: " + e);
-			e.printStackTrace();
-		}
+//		try {
+//			URI uri = URI.createPlatformPluginURI("org.eclipse.papyrus.robotml/model/ProteusProfile.profile.uml", true);
+//			
+//			Resource res = resourceSet.getResource(uri, true);
+//			Profile profile = (Profile)res.getContents().get(0);
+//			EPackage epackage = profile.getDefinition();
+//			packageRegistry.put(epackage.getNsURI(), epackage);
+//		} catch (Exception e) {
+//			System.out.println("---- error loading profile: " + e);
+//			e.printStackTrace();
+//		}
 	}
 
 	/**

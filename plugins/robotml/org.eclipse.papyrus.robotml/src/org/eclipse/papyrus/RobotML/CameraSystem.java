@@ -38,7 +38,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * @return the value of the '<em>Width</em>' attribute.
 	 * @see #setWidth(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Width()
-	 * @model default="0" dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model default="0" dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWidth();
@@ -64,7 +64,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * @return the value of the '<em>Height</em>' attribute.
 	 * @see #setHeight(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Height()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getHeight();
@@ -90,7 +90,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * @return the value of the '<em>Alpha u</em>' attribute.
 	 * @see #setAlpha_u(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Alpha_u()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getAlpha_u();
@@ -116,7 +116,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * @return the value of the '<em>Alpha v</em>' attribute.
 	 * @see #setAlpha_v(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Alpha_v()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getAlpha_v();
@@ -142,7 +142,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * @return the value of the '<em>U0</em>' attribute.
 	 * @see #setU0(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_U0()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getU0();
@@ -168,7 +168,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * @return the value of the '<em>V0</em>' attribute.
 	 * @see #setV0(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_V0()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getV0();
@@ -194,7 +194,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * @return the value of the '<em>Color format</em>' attribute.
 	 * @see #setColor_format(String)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Color_format()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.String" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.String" required="true" ordered="false"
 	 * @generated
 	 */
 	String getColor_format();

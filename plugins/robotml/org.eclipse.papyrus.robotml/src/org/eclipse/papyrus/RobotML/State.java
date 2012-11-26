@@ -3,9 +3,7 @@
 package org.eclipse.papyrus.RobotML;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Property;
 
 /**

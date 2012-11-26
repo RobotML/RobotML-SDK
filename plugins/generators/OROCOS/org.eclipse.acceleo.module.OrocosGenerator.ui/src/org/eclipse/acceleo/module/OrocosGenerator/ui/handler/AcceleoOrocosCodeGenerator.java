@@ -19,11 +19,10 @@ import java.util.Collections;
 
 import org.eclipse.acceleo.module.OrocosGenerator.main.Main;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.infra.widget.toolbox.notification.Type;
-import org.eclipse.papyrus.infra.widget.toolbox.notification.builders.CombinedPopupAndViewBuilder;
-import org.eclipse.papyrus.infra.widget.toolbox.notification.builders.NotificationBuilder;
+import org.eclipse.papyrus.infra.widgets.toolbox.notification.Type;
+import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.CombinedPopupAndViewBuilder;
+import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.NotificationBuilder;
 import org.eclipse.papyrus.infra.widgets.util.FileUtil;
-
 // TODO: Auto-generated Javadoc
 /**
  * The Class AcceleoOrocosCodeGenerator.

@@ -1,0 +1,43 @@
+[comment encoding = UTF-8 /]
+[module generate_FSM('http://www.eclipse.org/uml2/3.0.0/UML')]
+[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::MMQueries /]
+
+
+
+[template public generateFSM(c: Class,sm: StateMachine)]
+[file ('/src/'+ sm.name +'.lua', false, 'UTF-8')]
+-----create variables-----
+[let elt : Element = c.oclAsType(Element)]
+[generateVariables(elt)/]
+[/let]
+	return rfsm.csta {
+		
+		[for (state: State | getStates(sm))]
+			[state.name/] = rfsm.sista {
+				[if (state.hasEntry())]
+					entry=function()
+						[state.getEntry()/]
+					end,
+				[/if]
+				[if (state.hasExit())]
+					exit=function()
+						[state.getExit()/]
+					end,	
+				[/if]
+				[if (state.hasRun())]
+					doo=function(fsm)
+						[state.getRun()/]
+					end
+				[/if]
+				
+	  		},
+		[/for]
+		[for (tr : Transition | getTransitions(sm))]
+			rfsm.trans {src="[tr.source.name/]", tgt="[tr.target.name/]" , events={[for (trig: Trigger| tr.trigger)]'[trig.name/]'[/for]}  },
+		[/for]
+	}
+	
+	[/file]		
+
+
+[/template]

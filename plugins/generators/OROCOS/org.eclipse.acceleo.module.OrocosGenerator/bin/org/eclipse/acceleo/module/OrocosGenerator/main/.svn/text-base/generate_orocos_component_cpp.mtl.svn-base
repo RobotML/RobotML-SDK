@@ -1,0 +1,234 @@
+[comment encoding = UTF-8 /]
+[module generate_orocos_component_cpp('http://www.eclipse.org/uml2/3.0.0/UML')]
+[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::MMQueries/]
+[import org::eclipse::acceleo::module::OrocosGenerator::main::generate_orocos_interface_cpp /]
+[import org::eclipse::acceleo::module::OrocosGenerator::main::generate_FSM/]
+
+[template public generateOrocosComponentCpp(c : Class, root_model : Model)]
+
+[for (b : Behavior | c.ownedBehavior )]
+	[if (b.isFSM())]
+	[let sm : StateMachine = b.oclAsType(StateMachine)]
+	[generateFSM(sm)/]
+	[/let]
+	[/if]
+[/for]
+
+
+[comment src files are generated only for systems (i.e: different from actuators or sensors) /]
+[if (not isActuator(c)) and (not isSensorSystem(c))]
+[file ('/src/'+ c.name + '.cpp', false, 'UTF-8')]
+[setLibraries(c)/]
+#include <rtt/TaskContext.hpp>
+#include <ocl/Component.hpp>
+
+using namespace std;
+using namespace RTT;
+using namespace Orocos;
+//in case of datatypes use, uncomment the using namespace command below
+[let model : Model = getRootModel(root_model)]
+//using namespace [model.name.substitute(' ', '_')/]_types;
+[/let]
+namespace [c.namespace.name.substitute(' ', '_')/]	 {
+class [c.name/]
+	: public RTT::TaskContext 
+{   [comment ports and services declaration/]
+	// ports, operations and attributes
+	[let elt : Element = c.oclAsType(Element)]
+ 		[for (port : Port | getInputPortsForElement(elt))] 
+			[if (getParentType(port).toString().contains('sensor') or getParentType(port).toString().contains('std')
+			or getParentType(port).toString().contains('geometry') or getParentType(port).toString().contains('nav')
+			or getParentType(port).toString().contains('actionLib') or getParentType(port).toString().contains('stereo'))]
+			[port.visibility/]: InputPort<[getNameType(port.type)/]> [port.name/];
+ 			[/if]	
+		[comment]
+			[if (getParentType(port).toString().contains('sensor') or getParentType(port).toString().contains('std')
+			or getParentType(port).toString().contains('geometry') or getParentType(port).toString().contains('nav')
+			or getParentType(port).toString().contains('actionLib') or getParentType(port).toString().contains('stereo'))]
+			[port.visibility/]: InputPort<[getParentType(port)/]::[getNameType(port.type)/]> [port.name/];
+			if not 
+			[port.visibility/]: InputPort<[getNameType(port.type)/]> [port.name/]; 
+			[/if]
+		[/comment]
+		[/for]
+  		[for (port : Port | getOutputPortsForElement(elt))]
+		
+			[if (getParentType(port).toString().contains('sensor') or getParentType(port).toString().contains('std')
+			or getParentType(port).toString().contains('geometry') or getParentType(port).toString().contains('nav')
+			or getParentType(port).toString().contains('actionLib') or getParentType(port).toString().contains('stereo'))]
+			[port.visibility/]: OutputPort<[getNameType(port.type)/]> [port.name/];
+ 			[/if]	
+
+		[comment]	
+			[if not (getParentType(port).toString().contains('sensor') or getParentType(port).toString().contains('std')
+			or getParentType(port).toString().contains('geometry') or getParentType(port).toString().contains('nav')
+			or getParentType(port).toString().contains('actionLib') or getParentType(port).toString().contains('stereo'))]
+			[port.visibility/]: OutputPort<[getNameType(port.type)/]> [port.name/];
+			[/if]
+		[/comment]
+		[/for]
+	[/let]
+
+[comment operation declaration/]// Operations 
+	[let elt : Element = c.oclAsType(Element)]
+			[for (sp : Port | getServicePort())]				
+				[let interface : Interface = sp.type]
+					[for (op : Operation | interface.getAllOperations())]
+						[if (isPortProvided(sp))]
+	[op.visibility/]: [getNameType(op.type)/] [op.name/] ([getOperationSignature(op)/]) 
+	{
+		// Add the body of the operation
+		return NULL;//replace null with the returned value
+	}
+						[/if]
+						[if (isPortRequired(sp))]
+	protected: OperationCaller <[getNameType(op.type)/]([getOperationSignatureType(op) /])> [op.name/];
+						[/if]
+       				[/for]
+				[/let]				
+			[/for]
+		[/let]
+
+	
+
+	[comment attributes & properties declaration/]
+	[let elt : Element = c.oclAsType(Element)]
+		[for (property : Property | getProperties(c, elt))]
+		[if(getNameType(property.type)) = '']
+		[property.visibility/]: [getNameType(property.type)/] [property.name/];
+		[/if]
+ 		[/for]
+ 	[/let]
+
+	
+	
+	[comment constructor/]// Constructor
+	[c.visibility/]: [c.name/] (const std::string& name)
+		: TaskContext(name) 						//Add Rostopics		
+		[let elt : Element = c.oclAsType(Element)]
+		[for (port : Port | getInputOutputPorts(elt))]
+			, [port.name/]("[port.name/]")	
+		[/for]
+		[/let]
+		[for (sp : Port | getServicePort())]				
+			[let interface : Interface = sp.type]
+				[for (op : Operation | interface.getAllOperations())]
+					[if (isPortRequired(sp))]
+			, [op.name/] ("[op.name/]")
+					[/if]
+       			[/for]
+			[/let]				
+		[/for]	
+  		{ 	
+		[comment adding ports to the constructor/]
+		[let elt : Element = c.oclAsType(Element)]
+			[for (port : Port | getInputOutputPorts(elt))]
+		this->ports()->addPort([port.name/]);	
+			[/for]
+		[/let]
+
+		[comment Subcomponents must be handled differently in Orocos/]
+		[comment]
+		[for ( property1: Property | getAllSubComponentsInClass(c))]
+			[if (not isActuator(getclass(property1))) and (not isSensor(getclass(property1)))]
+		this->addProperty("[property1.type.name.toLower()/]", [property1.type.name.toLower()/]).doc("Description :  [property1.type.name.toUpperFirst()/]") ;	
+			[/if]
+		[/for]
+		[/comment]
+		
+		[comment adding Properties to the constructor /]	
+		[let elt : Element = c.oclAsType(Element)]
+			[for (property : Property | getProperties(c,elt))]
+		this->addProperty("[property.name/]", [property.name/]);
+			[/for]
+		[/let]
+
+[comment adding operations to the constructor /]	
+	[for (op : Operation | c.getAllOperations())]
+		this->addOperation("[op.name/]", &[c.name/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
+			.doc("Description : [op.type.name.toUpperFirst()/]");
+		[/for]
+
+        [let elt : Element = c.oclAsType(Element)]
+			[for (sp : Port | getServicePort())]				
+				[let interface : Interface = sp.type]
+					[for (op : Operation | interface.getAllOperations())]
+						[if (isPortProvided(sp))]
+		this->provides("[interface.name/]")
+			->addOperation("[op.name/]", &[c.name/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
+				.doc("");
+						[/if]
+						[if (isPortRequired(sp))]
+		this->requires("[interface.name/]")
+			->addOperationCaller([op.name/]);
+						[/if]
+       				[/for]
+				[/let]				
+			[/for]
+		[/let]
+	}
+	[comment destructor/]// Destructor
+    ~[c.name/]() {}
+	[comment components methods/]
+	/**
+	 * This function is for the configuration code.
+     * Return false to abort configuration.
+     */
+	bool configureHook() {
+			[for (sp : Port | getServicePort())]				
+			[let interface : Interface = sp.type]
+				[if (isPortRequired(sp))]
+					[let p : Port = getOppositePort(sp)]
+		if (!(requires("[interface.name/]")->connectTo(getPeer("[p.class.name/]")->provides("[interface.name/]")))){
+			log(Info) << "connection problem to service" << endlog();
+		}
+					[/let]
+				[/if]
+			[/let]				
+		[/for]
+		// ...
+		return true;
+	}
+
+	/**
+	 * This function is for the application's start up code.
+	 * Return false to abort start up.
+	 */
+	bool startHook() {
+		// ...
+		return true;
+	}
+
+	/**
+	 * This function is called by the Execution Engine.
+	 */
+	void updateHook() {
+		// algorithm goes here.
+	}
+
+	/**
+	 * This function is called when the task is stopped.
+ 	 */
+	void stopHook() {
+		// stop code after last updateHook()
+	}
+
+	/**
+	 * This function is called when the task is being deconfigured.
+	 */
+	void cleanupHook() {
+		// Your configuration cleanup code
+	}	
+
+
+};
+
+}
+#include <rtt/Component.hpp>
+[comment component creation /]
+ORO_CREATE_COMPONENT([c.namespace.name.substitute(' ', '_')/]::[c.name/])
+
+[/file]
+[/if]
+
+[/template]

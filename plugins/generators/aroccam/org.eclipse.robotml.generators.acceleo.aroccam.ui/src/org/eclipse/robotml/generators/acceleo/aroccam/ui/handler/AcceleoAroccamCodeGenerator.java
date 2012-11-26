@@ -64,6 +64,7 @@ public class AcceleoAroccamCodeGenerator {
 					targetFolder.getParentFile().mkdirs();
 				}
 				//Instantiate a new acceleo generator 
+				@SuppressWarnings("unchecked")
 				Generate_aroccam generate = new Generate_aroccam(this.generationInputModel, targetFolder, Collections.EMPTY_LIST);
 
 				generate.doGenerate(null);

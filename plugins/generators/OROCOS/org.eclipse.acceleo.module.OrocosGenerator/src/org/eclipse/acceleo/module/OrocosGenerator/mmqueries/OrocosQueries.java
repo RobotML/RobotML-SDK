@@ -20,6 +20,7 @@ import java.util.List;
 import org.eclipse.papyrus.RobotML.ServiceFlowKind;
 import org.eclipse.papyrus.RobotML.ServicePort;
 import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
+import org.eclipse.robotml.generators.acceleo.mmqueries.DataTypeQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
 import org.eclipse.acceleo.engine.event.IAcceleoTextGenerationListener;
@@ -51,6 +52,7 @@ import org.eclipse.uml2.uml.Vertex;
 
 public class OrocosQueries {
 	LinkedList<java.lang.String> dataTypes = new LinkedList<String>();
+	LinkedList<java.lang.String> propTypes = new LinkedList<String>();
 	LinkedList<java.lang.String> alldata=new LinkedList<String>();
 	LinkedList<java.lang.String> rttData = new LinkedList<String>();
 	boolean includePort= false;
@@ -292,6 +294,12 @@ public class OrocosQueries {
 		return false;
 	}	
 	
+	public Boolean isConnectedActuator(java.lang.String st) {						
+			if (st.compareTo("ActuatorSystem")==0)
+				return true;				
+		return false;
+	}
+	
    /**
     * Checks whether the component is a sensor	
     * 
@@ -307,6 +315,15 @@ public class OrocosQueries {
 		return false;
 	}
 
+		public Boolean isConnectedSensor(java.lang.String st) {						
+				if (st.equals("Sensor") || 
+						st.equals("SensorSystem") ||
+						st.equals("GpsSystem") ||
+						st.equals("LidarSystem") ||
+						st.equals("CameraSystem") )
+					return true;				
+			return false;
+		}
 	
 	
 	/**
@@ -526,6 +543,29 @@ public class OrocosQueries {
     * 
     */
 
+/**
+ * imports the used ROS datatypes 	
+ * 
+ */
+public LinkedList<java.lang.String> setDataTypesLibraries(Property elt){
+	
+    String res="";
+	Property p=(Property)elt;
+	String parentType = getParentType(p).toString();
+	if(parentType.contains("std")||parentType.contains("sensor")||parentType.contains("stereo")||parentType.contains("geometry")||
+		parentType.contains("nav")||parentType.contains("actionLib"))
+	    res="#include<"+parentType+"/"+p.getType().getName()+".h>";
+		res = res + "\n";
+		if(!propTypes.contains(res))
+			propTypes.add(res);
+		
+	return propTypes;
+}
+	
+	
+	
+	
+	
 public LinkedList<java.lang.String> setLibraries(Element c){		
 		LinkedList<Element>	allelem =new LinkedList<Element>();
 		boolean includeOperation= false;
@@ -598,7 +638,7 @@ public LinkedList<java.lang.String> setLibraries(Element c){
  */
 
 public LinkedList<java.lang.String> setRttLibraries(Element c){
-	
+	/*
 	LinkedList<Element>	allelem =new LinkedList<Element>();
 	
 	for(Element elt: c.allOwnedElements()){
@@ -625,7 +665,11 @@ public LinkedList<java.lang.String> setRttLibraries(Element c){
 		}
 	
 	}
-	}
+	}*/
+	rttData.add("import ("+'"'+"rtt_sensor_msgs"+'"'+")\n");
+	rttData.add("import ("+'"'+"rtt_nav_msgs"+'"'+")\n");
+	rttData.add("import ("+'"'+"rtt_geometry_msgs"+'"'+")\n");
+	rttData.add("import ("+'"'+"rtt_std_msgs"+'"'+")\n");
 	return rttData;
 }
 }

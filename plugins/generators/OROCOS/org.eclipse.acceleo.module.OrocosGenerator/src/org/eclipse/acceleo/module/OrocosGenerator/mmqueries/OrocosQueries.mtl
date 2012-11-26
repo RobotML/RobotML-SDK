@@ -16,7 +16,13 @@
 [query public isSensor(c : Class) : Boolean =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isSensor(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
+[query public isConnectedActuator(st : String ) : Boolean =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isConnectedActuator(java.lang.String)', Sequence{st})
+/]
 
+[query public isConnectedSensor(st : String) : Boolean =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isConnectedSensor(java.lang.String)', Sequence{st})
+/]
 [query public getOperations(c : Class) : Sequence(Operation) =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperations(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
@@ -131,7 +137,12 @@
 
 [query public setLibraries(class : Element) : String =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'setLibraries(org.eclipse.uml2.uml.Element)', Sequence{class})
+/]
+
+[query public setDataTypesLibraries(class : Element) : String =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'setDataTypesLibraries(org.eclipse.uml2.uml.Element)', Sequence{class})
 /] 
+ 
 
 [comment  
 					state machines queries 

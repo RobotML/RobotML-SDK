@@ -21,6 +21,14 @@
 [template public generateOROCOS(model : Model)] 
 [comment @main/]
 [comment][generateElement(model)/][/comment]
+[if (isRootModel(model))]
+	[generateConfigFile(model)/]
+	[generateOpsFile(model)/]
+[/if]
+[comment]	[generate_Datatype_file(rootModel)/] [/comment]
+
+[generateManifestFile(model)/]
+[generateMakefile(model)/]
 
 [comment] 
 	Generate Orocos components: 
@@ -33,14 +41,14 @@
 			[if (hasStateMachine(c))]
 				[generateOrocosComponentLua(c, model)/]				
 			[else]
-				[if(isProperty(c))]
+			[if(isMacroComponent(c) = false)]
 					[generateOrocosComponentHpp(c, model)/]
 					[generateOrocosComponentCpp(c, model)/]
-				[/if]
 				[comment]
 					[generateOrocosComponentHpp(c, model)/]
 					=> Not Subcomponent					
 				[/comment]				
+			[/if]
 			[/if]
 		[/if]
 	[/let]
@@ -53,14 +61,6 @@
 	[generateOrocosInterfaceCpp(interface,model)/]
 [/for]
 [/comment]
-
-[let rootModel : Model = getRootModel(model)]
-	[generateConfigFile(rootModel)/]
-	[generateOpsFile(rootModel)/]
-[comment]	[generate_Datatype_file(rootModel)/] [/comment]
-[/let]
-[generateManifestFile(model)/]
-[generateMakefile(model)/]
 
 [comment]
 For generating xml file	

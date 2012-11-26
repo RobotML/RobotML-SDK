@@ -2,6 +2,7 @@
 [module generate_orocos_component_hpp('http://www.eclipse.org/uml2/3.0.0/UML')]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
 [import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries/]
 [import org::eclipse::acceleo::module::OrocosGenerator::main::generate_orocos_interface_cpp /]
 [import org::eclipse::acceleo::module::OrocosGenerator::main::generate_FSM/]
@@ -28,14 +29,15 @@
 using namespace std;
 using namespace RTT;
 using namespace Orocos;
-//in case of datatypes use, uncomment the using namespace command below
+
 [comment]
+//in case of datatypes use, uncomment the using namespace command below
 [let model : Model = getRootModel(root_model)]
 //using namespace [model.name.substitute(' ', '_')/]_types;
 [/let]
 [/comment]
 
-namespace [c.owner.toString().substitute(' ', '_')/]	 {
+namespace [getRootClassForModel(root_model).name.substitute(' ', '_')/]	 {
 class [c.name/]
 	: public RTT::TaskContext 
 {   [comment ports and services declaration/]
@@ -46,7 +48,10 @@ class [c.name/]
 			or getParentType(port).toString().contains('geometry') or getParentType(port).toString().contains('nav')
 			or getParentType(port).toString().contains('actionLib') or getParentType(port).toString().contains('stereo'))]
 			[port.visibility/]: InputPort<[getNameType(port.type)/]> [port.name/];
- 			[/if]	
+ 			[/if]
+			[if (isRobotMLDataType(root_model, port.type.name) = false)]
+			[port.visibility/]: InputPort<[port.type.name/]> [port.name/];
+			[/if]
 		[/for]
   		[for (port : Port | getOutputPortsForElement(elt))]
 		
@@ -55,6 +60,9 @@ class [c.name/]
 			or getParentType(port).toString().contains('actionLib') or getParentType(port).toString().contains('stereo'))]
 			[port.visibility/]: OutputPort<[getNameType(port.type)/]> [port.name/];
  			[/if]	
+			[if (isRobotMLDataType(root_model, port.type.name) = false)]
+			[port.visibility/]: OutputPort<[port.type.name/]> [port.name/];
+			[/if]
 		[/for]
 	[/let]
 

@@ -11,9 +11,9 @@
 [comment we do not generate orocos components for actuators and sensors /]
 [file ( 'src/'+c.name + '.cpp', false, 'UTF-8')]
 
-#include "c.name + '.hpp'"
+#include "[c.name/].h"
 [comment component creation /]
-ORO_CREATE_COMPONENT([c.namespace.name.substitute(' ', '_')/]::[c.name/])
+ORO_CREATE_COMPONENT([getRootClassForModel(root_model).name.substitute(' ', '_')/]::[c.name/])
 
 [/file]
 [/template]

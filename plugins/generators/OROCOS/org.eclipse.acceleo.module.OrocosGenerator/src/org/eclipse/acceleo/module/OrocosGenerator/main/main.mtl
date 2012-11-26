@@ -24,8 +24,8 @@
 [if (isRootModel(model))]
 	[generateConfigFile(model)/]
 	[generateOpsFile(model)/]
+    [generate_Datatype_file(model)/]
 [/if]
-[comment]	[generate_Datatype_file(rootModel)/] [/comment]
 
 [generateManifestFile(model)/]
 [generateMakefile(model)/]

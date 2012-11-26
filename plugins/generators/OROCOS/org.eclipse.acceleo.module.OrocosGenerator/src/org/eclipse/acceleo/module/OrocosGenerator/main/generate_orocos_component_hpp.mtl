@@ -23,13 +23,15 @@
 #include <ocl/Component.hpp>
 #include <iostream>
 #include <numeric>
+#include "[root_model.name.substitute(' ', '_')/]_types.h"
 #include <stdlib.h>
 #include <math.h>
+
 
 using namespace std;
 using namespace RTT;
 using namespace Orocos;
-
+using namespace [root_model.name.substitute(' ', '_')/]_types;
 [comment]
 //in case of datatypes use, uncomment the using namespace command below
 [let model : Model = getRootModel(root_model)]
@@ -44,12 +46,15 @@ class [c.name/]
 	// ports, operations and attributes
 	[let elt : Element = c.oclAsType(Element)]
  		[for (port : Port | getInputPortsForElement(elt))] 
-			[if (getParentType(port).toString().contains('sensor') or getParentType(port).toString().contains('std')
+			[comment][if (getParentType(port).toString().contains('sensor') or getParentType(port).toString().contains('std')
 			or getParentType(port).toString().contains('geometry') or getParentType(port).toString().contains('nav')
 			or getParentType(port).toString().contains('actionLib') or getParentType(port).toString().contains('stereo'))]
 			[port.visibility/]: InputPort<[getNameType(port.type)/]> [port.name/];
  			[/if]
-			[if (isRobotMLDataType(root_model, port.type.name) = false)]
+			[/comment]
+			[if (isRobotMLDataType(root_model, port.type.name))]
+		    [port.visibility/]: InputPort<[getNameType(port.type)/]> [port.name/];
+			[else]
 			[port.visibility/]: InputPort<[port.type.name/]> [port.name/];
 			[/if]
 		[/for]

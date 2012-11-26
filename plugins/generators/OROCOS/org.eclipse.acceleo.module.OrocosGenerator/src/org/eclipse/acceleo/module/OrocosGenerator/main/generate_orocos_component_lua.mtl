@@ -1,6 +1,8 @@
 [comment encoding = UTF-8 /]
 [module generate_orocos_component_lua('http://www.eclipse.org/uml2/3.0.0/UML','http://Papyrus/RobotML/1')]
-[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::MMQueries/]
+[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries/]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
 [import org::eclipse::acceleo::module::OrocosGenerator::main::generate_Datatype_file /]
 [import org::eclipse::acceleo::module::OrocosGenerator::main::generate_FSM /]
 
@@ -37,7 +39,7 @@ local [state.name/]
 	[/for]
 [/let]
 [let elt : Element = c.oclAsType(Element)]
-	[for (port : Port | getInputOutputPorts(elt))]
+	[for (port : Port | getAllPorts(elt))]
 rtt.getTC():addPort([port.name/], "[port.name/]", "A [getNameType(port.type)/] Port in Component [c.name/]");	
 	[/for]
 [/let]
@@ -71,12 +73,12 @@ end
 function cleanupHook()
     -----cleanup ports-----
 [let elt : Element = c.oclAsType(Element)]
-	[for (port : Port | getInputOutputPorts(elt))]
+	[for (port : Port | getAllPorts(elt))]
 	rtt.getTC():removePort([port.name/]:info().name)
 	[/for]
 [/let]
 [let elt : Element = c.oclAsType(Element)]
-	[for (port : Port | getInputOutputPorts(elt))]
+	[for (port : Port | getAllPorts(elt))]
 	[port.name/]:delete()	
 	[/for]
 [/let]

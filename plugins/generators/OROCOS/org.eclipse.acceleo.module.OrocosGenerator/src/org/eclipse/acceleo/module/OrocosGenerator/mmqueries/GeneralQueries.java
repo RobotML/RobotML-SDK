@@ -41,8 +41,10 @@ import org.eclipse.uml2.uml.Vertex;
  */
 public class GeneralQueries {
 	LinkedList<java.lang.String> dataTypes = new LinkedList<String>();
+	LinkedList<java.lang.String> alldata=new LinkedList<String>();
+	LinkedList<java.lang.String> rttData = new LinkedList<String>();
 
-	/** 
+	/** setR
 	 * Checks whether or not a port is a "source port" from the point of view of a given connector.
 	 * A source port can be an output port for a connector stepping out of a component or it can be
 	 * an input port for a connector linking a component model input port to a component input port
@@ -281,7 +283,7 @@ public class GeneralQueries {
 		return null;
 	}
 	/**
-	 * On a given class (a RobotML system), retrieve all the contained systems.
+	 * On a given class (a PROTEUS system), retrieve all the contained systems.
 	 * Recursive. 
 	 */
 	public List<org.eclipse.uml2.uml.Property> getAllSubComponentsInClass(org.eclipse.uml2.uml.Class c)
@@ -297,7 +299,7 @@ public class GeneralQueries {
 	}
 
 	/**
-	 * On a given class (a RobotML system), retrieve all the contained systems.
+	 * On a given class (a PROTEUS system), retrieve all the contained systems.
 	 * Not recursive. Retrieves only one level deep.
 	 * @TODO: c'est tr�s tr�s moche tout �a. Et puis on ratisse large avec tous ces stereotypes.
 	 */
@@ -388,19 +390,19 @@ public class GeneralQueries {
 	}
 
 	/**
-	 * Retrieves all the component models available inside a RobotML model.
+	 * Retrieves all the component models available inside a PROTEUS model.
 	 * This is based on stereotype names. Not robust.
-	 * @TODO: use Java API generated from the RobotML Profile.
+	 * @TODO: use Java API generated from the PROTEUS Profile.
 	 */
 	/*
-	public List<NamedElement> getRobotMLComponentModels(Model model)
+	public List<NamedElement> getProteusComponentModels(Model model)
 	{
 		LinkedList<NamedElement> found_elts = new LinkedList<NamedElement>();
 		getElementsWithStereotype(model,org.eclipse.papyrus.RobotML.RoboticSystem.class,found_elts);
 		return found_elts;
 	}
 	 */
-	public List<NamedElement> getRobotMLComponentModels(Model model)
+	public List<NamedElement> getProteusComponentModels(Model model)
 	{
 		LinkedList<NamedElement> found_elts = new LinkedList<NamedElement>();
 		found_elts.addAll(getElementsWithStereotype(model,"System"));
@@ -593,7 +595,7 @@ public class GeneralQueries {
 	 */
 	public Boolean isDataType(Element elt) {
 		boolean b = (elt instanceof org.eclipse.uml2.uml.DataType);
-		System.out.println(((NamedElement)elt).getName()+" - isDataType: "+b+" "+elt.getAppliedStereotypes());
+		//System.out.println(((NamedElement)elt).getName()+" - isDataType: "+b+" "+elt.getAppliedStereotypes());
 		return b;
 	}
 
@@ -1117,7 +1119,7 @@ public class GeneralQueries {
 				java.lang.System.out.println("* model imported package: "+elt);
 			}
 			//
-			// Récupérer Package par Package si possible (cf méthodologie Outil RobotML) 
+			// Récupérer Package par Package si possible (cf méthodologie Outil Proteus) 
 			//
 			for (org.eclipse.uml2.uml.Package elt : model.getNestedPackages()) {
 				java.lang.System.out.println("* model nested package: "+elt);
@@ -1200,7 +1202,7 @@ public class GeneralQueries {
 	 * @param model
 	 * @return
 	 */
-	public List<Interface> getRobotMLInterfaceModels (Model model) {
+	public List<Interface> getProteusInterfaceModels (Model model) {
 		LinkedList<Interface> found_interface = new LinkedList<org.eclipse.uml2.uml.Interface>();
 		for (Element elt : model.getOwnedElements()) {
 			if (elt instanceof org.eclipse.uml2.uml.Interface) {
@@ -1506,7 +1508,7 @@ public class GeneralQueries {
 
 	public String getContainer(Model model)
 	{
-		List<NamedElement> found_elts = getRobotMLComponentModels(model);
+		List<NamedElement> found_elts = getProteusComponentModels(model);
 		for (NamedElement e : found_elts)
 		{
 			//dont have both input and output port
@@ -1683,9 +1685,43 @@ public class GeneralQueries {
 	}
 	
 	
+
+	public LinkedList<java.lang.String> setRttLibraries(Element c){
+		
+		LinkedList<Element>	allelem =new LinkedList<Element>();
+		
+		for(Element elt: c.allOwnedElements()){
+			if(!isDataType(elt))
+			{
+				allelem.add(elt);
+			}
+		}
+		
+		for(Element elt: allelem){
+
+		if(isPort(elt))
+		{
+			String res="";
+			Port p=(Port)elt;
+			//if(!isEDataTypeOfPort(p))
+			//{
+			String parentType = getParentType(p).toString();
+			//ROS topics
+			if(parentType.contains("std")||parentType.contains("sensor")||parentType.contains("stereo")||parentType.contains("geometry")||
+				parentType.contains("nav")||parentType.contains("actionLib")){	
+				res="import ("+'"'+"rtt_"+parentType+'"'+")\n";
+				if(!rttData.contains(res))
+					rttData.add(res);
+			}
+		
+		}
+		}
+		return rttData;
+	}
+	
 	
 	public LinkedList<java.lang.String> setLibraries(Element c){
-		LinkedList<java.lang.String> alldata=new LinkedList<String>();
+		
 		LinkedList<Element>	allelem =new LinkedList<Element>();
 		boolean includePort= false;
 		boolean includeOperation= false;
@@ -1702,7 +1738,7 @@ public class GeneralQueries {
 		if(isPort(elt))
 		{
 			if(!includePort){	
-				alldata.add("#include <rtt/Port.hpp>");
+				alldata.add("#include <rtt/Port.hpp>\n");
 				includePort= true;
 			 }
 
@@ -1714,17 +1750,18 @@ public class GeneralQueries {
 			//ROS topics
 			if(parentType.contains("std")||parentType.contains("sensor")||parentType.contains("stereo")||parentType.contains("geometry")||
 				parentType.contains("nav")||parentType.contains("actionLib")){	
-				res="#include<"+parentType+"/"+p.getType().getName()+".h>"+"\n";
+				res="#include<"+parentType+"/"+p.getType().getName()+".h>\n";
 				res = res + "\n";
+				if(!alldata.contains(res))
+					alldata.add(res);
 			}
-			//predefined type
-			else if(isADataType(p.getType().getName()) && !includeDataTypes){
+			//user data type type
+			/*else if(isADataType(p.getType().getName()) && !includeDataTypes){
 				res = "#include"+'"'+parentType+".h"+'"';
 				res = res + "\n";
 				includeDataTypes = true;
-			}		
-			if(!alldata.contains(res))
-				alldata.add(res);
+			}*/		
+			
 			//}
 		}
 		
@@ -1741,9 +1778,10 @@ public class GeneralQueries {
 				res = "#include"+'"'+parentType+".hpp"+'"'+"\n";
 				res = res + "\n";
 				includeDataTypes = true;
+				if(!alldata.contains(res))
+					alldata.add(res);
 			}
-			if(!alldata.contains(res))
-				alldata.add(res);
+			
 		//}
 		}
 		if(isOperation(elt))

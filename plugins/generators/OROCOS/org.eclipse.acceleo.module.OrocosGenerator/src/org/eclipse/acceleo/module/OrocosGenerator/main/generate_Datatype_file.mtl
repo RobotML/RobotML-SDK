@@ -1,7 +1,9 @@
 [comment encoding = UTF-8 /]
 [module generate_Datatype_file('http://www.eclipse.org/uml2/3.0.0/UML')]
 
-[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::MMQueries/]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
+[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries/]
 
 [template public generate_Datatype_file(model : Model)]
 [file ('src/'+model.name.substitute(' ', '_')+'_DataTypes.h', false, 'UTF-8')]

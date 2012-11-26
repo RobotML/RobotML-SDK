@@ -1,7 +1,8 @@
 [comment encoding = UTF-8 /]
 [module generate_mapping_file('http://www.eclipse.org/uml2/3.0.0/UML','http://Papyrus/RobotML/1')]
-[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::MMQueries /]
-
+[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
 
 [template public generateMappingFile(model : Model)]
 [file ('connect.xml', false, 'UTF-8')]

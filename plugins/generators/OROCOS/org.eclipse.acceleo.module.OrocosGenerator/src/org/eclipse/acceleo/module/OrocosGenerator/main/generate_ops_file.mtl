@@ -1,15 +1,20 @@
 [comment encoding = UTF-8 /]
 [module generate_ops_file('http://www.eclipse.org/uml2/3.0.0/UML','http://Papyrus/RobotML/1')]
-[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::MMQueries /]
+[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries /]
 
 [template public generateOpsFile(model : Model)]
-[file ('connect.ops', false, 'UTF-8')]
+[file ('/connect.ops', false, 'UTF-8')]
 //-----import package-----
-import("[model.name/]") 
-//-----chargement des composants-----
+import("[model.name/]")
+[for (elt: NamedElement | getSystems(model))] 
+		[let c : Class = elt.oclAsType(Class)]
+			[setRttLibraries(c)/]			
+		[/let]
+	[/for]	 
+
+//-----loading components-----
 	[for (elt: NamedElement | getSystems(model))] 
 		[let c : Class = elt.oclAsType(Class)]
-[comment] If an element have input or/and output port, then it must be system[/comment]
 			[if (elt.getAllPorts() -> isEmpty() = false)]
 loadComponent("[c.name/]","[c.namespace.name/]::[c.name/]")
 			[/if]
@@ -30,6 +35,7 @@ setActivity("[c.name/]", period, priority, scheduler)
 	[/for]
 
 //-----setting connections between components-----
+[comment]
 	[for (elt: NamedElement | getSystems(model))] 
 		[let c : Class = elt.oclAsType(Class)]
 			[if (elt.getOppositeComponents() -> isEmpty() = false)]
@@ -39,7 +45,7 @@ connectPeers("[c.name/]", "[component/]")
 			[/if]
 		[/let]
 	[/for]
-
+[/comment]
 //-----connecting ports-----
 	[for (elt: NamedElement | getSystems(model))] 
 [let count : Integer = 1]
@@ -53,8 +59,8 @@ cp_[c.name/]_[port.name/].type = DATA; //DATA = 0, BUFFER = 1
 cp_[c.name/]_[port.name/].size = 1; //size of the buffer
 cp_[c.name/]_[port.name/].lock_policy = LOCK_FREE; //UNSYNC = 0, LOCKED = 1, LOCK_FREE = 2
 cp_[c.name/]_[port.name/].transport = 3; //ROS = 3
-cp_[c.name/][port.name/].name_id = "[getOppositePort(port).class.name/]";
-stream("[c.name/].[port.name/]",cp_[c.name/].[port.name/])							
+cp_[c.name/]_[port.name/].name_id = "[getOppositePort(port).class.name/]";
+stream("[c.name/].[port.name/]",cp_[c.name/]_[port.name/])							
 					[/if]
 				[/for]
 			[/if]

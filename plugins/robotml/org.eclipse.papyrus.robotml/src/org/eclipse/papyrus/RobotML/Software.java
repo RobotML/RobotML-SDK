@@ -61,7 +61,7 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * @return the value of the '<em>Period</em>' attribute.
 	 * @see #setPeriod(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSoftware_Period()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getPeriod();
@@ -87,7 +87,7 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see #setPriority(char)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSoftware_Priority()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt8" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt8" required="true" ordered="false"
 	 * @generated
 	 */
 	char getPriority();
@@ -113,7 +113,7 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * @return the value of the '<em>Deadline</em>' attribute.
 	 * @see #setDeadline(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSoftware_Deadline()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getDeadline();
@@ -139,7 +139,7 @@ public interface Software extends org.eclipse.papyrus.RobotML.System {
 	 * @return the value of the '<em>Wcet</em>' attribute.
 	 * @see #setWcet(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSoftware_Wcet()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWcet();

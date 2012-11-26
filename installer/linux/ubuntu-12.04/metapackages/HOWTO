@@ -1,0 +1,11 @@
+1- Télécharger eclipse-proteus et le décompresser dans le dossier metapackages
+
+https://dassault3.ddo.net/gf/download/docmanfileversion/5442/7022/eclipse-proteus.tar.gz
+
+2- Construire le paquet eclispe grâce au script 'make_eclipse.sh' (utilise celui en pj, l'autre contrôle pas l'existence du répertoire cible)
+
+3- lancer le script 'fetch_pkg.sh' qui va te récupérer les dépendances manquantes sur le dépôts existant.
+
+4- lancer le script 'pkg.sh' qui va te créer le dépôt en local dans le répertoire ./repo
+
+5- Uploader le contenu du dépôt sur le serveur.

@@ -26,16 +26,11 @@
             locationURI="popup:org.eclipse.papyrus.robotML.modelexplorer.popupmenu.generate">
          <command
                commandId="org.eclipse.robotML.generateOrocosCommand"
-               id = "org.eclipse.robotML.generateOrocos"
-               label = "Generate to Orocos"
-               tooltip = "Generate code to Orocos component based framework"
-               style="push">
-        	   <visibleWhen>
-               <reference
-                     definitionId=
-				"org.eclipse.papyrus.proteus.diagram.common.IsPapyrusActiveWithProteus">
-               </reference>
-            </visibleWhen>
+               icon="icons/default.gif"
+               id="org.eclipse.robotML.generateOrocos"
+               label="Generate to Orocos"
+               style="push"
+               tooltip="Generate code to Orocos component based framework">
          </command>
       </menuContribution>
    </extension>

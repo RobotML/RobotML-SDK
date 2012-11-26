@@ -2188,7 +2188,7 @@ transform the velocities from the operational space to the articular space (left
   <RobotML:Software xmi:id="_7wkaQEXUEeG16PyxfiNe2w" base_Class="_J9fscBwnEeGLkp-G70uDww"/>
   <RobotML:Software xmi:id="_-L9eoEXUEeG16PyxfiNe2w" base_Class="_JZgwILIwEeCMZ_jG2EiYOw"/>
   <RobotML:Software xmi:id="_CQ56wEXVEeG16PyxfiNe2w" base_Class="_-HN1ILIyEeCMZ_jG2EiYOw"/>
-  <RobotML:Software xmi:id="_ErDpAEXVEeG16PyxfiNe2w" base_Class="_gGtmUBwnEeGLkp-G70uDww" />
+  <RobotML:Software xmi:id="_ErDpAEXVEeG16PyxfiNe2w" base_Class="_gGtmUBwnEeGLkp-G70uDww"/>
   <RobotML:Software xmi:id="_MRwUoEXVEeG16PyxfiNe2w" base_Class="_-gauYLIpEeCMZ_jG2EiYOw"/>
   <RobotML:Software xmi:id="_hOo-QEXVEeG16PyxfiNe2w" base_Class="__4DPsLIpEeCMZ_jG2EiYOw"/>
   <RobotML:Software xmi:id="_jNwWUEXVEeG16PyxfiNe2w" base_Class="_u7twwLIxEeCMZ_jG2EiYOw"/>
@@ -2197,13 +2197,13 @@ transform the velocities from the operational space to the articular space (left
   <RobotML:SensorSystem xmi:id="_odCeoEXVEeG16PyxfiNe2w" base_Class="_BUJhoLInEeCMZ_jG2EiYOw"/>
   <RobotML:GPSSystem xmi:id="_pX7ZkEXVEeG16PyxfiNe2w" base_Class="_Y81YQLIpEeCMZ_jG2EiYOw"/>
   <RobotML:SensorSystem xmi:id="_xd6CMEXVEeG16PyxfiNe2w" base_Class="_bJ33kLIpEeCMZ_jG2EiYOw"/>
-  <RobotML:LidarSystem xmi:id="_0jUT8EXVEeG16PyxfiNe2w" base_Class="_feS6ILIpEeCMZ_jG2EiYOw" />
+  <RobotML:LidarSystem xmi:id="_0jUT8EXVEeG16PyxfiNe2w" base_Class="_feS6ILIpEeCMZ_jG2EiYOw"/>
   <RobotML:CameraSystem xmi:id="_1nXx8EXVEeG16PyxfiNe2w" base_Class="_5lwyQLIpEeCMZ_jG2EiYOw"/>
   <RobotML:Software xmi:id="_3-zjYEXVEeG16PyxfiNe2w" base_Class="_vAHPwLIJEeCwJ8JKZfJS1Q"/>
   <RobotML:Software xmi:id="_5bJlkEXVEeG16PyxfiNe2w" base_Class="_3mPcQLICEeCwJ8JKZfJS1Q"/>
   <RobotML:Software xmi:id="_7q2-YEXVEeG16PyxfiNe2w" base_Class="_mdEfYLIDEeCwJ8JKZfJS1Q"/>
   <RobotML:Software xmi:id="_9nb_0EXVEeG16PyxfiNe2w" base_Class="_og_7cLICEeCwJ8JKZfJS1Q"/>
-  <RobotML:Software xmi:id="_BmFmsEXWEeG16PyxfiNe2w" base_Class="_KIQl8LIDEeCwJ8JKZfJS1Q" />
+  <RobotML:Software xmi:id="_BmFmsEXWEeG16PyxfiNe2w" base_Class="_KIQl8LIDEeCwJ8JKZfJS1Q"/>
   <RobotML:Software xmi:id="_Cx3dUEXWEeG16PyxfiNe2w" base_Class="_kgqSgLICEeCwJ8JKZfJS1Q"/>
   <RobotML:Software xmi:id="_EJW0sEXWEeG16PyxfiNe2w" base_Class="_IiR_QLIGEeCwJ8JKZfJS1Q"/>
   <RobotML:Software xmi:id="_FDXl4EXWEeG16PyxfiNe2w" base_Class="_7vsoILIGEeCwJ8JKZfJS1Q"/>

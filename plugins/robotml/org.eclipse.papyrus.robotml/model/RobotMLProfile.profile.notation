@@ -73,6 +73,10 @@
           <element xmi:type="uml:Property" href="RobotMLProfile.profile.uml#_7y-AEBegEeK7mbF2c-wZPA"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_70KS4RegEeK7mbF2c-wZPA"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_5Sfq0CM6EeKwed7FEEF-4Q" type="3002" fontHeight="8" lineColor="0">
+          <element xmi:type="uml:Property" href="RobotMLProfile.profile.uml#_5SWg4CM6EeKwed7FEEF-4Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_5Sfq0SM6EeKwed7FEEF-4Q"/>
+        </children>
         <styles xmi:type="notation:SortingStyle" xmi:id="_GopFy_cJEd-J06U5HM_o-Q"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_GopFzPcJEd-J06U5HM_o-Q"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GopFzfcJEd-J06U5HM_o-Q"/>
@@ -596,6 +600,10 @@
         <children xmi:type="notation:Shape" xmi:id="_1EuD8EN8EeGMZOSJIfa0gg" type="3002" fontHeight="8" lineColor="0">
           <element xmi:type="uml:Property" href="RobotMLProfile.profile.uml#_1D-dEEN8EeGMZOSJIfa0gg"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_1EuD8UN8EeGMZOSJIfa0gg"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_Y6fowCM6EeKwed7FEEF-4Q" type="3002" fontHeight="8" lineColor="0">
+          <element xmi:type="uml:Property" href="RobotMLProfile.profile.uml#_Y0FewCM6EeKwed7FEEF-4Q"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_Y6fowSM6EeKwed7FEEF-4Q"/>
         </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_STFm2gB6EeGXJOJtWKn8jQ"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_STFm2wB6EeGXJOJtWKn8jQ"/>

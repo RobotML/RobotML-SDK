@@ -3,41 +3,5 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.alf_0.8.2.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.alf.ui_0.8.2.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.operation.editor.xtext_0.8.2.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.operation.editor.xtext.ui_0.8.2.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.diagram.architecture_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.diagram.common_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.diagram.componentdef_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.diagram.datatypedef_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.diagram.interfacedef_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.diagram.ui_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.doc_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.feature_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.help_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.model.library_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.modelexplorer_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.properties.view_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.table.datatypes_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.templaterepository_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.ui.perspectiveconfiguration_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.proteus.validation_0.8.0.201201241613.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.papyrus.umlutils_0.8.2.v201202131735.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.diagram.architecture_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.diagram.common_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.diagram.componentdef_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.diagram.datatypedef_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.diagram.interfacedef_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.diagram.ui_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.doc_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.modelexplorer_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.perspective_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.properties.view_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.table.datatypes_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.templaterepository_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml.validation_0.9.1.201210171425.jar"/>
-	<classpathentry kind="lib" path="/home/selma/ProteusWorkspace/org.eclipse.papyrus.robotml.update.site/plugins/org.eclipse.papyrus.robotml_0.9.1.201210171425.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -3,13 +3,10 @@
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
 
 /**
@@ -22,6 +19,7 @@ import org.eclipse.papyrus.RobotML.RobotMLPackage;
  *   <li>{@link org.eclipse.papyrus.RobotML.impl.SystemImpl#getBase_Class <em>Base Class</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotML.impl.SystemImpl#isNative <em>Native</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotML.impl.SystemImpl#getLibraryPath <em>Library Path</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.SystemImpl#getLibraryComponentName <em>Library Component Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,6 +75,26 @@ public class SystemImpl extends EObjectImpl implements org.eclipse.papyrus.Robot
 	 * @ordered
 	 */
 	protected String libraryPath = LIBRARY_PATH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLibraryComponentName() <em>Library Component Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLibraryComponentName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LIBRARY_COMPONENT_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLibraryComponentName() <em>Library Component Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLibraryComponentName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String libraryComponentName = LIBRARY_COMPONENT_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,6 +200,27 @@ public class SystemImpl extends EObjectImpl implements org.eclipse.papyrus.Robot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getLibraryComponentName() {
+		return libraryComponentName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLibraryComponentName(String newLibraryComponentName) {
+		String oldLibraryComponentName = libraryComponentName;
+		libraryComponentName = newLibraryComponentName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.SYSTEM__LIBRARY_COMPONENT_NAME, oldLibraryComponentName, libraryComponentName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -192,6 +231,8 @@ public class SystemImpl extends EObjectImpl implements org.eclipse.papyrus.Robot
 				return isNative();
 			case RobotMLPackage.SYSTEM__LIBRARY_PATH:
 				return getLibraryPath();
+			case RobotMLPackage.SYSTEM__LIBRARY_COMPONENT_NAME:
+				return getLibraryComponentName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,6 +253,9 @@ public class SystemImpl extends EObjectImpl implements org.eclipse.papyrus.Robot
 				return;
 			case RobotMLPackage.SYSTEM__LIBRARY_PATH:
 				setLibraryPath((String)newValue);
+				return;
+			case RobotMLPackage.SYSTEM__LIBRARY_COMPONENT_NAME:
+				setLibraryComponentName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -234,6 +278,9 @@ public class SystemImpl extends EObjectImpl implements org.eclipse.papyrus.Robot
 			case RobotMLPackage.SYSTEM__LIBRARY_PATH:
 				setLibraryPath(LIBRARY_PATH_EDEFAULT);
 				return;
+			case RobotMLPackage.SYSTEM__LIBRARY_COMPONENT_NAME:
+				setLibraryComponentName(LIBRARY_COMPONENT_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -252,6 +299,8 @@ public class SystemImpl extends EObjectImpl implements org.eclipse.papyrus.Robot
 				return native_ != NATIVE_EDEFAULT;
 			case RobotMLPackage.SYSTEM__LIBRARY_PATH:
 				return LIBRARY_PATH_EDEFAULT == null ? libraryPath != null : !LIBRARY_PATH_EDEFAULT.equals(libraryPath);
+			case RobotMLPackage.SYSTEM__LIBRARY_COMPONENT_NAME:
+				return LIBRARY_COMPONENT_NAME_EDEFAULT == null ? libraryComponentName != null : !LIBRARY_COMPONENT_NAME_EDEFAULT.equals(libraryComponentName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,6 +319,8 @@ public class SystemImpl extends EObjectImpl implements org.eclipse.papyrus.Robot
 		result.append(native_);
 		result.append(", libraryPath: ");
 		result.append(libraryPath);
+		result.append(", libraryComponentName: ");
+		result.append(libraryComponentName);
 		result.append(')');
 		return result.toString();
 	}

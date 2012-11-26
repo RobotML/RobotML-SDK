@@ -8,7 +8,7 @@ import org.eclipse.papyrus.RobotML.DataFlowDirectionKind;
 import org.eclipse.papyrus.RobotML.DataFlowPort;
 import org.eclipse.papyrus.RobotML.ServiceFlowKind;
 import org.eclipse.papyrus.RobotML.ServicePort;
-import org.eclipse.papyrus.umlutils.ElementUtil;
+import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Connector;

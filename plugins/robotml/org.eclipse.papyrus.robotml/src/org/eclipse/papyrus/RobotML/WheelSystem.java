@@ -46,7 +46,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Wheel Radius</em>' attribute.
 	 * @see #setWheelRadius(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_WheelRadius()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWheelRadius();
@@ -72,7 +72,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Wheel Width</em>' attribute.
 	 * @see #setWheelWidth(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_WheelWidth()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWheelWidth();
@@ -98,7 +98,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Suspension Rest Length</em>' attribute.
 	 * @see #setSuspensionRestLength(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_SuspensionRestLength()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getSuspensionRestLength();
@@ -124,7 +124,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Wheel Connection Height</em>' attribute.
 	 * @see #setWheelConnectionHeight(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_WheelConnectionHeight()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWheelConnectionHeight();
@@ -150,7 +150,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Type Of Wheel</em>' attribute.
 	 * @see #setTypeOfWheel(String)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_TypeOfWheel()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.String" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.String" required="true" ordered="false"
 	 * @generated
 	 */
 	String getTypeOfWheel();
@@ -176,7 +176,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Wheel Velocity PI Dkp</em>' attribute.
 	 * @see #setWheelVelocityPIDkp(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_WheelVelocityPIDkp()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWheelVelocityPIDkp();
@@ -202,7 +202,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Wheel Velocity PI Dki</em>' attribute.
 	 * @see #setWheelVelocityPIDki(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_WheelVelocityPIDki()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWheelVelocityPIDki();
@@ -228,7 +228,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Wheel Velocity PI Dkd</em>' attribute.
 	 * @see #setWheelVelocityPIDkd(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_WheelVelocityPIDkd()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWheelVelocityPIDkd();
@@ -254,7 +254,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Wheel Steering PI Dkp</em>' attribute.
 	 * @see #setWheelSteeringPIDkp(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_WheelSteeringPIDkp()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWheelSteeringPIDkp();
@@ -280,7 +280,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Wheel Steering PI Dkd</em>' attribute.
 	 * @see #setWheelSteeringPIDkd(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_WheelSteeringPIDkd()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWheelSteeringPIDkd();
@@ -306,7 +306,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Wheel Friction</em>' attribute.
 	 * @see #setWheelFriction(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_WheelFriction()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWheelFriction();
@@ -332,7 +332,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Suspension Stiffness</em>' attribute.
 	 * @see #setSuspensionStiffness(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_SuspensionStiffness()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getSuspensionStiffness();
@@ -358,7 +358,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Suspension Damping</em>' attribute.
 	 * @see #setSuspensionDamping(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_SuspensionDamping()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getSuspensionDamping();
@@ -384,7 +384,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Suspension Compression</em>' attribute.
 	 * @see #setSuspensionCompression(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_SuspensionCompression()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getSuspensionCompression();
@@ -410,7 +410,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Wheel Velocity PI Dmax Sum</em>' attribute.
 	 * @see #setWheelVelocityPIDmaxSum(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_WheelVelocityPIDmaxSum()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWheelVelocityPIDmaxSum();
@@ -436,7 +436,7 @@ public interface WheelSystem extends ActuatorSystem {
 	 * @return the value of the '<em>Wheel Velocity PI Dmax Val</em>' attribute.
 	 * @see #setWheelVelocityPIDmaxVal(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getWheelSystem_WheelVelocityPIDmaxVal()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
 	 * @generated
 	 */
 	float getWheelVelocityPIDmaxVal();

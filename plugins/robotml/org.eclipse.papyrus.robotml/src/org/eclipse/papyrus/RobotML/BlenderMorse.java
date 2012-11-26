@@ -86,7 +86,7 @@ public interface BlenderMorse extends RoboticSimulator {
 	 * @return the value of the '<em>Gravity</em>' attribute.
 	 * @see #setGravity(float)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getBlenderMorse_Gravity()
-	 * @model dataType="org.eclipse.papyrus.ProteusLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" ordered="false"
 	 * @generated
 	 */
 	float getGravity();

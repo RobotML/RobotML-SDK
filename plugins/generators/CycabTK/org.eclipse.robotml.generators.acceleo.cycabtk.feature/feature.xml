@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.proteus.generators.acceleo.cycabtk.feature"
+      id="org.eclipse.robotml.generators.acceleo.cycabtk.feature"
       label="CycabTK code generators for RobotML"
       version="1.0.0.qualifier"
       provider-name="INRIA">
@@ -12,25 +12,6 @@
    <license url="http://www.example.com/license">
       [Enter License Description here.]
    </license>
-
-   <requires>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.eclipse.ocl"/>
-      <import plugin="org.eclipse.ocl.ecore"/>
-      <import plugin="org.eclipse.acceleo.common" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.parser" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.model" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.profiler" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.engine" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.uml2.uml" version="3.1.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.proteus" version="0.8.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.umlutils" version="0.8.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.proteus.generators.acceleo" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.resources" version="3.6.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui"/>
-   </requires>
 
    <plugin
          id="org.eclipse.robotml.generators.acceleo.cycabtk"

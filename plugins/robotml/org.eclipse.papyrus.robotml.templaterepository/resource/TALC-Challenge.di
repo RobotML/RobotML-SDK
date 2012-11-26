@@ -97,10 +97,10 @@
           <emfPageIdentifier href="TALC-Challenge.notation#_yOguQPK0EeGiOqE2lAIjQw"/>
         </children>
         <children>
-          <emfPageIdentifier href="TALC-Challenge.notation#_ZQx50PK-EeGiOqE2lAIjQw"/>
+          <emfPageIdentifier href="TALC-Challenge.notation#_TZ0nIJXwEeGRTLVZf4NyYw"/>
         </children>
         <children>
-          <emfPageIdentifier href="TALC-Challenge.notation#_TZ0nIJXwEeGRTLVZf4NyYw"/>
+          <emfPageIdentifier href="TALC-Challenge.notation#_ZQx50PK-EeGiOqE2lAIjQw"/>
         </children>
       </children>
     </windows>

@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.acceleo.module.OrocosGenerator.ui.handler;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.List;
 
@@ -23,7 +24,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
-
+import org.eclipse.jface.dialogs.ProgressMonitorDialog;
+import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -39,16 +43,22 @@ public class GenerateOrocosCodeCommand extends AbstractTransactionalCommand {
 
 	/** The orocos target folder path. */
 	private final String orocosTargetFolderPath;
-	
+
 	/**
 	 * Instantiates a new generate orocos code command.
-	 *
-	 * @param label the label
-	 * @param domain the domain
-	 * @param selectedElement the selected element
-	 * @param orocosTargetFolderPath the orocos target folder path
+	 * 
+	 * @param label
+	 *            the label
+	 * @param domain
+	 *            the domain
+	 * @param selectedElement
+	 *            the selected element
+	 * @param orocosTargetFolderPath
+	 *            the orocos target folder path
 	 */
-	public GenerateOrocosCodeCommand(String label, TransactionalEditingDomain domain, EObject selectedElement, String orocosTargetFolderPath) {
+	public GenerateOrocosCodeCommand(String label,
+			TransactionalEditingDomain domain, EObject selectedElement,
+			String orocosTargetFolderPath) {
 		super(domain, label, Collections.EMPTY_LIST);
 		// TODO Auto-generated constructor stub
 		this.domain = domain;
@@ -56,19 +66,47 @@ public class GenerateOrocosCodeCommand extends AbstractTransactionalCommand {
 		this.orocosTargetFolderPath = orocosTargetFolderPath;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.
+	 * AbstractTransactionalCommand
+	 * #doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
+	 * org.eclipse.core.runtime.IAdaptable)
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		System.err.println("Model Exlorer generation menu Orocos");
-		AcceleoOrocosCodeGenerator codeGenerator = new AcceleoOrocosCodeGenerator();
-		codeGenerator.runAcceleoTransformation(selectedElement, orocosTargetFolderPath);
+		// System.err.println("Model Exlorer generation menu Orocos");
+		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+				.getShell();
+		final ProgressMonitorDialog monitordialog = new ProgressMonitorDialog(
+				shell);
+		try {
+			monitordialog.run(true, true, new IRunnableWithProgress() {
+
+				public void run(IProgressMonitor monitor)
+						throws InvocationTargetException, InterruptedException {
+					monitor.beginTask("Generating Acceleo files", 100);
+					AcceleoOrocosCodeGenerator codeGenerator = new AcceleoOrocosCodeGenerator();
+					codeGenerator.runAcceleoTransformation(selectedElement,
+							orocosTargetFolderPath);
+					monitor.done();
+				}
+
+			});
+
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		return CommandResult.newOKCommandResult();
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

@@ -38,8 +38,8 @@ std::string getCurrentTime();
 //
 // Data type definitions ----------------------------------------------------------
 //
-
-	[for (type : DataType | project.types)]
+[let types : Sequence(DataType) = getSortedDataTypes(project)]
+	[for (type : DataType | types)]
 // -------------------------------------------------------- [type.name/]
 
 		[if (isBasicType(type))]
@@ -63,7 +63,7 @@ std::string getCurrentTime();
 		[/if]
 		
 	[/for]
-
+[/let]
 #endif
 
 

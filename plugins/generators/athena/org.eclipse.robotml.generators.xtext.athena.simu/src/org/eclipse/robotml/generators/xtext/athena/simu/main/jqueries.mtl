@@ -250,3 +250,34 @@
 	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getProcessingSignature(org.xtext.athenaDSL.ProcessingDeclaration)', Sequence{proc}) 
 /]
 
+[query public getSortedDataTypes(project : athenaDSL::Project) : Sequence(athenaDSL::DataType) =
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getSortedDataTypes(org.xtext.athenaDSL.Project)', Sequence{project})
+/]
+
+[query public getPrototypes(project : athenaDSL::Project) : Sequence(athenaDSL::prototypeDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getPrototypes(org.xtext.athenaDSL.Project)', Sequence{project})
+/]
+
+[query public getParameters(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::parameterDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getParameters(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]
+
+[query public getReferences(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::referenceDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getReferences(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]
+
+[query public getEvents(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::eventDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getEvents(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]
+
+[query public getSignals(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::signalDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getSignals(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]
+
+[query public getStateSets(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::statesetDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getStateSets(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]
+
+[query public getInteractions(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::interactionDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getInteractions(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]

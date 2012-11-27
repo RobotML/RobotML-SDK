@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.papyrus.RobotML.Algorithm;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.Transition;
+import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.FSMQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
 import org.eclipse.robotml.generators.acceleo.athena.files.configGenerator;
@@ -17,7 +18,10 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehavioralFeature;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.DataType;
+import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Interval;
@@ -47,6 +51,7 @@ public class SpecificQueries {
 	static final private String _arrayKeyword = "array";
 	static final private String _mapKeyword = "map";
 	static final private String _vectorKeyword = "vector";
+	static final private String _unionKeyword = "union";
 	
 	static private HashSet<NamedElement> _basicTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _enumTypeUsed = new HashSet<NamedElement>();
@@ -138,8 +143,18 @@ public class SpecificQueries {
 			SpecificQueries._mapDeclaration.put("Real", decl);
 			//Time
 			decl = "include CPP : \"time.h\"\r\n";
-			decl += "language CPP : \"_time*\" = \"NULL\"";
+			decl += "language CPP : \"time_t*\" = \"NULL\"";
 			SpecificQueries._mapDeclaration.put("Time", decl);
+			//Real64
+			decl = "include MATLAB : \"matrix.h\"\r\n";
+			decl += "language MATLAB : \"mxDOUBLE_CLASS\" = \"0\"\r\n";
+			decl += "language CPP : \"double\" = \"0.\"\r\n";
+			decl += "language VLE : \"Double\" = \"0.0\"";
+			SpecificQueries._mapDeclaration.put("Real64", decl);
+			//Real32
+			decl = "language CPP : \"float\" = \"0.f\"\r\n";
+			decl += "language VLE : \"Double\" = \"0.0\"";
+			SpecificQueries._mapDeclaration.put("Real32", decl);
 		}
 	}
 	
@@ -511,7 +526,8 @@ public class SpecificQueries {
 		{
 			if(SpecificQueries.isProcessing((Operation)elt) == false)
 			{
-				buffer.add(elt);
+				if(SpecificQueries.getFSMOperation((Model)model).contains((Operation)elt) == false)
+					buffer.add(elt);
 			}
 		}
 		list.removeAll(buffer);
@@ -528,7 +544,7 @@ public class SpecificQueries {
 		Boolean result = false;
 		//System.out.println(op.getOwner().toString());
 		if(op.getOwner() instanceof org.eclipse.uml2.uml.Class)
-		{
+		{	
 			/*
 			 * Check if the operation is in the behavior specification then it's a processing
 			 */
@@ -781,7 +797,15 @@ public class SpecificQueries {
 		String result = "";
 		if(SpecificQueries.isExternalLibrairy(classe))
 		{
-			result = classe.getValue(classe.getAppliedStereotypes().get(0), SpecificQueries._pathProperty).toString(); 
+			Stereotype stereo = classe.getAppliedStereotypes().get(0);
+			if(stereo != null)
+			{
+				Object obj = classe.getValue(stereo, SpecificQueries._pathProperty);
+				if(obj != null)
+				{
+					result = obj.toString();
+				}
+			}
 		}
 		return result;
 	}
@@ -879,11 +903,14 @@ public class SpecificQueries {
 		
 		for(Comment comment : ne.getOwnedComments())
 		{
-			if(comment.getBody().startsWith(_arrayKeyword) == true ||
-					comment.getBody().startsWith(_mapKeyword) == true ||
-					comment.getBody().startsWith(_vectorKeyword) == true)
+			if(comment.getBody() != null)
 			{
-				result = comment.getBody();
+				if(comment.getBody().startsWith(_arrayKeyword) == true ||
+						comment.getBody().startsWith(_mapKeyword) == true ||
+						comment.getBody().startsWith(_vectorKeyword) == true)
+				{
+					result = comment.getBody();
+				}
 			}
 		}
 		
@@ -915,21 +942,36 @@ public class SpecificQueries {
 	{
 		Boolean result = false;
 		
-		DataType dt = (DataType) ne;
-		if(dt.getAllAttributes().size() > 0)
+		/*
+		 * For type "container", declaration is tsocked in the comment
+		 * Format : <type> <<template>> <name> <dimension>;
+		 */
+		
+		for(Comment comment : ne.getOwnedComments())
 		{
-			for(Property prop : dt.getAllAttributes())
+			if(comment.getBody() != null)
 			{
-				if(prop.getName().equals(dt.getName()))
+				if(comment.getBody().startsWith(_unionKeyword) == true)
 				{
-					if(prop.getType() == null)
-						result = true;
+					result = true;
 				}
-				
-				if(result == true)
-					break;
 			}
 		}
+//		DataType dt = (DataType) ne;
+//		if(dt.getAllAttributes().size() > 0)
+//		{
+//			for(Property prop : dt.getAllAttributes())
+//			{
+//				if(prop.getName().equals(dt.getName()))
+//				{
+//					if(prop.getType() == null)
+//						result = true;
+//				}
+//				
+//				if(result == true)
+//					break;
+//			}
+//		}
 		
 		return result;
 	}
@@ -1060,6 +1102,7 @@ public class SpecificQueries {
 		
 		for(DataType dt :datatypes)
 		{	
+			System.out.println("DataType : " + dt.getName());
 			if(usedType.contains(dt) || 
 					SpecificQueries.isDataTypeUsed(model, dt))
 			{
@@ -1078,6 +1121,7 @@ public class SpecificQueries {
 							else
 							{
 								usedType.add(prop.getType());
+								System.out.println("Add : " + prop.getType().getName());
 							}
 						}
 					}
@@ -1219,7 +1263,7 @@ public class SpecificQueries {
 		collection.addAll(_defineTypeUsed);
 		collection.addAll(_unionTypeUsed);
 		
-		collection.sortDataType();
+		collection.sort();
 		
 		
 		return new LinkedList<NamedElement>(collection);
@@ -1240,6 +1284,25 @@ public class SpecificQueries {
 		return SpecificQueries._structTypeUsed.contains(ne);
 	}
 	
+	static private List<Operation> getFSMOperation(Model model)
+	{
+		LinkedList<Operation> res = new LinkedList<Operation>();
+		FSMQueries queries = new FSMQueries();
+		List<StateMachine> sms = queries.getStateMachines(model);
+		for(StateMachine sm : sms)
+		{
+			List<org.eclipse.papyrus.RobotML.Transition> transitions = queries.getTransitions(sm);
+			for(org.eclipse.papyrus.RobotML.Transition transition : transitions)
+			{
+				if(transition.getGuard() != null)
+					res.add(transition.getGuard().getBase_Operation());
+				
+				if(transition.getEffect()  != null)
+					res.add(transition.getEffect().getBase_Operation());
+			}
+		}
+		return res;
+	}
 	
 	static public List<OpaqueBehavior> getFSMOpaqueBehavior(Model model, StateMachine sm)
 	{
@@ -1267,5 +1330,259 @@ public class SpecificQueries {
 			}
 		}
 		return res;
+	}
+	
+	
+	static public List<Vertex> getFSMStates(StateMachine sm)
+	{
+		LinkedList<Vertex> res = new LinkedList<Vertex>();
+		
+		FSMQueries query = new FSMQueries();
+		int index = 0;
+		for(Vertex elt : query.getStates(sm))
+		{
+			if(elt.getIncomings().size() > 0)
+			{
+				res.add(index, elt);
+				index ++;
+			}
+		}
+		
+		return res;
+	}
+	
+	/**
+	 * Check if state of statemachine is the initial state
+	 * WARNING !!! The intial state is the first state after the state with INITIAL kind
+	 * @param state
+	 * @return
+	 */
+	static public Boolean isStartingState(Vertex state)
+	{
+		Boolean isInitial = false;
+		for(Transition transition : state.getIncomings())
+		{
+			Vertex src = transition.getSource();
+			if(src != state)
+			{
+				List<Transition> tmp = src.getIncomings();
+				if(tmp.size() == 0)
+					isInitial = true;
+			}
+		}
+		
+		return isInitial;
+	}
+	
+	static public List<Port> getReferences(Model model, Class classe)
+	{
+		LinkedList<Port> res = new LinkedList<Port>();
+		HashSet<Class> classes = getAllModelClasses(model);
+		for(Class elt : classes)
+		{
+			List<Port> in_ports = ArchitectureQueries.getInputPortsForElement(classe) ;
+			if(ArchitectureQueries.isAnAncestorOf(classe, elt))
+			{
+				List<Port> in_ports_child = ArchitectureQueries.getInputPortsForElement(elt);
+				for(Port port : in_ports)
+				{
+					if(in_ports_child.contains(port) == true &&
+							res.contains(port) == false)
+					{
+						if(ArchitectureQueries.isPortConnected(port))
+						{
+							res.add(port);
+						}
+					}
+				}
+			}
+		}
+		
+		
+		return res;
+	}
+	
+	static private Boolean hasChildren(Model model, Class classe)
+	{
+		return !SpecificQueries.getChildren(model, classe).isEmpty();
+	}
+	
+	static private List<NamedElement> getChildren(Model model, Class classe)
+	{
+		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
+		HashSet<Class> classes = SpecificQueries.getAllModelClasses(model);
+		for(Class class_tmp : classes)
+		{
+			if(class_tmp != classe)
+			{
+				List<Class> super_classes = class_tmp.getSuperClasses();
+				if(super_classes.contains(classe))
+				{
+					res.add(class_tmp);
+					res.addAll(getChildren(model, class_tmp));
+				}
+			}
+		}
+		return res;
+	}
+	
+	static private List<NamedElement> getParentsInstanciation(Model model, Class classe)
+	{
+		LinkedList<NamedElement> parents = new LinkedList<NamedElement>();
+		LinkedList<NamedElement> classes = new LinkedList<NamedElement>();
+		classes.add(classe);
+		if(SpecificQueries.hasChildren(model, classe));
+		{
+			classes.addAll(SpecificQueries.getChildren(model, classe));
+		}
+		
+		HashSet<Class> components = SpecificQueries.getAllModelClasses(model);
+		for(Class comp : components)
+		{
+			
+			List<Property> subComponents = comp.getAllAttributes();
+			for(Property prop : subComponents)
+			{
+				if(classes.contains(prop.getType()))
+				{
+					parents.add(comp);
+					break;
+				}
+			}
+		}
+		return parents;
+	}
+	
+	static public List<NamedElement> getOriginsPort(Model model, Class classe_dest, Port port)
+	{
+		LinkedList<NamedElement> result = new LinkedList<NamedElement>();
+		List<NamedElement> tmp = SpecificQueries.getPortOtherSide(port);
+		/*
+		 * Check in object instance the origin port
+		 */
+		for(Property prop : classe_dest.getAllAttributes()){
+			if(prop.getType() != classe_dest)
+			{
+				if(tmp.contains(prop.getType()))
+				{
+					result.add(prop);
+					System.out.println("Class " + classe_dest.getName() + " for port => " + port.getName() + " from " + prop.getName());
+				}
+			}
+		}
+		
+		if(result.isEmpty())
+		{
+			/*
+			 * Get the parent instance, and check if the port is link with an other instance than the classe destination
+			 */
+			List<NamedElement> parents = SpecificQueries.getParentsInstanciation(model, classe_dest);
+			
+			if(parents.isEmpty() == false)
+			{
+				
+				for(NamedElement parent : parents)
+				{
+					for(Property prop : ((Class)parent).getAllAttributes())
+					{
+						if(tmp.contains(prop.getType()))
+						{
+							result.add(prop.getType());
+							System.out.println("Parent class "+ parent.getName() + " *** Class " + classe_dest.getName() + " for port => " + port.getName() + " from " + prop.getName());
+						}
+					}
+				}
+				
+			}
+		}
+		return result;
+	}
+	
+	static private List<NamedElement> getPortOtherSide(Port port)
+	{
+		/*
+		 * Get all element are in other side the port
+		 */
+		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
+		for(ConnectorEnd end : port.getEnds())
+		{
+			if(end.getOwner() != null && end.getOwner()!= port)
+			{
+				Connector connector = (Connector)end.getOwner();
+				if((connector != null))
+				{
+					if(connector.getOwner() != null)
+					{
+						if(res.contains(connector.getOwner()) == false)
+						{
+							res.add((NamedElement) connector.getOwner());
+						}
+					}
+				}
+			}
+		}
+		return res;
+	}
+	
+	static public Boolean isConnectedToOwner(Port port, Class classe, Model model)
+	{
+		Boolean result = false;
+		
+		List<NamedElement> parents = SpecificQueries.getParentsInstanciation(model, classe);
+		if(parents.isEmpty() == false)
+		{
+			List<NamedElement> tmp = SpecificQueries.getPortOtherSide(port);
+			for(NamedElement elt : tmp)
+			{
+				result |= parents.contains(elt);
+				if(parents.contains(elt))
+				{
+					System.out.println("Port " + port.getName() + " from class " + classe.getName() + " is connected to " + elt.getName());
+				}
+			}
+		}	
+		return result;
+	}
+
+	static public Boolean hasValidConnection(Port port)
+	{
+		Boolean result = false;
+		result = (port.getOwner() != null);
+		for(ConnectorEnd end : port.getEnds())
+		{
+			if(end.getOwner() != null && end.getOwner()!= port)
+			{
+				Connector connector = (Connector)end.getOwner();
+				if((port.getOwner() != null) && (connector != null))
+				{
+					result = true;
+					break;
+				}
+			}
+			
+		}
+		
+		return result;
+	}
+	
+	static public Boolean isConnected(Port port)
+	{
+		Boolean result = false;
+		
+		System.out.println("*** Port : " + port.getName());
+		for(ConnectorEnd connector : port.getEnds())
+		{
+			System.out.println("PORT OWNER : " + port.getOwner().toString());
+			System.out.println("ROLE : " + connector.getRole());
+			if(connector.getPartWithPort() != null)
+			{
+				System.out.println("PART WITH PORT : " + connector.getPartWithPort());
+			}
+				
+			//System.out.println("OWNER : " + connector.getOwner());
+			Connector con = (Connector)connector.getOwner();
+			System.out.println("OTHER SIDE : " + con.getOwner().toString());
+		}
+		return result;
 	}
 }

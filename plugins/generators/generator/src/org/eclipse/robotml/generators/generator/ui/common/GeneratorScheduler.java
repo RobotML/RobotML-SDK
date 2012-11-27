@@ -80,8 +80,14 @@ public class GeneratorScheduler {
 
 			this._generators.get(gen_name).doGenerate(BasicMonitor.toMonitor(monitor));
 			
-		} catch (IOException e) {
+		} 
+		catch (IOException e) 
+		{
 			JOptionPane.showMessageDialog(null,e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+			//e.printStackTrace();
+		}
+		catch(Exception e)
+		{
 			//e.printStackTrace();
 		}
 	}

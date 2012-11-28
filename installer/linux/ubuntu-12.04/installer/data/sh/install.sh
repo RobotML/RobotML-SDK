@@ -18,6 +18,7 @@ check_and_install() {
 #
 # Installing python-gtk2, required for pygtk interface.
 #
+sudo apt-get update
 check_and_install "python-gtk2"
 
 #

@@ -5,17 +5,30 @@
 
 [/template]
 
-
 [query public getRobotMLComponentModels(model : Model) : Sequence(NamedElement) =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'getRobotMLComponentModels(org.eclipse.uml2.uml.Model)', Sequence{model})
 /]
 [query public isActuator(c : Class) : Boolean =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isActuator(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
-
 [query public isSensor(c : Class) : Boolean =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isSensor(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
+
+[query public getOperationDataType(op : Operation) : Sequence(DataType) =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationDataType(org.eclipse.uml2.uml.Class)', Sequence{op})
+/]
+[query public getPropertyDataType(p : Property) : Sequence(DataType) =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperations(org.eclipse.uml2.uml.Class)', Sequence{p})
+/]
+[query public getDataTypesInClass(c : Class) : Sequence(NamedElement) =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getDataTypesInClass(org.eclipse.uml2.uml.Class)', Sequence{c})
+/]
+
+[query public isGeneratedDataType(t : Type) : Boolean =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isGeneratedDataType(org.eclipse.uml2.uml.Type)', Sequence{t})
+/]
+
 [query public isConnectedActuator(st : String ) : Boolean =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isConnectedActuator(java.lang.String)', Sequence{st})
 /]

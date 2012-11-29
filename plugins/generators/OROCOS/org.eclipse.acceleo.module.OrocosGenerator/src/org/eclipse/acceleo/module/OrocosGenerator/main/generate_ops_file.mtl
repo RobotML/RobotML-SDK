@@ -4,7 +4,7 @@
 [import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
 
 [template public generateOpsFile(model : Model)]
-[file ('/connect.ops', false, 'UTF-8')]
+[file ('/Deployment/connect.ops', false, 'UTF-8')]
 //-----import package-----
 import("[model.name/]")
 [for (elt: NamedElement | getSystems(model))]

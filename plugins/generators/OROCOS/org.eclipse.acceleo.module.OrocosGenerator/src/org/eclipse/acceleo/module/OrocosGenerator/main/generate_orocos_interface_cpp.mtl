@@ -5,7 +5,7 @@
 
 [template public generateOrocosInterfaceCpp(i : Interface, root_model : Model)]
 
-[file ('/src/'+ i.name + '.hpp', false, 'UTF-8')]
+[file ( 'src/'+i.name+'/'+i.name+'.hpp', false, 'UTF-8')]
 #include <rtt/TaskContext.hpp>
 #include <rtt/Port.hpp>
 #include <rtt/Operation.hpp>

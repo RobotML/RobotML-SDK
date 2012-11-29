@@ -16,7 +16,7 @@
 [/for]
 
 
-[file ('/src/'+ c.name + '.lua', false, 'UTF-8')]
+[file ( 'src/'+c.name+'/'+c.name+'.lua', false, 'UTF-8')]
 [comment Library declaration/]----- Library -----
 require "rttlib"
 require "rttros"

@@ -6,6 +6,7 @@
 [import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries/]
 [import org::eclipse::acceleo::module::OrocosGenerator::main::generate_orocos_interface_cpp /]
 [import org::eclipse::acceleo::module::OrocosGenerator::main::generate_FSM/]
+[import org::eclipse::acceleo::module::OrocosGenerator::main::generate_Datatype_file /]
 
 [template public generateOrocosComponentHpp(c : Class, root_model : Model)]
 [for (b : Behavior | c.ownedBehavior )]
@@ -17,7 +18,7 @@
 [/for]
 
 [comment we do not generate orocos components for actuators and sensors /]
-[file ( 'src/'+c.name + '.h', false, 'UTF-8')]
+[file ( 'src/'+c.name+'/'+c.name+'.hpp', false, 'UTF-8')]
 [setLibraries(c)/]
 #include <rtt/TaskContext.hpp>
 #include <ocl/Component.hpp>
@@ -32,6 +33,8 @@ using namespace std;
 using namespace RTT;
 using namespace Orocos;
 using namespace [root_model.name.substitute(' ', '_')/]_types;
+
+[generate_Datatype_file(c, root_model)/]
 [comment]
 //in case of datatypes use, uncomment the using namespace command below
 [let model : Model = getRootModel(root_model)]
@@ -157,7 +160,7 @@ class [c.name/]
 					[for (op : Operation | interface.getAllOperations())]
 						[if (isAProvidedPort(sp))]
 		this->provides("[interface.name/]")
-			->addOperation("[op.name/]", &[c.name/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
+			->addOperation("[op.name.substitute(' ', '_')/]",&[c.namespace/]::[c.name.substitute(' ', '_')/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
 				.doc("");
 						[/if]
 						[if (isARequiredPort(sp))]

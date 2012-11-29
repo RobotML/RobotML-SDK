@@ -9,8 +9,7 @@
 [template public generateOrocosComponentCpp(c : Class, root_model : Model)]
 
 [comment we do not generate orocos components for actuators and sensors /]
-[file ( 'src/'+c.name + '.cpp', false, 'UTF-8')]
-
+[file ( 'src/'+c.name+'/'+c.name+'.cpp', false, 'UTF-8')]
 #include "[c.name/].h"
 [comment component creation /]
 ORO_CREATE_COMPONENT([getRootClassForModel(root_model).name.substitute(' ', '_')/]::[c.name/])

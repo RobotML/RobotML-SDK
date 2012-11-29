@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.FunctionBehavior;
 import org.eclipse.uml2.uml.Interface;
@@ -51,10 +52,12 @@ import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.Vertex;
 
 public class OrocosQueries {
-	LinkedList<java.lang.String> dataTypes = new LinkedList<String>();
+	
 	LinkedList<java.lang.String> propTypes = new LinkedList<String>();
 	LinkedList<java.lang.String> alldata=new LinkedList<String>();
 	LinkedList<java.lang.String> rttData = new LinkedList<String>();
+	LinkedList<NamedElement> addedDataTypes = new LinkedList<NamedElement>();
+
 	boolean includePort= false;
 	/**
 	 * Returns all the ports used in the model
@@ -351,12 +354,12 @@ public class OrocosQueries {
 		return res;
 	}
 
-	public void addDataType(String s){
+	/*public void addDataType(String s){
 		dataTypes.add(s);
 		return ;
-	}
+	}*/
 	
-	public boolean isADataType(String s)
+/*	public boolean isADataType(String s)
 	{
 		boolean found = false;
 		for(String elt: dataTypes){
@@ -364,7 +367,7 @@ public class OrocosQueries {
 				found = true;
 		}
 		return found;
-	}
+	}*/
 	/**
 	 * Function to get a component's state machines
 	 * @param clazz the class in which the component is described
@@ -544,7 +547,7 @@ public class OrocosQueries {
     */
 
 /**
- * imports the used ROS datatypes 	
+ * converts robotML libraries into ROS topics 	
  * 
  */
 public LinkedList<java.lang.String> setDataTypesLibraries(Property elt){
@@ -569,7 +572,6 @@ public LinkedList<java.lang.String> setDataTypesLibraries(Property elt){
 public LinkedList<java.lang.String> setLibraries(Element c){		
 		LinkedList<Element>	allelem =new LinkedList<Element>();
 		boolean includeOperation= false;
-		boolean includeDataTypes = false;
 		for(Element elt: c.allOwnedElements()){
 			if(!GeneralQueries.isDataType(elt))
 			{
@@ -612,13 +614,13 @@ public LinkedList<java.lang.String> setLibraries(Element c){
 		if(parentType.contains("std")||parentType.contains("sensor")||parentType.contains("stereo")||parentType.contains("geometry")||
 			parentType.contains("nav")||parentType.contains("actionLib"))
 		res="#include<"+parentType+"/"+p.getType().getName()+".h>";
-		else if(isADataType(p.getType().getName()) && !includeDataTypes){
+/*		else if(isADataType(p.getType().getName()) && !includeDataTypes){
 			res = "#include"+'"'+parentType+".hpp"+'"'+"\n";
 			res = res + "\n";
 			includeDataTypes = true;
 			if(!alldata.contains(res))
 				alldata.add(res);
-			}
+			}*/
 		} 
 		if(isOperation(elt))
 		{
@@ -671,5 +673,54 @@ public LinkedList<java.lang.String> setRttLibraries(Element c){
 	rttData.add("import ("+'"'+"rtt_geometry_msgs"+'"'+")\n");
 	rttData.add("import ("+'"'+"rtt_std_msgs"+'"'+")\n");
 	return rttData;
+}
+
+
+public DataType getPropertyDataType(Property prop) {
+	Type t = prop.getType();
+	if (t!= null && t instanceof DataType) {
+		return (DataType)t;
+	}
+	return null;
+}
+
+public DataType getOperationDataType(Operation op) {
+	Type t = op.getType();
+	if (t!= null && t instanceof DataType) {
+		return (DataType)t;
+	}
+	return null;
+}
+
+public boolean isGeneratedDataType(Type t){
+	boolean generated = false;
+	for(Element elt: addedDataTypes){
+		if(((Type)elt).equals(t))
+			generated = true;
+	}
+	if(!generated)
+		addedDataTypes.add(t);
+	return generated;
+}
+
+
+public List<NamedElement> getDataTypesInClass(Class c)
+{	LinkedList<NamedElement> found_elts = new LinkedList<NamedElement>();	
+	for (org.eclipse.uml2.uml.Element prop : c.getAllAttributes()) {
+		java.lang.System.out.println(prop);
+
+	if (GeneralQueries.isProperty(prop)){
+		Type t = ((Property)prop).getType();
+		java.lang.System.out.println(t);
+		found_elts.add(t);
+	}	
+	
+	else if (GeneralQueries.isPort(prop)){ 
+		Type t = ((Port)prop).getType();
+		java.lang.System.out.println(t);
+		found_elts.add(t);
+	}
+	}
+	return found_elts;
 }
 }

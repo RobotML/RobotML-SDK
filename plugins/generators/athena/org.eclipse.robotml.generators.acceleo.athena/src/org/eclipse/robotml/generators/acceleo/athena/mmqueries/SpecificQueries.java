@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -21,7 +22,6 @@ import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.DataType;
-import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Interval;
@@ -59,6 +59,8 @@ public class SpecificQueries {
 	static private HashSet<NamedElement> _structTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _defineTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _unionTypeUsed = new HashSet<NamedElement>();
+	
+	static private HashSet<ComponentLevel> _instanceTree = new HashSet<ComponentLevel>(); 
 	
 	static private void initDeclarationMap()
 	{
@@ -333,7 +335,7 @@ public class SpecificQueries {
 			res.addAll(found_elts);
 		} catch (Exception e)
 		{
-			System.out.println(e);
+			//System.out.println(e);
 			e.printStackTrace();
 		}
 		// Return list of classes
@@ -634,7 +636,7 @@ public class SpecificQueries {
 		}
 		else
 		{
-			result = "// Unknown datatype declaration!!!";
+			result = "// Unknown datatype declaration!!! => " + elt.getName();
 		}
 		
 		return result;
@@ -820,33 +822,24 @@ public class SpecificQueries {
 		String result = "";
 		if(vertex instanceof State)
 		{
-			if(vertex.getAppliedStereotypes().size() > 0)
+			org.eclipse.papyrus.RobotML.State state = ElementUtil.getStereotypeApplication(vertex, org.eclipse.papyrus.RobotML.State.class);
+			if(state != null)
 			{
-				Stereotype stereo = vertex.getAppliedStereotypes().get(0);
-				Object obj = vertex.getValue(stereo, SpecificQueries._operationProperty);
-				if(obj != null)
+				if(state.getOperation() != null)
 				{
-					if(obj instanceof Algorithm)
+					String operation = state.getOperation().getBase_Operation().getName();
+					result = SpecificQueries._interactionTag + " " + operation + "(";
+					for(Property prop : state.getArguments())
 					{
-						String operation = ((Algorithm)obj).getBase_Operation().getName();
-						List<?> list= (List<?>)vertex.getValue(stereo, SpecificQueries._argumentsProperty);
-						
-						result = SpecificQueries._interactionTag + " " + operation + "(";
-						int count = list.size();
-						for(int cpt = 0; cpt < count; cpt ++)
-						{
-							if((cpt + 1) == count)
-							{
-								result += list.get(cpt);
-							}
-							else
-							{
-								result += list.get(cpt) + ", ";
-							}
-						}
-						result += ")";
+						result += prop.getName() + ","; 
 					}
-				}	
+					int index = result.lastIndexOf(",");
+					if(index > -1)
+					{
+						result = result.substring(0, index);
+					}
+					result += ")";
+				}
 			}
 		}
 		return result;
@@ -957,21 +950,6 @@ public class SpecificQueries {
 				}
 			}
 		}
-//		DataType dt = (DataType) ne;
-//		if(dt.getAllAttributes().size() > 0)
-//		{
-//			for(Property prop : dt.getAllAttributes())
-//			{
-//				if(prop.getName().equals(dt.getName()))
-//				{
-//					if(prop.getType() == null)
-//						result = true;
-//				}
-//				
-//				if(result == true)
-//					break;
-//			}
-//		}
 		
 		return result;
 	}
@@ -1088,6 +1066,8 @@ public class SpecificQueries {
 	//static public Boolean sortUsedDataType(NamedElement model)
 	static public Boolean searchUsedDataType(Model model)
 	{
+		SpecificQueries.initInstanceTree(model);
+		
 		SpecificQueries._basicTypeUsed.clear();
 		SpecificQueries._containerTypeUsed.clear();
 		SpecificQueries._enumTypeUsed.clear();
@@ -1102,7 +1082,7 @@ public class SpecificQueries {
 		
 		for(DataType dt :datatypes)
 		{	
-			System.out.println("DataType : " + dt.getName());
+			//System.out.println("DataType : " + dt.getName());
 			if(usedType.contains(dt) || 
 					SpecificQueries.isDataTypeUsed(model, dt))
 			{
@@ -1121,7 +1101,7 @@ public class SpecificQueries {
 							else
 							{
 								usedType.add(prop.getType());
-								System.out.println("Add : " + prop.getType().getName());
+								//System.out.println("Add : " + prop.getType().getName());
 							}
 						}
 					}
@@ -1456,6 +1436,7 @@ public class SpecificQueries {
 	static public List<NamedElement> getOriginsPort(Model model, Class classe_dest, Port port)
 	{
 		LinkedList<NamedElement> result = new LinkedList<NamedElement>();
+		System.out.println("Search Origin for " + classe_dest.getName() + "::" + port.getName());
 		List<NamedElement> tmp = SpecificQueries.getPortOtherSide(port);
 		/*
 		 * Check in object instance the origin port
@@ -1466,7 +1447,7 @@ public class SpecificQueries {
 				if(tmp.contains(prop.getType()))
 				{
 					result.add(prop);
-					System.out.println("Class " + classe_dest.getName() + " for port => " + port.getName() + " from " + prop.getName());
+				//	System.out.println("Class " + classe_dest.getName() + " for port => " + port.getName() + " from " + prop.getName());
 				}
 			}
 		}
@@ -1488,7 +1469,7 @@ public class SpecificQueries {
 						if(tmp.contains(prop.getType()))
 						{
 							result.add(prop.getType());
-							System.out.println("Parent class "+ parent.getName() + " *** Class " + classe_dest.getName() + " for port => " + port.getName() + " from " + prop.getName());
+							//System.out.println("Parent class "+ parent.getName() + " *** Class " + classe_dest.getName() + " for port => " + port.getName() + " from " + prop.getName());
 						}
 					}
 				}
@@ -1537,7 +1518,7 @@ public class SpecificQueries {
 				result |= parents.contains(elt);
 				if(parents.contains(elt))
 				{
-					System.out.println("Port " + port.getName() + " from class " + classe.getName() + " is connected to " + elt.getName());
+					//System.out.println("Port " + port.getName() + " from class " + classe.getName() + " is connected to " + elt.getName());
 				}
 			}
 		}	
@@ -1569,11 +1550,11 @@ public class SpecificQueries {
 	{
 		Boolean result = false;
 		
-		System.out.println("*** Port : " + port.getName());
+		//System.out.println("*** Port : " + port.getName());
 		for(ConnectorEnd connector : port.getEnds())
 		{
-			System.out.println("PORT OWNER : " + port.getOwner().toString());
-			System.out.println("ROLE : " + connector.getRole());
+			//System.out.println("PORT OWNER : " + port.getOwner().toString());
+			//System.out.println("ROLE : " + connector.getRole());
 			if(connector.getPartWithPort() != null)
 			{
 				System.out.println("PART WITH PORT : " + connector.getPartWithPort());
@@ -1584,5 +1565,415 @@ public class SpecificQueries {
 			System.out.println("OTHER SIDE : " + con.getOwner().toString());
 		}
 		return result;
+	}
+	
+	static public Boolean isLinkedToParentInstance(Model model, Class src, Port port)
+	{
+		Boolean result = false;
+		System.out.println("*** Test linked to parent for : " + src.getName() + "::" + port.getName());
+		List<NamedElement> parents = SpecificQueries.getParentsInstanciation(model, src);
+		for(NamedElement elt : parents)
+		{
+			result |= isLinked(port, (Class)elt);
+		}
+		return result;
+	}
+	
+	static public Property findPortOwner(Model model, Class src, Port port)
+	{
+		Property res = null;
+		List<NamedElement> parents = SpecificQueries.getParentsInstanciation(model, src);
+		for(NamedElement elt : parents)
+		{
+			Class parent = (Class)elt;
+			for(Property prop : parent.getAllAttributes())
+			{
+				if(prop.getType() instanceof Class)
+				{
+					if(SpecificQueries.isLinked(port, (Class)prop.getType()))
+					{
+						for(ConnectorEnd cend : port.getEnds())
+						{
+							if(cend.getRole() != port)
+							{
+								Port dest = (Port)cend.getRole();
+								if(dest.getEnds().size() > 1)
+								{
+									SpecificQueries.findPortOwner(model, (Class)prop.getType(), port);
+								}
+								else
+								{
+									res = prop;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return res;
+	}
+	
+	static public Property getLinkedToProperty(Model model, Class src, Port port)
+	{
+		//Property result = null;
+		//Search parent
+		//System.out.println("*** Test linked to  : " + src.getName() + "::" + port.getName());
+		List<NamedElement> parents = SpecificQueries.getParentsInstanciation(model, src);
+		for(NamedElement elt : parents)
+		{
+			//search instance of the parent
+			Class parent = (Class)elt;
+			for(Property prop : parent.getAllAttributes())
+			{
+				if(prop.getType() instanceof Class)
+				{
+					if(prop.getType() != src)
+					{
+						if(SpecificQueries.isLinked(port, (Class)prop.getType()))
+						{
+							return prop;
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+	
+	static public Boolean isLinkedToProperty(Model model, Class src, Port port)
+	{
+		Set<Class> res = SpecificQueries.BrowserPortConnection(src, port, null);
+		Set<Class> children = SpecificQueries.getChildrenInstance(src);
+		
+		res.removeAll(children);
+		
+		//serch the farest component
+		int level = Integer.MAX_VALUE;
+		ComponentLevel tmp = null;
+		for(ComponentLevel cmp : SpecificQueries._instanceTree)
+		{
+			if(res.contains(cmp._class))
+			{
+				if(level > cmp._level)
+				{
+					level = cmp._level;
+					tmp = cmp;
+				}
+			}
+		}
+		if(tmp != null)
+		{
+			//test to linked with parent children
+			List<Port> port_list = ArchitectureQueries.getOutputPortsForElement(tmp._class);
+			port_list.addAll(ArchitectureQueries.getInputPortsForElement(tmp._class));
+			
+			for(Port parent_port : port_list)
+			{
+				if(port.getType().equals(parent_port.getType()))
+				{
+					Set<Class> child = SpecificQueries.BrowserPortConnection(tmp._class, parent_port, null);
+					List<NamedElement> parents = SpecificQueries.getParentsInstanciation(model, tmp._class);
+					child.removeAll(parents);
+					
+					//TODO : Supprimer les parents et la source
+					for(Class child_class : child)
+						System.out.println("*** " + src.getName() + "::" + port.getName() + " is link to: " + child_class.getName());
+					
+				}
+			}
+			
+//			System.out.println("*** " + src.getName() + "::" + port.getName() + " is link to: " + tmp._class.getName());
+		}
+		else
+		{
+			System.out.println("*** No connection found for " + src.getName() + "::" + port.getName());
+		}
+		
+//		return (SpecificQueries.getLinkedToProperty(model, src, port) != null);
+		return (SpecificQueries.findPortOwner(model, src, port) != null);
+	}
+	
+	static public Boolean hasObjectInstanceConnection(Model model, Class src, Port port)
+	{
+		return (getObjectInstanceConnectionName(model, src, port) != null);
+	}
+	
+	static public Boolean hasParentInstanceConnection(Model model, Class src, Port port)
+	{
+		return (SpecificQueries.getParentInstanceConnection(model, src, port) != null);
+	}
+	
+	static public String getObjectInstanceConnectionName(Model model, Class src, Port port)
+	{
+		System.out.println("*** " + src.getName() + "::" + port.getName());
+		Class parent = getParentInstanceConnection(model, src, port);
+		if(parent != null)
+		{
+			/*
+			 * List the parent instances and test the connection
+			 */
+			for(Property prop : parent.getAllAttributes())
+			{
+				if(prop.getType() instanceof Class)
+				{
+					if(prop.getType() != src)
+					{
+						if(SpecificQueries.isLinked(port, (Class)prop.getType()))
+						{
+							return prop.getName();
+						}
+					}
+				}
+			}
+//			
+//			
+//			
+//			
+//			List<Port> port_list = ArchitectureQueries.getOutputPortsForElement(parent);
+//			port_list.addAll(ArchitectureQueries.getInputPortsForElement(parent));
+//			
+//			for(Port parent_port : port_list)
+//			{
+//				if(port.getType().equals(parent_port.getType()))
+//				{
+//					Set<Class> child = SpecificQueries.BrowserPortConnection(parent, parent_port, null);
+//					List<NamedElement> parents = SpecificQueries.getParentsInstanciation(model, parent);
+//					child.removeAll(parents);
+//					child.remove(src);
+//					
+//					if(child.isEmpty())
+//					{
+//						Property res = SpecificQueries.getLinkedProperty(parent, port);
+//						//if(res != null) return res.getName();
+//					}
+//					else
+//					{
+//						for(Property prop : parent.getAllAttributes())
+//						{
+//							for(Class child_class : child)
+//							{
+//								if(prop.getType() instanceof Class)
+//								{
+//									Class prop_class = (Class)prop.getType();
+//									if((prop_class == child_class))
+//									{
+//										return prop.getName();
+//									}
+//								}
+//							}
+//						}
+//					}
+//				}
+//			} 
+		}
+		return null;
+	}
+	
+	static private Property getLinkedProperty(Class parent, Port port)
+	{
+		Property res = null;
+		
+		for(Property prop : parent.getAllAttributes())
+		{
+			if(prop.getType() instanceof Class)
+			{
+//				List<Port> ports = ArchitectureQueries.getOutputPortsForElement((Class)prop.getType());
+//				ports.addAll(ArchitectureQueries.getInputPortsForElement((Class)prop.getType()));
+//				for(Port port : ports)
+//				{
+//					if(SpecificQueries.isLinked(port, src))
+//					{
+//						return prop;
+//					}
+//				}
+				Class src_port = (Class)port.getOwner();
+				if((prop.getType() != src_port) &&
+						SpecificQueries.isLinked(port, (Class)prop.getType()))
+				{
+					return prop;
+				}
+			}
+		}
+		
+		return res;
+	}
+	//TODO : 
+	/*
+	 * Obtenir  le parent, puis obtenir l'extremite de la connection. Comparer...
+	 */
+	static public Class getParentInstanceConnection(Model model, Class src, Port port)
+	{
+		
+		HashSet<Class> classes = SpecificQueries.getAllModelClasses(model);
+		for(Class classe : classes)
+		{
+			if(SpecificQueries.hadInstanceOf(classe, src) == true)
+			{
+				return classe;
+			}
+		}
+		return null;
+		
+//		Set<Class> res = SpecificQueries.BrowserPortConnection(src, port, null);
+//		Set<Class> children = SpecificQueries.getChildrenInstance(src);
+//		
+//		res.removeAll(children);
+//		
+//		//serch the farest component
+//		int level = Integer.MAX_VALUE;
+//		ComponentLevel tmp = null;
+//		for(ComponentLevel cmp : SpecificQueries._instanceTree)
+//		{
+//			if(res.contains(cmp._class))
+//			{
+//				if(level > cmp._level)
+//				{
+//					level = cmp._level;
+//					tmp = cmp;
+//				}
+//			}
+//		}
+//		Class result = null;
+//		if(tmp != null)
+//		{
+//			result = tmp._class;
+//			//System.out.println("Class " + src.getName() +  "::" + port.getName() + " had " + tmp._class.getName() + " as parent.");
+//		}
+//		return result;
+	}
+	
+	static private boolean hadInstanceOf(Class object_to_test, Class object_instance)
+	{
+		boolean res = false;
+		for(Property prop : object_to_test.getAllAttributes())
+		{
+			if(prop.getType() instanceof Class)
+			{
+				res |= (prop.getType() == object_instance);
+			}
+		}
+		return res;
+	}
+	
+	static private boolean isLinked(Port port, Class dest)
+	{
+		boolean res = false;
+		List<Port> port_list = ArchitectureQueries.getInputPortsForElement(dest);
+		port_list.addAll(ArchitectureQueries.getOutputPortsForElement(dest));
+		
+		for(ConnectorEnd  cend : port.getEnds())
+		{
+			Connector connector = (Connector)cend.getOwner();
+			for(ConnectorEnd end : connector.getEnds())
+			{
+				Port tmp1 = (Port)end.getRole();
+				if(port_list.contains(tmp1))
+				{
+					//System.out.println("Port " + port.getName() + " is linked to " + dest.getName());
+					res = true;
+				}
+			}
+		}
+		
+		return res;
+	}
+	
+	static public List<Port> getPorts(Class classe)
+	{
+		LinkedList<Port> res = new LinkedList<Port>();
+		
+		res.addAll(ArchitectureQueries.getInputPortsForElement(classe));
+		res.addAll(ArchitectureQueries.getOutputPortsForElement(classe));
+		
+		for(Class super_class : classe.getSuperClasses())
+		{
+			res.addAll(getPorts(super_class));
+		}
+		return res;
+	}
+	
+	
+	static public Set<Class> BrowserPortConnection(Class src, Port port, Port prev)
+	{
+		HashSet<Class> result = new HashSet<Class>();
+		for(ConnectorEnd src_cend : port.getEnds())
+		{
+			//if(src_cend.getRole() != port)
+			//{
+				Connector con = (Connector)src_cend.getOwner();
+				for(ConnectorEnd cend : con.getEnds())
+				{
+					if(cend != src_cend)
+					{
+						Port dest_port = (Port)cend.getRole();
+						if(dest_port != null)
+						{
+							if(dest_port != prev && dest_port != port)
+							{
+								Class dest = (Class) dest_port.getOwner();
+								if(dest != null)
+								{
+									List<Class> super_classes = src.getSuperClasses();
+									if(super_classes.contains(dest) == false)
+									{
+										result.add(dest);
+										result.addAll(SpecificQueries.BrowserPortConnection(src, dest_port, port));
+									}
+								}
+							}
+						}
+					}
+				}
+			//}
+		}
+		return result;
+	}
+
+	static private Set<Class> getChildrenInstance(Class src)
+	{
+		HashSet<Class> result = new HashSet<Class>();
+		for(Property prop : src.getAllAttributes())
+		{
+			if(prop.getType() instanceof Class)
+			{
+				result.add((Class)prop.getType());
+				result.addAll(SpecificQueries.getChildrenInstance((Class)prop.getType()));
+			}
+		}
+		return result;
+	}
+	
+	static private void initInstanceTree(Model model)
+	{
+		HashSet<Class> classes = SpecificQueries.getAllModelClasses(model);
+		Class root = null;
+		for(Class classe : classes)
+		{
+			org.eclipse.papyrus.RobotML.Environment stereo = ElementUtil.getStereotypeApplication(classe, org.eclipse.papyrus.RobotML.Environment.class);
+			if(stereo != null)
+			{
+				root = classe;
+				break;
+			}
+		}
+		
+		if(root != null)
+			SpecificQueries._instanceTree = SpecificQueries.BrowseClassInstance(root, 0);
+	}
+	
+	static private HashSet<ComponentLevel> BrowseClassInstance(Class classe, int level)
+	{
+		HashSet<ComponentLevel> res = new HashSet<ComponentLevel>();
+		for(Property prop : classe.getAllAttributes())
+		{
+			if(prop.getType() instanceof Class)
+			{
+				Class inst = (Class)prop.getType();
+				res.add(new ComponentLevel(inst, level));
+				res.addAll(SpecificQueries.BrowseClassInstance(inst, level + 1));
+			}
+		}
+		return res;
 	}
 }

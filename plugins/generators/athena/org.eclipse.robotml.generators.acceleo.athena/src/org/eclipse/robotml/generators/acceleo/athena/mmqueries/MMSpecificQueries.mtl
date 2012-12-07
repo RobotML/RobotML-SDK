@@ -196,3 +196,39 @@
 [query public getOriginsPort(model : Model, classe : Class, port : Port) : Sequence(NamedElement) =
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getOriginsPort(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Port)', Sequence{model, classe, port})
 /]
+
+[query public isLinkedToParentInstance(model : Model, classe : Class, port : Port) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isLinkedToParentInstance(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Port)', Sequence{model, classe, port})
+/]
+
+[query public isLinkedToProperty(model : Model, classe : Class, port : Port) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isLinkedToProperty(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Port)', Sequence{model, classe, port})
+/]
+
+[query public getLinkedToProperty(model : Model, classe : Class, port : Port) : Property =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getLinkedToProperty(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Port)', Sequence{model, classe, port})
+/]
+
+[query public findPortOwner(model : Model, classe : Class, port : Port) : Property =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'findPortOwner(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Port)', Sequence{model, classe, port})
+/]
+
+[query public hasObjectInstanceConnection(model : Model, classe : Class, port : Port) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'hasObjectInstanceConnection(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Port)', Sequence{model, classe, port})
+/]
+
+[query public hasParentInstanceConnection(model : Model, classe : Class, port : Port) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'hasParentInstanceConnection(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Port)', Sequence{model, classe, port})
+/]
+
+[query public getObjectInstanceConnectionName(model : Model, classe : Class, port : Port) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getObjectInstanceConnectionName(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Port)', Sequence{model, classe, port})
+/]
+
+[query public getParentInstanceConnection(model : Model, classe : Class, port : Port) : Class =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getParentInstanceConnection(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Port)', Sequence{model, classe, port})
+/]
+
+[query public getPorts(classe : Class) : Sequence(Port) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getPorts(org.eclipse.uml2.uml.Class)', Sequence{classe})
+/]

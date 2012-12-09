@@ -1,6 +1,8 @@
 RobotML-SDK
 ===========
 
+Documentation of the project is available here: http://robotml.github.com/
+
 This repository includes every part of the RobotML development. It means:
 
   - installer: for the different Robotic middleware defined in the project to be installed onto the UBUNTU 12.04 OS

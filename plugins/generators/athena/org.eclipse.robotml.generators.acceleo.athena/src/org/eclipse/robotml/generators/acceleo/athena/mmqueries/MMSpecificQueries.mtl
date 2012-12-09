@@ -168,3 +168,31 @@
 [query public getFSMOpaqueBehavior(model : Model, sm : StateMachine) : Sequence(OpaqueBehavior) =
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getFSMOpaqueBehavior(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.StateMachine)', Sequence{model, sm})
 /]
+
+[query public getFSMStates(sm : StateMachine) : Sequence(Vertex) = 
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getFSMStates(org.eclipse.uml2.uml.StateMachine)', Sequence{sm})
+/]
+
+[query public isStartingState(state : Vertex) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isStartingState(org.eclipse.uml2.uml.Vertex)', Sequence{state})
+/]
+
+[query public isConnectedToOwner(port : Port, classe : Class, model : Model) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isConnectedToOwner(org.eclipse.uml2.uml.Port, org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Model)', Sequence{port, classe, model})
+/]
+
+[query public getReferences(model : Model, classe : Class) : Sequence(Port) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getReferences(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Class)', Sequence{model, classe})
+/]
+
+[query public isConnected(port : Port) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isConnected(org.eclipse.uml2.uml.Port)', Sequence{port})
+/]
+
+[query public hasValidConnection(port : Port) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'hasValidConnection(org.eclipse.uml2.uml.Port)', Sequence{port})
+/]
+
+[query public getOriginsPort(model : Model, classe : Class, port : Port) : Sequence(NamedElement) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getOriginsPort(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Port)', Sequence{model, classe, port})
+/]

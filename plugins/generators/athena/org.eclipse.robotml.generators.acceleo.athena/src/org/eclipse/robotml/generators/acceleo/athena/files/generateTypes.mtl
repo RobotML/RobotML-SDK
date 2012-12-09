@@ -116,7 +116,13 @@ validity [type.name/] is [getDataTypeValidity(type)/]
 [if(hasComment(ne))]
 [getCommentFromElement(ne)/]
 [/if]
-union [ne.name/] begin
-//Not defined in the model!
+[let dt : DataType = ne.oclAsType(DataType)]
+[let attributes : Set(Property) = dt.attribute]
+union [dt.name/] begin
+[for(prop : Property | attributes)]
+	[prop.type.name/][if(attributes->asSequence()->indexOf(prop) < attributes->size())],[/if]
+[/for]
+[/let]
 end
+[/let]
 [/template]

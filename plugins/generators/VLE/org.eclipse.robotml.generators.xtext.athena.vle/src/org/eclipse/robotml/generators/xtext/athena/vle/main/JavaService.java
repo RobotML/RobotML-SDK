@@ -498,4 +498,14 @@ public class JavaService {
 		return s.getCall() instanceof ifblock;
 	}
 	
+	public Boolean hasStateSet(prototypeDeclaration proto)
+	{
+		Boolean result = false;
+		for(architectureElement elt : proto.getDefinitions())
+		{
+			result |= (elt instanceof statesetDeclaration);
+		}
+		return result;
+	}
+	
 }

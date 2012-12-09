@@ -5,7 +5,27 @@
 # http://anr-proteus.fr
 #
 
-if [ 2 -gt $# ]; then
+check_and_install() {
+  if  dpkg -l $1 > /dev/null 2>&1  ;
+  then 
+    echo "$1 already installed"
+  else 
+    echo "Installing $1"
+    sudo apt-get -q -y install $1
+  fi
+}
+
+#
+# Installing python-gtk2, required for pygtk interface.
+#
+sudo apt-get update
+check_and_install "python-gtk2"
+
+#
+# Fetching login from input
+#
+if [ 2 -gt $# ]; 
+then
   echo "usage: $0 login password [pkg...]"
   echo "  proteus.bourges.univ-orleans.fr - anr-proteus.fr"
   exit 1
@@ -17,6 +37,9 @@ PASSW=${1}
 shift
 PACKG=$@
 
+#
+# Checking distribution
+#
 DISTRIBUTION=$(lsb_release -sc)
 if [ ! -d ~/.proteus ]; then
     mkdir ~/.proteus
@@ -104,7 +127,7 @@ echo "
 [INFO] Update APT cache
 -------------------------------------------------------------------------------"
 # update repo
-sudo apt-get update
+sudo apt-get -q update
 if [ 0 -ne $? ]; then
     read -p "[WARNING] It seems that APT could not update, continue anyway? [y/N]: " CONT
     if [ "$CONT" != "y"  ]; then
@@ -117,7 +140,7 @@ echo "
 [INFO] Upgrade
 -------------------------------------------------------------------------------"
 #sudo apt-get -q --force-yes -y upgrade
-sudo apt-get upgrade
+sudo apt-get --force-yes -q -y upgrade
 # check reboot required
 if [ -f /var/run/reboot-required ]; then
     echo "[WARNING] You might need to reboot (if you updated your kernel for instance)"
@@ -129,16 +152,18 @@ if [ -f /var/run/reboot-required ]; then
     fi
 fi
 
-echo ${PACKG}
-
 echo "
 -------------------------------------------------------------------------------
 [INFO] Install
 -------------------------------------------------------------------------------"
 # install
-sudo apt-get --force-yes -y install python-dev python-pip libyaml-dev python-yaml ${PACKG}
-# python-setuptools : easy_install
-# python-yaml : rosinstall
+check_and_install "python-dev"
+check_and_install "python-pip"
+check_and_install "libyaml-dev"
+check_and_install "python-yaml"
+
+sudo apt-get install ${PACKG}
+
 echo "
 -------------------------------------------------------------------------------
 [INFO] Install: apt-get install done
@@ -153,8 +178,12 @@ if ! grep -q "/usr/local/lib/python3/dist-packages" ~/.proteus/setup.sh; then
 fi
 
 echo "[INFO] check for rosinstall tool"
-if ! which rosinstall > /dev/null 2>&1 ; then
+check_and_install "python-pip"
+if ! which rosinstall > /dev/null 2>&1 ;
+then
     sudo pip install -U rosinstall
+else
+  echo "rosinstall ok"
 fi
 
 echo "
@@ -166,7 +195,7 @@ echo "
                         http://anr-proteus.fr
 -------------------------------------------------------------------------------"
 
-xdg-open http://bit.ly/proteus2
+# xdg-open http://bit.ly/proteus2
 
 exit 0
 

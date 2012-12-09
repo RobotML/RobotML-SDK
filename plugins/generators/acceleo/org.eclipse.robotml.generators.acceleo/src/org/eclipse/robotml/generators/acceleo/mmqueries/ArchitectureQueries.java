@@ -3,6 +3,7 @@ package org.eclipse.robotml.generators.acceleo.mmqueries;
 import java.util.List;
 import java.util.LinkedList;
 
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.Element;
@@ -665,4 +666,31 @@ public class ArchitectureQueries {
 			java.lang.System.out.println("\t\t* port stereotype has attribute: "+propSt.getName()+" - "+port.getValue(pst, propSt.getName()));
 		}							
 	}
+	
+	static public Boolean isAnAncestorOf(Class current_elt, Class other_elt)
+	{
+		Boolean result = false;
+		if(current_elt != null && other_elt != null)
+		{
+			if(current_elt == other_elt)
+			{
+				result = true;
+			}
+			else
+			{
+				for(Class parent : current_elt.getSuperClasses())
+				{
+					current_elt = parent;
+					if(other_elt == current_elt)
+					{
+						result = true;
+						break;
+					}
+				}
+			}
+		}
+		
+		return result;
+	}
+	
 }

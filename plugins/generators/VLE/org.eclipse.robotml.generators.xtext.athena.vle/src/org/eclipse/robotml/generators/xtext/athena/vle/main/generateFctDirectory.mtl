@@ -1,0 +1,121 @@
+[comment encoding = UTF-8 /]
+[module generateFctDirectory('http://www.xtext.org/AthenaDSL')]
+
+[template public generateFctDirectory(project : Project)]
+[file('generated/src/FunctionDirectory.cpp', false, 'UTF-8')]
+#include "FunctionDirectory.hpp"
+
+using namespace generated;
+FunctionDirectory* FunctionDirectory::_instance = NULL;
+
+
+/**
+ *
+ */
+extern "C" __EXPORT__ void  declareUserFunction(const string& name, void* f) {
+	FunctionDirectory::getInstance()->addFunction(name,f);
+}
+
+/**
+ *
+ */
+extern "C" __EXPORT__ void* getUserFunction(const string& name) {
+	return FunctionDirectory::getInstance()->getFunction(name);
+}
+
+[/file]
+
+[file('generated/src/FunctionDirectory.hpp', false, 'UTF-8')]
+#ifndef FunctionDirectory_H
+#define FunctionDirectory_H
+#include <map>
+#include <string>
+#include <iostream>
+
+#ifdef WIN32
+#include <windows.h>
+#else
+#include <dlfcn.h>
+#endif
+
+#include "Compatibility.hpp"
+
+using namespace std;
+
+namespace generated {
+
+class FunctionDirectory {
+private:
+	std::map<const std::string, void*> functions;
+	static FunctionDirectory* _instance;
+
+	FunctionDirectory() { }
+public:
+	void addFunction(const std::string& name, void* fct) { functions['['/]name[']'/] = fct; } 
+	void* getFunction(const std::string& name) {
+		std::map<std::string,void*>::iterator it = functions.find(name);
+	    if (it!=functions.end()) return (*it).second;
+	    else {
+			cout << "# getUserFunction failed for " << name << endl;
+			throw "getUserFunction failed for "+name;
+			return NULL;
+		}
+	}
+	unsigned int size() { return functions.size(); }
+
+	static FunctionDirectory* getInstance() {
+		if(FunctionDirectory::_instance == NULL) {
+			FunctionDirectory::_instance = new FunctionDirectory();		
+		}
+		return FunctionDirectory::_instance;
+	}
+};
+
+class LibraryLoader {
+private:
+	void* libhandle;
+public:
+	__EXPORT__ LibraryLoader(const char* libname) {
+		libhandle = 0;
+#ifdef WIN32
+		std::cout << "# loading library " << libname << std::endl;
+    	libhandle = LoadLibrary(libname);
+#else
+    	std::cout << "# loading library " << libname << std::endl;
+    	libhandle = dlopen(libname, RTLD_LAZY);
+    	std::cout << "# handle is: " << libhandle << std::endl;
+#endif
+
+    	if(!libhandle)
+      		throw("Library could not be loaded.");
+	}
+	__EXPORT__ ~LibraryLoader() {
+		if(libhandle){
+#ifdef WIN32
+			FreeLibrary((HINSTANCE)libhandle);
+#else
+			dlclose(libhandle);
+#endif
+		}
+	}
+	__EXPORT__ void* getFunction(char* funcName) {
+		void* func = 0;
+		if(libhandle){
+#ifdef WIN32
+			func = GetProcAddress((HINSTANCE)libhandle, funcName);
+#else
+			func = dlsym(libhandle, funcName);
+#endif
+		}
+
+		if(!func)
+			throw("Function could not be loaded.");
+
+    	return func;
+	}
+};
+}
+#endif /* FunctionDirectory_H*/
+[/file]
+[/template]
+

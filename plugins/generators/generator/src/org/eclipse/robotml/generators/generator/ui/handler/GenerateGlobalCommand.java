@@ -18,6 +18,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.robotml.generators.generator.ui.common.FileSynchronizer;
 import org.eclipse.robotml.generators.generator.ui.common.GenerateAll;
 import org.eclipse.robotml.generators.generator.ui.common.GeneratorScheduler;
 import org.eclipse.robotml.generators.generator.ui.xml.Configuration;
@@ -34,6 +35,8 @@ public class GenerateGlobalCommand extends AbstractTransactionalCommand {
 
 	/** The trunk target folder path. */
 	private final String _target;
+	
+	private FileSynchronizer _synchronizer = null;
 	
 	/**
 	 * Instantiates global generator command.
@@ -52,6 +55,7 @@ public class GenerateGlobalCommand extends AbstractTransactionalCommand {
 		Configuration.getInstance().setTransactionDomain(domain);
 		this._selection = selectedElement;
 		this._target = athenaTargetFolderPath;
+		this._synchronizer = new FileSynchronizer(domain);
 	}
 	
 	@Override

@@ -87,7 +87,7 @@ end
 [/if]
 [let dt : DataType = ne.oclAsType(DataType)]
 [for(prop : Property | dt.attribute)]
-define [type.name/] is [prop.type.name/]
+define [dt.name/] is [prop.type.name/]
 [/for]
 [/let]
 [/template]

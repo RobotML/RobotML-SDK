@@ -1,48 +1,58 @@
 [comment encoding = UTF-8 /]
 [module generate_Datatype_file('http://www.eclipse.org/uml2/3.0.0/UML')]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
+[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries/]
 
-[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::MMQueries/]
-
-[template public generate_Datatype_file(model : Model)]
-[file ('src/'+model.name.substitute(' ', '_')+'_DataTypes.h', false, 'UTF-8')]
-#ifndef _[model.name.toUpper()/]_DATATYPES_H_
-#define _[model.name.toUpper()/]_DATATYPES_H_
-#include <rtt/TaskContext.hpp>
-#include <ocl/Component.hpp>
-#include <numeric>
-[comment generating libraries  /]
-[for (elt : Element | model.allOwnedElements())]
-[if (isDataType(elt))]
-[setLibraries(elt)/]
+[template public generate_Datatype_file(c : Class, m: Model)]
+[for (elt : Element | getDataTypesInClass(c))]
+[let type: Type = elt]
+[if(isRobotMLDataType(m, type.name)  = false)]
+[file ( 'src/DataTypes/'+type.name.substitute(' ', '_')+'.hpp', false, 'UTF-8')]
+#ifndef _[type.name.toUpper()/]_DATATYPES_H_
+#define _[type.name.toUpper()/]_DATATYPES_H_
+#endif // _[type.name.toUpper()/]_DATATYPES_H_
+[/file]
 [/if]
+[/let]
 [/for]
-namespace [model.name.substitute(' ','_')/]_types{
-[for (elt : Element | model.allOwnedElements())]
-[if (isDataType(elt))]
+[comment]
+
+
+ 
+[for (elt : Element | model.allOwnedElements())] 
+[for (property : Property |getProperties1(elt))]
+	[setDataTypesLibraries(property)/] 
+[/for]
+[/for] 
+namespace [dt.name.substitute(' ','_')/]Types{
+
+[for (elt : Element | model.getElementsDataType())]
+
 [let n: NamedElement = elt]
 typedef struct{
+[/comment]
+
 [comment datatypes attributes /]
+[comment]
 [for (property : Property |getProperties1(elt))]
     [let type :Type = property.type]
 	[if (getParentType(property).toString().contains('sensor') or getParentType(property).toString().contains('std')
 			or getParentType(property).toString().contains('geometry') or getParentType(property).toString().contains('nav')
 			or getParentType(property).toString().contains('actionLib') or getParentType(property).toString().contains('stereo'))]
-	[property.visibility/] [getParentType(property).toString()/]::[type.name.toLower()/] [property.name/]
+	[property.visibility/] [getParentType(property).toString()/]::[type.name.toLower()/] [property.name/];
 	[/if]
-	[if not (getParentType(property).toString().contains('sensor') or getParentType(property).toString().contains('std')
-			or getParentType(property).toString().contains('geometry') or getParentType(property).toString().contains('nav')
-			or getParentType(property).toString().contains('actionLib') or getParentType(property).toString().contains('stereo'))]
-	[property.visibility/] [type.name.toLower()/] [property.name/]
+	[if (isRobotMLDataType(model,type.name) = false)]
+	[property.visibility/] [type.name.toLower()/] [property.name/];
 	[/if]
 	[/let]
 [/for]
 }[n.name.substituteAll(' ', '_')/];
 [addDataType(n.name.toString())/] 
 [/let]
-[/if]
 [/for]
 }
-#endif // _[model.name.toUpper()/]_DATATYPES_H_
-[/file]
 
+[/comment]
 [/template]

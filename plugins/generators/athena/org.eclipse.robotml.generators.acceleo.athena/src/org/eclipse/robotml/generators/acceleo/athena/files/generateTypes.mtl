@@ -34,7 +34,7 @@
 [getCommentFromElement(ne)/]
 [/if]
 basic [ne.name/] begin
-	[getAthenaDataTypeDeclaration(ne)/]
+[getAthenaDataTypeDeclaration(ne)/]
 end
 [/template]
 
@@ -45,15 +45,15 @@ end
 [/if]
 [let enum : Enumeration = ne.oclAsType(Enumeration)]
 basic [ne.name/] begin
-language CPP : "enum {
+	language CPP : "enum {
 [let literals : OrderedSet(EnumerationLiteral) = enum.ownedLiteral]
 [for(literal : EnumerationLiteral | literals)]
-[literal.name/]=[if((literal.specification = null) =(false) )][literal.specification.integerValue()/][/if][if(literals->indexOf(literal) < literals->size())],[/if]
+		[literal.name/]=[if((literal.specification = null) =(false) )][literal.specification.integerValue()/][/if][if(literals->indexOf(literal) < literals->size())],[/if]
 [/for]
-}" = "[literals->first().name/]"
+	}" = "[literals->first().name/]"
 [/let]
-language VLE : "Integer" = "0"
-lexicalCast CPP : "unsigned int"
+	language VLE : "Integer" = "0"
+	lexicalCast CPP : "unsigned int"
 end
 [/let]
 [/template]
@@ -66,21 +66,11 @@ end
 [let struct : DataType = ne.oclAsType(DataType)]
 struct [ne.name/] begin
 [for(prop : Property | struct.attribute)]
-[prop.type.name/] [prop.name/]
+	[prop.type.name/] [prop.name/]
 [/for]
 [/let]
 end
 [/template]
-
-[comment][template private generateUnknownType(model : Model)]
-[let types : Sequence(NamedElement) = getUnknownDataTypes(model)]
-	[for(type : NamedElement | types)]
-		[let data : DataType = type.oclAsType(DataType)]
-// [data.name/] == > unknown type !!!
-		[/let]
-	[/for]
-[/let]
-[/template][/comment]
 
 [comment]Container type generartion (array, vector and map)[/comment]
 [template private generateContainerType(ne : NamedElement)]

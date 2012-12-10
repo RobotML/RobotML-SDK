@@ -3,6 +3,7 @@
  */
 package org.eclipse.robotml.generators.acceleo.athena.mmqueries;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
@@ -148,8 +149,8 @@ public class DataTypeCollection extends Vector<NamedElement> {
 			String key = type_str.substring(index_begin, index_sep - 1);
 			String value = type_str.substring(index_sep + 1, index_end);
 			
-			res.add(key);
-			res.add(value);
+			if(res.contains(key) == false) res.add(key);
+			if(res.contains(value) == false) res.add(value);
 		}
 		else
 		{
@@ -158,7 +159,7 @@ public class DataTypeCollection extends Vector<NamedElement> {
 			int index_end = type_str.indexOf(">");
 			
 			type_str = type_str.substring(index_begin, index_end).trim();
-			res.add(type_str);
+			if(res.contains(type_str) == false) res.add(type_str);
 		}
 		
 		return res;
@@ -177,100 +178,6 @@ public class DataTypeCollection extends Vector<NamedElement> {
 		return res;
 	}
 	
-//	public void sortDataType()
-//	{
-//		for(int cpt = 0; cpt < this.size(); cpt++)
-//		{
-//			NamedElement elt = this.get(cpt);
-//			//structured datatype
-//			if(SpecificQueries.isStructuredType(elt) ||
-//					SpecificQueries.isDefineType(elt))
-//			{
-//				for(NamedElement child : ((DataType)elt).getAllAttributes())
-//				{
-//					if(isDefine(child) == false)
-//					{
-//						this.move(elt, cpt + 1);
-//						break;
-//					}
-//				}
-//			}
-//			else if(SpecificQueries.isUnionType(elt))
-//			{
-//				//TODO: Wait for union definition
-//			}
-//			else if(SpecificQueries.isContainerType(elt) == true)
-//			{
-//				//containers datatype
-//				String type = SpecificQueries.getContainerTypeDeclaration(elt);
-//				
-//				//type map
-//				if(type.startsWith("map"))
-//				{
-//					//type array and vector
-//					int index_begin = type.indexOf("<") + 1;
-//					int index_sep = type.indexOf(",");
-//					int index_end = type.indexOf(">") - 1;	
-//					
-//					String key = type.substring(index_begin, index_sep - 1);
-//					String value = type.substring(index_sep + 1, index_end);
-//					
-//					if(isDefine(key, cpt) == false || isDefine(value, cpt) == false)
-//					{
-//						this.move(elt, cpt + 1);
-//					}
-//				}
-//				else
-//				{
-//					//type array and vector
-//					int index_begin = type.indexOf("<") + 1;
-//					int index_end = type.indexOf(">") - 1;
-//					
-//					type = type.substring(index_begin, index_end).trim();
-//					if(isDefine(type, cpt) == false)
-//					{
-//						this.move(elt, cpt + 1);
-//					}
-//				}
-//			}
-//		}
-//	}
-//	
-//	private boolean isDefine(NamedElement ne)
-//	{	
-//		int index = this.indexOf(ne);
-//		if(index < 0)
-//		{
-//			//child datatype element, we test all element
-//			index = this.size();
-//		}
-//		boolean result = false;
-//		try
-//		{
-//			result = isDefine(ne.getName(), index);
-//		}
-//		catch(Exception e)
-//		{
-//			e.printStackTrace();
-//		}
-//		return result;
-//	}
-//	
-//	private boolean isDefine(String type_name, int index)
-//	{
-//		boolean result = false;
-//		for(int cpt = 0; cpt < index; cpt ++)
-//		{
-//			NamedElement elt = this.get(cpt);
-//			if(type_name.equals(elt.getName()) == true)
-//			{
-//				result = true;
-//				break;
-//			}
-//		}
-//		return result;
-//	}
-	
 	private void move(NamedElement ne, int index)
 	{
 		this.remove(ne);
@@ -282,5 +189,24 @@ public class DataTypeCollection extends Vector<NamedElement> {
 		{
 			this.insertElementAt(ne, index);
 		}
+	}
+	
+	@Override
+	public boolean addAll(Collection<? extends NamedElement> c)
+	{
+		for(NamedElement elt : c)
+		{
+			boolean isInserted = false;
+			for(NamedElement elt_this: this)
+			{
+				isInserted |= (elt_this.getName().equals(elt.getName()) == true);
+			}
+			
+			if(isInserted == false)
+			{
+				this.add(elt);
+			}
+		}
+		return true;
 	}
 }

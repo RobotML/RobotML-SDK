@@ -4,8 +4,7 @@ USE_UNSTABLE=0
 USERNAME=
 PASSWORD=
 
-while getopts "l:p:u" opt; do
- echo $opt ":" $OPTARG
+while getopts "l:p:h:u" opt; do
  case $opt in
  u)
   USE_UNSTABLE=1

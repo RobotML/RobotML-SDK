@@ -1,9 +1,7 @@
 Origin: Proteus
-Label: Proteus
-Suite: stable
-Codename: stable
-Version: all
+Label: Proteus apt repository
+Codename: precise
 Architectures: i386
-Components: main
-Description: depot de paquets du projet Proteus
-
+Components: stable unstable
+SignWith: yes
+Description: Stable repository of Proteus project.

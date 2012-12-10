@@ -1,0 +1,10 @@
+Package: proteus-base
+Version: 0.1
+Section: stable
+Priority: optional
+Architecture: i386
+Maintainer: contact@anr-proteus.fr
+Depends: build-essential, g++, cmake, python-pip, subversion, git-cvs, mercurial, python3.2-dev, python-yaml, libyaml-dev, ruby, rubygems, doxygen, ros-fuerte-ros-comm, openjdk-6-jdk, dpkg, python-sphinx, pandoc
+Homepage: http://anr-proteus.fr
+Description: Base package for PROTEUS
+

@@ -1,0 +1,10 @@
+Package: proteus-rtmaps
+Version: 0.1
+Section: stable
+Priority: optional
+Architecture: i386
+Maintainer: contact@anr-proteus.fr
+Depends: rtmaps
+Homepage: http://anr-proteus.fr
+Description: RTMaps for PROTEUS
+

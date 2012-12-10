@@ -1,0 +1,10 @@
+Package: proteus-morse
+Version: 0.1
+Section: stable
+Priority: optional
+Architecture: i386
+Maintainer: contact@anr-proteus.fr
+Depends: python3.2-dev, blender-proteus, openrobots-morse, ros-fuerte-ros-comm, python3-yaml
+Homepage: http://anr-proteus.fr
+Description: MORSE and ROS for PROTEUS
+

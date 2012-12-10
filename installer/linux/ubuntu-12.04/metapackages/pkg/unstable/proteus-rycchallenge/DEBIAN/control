@@ -1,0 +1,10 @@
+Package: proteus-rycchallenge
+Version: 0.2
+Section: unstable
+Priority: optional
+Architecture: i386
+Maintainer: contact@anr-proteus.fr
+Depends: proteus-base, proteus-morse, proteus-effibox, proteus-rtmaps, proteus-orocos, proteus-rycchallenge-data (>=0.1)
+Homepage: http://anr-proteus.fr
+Description: PROTEUS Robotic Youth Challenge
+

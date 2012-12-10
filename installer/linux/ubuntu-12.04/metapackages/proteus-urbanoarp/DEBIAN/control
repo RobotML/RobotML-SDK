@@ -1,9 +1,0 @@
-Package: proteus-urbanoarp
-Version: 0.1
-Section: devel
-Priority: optional
-Architecture: i386
-Maintainer: clement.fouque@lasmea.univ-bpclermont.fr
-Depends: proteus-base, proteus-cycabtk, proteus-effibox, proteus-urbanoarp-data
-Homepage: http://anr-proteus.fr
-Description: PROTEUS Urban OARP

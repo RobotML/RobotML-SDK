@@ -1,0 +1,10 @@
+Package: proteus-orocos
+Version: 0.2
+Section: devel
+Priority: optional
+Architecture: i386
+Maintainer: clement.fouque@lasmea.univ-bpclermont.fr
+Depends: ros-fuerte-ros-comm, libreadline-dev, omniorb, omniidl, omniorb-nameserver, libomniorb4-1, libomniorb4-dev, libomnithread3-dev, libomnithread3c2, gccxml, antlr, libantlr-dev, libxslt1-dev, liblua5.1-0-dev, ruby1.8-dev, libruby1.8, rubygems1.8
+Homepage: http://anr-proteus.fr
+Description: Orocos for PROTEUS
+

@@ -1,0 +1,10 @@
+Package: proteus-all
+Version: 0.1
+Section: stable
+Priority: optional
+Architecture: i386
+Maintainer: contact@anr-proteus.fr
+Depends: proteus-urbanoarp, proteus-airlandoarp, proteus-offroadoarp, proteus-interventionoarp, proteus-rycchallenge, proteus-base-eclipse, proteus-base-protege
+Homepage: http://anr-proteus.fr
+Description: All packages of PROTEUS
+

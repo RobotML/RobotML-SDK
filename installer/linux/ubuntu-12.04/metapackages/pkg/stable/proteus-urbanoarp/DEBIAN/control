@@ -1,0 +1,9 @@
+Package: proteus-urbanoarp
+Version: 0.1
+Section: stable
+Priority: optional
+Architecture: i386
+Maintainer: contact@anr-proteus.fr
+Depends: proteus-base, proteus-cycabtk, proteus-effibox, proteus-urbanoarp-data
+Homepage: http://anr-proteus.fr
+Description: PROTEUS Urban OARP

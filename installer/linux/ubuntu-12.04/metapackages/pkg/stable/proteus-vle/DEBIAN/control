@@ -1,0 +1,9 @@
+Package: proteus-vle
+Version: 0.2
+Section: stable
+Priority: optional
+Architecture: i386
+Maintainer: contact@anr-proteus.fr
+Depends: libgtkmm-2.4-dev, libglademm-2.4-dev, libgtksourceviewmm-3.0-dev, libboost-all-dev, vle-1.0
+Homepage: http://anr-proteus.fr
+Description: VLE for PROTEUS

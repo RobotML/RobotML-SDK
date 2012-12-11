@@ -18,7 +18,12 @@
 
 [if(isModelValid(model))]
 [searchUsedDataType(model)/]
-[if (isAutomaticGeneration(null))]
+[generateDataTypeFile(model)/]
+[generateFunctionFile(model)/]
+[generateProcessingFile(model)/]
+[generatePrototypeFile(model)/]
+[generateOutputSimulatorFile(model)/]
+[comment][if (isAutomaticGeneration(null))]
 [file(model.name + '.adl', false, 'UTF-8')]
 //
 //	Model [model.name/]
@@ -91,7 +96,7 @@ language MATLAB
 //
 [generateWrapper(model)/]
 [/file]
-[/if]
+[/if][/comment]
 [else]
 [let msg : String = 'Can\'t generate model, because not have an environment component.']
 [showErrorMessageDlg(msg)/]
@@ -112,7 +117,7 @@ wrapper [classe.name/] begin
 [comment]		link-library { [lib.path.toString()/] }[/comment]
 [let ops : Sequence(Operation) = classe.eAllContents(Operation)]
 	implements-functions {
-[for(op : Operation | ops)]
+[for(op : Operation | ops)][searchUsedDataType(model)/]
 							[op.name/][if(ops->indexOf(op) < ops->size())],[/if]
 [/for]
 	}
@@ -125,4 +130,57 @@ end
 [/if]
 [/for]
 [/let]
+[/template]
+
+[template private generateDataTypeFile(model : Model)]
+[file('DatatypeDecl.adl', false, 'UTF-8')]
+[generateTypes(model)/]
+[/file]
+[/template]
+
+[template private generateFunctionFile(model : Model)]
+[file('FunctionDecl.adl', false, 'UTF-8')]
+[generateFunctions(model)/]
+[/file]
+[/template]
+
+[template private generateProcessingFile(model : Model)]
+[file('ProcessingDecl.adl', false, 'UTF-8')]
+[generateProcessings(model)/]
+[/file]
+[/template]
+
+[template private generatePrototypeFile(model : Model)]
+[file(model.name + '.adl', false, 'UTF-8')]
+language CPP
+language VLE
+language MATLAB
+
+import "DatatypeDecl.adl"
+import "FunctionDecl.adl"
+import "ProcessingDecl.adl"
+
+[generatePrototypes(model)/]
+
+//Wrappers
+[generateWrapper(model)/]
+[/file]
+[/template]
+
+[template private generateOutputSimulatorFile(model : Model)]
+[file('.' + model.name + '.adl.output', false, 'UTF-8')]
+language CPP
+language VLE
+language MATLAB
+
+[generateTypes(model)/]
+
+[generateFunctions(model)/]
+
+[generateProcessings(model)/]
+
+[generatePrototypes(model)/]
+
+[generateWrapper(model)/]
+[/file]
 [/template]

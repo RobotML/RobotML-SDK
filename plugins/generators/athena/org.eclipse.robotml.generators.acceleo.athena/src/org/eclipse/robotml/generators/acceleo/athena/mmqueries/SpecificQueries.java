@@ -160,6 +160,16 @@ public class SpecificQueries {
 			decl = "language CPP : \"float\" = \"0.f\"\r\n";
 			decl += "language VLE : \"Double\" = \"0.0\"";
 			SpecificQueries._mapDeclaration.put("Real32", decl);
+			//Bool
+			decl = "include MATLAB : \"matrix.h\"\r\n";
+			decl += "language MATLAB : \"mxINT8_CLASS\" = \"0\"\r\n";
+			decl += "language CPP : \"bool\" = \"false\"\r\n";
+			decl += "language VLE : \"Boolean\" = \"false\"";
+			SpecificQueries._mapDeclaration.put("Bool", decl);
+			//Byte
+			decl = "language CPP : \"char\" = \"0\"\r\n";
+			decl += "language VLE : \"Integer\" = \"0\"";
+			SpecificQueries._mapDeclaration.put("Byte", decl);
 		}
 	}
 	
@@ -1093,71 +1103,91 @@ public class SpecificQueries {
 		HashSet<NamedElement> usedType = new HashSet<NamedElement>();
 		
 		HashSet<DataType> datatypes = SpecificQueries.getAllModelDataTypes(model);
-//		Set<String> neededTypes = searchUsedDataTypeFromModel(model);
-//		
-//		HashSet<DataType> tmp = new HashSet<DataType>();
-//		HashSet<DataType> savedTypes = new HashSet<DataType>();
-//		for(DataType dt : datatypes)
-//		{
-//			String dt_name = dt.getName();
-//			if(neededTypes.contains(dt_name))
-//			{
-//				//On verifie si le type est présent dans la liste si 'est un container ou un struct
-//				if(SpecificQueries.isContainerType(dt))
-//				{
-//					
-//				}
-//				else if(SpecificQueries.isStructuredType(dt))
-//				{
-//					
-//				}
-//			}
-//			else if(savedTypes.contains(dt) == false)
-//			{
-//				tmp.add(dt);
-//			}
-//		}
+		Set<String> neededTypes = searchUsedDataTypeFromModel(model);
 		
-		for(DataType dt :datatypes)
-		{	
-			System.out.println("DataType : " + dt.getName());
-			if(usedType.contains(dt) || 
-					SpecificQueries.isDataTypeUsed(model, dt))
+		HashSet<DataType> tmp = new HashSet<DataType>();
+		HashSet<DataType> savedTypes = new HashSet<DataType>();
+		for(DataType dt : datatypes)
+		{
+			String dt_name = dt.getName();
+			if(neededTypes.contains(dt_name))
 			{
-				System.out.println("Add " + dt.getName());
-				usedType.add(dt);
-				if(dt.getAllAttributes().size() > 0)
+				//On verifie si le type est présent dans la liste si 'est un container ou un struct
+				if(SpecificQueries.isContainerType(dt))
 				{
-					for(Property prop : dt.getAllAttributes())
+					//recherche le type dans les datatypes
+					for(DataType dt_bis : datatypes)
 					{
-						if(prop.getType() != null)
+						for(String type : SpecificQueries.getContainerType(dt))
 						{
-							if(unusedType.contains(prop.getType()))
+							if(type.equals(dt_bis.getName()))
 							{
-								unusedType.remove(prop.getType());
-								usedType.add(prop.getType());
-								System.out.println("Oups is used : " + prop.getType().getName());
-							}
-							else
-							{
-								if(usedType.contains(prop.getType()) == false)
-								{
-									usedType.add(prop.getType());
-									System.out.println("Add : " + prop.getType().getName());
-								}
+								savedTypes.add(dt_bis);
 							}
 						}
 					}
 				}
+				else if(SpecificQueries.isStructuredType(dt))
+				{
+					for(Property prop : dt.getAllAttributes())
+					{
+						savedTypes.add((DataType)prop.getType());
+					}
+				}
 			}
-			else
+			else if(savedTypes.contains(dt) == false)
 			{
-				unusedType.add(dt);
-				System.out.println("Is unused ... " + dt.getName());
+				tmp.add(dt);
 			}
 		}
 		
-		SpecificQueries.sortDataType(usedType);
+		datatypes.removeAll(tmp);
+		datatypes.addAll(savedTypes);
+		
+		
+		HashSet<NamedElement> toSort = new HashSet<NamedElement>(datatypes);
+		SpecificQueries.sortDataType(toSort);
+		
+//		for(DataType dt :datatypes)
+//		{	
+//			System.out.println("DataType : " + dt.getName());
+//			if(usedType.contains(dt) || 
+//					SpecificQueries.isDataTypeUsed(model, dt))
+//			{
+//				System.out.println("Add " + dt.getName());
+//				usedType.add(dt);
+//				if(dt.getAllAttributes().size() > 0)
+//				{
+//					for(Property prop : dt.getAllAttributes())
+//					{
+//						if(prop.getType() != null)
+//						{
+//							if(unusedType.contains(prop.getType()))
+//							{
+//								unusedType.remove(prop.getType());
+//								usedType.add(prop.getType());
+//								System.out.println("Oups is used : " + prop.getType().getName());
+//							}
+//							else
+//							{
+//								if(usedType.contains(prop.getType()) == false)
+//								{
+//									usedType.add(prop.getType());
+//									System.out.println("Add : " + prop.getType().getName());
+//								}
+//							}
+//						}
+//					}
+//				}
+//			}
+//			else
+//			{
+//				unusedType.add(dt);
+//				System.out.println("Is unused ... " + dt.getName());
+//			}
+//		}
+//		
+//		SpecificQueries.sortDataType(usedType);
 		
 		
 		
@@ -2072,5 +2102,38 @@ public class SpecificQueries {
 	static public void showErrorMessageDlg(String msg)
 	{
 		JOptionPane.showMessageDialog(null, msg, "ERROR", JOptionPane.ERROR_MESSAGE);
+	}
+	
+	static private List<String> getContainerType(NamedElement type)
+	{
+		LinkedList<String> res = new LinkedList<String>();
+		//containers datatype
+		String type_str = SpecificQueries.getContainerTypeDeclaration(type);
+		
+		//type map
+		if(type_str.startsWith("map"))
+		{
+			//type array and vector
+			int index_begin = type_str.indexOf("<") + 1;
+			int index_sep = type_str.indexOf(",");
+			int index_end = type_str.indexOf(">") - 1;	
+			
+			String key = type_str.substring(index_begin, index_sep - 1);
+			String value = type_str.substring(index_sep + 1, index_end);
+			
+			if(res.contains(key) == false) res.add(key);
+			if(res.contains(value) == false) res.add(value);
+		}
+		else
+		{
+			//type array and vector
+			int index_begin = type_str.indexOf("<") + 1;
+			int index_end = type_str.indexOf(">");
+			
+			type_str = type_str.substring(index_begin, index_end).trim();
+			if(res.contains(type_str) == false) res.add(type_str);
+		}
+		
+		return res;
 	}
 }

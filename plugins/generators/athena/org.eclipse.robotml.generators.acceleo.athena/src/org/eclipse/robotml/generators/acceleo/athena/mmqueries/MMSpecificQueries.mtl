@@ -232,3 +232,11 @@
 [query public getPorts(classe : Class) : Sequence(Port) =
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getPorts(org.eclipse.uml2.uml.Class)', Sequence{classe})
 /]
+
+[query public isModelValid(model : NamedElement) : Boolean = 
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isModelValid(org.eclipse.uml2.uml.NamedElement)', Sequence{model})
+/]
+
+[query public showErrorMessageDlg(msg : String) : OclVoid = 
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'showErrorMessageDlg(java.lang.String)', Sequence{msg})
+/]

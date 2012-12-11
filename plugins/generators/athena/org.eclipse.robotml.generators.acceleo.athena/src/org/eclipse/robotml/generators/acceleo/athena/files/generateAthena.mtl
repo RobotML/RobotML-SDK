@@ -14,7 +14,9 @@
 
 [template public generateAthena(model : Model)]
 [comment @main /] 
-	[comment][sortUsedDataType(model)/][/comment]
+	
+
+[if(isModelValid(model))]
 [searchUsedDataType(model)/]
 [if (isAutomaticGeneration(null))]
 [file(model.name + '.adl', false, 'UTF-8')]
@@ -89,6 +91,11 @@ language MATLAB
 //
 [generateWrapper(model)/]
 [/file]
+[/if]
+[else]
+[let msg : String = 'Can\'t generate model, because not have an environment component.']
+[showErrorMessageDlg(msg)/]
+[/let]
 [/if]
 [/template]
 

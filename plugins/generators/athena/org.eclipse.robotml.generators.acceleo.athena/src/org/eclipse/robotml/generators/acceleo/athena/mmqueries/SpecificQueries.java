@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import javax.swing.JOptionPane;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.papyrus.RobotML.Algorithm;
@@ -1060,13 +1062,13 @@ public class SpecificQueries {
 				if(result == true) System.out.println("DataType " + dataToTest.getName() + " is used on container " + decl);
 			}
 		}
-		else if(ne instanceof Parameter)
-		{
-			Parameter param = (Parameter)ne;
-			if(param.getType() != null)
-				result = dataToTest.getName().equals(param.getType().getName());
-			if(result == true) System.out.println("DataType " + dataToTest.getName() + " is used on parameter " + param.getType());
-		}
+//		else if(ne instanceof Parameter)
+//		{
+//			Parameter param = (Parameter)ne;
+//			if(param.getType() != null)
+//				result = dataToTest.getName().equals(param.getType().getName());
+//			if(result == true) System.out.println("DataType " + dataToTest.getName() + " is used on parameter " + param.getType());
+//		}
 		return result; 
 	}
 	
@@ -1091,6 +1093,30 @@ public class SpecificQueries {
 		HashSet<NamedElement> usedType = new HashSet<NamedElement>();
 		
 		HashSet<DataType> datatypes = SpecificQueries.getAllModelDataTypes(model);
+//		Set<String> neededTypes = searchUsedDataTypeFromModel(model);
+//		
+//		HashSet<DataType> tmp = new HashSet<DataType>();
+//		HashSet<DataType> savedTypes = new HashSet<DataType>();
+//		for(DataType dt : datatypes)
+//		{
+//			String dt_name = dt.getName();
+//			if(neededTypes.contains(dt_name))
+//			{
+//				//On verifie si le type est présent dans la liste si 'est un container ou un struct
+//				if(SpecificQueries.isContainerType(dt))
+//				{
+//					
+//				}
+//				else if(SpecificQueries.isStructuredType(dt))
+//				{
+//					
+//				}
+//			}
+//			else if(savedTypes.contains(dt) == false)
+//			{
+//				tmp.add(dt);
+//			}
+//		}
 		
 		for(DataType dt :datatypes)
 		{	
@@ -1993,5 +2019,58 @@ public class SpecificQueries {
 			}
 		}
 		return res;
+	}
+	
+	static public Set<String> searchUsedDataTypeFromModel(NamedElement elt)
+	{
+		HashSet<String> types = new HashSet<String>();
+		TreeIterator<EObject> iter = elt.eAllContents();
+		while(iter.hasNext())
+		{
+			EObject elt_iter = (EObject)iter.next();
+			if(elt_iter instanceof Parameter)
+			{
+				types.add(((Parameter)elt_iter).getType().getName());
+			}
+			else if(elt_iter instanceof Property)
+			{
+				types.add(((Property)elt_iter).getType().getName());
+			}
+			else if(elt_iter instanceof Port)
+			{
+				types.add(((Port)elt_iter).getType().getName());
+			}
+			else if(elt_iter instanceof org.eclipse.uml2.uml.PackageImport)
+			{
+				PackageImport imp = (PackageImport)elt_iter;
+				types.addAll(searchUsedDataTypeFromModel((NamedElement)imp.getImportedPackage()));
+			}
+			else if(elt_iter instanceof NamedElement)
+			{
+				types.addAll(searchUsedDataTypeFromModel((NamedElement)elt_iter));
+			}
+		}
+		return types;
+	}
+	
+	static public Boolean isModelValid(NamedElement model)
+	{
+		Boolean result = false;
+		TreeIterator<EObject> iter = model.eAllContents();
+		while(iter.hasNext())
+		{
+			EObject obj = iter.next();
+			if(obj instanceof Class)
+			{
+				org.eclipse.papyrus.RobotML.Environment env = ElementUtil.getStereotypeApplication((Class)obj, org.eclipse.papyrus.RobotML.Environment.class);
+				result |= (env != null);
+			}
+		}
+		return result;
+	}
+	
+	static public void showErrorMessageDlg(String msg)
+	{
+		JOptionPane.showMessageDialog(null, msg, "ERROR", JOptionPane.ERROR_MESSAGE);
 	}
 }

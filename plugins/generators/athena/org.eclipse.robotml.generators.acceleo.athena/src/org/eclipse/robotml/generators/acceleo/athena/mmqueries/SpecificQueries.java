@@ -30,6 +30,7 @@ import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.PackageImport;
+import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StateMachine;
@@ -1038,6 +1039,7 @@ public class SpecificQueries {
 				result = dataToTest.getName().equals(prop.getType().getName());
 //			else
 //				System.out.println("Type null for the property : " + prop.getName());
+			if(result == true) System.out.println("DataType " + dataToTest.getName() + " is used on property " + prop.getName());
 		}
 		else if(ne instanceof Port)
 		{
@@ -1046,6 +1048,7 @@ public class SpecificQueries {
 				result = dataToTest.getName().equals(port.getType().getName());
 //			else
 //				System.out.println("Type null for the port : " + port.getName());
+			if(result == true) System.out.println("DataType " + dataToTest.getName() + " is used on port " + port.getName());
 		}
 		else if(ne instanceof DataType)
 		{	
@@ -1053,7 +1056,16 @@ public class SpecificQueries {
 			{
 				String decl = SpecificQueries.getContainerTypeDeclaration(ne);
 				result = decl.contains(dataToTest.getName());
+				
+				if(result == true) System.out.println("DataType " + dataToTest.getName() + " is used on container " + decl);
 			}
+		}
+		else if(ne instanceof Parameter)
+		{
+			Parameter param = (Parameter)ne;
+			if(param.getType() != null)
+				result = dataToTest.getName().equals(param.getType().getName());
+			if(result == true) System.out.println("DataType " + dataToTest.getName() + " is used on parameter " + param.getType());
 		}
 		return result; 
 	}
@@ -1082,10 +1094,11 @@ public class SpecificQueries {
 		
 		for(DataType dt :datatypes)
 		{	
-			//System.out.println("DataType : " + dt.getName());
+			System.out.println("DataType : " + dt.getName());
 			if(usedType.contains(dt) || 
 					SpecificQueries.isDataTypeUsed(model, dt))
 			{
+				System.out.println("Add " + dt.getName());
 				usedType.add(dt);
 				if(dt.getAllAttributes().size() > 0)
 				{
@@ -1097,11 +1110,15 @@ public class SpecificQueries {
 							{
 								unusedType.remove(prop.getType());
 								usedType.add(prop.getType());
+								System.out.println("Oups is used : " + prop.getType().getName());
 							}
 							else
 							{
-								usedType.add(prop.getType());
-								//System.out.println("Add : " + prop.getType().getName());
+								if(usedType.contains(prop.getType()) == false)
+								{
+									usedType.add(prop.getType());
+									System.out.println("Add : " + prop.getType().getName());
+								}
 							}
 						}
 					}
@@ -1110,6 +1127,7 @@ public class SpecificQueries {
 			else
 			{
 				unusedType.add(dt);
+				System.out.println("Is unused ... " + dt.getName());
 			}
 		}
 		

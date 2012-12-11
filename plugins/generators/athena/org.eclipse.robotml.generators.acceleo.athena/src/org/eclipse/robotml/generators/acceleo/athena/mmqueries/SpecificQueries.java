@@ -2136,4 +2136,9 @@ public class SpecificQueries {
 		
 		return res;
 	}
+	
+	static public Boolean isModelSaved()
+	{
+		return (JOptionPane.showConfirmDialog(null, "Did you save your model ?", "INFORMATION", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION);
+	}
 }

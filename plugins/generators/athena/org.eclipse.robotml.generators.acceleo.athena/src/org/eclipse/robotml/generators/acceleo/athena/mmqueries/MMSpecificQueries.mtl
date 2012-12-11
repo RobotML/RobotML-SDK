@@ -240,3 +240,7 @@
 [query public showErrorMessageDlg(msg : String) : OclVoid = 
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'showErrorMessageDlg(java.lang.String)', Sequence{msg})
 /]
+
+[query public isModelSaved() : Boolean = 
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isModelSaved()', Sequence{})
+/]

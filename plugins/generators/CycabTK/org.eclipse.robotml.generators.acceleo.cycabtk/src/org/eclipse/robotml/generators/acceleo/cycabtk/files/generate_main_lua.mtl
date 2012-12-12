@@ -56,7 +56,14 @@ phyEng = cycabtk.StdPhysicsEngine "phyEng"
 	[for( inst: InstanceSpecification | getInstanceSpecifications(model))]
 		[comment][inst.name/] : [inst.classifier.name/] [inst.clientDependency.name/][/comment]
 		[let elt : Class =  findClassInModel(model, inst.classifier.name->asSequence()->first())]
-		[if(inheritsFrom(elt, 'RoboticSystem') or inheritsFrom(elt, 'Robot'))]
+		[if(inheritsFrom(elt, 'Robot'))]
+require "[model.name/]/[inst.classifier.name/]_"
+[inst.name/] = [inst.classifier.name/]_( "[inst.name/]" )
+			[let parentName : String = getParentName(inst)]
+[inst.name/]:MakeChildOf( "[parentName/]" )
+			[/let]
+		[/if]
+		[if(inheritsFrom(elt, 'RoboticSystem'))]
 require "[model.name/]/[inst.classifier.name/]"
 [inst.name/] = [inst.classifier.name/]( "[inst.name/]" )
 			[let parentName : String = getParentName(inst)]

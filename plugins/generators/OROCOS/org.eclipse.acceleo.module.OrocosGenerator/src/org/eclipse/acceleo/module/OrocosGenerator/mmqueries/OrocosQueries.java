@@ -17,9 +17,14 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.papyrus.RobotML.Robot;
 import org.eclipse.papyrus.RobotML.ServiceFlowKind;
 import org.eclipse.papyrus.RobotML.ServicePort;
 import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
+
+import org.eclipse.papyrus.RobotML.Transition;
+import org.eclipse.papyrus.RobotML.State;
+
 import org.eclipse.robotml.generators.acceleo.mmqueries.DataTypeQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
@@ -39,15 +44,17 @@ import org.eclipse.uml2.uml.FunctionBehavior;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.OpaqueBehavior;
 import org.eclipse.uml2.uml.Operation;
+import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.State;
+//import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.Transition;
+//import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.Vertex;
 
@@ -77,6 +84,29 @@ public class OrocosQueries {
 	}
 	
 	/**
+	 * Returns all the properties in a given class
+	 * except subcomponents and ports
+	 * @param c
+	 * @param elt
+	 * @return properties list
+	 */ 
+	public List<Property> getProperties(Class c, Element elt) {
+		LinkedList<Property> found_props = new LinkedList<org.eclipse.uml2.uml.Property>();
+		LinkedList<Property> properties = (LinkedList<Property>) ArchitectureQueries.getAllSubComponentsInClass(c);
+		for (Element child : elt.getOwnedElements()) {
+			if (child instanceof NamedElement					
+					&& GeneralQueries.isProperty(child)
+					&& (!(child instanceof org.eclipse.uml2.uml.Port))) {
+				Property found_port = (org.eclipse.uml2.uml.Property)child;
+				if (!(properties.contains(found_port))) 
+					found_props.add(found_port);				
+			}
+		}
+		return found_props;
+	}
+
+	
+	/**
 	 * Returns the service ports of the given component
 	 */
 	public List<Port> getServicePort(Element elt) {
@@ -92,23 +122,39 @@ public class OrocosQueries {
 		return found_input_ports;
 	}
 	/**
-	 * Returns all the properties of the given class except ports 
+	 * Returns all the properties of the given element except ports 
 	 */
-	public List<Property> getProperties(Class c, Element elt) {
-		LinkedList<Property> found_ports = new LinkedList<org.eclipse.uml2.uml.Property>();
-		LinkedList<Property> properties = (LinkedList<Property>) ArchitectureQueries.getAllSubComponentsInClass(c);
+	public List<Property> getProperties(Element elt) {
+		LinkedList<Property> found_props = new LinkedList<org.eclipse.uml2.uml.Property>();
 		for (Element child : elt.getOwnedElements()) {
-			if (child instanceof NamedElement					
-					&& GeneralQueries.isProperty(child)
-					&& (!(child instanceof org.eclipse.uml2.uml.Port))) {
-				Property found_port = (org.eclipse.uml2.uml.Property)child;
-				if (!(properties.contains(found_port))) 
-					found_ports.add(found_port);				
-			}
+		if (child instanceof NamedElement 
+		&& child instanceof org.eclipse.uml2.uml.Property
+		&& GeneralQueries.isProperty(child)
+		&& (!(child instanceof org.eclipse.uml2.uml.Port))) {
+		Property found_prop = (org.eclipse.uml2.uml.Property)child;
+		found_props.add(found_prop);
 		}
-		return found_ports;
+		}
+		return found_props;
+	
 	}
 
+	/**
+	 * Returns all the operations of a given element 
+	 */
+	public List<Operation> getOperations(Element elt) {
+		LinkedList<Operation> found_ops = new LinkedList<org.eclipse.uml2.uml.Operation>();
+		for (Element child : elt.getOwnedElements()) {
+		if (child instanceof NamedElement 
+		&& child instanceof org.eclipse.uml2.uml.Operation) {
+		Operation found_op = (org.eclipse.uml2.uml.Operation)child;
+		found_ops.add(found_op);
+		}
+		}
+		return found_ops;
+	}
+	
+	
 	/**
 	 * 	Returns all the operations in a given class
 	 */
@@ -116,6 +162,26 @@ public class OrocosQueries {
 		return myClass.getAllOperations();
 	}
 
+
+	/**
+	 * Returns all the interfaces defined in the model	
+	 * @param model
+	 * @return
+	 */
+		public List<Interface> getRobotMLInterfaces (Model model) {
+			LinkedList<Interface> found_interface = new LinkedList<org.eclipse.uml2.uml.Interface>();
+			for (Element elt : model.getOwnedElements()) {
+				if (elt instanceof org.eclipse.uml2.uml.Interface) {
+
+				//if (GeneralQueries.isInterface(elt)) {
+					Interface found_i = (org.eclipse.uml2.uml.Interface)elt;
+					found_interface.add(found_i);;
+				}
+			}
+			return found_interface;
+		}
+	
+	
 	/**
 	 * Returns all the operations of a given interface
 	 */
@@ -155,8 +221,54 @@ public class OrocosQueries {
 		}
 		return typeName;		
 	}
-
 	
+/**
+ * returns the parameters of a given operation
+ * @param op
+ * @return
+ */
+	public List<Element> getOperationInputParameters (Operation op) {
+	LinkedList<Element>	allelem =new LinkedList<Element>();
+	int size = op.getOwnedParameters().size();
+	
+	for (int i=0; i<size; i++) {
+		Parameter param = op.getOwnedParameters().get(i);
+		if (param.getDirection() != ParameterDirectionKind.get(ParameterDirectionKind.RETURN)) {
+			allelem.add(param);
+		}
+	}
+	return allelem;
+	}
+	
+/**
+ * returns the return parameters of a given operation 
+ */
+	public List<Element> getOperationReturnParameters (Operation op) {
+		LinkedList<Element>	allelem =new LinkedList<Element>();
+		int size = op.getOwnedParameters().size();
+		
+		for (int i=0; i<size; i++) {
+			Parameter param = op.getOwnedParameters().get(i);
+			if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.RETURN)) {
+				allelem.add(param);
+			}
+		}
+		return allelem;
+	}
+	
+	/**
+	 * returns the type of a given operation parameter	
+	 */
+	public String getOperationParameterType (Operation op, Parameter p) {
+		String res = "";
+		
+		for (Parameter param : op.getOwnedParameters()) {
+			if (param == p) {
+				res = p.getType().getName();
+			}
+		}
+		return res;
+	}
 	
 	
 	/**
@@ -368,6 +480,185 @@ public class OrocosQueries {
 		}
 		return found;
 	}*/
+	
+	/**
+	 * converts robotML libraries into ROS topics 	
+	 * 
+	 */
+	public LinkedList<java.lang.String> setDataTypesLibraries(Property elt){
+		
+	    String res="";
+		Property p=(Property)elt;
+		String parentType = getParentType(p).toString();
+		if(parentType.contains("std")||parentType.contains("sensor")||parentType.contains("stereo")||parentType.contains("geometry")||
+			parentType.contains("nav")||parentType.contains("actionLib"))
+		    res="#include<"+parentType+"/"+p.getType().getName()+".h>";
+			res = res + "\n";
+			if(!propTypes.contains(res))
+				propTypes.add(res);
+			
+		return propTypes;
+	}
+		
+		
+		
+		
+		
+	public LinkedList<java.lang.String> setLibraries(Element c){		
+			LinkedList<Element>	allelem =new LinkedList<Element>();
+			boolean includeOperation= false;
+			for(Element elt: c.allOwnedElements()){
+				if(!GeneralQueries.isDataType(elt))
+				{
+					allelem.add(elt);
+				}
+			}
+			
+			for(Element elt: allelem){
+
+			if(GeneralQueries.isPort(elt))
+			{
+				if(!includePort){	
+					alldata.add("#include <rtt/Port.hpp>\n");
+					includePort= true;
+				 }
+
+				String res="";
+				Port p=(Port)elt;
+				String parentType = getParentType(p).toString();
+				//ROS topics
+				if(parentType.contains("std")||parentType.contains("sensor")||parentType.contains("stereo")||parentType.contains("geometry")||
+					parentType.contains("nav")||parentType.contains("actionLib")){	
+					res="#include<"+parentType+"/"+p.getType().getName()+".h>\n";
+					res = res + "\n";
+					if(!alldata.contains(res))
+						alldata.add(res);
+				}
+				//user data type type
+				/*else if(isADataType(p.getType().getName()) && !includeDataTypes){
+					res = "#include"+'"'+parentType+".h"+'"';
+					res = res + "\n";
+					includeDataTypes = true;
+				}*/	
+			}
+			
+			if(GeneralQueries.isProperty(elt))
+			{    String res="";
+			Property p=(Property)elt;
+			String parentType = getParentType(p).toString();
+			if(parentType.contains("std")||parentType.contains("sensor")||parentType.contains("stereo")||parentType.contains("geometry")||
+				parentType.contains("nav")||parentType.contains("actionLib"))
+			res="#include<"+parentType+"/"+p.getType().getName()+".h>";
+	/*		else if(isADataType(p.getType().getName()) && !includeDataTypes){
+				res = "#include"+'"'+parentType+".hpp"+'"'+"\n";
+				res = res + "\n";
+				includeDataTypes = true;
+				if(!alldata.contains(res))
+					alldata.add(res);
+				}*/
+			} 
+			if(isOperation(elt))
+			{
+				if(!includeOperation)
+				{	Interface I = (Interface) elt.getOwner();
+					alldata.add("#include <rtt/Operation.hpp>\n");
+					alldata.add("#include "+I.getName()+".h"+'"'+"\n");
+					includeOperation = true;
+				}
+				}
+			}
+			return alldata;
+		}
+
+	/**
+	 * This function initializes the includes of the ops file with the port types 
+	 */
+
+	public LinkedList<java.lang.String> setRttLibraries(Element c){
+		/*
+		LinkedList<Element>	allelem =new LinkedList<Element>();
+		
+		for(Element elt: c.allOwnedElements()){
+			if(!GeneralQueries.isDataType(elt))
+			{
+				allelem.add(elt);
+			}
+		}
+		
+		for(Element elt: allelem){
+
+		if(GeneralQueries.isPort(elt))
+		{
+			String res="";
+			Port p=(Port)elt;
+		
+			String parentType = getParentType(p).toString();
+			//ROS topics
+			if(parentType.contains("std")||parentType.contains("sensor")||parentType.contains("stereo")||parentType.contains("geometry")||
+				parentType.contains("nav")||parentType.contains("actionLib")){	
+				res="import ("+'"'+"rtt_"+parentType+'"'+")\n";
+				if(!rttData.contains(res))
+					rttData.add(res);
+			}
+		
+		}
+		}*/
+		rttData.add("import ("+'"'+"rtt_sensor_msgs"+'"'+")\n");
+		rttData.add("import ("+'"'+"rtt_nav_msgs"+'"'+")\n");
+		rttData.add("import ("+'"'+"rtt_geometry_msgs"+'"'+")\n");
+		rttData.add("import ("+'"'+"rtt_std_msgs"+'"'+")\n");
+		return rttData;
+	}
+
+
+	public DataType getPropertyDataType(Property prop) {
+		Type t = prop.getType();
+		if (t!= null && t instanceof DataType) {
+			return (DataType)t;
+		}
+		return null;
+	}
+
+	public DataType getOperationDataType(Operation op) {
+		Type t = op.getType();
+		if (t!= null && t instanceof DataType) {
+			return (DataType)t;
+		}
+		return null;
+	}
+
+	public boolean isExistingType(Type t){
+		for(Element elt: addedDataTypes){
+			if(((Type)elt).equals(t))
+				return true;
+		}
+		return false;
+	}
+
+	public void addType(Type t){
+		addedDataTypes.add(t);
+	}
+
+	public List<NamedElement> getDataTypesInClass(Class c)
+	{	LinkedList<NamedElement> found_elts = new LinkedList<NamedElement>();	
+		for (org.eclipse.uml2.uml.Element prop : c.getAllAttributes()) {
+			java.lang.System.out.println(prop);
+
+		if (GeneralQueries.isProperty(prop)){
+			Type t = ((Property)prop).getType();
+			java.lang.System.out.println(t);
+			found_elts.add(t);
+		}	
+		
+		else if (GeneralQueries.isPort(prop)){ 
+			Type t = ((Port)prop).getType();
+			java.lang.System.out.println(t);
+			found_elts.add(t);
+		}
+		}
+		return found_elts;
+	}
+
 	/**
 	 * Function to get a component's state machines
 	 * @param clazz the class in which the component is described
@@ -383,38 +674,14 @@ public class OrocosQueries {
 		return stateMachinesList;
 	}
 
-	/**
-	 * Function to get all states in a StateMachine
-	 * @param stateMachine the state machine from which we need the states
-	 * @return the list of states in this state machine
-	 */
-	public List<State> getStates(StateMachine stateMachine){
-		List<State> stateList = new LinkedList<State>();
-		for(Vertex v : stateMachine.getRegions().get(0).getSubvertices()){
-			if(v instanceof State)
-				stateList.add((State) v);
-		}
-		return stateList;
-	}
-
-	/**
-	 * Function to get all transitions in a StateMachine
-	 * @param stateMachine the state machine from which we need the transitions
-	 * @return the list of transitions in this state machine
-	 */
-	public List<Transition> getTransitions(StateMachine stateMachine){
-		List<Transition> transitionList = new LinkedList<Transition>();
-		transitionList.addAll(stateMachine.getRegions().get(0).getTransitions());
-		return transitionList;
-	}
-
+		
 	/**
 	 * Predicate to know if a state possesses entry function
 	 * @param state the state in which we look
 	 * @return true if there is an entry function, else false 
 	 */
 	public boolean hasEntry(State state){
-		return state.getEntry()!=null;
+		return state.getBase_State().getEntry()!=null;
 	}
 
 	/**
@@ -423,7 +690,7 @@ public class OrocosQueries {
 	 * @return true if there is an exit function, else false 
 	 */
 	public boolean hasExit(State state){
-		return state.getExit()!=null;
+		return state.getBase_State().getExit()!=null;
 	}
 
 	/**
@@ -433,7 +700,7 @@ public class OrocosQueries {
 	 */
 	public String getEntry(State state){
 		if(hasEntry(state)){
-			return ((FunctionBehavior) state.getEntry()).getBodies().get(0);
+			return ((FunctionBehavior) state.getBase_State().getEntry()).getBodies().get(0);
 		}else return "";
 	}
 
@@ -445,20 +712,24 @@ public class OrocosQueries {
 	 */
 	public String getExit(State state){
 		if(hasExit(state)){
-			return  ((FunctionBehavior) state.getExit()).getBodies().get(0);
+			return  ((FunctionBehavior) state.getBase_State().getExit()).getBodies().get(0);
 		}
 		else return "";
 	}
 
 	/**
-	 * Predicate to know if a transition possesses triggers
+	 * Checks whether a transition possesses triggers
 	 * @param transition the transition in which we look
 	 * @return true if there is at least one trigger specified in the model, else false
 	 */
+	/* Specific to UML
 	public boolean hasTriggers(Transition transition){
 		return ((transition.getTriggers().size())>0);
 	}
-
+*/
+	public boolean hasTriggers(org.eclipse.papyrus.RobotML.Transition transition){
+		return ((transition.getBase_Transition().getTriggers().size())>0);
+	}
 	/**
 	 * Predicate to know if the specified Behavior is a state machine
 	 * @param b the behavior in test
@@ -474,7 +745,7 @@ public class OrocosQueries {
 	 * @return true if there is a run function
 	 */
 	public boolean hasRun(State state){
-		return state.getDoActivity()!=null;
+		return state.getBase_State().getDoActivity()!=null;
 	}
 
 	/**
@@ -483,7 +754,7 @@ public class OrocosQueries {
 	 * @return a string containing the body
 	 */
 	public String getRun(State state){
-		return ((FunctionBehavior)state.getDoActivity()).getBodies().get(0);
+		return ((FunctionBehavior)state.getBase_State().getDoActivity()).getBodies().get(0);
 	}
 
 	/**
@@ -506,7 +777,7 @@ public class OrocosQueries {
 			else
 				return typeName.toLowerCase();
 		}		
-		else if(owner.equals("ecore")) {//edatatypes
+		else if(owner.equals("ecore")) {
 			if (typeName.equals("Boolean"))
 				return "bool";
 			else
@@ -518,8 +789,52 @@ public class OrocosQueries {
 		return result;
 
 	}
-
-
+/**
+ * Converts the selected type into C++ type
+ * @param type
+ * @return
+ */
+	public String convertType(String typeName){
+		if(typeName.contains("int")//Int, UInt, int32, uint16 and so on
+			|| typeName.contains("float")//float, float32 and float64
+			|| typeName.equalsIgnoreCase("double"))
+				return "double";
+	    if (typeName.contains("Bool")) return "bool";
+		if(typeName.isEmpty() || typeName.equalsIgnoreCase("invalid"))
+				return "void";
+		else
+				return typeName;
+	}	
+	
+	/**
+	 * Returns the associated operation to the given guard
+	 */
+	public Operation getAssociatedOperation(Operation o){
+	String opName = o.getName();
+	Class c = o.getClass_();
+	
+	for(Operation elt : getOperations(c)){
+		if(elt.getName().equals(opName))
+			return (Operation) elt;
+	}
+	return null;	
+	}
+	
+	/**
+	 * Returns the body operation defined in the model
+	 * @param op
+	 * @return
+	 */
+	public List<Behavior> getOperationMethod(Operation op){
+		List<Behavior> behaviors = new LinkedList<Behavior>();
+		for(Behavior elt : op.getMethods()){
+				java.lang.System.out.println("elt" + elt);
+				behaviors.add(elt);
+		}
+		return behaviors;	
+		}
+	
+	
 	/**
 	 * Function to generate variable that may be used in lua fsm
 	 * for reading/writing to the component's ports
@@ -535,192 +850,6 @@ public class OrocosQueries {
 					+"= rtt.Variable(\""+getLUAType(port.getType())+"\")\n";
 			cpt++;			
 		}
-
-
 		return toReturn;
 	}
-
-   /**
-    * This function initializes the includes of the component file with the port types, operation types and 
-    * properties types
-    * 
-    */
-
-/**
- * converts robotML libraries into ROS topics 	
- * 
- */
-public LinkedList<java.lang.String> setDataTypesLibraries(Property elt){
-	
-    String res="";
-	Property p=(Property)elt;
-	String parentType = getParentType(p).toString();
-	if(parentType.contains("std")||parentType.contains("sensor")||parentType.contains("stereo")||parentType.contains("geometry")||
-		parentType.contains("nav")||parentType.contains("actionLib"))
-	    res="#include<"+parentType+"/"+p.getType().getName()+".h>";
-		res = res + "\n";
-		if(!propTypes.contains(res))
-			propTypes.add(res);
-		
-	return propTypes;
-}
-	
-	
-	
-	
-	
-public LinkedList<java.lang.String> setLibraries(Element c){		
-		LinkedList<Element>	allelem =new LinkedList<Element>();
-		boolean includeOperation= false;
-		for(Element elt: c.allOwnedElements()){
-			if(!GeneralQueries.isDataType(elt))
-			{
-				allelem.add(elt);
-			}
-		}
-		
-		for(Element elt: allelem){
-
-		if(GeneralQueries.isPort(elt))
-		{
-			if(!includePort){	
-				alldata.add("#include <rtt/Port.hpp>\n");
-				includePort= true;
-			 }
-
-			String res="";
-			Port p=(Port)elt;
-			String parentType = getParentType(p).toString();
-			//ROS topics
-			if(parentType.contains("std")||parentType.contains("sensor")||parentType.contains("stereo")||parentType.contains("geometry")||
-				parentType.contains("nav")||parentType.contains("actionLib")){	
-				res="#include<"+parentType+"/"+p.getType().getName()+".h>\n";
-				res = res + "\n";
-				if(!alldata.contains(res))
-					alldata.add(res);
-			}
-			//user data type type
-			/*else if(isADataType(p.getType().getName()) && !includeDataTypes){
-				res = "#include"+'"'+parentType+".h"+'"';
-				res = res + "\n";
-				includeDataTypes = true;
-			}*/	
-		}
-		
-		if(GeneralQueries.isProperty(elt))
-		{    String res="";
-		Property p=(Property)elt;
-		String parentType = getParentType(p).toString();
-		if(parentType.contains("std")||parentType.contains("sensor")||parentType.contains("stereo")||parentType.contains("geometry")||
-			parentType.contains("nav")||parentType.contains("actionLib"))
-		res="#include<"+parentType+"/"+p.getType().getName()+".h>";
-/*		else if(isADataType(p.getType().getName()) && !includeDataTypes){
-			res = "#include"+'"'+parentType+".hpp"+'"'+"\n";
-			res = res + "\n";
-			includeDataTypes = true;
-			if(!alldata.contains(res))
-				alldata.add(res);
-			}*/
-		} 
-		if(isOperation(elt))
-		{
-			if(!includeOperation)
-			{	Interface I = (Interface) elt.getOwner();
-				alldata.add("#include <rtt/Operation.hpp>\n");
-				alldata.add("#include "+I.getName()+".h"+'"'+"\n");
-				includeOperation = true;
-			}
-			}
-		}
-		return alldata;
-	}
-
-/**
- * This function initializes the includes of the ops file with the port types 
- */
-
-public LinkedList<java.lang.String> setRttLibraries(Element c){
-	/*
-	LinkedList<Element>	allelem =new LinkedList<Element>();
-	
-	for(Element elt: c.allOwnedElements()){
-		if(!GeneralQueries.isDataType(elt))
-		{
-			allelem.add(elt);
-		}
-	}
-	
-	for(Element elt: allelem){
-
-	if(GeneralQueries.isPort(elt))
-	{
-		String res="";
-		Port p=(Port)elt;
-	
-		String parentType = getParentType(p).toString();
-		//ROS topics
-		if(parentType.contains("std")||parentType.contains("sensor")||parentType.contains("stereo")||parentType.contains("geometry")||
-			parentType.contains("nav")||parentType.contains("actionLib")){	
-			res="import ("+'"'+"rtt_"+parentType+'"'+")\n";
-			if(!rttData.contains(res))
-				rttData.add(res);
-		}
-	
-	}
-	}*/
-	rttData.add("import ("+'"'+"rtt_sensor_msgs"+'"'+")\n");
-	rttData.add("import ("+'"'+"rtt_nav_msgs"+'"'+")\n");
-	rttData.add("import ("+'"'+"rtt_geometry_msgs"+'"'+")\n");
-	rttData.add("import ("+'"'+"rtt_std_msgs"+'"'+")\n");
-	return rttData;
-}
-
-
-public DataType getPropertyDataType(Property prop) {
-	Type t = prop.getType();
-	if (t!= null && t instanceof DataType) {
-		return (DataType)t;
-	}
-	return null;
-}
-
-public DataType getOperationDataType(Operation op) {
-	Type t = op.getType();
-	if (t!= null && t instanceof DataType) {
-		return (DataType)t;
-	}
-	return null;
-}
-
-public boolean isGeneratedDataType(Type t){
-	boolean generated = false;
-	for(Element elt: addedDataTypes){
-		if(((Type)elt).equals(t))
-			generated = true;
-	}
-	if(!generated)
-		addedDataTypes.add(t);
-	return generated;
-}
-
-
-public List<NamedElement> getDataTypesInClass(Class c)
-{	LinkedList<NamedElement> found_elts = new LinkedList<NamedElement>();	
-	for (org.eclipse.uml2.uml.Element prop : c.getAllAttributes()) {
-		java.lang.System.out.println(prop);
-
-	if (GeneralQueries.isProperty(prop)){
-		Type t = ((Property)prop).getType();
-		java.lang.System.out.println(t);
-		found_elts.add(t);
-	}	
-	
-	else if (GeneralQueries.isPort(prop)){ 
-		Type t = ((Port)prop).getType();
-		java.lang.System.out.println(t);
-		found_elts.add(t);
-	}
-	}
-	return found_elts;
-}
 }

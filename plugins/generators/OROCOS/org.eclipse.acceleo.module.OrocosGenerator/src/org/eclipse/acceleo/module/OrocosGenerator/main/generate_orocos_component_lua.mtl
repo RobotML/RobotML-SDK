@@ -7,10 +7,11 @@
 [import org::eclipse::acceleo::module::OrocosGenerator::main::generate_FSM /]
 
 [template public generateOrocosComponentLua(c : Class, root_model : Model)]
+[generate_Datatype_file(c, root_model)/]
 [for (b : Behavior | c.ownedBehavior )]
 	[if (b.isFSM())]
 	[let sm : StateMachine = b.oclAsType(StateMachine)]
-	[generateFSM(c,sm)/]
+	[generateFSM(root_model, c,sm)/]
 	[/let]
 	[/if]
 [/for]

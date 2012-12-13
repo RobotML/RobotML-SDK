@@ -12,14 +12,14 @@
 [for (b : Behavior | c.ownedBehavior )]
 	[if (b.isFSM())]
 	[let sm : StateMachine = b.oclAsType(StateMachine)]
-	[generateFSM(sm)/]
+	[generateFSM(root_model, c, sm)/]
 	[/let]
 	[/if]
 [/for]
 
 [comment we do not generate orocos components for actuators and sensors /]
 [file ( 'src/'+c.name+'/'+c.name+'.hpp', false, 'UTF-8')]
-[setLibraries(c)/]
+[comment] [setLibraries(c)/] [/comment]
 #include <rtt/TaskContext.hpp>
 #include <ocl/Component.hpp>
 #include <iostream>
@@ -74,7 +74,7 @@ class [c.name/]
 		[/for]
 	[/let]
 
-[comment operation declaration/]// Operations 
+[comment]// Operations 
 	[let elt : Element = c.oclAsType(Element)]
 			[for (sp : Port | getServicePort())]				
 				[let interface : Interface = sp.type]
@@ -94,9 +94,9 @@ class [c.name/]
 			[/for]
 		[/let]
 
-	
-
-	[comment attributes & properties declaration/]
+	[/comment]
+[comment]
+	// attributes & properties declaration
 	[let elt : Element = c.oclAsType(Element)]
 		[for (property : Property | getProperties(c, elt))]
 		[if(getNameType(property.type)) = '']
@@ -104,7 +104,7 @@ class [c.name/]
 		[/if]
  		[/for]
  	[/let]
-
+[/comment]
 	
 	
 	[comment constructor/]// Constructor

@@ -48,13 +48,9 @@
 	[/let]
 [/for]
 
-
-[comment]
-
-[for (interface : Interface | getProteusInterfaceModels(model))]	
+[for (interface : Interface | getRobotMLInterfaces(model))]	
 	[generateOrocosInterfaceCpp(interface,model)/]
 [/for]
-[/comment]
 
 [comment]
 For generating xml file	

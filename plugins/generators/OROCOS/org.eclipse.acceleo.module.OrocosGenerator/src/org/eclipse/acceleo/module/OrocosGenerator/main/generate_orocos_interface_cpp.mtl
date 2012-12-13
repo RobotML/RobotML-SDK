@@ -32,7 +32,13 @@ namespace [i.namespace.name.substitute(' ', '_')/]	 {
 
 		[comment operation declaration/]
 		[for (op : Operation | i.getAllOperations())]	
-		virtual [getNameType(op.type)/] [op.name/] ([getOperationSignature(op)/]) = 0;	
+		[comment] virtual [getNameType(op.type)/] [op.name/] ([getOperationSignature(op)/]) = 0; [/comment]
+	    virtual [op.visibility/]	[convertType(op.type.name)/] [op.name/] (
+		[for (input: Element | getOperationInputParameters(op))]
+			[let i : Parameter = input]
+			[i.name/] [convertType(getOperationParameterType(op, i))/],
+			[/let]
+		[/for]) = 0;	
 		[/for]
 
 		[comment constructor/]

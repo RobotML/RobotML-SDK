@@ -25,9 +25,20 @@
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getDataTypesInClass(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
 
-[query public isGeneratedDataType(t : Type) : Boolean =
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isGeneratedDataType(org.eclipse.uml2.uml.Type)', Sequence{t})
+[query public convertType(type: String) : String =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'convertType(java.lang.String)', Sequence{type})
 /]
+
+[query public getRobotMLInterfaces (m : Model) : Sequence(Interface) =
+        invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getRobotMLInterfaces(org.eclipse.uml2.uml.Model)', Sequence{m})
+/]
+ 
+
+[query public isExistingType(t : Type) : Boolean =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isExistingType(org.eclipse.uml2.uml.Type)', Sequence{t})
+/]
+[query public addType(t : Type) : OclAny = 
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries','addType(org.eclipse.uml2.uml.Type)',Sequence{t})/]
 
 [query public isConnectedActuator(st : String ) : Boolean =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isConnectedActuator(java.lang.String)', Sequence{st})
@@ -40,13 +51,22 @@
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperations(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
 
+[query public getOperations(elt : Element) : Sequence(Operation) =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperations(org.eclipse.uml2.uml.Element)', Sequence{elt})
+/]
 [query public getInterfaceOperations(i : Interface) : Sequence(Operation) =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getInterfaceOperations(org.eclipse.uml2.uml.Interface)', Sequence{i})
 /]
 
-[query public getProperties(c : Class, elt : Element) : Sequence(Property) =
-        invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getProperties(org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Element)', Sequence{elt})
+[query public getProperties(elt : Element) : Sequence(Property) =
+        invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getProperties(org.eclipse.uml2.uml.Element)', Sequence{elt})
 /]
+
+
+[query public getProperties(c : Class, elt : Element) : Sequence(Property)=
+        invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getProperties(org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Element)', Sequence{c, elt})
+/]
+
 
 [query public getServicePort(elt : Element) : Sequence(Port) =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getServicePort(org.eclipse.uml2.uml.Element)', Sequence{elt})
@@ -58,6 +78,18 @@
 
 [query public getTypeServicePort(port : Port) : String =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getTypeServicePort(org.eclipse.uml2.uml.Port)', Sequence{port})
+/]
+
+[query public getOperationInputParameters(op : Operation) : Sequence(NamedElement) = 
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationInputParameters(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
+/]
+
+[query public getOperationReturnParameters(op : Operation) : Sequence(NamedElement) = 
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationReturnParameters(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
+/]
+
+[query public getOperationParameterType(op : Operation, p: Parameter) : String = 
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationParameterType(org.eclipse.uml2.uml.Operation, org.eclipse.uml2.uml.Parameter)', Sequence{op}) 
 /]
 
 [query public getOperationSignature(op : Operation) : String = 
@@ -72,12 +104,8 @@
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationSignatureName(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
 /]
 
-[query public getRobotMLInterfaceModels(model : Model) : Sequence(Interface) =
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'getRobotMLInterfaceModels(org.eclipse.uml2.uml.Model)', Sequence{model})
-/]
-
 [query public getNameType(type : Type) : String =
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'getNameType(org.eclipse.uml2.uml.Type)', Sequence{type})
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getNameType(org.eclipse.uml2.uml.Type)', Sequence{type})
 /]
 
 
@@ -161,18 +189,20 @@
 					state machines queries 
 /]
 
+[query public getOperationMethod(op : Operation) : Sequence(Behavior)=
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationMethod(org.eclipse.uml2.uml.Operation)', Sequence{op})
+/]
+
 [query public hasStateMachine(c : Class) : Boolean =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'hasStateMachine(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
 [query public getStateMachines(clazz : Class) : Sequence(StateMachine)= 
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'getStateMachines(org.eclipse.uml2.uml.Class)', Sequence{clazz})
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getStateMachines(org.eclipse.uml2.uml.Class)', Sequence{clazz})
 /]
-[query public getStates(sm : StateMachine) : Sequence(State)= 
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'getStates(org.eclipse.uml2.uml.StateMachine)', Sequence{sm})
+[query public getAssociatedOperation(op : Operation) : Operation= 
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getGuardOperation(org.eclipse.uml2.uml.Operation)', Sequence{op})
 /]
-[query public getTransitions(sm : StateMachine) : Sequence(Transition)= 
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'getTransitions(org.eclipse.uml2.uml.StateMachine)', Sequence{sm})
-/]
+
 [query public hasEntry(s : State) : Boolean= 
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'hasEntry(org.eclipse.uml2.uml.State)', Sequence{s})
 /]
@@ -186,8 +216,9 @@
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'getExit(org.eclipse.uml2.uml.State)', Sequence{s})
 /]
 [query public hasTriggers(tr : Transition) : Boolean= 
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'hasTriggers(org.eclipse.uml2.uml.State)', Sequence{tr})
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'hasTriggers(org.eclipse.papyrus.RobotML.Transition)', Sequence{tr})
 /]
+
 [query public isFSM(b: Behavior) : Boolean= 
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'isFSM(org.eclipse.uml2.uml.Behavior)', Sequence{b})
 /]
@@ -213,4 +244,8 @@
 
 [query public getFullDataType(type: Type) : String =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'getFullDataType(org.eclipse.uml2.uml.Type)', Sequence{type})
+/]
+
+[query public getAllOpaqueBehaviorFromModel(m : Model) : Sequence(OpaqueBehavior) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.OrocosQueries', 'getAllOpaqueBehaviorFromModel(org.eclipse.uml2.uml.Model)', Sequence{m})
 /] 

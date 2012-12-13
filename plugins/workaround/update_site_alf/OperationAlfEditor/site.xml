@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.papyrus.uml.textedit.operation.feature_1.0.0.201210231651.jar" id="org.eclipse.papyrus.uml.textedit.operation.feature" version="1.0.0.201210231651"/>
+</site>

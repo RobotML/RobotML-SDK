@@ -3,7 +3,6 @@
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries/]
 
-[import org::eclipse::robotml::generators::acceleo::athena::files::generateImport/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::generateTypes/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::generateFunctions/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::generateProcessings/]

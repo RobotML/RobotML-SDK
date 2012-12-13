@@ -84,8 +84,8 @@
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationInputParameters(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
 /]
 
-[query public getOperationReturnParameters(op : Operation) : Sequence(NamedElement) = 
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationReturnParameters(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
+[query public getOperationOutputParameters(op : Operation) : Sequence(NamedElement) = 
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationOutputParameters(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
 /]
 
 [query public getOperationParameterType(op : Operation, p: Parameter) : String = 
@@ -180,8 +180,8 @@
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'setLibraries(org.eclipse.uml2.uml.Element)', Sequence{class})
 /]
 
-[query public setDataTypesLibraries(class : Element) : String =
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'setDataTypesLibraries(org.eclipse.uml2.uml.Element)', Sequence{class})
+[query public setROSLibraries(class : Element) : String =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'setROSLibraries(org.eclipse.uml2.uml.Element)', Sequence{class})
 /] 
  
 

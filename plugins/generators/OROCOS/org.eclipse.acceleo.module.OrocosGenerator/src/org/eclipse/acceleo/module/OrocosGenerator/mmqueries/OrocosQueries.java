@@ -233,7 +233,7 @@ public class OrocosQueries {
 	
 	for (int i=0; i<size; i++) {
 		Parameter param = op.getOwnedParameters().get(i);
-		if (param.getDirection() != ParameterDirectionKind.get(ParameterDirectionKind.RETURN)) {
+		if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.IN)) {
 			allelem.add(param);
 		}
 	}
@@ -243,13 +243,13 @@ public class OrocosQueries {
 /**
  * returns the return parameters of a given operation 
  */
-	public List<Element> getOperationReturnParameters (Operation op) {
+	public List<Element> getOperationOutputParameters (Operation op) {
 		LinkedList<Element>	allelem =new LinkedList<Element>();
 		int size = op.getOwnedParameters().size();
 		
 		for (int i=0; i<size; i++) {
 			Parameter param = op.getOwnedParameters().get(i);
-			if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.RETURN)) {
+			if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.OUT)) {
 				allelem.add(param);
 			}
 		}
@@ -262,9 +262,10 @@ public class OrocosQueries {
 	public String getOperationParameterType (Operation op, Parameter p) {
 		String res = "";
 		
-		for (Parameter param : op.getOwnedParameters()) {
-			if (param == p) {
-				res = p.getType().getName();
+		for (Element param : op.getOwnedElements()) {
+			if (param instanceof Parameter) {
+				if(((Parameter) param).getName().equals(p.getName()))
+					res = p.getType().getName();
 			}
 		}
 		return res;
@@ -485,7 +486,7 @@ public class OrocosQueries {
 	 * converts robotML libraries into ROS topics 	
 	 * 
 	 */
-	public LinkedList<java.lang.String> setDataTypesLibraries(Property elt){
+	public LinkedList<java.lang.String> setROSLibraries(Element elt){
 		
 	    String res="";
 		Property p=(Property)elt;
@@ -500,10 +501,33 @@ public class OrocosQueries {
 		return propTypes;
 	}
 		
+	public LinkedList<java.lang.String> setLibraries(Element c){		
+		LinkedList<String> allelem =new LinkedList<String>();
+		for(Element elt: c.allOwnedElements()){
+			/*if (elt instanceof org.eclipse.uml2.uml.DataType && !DataTypeQueries.isPrimitiveType(elt)) {
+			}*/
+			Type t = null;
+			if(GeneralQueries.isPort(elt)){
+				Port port = (Port) elt;
+				t = port.getType();
+				
+			}
+
+			if(GeneralQueries.isProperty(elt)){
+				Property prop = (Property) elt;
+				t = prop.getType();
+			}
+			
+			if(t instanceof org.eclipse.uml2.uml.DataType && !DataTypeQueries.isPrimitiveType(t)){
+				String res = "#include" + '"'+ "DataTypes/"+ t.getName() +".h"+'"';
+				allelem.add(res);
+			}
+		}
+		return allelem;
+	}
 		
 		
-		
-		
+	/*	
 	public LinkedList<java.lang.String> setLibraries(Element c){		
 			LinkedList<Element>	allelem =new LinkedList<Element>();
 			boolean includeOperation= false;
@@ -540,7 +564,7 @@ public class OrocosQueries {
 					res = res + "\n";
 					includeDataTypes = true;
 				}*/	
-			}
+	/*		}
 			
 			if(GeneralQueries.isProperty(elt))
 			{    String res="";
@@ -556,7 +580,7 @@ public class OrocosQueries {
 				if(!alldata.contains(res))
 					alldata.add(res);
 				}*/
-			} 
+	/*		} 
 			if(isOperation(elt))
 			{
 				if(!includeOperation)
@@ -568,7 +592,8 @@ public class OrocosQueries {
 				}
 			}
 			return alldata;
-		}
+		}*/
+		
 
 	/**
 	 * This function initializes the includes of the ops file with the port types 

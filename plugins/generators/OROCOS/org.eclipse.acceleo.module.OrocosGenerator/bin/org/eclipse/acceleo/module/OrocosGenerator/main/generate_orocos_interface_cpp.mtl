@@ -1,0 +1,52 @@
+[comment encoding = UTF-8 /]
+[module generate_orocos_interface_cpp('http://www.eclipse.org/uml2/3.0.0/UML','http://Papyrus/RobotML/1')]
+[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries /]
+
+
+[template public generateOrocosInterfaceCpp(i : Interface, root_model : Model)]
+
+[file ( 'src/'+i.name+'/'+i.name+'.hpp', false, 'UTF-8')]
+#include <rtt/TaskContext.hpp>
+#include <rtt/Port.hpp>
+#include <rtt/Operation.hpp>
+#include <ocl/Component.hpp>
+#include <numeric>
+
+using namespace std;
+using namespace RTT;
+//in case of datatypes use, uncomment the using namespace command below
+[let model : Model = getRootModel(root_model)]
+//using namespace [model.name.substitute(' ', '_')/]_types;
+[/let]
+namespace [i.namespace.name.substitute(' ', '_')/]	 {
+
+	class [i.name/] 
+		: public RTT::TaskContext 
+	{
+		[comment attribut & property declaration/]
+		[let elt : Element = i.oclAsType(Element)]
+		[for (property : Property | i.getAllAttributes())]
+		[property.visibility/] [getNameType(property.type)/] [property.name/];
+		[/for]
+		[/let] 
+
+		[comment operation declaration/]
+		[for (op : Operation | i.getAllOperations())]	
+		[comment] virtual [getNameType(op.type)/] [op.name/] ([getOperationSignature(op)/]) = 0; [/comment]
+	    virtual [op.visibility/]	[convertType(op.type.name)/] [op.name/] (
+		[for (input: Element | getOperationInputParameters(op))]
+			[let i : Parameter = input]
+			[i.name/] [convertType(getOperationParameterType(op, i))/],
+			[/let]
+		[/for]) = 0;	
+		[/for]
+
+		[comment constructor/]
+		[i.name/] (const std::string& name) = 0;
+		virtual ~[i.name/]();
+	};
+
+}
+[/file]
+
+[/template]

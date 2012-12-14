@@ -4,8 +4,6 @@
 *.war
 *.ear
 *.emtl
-*.jar
-
 plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo/bin/*
 <<<<<<< HEAD
 plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo.athena/bin/*

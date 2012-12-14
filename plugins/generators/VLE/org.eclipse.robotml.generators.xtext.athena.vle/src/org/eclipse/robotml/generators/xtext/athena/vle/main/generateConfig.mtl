@@ -25,3 +25,15 @@
 [/file]
 [/template]
 
+[template public generateXMLConfigValue(project : Project)]
+[file('generated/exp/configTemplate.xml', false, 'UTF-8')]
+<config>
+	<user-libraries>
+[for(wrapper : wrapperDeclaration | project.wrappers)]
+	<library>../lib/[wrapper.name/].so</library>
+[/for]
+	</user-libraries>
+</config>
+[/file]
+[/template]
+

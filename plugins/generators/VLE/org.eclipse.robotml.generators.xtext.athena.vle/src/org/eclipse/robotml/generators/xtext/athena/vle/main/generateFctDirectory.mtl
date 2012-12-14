@@ -8,26 +8,13 @@
 using namespace generated;
 FunctionDirectory* FunctionDirectory::_instance = NULL;
 
-
-/**
- *
- */
-extern "C" __EXPORT__ void  declareUserFunction(const string& name, void* f) {
-	FunctionDirectory::getInstance()->addFunction(name,f);
-}
-
-/**
- *
- */
-extern "C" __EXPORT__ void* getUserFunction(const string& name) {
-	return FunctionDirectory::getInstance()->getFunction(name);
-}
-
 [/file]
 
 [file('generated/src/FunctionDirectory.hpp', false, 'UTF-8')]
 #ifndef FunctionDirectory_H
 #define FunctionDirectory_H
+#include <vle/utils/DateTime.hpp>
+#include <vle/utils/Trace.hpp>
 #include <map>
 #include <string>
 #include <iostream>
@@ -41,6 +28,7 @@ extern "C" __EXPORT__ void* getUserFunction(const string& name) {
 #include "Compatibility.hpp"
 
 using namespace std;
+namespace vu = vle::utils;
 
 namespace generated {
 
@@ -51,19 +39,25 @@ private:
 
 	FunctionDirectory() { }
 public:
-	void addFunction(const std::string& name, void* fct) { functions['['/]name[']'/] = fct; } 
-	void* getFunction(const std::string& name) {
+	__EXPORT__ void addFunction(const std::string& name, void* fct) {
+		if(functions.find(name) == functions.end()) {
+			TraceAlways(vu::DateTime::simpleCurrentDate() + "FunctionDirectory::addFunction - add function \" " + name + " \"");
+			functions['['/]name[']'/] = fct;
+		}
+	}
+
+	__EXPORT__ void* getFunction(const std::string& name) {
 		std::map<std::string,void*>::iterator it = functions.find(name);
 	    if (it!=functions.end()) return (*it).second;
 	    else {
-			cout << "# getUserFunction failed for " << name << endl;
-			throw "getUserFunction failed for "+name;
+			TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionDirectory::getFunction - Failed for " + name); 
+			throw "getUserFunction failed for " + name;
 			return NULL;
 		}
 	}
-	unsigned int size() { return functions.size(); }
+	__EXPORT__ unsigned int size() { return functions.size(); }
 
-	static FunctionDirectory* getInstance() {
+	__EXPORT__ static FunctionDirectory* getInstance() {
 		if(FunctionDirectory::_instance == NULL) {
 			FunctionDirectory::_instance = new FunctionDirectory();		
 		}
@@ -78,12 +72,12 @@ public:
 	__EXPORT__ LibraryLoader(const char* libname) {
 		libhandle = 0;
 #ifdef WIN32
-		std::cout << "# loading library " << libname << std::endl;
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - LibraryLoader - loading library " + libname);
     	libhandle = LoadLibrary(libname);
 #else
-    	std::cout << "# loading library " << libname << std::endl;
+    	TraceAlways(vu::DateTime::simpleCurrentDate() + " - LibraryLoader - loading library " + libname);
     	libhandle = dlopen(libname, RTLD_LAZY);
-    	std::cout << "# handle is: " << libhandle << std::endl;
+    	//TraceAlways(vu::DateTime::simpleCurrentDate() + " - LibraryLoader - handle is " + libhandle);
 #endif
 
     	if(!libhandle)

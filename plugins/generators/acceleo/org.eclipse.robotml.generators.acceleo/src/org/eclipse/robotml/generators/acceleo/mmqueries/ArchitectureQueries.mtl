@@ -105,3 +105,7 @@
 [query public isAnAncestorOf(current_class : Class, other_class : Class) : Boolean =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'isAnAncestorOf(org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Class)', Sequence{current_class, other_class})
 /]
+
+[query public isAnInputOutputPort(port : Port) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'isAnInputOutputPort(org.eclipse.uml2.uml.Port)', Sequence{port})
+/]

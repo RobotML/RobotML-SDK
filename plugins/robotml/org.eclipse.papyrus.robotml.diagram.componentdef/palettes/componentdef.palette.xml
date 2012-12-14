@@ -245,7 +245,7 @@
 			<drawer
 			iconpath="platform:/plugin/org.eclipse.gmf.runtime.diagram.ui/icons/group.gif"
 			id="org.eclipse.papyrus.robotml.diagram.componentdef.ROBOTML_Componentdef__Platform"
-			name="Execution Platform">
+			name="Target Platform">
 			<aspectTool description="Create a new Platform" id="componentdef.tool.platform"
 				name="Platform" refToolId="composite.tool.class"
 				iconpath="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/05_robotic_platform.png">
@@ -264,21 +264,12 @@
 					</stereotypesToApply>
 				</postAction>
 			</aspectTool>
-			<aspectTool description="Create a new CycabTK Simulator" id="componentdef.tool.cycabtk"
-				name="CycabTK" refToolId="composite.tool.class"
+			<aspectTool description="Create a new Simulator" id="componentdef.tool.simulator"
+				name="Simulator" refToolId="composite.tool.class"
 				iconpath="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/04_robotic_simulator.png">
 				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
 					<stereotypesToApply>
-						<stereotype stereotypeName="RobotML::CycabTK"></stereotype>
-					</stereotypesToApply>
-				</postAction>
-			</aspectTool>
-			<aspectTool description="Create a new BlenderMorser Simulator" id="componentdef.tool.blendermorse"
-				name="Blender Morse" refToolId="composite.tool.class"
-				iconpath="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/04_robotic_simulator.png">
-				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
-					<stereotypesToApply>
-						<stereotype stereotypeName="RobotML::BlenderMorse"></stereotype>
+						<stereotype stereotypeName="RobotML::RoboticSimulator"></stereotype>
 					</stereotypesToApply>
 				</postAction>
 			</aspectTool>

@@ -1,7 +1,7 @@
 [comment encoding = UTF-8 /]
 [module generate_morse('http://www.eclipse.org/uml2/3.0.0/UML')]
 
-[import org::eclipse::proteus::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 
 [template public generateRobots(model : Model)]
 	[for (elt: NamedElement | getElementsWithStereotype(model, 'Robot'))]

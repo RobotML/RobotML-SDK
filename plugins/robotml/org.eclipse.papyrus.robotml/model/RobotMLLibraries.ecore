@@ -3,11 +3,6 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="RobotMLLibraries" nsURI="http:///RobotMLLibraries.ecore" nsPrefix="RobotMLLibraries">
   <eSubpackages name="RobotML_ModelLibrary" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary.ecore"
       nsPrefix="RobotMLLibraries.RobotML_ModelLibrary">
-    <eSubpackages name="RobotML_Components" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_Components.ecore"
-        nsPrefix="RobotMLLibraries.RobotML_ModelLibrary.RobotML_Components">
-      <eSubpackages name="sensors" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_Components/sensors.ecore"
-          nsPrefix="RobotMLLibraries.RobotML_ModelLibrary.RobotML_Components.sensors"/>
-    </eSubpackages>
     <eSubpackages name="RobotML_DataTypes" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes.ecore"
         nsPrefix="RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes">
       <eSubpackages name="diagnostic_datatypes" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/diagnostic_datatypes.ecore"
@@ -560,6 +555,34 @@
               upperBound="-1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/JoyFeedback"
               containment="true"/>
         </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="CarLikeOdometry">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="header" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Header"
+              containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="steering_angle" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="left_rear_wheel_distance"
+              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="right_rear_wheel_distance"
+              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="right_rear_wheel_velocity"
+              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="left_rear_wheel_velocity"
+              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="DifferentialOdometry">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="header" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Header"
+              containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="right_distance" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="left_distance" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="left_velocity" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="right_velocity" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+        </eClassifiers>
       </eSubpackages>
       <eSubpackages name="actionlib_datatypes" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/actionlib_datatypes.ecore"
           nsPrefix="RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes">
@@ -838,7 +861,7 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" ordered="false"
               upperBound="-1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Int64"/>
         </eClassifiers>
-        <eClassifiers xsi:type="ecore:EDataType" name="Int64" instanceClassName="long"/>
+        <eClassifiers xsi:type="ecore:EDataType" name="Int64" instanceClassName="double"/>
         <eClassifiers xsi:type="ecore:EClass" name="Float64MultiArray">
           <eStructuralFeatures xsi:type="ecore:EReference" name="layout" ordered="false"
               lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/MultiArrayLayout"

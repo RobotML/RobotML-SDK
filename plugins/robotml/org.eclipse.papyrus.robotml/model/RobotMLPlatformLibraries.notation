@@ -3646,10 +3646,106 @@
           <element xmi:type="uml:DataType" href="RobotMLPlatformLibraries.uml#_9WYRYKvMEeCFvbtLV_zCHw"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9XH4QavMEeCFvbtLV_zCHw" x="640" y="340" height="66"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_TWUi4DihEeKrufJqxR6Wig" type="3027" fontHeight="8" transparency="0" gradient="13420443, 16777215, 0" lineColor="0">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TWUi4jihEeKrufJqxR6Wig" source="ShadowFigure">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TWUi4zihEeKrufJqxR6Wig" key="ShadowFigure_Value" value="false"/>
+          </eAnnotations>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TWUi5DihEeKrufJqxR6Wig" source="displayNameLabelIcon">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TWUi5TihEeKrufJqxR6Wig" key="displayNameLabelIcon_value" value="false"/>
+          </eAnnotations>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TWUi5jihEeKrufJqxR6Wig" source="QualifiedName">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TWUi5zihEeKrufJqxR6Wig" key="QualifiedNameDepth" value="1000"/>
+          </eAnnotations>
+          <children xmi:type="notation:DecorationNode" xmi:id="_TWUi6DihEeKrufJqxR6Wig" type="5061"/>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_TWUi6TihEeKrufJqxR6Wig" type="7032">
+            <children xmi:type="notation:Shape" xmi:id="_bN_CsDihEeKrufJqxR6Wig" type="3018" fontHeight="8" lineColor="0">
+              <element xmi:type="uml:Property" href="RobotMLPlatformLibraries.uml#_bNPb0DihEeKrufJqxR6Wig"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_bN_CsTihEeKrufJqxR6Wig"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_85bpoDihEeKrufJqxR6Wig" type="3018" fontHeight="8" lineColor="0">
+              <element xmi:type="uml:Property" href="RobotMLPlatformLibraries.uml#_85IusDihEeKrufJqxR6Wig"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_85bpoTihEeKrufJqxR6Wig"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_BYIpkDiiEeKrufJqxR6Wig" type="3018" fontHeight="8" lineColor="0">
+              <element xmi:type="uml:Property" href="RobotMLPlatformLibraries.uml#_BXr9oDiiEeKrufJqxR6Wig"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_BYIpkTiiEeKrufJqxR6Wig"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_GUyJwDiiEeKrufJqxR6Wig" type="3018" fontHeight="8" lineColor="0">
+              <element xmi:type="uml:Property" href="RobotMLPlatformLibraries.uml#_GUVd0DiiEeKrufJqxR6Wig"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_GUyJwTiiEeKrufJqxR6Wig"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_NIy0MDiiEeKrufJqxR6Wig" type="3018" fontHeight="8" lineColor="0">
+              <element xmi:type="uml:Property" href="RobotMLPlatformLibraries.uml#_NIfSMDiiEeKrufJqxR6Wig"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_NIy0MTiiEeKrufJqxR6Wig"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_Pb3qEDiiEeKrufJqxR6Wig" type="3018" fontHeight="8" lineColor="0">
+              <element xmi:type="uml:Property" href="RobotMLPlatformLibraries.uml#_PbkIEDiiEeKrufJqxR6Wig"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Pb3qETiiEeKrufJqxR6Wig"/>
+            </children>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_TWUi6jihEeKrufJqxR6Wig"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_TWUi6zihEeKrufJqxR6Wig"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_TWUi7DihEeKrufJqxR6Wig"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TWUi7TihEeKrufJqxR6Wig"/>
+          </children>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_TWUi7jihEeKrufJqxR6Wig" visible="false" type="7033">
+            <styles xmi:type="notation:TitleStyle" xmi:id="_TWUi7zihEeKrufJqxR6Wig"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_TWUi8DihEeKrufJqxR6Wig"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_TWUi8TihEeKrufJqxR6Wig"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TWUi8jihEeKrufJqxR6Wig"/>
+          </children>
+          <element xmi:type="uml:DataType" href="RobotMLPlatformLibraries.uml#_TVk8ADihEeKrufJqxR6Wig"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TWUi4TihEeKrufJqxR6Wig" x="816" y="36"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_Vq4mgDihEeKrufJqxR6Wig" type="3027" fontHeight="8" transparency="0" gradient="13420443, 16777215, 0" lineColor="0">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Vq4mgjihEeKrufJqxR6Wig" source="ShadowFigure">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Vq4mgzihEeKrufJqxR6Wig" key="ShadowFigure_Value" value="false"/>
+          </eAnnotations>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Vq4mhDihEeKrufJqxR6Wig" source="displayNameLabelIcon">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Vq4mhTihEeKrufJqxR6Wig" key="displayNameLabelIcon_value" value="false"/>
+          </eAnnotations>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Vq4mhjihEeKrufJqxR6Wig" source="QualifiedName">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Vq4mhzihEeKrufJqxR6Wig" key="QualifiedNameDepth" value="1000"/>
+          </eAnnotations>
+          <children xmi:type="notation:DecorationNode" xmi:id="_Vq4miDihEeKrufJqxR6Wig" type="5061"/>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_Vq4miTihEeKrufJqxR6Wig" type="7032">
+            <children xmi:type="notation:Shape" xmi:id="_6UeZkDihEeKrufJqxR6Wig" type="3018" fontHeight="8" lineColor="0">
+              <element xmi:type="uml:Property" href="RobotMLPlatformLibraries.uml#_6UCUsDihEeKrufJqxR6Wig"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_6UeZkTihEeKrufJqxR6Wig"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_ZMX60DiiEeKrufJqxR6Wig" type="3018" fontHeight="8" lineColor="0">
+              <element xmi:type="uml:Property" href="RobotMLPlatformLibraries.uml#_ZLxd4DiiEeKrufJqxR6Wig"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ZMX60TiiEeKrufJqxR6Wig"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_bztwgDiiEeKrufJqxR6Wig" type="3018" fontHeight="8" lineColor="0">
+              <element xmi:type="uml:Property" href="RobotMLPlatformLibraries.uml#_bzj_gDiiEeKrufJqxR6Wig"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_bztwgTiiEeKrufJqxR6Wig"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_dxx_sDiiEeKrufJqxR6Wig" type="3018" fontHeight="8" lineColor="0">
+              <element xmi:type="uml:Property" href="RobotMLPlatformLibraries.uml#_dxedsDiiEeKrufJqxR6Wig"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_dxx_sTiiEeKrufJqxR6Wig"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_hOKnADiiEeKrufJqxR6Wig" type="3018" fontHeight="8" lineColor="0">
+              <element xmi:type="uml:Property" href="RobotMLPlatformLibraries.uml#_hNt7EDiiEeKrufJqxR6Wig"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_hOKnATiiEeKrufJqxR6Wig"/>
+            </children>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_Vq4mijihEeKrufJqxR6Wig"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_Vq4mizihEeKrufJqxR6Wig"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_Vq4mjDihEeKrufJqxR6Wig"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Vq4mjTihEeKrufJqxR6Wig"/>
+          </children>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_Vq4mjjihEeKrufJqxR6Wig" visible="false" type="7033">
+            <styles xmi:type="notation:TitleStyle" xmi:id="_Vq4mjzihEeKrufJqxR6Wig"/>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_Vq4mkDihEeKrufJqxR6Wig"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_Vq4mkTihEeKrufJqxR6Wig"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Vq4mkjihEeKrufJqxR6Wig"/>
+          </children>
+          <element xmi:type="uml:DataType" href="RobotMLPlatformLibraries.uml#_VqSwoDihEeKrufJqxR6Wig"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Vq4mgTihEeKrufJqxR6Wig" x="816" y="205" width="120"/>
+        </children>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jgd8CgLREeCtYMXppfqLMw"/>
       </children>
       <element xmi:type="uml:Package" href="RobotMLPlatformLibraries.uml#_JSoakAHwEeCQQOKrhO_fIQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jgd8AQLREeCtYMXppfqLMw" x="15" y="10" width="886" height="826"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jgd8AQLREeCtYMXppfqLMw" x="15" y="10" width="1111" height="826"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_rccAUALTEeCtYMXppfqLMw" type="2016" element="_hXK6IALLEeCtYMXppfqLMw" fontHeight="8" transparency="0" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rccAUgLTEeCtYMXppfqLMw" source="ShadowFigure">

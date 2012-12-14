@@ -38,8 +38,10 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Oarp4_datatypesPackageImpl;
 
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.ChannelFloat32;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CompressedImage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Image;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Imu;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.JointState;
@@ -188,6 +190,20 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * @generated
 	 */
 	private EClass joyFeedbackArrayEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass carLikeOdometryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass differentialOdometryEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1445,6 +1461,123 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCarLikeOdometry() {
+		return carLikeOdometryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCarLikeOdometry_Header() {
+		return (EReference)carLikeOdometryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCarLikeOdometry_Steering_angle() {
+		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCarLikeOdometry_Left_rear_wheel_distance() {
+		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCarLikeOdometry_Right_rear_wheel_distance() {
+		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCarLikeOdometry_Right_rear_wheel_velocity() {
+		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCarLikeOdometry_Left_rear_wheel_velocity() {
+		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDifferentialOdometry() {
+		return differentialOdometryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDifferentialOdometry_Header() {
+		return (EReference)differentialOdometryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDifferentialOdometry_Right_distance() {
+		return (EAttribute)differentialOdometryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDifferentialOdometry_Left_distance() {
+		return (EAttribute)differentialOdometryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDifferentialOdometry_Left_velocity() {
+		return (EAttribute)differentialOdometryEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDifferentialOdometry_Right_velocity() {
+		return (EAttribute)differentialOdometryEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Sensor_datatypesFactory getSensor_datatypesFactory() {
 		return (Sensor_datatypesFactory)getEFactoryInstance();
 	}
@@ -1613,6 +1746,21 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 
 		joyFeedbackArrayEClass = createEClass(JOY_FEEDBACK_ARRAY);
 		createEReference(joyFeedbackArrayEClass, JOY_FEEDBACK_ARRAY__ARRAY);
+
+		carLikeOdometryEClass = createEClass(CAR_LIKE_ODOMETRY);
+		createEReference(carLikeOdometryEClass, CAR_LIKE_ODOMETRY__HEADER);
+		createEAttribute(carLikeOdometryEClass, CAR_LIKE_ODOMETRY__STEERING_ANGLE);
+		createEAttribute(carLikeOdometryEClass, CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_DISTANCE);
+		createEAttribute(carLikeOdometryEClass, CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_DISTANCE);
+		createEAttribute(carLikeOdometryEClass, CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_VELOCITY);
+		createEAttribute(carLikeOdometryEClass, CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_VELOCITY);
+
+		differentialOdometryEClass = createEClass(DIFFERENTIAL_ODOMETRY);
+		createEReference(differentialOdometryEClass, DIFFERENTIAL_ODOMETRY__HEADER);
+		createEAttribute(differentialOdometryEClass, DIFFERENTIAL_ODOMETRY__RIGHT_DISTANCE);
+		createEAttribute(differentialOdometryEClass, DIFFERENTIAL_ODOMETRY__LEFT_DISTANCE);
+		createEAttribute(differentialOdometryEClass, DIFFERENTIAL_ODOMETRY__LEFT_VELOCITY);
+		createEAttribute(differentialOdometryEClass, DIFFERENTIAL_ODOMETRY__RIGHT_VELOCITY);
 	}
 
 	/**
@@ -1794,6 +1942,21 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 
 		initEClass(joyFeedbackArrayEClass, JoyFeedbackArray.class, "JoyFeedbackArray", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getJoyFeedbackArray_Array(), this.getJoyFeedback(), null, "array", null, 0, -1, JoyFeedbackArray.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(carLikeOdometryEClass, CarLikeOdometry.class, "CarLikeOdometry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCarLikeOdometry_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCarLikeOdometry_Steering_angle(), theStd_datatypesPackage.getFloat64(), "steering_angle", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCarLikeOdometry_Left_rear_wheel_distance(), theStd_datatypesPackage.getFloat64(), "left_rear_wheel_distance", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCarLikeOdometry_Right_rear_wheel_distance(), theStd_datatypesPackage.getFloat64(), "right_rear_wheel_distance", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCarLikeOdometry_Right_rear_wheel_velocity(), theStd_datatypesPackage.getFloat64(), "right_rear_wheel_velocity", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCarLikeOdometry_Left_rear_wheel_velocity(), theStd_datatypesPackage.getFloat64(), "left_rear_wheel_velocity", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(differentialOdometryEClass, DifferentialOdometry.class, "DifferentialOdometry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDifferentialOdometry_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDifferentialOdometry_Right_distance(), theStd_datatypesPackage.getFloat64(), "right_distance", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDifferentialOdometry_Left_distance(), theStd_datatypesPackage.getFloat64(), "left_distance", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDifferentialOdometry_Left_velocity(), theStd_datatypesPackage.getFloat64(), "left_velocity", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDifferentialOdometry_Right_velocity(), theStd_datatypesPackage.getFloat64(), "right_velocity", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

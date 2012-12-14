@@ -5,7 +5,7 @@
 			name="RobotML">
 			<aspectTool description="Create a new Robotic System" id="clazz.tool.system"
 				name="System" refToolId="clazz.tool.class"
-				iconpath="platform:/plugin/org.eclipse.papyrus.robotml/icons/components/component.gif">
+				iconpath="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/03_robot_system.png">
 				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
 					<stereotypesToApply>
 						<stereotype stereotypeName="RobotML::System"></stereotype>

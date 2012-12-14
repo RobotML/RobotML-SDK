@@ -1455,7 +1455,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Int64</em>'.
-	 * @model instanceClass="long"
+	 * @model instanceClass="double"
 	 * @generated
 	 */
 	EDataType getInt64();

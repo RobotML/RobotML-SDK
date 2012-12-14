@@ -27,11 +27,15 @@ import org.eclipse.papyrus.RobotML.Ground;
 import org.eclipse.papyrus.RobotML.Hardware;
 import org.eclipse.papyrus.RobotML.Human;
 import org.eclipse.papyrus.RobotML.ImageSensorSystem;
+import org.eclipse.papyrus.RobotML.InertialMeasurementUnitSystem;
+import org.eclipse.papyrus.RobotML.InertialNavigationSystem;
+import org.eclipse.papyrus.RobotML.InfraRedProximetrySystem;
 import org.eclipse.papyrus.RobotML.LandSurface;
 import org.eclipse.papyrus.RobotML.LidarSystem;
 import org.eclipse.papyrus.RobotML.LocalizationSensorSystem;
 import org.eclipse.papyrus.RobotML.ObjectDetectionSensorSystem;
 import org.eclipse.papyrus.RobotML.ObjectTrackingSensorSystem;
+import org.eclipse.papyrus.RobotML.OdometrySystem;
 import org.eclipse.papyrus.RobotML.OnPort;
 import org.eclipse.papyrus.RobotML.Pedestrian;
 import org.eclipse.papyrus.RobotML.PhysicalData;
@@ -498,6 +502,46 @@ public class RobotMLSwitch<T> extends Switch<T> {
 			case RobotMLPackage.ALLOCATE: {
 				Allocate allocate = (Allocate)theEObject;
 				T result = caseAllocate(allocate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotMLPackage.INERTIAL_MEASUREMENT_UNIT_SYSTEM: {
+				InertialMeasurementUnitSystem inertialMeasurementUnitSystem = (InertialMeasurementUnitSystem)theEObject;
+				T result = caseInertialMeasurementUnitSystem(inertialMeasurementUnitSystem);
+				if (result == null) result = caseSensorSystem(inertialMeasurementUnitSystem);
+				if (result == null) result = caseRoboticSystem(inertialMeasurementUnitSystem);
+				if (result == null) result = caseSystem(inertialMeasurementUnitSystem);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotMLPackage.INERTIAL_NAVIGATION_SYSTEM: {
+				InertialNavigationSystem inertialNavigationSystem = (InertialNavigationSystem)theEObject;
+				T result = caseInertialNavigationSystem(inertialNavigationSystem);
+				if (result == null) result = caseGPSSystem(inertialNavigationSystem);
+				if (result == null) result = caseLocalizationSensorSystem(inertialNavigationSystem);
+				if (result == null) result = caseSensorSystem(inertialNavigationSystem);
+				if (result == null) result = caseRoboticSystem(inertialNavigationSystem);
+				if (result == null) result = caseSystem(inertialNavigationSystem);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotMLPackage.ODOMETRY_SYSTEM: {
+				OdometrySystem odometrySystem = (OdometrySystem)theEObject;
+				T result = caseOdometrySystem(odometrySystem);
+				if (result == null) result = caseLocalizationSensorSystem(odometrySystem);
+				if (result == null) result = caseSensorSystem(odometrySystem);
+				if (result == null) result = caseRoboticSystem(odometrySystem);
+				if (result == null) result = caseSystem(odometrySystem);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotMLPackage.INFRA_RED_PROXIMETRY_SYSTEM: {
+				InfraRedProximetrySystem infraRedProximetrySystem = (InfraRedProximetrySystem)theEObject;
+				T result = caseInfraRedProximetrySystem(infraRedProximetrySystem);
+				if (result == null) result = caseObjectDetectionSensorSystem(infraRedProximetrySystem);
+				if (result == null) result = caseSensorSystem(infraRedProximetrySystem);
+				if (result == null) result = caseRoboticSystem(infraRedProximetrySystem);
+				if (result == null) result = caseSystem(infraRedProximetrySystem);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1237,6 +1281,66 @@ public class RobotMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAllocate(Allocate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Inertial Measurement Unit System</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Inertial Measurement Unit System</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInertialMeasurementUnitSystem(InertialMeasurementUnitSystem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Inertial Navigation System</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Inertial Navigation System</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInertialNavigationSystem(InertialNavigationSystem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Odometry System</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Odometry System</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOdometrySystem(OdometrySystem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Infra Red Proximetry System</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Infra Red Proximetry System</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInfraRedProximetrySystem(InfraRedProximetrySystem object) {
 		return null;
 	}
 

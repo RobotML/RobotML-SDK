@@ -47,8 +47,6 @@ public class SpecificQueries {
 	static private HashSet<String> temp = new HashSet<String>();
 	static private HashMap<String, String> _mapDeclaration = new HashMap<String, String>();
 	static final private String _pathProperty = "path";
-//	static final private String _operationProperty = "operation";
-//	static final private String _argumentsProperty = "arguments";
 	static final private String _interactionTag = "interaction";
 	
 	static final private String _arrayKeyword = "array";
@@ -62,8 +60,6 @@ public class SpecificQueries {
 	static private HashSet<NamedElement> _structTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _defineTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _unionTypeUsed = new HashSet<NamedElement>();
-	
-	static private HashSet<ComponentLevel> _instanceTree = new HashSet<ComponentLevel>(); 
 	
 	static private void initDeclarationMap()
 	{
@@ -309,18 +305,14 @@ public class SpecificQueries {
 			if (elt instanceof NamedElement) {
 				NamedElement ne = (NamedElement)elt;
 				if (ne instanceof org.eclipse.uml2.uml.DataType) {
-					//					System.out.println("datatype "+ne.getName());
 					DataType dt = (org.eclipse.uml2.uml.DataType)ne;
-					found_elts.add(dt);
-//					found_elts.addAll(getAllModelDataTypes(dt));					
+					found_elts.add(dt);				
 				}
 				else if (ne instanceof org.eclipse.uml2.uml.Enumeration) {
-					//					System.out.println("datatype "+ne.getName());
 					Enumeration dt = (org.eclipse.uml2.uml.Enumeration)ne;
 					found_elts.add(dt);					
 				}
 				else {
-					//					System.out.println("other "+ne.getName());
 					found_elts.addAll(getAllModelDataTypes(ne));					
 				}
 			} 
@@ -332,116 +324,6 @@ public class SpecificQueries {
 		}		
 		return found_elts;
 	}
-
-//	/**
-//	 * Rechercher tous les types de données utilisés par le modèle et les ordonner (héritage)
-//	 * @param model
-//	 * @return
-//	 */
-//	static public List<NamedElement> getAllDataTypes(NamedElement model) 
-//	{
-//		//
-//		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
-//		try {
-//			//
-//			java.util.HashSet<org.eclipse.uml2.uml.DataType> found_elts = getAllModelDataTypes(model);
-//			res.addAll(found_elts);
-//		} catch (Exception e)
-//		{
-//			//System.out.println(e);
-//			e.printStackTrace();
-//		}
-//		// Return list of classes
-//		return res;
-//	}
-
-//	/**
-//	 * Rechercher tous les types de données simples utilisés par le modèle 
-//	 * @param model
-//	 * @return
-//	 */
-//	static public List<NamedElement> getAllBasicDataTypes(NamedElement ne) 
-//	{
-//		return new LinkedList<NamedElement>(SpecificQueries._basicTypeUsed);
-//	}
-	
-//	/**
-//	 * Recherche tous les types "container"
-//	 * @param model
-//	 * @return
-//	 */
-//	static private List<NamedElement> getContainerDataTypes(NamedElement ne)
-//	{
-//		return new LinkedList<NamedElement>(SpecificQueries._containerTypeUsed);
-//	}
-	
-//	/**
-//	 * Rechercher tous les énumérations utilisés par le modèle et les ordonner (héritage)
-//	 * @param model
-//	 * @return
-//	 */
-//	static private List<NamedElement> getAllEnumeration(NamedElement ne) 
-//	{
-//		return new LinkedList<NamedElement>(SpecificQueries._enumTypeUsed);
-//	}
-//
-//	/**
-//	 * Rechercher tous les types de données simples utilisés par le modèle 
-//	 * @param model
-//	 * @return
-//	 */
-//	static private List<NamedElement> getAllStructuredDataTypes(NamedElement ne) 
-//	{
-//		return new LinkedList<NamedElement>(SpecificQueries._structTypeUsed);
-//	}
-	
-//	/**
-//	 * Return unknwon datatype
-//	 * @param model
-//	 * @return
-//	 */
-//	static public List<NamedElement> getUnknownDataTypes(NamedElement model)
-//	{
-//		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
-//		try
-//		{
-//			java.util.HashSet<org.eclipse.uml2.uml.DataType> found_elts = SpecificQueries.getAllModelDataTypes(model);
-////			System.out.println("Nb datatype : " + found_elts.size());
-//			found_elts.removeAll(SpecificQueries.getAllBasicDataTypes(model));
-//			found_elts.removeAll(SpecificQueries.getAllStructuredDataTypes(model));
-//			found_elts.removeAll(SpecificQueries.getAllEnumeration(model));
-//			found_elts.removeAll(SpecificQueries.getContainerDataTypes(model));
-//			found_elts.removeAll(SpecificQueries.getDefineType(model));
-//			found_elts.removeAll(SpecificQueries.getUnionType(model));
-//			
-//			res.addAll(found_elts);
-//		}
-//		catch(Exception e)
-//		{
-//			e.printStackTrace();
-//		}
-//		return res;
-//	}
-	
-//	/**
-//	 * Recherche les sous modèles
-//	 * @param modelne
-//	 * @return
-//	 */
-//	static public List<NamedElement> getSubModels(NamedElement model)
-//	{
-//		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
-//
-//		for(Element elt : model.getOwnedElements())
-//		{
-//			if(elt instanceof org.eclipse.uml2.uml.Model)
-//			{
-//				res.add((NamedElement) elt);
-//			}
-//		}
-//
-//		return res;
-//	}
 	
 	/**
 	 * Get the model's operation list
@@ -664,54 +546,6 @@ public class SpecificQueries {
 	{
 		return GeneralQueries.hasStereotype(classe, org.eclipse.papyrus.RobotML.AlgorithmLibrary.class);
 	}
-	
-//	/**
-//	 * Check has valid states
-//	 * @param fsm
-//	 * @return
-//	 */
-//	static public Boolean hasValidStates(org.eclipse.uml2.uml.StateMachine fsm)
-//	{
-//		Boolean result = false;
-//		
-//		FSMQueries queries = new FSMQueries();
-//		List<Vertex> states = queries.getStates(fsm);
-//		for(Vertex obj : states)
-//		{
-//			if(obj instanceof State)
-//			{
-//				State state = (State)obj;
-//				
-//				org.eclipse.papyrus.RobotML.State robotml_state = ElementUtil.getStereotypeApplication(state, org.eclipse.papyrus.RobotML.State.class);
-//				if(robotml_state != null)
-//				{
-//					result |= (robotml_state.getOperation() != null);
-//				}
-//			}
-//		}
-//
-//		return result;
-//	}
-	
-//	/**
-//	 * Check has valid transiiton
-//	 * @param fsm
-//	 * @return
-//	 */
-//	static public Boolean hasValidTransition(org.eclipse.uml2.uml.StateMachine fsm)
-//	{
-//		Boolean result = false;
-//		
-//		FSMQueries queries = new FSMQueries();
-//		List<org.eclipse.papyrus.RobotML.Transition> transitions = queries.getTransitions(fsm);
-//		for(org.eclipse.papyrus.RobotML.Transition transition : transitions)
-//		{
-//			result |= (transition.getGuard() != null);
-//			result |= (transition.getEffect() != null);
-//		}
-//		
-//		return result;
-//	}
 	
 	/**
 	 * Check has valid FSM declaration
@@ -1012,76 +846,6 @@ public class SpecificQueries {
 		return result;
 	}
 	
-//	/**
-//	 * Check if datatype is used in the model
-//	 * @param ne
-//	 * @param dataToTest
-//	 * @return
-//	 */
-//	static public Boolean isDataTypeUsed(NamedElement ne, NamedElement dataToTest)
-//	{
-//		Boolean result = false;
-//		
-//		if(ne instanceof Model)
-//		{
-//			TreeIterator<EObject> iter = ((Model)ne).eAllContents();
-//			while(iter.hasNext())
-//			{
-//				EObject obj = iter.next();
-//				if(obj instanceof NamedElement)
-//				{
-//					result = SpecificQueries.isDataTypeUsed((NamedElement)obj, dataToTest);
-//				}
-//				else if(obj instanceof org.eclipse.uml2.uml.PackageImport)
-//				{
-//					PackageImport imp = (PackageImport)obj;
-//					result = SpecificQueries.isDataTypeUsed(((NamedElement)imp.getImportedPackage()), dataToTest);
-//				}
-//				
-//				if(result == true)
-//				{
-//					break;
-//				}
-//			}
-//		}
-//		else if(ne instanceof Property)
-//		{
-//			Property prop = (Property)ne;
-//			if(prop.getType() != null)
-//				result = dataToTest.getName().equals(prop.getType().getName());
-////			else
-////				System.out.println("Type null for the property : " + prop.getName());
-//			if(result == true) System.out.println("DataType " + dataToTest.getName() + " is used on property " + prop.getName());
-//		}
-//		else if(ne instanceof Port)
-//		{
-//			Port port = (Port)ne;
-//			if(port.getType() != null)
-//				result = dataToTest.getName().equals(port.getType().getName());
-////			else
-////				System.out.println("Type null for the port : " + port.getName());
-//			if(result == true) System.out.println("DataType " + dataToTest.getName() + " is used on port " + port.getName());
-//		}
-//		else if(ne instanceof DataType)
-//		{	
-//			if(SpecificQueries.isContainerType(ne) == true)
-//			{
-//				String decl = SpecificQueries.getContainerTypeDeclaration(ne);
-//				result = decl.contains(dataToTest.getName());
-//				
-//				if(result == true) System.out.println("DataType " + dataToTest.getName() + " is used on container " + decl);
-//			}
-//		}
-////		else if(ne instanceof Parameter)
-////		{
-////			Parameter param = (Parameter)ne;
-////			if(param.getType() != null)
-////				result = dataToTest.getName().equals(param.getType().getName());
-////			if(result == true) System.out.println("DataType " + dataToTest.getName() + " is used on parameter " + param.getType());
-////		}
-//		return result; 
-//	}
-	
 	/**
 	 * Search used datatype in the model
 	 * @param model
@@ -1090,7 +854,6 @@ public class SpecificQueries {
 	//static public Boolean sortUsedDataType(NamedElement model)
 	static public Boolean searchUsedDataType(Model model)
 	{
-		//SpecificQueries.initInstanceTree(model);
 		
 		SpecificQueries._basicTypeUsed.clear();
 		SpecificQueries._containerTypeUsed.clear();
@@ -1099,9 +862,6 @@ public class SpecificQueries {
 		SpecificQueries._defineTypeUsed.clear();
 		SpecificQueries._unionTypeUsed.clear();
 		
-//		HashSet<NamedElement> unusedType = new HashSet<NamedElement>();
-//		HashSet<NamedElement> usedType = new HashSet<NamedElement>();
-//		
 		HashSet<DataType> datatypes = SpecificQueries.getAllModelDataTypes(model);
 		Set<String> neededTypes = searchUsedDataTypeFromModel(model);
 		
@@ -1147,49 +907,6 @@ public class SpecificQueries {
 		
 		HashSet<NamedElement> toSort = new HashSet<NamedElement>(datatypes);
 		SpecificQueries.sortDataType(toSort);
-		
-//		for(DataType dt :datatypes)
-//		{	
-//			System.out.println("DataType : " + dt.getName());
-//			if(usedType.contains(dt) || 
-//					SpecificQueries.isDataTypeUsed(model, dt))
-//			{
-//				System.out.println("Add " + dt.getName());
-//				usedType.add(dt);
-//				if(dt.getAllAttributes().size() > 0)
-//				{
-//					for(Property prop : dt.getAllAttributes())
-//					{
-//						if(prop.getType() != null)
-//						{
-//							if(unusedType.contains(prop.getType()))
-//							{
-//								unusedType.remove(prop.getType());
-//								usedType.add(prop.getType());
-//								System.out.println("Oups is used : " + prop.getType().getName());
-//							}
-//							else
-//							{
-//								if(usedType.contains(prop.getType()) == false)
-//								{
-//									usedType.add(prop.getType());
-//									System.out.println("Add : " + prop.getType().getName());
-//								}
-//							}
-//						}
-//					}
-//				}
-//			}
-//			else
-//			{
-//				unusedType.add(dt);
-//				System.out.println("Is unused ... " + dt.getName());
-//			}
-//		}
-//		
-//		SpecificQueries.sortDataType(usedType);
-		
-		
 		
 		return Boolean.TRUE;
 	}
@@ -1269,43 +986,6 @@ public class SpecificQueries {
 		
 		return result;
 	}
-
-//	/**
-//	 * Retrun the transition guard
-//	 * @param transition
-//	 * @return
-//	 */
-//	static public Algorithm getTransitionGuard(Transition transition)
-//	{
-//		Algorithm result = null;
-//		
-//		org.eclipse.papyrus.RobotML.Transition robotml_transition = ElementUtil.getStereotypeApplication(transition, org.eclipse.papyrus.RobotML.Transition.class);
-//		
-//		if(robotml_transition != null)
-//		{
-//			result = robotml_transition.getGuard();
-//		}		
-//		return result;
-//	}
-	
-//	/**
-//	 * Return the transition effect
-//	 * @param transition
-//	 * @return
-//	 */
-//	static public Algorithm getTransitionEffect(Transition transition)
-//	{
-//		Algorithm result = null;
-//		
-//		org.eclipse.papyrus.RobotML.Transition robotml_transition = ElementUtil.getStereotypeApplication(transition, org.eclipse.papyrus.RobotML.Transition.class);
-//		
-//		if(robotml_transition != null)
-//		{
-//			result = robotml_transition.getEffect();
-//		}		
-//		return result;
-//	}
-	
 	
 	static public LinkedList<NamedElement> getSortedDataType(NamedElement ne)
 	{
@@ -1442,184 +1122,6 @@ public class SpecificQueries {
 		
 		return isInitial;
 	}
-	
-//	static public List<Port> getReferences(Model model, Class classe)
-//	{
-//		LinkedList<Port> res = new LinkedList<Port>();
-//		HashSet<Class> classes = getAllModelClasses(model);
-//		for(Class elt : classes)
-//		{
-//			List<Port> in_ports = ArchitectureQueries.getInputPortsForElement(classe) ;
-//			if(ArchitectureQueries.isAnAncestorOf(classe, elt))
-//			{
-//				List<Port> in_ports_child = ArchitectureQueries.getInputPortsForElement(elt);
-//				for(Port port : in_ports)
-//				{
-//					if(in_ports_child.contains(port) == true &&
-//							res.contains(port) == false)
-//					{
-//						if(ArchitectureQueries.isPortConnected(port))
-//						{
-//							res.add(port);
-//						}
-//					}
-//				}
-//			}
-//		}
-//		
-//		
-//		return res;
-//	}
-	
-//	static private Boolean hasChildren(Model model, Class classe)
-//	{
-//		return !SpecificQueries.getChildren(model, classe).isEmpty();
-//	}
-	
-//	static private List<NamedElement> getChildren(Model model, Class classe)
-//	{
-//		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
-//		HashSet<Class> classes = SpecificQueries.getAllModelClasses(model);
-//		for(Class class_tmp : classes)
-//		{
-//			if(class_tmp != classe)
-//			{
-//				List<Class> super_classes = class_tmp.getSuperClasses();
-//				if(super_classes.contains(classe))
-//				{
-//					res.add(class_tmp);
-//					res.addAll(getChildren(model, class_tmp));
-//				}
-//			}
-//		}
-//		return res;
-//	}
-	
-//	static private List<NamedElement> getParentsInstanciation(Model model, Class classe)
-//	{
-//		LinkedList<NamedElement> parents = new LinkedList<NamedElement>();
-//		LinkedList<NamedElement> classes = new LinkedList<NamedElement>();
-//		classes.add(classe);
-//		if(SpecificQueries.hasChildren(model, classe));
-//		{
-//			classes.addAll(SpecificQueries.getChildren(model, classe));
-//		}
-//		
-//		HashSet<Class> components = SpecificQueries.getAllModelClasses(model);
-//		for(Class comp : components)
-//		{
-//			
-//			List<Property> subComponents = comp.getAllAttributes();
-//			for(Property prop : subComponents)
-//			{
-//				if(classes.contains(prop.getType()))
-//				{
-//					parents.add(comp);
-//					break;
-//				}
-//			}
-//		}
-//		return parents;
-//	}
-	
-//	static public List<NamedElement> getOriginsPort(Model model, Class classe_dest, Port port)
-//	{
-//		LinkedList<NamedElement> result = new LinkedList<NamedElement>();
-//		System.out.println("Search Origin for " + classe_dest.getName() + "::" + port.getName());
-//		List<NamedElement> tmp = SpecificQueries.getPortOtherSide(port);
-//		/*
-//		 * Check in object instance the origin port
-//		 */
-//		for(Property prop : classe_dest.getAllAttributes()){
-//			if(prop.getType() != classe_dest)
-//			{
-//				if(tmp.contains(prop.getType()))
-//				{
-//					result.add(prop);
-//				//	System.out.println("Class " + classe_dest.getName() + " for port => " + port.getName() + " from " + prop.getName());
-//				}
-//			}
-//		}
-//		
-//		if(result.isEmpty())
-//		{
-//			/*
-//			 * Get the parent instance, and check if the port is link with an other instance than the classe destination
-//			 */
-//			List<NamedElement> parents = SpecificQueries.getParentsInstanciation(model, classe_dest);
-//			
-//			if(parents.isEmpty() == false)
-//			{
-//				
-//				for(NamedElement parent : parents)
-//				{
-//					for(Property prop : ((Class)parent).getAllAttributes())
-//					{
-//						if(tmp.contains(prop.getType()))
-//						{
-//							result.add(prop.getType());
-//							//System.out.println("Parent class "+ parent.getName() + " *** Class " + classe_dest.getName() + " for port => " + port.getName() + " from " + prop.getName());
-//						}
-//					}
-//				}
-//				
-//			}
-//		}
-//		return result;
-//	}
-	
-//	static private List<NamedElement> getPortOtherSide(Port port)
-//	{
-//		/*
-//		 * Get all element are in other side the port
-//		 */
-//		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
-//		for(ConnectorEnd end : port.getEnds())
-//		{
-//			if(end.getOwner() != null && end.getOwner()!= port)
-//			{
-//				Connector connector = (Connector)end.getOwner();
-//				if((connector != null))
-//				{
-//					if(connector.getOwner() != null)
-//					{
-//						if(res.contains(connector.getOwner()) == false)
-//						{
-//							res.add((NamedElement) connector.getOwner());
-//						}
-//					}
-//				}
-//			}
-//		}
-//		return res;
-//	}
-	
-//	/**
-//	 * 
-//	 * @param port
-//	 * @param classe
-//	 * @param model
-//	 * @return
-//	 */
-//	static public Boolean isConnectedToOwner(Port port, Class classe, Model model)
-//	{
-//		Boolean result = false;
-//		
-//		List<NamedElement> parents = SpecificQueries.getParentsInstanciation(model, classe);
-//		if(parents.isEmpty() == false)
-//		{
-//			List<NamedElement> tmp = SpecificQueries.getPortOtherSide(port);
-//			for(NamedElement elt : tmp)
-//			{
-//				result |= parents.contains(elt);
-//				if(parents.contains(elt))
-//				{
-//					//System.out.println("Port " + port.getName() + " from class " + classe.getName() + " is connected to " + elt.getName());
-//				}
-//			}
-//		}	
-//		return result;
-//	}
 	
 	/**
 	 * Check if the class have a conection with a parent's object

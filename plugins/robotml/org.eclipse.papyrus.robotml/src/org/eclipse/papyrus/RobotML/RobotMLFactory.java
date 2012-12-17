@@ -445,6 +445,42 @@ public interface RobotMLFactory extends EFactory {
 	Allocate createAllocate();
 
 	/**
+	 * Returns a new object of class '<em>Inertial Measurement Unit System</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Inertial Measurement Unit System</em>'.
+	 * @generated
+	 */
+	InertialMeasurementUnitSystem createInertialMeasurementUnitSystem();
+
+	/**
+	 * Returns a new object of class '<em>Inertial Navigation System</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Inertial Navigation System</em>'.
+	 * @generated
+	 */
+	InertialNavigationSystem createInertialNavigationSystem();
+
+	/**
+	 * Returns a new object of class '<em>Odometry System</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Odometry System</em>'.
+	 * @generated
+	 */
+	OdometrySystem createOdometrySystem();
+
+	/**
+	 * Returns a new object of class '<em>Infra Red Proximetry System</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Infra Red Proximetry System</em>'.
+	 * @generated
+	 */
+	InfraRedProximetrySystem createInfraRedProximetrySystem();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

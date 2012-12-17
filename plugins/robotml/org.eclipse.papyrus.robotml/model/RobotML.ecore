@@ -334,4 +334,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Abstraction" ordered="false"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Abstraction"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InertialMeasurementUnitSystem" eSuperTypes="#//SensorSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InertialNavigationSystem" eSuperTypes="#//GPSSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OdometrySystem" eSuperTypes="#//LocalizationSensorSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InfraRedProximetrySystem" eSuperTypes="#//ObjectDetectionSensorSystem"/>
 </ecore:EPackage>

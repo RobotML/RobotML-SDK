@@ -71,6 +71,9 @@
         <children>
           <emfPageIdentifier href="RobotMLPlatformLibraries.notation#_0wcb8ALLEeCtYMXppfqLMw"/>
         </children>
+        <children>
+          <emfPageIdentifier href="RobotMLPlatformLibraries.notation#_IXAZkALREeCtYMXppfqLMw"/>
+        </children>
       </children>
     </windows>
   </sashModel>

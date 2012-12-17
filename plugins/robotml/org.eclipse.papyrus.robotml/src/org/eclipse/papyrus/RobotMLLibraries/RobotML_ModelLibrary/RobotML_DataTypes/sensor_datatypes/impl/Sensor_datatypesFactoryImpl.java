@@ -73,6 +73,8 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 			case Sensor_datatypesPackage.JOY: return createJoy();
 			case Sensor_datatypesPackage.JOY_FEEDBACK: return createJoyFeedback();
 			case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY: return createJoyFeedbackArray();
+			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY: return createCarLikeOdometry();
+			case Sensor_datatypesPackage.DIFFERENTIAL_ODOMETRY: return createDifferentialOdometry();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -246,6 +248,26 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	public JoyFeedbackArray createJoyFeedbackArray() {
 		JoyFeedbackArrayImpl joyFeedbackArray = new JoyFeedbackArrayImpl();
 		return joyFeedbackArray;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CarLikeOdometry createCarLikeOdometry() {
+		CarLikeOdometryImpl carLikeOdometry = new CarLikeOdometryImpl();
+		return carLikeOdometry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DifferentialOdometry createDifferentialOdometry() {
+		DifferentialOdometryImpl differentialOdometry = new DifferentialOdometryImpl();
+		return differentialOdometry;
 	}
 
 	/**

@@ -88,6 +88,9 @@ __EXPORT__ void [processing.name/]([getProcessingSignature(processing)/]);
 //extern "C" __EXPORT__ void* getUserFunction(const std::string&);[/comment]
 
 namespace generated {
+
+extern "C++" FunctionDirectory* FunctionDirectory::_instance;
+
 class Stub_[wrapper.name/] {
 public:
 	Stub_[wrapper.name/]() {

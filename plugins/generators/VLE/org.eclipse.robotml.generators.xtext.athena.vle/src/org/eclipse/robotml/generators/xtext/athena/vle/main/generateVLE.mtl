@@ -31,6 +31,7 @@
 [generateXMLParser(project)/]
 [comment]Generate the VPZ configuration file[/comment]
 [generateConfig(project)/]
+[generateXMLConfigValue(project)/]
 [comment]Generate the cmake files[/comment]
 [generateCMake(project)/]
 [comment]Generate deployment script[/comment]

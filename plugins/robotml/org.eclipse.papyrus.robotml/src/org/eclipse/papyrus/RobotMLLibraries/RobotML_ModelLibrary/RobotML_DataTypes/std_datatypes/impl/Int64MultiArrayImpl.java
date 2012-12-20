@@ -54,7 +54,7 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Long> data;
+	protected EList<Double> data;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,9 +123,9 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Long> getData() {
+	public EList<Double> getData() {
 		if (data == null) {
-			data = new EDataTypeUniqueEList<Long>(Long.class, this, Std_datatypesPackage.INT64_MULTI_ARRAY__DATA);
+			data = new EDataTypeUniqueEList<Double>(Double.class, this, Std_datatypesPackage.INT64_MULTI_ARRAY__DATA);
 		}
 		return data;
 	}
@@ -174,7 +174,7 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 				return;
 			case Std_datatypesPackage.INT64_MULTI_ARRAY__DATA:
 				getData().clear();
-				getData().addAll((Collection<? extends Long>)newValue);
+				getData().addAll((Collection<? extends Double>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

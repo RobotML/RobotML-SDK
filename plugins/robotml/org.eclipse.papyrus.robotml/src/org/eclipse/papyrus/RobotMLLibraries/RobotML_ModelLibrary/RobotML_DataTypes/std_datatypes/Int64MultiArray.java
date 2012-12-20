@@ -52,7 +52,7 @@ public interface Int64MultiArray extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Data</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Long}.
+	 * The list contents are of type {@link java.lang.Double}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Data</em>' attribute list isn't clear,
@@ -64,6 +64,6 @@ public interface Int64MultiArray extends EObject {
 	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int64" ordered="false"
 	 * @generated
 	 */
-	EList<Long> getData();
+	EList<Double> getData();
 
 } // Int64MultiArray

@@ -7,7 +7,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.papyrus.RobotML.ActuatorSystem;
 import org.eclipse.papyrus.RobotML.Agent;
 import org.eclipse.papyrus.RobotML.Algorithm;
@@ -29,11 +31,15 @@ import org.eclipse.papyrus.RobotML.Ground;
 import org.eclipse.papyrus.RobotML.Hardware;
 import org.eclipse.papyrus.RobotML.Human;
 import org.eclipse.papyrus.RobotML.ImageSensorSystem;
+import org.eclipse.papyrus.RobotML.InertialMeasurementUnitSystem;
+import org.eclipse.papyrus.RobotML.InertialNavigationSystem;
+import org.eclipse.papyrus.RobotML.InfraRedProximetrySystem;
 import org.eclipse.papyrus.RobotML.LandSurface;
 import org.eclipse.papyrus.RobotML.LidarSystem;
 import org.eclipse.papyrus.RobotML.LocalizationSensorSystem;
 import org.eclipse.papyrus.RobotML.ObjectDetectionSensorSystem;
 import org.eclipse.papyrus.RobotML.ObjectTrackingSensorSystem;
+import org.eclipse.papyrus.RobotML.OdometrySystem;
 import org.eclipse.papyrus.RobotML.OnPort;
 import org.eclipse.papyrus.RobotML.Pedestrian;
 import org.eclipse.papyrus.RobotML.PhysicalData;
@@ -66,23 +72,41 @@ import org.eclipse.papyrus.RobotML.UGVKind;
 import org.eclipse.papyrus.RobotML.UnitKind;
 import org.eclipse.papyrus.RobotML.WaterSurface;
 import org.eclipse.papyrus.RobotML.WheelSystem;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl.Actionlib_datatypesPackageImpl;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.Diagnostic_datatypesPackage;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.diagnostic_datatypes.impl.Diagnostic_datatypesPackageImpl;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.Geometry_datatypesPackageImpl;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.Nav_datatypesPackage;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.Oarp1_datatypesPackage;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.Oarp4_datatypesPackage;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Oarp4_datatypesPackageImpl;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesPackage;
+
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl;
+
 import org.eclipse.uml2.types.TypesPackage;
+
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -434,6 +458,34 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	 * @generated
 	 */
 	private EClass allocateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass inertialMeasurementUnitSystemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass inertialNavigationSystemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass odometrySystemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass infraRedProximetrySystemEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1909,6 +1961,42 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getInertialMeasurementUnitSystem() {
+		return inertialMeasurementUnitSystemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInertialNavigationSystem() {
+		return inertialNavigationSystemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOdometrySystem() {
+		return odometrySystemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInfraRedProximetrySystem() {
+		return infraRedProximetrySystemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getRobotKind() {
 		return robotKindEEnum;
 	}
@@ -2200,6 +2288,14 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		allocateEClass = createEClass(ALLOCATE);
 		createEReference(allocateEClass, ALLOCATE__BASE_ABSTRACTION);
 
+		inertialMeasurementUnitSystemEClass = createEClass(INERTIAL_MEASUREMENT_UNIT_SYSTEM);
+
+		inertialNavigationSystemEClass = createEClass(INERTIAL_NAVIGATION_SYSTEM);
+
+		odometrySystemEClass = createEClass(ODOMETRY_SYSTEM);
+
+		infraRedProximetrySystemEClass = createEClass(INFRA_RED_PROXIMETRY_SYSTEM);
+
 		// Create enums
 		robotKindEEnum = createEEnum(ROBOT_KIND);
 		ugvKindEEnum = createEEnum(UGV_KIND);
@@ -2284,6 +2380,10 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		roboticSimulatorEClass.getESuperTypes().add(this.getPlatform());
 		cycabTKEClass.getESuperTypes().add(this.getRoboticSimulator());
 		blenderMorseEClass.getESuperTypes().add(this.getRoboticSimulator());
+		inertialMeasurementUnitSystemEClass.getESuperTypes().add(this.getSensorSystem());
+		inertialNavigationSystemEClass.getESuperTypes().add(this.getGPSSystem());
+		odometrySystemEClass.getESuperTypes().add(this.getLocalizationSensorSystem());
+		infraRedProximetrySystemEClass.getESuperTypes().add(this.getObjectDetectionSensorSystem());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2481,6 +2581,14 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 
 		initEClass(allocateEClass, Allocate.class, "Allocate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAllocate_Base_Abstraction(), theUMLPackage.getAbstraction(), null, "base_Abstraction", null, 1, 1, Allocate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(inertialMeasurementUnitSystemEClass, InertialMeasurementUnitSystem.class, "InertialMeasurementUnitSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(inertialNavigationSystemEClass, InertialNavigationSystem.class, "InertialNavigationSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(odometrySystemEClass, OdometrySystem.class, "OdometrySystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(infraRedProximetrySystemEClass, InfraRedProximetrySystem.class, "InfraRedProximetrySystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(robotKindEEnum, RobotKind.class, "RobotKind");

@@ -1386,6 +1386,143 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 */
 	int JOY_FEEDBACK_ARRAY_FEATURE_COUNT = 1;
 
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl <em>Car Like Odometry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl#getCarLikeOdometry()
+	 * @generated
+	 */
+	int CAR_LIKE_ODOMETRY = 17;
+
+	/**
+	 * The feature id for the '<em><b>Header</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAR_LIKE_ODOMETRY__HEADER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Steering angle</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAR_LIKE_ODOMETRY__STEERING_ANGLE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Left rear wheel distance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_DISTANCE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Right rear wheel distance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_DISTANCE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Right rear wheel velocity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_VELOCITY = 4;
+
+	/**
+	 * The feature id for the '<em><b>Left rear wheel velocity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_VELOCITY = 5;
+
+	/**
+	 * The number of structural features of the '<em>Car Like Odometry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAR_LIKE_ODOMETRY_FEATURE_COUNT = 6;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.DifferentialOdometryImpl <em>Differential Odometry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.DifferentialOdometryImpl
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl#getDifferentialOdometry()
+	 * @generated
+	 */
+	int DIFFERENTIAL_ODOMETRY = 18;
+
+	/**
+	 * The feature id for the '<em><b>Header</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIFFERENTIAL_ODOMETRY__HEADER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Right distance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIFFERENTIAL_ODOMETRY__RIGHT_DISTANCE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Left distance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIFFERENTIAL_ODOMETRY__LEFT_DISTANCE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Left velocity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIFFERENTIAL_ODOMETRY__LEFT_VELOCITY = 3;
+
+	/**
+	 * The feature id for the '<em><b>Right velocity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIFFERENTIAL_ODOMETRY__RIGHT_VELOCITY = 4;
+
+	/**
+	 * The number of structural features of the '<em>Differential Odometry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIFFERENTIAL_ODOMETRY_FEATURE_COUNT = 5;
+
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest <em>Region Of Interest</em>}'.
@@ -2790,6 +2927,147 @@ public interface Sensor_datatypesPackage extends EPackage {
 	EReference getJoyFeedbackArray_Array();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry <em>Car Like Odometry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Car Like Odometry</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry
+	 * @generated
+	 */
+	EClass getCarLikeOdometry();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry#getHeader <em>Header</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Header</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry#getHeader()
+	 * @see #getCarLikeOdometry()
+	 * @generated
+	 */
+	EReference getCarLikeOdometry_Header();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry#getSteering_angle <em>Steering angle</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Steering angle</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry#getSteering_angle()
+	 * @see #getCarLikeOdometry()
+	 * @generated
+	 */
+	EAttribute getCarLikeOdometry_Steering_angle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry#getLeft_rear_wheel_distance <em>Left rear wheel distance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Left rear wheel distance</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry#getLeft_rear_wheel_distance()
+	 * @see #getCarLikeOdometry()
+	 * @generated
+	 */
+	EAttribute getCarLikeOdometry_Left_rear_wheel_distance();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry#getRight_rear_wheel_distance <em>Right rear wheel distance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Right rear wheel distance</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry#getRight_rear_wheel_distance()
+	 * @see #getCarLikeOdometry()
+	 * @generated
+	 */
+	EAttribute getCarLikeOdometry_Right_rear_wheel_distance();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry#getRight_rear_wheel_velocity <em>Right rear wheel velocity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Right rear wheel velocity</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry#getRight_rear_wheel_velocity()
+	 * @see #getCarLikeOdometry()
+	 * @generated
+	 */
+	EAttribute getCarLikeOdometry_Right_rear_wheel_velocity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry#getLeft_rear_wheel_velocity <em>Left rear wheel velocity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Left rear wheel velocity</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry#getLeft_rear_wheel_velocity()
+	 * @see #getCarLikeOdometry()
+	 * @generated
+	 */
+	EAttribute getCarLikeOdometry_Left_rear_wheel_velocity();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry <em>Differential Odometry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Differential Odometry</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry
+	 * @generated
+	 */
+	EClass getDifferentialOdometry();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry#getHeader <em>Header</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Header</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry#getHeader()
+	 * @see #getDifferentialOdometry()
+	 * @generated
+	 */
+	EReference getDifferentialOdometry_Header();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry#getRight_distance <em>Right distance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Right distance</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry#getRight_distance()
+	 * @see #getDifferentialOdometry()
+	 * @generated
+	 */
+	EAttribute getDifferentialOdometry_Right_distance();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry#getLeft_distance <em>Left distance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Left distance</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry#getLeft_distance()
+	 * @see #getDifferentialOdometry()
+	 * @generated
+	 */
+	EAttribute getDifferentialOdometry_Left_distance();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry#getLeft_velocity <em>Left velocity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Left velocity</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry#getLeft_velocity()
+	 * @see #getDifferentialOdometry()
+	 * @generated
+	 */
+	EAttribute getDifferentialOdometry_Left_velocity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry#getRight_velocity <em>Right velocity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Right velocity</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry#getRight_velocity()
+	 * @see #getDifferentialOdometry()
+	 * @generated
+	 */
+	EAttribute getDifferentialOdometry_Right_velocity();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3876,6 +4154,114 @@ public interface Sensor_datatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference JOY_FEEDBACK_ARRAY__ARRAY = eINSTANCE.getJoyFeedbackArray_Array();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl <em>Car Like Odometry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CarLikeOdometryImpl
+		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl#getCarLikeOdometry()
+		 * @generated
+		 */
+		EClass CAR_LIKE_ODOMETRY = eINSTANCE.getCarLikeOdometry();
+
+		/**
+		 * The meta object literal for the '<em><b>Header</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CAR_LIKE_ODOMETRY__HEADER = eINSTANCE.getCarLikeOdometry_Header();
+
+		/**
+		 * The meta object literal for the '<em><b>Steering angle</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CAR_LIKE_ODOMETRY__STEERING_ANGLE = eINSTANCE.getCarLikeOdometry_Steering_angle();
+
+		/**
+		 * The meta object literal for the '<em><b>Left rear wheel distance</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_DISTANCE = eINSTANCE.getCarLikeOdometry_Left_rear_wheel_distance();
+
+		/**
+		 * The meta object literal for the '<em><b>Right rear wheel distance</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_DISTANCE = eINSTANCE.getCarLikeOdometry_Right_rear_wheel_distance();
+
+		/**
+		 * The meta object literal for the '<em><b>Right rear wheel velocity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CAR_LIKE_ODOMETRY__RIGHT_REAR_WHEEL_VELOCITY = eINSTANCE.getCarLikeOdometry_Right_rear_wheel_velocity();
+
+		/**
+		 * The meta object literal for the '<em><b>Left rear wheel velocity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CAR_LIKE_ODOMETRY__LEFT_REAR_WHEEL_VELOCITY = eINSTANCE.getCarLikeOdometry_Left_rear_wheel_velocity();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.DifferentialOdometryImpl <em>Differential Odometry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.DifferentialOdometryImpl
+		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl#getDifferentialOdometry()
+		 * @generated
+		 */
+		EClass DIFFERENTIAL_ODOMETRY = eINSTANCE.getDifferentialOdometry();
+
+		/**
+		 * The meta object literal for the '<em><b>Header</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DIFFERENTIAL_ODOMETRY__HEADER = eINSTANCE.getDifferentialOdometry_Header();
+
+		/**
+		 * The meta object literal for the '<em><b>Right distance</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIFFERENTIAL_ODOMETRY__RIGHT_DISTANCE = eINSTANCE.getDifferentialOdometry_Right_distance();
+
+		/**
+		 * The meta object literal for the '<em><b>Left distance</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIFFERENTIAL_ODOMETRY__LEFT_DISTANCE = eINSTANCE.getDifferentialOdometry_Left_distance();
+
+		/**
+		 * The meta object literal for the '<em><b>Left velocity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIFFERENTIAL_ODOMETRY__LEFT_VELOCITY = eINSTANCE.getDifferentialOdometry_Left_velocity();
+
+		/**
+		 * The meta object literal for the '<em><b>Right velocity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIFFERENTIAL_ODOMETRY__RIGHT_VELOCITY = eINSTANCE.getDifferentialOdometry_Right_velocity();
 
 	}
 

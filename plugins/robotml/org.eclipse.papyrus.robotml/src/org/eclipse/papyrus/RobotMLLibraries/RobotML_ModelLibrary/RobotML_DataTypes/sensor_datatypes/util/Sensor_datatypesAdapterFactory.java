@@ -136,6 +136,14 @@ public class Sensor_datatypesAdapterFactory extends AdapterFactoryImpl {
 				return createJoyFeedbackArrayAdapter();
 			}
 			@Override
+			public Adapter caseCarLikeOdometry(CarLikeOdometry object) {
+				return createCarLikeOdometryAdapter();
+			}
+			@Override
+			public Adapter caseDifferentialOdometry(DifferentialOdometry object) {
+				return createDifferentialOdometryAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -390,6 +398,34 @@ public class Sensor_datatypesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createJoyFeedbackArrayAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry <em>Car Like Odometry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CarLikeOdometry
+	 * @generated
+	 */
+	public Adapter createCarLikeOdometryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry <em>Differential Odometry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.DifferentialOdometry
+	 * @generated
+	 */
+	public Adapter createDifferentialOdometryAdapter() {
 		return null;
 	}
 

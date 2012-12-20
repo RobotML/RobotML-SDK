@@ -168,6 +168,18 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY: {
+				CarLikeOdometry carLikeOdometry = (CarLikeOdometry)theEObject;
+				T result = caseCarLikeOdometry(carLikeOdometry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Sensor_datatypesPackage.DIFFERENTIAL_ODOMETRY: {
+				DifferentialOdometry differentialOdometry = (DifferentialOdometry)theEObject;
+				T result = caseDifferentialOdometry(differentialOdometry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -424,6 +436,36 @@ public class Sensor_datatypesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseJoyFeedbackArray(JoyFeedbackArray object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Car Like Odometry</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Car Like Odometry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCarLikeOdometry(CarLikeOdometry object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Differential Odometry</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Differential Odometry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDifferentialOdometry(DifferentialOdometry object) {
 		return null;
 	}
 

@@ -1,11 +1,11 @@
 [comment encoding = UTF-8 /]
 [module generate_orocos_interface_cpp('http://www.eclipse.org/uml2/3.0.0/UML','http://Papyrus/RobotML/1')]
-[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::MMQueries /]
+[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries /]
 
 
 [template public generateOrocosInterfaceCpp(i : Interface, root_model : Model)]
 
-[file ('/src/'+ i.name + '.hpp', false, 'UTF-8')]
+[file ( 'src/'+i.name+'/'+i.name+'.hpp', false, 'UTF-8')]
 #include <rtt/TaskContext.hpp>
 #include <rtt/Port.hpp>
 #include <rtt/Operation.hpp>
@@ -32,7 +32,13 @@ namespace [i.namespace.name.substitute(' ', '_')/]	 {
 
 		[comment operation declaration/]
 		[for (op : Operation | i.getAllOperations())]	
-		virtual [getNameType(op.type)/] [op.name/] ([getOperationSignature(op)/]) = 0;	
+		[comment] virtual [getNameType(op.type)/] [op.name/] ([getOperationSignature(op)/]) = 0; [/comment]
+	    virtual [op.visibility/]	[convertType(op.type.name)/] [op.name/] (
+		[for (input: Element | getOperationInputParameters(op))]
+			[let i : Parameter = input]
+			[i.name/] [convertType(getOperationParameterType(op, i))/],
+			[/let]
+		[/for]) = 0;	
 		[/for]
 
 		[comment constructor/]

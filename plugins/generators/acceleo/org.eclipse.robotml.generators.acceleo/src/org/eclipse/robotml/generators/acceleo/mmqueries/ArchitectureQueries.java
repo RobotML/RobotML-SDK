@@ -693,4 +693,24 @@ public class ArchitectureQueries {
 		return result;
 	}
 	
+	/**
+	 * For DataFlow ports: is it an Output Port ?
+	 * @param port
+	 * @return false if the port is not a DataFlowPort or not an input/output port.  
+	 */
+	static public Boolean isAnInputOutputPort(Port port)
+	{
+		try {
+			DataFlowPort dfp = ElementUtil.getStereotypeApplication(port, DataFlowPort.class);
+			if (dfp == null)
+				return false;
+			if (dfp.getDirection() == DataFlowDirectionKind.INOUT)
+				return true;
+			return false;
+		} catch (Exception e) {
+			java.lang.System.out.println("EXCEPTION caught:" + e.toString());
+		}
+		return false;
+	}
+	
 }

@@ -227,15 +227,15 @@
     <genClasses ecoreClass="RobotML.ecore#//Allocate">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//Allocate/base_Abstraction"/>
     </genClasses>
+    <genClasses ecoreClass="RobotML.ecore#//InertialMeasurementUnitSystem"/>
+    <genClasses ecoreClass="RobotML.ecore#//InertialNavigationSystem"/>
+    <genClasses ecoreClass="RobotML.ecore#//OdometrySystem"/>
+    <genClasses ecoreClass="RobotML.ecore#//InfraRedProximetrySystem"/>
   </genPackages>
   <genPackages prefix="RobotMLLibraries" basePackage="org.eclipse.papyrus" disposableProviderFactory="true"
-      ecorePackage="RobotMLLibraries.ecore#/">
+      metaDataPackageSuffix="org.eclipse.papyrus" ecorePackage="RobotMLLibraries.ecore#/">
     <nestedGenPackages prefix="RobotML_ModelLibrary" disposableProviderFactory="true"
         ecorePackage="RobotMLLibraries.ecore#//RobotML_ModelLibrary">
-      <nestedGenPackages prefix="RobotML_Components" disposableProviderFactory="true"
-          ecorePackage="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_Components">
-        <nestedGenPackages prefix="Sensors" disposableProviderFactory="true" ecorePackage="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_Components/sensors"/>
-      </nestedGenPackages>
       <nestedGenPackages prefix="RobotML_DataTypes" disposableProviderFactory="true"
           ecorePackage="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes">
         <nestedGenPackages prefix="Diagnostic_datatypes" disposableProviderFactory="true"
@@ -526,6 +526,21 @@
           </genClasses>
           <genClasses ecoreClass="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/JoyFeedbackArray">
             <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/JoyFeedbackArray/array"/>
+          </genClasses>
+          <genClasses ecoreClass="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CarLikeOdometry">
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CarLikeOdometry/header"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CarLikeOdometry/steering_angle"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CarLikeOdometry/left_rear_wheel_distance"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CarLikeOdometry/right_rear_wheel_distance"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CarLikeOdometry/right_rear_wheel_velocity"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CarLikeOdometry/left_rear_wheel_velocity"/>
+          </genClasses>
+          <genClasses ecoreClass="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/DifferentialOdometry">
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/DifferentialOdometry/header"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/DifferentialOdometry/right_distance"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/DifferentialOdometry/left_distance"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/DifferentialOdometry/left_velocity"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/DifferentialOdometry/right_velocity"/>
           </genClasses>
         </nestedGenPackages>
         <nestedGenPackages prefix="Actionlib_datatypes" disposableProviderFactory="true"

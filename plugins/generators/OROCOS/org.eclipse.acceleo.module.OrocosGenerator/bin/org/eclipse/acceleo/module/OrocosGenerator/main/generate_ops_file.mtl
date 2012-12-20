@@ -1,15 +1,18 @@
 [comment encoding = UTF-8 /]
 [module generate_ops_file('http://www.eclipse.org/uml2/3.0.0/UML','http://Papyrus/RobotML/1')]
-[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::MMQueries /]
+[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
 
 [template public generateOpsFile(model : Model)]
-[file ('connect.ops', false, 'UTF-8')]
+[file ('/Deployment/connect.ops', false, 'UTF-8')]
 //-----import package-----
-import("[model.name/]") 
-//-----chargement des composants-----
+import("[model.name/]")
+[for (elt: NamedElement | getSystems(model))]
+[setRttLibraries(elt)/]
+[/for]
+//-----loading components-----
 	[for (elt: NamedElement | getSystems(model))] 
 		[let c : Class = elt.oclAsType(Class)]
-[comment] If an element have input or/and output port, then it must be system[/comment]
 			[if (elt.getAllPorts() -> isEmpty() = false)]
 loadComponent("[c.name/]","[c.namespace.name/]::[c.name/]")
 			[/if]
@@ -30,6 +33,7 @@ setActivity("[c.name/]", period, priority, scheduler)
 	[/for]
 
 //-----setting connections between components-----
+[comment]
 	[for (elt: NamedElement | getSystems(model))] 
 		[let c : Class = elt.oclAsType(Class)]
 			[if (elt.getOppositeComponents() -> isEmpty() = false)]
@@ -39,30 +43,55 @@ connectPeers("[c.name/]", "[component/]")
 			[/if]
 		[/let]
 	[/for]
-
+[/comment]
 //-----connecting ports-----
-	[for (elt: NamedElement | getSystems(model))] 
-[let count : Integer = 1]
-		[let c : Class = elt.oclAsType(Class)]
-[comment] If an element have input or/and output port, then it must be system[/comment]
-			[if (elt.getAllPorts() -> isEmpty() = false)]
-				[for (port  : Port | getAllPorts(elt))]						
-					[if (getOppositePort(port) <> null )]
+[comment]
+[for (elt: NamedElement | getSystems(model))] 
+	[let count : Integer = 1]
+	[let c : Class = elt.oclAsType(Class)]
+	[if (elt.getAllPorts() -> isEmpty() = false)]
+	[for (port  : Port | getAllPorts(elt))]						
+	 [if (getOppositePort(port) <> null )]
 var ConnPolicy cp_[c.name/]_[port.name/];
 cp_[c.name/]_[port.name/].type = DATA; //DATA = 0, BUFFER = 1
 cp_[c.name/]_[port.name/].size = 1; //size of the buffer
 cp_[c.name/]_[port.name/].lock_policy = LOCK_FREE; //UNSYNC = 0, LOCKED = 1, LOCK_FREE = 2
 cp_[c.name/]_[port.name/].transport = 3; //ROS = 3
-cp_[c.name/][port.name/].name_id = "[getOppositePort(port).class.name/]";
-stream("[c.name/].[port.name/]",cp_[c.name/].[port.name/])							
-					[/if]
-				[/for]
-			[/if]
-		[/let]
-[/let]
-	[/for]
+cp_[c.name/]_[port.name/].name_id = "[getOppositePort(port).class.name/]";
+stream("[c.name/].[port.name/]",cp_[c.name/]_[port.name/])							
+	[/if]
+    [/for]
+	[/if]
+	[/let]
+    [/let]
+[/for]
+[/comment]
 
-[comment]stream("[c.name/].[port.name/]","[getOppositePort(port).class.name/].[getOppositePort(port).name/]",cp_1)	[/comment]
+[for (elt: NamedElement | getSystems(model))] 
+	[let count : Integer = 1]
+	[let c : Class = elt.oclAsType(Class)]
+	[if (elt.getExternalInputConnectors(c) <> null)]
+	[for (conn  : Connector | getExternalInputConnectors(c))]						
+	 [if (getDestComponentForConnector(conn) <> null )]
+var ConnPolicy cp_[getDestComponentForConnector(conn).name/]_[getDestPortName(conn)/];
+cp_[getDestComponentForConnector(conn).name/]_[getDestPortName(conn)/].type = DATA; //DATA = 0, BUFFER = 1
+cp_[getDestComponentForConnector(conn).name/]_[getDestPortName(conn)/].size = 1; //size of the buffer
+cp_[getDestComponentForConnector(conn).name/]_[getDestPortName(conn)/].lock_policy = LOCK_FREE; //UNSYNC = 0, LOCKED = 1, LOCK_FREE = 2
+cp_[getDestComponentForConnector(conn).name/]_[getDestPortName(conn)/].transport = 3; //ROS = 3
+cp_[getDestComponentForConnector(conn).name/]_[getDestPortName(conn)/].name_id = "[getDestComponentForConnector(conn).name/]";
+[if(isConnectedSensor(getDestComponentTypeNameForConnector(conn)) or isConnectedActuator(getDestComponentTypeNameForConnector(conn)))]
+stream("[getDestComponentForConnector(conn).name/].[getDestPortName(conn)/]",cp_[c.name/]_[getDestPortName(conn)/])
+[else]
+connectPeers("[c.name/]", "[getDestComponentForConnector(conn).name/]")
+[/if]							
+
+	[/if]
+    [/for]
+	[/if]
+	[/let]
+    [/let]
+[/for]
+
 
 //-----configurating components-----
 	[for (elt: NamedElement | getSystems(model))] 

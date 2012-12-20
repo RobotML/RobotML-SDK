@@ -27,5 +27,7 @@ Import-Package: com.cea.ec3m.gentools.core,
  org.eclipse.acceleo.engine.event,
  org.eclipse.acceleo.engine.generation.strategy,
  org.eclipse.acceleo.engine.service,
+ org.eclipse.robotml.generators.acceleo,
+ org.eclipse.robotml.generators.acceleo.mmqueries,
  org.eclipse.uml2.uml,
  org.eclipse.uml2.uml.resource

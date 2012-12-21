@@ -31,14 +31,13 @@ open a terminal
 cd applicationPath/build/
 effibox -a libApplicationName
 
-
-[comment]
 ----Deployment
 [for (elt: InstanceSpecification | getInstanceSpecifications(model))]
 	[elt.name/] - [elt.qualifiedName/] - [elt.getLabel()/]
 	[elt.getParentName()/]
 [/for]
 
+[comment]
 ----Stereotypes
 [comment] acceleo help [/comment]
 * Sensor systems:

@@ -95,8 +95,12 @@ public class DataTypeQueries{
 				type_name = "Unknown_NULL_IN_MODEL";
 			if (member.getUpper()<0) {
 				s+="\tstd::vector<" + type_name + "> " + member.getName() + ";\n";
-			} else {
+			} else if (member.getUpper() <= 1){
 				s+="\t" + type_name + " " + member.getName() + ";\n";
+			} else if (member.getUpper() == member.getLower()) {
+				s+="\t" + type_name + " " + member.getName() + "[" + member.getUpper() + "];\n";
+			} else {
+				s+="\tstd::vector<" + type_name + "> " + member.getName() + ";\n";
 			}
 		}
 		s+= "};\n";

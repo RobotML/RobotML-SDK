@@ -6,6 +6,10 @@
 	= invoke('org.eclipse.robotml.generators.acceleo.alf.main.AlfServices', 'createAlfBlockFromUML(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
 /]
 
+[query public canConvertToAlfBlock(ne : NamedElement) : Boolean
+	= invoke('org.eclipse.robotml.generators.acceleo.alf.main.AlfServices', 'canConvertToAlfBlock(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
 [query public translateAlfBlocTo_CPP(bloc : alf::Block) : String =
 	invoke('org.eclipse.robotml.generators.acceleo.alf.main.AlfServices', 'translateAlfBlocTo_CPP(org.eclipse.papyrus.uml.alf.alf.Block)', Sequence{bloc})
 /]

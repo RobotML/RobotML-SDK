@@ -18,6 +18,10 @@
                label="Generate to Athena ADL"
                menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
       </objectContribution>
+      <objectContribution
+            id="org.eclipse.robotml.generators.acceleo.athena.ui.contribution1"
+            objectClass="org.eclipse.core.resources.IFile">
+      </objectContribution>
    </extension>
   
    <extension

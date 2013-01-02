@@ -152,3 +152,11 @@
 [query public isModelSaved() : Boolean = 
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isModelSaved()', Sequence{})
 /]
+
+[query public isGuard(model : NamedElement, opName : String) : Boolean = 
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isGuard(org.eclipse.uml2.uml.NamedElement, java.lang.String)', Sequence{model, opName})
+/]
+
+[query public isEffect(model : NamedElement, opName : String) : Boolean = 
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isEffect(org.eclipse.uml2.uml.NamedElement, java.lang.String)', Sequence{model, opName})
+/]

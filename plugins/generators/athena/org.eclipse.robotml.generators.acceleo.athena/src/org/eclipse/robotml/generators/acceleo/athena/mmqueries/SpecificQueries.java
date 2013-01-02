@@ -1266,15 +1266,24 @@ public class SpecificQueries {
 			EObject elt_iter = (EObject)iter.next();
 			if(elt_iter instanceof Parameter)
 			{
-				types.add(((Parameter)elt_iter).getType().getName());
+				if(((Parameter)elt_iter).getType() != null)
+					types.add(((Parameter)elt_iter).getType().getName());
+				else
+					System.err.println("ERROR : null pointer type for " + ((Parameter)elt_iter).getName());
 			}
 			else if(elt_iter instanceof Property)
 			{
-				types.add(((Property)elt_iter).getType().getName());
+				if(((Property)elt_iter).getType() != null)
+					types.add(((Property)elt_iter).getType().getName());
+				else
+					System.err.println("ERROR : null pointer type for " + ((Property)elt_iter).getName());
 			}
 			else if(elt_iter instanceof Port)
 			{
-				types.add(((Port)elt_iter).getType().getName());
+				if(((Port)elt_iter).getType() != null)
+					types.add(((Port)elt_iter).getType().getName());
+				else
+					System.err.println("ERROR : null pointer type for " + ((Port)elt_iter).getName());
 			}
 			else if(elt_iter instanceof org.eclipse.uml2.uml.PackageImport)
 			{
@@ -1364,5 +1373,87 @@ public class SpecificQueries {
 	static public Boolean isModelSaved()
 	{
 		return (JOptionPane.showConfirmDialog(null, "Did you save your model ?", "INFORMATION", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION);
+	}
+	
+	/**
+	 * Ask to operation as a transition guard
+	 * @param model
+	 * @param opName
+	 * @return
+	 */
+	static public Boolean isGuard(NamedElement model, String opName)
+	{
+		Boolean result = false;
+		HashSet<Class> listClass = SpecificQueries.getAllModelClasses(model);
+		for(Class classe : listClass)
+		{
+			TreeIterator<EObject> iter = classe.eAllContents();
+			while(iter.hasNext())
+			{
+				EObject obj = iter.next();
+				if(obj instanceof StateMachine)
+				{
+					result |= testGuard((StateMachine)obj, opName);
+				}
+			}
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Ask to operation as a transition effect
+	 * @param model
+	 * @param opName
+	 * @return
+	 */
+	static public Boolean isEffect(NamedElement model, String opName)
+	{
+		Boolean result = false;
+		HashSet<Class> listClass = SpecificQueries.getAllModelClasses(model);
+		for(Class classe : listClass)
+		{
+			TreeIterator<EObject> iter = classe.eAllContents();
+			while(iter.hasNext())
+			{
+				EObject obj = iter.next();
+				if(obj instanceof StateMachine)
+				{
+					result |= testEffect((StateMachine)obj, opName);
+				}
+			}
+		}
+		
+		return result;
+	}
+	
+	static private Boolean testGuard(StateMachine sm, String opName)
+	{
+		Boolean result = false;
+		FSMQueries queries = new FSMQueries();
+		List<org.eclipse.papyrus.RobotML.Transition> listTrans = queries.getTransitions(sm);
+		for(org.eclipse.papyrus.RobotML.Transition trans : listTrans)
+		{
+			if(trans.getGuard() != null)
+			{
+				result = trans.getGuard().getBase_Operation().getName().equals(opName);
+			}
+		}
+ 		return result;
+	}
+	
+	static private Boolean testEffect(StateMachine sm, String opName)
+	{
+		Boolean result = false;
+		FSMQueries queries = new FSMQueries();
+		List<org.eclipse.papyrus.RobotML.Transition> listTrans = queries.getTransitions(sm);
+		for(org.eclipse.papyrus.RobotML.Transition trans : listTrans)
+		{
+			if(trans.getEffect() != null)
+			{
+				result = trans.getEffect().getBase_Operation().getName().equals(opName);
+			}
+		}
+ 		return result;
 	}
 }

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MacroPackage xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.1" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram_RTBoardView.xsd">
+<RequiredPackages>
+<File><![CDATA[C:\Code\PROTEUS\git_repo\RobotML-SDK\plugins\generators\RTMaps\rtmaps_resources\rtmaps_4_sdk_proteus_vc2010\packages\rtmaps_data_conversion.pck]]>
+<Relative><![CDATA[%RTMAPS_DIAGRAMDIR%\..\rtmaps_resources\rtmaps_4_sdk_proteus_vc2010\packages\rtmaps_data_conversion.pck]]></Relative>
+</File>
+<File><![CDATA[C:\RTMaps 4.1\packages\rtmaps_vectornav.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%\packages\rtmaps_vectornav.pck]]></Relative>
+</File>
+<File><![CDATA[C:\RTMaps 4.1\packages\rtmaps_hokuyo.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%\packages\rtmaps_hokuyo.pck]]></Relative>
+</File>
+<File><![CDATA[C:\RTMaps 4.1\packages\rtmaps_camera1394_dcam_646.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%\packages\rtmaps_camera1394_dcam_646.pck]]></Relative>
+</File>
+</RequiredPackages>
+<RequiredMacroPackages/>
+<MacroComponentModel Model="hokuyo_wrapper" Version="">
+<Component InstanceName="SCIP2_laser_1" Model="SCIP2_laser" x="144" y="144" z="0">
+<Output LongName="SCIP2_laser_1.scan" Name="scan">
+<Property LongName="SCIP2_laser_1.scan.fifosize" Type="1">16</Property>
+<Property LongName="SCIP2_laser_1.scan.periodic" Type="0">false</Property>
+<Property LongName="SCIP2_laser_1.scan.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="SCIP2_laser_1.timestamp" Name="timestamp">
+<Property LongName="SCIP2_laser_1.timestamp.fifosize" Type="1">16</Property>
+<Property LongName="SCIP2_laser_1.timestamp.periodic" Type="0">false</Property>
+<Property LongName="SCIP2_laser_1.timestamp.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="SCIP2_laser_1.sensor_model" Type="4"><![CDATA[3|0|UTM-30LX|URG-04LX|UBG-05LX]]></Property>
+<Property LongName="SCIP2_laser_1.serial_port" Type="3"><![CDATA[COM1]]></Property>
+<Property LongName="SCIP2_laser_1.serial_baudrate" Type="4"><![CDATA[7|3|19200|38400|57600|115200|250000|500000|750000]]></Property>
+<Property LongName="SCIP2_laser_1.serial_recv_buf_size" Type="1">1024</Property>
+<Property LongName="SCIP2_laser_1.serial_timeout" Type="1">10000</Property>
+<Property LongName="SCIP2_laser_1.acq_mode" Type="4"><![CDATA[3|0|Continuous|Single frame|Decode input raw stream]]></Property>
+<Property LongName="SCIP2_laser_1.output_raw_stream" Type="0">false</Property>
+<Property LongName="SCIP2_laser_1.threaded" Type="0">true</Property>
+<Property LongName="SCIP2_laser_1.priority" Type="1">255</Property>
+<Property LongName="SCIP2_laser_1.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="lidar_scan_rtmaps_to_robotml_2" Model="lidar_scan_rtmaps_to_robotml" x="392" y="144" z="0">
+<Input LongName="lidar_scan_rtmaps_to_robotml_2.scans_in" Name="scans_in">
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.scans_in.readerType" Type="1">0</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.scans_in.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="lidar_scan_rtmaps_to_robotml_2.status" Name="status">
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.status.fifosize" Type="1">16</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.status.periodic" Type="0">false</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.status.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="lidar_scan_rtmaps_to_robotml_2.laser_scan" Name="laser_scan">
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.laser_scan.fifosize" Type="1">16</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.laser_scan.periodic" Type="0">false</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.laser_scan.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.threaded" Type="0">true</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.priority" Type="1">128</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.autoStart" Type="0">false</Property>
+</Component>
+<Connection Input="lidar_scan_rtmaps_to_robotml_2.scans_in" Output="SCIP2_laser_1.scan"/>
+<Output Name="laser_scan" Target="lidar_scan_rtmaps_to_robotml_2.laser_scan"/>
+<Output Name="status" Target="lidar_scan_rtmaps_to_robotml_2.status"/>
+<Property Name="serial_port" Target="SCIP2_laser_1.serial_port"/>
+<Property Name="serial_baudrate" Target="SCIP2_laser_1.serial_baudrate"/>
+<RTBoardView ID="JavaStudio1.0">
+<Description/>
+<ComponentBox InstanceName="SCIP2_laser_1" reversed="false">
+<Description/>
+<OutputInfos Name="scan">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="timestamp">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="lidar_scan_rtmaps_to_robotml_2" reversed="false">
+<Description/>
+<InputInfos Name="scans_in">
+<Description/>
+</InputInfos>
+<OutputInfos Name="status">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="laser_scan">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<OutputBox InstanceName="status" reversed="false" x="568" y="184" z="0">
+<Description/>
+</OutputBox>
+<OutputBox InstanceName="laser_scan" reversed="false" x="568" y="168" z="0">
+<Description/>
+</OutputBox>
+<ConnectionShape InstanceName="lidar_scan_rtmaps_to_robotml_2.scans_in" color="0"/>
+</RTBoardView>
+</MacroComponentModel>
+<MacroComponentModel Model="imu_vectornav_vn100_wrapper" Version="">
+<Component InstanceName="imu_rtmaps_to_robotml_2" Model="imu_rtmaps_to_robotml" x="400" y="352" z="0">
+<Input LongName="imu_rtmaps_to_robotml_2.accelerations" Name="accelerations">
+<Property LongName="imu_rtmaps_to_robotml_2.accelerations.readerType" Type="1">0</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.accelerations.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="imu_rtmaps_to_robotml_2.angular_rates" Name="angular_rates">
+<Property LongName="imu_rtmaps_to_robotml_2.angular_rates.readerType" Type="1">0</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.angular_rates.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="imu_rtmaps_to_robotml_2.quaternion" Name="quaternion">
+<Property LongName="imu_rtmaps_to_robotml_2.quaternion.readerType" Type="1">0</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.quaternion.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="imu_rtmaps_to_robotml_2.accel_girat" Name="accel_girat">
+<Property LongName="imu_rtmaps_to_robotml_2.accel_girat.fifosize" Type="1">16</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.accel_girat.periodic" Type="0">false</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.accel_girat.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="imu_rtmaps_to_robotml_2.threaded" Type="0">true</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.priority" Type="1">128</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="vn_100_1" Model="vn_100" x="144" y="320" z="0">
+<Input LongName="vn_100_1.iStream8" Name="iStream8">
+<Property LongName="vn_100_1.iStream8.readerType" Type="1">0</Property>
+<Property LongName="vn_100_1.iStream8.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="vn_100_1.oYaw_Pitch_Roll" Name="oYaw_Pitch_Roll">
+<Property LongName="vn_100_1.oYaw_Pitch_Roll.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oYaw_Pitch_Roll.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oYaw_Pitch_Roll.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="vn_100_1.oQuaternion" Name="oQuaternion">
+<Property LongName="vn_100_1.oQuaternion.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oQuaternion.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oQuaternion.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="vn_100_1.oAngular_Rates" Name="oAngular_Rates">
+<Property LongName="vn_100_1.oAngular_Rates.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oAngular_Rates.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oAngular_Rates.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="vn_100_1.oStream8" Name="oStream8">
+<Property LongName="vn_100_1.oStream8.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oStream8.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oStream8.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="vn_100_1.oMagnetic" Name="oMagnetic">
+<Property LongName="vn_100_1.oMagnetic.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oMagnetic.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oMagnetic.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="vn_100_1.oAcceleration" Name="oAcceleration">
+<Property LongName="vn_100_1.oAcceleration.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oAcceleration.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oAcceleration.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="vn_100_1.pInputFIFOSize" Type="1">1000</Property>
+<Property LongName="vn_100_1.pOutputFIFOsSize" Type="1">10</Property>
+<Property LongName="vn_100_1.threaded" Type="0">true</Property>
+<Property LongName="vn_100_1.priority" Type="1">128</Property>
+<Property LongName="vn_100_1.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="SerialPort_3" Model="SerialPort" x="176" y="144" z="0">
+<Input LongName="SerialPort_3.streamInput" Name="streamInput">
+<Property LongName="SerialPort_3.streamInput.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_3.streamInput.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="SerialPort_3.rts_state" Name="rts_state">
+<Property LongName="SerialPort_3.rts_state.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_3.rts_state.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="SerialPort_3.dtr_state" Name="dtr_state">
+<Property LongName="SerialPort_3.dtr_state.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_3.dtr_state.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="SerialPort_3.streamOutput" Name="streamOutput">
+<Property LongName="SerialPort_3.streamOutput.fifosize" Type="1">32</Property>
+<Property LongName="SerialPort_3.streamOutput.periodic" Type="0">false</Property>
+<Property LongName="SerialPort_3.streamOutput.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="SerialPort_3.port" Type="3"><![CDATA[COM1]]></Property>
+<Property LongName="SerialPort_3.baudrate" Type="4"><![CDATA[10|9|110|300|1200|2400|4800|9600|19200|38400|57600|115200]]></Property>
+<Property LongName="SerialPort_3.parity" Type="4"><![CDATA[5|0|None|Even|Odd|Mark|Space]]></Property>
+<Property LongName="SerialPort_3.stopbits" Type="4"><![CDATA[3|0|1|2|1,5]]></Property>
+<Property LongName="SerialPort_3.byteSize" Type="4"><![CDATA[4|3|5|6|7|8]]></Property>
+<Property LongName="SerialPort_3.flowControl" Type="4"><![CDATA[3|0|None|Xon/Xoff|Hardware (RTS/CTS)]]></Property>
+<Property LongName="SerialPort_3.XonChar" Type="1">17</Property>
+<Property LongName="SerialPort_3.XoffChar" Type="1">19</Property>
+<Property LongName="SerialPort_3.min" Type="1">50</Property>
+<Property LongName="SerialPort_3.wtime" Type="1">10000</Property>
+<Property LongName="SerialPort_3.use_non_standard_baudrate" Type="0">false</Property>
+<Property LongName="SerialPort_3.non_standard_baudrate" Type="1">10000</Property>
+<Property LongName="SerialPort_3.correct_timestamp_based_on_baudrate" Type="0">true</Property>
+<Property LongName="SerialPort_3.use_data_terminal_ready" Type="0">true</Property>
+<Property LongName="SerialPort_3.use_request_to_send" Type="0">true</Property>
+<Property LongName="SerialPort_3.use_carrier_detect" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_3.use_clear_to_send" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_3.use_data_set_ready" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_3.use_ring" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_3.verbose" Type="0">false</Property>
+<Property LongName="SerialPort_3.threaded" Type="0">true</Property>
+<Property LongName="SerialPort_3.priority" Type="1">255</Property>
+<Property LongName="SerialPort_3.autoStart" Type="0">false</Property>
+</Component>
+<Connection Input="imu_rtmaps_to_robotml_2.quaternion" Output="vn_100_1.oQuaternion"/>
+<Connection Input="imu_rtmaps_to_robotml_2.accelerations" Output="vn_100_1.oAcceleration"/>
+<Connection Input="imu_rtmaps_to_robotml_2.angular_rates" Output="vn_100_1.oAngular_Rates"/>
+<Connection Input="vn_100_1.iStream8" Output="SerialPort_3.streamOutput"/>
+<Connection Input="SerialPort_3.streamInput" Output="vn_100_1.oStream8"/>
+<Output Name="accel_girat" Target="imu_rtmaps_to_robotml_2.accel_girat"/>
+<Property Name="baudrate" Target="SerialPort_3.baudrate"/>
+<Property Name="serial_port" Target="SerialPort_3.port"/>
+<RTBoardView ID="JavaStudio1.0">
+<Description/>
+<ComponentBox InstanceName="imu_rtmaps_to_robotml_2" reversed="false">
+<Description/>
+<InputInfos Name="accelerations">
+<Description/>
+</InputInfos>
+<InputInfos Name="angular_rates">
+<Description/>
+</InputInfos>
+<InputInfos Name="quaternion">
+<Description/>
+</InputInfos>
+<OutputInfos Name="accel_girat">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="vn_100_1" reversed="false">
+<Description/>
+<InputInfos Name="iStream8">
+<Description/>
+</InputInfos>
+<OutputInfos Name="oYaw_Pitch_Roll">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="oQuaternion">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="oAngular_Rates">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="oStream8">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="oMagnetic">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="oAcceleration">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="SerialPort_3" reversed="false">
+<Description/>
+<InputInfos Name="streamInput">
+<Description/>
+</InputInfos>
+<InputInfos Name="rts_state">
+<Description/>
+</InputInfos>
+<InputInfos Name="dtr_state">
+<Description/>
+</InputInfos>
+<OutputInfos Name="streamOutput">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<OutputBox InstanceName="accel_girat" reversed="false" x="648" y="368" z="0">
+<Description/>
+</OutputBox>
+<ConnectionShape InstanceName="imu_rtmaps_to_robotml_2.quaternion" color="0"/>
+<ConnectionShape InstanceName="imu_rtmaps_to_robotml_2.accelerations" color="0"/>
+<ConnectionShape InstanceName="imu_rtmaps_to_robotml_2.angular_rates" color="0"/>
+<ConnectionShape InstanceName="vn_100_1.iStream8" color="0"/>
+<ConnectionShape InstanceName="SerialPort_3.streamInput" color="0"/>
+</RTBoardView>
+</MacroComponentModel>
+<MacroComponentModel Model="camera_image_wrapper" Version="">
+<Component InstanceName="camera_image_rtmaps_to_robotml_1" Model="camera_image_rtmaps_to_robotml" x="264" y="144" z="0">
+<Input LongName="camera_image_rtmaps_to_robotml_1.image_in" Name="image_in">
+<Property LongName="camera_image_rtmaps_to_robotml_1.image_in.readerType" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.image_in.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="camera_image_rtmaps_to_robotml_1.video" Name="video">
+<Property LongName="camera_image_rtmaps_to_robotml_1.video.fifosize" Type="1">16</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.video.periodic" Type="0">false</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.video.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="camera_image_rtmaps_to_robotml_1.calibrate" Name="calibrate">
+<Property LongName="camera_image_rtmaps_to_robotml_1.calibrate.fifosize" Type="1">16</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.calibrate.periodic" Type="0">false</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.calibrate.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="camera_image_rtmaps_to_robotml_1.distorsion_model" Type="3"><![CDATA[plumb_bob]]></Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.D" Type="3"><![CDATA[0.0;0.0;0.0;0.0;0.0]]></Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.K" Type="3"><![CDATA[0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0]]></Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.R" Type="3"><![CDATA[0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0]]></Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.P" Type="3"><![CDATA[0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0]]></Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.binning_x" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.binning_y" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.roi_x_offset" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.roi_y_offset" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.roi_width" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.roi_height" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.roi_do_rectify" Type="0">false</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.threaded" Type="0">true</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.priority" Type="1">128</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="Camera1394_DCAM_1" Model="Camera1394_DCAM" x="144" y="288" z="0">
+<Property LongName="Camera1394_DCAM_1.Camera" Type="4"><![CDATA[1|0|N/A]]></Property>
+<Property LongName="Camera1394_DCAM_1.VideoMode" Type="4"><![CDATA[1|0|N/A]]></Property>
+<Property LongName="Camera1394_DCAM_1.FrameRate" Type="4"><![CDATA[1|0|N/A]]></Property>
+<Property LongName="Camera1394_DCAM_1.CaptureMode" Type="4"><![CDATA[3|1|One shot|Continuous|Hardware triggered]]></Property>
+<Property LongName="Camera1394_DCAM_1.Enable_1394b" Type="4"><![CDATA[3|0|Auto|Yes|No]]></Property>
+<Property LongName="Camera1394_DCAM_1.AutoExposure" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Brightness" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Focus" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Gain" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Gamma" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Hue" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Iris" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Saturation" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Sharpness" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Shutter" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.WhiteBalanceU" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.WhiteBalanceV" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Zoom" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Nb_additional_registers" Type="1">0</Property>
+<Property LongName="Camera1394_DCAM_1.Additional_regs_values_format" Type="4"><![CDATA[2|1|Decimal|Hexadecimal]]></Property>
+<Property LongName="Camera1394_DCAM_1.threaded" Type="0">true</Property>
+<Property LongName="Camera1394_DCAM_1.priority" Type="1">128</Property>
+<Property LongName="Camera1394_DCAM_1.autoStart" Type="0">false</Property>
+</Component>
+<Output Name="video" Target="camera_image_rtmaps_to_robotml_1.video"/>
+<Output Name="calibrate" Target="camera_image_rtmaps_to_robotml_1.calibrate"/>
+<RTBoardView ID="JavaStudio1.0">
+<Description/>
+<ComponentBox InstanceName="camera_image_rtmaps_to_robotml_1" reversed="false">
+<Description/>
+<InputInfos Name="image_in">
+<Description/>
+</InputInfos>
+<OutputInfos Name="video">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="calibrate">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="Camera1394_DCAM_1" reversed="false">
+<Description/>
+</ComponentBox>
+<OutputBox InstanceName="video" reversed="false" x="472" y="168" z="0">
+<Description/>
+</OutputBox>
+<OutputBox InstanceName="calibrate" reversed="false" x="472" y="184" z="0">
+<Description/>
+</OutputBox>
+</RTBoardView>
+</MacroComponentModel>
+</MacroPackage>

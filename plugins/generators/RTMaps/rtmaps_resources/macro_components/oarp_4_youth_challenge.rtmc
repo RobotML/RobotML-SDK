@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <MacroPackage xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.1" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram_RTBoardView.xsd">
 <RequiredPackages>
-<File><![CDATA[C:\Code\PROTEUS\git_repo\RobotML-SDK\plugins\generators\RTMaps\rtmaps_resources\rtmaps_4_sdk_proteus_vc2010\packages\rtmaps_data_conversion.pck]]>
-<Relative><![CDATA[%RTMAPS_DIAGRAMDIR%\..\rtmaps_resources\rtmaps_4_sdk_proteus_vc2010\packages\rtmaps_data_conversion.pck]]></Relative>
+<File><![CDATA[C:\Code\PROTEUS\git_repo\RobotML-SDK\plugins\generators\RTMaps\rtmaps_resources\rtmaps_4_sdk_proteus\packages\rtmaps_data_conversion.pck]]>
+<Relative><![CDATA[%RTMAPS_DIAGRAMDIR%\..\rtmaps_4_sdk_proteus\packages\rtmaps_data_conversion.pck]]></Relative>
 </File>
 <File><![CDATA[C:\RTMaps 4.1\packages\rtmaps_vectornav.pck]]>
 <Relative><![CDATA[%RTMAPS_INSTDIR%\packages\rtmaps_vectornav.pck]]></Relative>

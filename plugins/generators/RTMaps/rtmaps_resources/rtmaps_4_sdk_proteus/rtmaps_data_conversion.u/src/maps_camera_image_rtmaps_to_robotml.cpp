@@ -46,7 +46,7 @@ MAPS_END_ACTIONS_DEFINITION
 
 // Use the macros to declare this component (camera_image_rtmaps_to_robotml) behaviour
 MAPS_COMPONENT_DEFINITION(MAPScamera_image_rtmaps_to_robotml,"camera_image_rtmaps_to_robotml","1.0",128,
-			  MAPS::Threaded,MAPS::Threaded,
+			MAPS::Threaded|MAPS::Sequential,MAPS::Sequential,
 			  -1, // Nb of inputs. Leave -1 to use the number of declared input definitions
 			  -1, // Nb of outputs. Leave -1 to use the number of declared output definitions
 			  -1, // Nb of properties. Leave -1 to use the number of declared property definitions

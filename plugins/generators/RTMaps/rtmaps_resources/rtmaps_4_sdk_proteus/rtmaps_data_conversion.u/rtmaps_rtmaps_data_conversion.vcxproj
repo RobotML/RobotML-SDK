@@ -70,12 +70,18 @@
     <ClCompile Include="src\maps_gps_rtmaps_to_robotml.cpp" />
     <ClCompile Include="src\maps_imu_rtmaps_to_robotml.cpp" />
     <ClCompile Include="src\maps_lidar_scan_rtmaps_to_robotml.cpp" />
+    <ClCompile Include="src\maps_wifibot_inputs_robotml_to_rtmaps.cpp" />
+    <ClCompile Include="src\maps_wifibot_outputs_rtmaps_to_robotml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="local_interfaces\maps_camera_image_rtmaps_to_robotml.h" />
     <ClInclude Include="local_interfaces\maps_gps_rtmaps_to_robotml.h" />
     <ClInclude Include="local_interfaces\maps_imu_rtmaps_to_robotml.h" />
     <ClInclude Include="local_interfaces\maps_lidar_scan_rtmaps_to_robotml.h" />
+    <ClInclude Include="local_interfaces\maps_proxi_rtmaps_to_robotml.h" />
+    <ClInclude Include="local_interfaces\maps_wifibot_inputs_robotml_to_rtmaps.h" />
+    <ClInclude Include="local_interfaces\maps_wifibot_odometry_rtmaps_to_robotml.h" />
+    <ClInclude Include="local_interfaces\maps_wifibot_outputs_rtmaps_to_robotml.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

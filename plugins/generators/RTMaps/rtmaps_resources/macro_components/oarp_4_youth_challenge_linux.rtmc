@@ -13,8 +13,8 @@
 <File><![CDATA[/opt/rtmaps/packages/rtmaps_camera1394_dcam.pck]]>
 <Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_camera1394_dcam.pck]]></Relative>
 </File>
-<File><![CDATA[/home/nicolas/proteus/github/RobotML-SDK/plugins/generators/RTMaps/rtmaps_resources/rtmaps_4_sdk_proteus/packages/linux_x86/rtmaps_data_conversion.pck]]>
-<Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../rtmaps_4_sdk_proteus/packages/linux_x86/rtmaps_data_conversion.pck]]></Relative>
+<File><![CDATA[/home/nicolas/proteus/github/RobotML-SDK/plugins/generators/RTMaps/rtmaps_resources/user_sdk/packages/linux_x86/rtmaps_data_conversion.pck]]>
+<Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../user_sdk/packages/linux_x86/rtmaps_data_conversion.pck]]></Relative>
 </File>
 <File><![CDATA[/opt/rtmaps/packages/rtmaps_vectornav.pck]]>
 <Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_vectornav.pck]]></Relative>

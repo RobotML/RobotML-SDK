@@ -52,9 +52,13 @@ knowledge of the CeCILL-C license and that you accept its terms.
   <RequiredMacroPackages>
 	[for (elt: NamedElement | getComponentModels(model))]
 		[let c : Class = elt.oclAsType(Class)]
-		[if (isMacroComponent(c))]
+		[if (c.hasRTMapsNativeImplementation() = true)]
+		<File><!['['/]CDATA['['/][c.getRTMapsNativeLibraryPathFromGenericAttribute()/][']'/][']'/]>
+	      <Relative><!['['/]CDATA['['/][c.getRTMapsNativeLibraryPathFromGenericAttribute()/][']'/][']'/]></Relative>
+	    </File>
+		[elseif (isMacroComponent(c))]
     <File><!['['/]CDATA['['/]/dummy/absolute/path/for/[c.name + '.rtmc'/][']'/][']'/]>
-      <Relative><!['['/]CDATA['['/]%RTMAPS_DIAGRAMDIR%/macro_components/[c.name + '.rtmc'/][']'/][']'/]></Relative>
+      <Relative><!['['/]CDATA['['/]%RTMAPS_DIAGRAMDIR%/[c.name + '.rtmc'/][']'/][']'/]></Relative>
     </File>
 		[/if]
 		[/let]
@@ -85,7 +89,14 @@ knowledge of the CeCILL-C license and that you accept its terms.
 	[/comment]
 	[let main_comp : Class = getRootClassForModel(model)]
 			[for (prop: Property | getLevel1SubComponentsForComponent(main_comp))]
-				[if (isMacroComponent(prop.type.oclAsType(Class)))]
+				[if (prop.type.oclAsType(Class).hasRTMapsNativeImplementation() = true)]
+			    <MacroComponent InstanceName="[prop.name/]" Model="[prop.type.oclAsType(Class).getRTMapsNativeComponentNameFromGenericAttribute()/]" x="[i * hor_spacing + 50/]" y="[i * vert_spacing/]" z="0">
+			      [comment]
+				  <InputPropertyOverload LongName="stream_in.readerType" Type="1">0</InputPropertyOverload>
+			      <OutputPropertyOverload LongName="position.fifosize" Type="1">16</OutputPropertyOverload>
+				  [/comment]
+			    </MacroComponent>					
+				[elseif  (isMacroComponent(prop.type.oclAsType(Class)))]
 			    <MacroComponent InstanceName="[prop.name/]" Model="macro_[prop.type.name/]" x="[i * hor_spacing + 50/]" y="[i * vert_spacing/]" z="0">
 			      [comment]
 				  <InputPropertyOverload LongName="stream_in.readerType" Type="1">0</InputPropertyOverload>
@@ -95,7 +106,9 @@ knowledge of the CeCILL-C license and that you accept its terms.
 				[/if]
 			[/for]
 			[for (prop: Property | getLevel1SubComponentsForComponent(main_comp))]
-				[if (isMacroComponent(prop.type.oclAsType(Class))=false)]
+				[if (prop.type.oclAsType(Class).hasRTMapsNativeImplementation() = true)]
+					[comment]Do nothing: it will be instanciated as a native macro-component.[/comment]
+				[elseif (isMacroComponent(prop.type.oclAsType(Class))=false)]
 		    	<Component InstanceName="[prop.name/]" Model="[prop.type.name/]" x="[i * hor_spacing/]" y="[i * vert_spacing/]" z="0">
 				  [comment]
 			      <Input LongName="RGB2YUV_7.input" Name="input">

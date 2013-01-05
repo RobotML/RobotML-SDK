@@ -34,6 +34,8 @@ knowledge of the CeCILL-C license and that you accept its terms.
 */
 package org.eclipse.robotml.generators.acceleo.rtmaps;
 
+import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
+
 public class RTMapsDataTypeQueries {
 
 	public String getNbElementsInVector(String type_name, String ioelt_name, String return_value_name) {
@@ -224,5 +226,48 @@ public class RTMapsDataTypeQueries {
 			return "packages/linux_x86/";
 		else
 			return "packages/";
+	}
+	
+	public boolean hasRTMapsNativeImplementation(org.eclipse.uml2.uml.Class c)
+	{
+		if (ArchitectureQueries.hasNativeImplementation(c)) {
+			if (getRTMapsNativeLibraryPathFromGenericAttribute(c) != null && getRTMapsNativeComponentNameFromGenericAttribute(c) != null) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public String getRTMapsNativeLibraryPathFromGenericAttribute(org.eclipse.uml2.uml.Class c)
+	{
+		if (ArchitectureQueries.hasNativeImplementation(c)) {
+			String native_libs = ArchitectureQueries.getNativeLibraryPathForComponent(c);
+			if (native_libs == null)
+				return null;
+			return getRTMapsSpecificValueFromStringAttribute(native_libs);
+		}
+		return null;
+	}
+	
+	public String getRTMapsNativeComponentNameFromGenericAttribute(org.eclipse.uml2.uml.Class c)
+	{
+		if (ArchitectureQueries.hasNativeImplementation(c)) {
+			String native_comps = ArchitectureQueries.getNativeComponentNameForComponent(c);
+			if (native_comps == null)
+				return null;
+			return getRTMapsSpecificValueFromStringAttribute(native_comps);
+		}
+		return null;
+	}
+
+	public String getRTMapsSpecificValueFromStringAttribute(String attribute) {
+		String[] sections = attribute.split(";");
+		for (int i=0; i<sections.length; i++) {
+			String[] key_value = sections[i].split("=");
+			if (key_value[0].equalsIgnoreCase("rtmaps")) {
+				return key_value[1];
+			}
+		}
+		return null;
 	}
 }

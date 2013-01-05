@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <MacroPackage xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.1" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram_RTBoardView.xsd">
 <RequiredPackages>
-<File><![CDATA[C:\RTMaps 4.1\packages\rtmaps_gps.pck]]>
-<Relative><![CDATA[%RTMAPS_INSTDIR%\packages\rtmaps_gps.pck]]></Relative>
+<File><![CDATA[/opt/rtmaps/packages/rtmaps_wifibot.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_wifibot.pck]]></Relative>
 </File>
-<File><![CDATA[C:\RTMaps 4.1\packages\rtmaps_wifibot.pck]]>
-<Relative><![CDATA[%RTMAPS_INSTDIR%\packages\rtmaps_wifibot.pck]]></Relative>
+<File><![CDATA[/opt/rtmaps/packages/rtmaps_hokuyo.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_hokuyo.pck]]></Relative>
 </File>
-<File><![CDATA[C:\RTMaps 4.1\packages\rtmaps_vectornav.pck]]>
-<Relative><![CDATA[%RTMAPS_INSTDIR%\packages\rtmaps_vectornav.pck]]></Relative>
+<File><![CDATA[/opt/rtmaps/packages/rtmaps_gps.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_gps.pck]]></Relative>
 </File>
-<File><![CDATA[C:\RTMaps 4.1\packages\rtmaps_hokuyo.pck]]>
-<Relative><![CDATA[%RTMAPS_INSTDIR%\packages\rtmaps_hokuyo.pck]]></Relative>
+<File><![CDATA[/opt/rtmaps/packages/rtmaps_camera1394_dcam.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_camera1394_dcam.pck]]></Relative>
 </File>
-<File><![CDATA[C:\Code\PROTEUS\git_repo\RobotML-SDK\plugins\generators\RTMaps\rtmaps_resources\user_sdk\packages\rtmaps_data_conversion.pck]]>
-<Relative><![CDATA[%RTMAPS_DIAGRAMDIR%\..\user_sdk\packages\rtmaps_data_conversion.pck]]></Relative>
+<File><![CDATA[/home/nicolas/proteus/github/RobotML-SDK/plugins/generators/RTMaps/rtmaps_resources/user_sdk/packages/linux_x86/rtmaps_data_conversion.pck]]>
+<Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/user_sdk/packages/linux_x86/rtmaps_data_conversion.pck]]></Relative>
 </File>
-<File><![CDATA[C:\RTMaps 4.1\packages\rtmaps_camera1394_dcam_646.pck]]>
-<Relative><![CDATA[%RTMAPS_INSTDIR%\packages\rtmaps_camera1394_dcam_646.pck]]></Relative>
+<File><![CDATA[/opt/rtmaps/packages/rtmaps_vectornav.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_vectornav.pck]]></Relative>
 </File>
 </RequiredPackages>
 <RequiredMacroPackages/>
@@ -34,7 +34,7 @@
 <Property LongName="SCIP2_laser_1.timestamp.subsampling" Type="1">1</Property>
 </Output>
 <Property LongName="SCIP2_laser_1.sensor_model" Type="4"><![CDATA[3|0|UTM-30LX|URG-04LX|UBG-05LX]]></Property>
-<Property LongName="SCIP2_laser_1.serial_port" Type="3"><![CDATA[COM1]]></Property>
+<Property LongName="SCIP2_laser_1.serial_port" Type="3"><![CDATA[/dev/ttyACM0]]></Property>
 <Property LongName="SCIP2_laser_1.serial_baudrate" Type="4"><![CDATA[7|3|19200|38400|57600|115200|250000|500000|750000]]></Property>
 <Property LongName="SCIP2_laser_1.serial_recv_buf_size" Type="1">1024</Property>
 <Property LongName="SCIP2_laser_1.serial_timeout" Type="1">10000</Property>
@@ -59,6 +59,12 @@
 <Property LongName="lidar_scan_rtmaps_to_robotml_2.laser_scan.periodic" Type="0">false</Property>
 <Property LongName="lidar_scan_rtmaps_to_robotml_2.laser_scan.subsampling" Type="1">1</Property>
 </Output>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.nb_layers" Type="1">1</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.angle_min" Type="2">-135.0</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.angle_max" Type="2">135.0</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.angle_increment" Type="2">0.25</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.range_min" Type="2">0.0</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.range_max" Type="2">30.0</Property>
 <Property LongName="lidar_scan_rtmaps_to_robotml_2.threaded" Type="0">true</Property>
 <Property LongName="lidar_scan_rtmaps_to_robotml_2.priority" Type="1">128</Property>
 <Property LongName="lidar_scan_rtmaps_to_robotml_2.autoStart" Type="0">false</Property>
@@ -128,25 +134,25 @@
 <Property LongName="vn_100_1.iStream8.readerType" Type="1">0</Property>
 <Property LongName="vn_100_1.iStream8.subsampling" Type="1">1</Property>
 </Input>
-<Output LongName="vn_100_1.oYaw_Pitch_Roll" Name="oYaw_Pitch_Roll">
-<Property LongName="vn_100_1.oYaw_Pitch_Roll.fifosize" Type="1">16</Property>
-<Property LongName="vn_100_1.oYaw_Pitch_Roll.periodic" Type="0">false</Property>
-<Property LongName="vn_100_1.oYaw_Pitch_Roll.subsampling" Type="1">1</Property>
-</Output>
 <Output LongName="vn_100_1.oQuaternion" Name="oQuaternion">
 <Property LongName="vn_100_1.oQuaternion.fifosize" Type="1">16</Property>
 <Property LongName="vn_100_1.oQuaternion.periodic" Type="0">false</Property>
 <Property LongName="vn_100_1.oQuaternion.subsampling" Type="1">1</Property>
 </Output>
-<Output LongName="vn_100_1.oAngular_Rates" Name="oAngular_Rates">
-<Property LongName="vn_100_1.oAngular_Rates.fifosize" Type="1">16</Property>
-<Property LongName="vn_100_1.oAngular_Rates.periodic" Type="0">false</Property>
-<Property LongName="vn_100_1.oAngular_Rates.subsampling" Type="1">1</Property>
+<Output LongName="vn_100_1.oYaw_Pitch_Roll" Name="oYaw_Pitch_Roll">
+<Property LongName="vn_100_1.oYaw_Pitch_Roll.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oYaw_Pitch_Roll.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oYaw_Pitch_Roll.subsampling" Type="1">1</Property>
 </Output>
 <Output LongName="vn_100_1.oStream8" Name="oStream8">
 <Property LongName="vn_100_1.oStream8.fifosize" Type="1">16</Property>
 <Property LongName="vn_100_1.oStream8.periodic" Type="0">false</Property>
 <Property LongName="vn_100_1.oStream8.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="vn_100_1.oAngular_Rates" Name="oAngular_Rates">
+<Property LongName="vn_100_1.oAngular_Rates.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oAngular_Rates.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oAngular_Rates.subsampling" Type="1">1</Property>
 </Output>
 <Output LongName="vn_100_1.oMagnetic" Name="oMagnetic">
 <Property LongName="vn_100_1.oMagnetic.fifosize" Type="1">16</Property>
@@ -182,10 +188,10 @@
 <Property LongName="SerialPort_3.streamOutput.periodic" Type="0">false</Property>
 <Property LongName="SerialPort_3.streamOutput.subsampling" Type="1">1</Property>
 </Output>
-<Property LongName="SerialPort_3.port" Type="3"><![CDATA[COM1]]></Property>
+<Property LongName="SerialPort_3.port" Type="3"><![CDATA[/dev/ttyUSB0]]></Property>
 <Property LongName="SerialPort_3.baudrate" Type="4"><![CDATA[10|9|110|300|1200|2400|4800|9600|19200|38400|57600|115200]]></Property>
-<Property LongName="SerialPort_3.parity" Type="4"><![CDATA[5|0|None|Even|Odd|Mark|Space]]></Property>
-<Property LongName="SerialPort_3.stopbits" Type="4"><![CDATA[3|0|1|2|1,5]]></Property>
+<Property LongName="SerialPort_3.parity" Type="4"><![CDATA[3|0|None|Even|Odd]]></Property>
+<Property LongName="SerialPort_3.stopbits" Type="4"><![CDATA[2|0|1|2]]></Property>
 <Property LongName="SerialPort_3.byteSize" Type="4"><![CDATA[4|3|5|6|7|8]]></Property>
 <Property LongName="SerialPort_3.flowControl" Type="4"><![CDATA[3|0|None|Xon/Xoff|Hardware (RTS/CTS)]]></Property>
 <Property LongName="SerialPort_3.XonChar" Type="1">17</Property>
@@ -236,16 +242,16 @@
 <InputInfos Name="iStream8">
 <Description/>
 </InputInfos>
-<OutputInfos Name="oYaw_Pitch_Roll">
-<Description/>
-</OutputInfos>
 <OutputInfos Name="oQuaternion">
 <Description/>
 </OutputInfos>
-<OutputInfos Name="oAngular_Rates">
+<OutputInfos Name="oYaw_Pitch_Roll">
 <Description/>
 </OutputInfos>
 <OutputInfos Name="oStream8">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="oAngular_Rates">
 <Description/>
 </OutputInfos>
 <OutputInfos Name="oMagnetic">
@@ -370,23 +376,23 @@
 <Property LongName="SerialPort_1.rts_state.readerType" Type="1">0</Property>
 <Property LongName="SerialPort_1.rts_state.subsampling" Type="1">1</Property>
 </Input>
-<Input LongName="SerialPort_1.streamInput" Name="streamInput">
-<Property LongName="SerialPort_1.streamInput.readerType" Type="1">0</Property>
-<Property LongName="SerialPort_1.streamInput.subsampling" Type="1">1</Property>
-</Input>
 <Input LongName="SerialPort_1.dtr_state" Name="dtr_state">
 <Property LongName="SerialPort_1.dtr_state.readerType" Type="1">0</Property>
 <Property LongName="SerialPort_1.dtr_state.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="SerialPort_1.streamInput" Name="streamInput">
+<Property LongName="SerialPort_1.streamInput.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_1.streamInput.subsampling" Type="1">1</Property>
 </Input>
 <Output LongName="SerialPort_1.streamOutput" Name="streamOutput">
 <Property LongName="SerialPort_1.streamOutput.fifosize" Type="1">32</Property>
 <Property LongName="SerialPort_1.streamOutput.periodic" Type="0">false</Property>
 <Property LongName="SerialPort_1.streamOutput.subsampling" Type="1">1</Property>
 </Output>
-<Property LongName="SerialPort_1.port" Type="3"><![CDATA[COM1]]></Property>
+<Property LongName="SerialPort_1.port" Type="3"><![CDATA[/dev/ttyUSB1]]></Property>
 <Property LongName="SerialPort_1.baudrate" Type="4"><![CDATA[10|4|110|300|1200|2400|4800|9600|19200|38400|57600|115200]]></Property>
-<Property LongName="SerialPort_1.parity" Type="4"><![CDATA[5|0|None|Even|Odd|Mark|Space]]></Property>
-<Property LongName="SerialPort_1.stopbits" Type="4"><![CDATA[3|0|1|2|1,5]]></Property>
+<Property LongName="SerialPort_1.parity" Type="4"><![CDATA[3|0|None|Even|Odd]]></Property>
+<Property LongName="SerialPort_1.stopbits" Type="4"><![CDATA[2|0|1|2]]></Property>
 <Property LongName="SerialPort_1.byteSize" Type="4"><![CDATA[4|3|5|6|7|8]]></Property>
 <Property LongName="SerialPort_1.flowControl" Type="4"><![CDATA[3|0|None|Xon/Xoff|Hardware (RTS/CTS)]]></Property>
 <Property LongName="SerialPort_1.XonChar" Type="1">17</Property>
@@ -417,25 +423,25 @@
 <Property LongName="NMEA_GPGGA_frame_decoder_2.oStream8.periodic" Type="0">false</Property>
 <Property LongName="NMEA_GPGGA_frame_decoder_2.oStream8.subsampling" Type="1">1</Property>
 </Output>
-<Output LongName="NMEA_GPGGA_frame_decoder_2.position_lla" Name="position_lla">
-<Property LongName="NMEA_GPGGA_frame_decoder_2.position_lla.fifosize" Type="1">16</Property>
-<Property LongName="NMEA_GPGGA_frame_decoder_2.position_lla.periodic" Type="0">false</Property>
-<Property LongName="NMEA_GPGGA_frame_decoder_2.position_lla.subsampling" Type="1">1</Property>
-</Output>
 <Output LongName="NMEA_GPGGA_frame_decoder_2.dgps_data_age" Name="dgps_data_age">
 <Property LongName="NMEA_GPGGA_frame_decoder_2.dgps_data_age.fifosize" Type="1">16</Property>
 <Property LongName="NMEA_GPGGA_frame_decoder_2.dgps_data_age.periodic" Type="0">false</Property>
 <Property LongName="NMEA_GPGGA_frame_decoder_2.dgps_data_age.subsampling" Type="1">1</Property>
 </Output>
-<Output LongName="NMEA_GPGGA_frame_decoder_2.quality_indicator" Name="quality_indicator">
-<Property LongName="NMEA_GPGGA_frame_decoder_2.quality_indicator.fifosize" Type="1">16</Property>
-<Property LongName="NMEA_GPGGA_frame_decoder_2.quality_indicator.periodic" Type="0">false</Property>
-<Property LongName="NMEA_GPGGA_frame_decoder_2.quality_indicator.subsampling" Type="1">1</Property>
+<Output LongName="NMEA_GPGGA_frame_decoder_2.position_lla" Name="position_lla">
+<Property LongName="NMEA_GPGGA_frame_decoder_2.position_lla.fifosize" Type="1">16</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.position_lla.periodic" Type="0">false</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.position_lla.subsampling" Type="1">1</Property>
 </Output>
 <Output LongName="NMEA_GPGGA_frame_decoder_2.dgps_station_id" Name="dgps_station_id">
 <Property LongName="NMEA_GPGGA_frame_decoder_2.dgps_station_id.fifosize" Type="1">16</Property>
 <Property LongName="NMEA_GPGGA_frame_decoder_2.dgps_station_id.periodic" Type="0">false</Property>
 <Property LongName="NMEA_GPGGA_frame_decoder_2.dgps_station_id.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="NMEA_GPGGA_frame_decoder_2.quality_indicator" Name="quality_indicator">
+<Property LongName="NMEA_GPGGA_frame_decoder_2.quality_indicator.fifosize" Type="1">16</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.quality_indicator.periodic" Type="0">false</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.quality_indicator.subsampling" Type="1">1</Property>
 </Output>
 <Output LongName="NMEA_GPGGA_frame_decoder_2.nb_satellites" Name="nb_satellites">
 <Property LongName="NMEA_GPGGA_frame_decoder_2.nb_satellites.fifosize" Type="1">16</Property>
@@ -491,10 +497,10 @@
 <InputInfos Name="rts_state">
 <Description/>
 </InputInfos>
-<InputInfos Name="streamInput">
+<InputInfos Name="dtr_state">
 <Description/>
 </InputInfos>
-<InputInfos Name="dtr_state">
+<InputInfos Name="streamInput">
 <Description/>
 </InputInfos>
 <OutputInfos Name="streamOutput">
@@ -509,16 +515,16 @@
 <OutputInfos Name="oStream8">
 <Description/>
 </OutputInfos>
-<OutputInfos Name="position_lla">
-<Description/>
-</OutputInfos>
 <OutputInfos Name="dgps_data_age">
 <Description/>
 </OutputInfos>
-<OutputInfos Name="quality_indicator">
+<OutputInfos Name="position_lla">
 <Description/>
 </OutputInfos>
 <OutputInfos Name="dgps_station_id">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="quality_indicator">
 <Description/>
 </OutputInfos>
 <OutputInfos Name="nb_satellites">
@@ -688,10 +694,10 @@
 <Property LongName="SerialPort_2.streamOutput.periodic" Type="0">false</Property>
 <Property LongName="SerialPort_2.streamOutput.subsampling" Type="1">1</Property>
 </Output>
-<Property LongName="SerialPort_2.port" Type="3"><![CDATA[COM1]]></Property>
-<Property LongName="SerialPort_2.baudrate" Type="4"><![CDATA[10|5|110|300|1200|2400|4800|9600|19200|38400|57600|115200]]></Property>
-<Property LongName="SerialPort_2.parity" Type="4"><![CDATA[5|0|None|Even|Odd|Mark|Space]]></Property>
-<Property LongName="SerialPort_2.stopbits" Type="4"><![CDATA[3|0|1|2|1,5]]></Property>
+<Property LongName="SerialPort_2.port" Type="3"><![CDATA[/dev/ttyS0]]></Property>
+<Property LongName="SerialPort_2.baudrate" Type="4"><![CDATA[10|7|110|300|1200|2400|4800|9600|19200|38400|57600|115200]]></Property>
+<Property LongName="SerialPort_2.parity" Type="4"><![CDATA[3|0|None|Even|Odd]]></Property>
+<Property LongName="SerialPort_2.stopbits" Type="4"><![CDATA[2|0|1|2]]></Property>
 <Property LongName="SerialPort_2.byteSize" Type="4"><![CDATA[4|3|5|6|7|8]]></Property>
 <Property LongName="SerialPort_2.flowControl" Type="4"><![CDATA[3|0|None|Xon/Xoff|Hardware (RTS/CTS)]]></Property>
 <Property LongName="SerialPort_2.XonChar" Type="1">17</Property>

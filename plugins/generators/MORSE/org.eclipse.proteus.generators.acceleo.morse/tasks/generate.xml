@@ -1,17 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<project default="generate" name="org.eclipse.proteus.generators.acceleo.morse">
-    <property name="ECLIPSE_HOME" value="../../../../../../../apps/eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../.."/>
-
-    <!-- The classpath with only the dependencies used by the project -->
-    <path id="org.eclipse.proteus.generators.acceleo.morse.libraryclasspath">
-        <pathelement location="${ECLIPSE_WORKSPACE}/org.eclipse.proteus.generators.acceleo.morse/bin"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.8.0.v20120521-2346.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.8.1.v20120830-144521.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.6.100.v20120522-1841.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.5.300.v20120622-204750.jar"/>
-=======
 <project default="generate" name="org.eclipse.robotml.generators.acceleo.morse">
     <property name="ECLIPSE_HOME" value="../../../../../../../Produits/eclipse-modeling-juno-RC3-win32/eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../../../../../../../runtime-New_configurationMORSE"/>
@@ -23,21 +10,11 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.8.0.v20120529-1548.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.6.100.v20120522-1841.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.5.200.v20120521-2346.jar"/>
->>>>>>> 596688edf02bc258b5ab82572c974b033774accc
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.100.v20120521-2346/runtime_registry_compatibility.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.registry_3.5.200.v20120522-1841.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.5.0.v20120522-1841.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.4.200.v20120523-2004.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.3.100.v20120522-1841.jar"/>
-<<<<<<< HEAD
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.9.0.v20121109-0529.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.9.0.v20121109-0529.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.9.0.v20121109-0529.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl_3.3.0.v20121107-1612.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.common_1.1.0.v20121102-1658.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.ecore_3.2.100.v20121109-1114.jar"/>
-=======
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.8.1.v20120911-0500.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.8.0.v20120911-0500.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.8.0.v20120911-0500.jar"/>
@@ -45,22 +22,11 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.common_1.0.0.v20120516-1543.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.ecore_3.2.0.v20120522-1637.jar"/>
->>>>>>> 596688edf02bc258b5ab82572c974b033774accc
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.common_3.3.1.v20120831-0923.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.parser_3.3.1.v20120831-0923.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.model_3.3.1.v20120831-0923.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.profiler_3.3.1.v20120831-0923.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.engine_3.3.1.v20120831-0923.jar"/>
-<<<<<<< HEAD
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.9.0.v20121109-0549.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.9.0.v20121109-0549.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.uml_4.0.100.v20121112-0901.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.common_1.7.0.v20121112-0901.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.types_1.0.0.v20121112-0901.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.mapping.ecore2xml_2.7.0.v20121109-0549.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.validation_1.4.0.v20100428-2315.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.8.1.v20120802-154922.jar"/>
-=======
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.8.1.v20120917-0436.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.8.0.v20120917-0436.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.uml_4.0.100.v20120830-1546.jar"/>
@@ -69,7 +35,6 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.mapping.ecore2xml_2.7.0.v20120917-0436.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.validation_1.4.0.v20100428-2315.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.8.0.v20120522-2034.jar"/>
->>>>>>> 596688edf02bc258b5ab82572c974b033774accc
     </path>
 
     <path id="org.eclipse.robotml.generators.acceleo.morse.classpath">

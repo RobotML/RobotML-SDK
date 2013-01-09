@@ -141,12 +141,14 @@ void [c.name/]::[port.name/]([port.type.name/] const& data)
 bool [c.name/]::[m.name/]([for( param: Parameter | op.ownedParameter) separator(',')][param.type.name/] [if (param.direction.toString() = 'in')]const[/if]& [param.name/][/for])
 {
 	/*[m.oclAsType(OpaqueBehavior)._body/]*/
+	return false;
 }
 			[/for]
 		[else]
 bool [c.name/]::[op.name/]([for( param: Parameter | op.ownedParameter) separator(',')][param.type.name/] [if (param.direction.toString() = 'in')]const[/if]& [param.name/][/for])
 {
 	//to complete
+	return false;
 }
 		[/if]
 	[/for]

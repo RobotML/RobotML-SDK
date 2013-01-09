@@ -6,6 +6,7 @@
 [import org::eclipse::robotml::generators::acceleo::mmqueries::DeploymentQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::FSMQueries /]
+[import org::eclipse::robotml::generators::acceleo::aroccam::files::generate_aroccam_component_cpp /]
 
 [template public generateAroccamApplicationCpp(model : Model)]
 
@@ -32,9 +33,9 @@ using namespace qtviewer;
 
 void [model.name/]Application::initialization(const std::string &)
 {
-[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+[for (inst: InstanceSpecification | getInstanceSpecifications(model)) before('\t//robotML component connections\n')]
 	[let p: Property = getInstance(model, inst)]
-		[if (p.isProperty() and inst.isAllocatedTo('allocate to aroccam'))]
+		[if (p.isProperty() and inst.isAllocatedTo('aroccam'))]
 			[for (port : Port | p.type.oclAsType(Class).getInputPortsForElement())]
 				[for (conn : Connector | port.getConnectionsFromPort())]
 					[if (	conn.getSourceComponentForConnector().type.oclAsType(Class).hasStereotype('System') or
@@ -52,7 +53,7 @@ void [model.name/]Application::finalization()
 {
 }
 
-//cameras event callbacks
+//effibox cameras event callbacks
 [for (inst: InstanceSpecification | getInstanceSpecifications(model))]
 	[let p: Property = getInstance(model, inst)]
 		[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('CameraSystem'))]
@@ -65,7 +66,7 @@ void [model.name/]Application::frame[p.name/](const effibox::FramePtr & f)
 	[/let]
 [/for]
 
-//rangefinder event callbacks
+//effibox rangefinder event callbacks
 [for (inst: InstanceSpecification | getInstanceSpecifications(model))]
 	[let p: Property = getInstance(model, inst)]
 		[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('LidarSystem'))]
@@ -78,7 +79,7 @@ void [model.name/]Application::frame[p.name/](const effibox::FramePtr & f)
 	[/let]
 [/for]
 
-//gps events callbacks
+//effibox gps events callbacks
 [for (inst: InstanceSpecification | getInstanceSpecifications(model))]
 	[let p: Property = getInstance(model, inst)]
 		[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('GPSSystem'))]
@@ -91,7 +92,7 @@ void [model.name/]Application::frame[p.name/]_GGA(const effibox::FramePtr & f)
 	[/let]
 [/for]
 
-//odometry events callback
+//effibox odometry events callback
 [for (inst: InstanceSpecification | getInstanceSpecifications(model))]
 	[let p: Property = getInstance(model, inst)]
 		[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('OdometrySystem'))]
@@ -104,7 +105,7 @@ void [model.name/]Application::frame[p.name/]_genericodometry(const effibox::Fra
 	[/let]
 [/for]
 
-//imu events callback
+//effibox imu events callback
 [for (inst: InstanceSpecification | getInstanceSpecifications(model))]
 	[let p: Property = getInstance(model, inst)]
 		[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('InertialMeasurementUnitSystem'))]
@@ -123,5 +124,14 @@ void [model.name/]Application::frameError(const FramePtr & f)
 	std::cerr << "Frame error " << frame->getErrorMessage() << " occured at " << frame->getDate() << "!" << std::endl;
 }
 [/file]
+
+[comment] Generate Sub-Components [/comment]
+[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+	[let p: Property = getInstance(model, inst)]
+		[if (p.isProperty() and inst.isAllocatedTo('aroccam'))]
+[generateAroccamComponentCpp(p.type.oclAsType(Class),model)/]
+		[/if]
+	[/let]
+[/for]
 
 [/template]

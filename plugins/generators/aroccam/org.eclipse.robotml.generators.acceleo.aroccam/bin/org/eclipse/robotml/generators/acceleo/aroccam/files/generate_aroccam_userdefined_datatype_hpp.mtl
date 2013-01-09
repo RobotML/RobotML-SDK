@@ -11,6 +11,9 @@
 #ifndef __EFFIBOX_Datatype_[elt.name/]_HPP__
 #define __EFFIBOX_Datatype_[elt.name/]_HPP__
 
+//stl
+#include <vector>
+
 //local includes
 #include "DataType.hpp"
 
@@ -30,7 +33,13 @@ struct [elt.name/]
 {
 	[for (elem: Element | elt.allOwnedElements())]
 		[if elem.oclIsTypeOf(Property)]
+			[let s: String = elem.oclAsType(Property).getInstanceMultiplicity()]
+				[if s.equalsIgnoreCase('')] 
 	[elem.oclAsType(Property).type.name/] [elem.oclAsType(Property).name/];
+				[else]
+	std::vector<[elem.oclAsType(Property).type.name/]> [elem.oclAsType(Property).name/];
+				[/if]
+			[/let]
 		[/if]
 	[/for]
 };

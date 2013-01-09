@@ -31,21 +31,15 @@ open a terminal
 cd applicationPath/build/
 effibox -a libApplicationName
 
-----Deployment
+--------------------------------------------
+--------GENERATOR DEBUG INFORMATIONS--------
+--------------------------------------------
+
+----DeploymentPlan
+List of components instances in the model :
+
 [for (inst: InstanceSpecification | getInstanceSpecifications(model))]
-	[let p: Property = getInstance(model, inst)]
-		[if (p.isProperty() and inst.isAllocatedTo('allocate to aroccam'))]
-[p.type.oclAsType(Class).getStereotype()/] [p.type.name/] [p.name/]
-		[/if]
-	[/let]
-[/for]
-
-----/Deployment
-
-[for (elt: NamedElement | getComponentModels(model))]
-	[let c : Class = elt.oclAsType(Class)]
-		[elt.name/] - [elt.qualifiedName/] - [elt.getLabel()/]
-	[/let]
+Name: [inst.name/] Allocation: [getAllocationName(inst)/] [let p: Property = getInstance(model, inst)][if (p.isProperty())]RealName:[p.name/], Type: [p.type.name/], Stereotype:[p.type.oclAsType(Class).getStereotype()/][/if][/let] 
 [/for]
 
 [comment]

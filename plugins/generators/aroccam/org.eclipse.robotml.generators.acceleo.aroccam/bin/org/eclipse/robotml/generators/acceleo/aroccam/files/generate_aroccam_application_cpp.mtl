@@ -3,9 +3,9 @@
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::DeploymentQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::FSMQueries /]
-
 
 [template public generateAroccamApplicationCpp(model : Model)]
 
@@ -32,65 +32,95 @@ using namespace qtviewer;
 
 void [model.name/]Application::initialization(const std::string &)
 {
-[let main_comp : Class = getRootClassForModel(model)]
-	[for (conn : Connector | getInternalConnectors(main_comp))]
-	//[conn.getSourceComponentInstanceNameForConnector()/].[conn.getSourcePortName()/].addFunctionToExecute([getDestComponentInstanceNameForConnector(conn)/]);
-	[/for]
-[/let]
+[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+	[let p: Property = getInstance(model, inst)]
+		[if (p.isProperty() and inst.isAllocatedTo('allocate to aroccam'))]
+			[for (port : Port | p.type.oclAsType(Class).getInputPortsForElement())]
+				[for (conn : Connector | port.getConnectionsFromPort())]
+					[if (	conn.getSourceComponentForConnector().type.oclAsType(Class).hasStereotype('System') or
+							conn.getSourceComponentForConnector().type.oclAsType(Class).hasStereotype('Software'))]
+  [conn.getSourceComponentInstanceNameForConnector()/].[conn.getSourcePortName()/]->addFunctionToExecute(boost::bind(&[conn.getDestComponentForConnector().type.name/]::[conn.getDestPortName()/], &[conn.getDestComponentForConnector().name/], _1));
+					[/if]
+				[/for]
+			[/for]
+		[/if]
+	[/let]
+[/for]
 }
+
 void [model.name/]Application::finalization()
 {
 }
 
 //cameras event callbacks
-[for (elt: NamedElement | getElementsWithStereotype(model,'CameraSystem'))]
-void [model.name/]Application::frame[elt.name/](const effibox::FramePtr & f)
+[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+	[let p: Property = getInstance(model, inst)]
+		[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('CameraSystem'))]
+void [model.name/]Application::frame[p.name/](const effibox::FramePtr & f)
 {
-  camera::FrameCameraImagePtr frame = frame_cast<camera::FrameCameraImage>(f);
-  qtviewer::ShowFrame("[elt.name/]", frame);
+	camera::FrameCameraImagePtr frame = frame_cast<camera::FrameCameraImage>(f);
+	qtviewer::ShowFrame("[p.name/]", frame);
 }
+		[/if]
+	[/let]
 [/for]
 
 //rangefinder event callbacks
-[for (elt: NamedElement | getElementsWithStereotype(model,'LidarSystem'))]
-void [model.name/]Application::frame[elt.name/](const effibox::FramePtr & f)
+[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+	[let p: Property = getInstance(model, inst)]
+		[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('LidarSystem'))]
+void [model.name/]Application::frame[p.name/](const effibox::FramePtr & f)
 {
-  rangefinder::FrameRangefinderDistancePtr frame = frame_cast<rangefinder::FrameRangefinderDistance>(f);
-  qtviewer::ShowFrame("[elt.name/]", frame);
+	rangefinder::FrameRangefinderDistancePtr frame = frame_cast<rangefinder::FrameRangefinderDistance>(f);
+	qtviewer::ShowFrame("[p.name/]", frame);
 }
+		[/if]
+	[/let]
 [/for]
 
 //gps events callbacks
-[for (elt: NamedElement | getElementsWithStereotype(model,'GPSSystem'))]
-void [model.name/]Application::frame[elt.name/]_GGA(const effibox::FramePtr & f)
+[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+	[let p: Property = getInstance(model, inst)]
+		[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('GPSSystem'))]
+void [model.name/]Application::frame[p.name/]_GGA(const effibox::FramePtr & f)
 {
-  gps::FrameGpsGGAPtr frame = frame_cast<gps::FrameGpsGGA>(f);
-  qtviewer::ShowFrame("[elt.name/]", frame);
+	gps::FrameGpsGGAPtr frame = frame_cast<gps::FrameGpsGGA>(f);
+	qtviewer::ShowFrame("[p.name/]", frame);
 }
+		[/if]
+	[/let]
 [/for]
 
 //odometry events callback
-[for (elt: NamedElement | getElementsWithStereotype(model,'OdometrySystem'))]
-void [model.name/]Application::frame[elt.name/]_genericodometry(const effibox::FramePtr & f)
+[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+	[let p: Property = getInstance(model, inst)]
+		[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('OdometrySystem'))]
+void [model.name/]Application::frame[p.name/]_genericodometry(const effibox::FramePtr & f)
 {
-  vehicle::FrameOdometryPtr frame = frame_cast<vehicle::FrameOdometry>(f);
-  qtviewer::ShowFrame("[elt.name/]", frame);
+	vehicle::FrameOdometryPtr frame = frame_cast<vehicle::FrameOdometry>(f);
+	qtviewer::ShowFrame("[p.name/]", frame);
 }
+		[/if]
+	[/let]
 [/for]
 
 //imu events callback
-[for (elt: NamedElement | getElementsWithStereotype(model,'InertialMeasurementUnitSystem'))]
-void [model.name/]Application::frame[elt.name/]_GLOBAL(const effibox::FramePtr & f)
+[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+	[let p: Property = getInstance(model, inst)]
+		[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('InertialMeasurementUnitSystem'))]
+void [model.name/]Application::frame[p.name/]_GLOBAL(const effibox::FramePtr & f)
 {
-  imu::FrameIMUPtr frame = frame_cast<imu::FrameIMU>(f);
-  qtviewer::ShowFrame("[elt.name/]", frame);
+	imu::FrameIMUPtr frame = frame_cast<imu::FrameIMU>(f);
+	qtviewer::ShowFrame("[p.name/]", frame);
 }
+		[/if]
+	[/let]
 [/for]
 
 void [model.name/]Application::frameError(const FramePtr & f)
 {
-  effibox::FrameErrorPtr frame = frame_cast<FrameError>(f);
-  std::cerr << "Frame error " << frame->getErrorMessage() << " occured at " << frame->getDate() << "!" << std::endl;
+	effibox::FrameErrorPtr frame = frame_cast<FrameError>(f);
+	std::cerr << "Frame error " << frame->getErrorMessage() << " occured at " << frame->getDate() << "!" << std::endl;
 }
 [/file]
 

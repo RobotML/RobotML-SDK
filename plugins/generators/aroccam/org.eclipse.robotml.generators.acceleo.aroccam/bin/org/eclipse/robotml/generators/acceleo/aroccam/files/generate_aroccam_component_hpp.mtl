@@ -6,8 +6,8 @@
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::FSMQueries /]
 
-[template public generateAroccamComponentHpp(c : Class, root_model : Model)]
-[file ('src/' + root_model.name + 'Application/' + c.getStereotype() + '/' + c.name + '/' + c.name + '.hpp', false, 'UTF-8')]
+[template public generateAroccamComponentHpp(c : Class, model : Model)]
+[file ('src/' + model.name + 'Application/' + c.getStereotype() + '/' + c.name + '/' + c.name + '.hpp', false, 'UTF-8')]
 #ifndef __EFFIBOX_[c.name/]_HPP__
 #define __EFFIBOX_[c.name/]_HPP__
 
@@ -16,6 +16,9 @@
 
 //local includes
 #include "Datatypes/all.hpp"
+
+[comment]Generate Hpp sub-component[/comment]
+[if c.isMacroComponent()][for (prop: Property | getLevel1SubComponentsForComponent(c))][generateAroccamComponentHpp(prop.type.oclAsType(Class),model)/][/for][/if]
 
 [comment]Includes for subcomponents[/comment]
 [if c.isMacroComponent()]

@@ -3,9 +3,11 @@
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::DeploymentQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::FSMQueries /]
-
+[import org::eclipse::robotml::generators::acceleo::aroccam::files::generate_aroccam_component_hpp /]
+[import org::eclipse::robotml::generators::acceleo::aroccam::files::generate_aroccam_component_cpp /]
 
 [template public generateAroccamApplicationHpp(model : Model)]
 
@@ -18,15 +20,15 @@
 
 //local includes
 #include "Datatypes/all.hpp"
-[let main_comp : Class = getRootClassForModel(model)]
-	[for (prop: Property | getLevel1SubComponentsForComponent(main_comp))]
-		[let sub_c : Class = prop.type.oclAsType(Class)]
-			[if (sub_c.getStereotype().contains('Software'))]
-#include "[sub_c.getStereotype()/]/[sub_c.name/]/[sub_c.name/].hpp"
-			[/if]
-		[/let]
-	[/for]
-[/let]
+
+[comment] Includes sub-components (which has been allocated to aroccam) [/comment]
+[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+	[let p: Property = getInstance(model, inst)]
+		[if (p.isProperty() and inst.isAllocatedTo('allocate to aroccam'))]
+#include "[p.type.oclAsType(Class).getStereotype()/]/[p.type.name/]/[p.type.name/].hpp"
+		[/if]
+	[/let]
+[/for]
 
 class [model.name/]Application: public Application
 {
@@ -37,43 +39,61 @@ public:
 	void finalization();
 
 	//cameras event callbacks
-	[for (elt: NamedElement | getElementsWithStereotype(model,'CameraSystem'))]
-		void frame[elt.name/](const effibox::FramePtr & f);
+	[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+		[let p: Property = getInstance(model, inst)]
+			[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('CameraSystem'))]
+	void frame[p.name/](const effibox::FramePtr & f);
+			[/if]
+		[/let]
 	[/for]
 
 	//rangefinder event callbacks
-	[for (elt: NamedElement | getElementsWithStereotype(model,'LidarSystem'))]
-		void frame[elt.name/](const effibox::FramePtr & f);
+	[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+		[let p: Property = getInstance(model, inst)]
+			[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('LidarSystem'))]
+	void frame[p.name/](const effibox::FramePtr & f);
+			[/if]
+		[/let]
 	[/for]
 
 	//gps events callbacks
-	[for (elt: NamedElement | getElementsWithStereotype(model,'GPSSystem'))]
-		void frame[elt.name/]_GGA(const effibox::FramePtr & f);
+	[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+		[let p: Property = getInstance(model, inst)]
+			[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('GPSSystem'))]
+	void frame[p.name/]_GGA(const effibox::FramePtr & f);
+			[/if]
+		[/let]
 	[/for]
 
 	//odometry events callbacks
-	[for (elt: NamedElement | getElementsWithStereotype(model,'OdometrySystem'))]
-		void frame[elt.name/]_genericodometry(const effibox::FramePtr & f);
+	[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+		[let p: Property = getInstance(model, inst)]
+			[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('OdometrySystem'))]
+	void frame[p.name/]_genericodometry(const effibox::FramePtr & f);
+			[/if]
+		[/let]
 	[/for]
 
 	//imu events callbacks
-	[for (elt: NamedElement | getElementsWithStereotype(model,'InertialMeasurementUnitSystem'))]
-		void frame[elt.name/]_GLOBAL(const effibox::FramePtr & f);
+	[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+		[let p: Property = getInstance(model, inst)]
+			[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('InertialMeasurementUnitSystem'))]
+	void frame[p.name/]_GLOBAL(const effibox::FramePtr & f);
+			[/if]
+		[/let]
 	[/for]
 
 	void frameError(const effibox::FramePtr & f);
 
 	//sub-components
-	[comment] TODO ICI, GERER LA PARTIE DEPLOIEMENT POUR INSTANCIER LES BONS COMPOSANTS !!
-	[let main_comp : Class = getRootClassForModel(model)]
-		[for (prop: Property | getLevel1SubComponentsForComponent(main_comp))]
-			[if prop.oclAsType(Class).getStereotype().contains('Software') = true]
-		[prop.type.name/] [prop.name/];
+	[comment] Generate components in deployment plan which has been allocated to aroccam [/comment]
+	[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+		[let p: Property = getInstance(model, inst)]
+			[if (p.isProperty() and inst.isAllocatedTo('allocate to aroccam'))]
+	[p.type.name/] [p.name/];
 			[/if]
-		[/for]
-	[/let]
-	[/comment]
-
+		[/let]
+	[/for]
 };
 
 #endif

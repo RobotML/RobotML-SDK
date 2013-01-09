@@ -6,12 +6,15 @@
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::FSMQueries /]
 
-[template public generateAroccamComponentCpp(c : Class, root_model : Model)]
-[file ('src/' + root_model.name + 'Application/' + c.getStereotype() + '/' + c.name + '/' + c.name + '.cpp', false, 'UTF-8')]
+[template public generateAroccamComponentCpp(c : Class, model : Model)]
+[file ('src/' + model.name + 'Application/' + c.getStereotype() + '/' + c.name + '/' + c.name + '.cpp', false, 'UTF-8')]
 #include "[c.name/].hpp"
 
 //boost
 #include <boost/bind.hpp>
+
+[comment]Generate Cpp sub-component[/comment]
+[if c.isMacroComponent()][for (prop: Property | getLevel1SubComponentsForComponent(c))][generateAroccamComponentCpp(prop.type.oclAsType(Class),model)/][/for][/if]
 
 [comment]Constructor[/comment]
 [c.name/]::[c.name/]()
@@ -151,7 +154,7 @@ bool [c.name/]::[op.name/]([for( param: Parameter | op.ownedParameter) separator
 
 [comment][for (prop: Property | getLevel1SubComponentsForComponent(c))][/comment]
 [comment][let sub_c : Class = prop.type.oclAsType(Class)][/comment]
-[comment]	[generateAroccamComponentCpp(sub_c,root_model)/][/comment]
+[comment]	[generateAroccamComponentCpp(sub_c,model)/][/comment]
 [comment][/let][/comment]
 [comment][/for][/comment]
 [/file]

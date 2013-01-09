@@ -635,6 +635,28 @@ public class ArchitectureQueries {
 		ConnectorEnd e2 = conn.getEnds().get(1);
 		return (e1.getRole() == port) ? (Port)e2.getRole() : (Port)e1.getRole();
 	}
+	
+	/**
+	 * Get external connectors to a port 
+	 * @param port
+	 * @return a list of connectors which are connected to the port.
+	 */
+	static public List<org.eclipse.uml2.uml.Connector> getConnectionsFromPort(Port port)
+	{
+		LinkedList<org.eclipse.uml2.uml.Connector> connectors = new LinkedList<org.eclipse.uml2.uml.Connector>();
+		
+		for (ConnectorEnd connEnd : port.getEnds())
+		{
+			Connector conn = (Connector)connEnd.getOwner();
+
+			if (conn.getEnds().size() >= 2 && (conn.getEnds().get(0).getPartWithPort() != null) && (conn.getEnds().get(1).getPartWithPort() != null))
+			{
+				connectors.add(conn);
+			}
+		}
+		
+		return connectors;
+	}
 
 	/**
 	 * Debug function: prints info about a given dataflow port.

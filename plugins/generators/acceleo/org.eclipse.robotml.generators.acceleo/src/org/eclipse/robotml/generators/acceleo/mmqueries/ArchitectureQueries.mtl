@@ -35,6 +35,9 @@
 [query public getExternalOutputConnectors(c : Class) : Sequence(Connector) =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries','getExternalOutputConnectors(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
+[query public getAllSubComponentsInClass(class : Class) : Sequence(Property) =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'getAllSubComponentsInClass(org.eclipse.uml2.uml.Class)', Sequence{class})
+/]
 [query public getLevel1SubComponentsForComponent(class : Class) : Sequence(Property) =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'getLevel1SubComponentsForComponent(org.eclipse.uml2.uml.Class)', Sequence{class})
 /]
@@ -84,7 +87,10 @@
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'getConnectionDefinition(org.eclipse.uml2.uml.Connector)', Sequence{conn}) 
 /]
 [query public getConnectedPort(port : Port) : Port = 
-	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'getConnectedPort(org.eclipse.uml2.uml.Port)', Sequence{port}) 
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'getConnectedPort(org.eclipse.uml2.uml.Port)', Sequence{port})
+/]
+[query public getConnectionsFromPort(port : Port) : Sequence(Connector) =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries','getConnectionsFromPort(org.eclipse.uml2.uml.Port)', Sequence{port})
 /]
 [query public isAnInputPort(port : Port) : Boolean = 
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'isAnInputPort(org.eclipse.uml2.uml.Port)', Sequence{port}) 

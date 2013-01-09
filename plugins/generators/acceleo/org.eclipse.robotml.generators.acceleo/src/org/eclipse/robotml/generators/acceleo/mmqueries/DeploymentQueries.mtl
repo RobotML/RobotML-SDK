@@ -10,3 +10,9 @@
 [query public getParentName(inst : InstanceSpecification) : String =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getParentName(org.eclipse.uml2.uml.InstanceSpecification)', Sequence{inst})
 /]
+[query public getInstance(elt : Model, inst : InstanceSpecification) : Property =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getInstance(org.eclipse.uml2.uml.Model,org.eclipse.uml2.uml.InstanceSpecification)', Sequence{elt, inst})
+/]
+[query public isAllocatedTo(inst : InstanceSpecification, pfn: String) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'isAllocatedTo(org.eclipse.uml2.uml.InstanceSpecification,java.lang.String)', Sequence{inst, pfn})
+/]

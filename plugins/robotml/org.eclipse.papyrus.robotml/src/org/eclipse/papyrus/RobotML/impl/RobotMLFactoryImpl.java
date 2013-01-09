@@ -6,8 +6,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
 import org.eclipse.papyrus.RobotML.ActuatorSystem;
 import org.eclipse.papyrus.RobotML.Agent;
 import org.eclipse.papyrus.RobotML.Algorithm;
@@ -28,11 +31,15 @@ import org.eclipse.papyrus.RobotML.GPSSystem;
 import org.eclipse.papyrus.RobotML.Hardware;
 import org.eclipse.papyrus.RobotML.Human;
 import org.eclipse.papyrus.RobotML.ImageSensorSystem;
+import org.eclipse.papyrus.RobotML.InertialMeasurementUnitSystem;
+import org.eclipse.papyrus.RobotML.InertialNavigationSystem;
+import org.eclipse.papyrus.RobotML.InfraRedProximetrySystem;
 import org.eclipse.papyrus.RobotML.LandSurface;
 import org.eclipse.papyrus.RobotML.LidarSystem;
 import org.eclipse.papyrus.RobotML.LocalizationSensorSystem;
 import org.eclipse.papyrus.RobotML.ObjectDetectionSensorSystem;
 import org.eclipse.papyrus.RobotML.ObjectTrackingSensorSystem;
+import org.eclipse.papyrus.RobotML.OdometrySystem;
 import org.eclipse.papyrus.RobotML.OnPort;
 import org.eclipse.papyrus.RobotML.Pedestrian;
 import org.eclipse.papyrus.RobotML.PhysicalData;
@@ -156,6 +163,10 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 			case RobotMLPackage.BLENDER_MORSE: return createBlenderMorse();
 			case RobotMLPackage.ON_PORT: return createOnPort();
 			case RobotMLPackage.ALLOCATE: return createAllocate();
+			case RobotMLPackage.INERTIAL_MEASUREMENT_UNIT_SYSTEM: return createInertialMeasurementUnitSystem();
+			case RobotMLPackage.INERTIAL_NAVIGATION_SYSTEM: return createInertialNavigationSystem();
+			case RobotMLPackage.ODOMETRY_SYSTEM: return createOdometrySystem();
+			case RobotMLPackage.INFRA_RED_PROXIMETRY_SYSTEM: return createInfraRedProximetrySystem();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -687,6 +698,46 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	public Allocate createAllocate() {
 		AllocateImpl allocate = new AllocateImpl();
 		return allocate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InertialMeasurementUnitSystem createInertialMeasurementUnitSystem() {
+		InertialMeasurementUnitSystemImpl inertialMeasurementUnitSystem = new InertialMeasurementUnitSystemImpl();
+		return inertialMeasurementUnitSystem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InertialNavigationSystem createInertialNavigationSystem() {
+		InertialNavigationSystemImpl inertialNavigationSystem = new InertialNavigationSystemImpl();
+		return inertialNavigationSystem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OdometrySystem createOdometrySystem() {
+		OdometrySystemImpl odometrySystem = new OdometrySystemImpl();
+		return odometrySystem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InfraRedProximetrySystem createInfraRedProximetrySystem() {
+		InfraRedProximetrySystemImpl infraRedProximetrySystem = new InfraRedProximetrySystemImpl();
+		return infraRedProximetrySystem;
 	}
 
 	/**

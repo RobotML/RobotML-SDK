@@ -175,6 +175,24 @@ public interface Sensor_datatypesFactory extends EFactory {
 	JoyFeedbackArray createJoyFeedbackArray();
 
 	/**
+	 * Returns a new object of class '<em>Car Like Odometry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Car Like Odometry</em>'.
+	 * @generated
+	 */
+	CarLikeOdometry createCarLikeOdometry();
+
+	/**
+	 * Returns a new object of class '<em>Differential Odometry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Differential Odometry</em>'.
+	 * @generated
+	 */
+	DifferentialOdometry createDifferentialOdometry();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

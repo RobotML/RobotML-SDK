@@ -558,8 +558,8 @@ public class Std_datatypesFactoryImpl extends EFactoryImpl implements Std_dataty
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Long createInt64FromString(EDataType eDataType, String initialValue) {
-		return (Long)super.createFromString(eDataType, initialValue);
+	public Double createInt64FromString(EDataType eDataType, String initialValue) {
+		return (Double)super.createFromString(eDataType, initialValue);
 	}
 
 	/**

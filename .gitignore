@@ -7,11 +7,27 @@
 *.war
 *.ear
 *.emtl
+
+# Visual Studio secondary files
+*.suo
+*.sdf
+*.opensdf
+*.vcxproj.user
+
+# Generators compiled binary files
 plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo/bin/*
 plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo.athena/bin/*
 plugins/generators/RTMaps/org.eclipse.robotml.generators.acceleo.rtmaps/bin/*
 plugins/generators/RTMaps/org.eclipse.robotml.generators.acceleo.rtmaps.ui/bin/*
+<<<<<<< HEAD
 plugins/generators/CycabTK/org.eclipse.robotml.generators.acceleo.cycabtk/bin/*
 plugins/generators/CycabTK/org.eclipse.robotml.generators.acceleo.cycabtk.ui/bin/*
 
 
+=======
+
+# RTMaps resources intermediate binary files
+plugins/generators/RTMaps/rtmaps_resources/rtmaps_4_sdk_proteus/build/*
+plugins/generators/RTMaps/rtmaps_resources/rtmaps_4_sdk_proteus/ipch/*
+plugins/generators/RTMaps/rtmaps_resources/rtmaps_4_sdk_proteus/packages/debug/*
+>>>>>>> 596688edf02bc258b5ab82572c974b033774accc

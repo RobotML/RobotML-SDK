@@ -3,7 +3,6 @@
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries/]
 
-[import org::eclipse::robotml::generators::acceleo::athena::files::generateImport/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::generateTypes/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::generateFunctions/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::generateProcessings/]
@@ -15,7 +14,7 @@
 [template public generateAthena(model : Model)]
 [comment @main /] 
 	
-
+[if(isModelSaved())]
 [if(isModelValid(model))]
 [searchUsedDataType(model)/]
 [generateDataTypeFile(model)/]
@@ -23,84 +22,11 @@
 [generateProcessingFile(model)/]
 [generatePrototypeFile(model)/]
 [generateOutputSimulatorFile(model)/]
-[comment][if (isAutomaticGeneration(null))]
-[file(model.name + '.adl', false, 'UTF-8')]
-//
-//	Model [model.name/]
-//
-
-language CPP
-language VLE
-language MATLAB
-
-[if (createDataTypesFile(null))]
-[file ('datatypes.adl', false, 'UTF-8')]
-[generateTypes(model)/]
-[/file]
-[/if]
-
-//
-//	Imports
-//
-[generateImport(model)/]
-
-//
-// Functions
-//
-[generateFunctions(model)/]
-
-//
-// Processings 
-//
-[generateProcessings(model)/]
-
-//
-// Prototypes
-//
-[generatePrototypes(model)/]
-
-//
-// Wrapper
-//
-[generateWrapper(model)/]
-[/file]
-[elseif (isModelNameSelected(model))]
-[file(model.name + '.adl', false, 'UTF-8')]
-//
-//	Model [model.name/]
-//
-
-language CPP
-language VLE
-language MATLAB
-
-[generateTypes(model)/]
-
-//
-// Functions
-//
-[generateFunctions(model)/]
-
-//
-// Processings 
-//
-[generateProcessings(model)/]
-
-//
-// Prototypes
-//
-[generatePrototypes(model)/]
-
-//
-// Wrapper
-//
-[generateWrapper(model)/]
-[/file]
-[/if][/comment]
 [else]
 [let msg : String = 'Can\'t generate model, because not have an environment component.']
 [showErrorMessageDlg(msg)/]
 [/let]
+[/if]
 [/if]
 [/template]
 
@@ -113,11 +39,9 @@ language MATLAB
 wrapper [classe.name/] begin
 		
 	link-library { "[generateWrapperString(classe)/]" }
-[comment]			[let lib : AlgorithmLibrary = classe.oclAsType(AlgorithmLibrary)][/comment]
-[comment]		link-library { [lib.path.toString()/] }[/comment]
 [let ops : Sequence(Operation) = classe.eAllContents(Operation)]
 	implements-functions {
-[for(op : Operation | ops)][searchUsedDataType(model)/]
+[for(op : Operation | ops)]
 							[op.name/][if(ops->indexOf(op) < ops->size())],[/if]
 [/for]
 	}
@@ -125,7 +49,6 @@ wrapper [classe.name/] begin
 	external-objects {  }
 	external-libraries {  }
 	test-apps {  } 
-[comment]				[/let][/comment]
 end
 [/if]
 [/for]

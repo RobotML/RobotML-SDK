@@ -51,13 +51,14 @@ public:
 		void frame[elt.name/]_GGA(const effibox::FramePtr & f);
 	[/for]
 
-	//other sensors events callback
-	[for (elt: NamedElement | getElementsWithStereotype(model,'SensorSystem'))]
-		[if(elt.name.toLower().contains('odometry'))]
+	//odometry events callbacks
+	[for (elt: NamedElement | getElementsWithStereotype(model,'OdometrySystem'))]
 		void frame[elt.name/]_genericodometry(const effibox::FramePtr & f);
-		[elseif(elt.name.toLower().contains('imu'))]
+	[/for]
+
+	//imu events callbacks
+	[for (elt: NamedElement | getElementsWithStereotype(model,'InertialMeasurementUnitSystem'))]
 		void frame[elt.name/]_GLOBAL(const effibox::FramePtr & f);
-		[/if]
 	[/for]
 
 	void frameError(const effibox::FramePtr & f);

@@ -1182,7 +1182,7 @@ public class Std_datatypesPackageImpl extends EPackageImpl implements Std_dataty
 		initEDataType(int16EDataType, int.class, "Int16", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(charEDataType, char.class, "Char", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(durationEDataType, double.class, "Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(int64EDataType, long.class, "Int64", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(int64EDataType, double.class, "Int64", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(uInt64EDataType, long.class, "UInt64", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(float32EDataType, float.class, "Float32", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 

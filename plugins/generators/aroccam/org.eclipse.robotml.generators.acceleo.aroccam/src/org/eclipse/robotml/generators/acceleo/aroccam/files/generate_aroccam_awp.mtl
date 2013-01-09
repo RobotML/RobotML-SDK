@@ -54,8 +54,7 @@
       		</event>
    		</interface>
 	[/for]
-	[for (elt: NamedElement | getElementsWithStereotype(model,'SensorSystem'))]
-		[if(elt.name.toLower().contains('odometry'))]
+	[for (elt: NamedElement | getElementsWithStereotype(model,'OdometrySystem'))]
    		<interface model="model_simulated_ros_vipalab" type="vehicle">
       		<name>[elt.name/]</name>
       		<driver id="driver_ros" configId="all">
@@ -67,7 +66,8 @@
          		<handler processingChoice="Acquisition + Visualization" state="0">frame[elt.name/]_genericodometry</handler>
       		</event>
    		</interface>
-		[elseif(elt.name.toLower().contains('imu')) ]
+	[/for]
+	[for (elt: NamedElement | getElementsWithStereotype(model,'InertialMeasurementUnitSystem'))]
 		<interface model="model_simulated_ros_imu" type="imu">
 			<name>[elt.name/]</name>
 			<driver id="driver_ros" configId="all">
@@ -78,7 +78,6 @@
 				<handler processingChoice="Acquisition" state="0">frame[elt.name/]_GLOBAL</handler>
 			</event>
 		</interface>
-		[/if]
 	[/for]
 </project>
 [/file]

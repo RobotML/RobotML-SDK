@@ -69,21 +69,22 @@ void [model.name/]Application::frame[elt.name/]_GGA(const effibox::FramePtr & f)
 }
 [/for]
 
-//other sensors events callback
-[for (elt: NamedElement | getElementsWithStereotype(model,'SensorSystem'))]
-	[if(elt.name.toLower().contains('odometry'))]
+//odometry events callback
+[for (elt: NamedElement | getElementsWithStereotype(model,'OdometrySystem'))]
 void [model.name/]Application::frame[elt.name/]_genericodometry(const effibox::FramePtr & f)
 {
   vehicle::FrameOdometryPtr frame = frame_cast<vehicle::FrameOdometry>(f);
   qtviewer::ShowFrame("[elt.name/]", frame);
 }
-	[elseif(elt.name.toLower().contains('imu'))]
+[/for]
+
+//imu events callback
+[for (elt: NamedElement | getElementsWithStereotype(model,'InertialMeasurementUnitSystem'))]
 void [model.name/]Application::frame[elt.name/]_GLOBAL(const effibox::FramePtr & f)
 {
   imu::FrameIMUPtr frame = frame_cast<imu::FrameIMU>(f);
   qtviewer::ShowFrame("[elt.name/]", frame);
 }
-	[/if]
 [/for]
 
 void [model.name/]Application::frameError(const FramePtr & f)

@@ -14,6 +14,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.papyrus.RobotML.*;
+import org.eclipse.papyrus.RobotML.System;
 import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
 
 /**
@@ -409,6 +410,29 @@ public class ArchitectureQueries {
 		return result;
 	}
 	
+	static public Boolean hasNativeImplementation(org.eclipse.uml2.uml.Class c)
+	{
+		org.eclipse.papyrus.RobotML.System sys = org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication(c, org.eclipse.papyrus.RobotML.System.class);
+		if (sys == null)
+			return false;
+		return sys.isNative();
+	}
+	
+	static public String getNativeLibraryPathForComponent(org.eclipse.uml2.uml.Class c) 
+	{
+		org.eclipse.papyrus.RobotML.System sys = org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication(c, org.eclipse.papyrus.RobotML.System.class);
+		if (sys == null)
+			return null;
+		return sys.getLibraryPath();
+	}
+	
+	static public String getNativeComponentNameForComponent(org.eclipse.uml2.uml.Class c) 
+	{
+		org.eclipse.papyrus.RobotML.System sys = org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication(c, org.eclipse.papyrus.RobotML.System.class);
+		if (sys == null)
+			return null;
+		return sys.getLibraryComponentName();
+	}
 	/**
 	 * 
 	 */

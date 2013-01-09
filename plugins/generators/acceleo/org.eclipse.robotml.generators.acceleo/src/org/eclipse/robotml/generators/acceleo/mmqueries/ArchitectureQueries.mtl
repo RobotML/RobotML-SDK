@@ -56,6 +56,15 @@
 [query public isMacroComponent(class : Class) : Boolean = 
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'isMacroComponent(org.eclipse.uml2.uml.Class)', Sequence{class}) 
 /]
+[query public hasNativeImplementation(class : Class) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'hasNativeImplementation(org.eclipse.uml2.uml.Class)', Sequence{class}) 
+/]
+[query public getNativeLibraryPathForComponent(class : Class) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'getNativeLibraryPathForComponent(org.eclipse.uml2.uml.Class)', Sequence{class}) 
+/]
+[query public getNativeComponentNameForComponent(class : Class) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'getNativeComponentNameForComponent(org.eclipse.uml2.uml.Class)', Sequence{class}) 
+/]
 [query public getComponentFileName(classifier : Classifier, end : String) : String = 
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'getComponentFileName(org.eclipse.uml2.uml.Classifier,java.lang.String)', Sequence{classifier,end}) 
 /]

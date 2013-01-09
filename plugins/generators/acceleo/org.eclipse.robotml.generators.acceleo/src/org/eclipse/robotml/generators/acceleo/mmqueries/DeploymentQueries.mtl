@@ -16,3 +16,6 @@
 [query public isAllocatedTo(inst : InstanceSpecification, pfn: String) : Boolean =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'isAllocatedTo(org.eclipse.uml2.uml.InstanceSpecification,java.lang.String)', Sequence{inst, pfn})
 /]
+[query public getAllocationName(inst : InstanceSpecification) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getAllocationName(org.eclipse.uml2.uml.InstanceSpecification)', Sequence{inst})
+/]

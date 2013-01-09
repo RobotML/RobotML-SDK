@@ -2,7 +2,6 @@ package org.eclipse.robotml.generators.acceleo.mmqueries;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.io.*;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -120,13 +119,37 @@ public class DeploymentQueries {
 	 */
 	static public Boolean isAllocatedTo(InstanceSpecification instanceSpecification, String platformKind)
 	{
-		for(Dependency d : instanceSpecification.getClientDependencies())
-		{
-			if(d.getName().equals(platformKind))
-				return true;
-		}
+		if(instanceSpecification.getClientDependencies().size() == 0)
+			return false;
+		
+		//il n'y a toujours qu'un element
+		Dependency d = instanceSpecification.getClientDependencies().get(0);
+
+		//TODO: attention d.getName() donne quelque chose du genre "allocate to aroccam1"
+		//ou aroccam1 est le nom donné par l'utilisateur de l'instance du composant platform (Aroccam1) aussi nommé par l'utilisateur...
+		//pour que ça fonctionne parfaitement, il faudrait retrouver la valeur du paramètre "Kind" associé au
+		//Stéréotype RoboticMiddleware du composant platform (Aroccam1) nommé par l'utilisateur
+		//pour l'instant ça fonctionne comme ça, à condition que l'utilisateur a nommé sont instance de plateforme avec un nom
+		//qui contient la meme chaine que dans le kind... 
+		if(d.getName().toLowerCase().contains(platformKind.toLowerCase()))
+			return true;
 		
 		return false;
 	}
+	
+	/**
+	 * Function to know the content of allocation string. 
+	 * @param instanceSpecification
+	 * @return the allocation string 
+	 */
+	static public String getAllocationName(InstanceSpecification instanceSpecification)
+	{
+		if(instanceSpecification.getClientDependencies().size() == 0)
+			return new String();
+		
+		//il n'y a toujours qu'un element
+		Dependency d = instanceSpecification.getClientDependencies().get(0);
+		
+		return d.getName();
+	}
 }
-

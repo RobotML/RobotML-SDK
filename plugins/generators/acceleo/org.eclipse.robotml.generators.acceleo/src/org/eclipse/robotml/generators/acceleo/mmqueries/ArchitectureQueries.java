@@ -325,7 +325,7 @@ public class ArchitectureQueries {
 	static public List<org.eclipse.uml2.uml.Port> getOutputPortsForElement(Element elt) {
 		LinkedList<org.eclipse.uml2.uml.Port> found_output_ports = new LinkedList<org.eclipse.uml2.uml.Port>();		
 		for (Element child : elt.getOwnedElements()) {
-			if (child instanceof NamedElement && child instanceof org.eclipse.uml2.uml.Port) {
+			if (child instanceof org.eclipse.uml2.uml.Port) {
 				if (isAnOutputPort((org.eclipse.uml2.uml.Port)child)) {
 					found_output_ports.add((org.eclipse.uml2.uml.Port)child);
 				}
@@ -649,7 +649,9 @@ public class ArchitectureQueries {
 		{
 			Connector conn = (Connector)connEnd.getOwner();
 
-			if (conn.getEnds().size() >= 2 && (conn.getEnds().get(0).getPartWithPort() != null) && (conn.getEnds().get(1).getPartWithPort() != null))
+			if (conn.getEnds().size() >= 2 &&
+				conn.getEnds().get(0).getPartWithPort() != null &&
+				conn.getEnds().get(1).getPartWithPort() != null)
 			{
 				connectors.add(conn);
 			}

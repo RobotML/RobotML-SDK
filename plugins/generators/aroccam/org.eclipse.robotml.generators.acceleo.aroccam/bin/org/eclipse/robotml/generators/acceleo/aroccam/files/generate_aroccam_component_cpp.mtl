@@ -56,7 +56,7 @@ void [c.name/]::evaluateFSMTransitions()
 	[comment]for each FSM[/comment]
 	[for (sm: StateMachine | c.getStateMachines())]
 
-		[comment]for each state[/comment]
+		[comment]for each state
 	switch(currentStateIn[sm.name/])
 	{
 		[for (state: Vertex | getStates(sm))]
@@ -74,6 +74,7 @@ void [c.name/]::evaluateFSMTransitions()
 	break;
 		[/for]
 	};
+[/comment]
 	[/for]
 }
 
@@ -91,7 +92,7 @@ void [c.name/]::[port.name/]([port.type.name/] const& data)
 	
 		evaluateFSMTransitions();
 
-		[comment]find associated operations[/comment]
+		[comment]find associated operations
 		[for (op : Operation | c.getAllOperations()) before('\t//operations\n')]
 			[if (op.method->size() > 0)]
 				[for (m : Behavior | op.method)]
@@ -129,6 +130,7 @@ void [c.name/]::[port.name/]([port.type.name/] const& data)
 				[/for]
 			[/if]
 		[/for]
+		[/comment]
 
 	//to complete
 }

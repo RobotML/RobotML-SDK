@@ -6,6 +6,8 @@ import java.util.List;
 import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.StateMachine;
+import org.eclipse.uml2.uml.State;
+import org.eclipse.uml2.uml.Transition;
 
 public class FSMQueries {
 	/**
@@ -64,5 +66,26 @@ public class FSMQueries {
 		return res;
 	}
 	
-
+	/**
+	 * Generate the state operation
+	 * @param vertex
+	 * @return
+	 */
+	public String generateOperationStateString(org.eclipse.uml2.uml.Vertex vertex)
+	{
+		String result = "";
+		if(vertex instanceof State)
+		{
+			org.eclipse.papyrus.RobotML.State state = ElementUtil.getStereotypeApplication(vertex, org.eclipse.papyrus.RobotML.State.class);
+			if(state != null)
+			{
+				if(state.getOperation() != null)
+				{
+					String operation = state.getOperation().getBase_Operation().getName();
+					result = operation;
+				}
+			}
+		}
+		return result;
+	}
 }

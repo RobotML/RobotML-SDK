@@ -175,7 +175,7 @@ end
 [for( behavior : OpaqueBehavior | behaviors)]
 [if((behavior.specification = null) =(false))]
 [if(behavior.specification.name.equalsIgnoreCase(guard.base_Operation.name))]
-[if(canConvertToAlfBlock(behavior.oclAsType(NamedElement)) = true)]
+[if(canConvertToAlfBlock(behavior.oclAsType(NamedElement)) =(true))]
 [let bloc : alf::Block = createAlfBlockFromUML(behavior.oclAsType(NamedElement))]
 event [guard.base_Operation.name/] { [translateAlfBlocTo_Athena(bloc)/] }
 [/let]

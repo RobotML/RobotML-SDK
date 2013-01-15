@@ -91,7 +91,7 @@ import "ProcessingDecl.adl"
 [/template]
 
 [template private generateOutputSimulatorFile(model : Model)]
-[file('.' + model.name + '.adl.output', false, 'UTF-8')]
+[file('.' + model.name + '.output.adl', false, 'UTF-8')]
 language CPP
 language VLE
 language MATLAB

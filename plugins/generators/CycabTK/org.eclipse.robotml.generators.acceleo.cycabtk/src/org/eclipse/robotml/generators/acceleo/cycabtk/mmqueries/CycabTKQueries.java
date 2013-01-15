@@ -25,7 +25,7 @@ public class CycabTKQueries {
 		
 		for(Property component : ArchitectureQueries.getAllSubComponentsInClass(c))
 		{
-			System.out.println("component : " + component.getName());
+			//System.out.println("component : " + component.getName());
 			Type propType = component.getType();
 			if (GeneralQueries.isClass(propType)) {
 				for( org.eclipse.uml2.uml.Property prop :((org.eclipse.uml2.uml.Class) propType).getAllAttributes()){

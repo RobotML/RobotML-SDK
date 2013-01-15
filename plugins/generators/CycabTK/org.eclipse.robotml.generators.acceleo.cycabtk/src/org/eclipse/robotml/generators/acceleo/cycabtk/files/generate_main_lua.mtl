@@ -53,7 +53,7 @@ cont.RotationSpeed = 1.000000
 phyEng = cycabtk.StdPhysicsEngine "phyEng"
 
 -- Model instances --
-	[for( inst: InstanceSpecification | getInstanceSpecifications(model))]
+	[for( inst: InstanceSpecification | getInstanceSpecificationsForPlatform(model, 'cycabTK'))]
 		[comment][inst.name/] : [inst.classifier.name/] [inst.clientDependency.name/][/comment]
 		[let elt : Class =  findClassInModel(model, inst.classifier.name->asSequence()->first())]
 		[if(inheritsFrom(elt, 'Robot'))]

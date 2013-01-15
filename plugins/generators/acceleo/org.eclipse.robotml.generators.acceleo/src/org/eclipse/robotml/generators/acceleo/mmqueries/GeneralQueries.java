@@ -344,7 +344,7 @@ public class GeneralQueries {
 	{
 		String result = null;
 		result = getAttributeValue(cl, attr, stname);
-		System.out.println("value : " + result);
+		//System.out.println("value : " + result);
 
 		if(result == null || result.length()==0){
 			return defaultValue;

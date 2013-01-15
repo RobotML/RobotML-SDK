@@ -7,6 +7,9 @@
 [query public getInstanceSpecifications(elt : Model) : Sequence(InstanceSpecification) =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getInstanceSpecificationsInModel(org.eclipse.uml2.uml.Model)', Sequence{elt})
 /]
+[query public getInstanceSpecificationsForPlatform(elt : Model, pfn: String) : Sequence(InstanceSpecification) = 
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getInstanceSpecificationsForPlatform(org.eclipse.uml2.uml.Model, java.lang.String)', Sequence{elt, pfn})
+/]
 [query public getParentName(inst : InstanceSpecification) : String =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getParentName(org.eclipse.uml2.uml.InstanceSpecification)', Sequence{inst})
 /]
@@ -18,4 +21,7 @@
 /]
 [query public getAllocationName(inst : InstanceSpecification) : String =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getAllocationName(org.eclipse.uml2.uml.InstanceSpecification)', Sequence{inst})
+/]
+[query public getDefinedComponentsForPlatform(elt : Model, pfn: String) : Sequence(Class) = 
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getDefinedComponentsForPlatform(org.eclipse.uml2.uml.Model, java.lang.String)', Sequence{elt, pfn})
 /]

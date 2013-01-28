@@ -35,7 +35,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.mapping.ecore2xml_2.7.0.v20120917-0436.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.validation_1.4.0.v20100428-2315.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.8.1.v20120802-154922.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.papyrus.infra.widgets.toolbox_0.9.1.v201301090557.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.papyrus.infra.widgets.toolbox_0.9.1.v201301110555.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.papyrus.robotml_0.9.1.201301031735.jar"/>
     </path>
 

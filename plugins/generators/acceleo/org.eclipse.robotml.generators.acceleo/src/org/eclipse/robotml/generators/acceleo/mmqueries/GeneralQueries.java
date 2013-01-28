@@ -329,6 +329,8 @@ public class GeneralQueries {
 							return null;
 						}
 						return ((EList<Object>) o).get(0).toString();
+					}else{
+						return o.toString();
 					}
 				}
 			}

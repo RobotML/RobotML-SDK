@@ -25,6 +25,7 @@
 	[comment][inspectModel(model)/][/comment]	
 	
 	[for (c: Class | getDefinedComponentsForPlatform(model, 'cycabTK'))]
+		[if getAttributeValue(c, 'native', getStereotype(c), 'false') = 'false']
 		[if( hasStereotype(c, 'Robot'))]
 			[generateRobot(c, model)/]
 		[elseif (hasStereotype(c, 'LidarSystem'))]
@@ -35,8 +36,9 @@
 			[generateGPS(c, model)/]
 		[elseif (hasStereotype(c, 'IMU'))]
 			[generateIMU(c, model)/]
-		[elseif (hasStereotype(c, 'RoboticSystem'))]
+		[elseif (inheritsFrom(c, 'RoboticSystem'))]
 			[generateSystem(c, model)/]
+		[/if]
 		[/if]
 	[/for]
 	

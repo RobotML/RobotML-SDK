@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://Athenaml_PROFILES/"
+            target="platform:/plugin/org.eclipse.papyrus.robotml.athenaml/model/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="RobotML extended profil"
+            name="AthenaML"
+            path="pathmap://Athenaml_PROFILES/model.profile.uml"
+            provider="Dassault Aviation">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            location="http://papyrus/AthenaML/1.0"
+            uri="platform:/plugin/org.eclipse.papyrus.robotml.athenaml/model/model.profile.uml#_u1mf4ELQEeKtKeKgzv7YFw">
+      </profile>
+   </extension>
+
+</plugin>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="AthenaML" nsURI="http://papyrus/AthenaML/1.0" nsPrefix="AthenaML">
+  <eClassifiers xsi:type="ecore:EClass" name="Array">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" ordered="false" lowerBound="1"
+        eType="ecore:EDataType types.ecore#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dimension" ordered="false"
+        lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeTemplate" ordered="false"
+        lowerBound="1" eType="ecore:EClass uml.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseDataType" ordered="false"
+        lowerBound="1" eType="ecore:EClass uml.ecore#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vector">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" ordered="false" lowerBound="1"
+        eType="ecore:EDataType types.ecore#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeTemplate" ordered="false"
+        lowerBound="1" eType="ecore:EClass uml.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseDataType" ordered="false"
+        lowerBound="1" eType="ecore:EClass uml.ecore#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Map">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valuesType" ordered="false"
+        lowerBound="1" eType="ecore:EClass uml.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseDataType" ordered="false"
+        lowerBound="1" eType="ecore:EClass uml.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keysType" ordered="false"
+        lowerBound="1" eType="ecore:EClass uml.ecore#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Alias">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" lowerBound="1"
+        eType="ecore:EClass uml.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseDataType" ordered="false"
+        lowerBound="1" eType="ecore:EClass uml.ecore#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Union">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" ordered="false"
+        lowerBound="1" upperBound="-1" eType="ecore:EClass uml.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseDataType" ordered="false"
+        lowerBound="1" eType="ecore:EClass uml.ecore#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameters">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseClass" ordered="false"
+        lowerBound="1" eType="ecore:EClass uml.ecore#//Class"/>
+  </eClassifiers>
+</ecore:EPackage>

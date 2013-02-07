@@ -375,7 +375,8 @@ public class ArchitectureQueries {
 		LinkedList<NamedElement> found_elts = new LinkedList<NamedElement>();
 		for (Element elt : model.allOwnedElements()) {
 			if (elt instanceof org.eclipse.uml2.uml.Class) {
-				if (GeneralQueries.hasStereotype((org.eclipse.uml2.uml.Class)elt,org.eclipse.papyrus.RobotML.System.class)) {
+				if (GeneralQueries.hasStereotype((org.eclipse.uml2.uml.Class)elt,org.eclipse.papyrus.RobotML.System.class) &&
+					false == GeneralQueries.hasStereotype((org.eclipse.uml2.uml.Class)elt, org.eclipse.papyrus.RobotML.Platform.class)) {
 					found_elts.add((NamedElement)elt);
 				}
 			}

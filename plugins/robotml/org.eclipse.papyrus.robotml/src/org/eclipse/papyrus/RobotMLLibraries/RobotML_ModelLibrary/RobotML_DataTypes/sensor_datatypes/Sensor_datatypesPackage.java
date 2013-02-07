@@ -4,6 +4,7 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -102,13 +103,22 @@ public interface Sensor_datatypesPackage extends EPackage {
 	int REGION_OF_INTEREST__DO_RECTIFY = 3;
 
 	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_OF_INTEREST__WIDTH = 4;
+
+	/**
 	 * The number of structural features of the '<em>Region Of Interest</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_OF_INTEREST_FEATURE_COUNT = 4;
+	int REGION_OF_INTEREST_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.RangeImpl <em>Range</em>}' class.
@@ -1051,85 +1061,13 @@ public interface Sensor_datatypesPackage extends EPackage {
 	int NAV_SAT_FIX = 13;
 
 	/**
-	 * The feature id for the '<em><b>STATUS NO FIX</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAV_SAT_FIX__STATUS_NO_FIX = 0;
-
-	/**
-	 * The feature id for the '<em><b>STATUS FIX</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAV_SAT_FIX__STATUS_FIX = 1;
-
-	/**
-	 * The feature id for the '<em><b>STATUS SBAS FIX</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAV_SAT_FIX__STATUS_SBAS_FIX = 2;
-
-	/**
-	 * The feature id for the '<em><b>STATUS GBAS FIX</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAV_SAT_FIX__STATUS_GBAS_FIX = 3;
-
-	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAV_SAT_FIX__STATUS = 4;
-
-	/**
-	 * The feature id for the '<em><b>SERVICE GPS</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAV_SAT_FIX__SERVICE_GPS = 5;
-
-	/**
-	 * The feature id for the '<em><b>SERVICE GLONASS</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAV_SAT_FIX__SERVICE_GLONASS = 6;
-
-	/**
-	 * The feature id for the '<em><b>SERVICE COMPASS</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAV_SAT_FIX__SERVICE_COMPASS = 7;
-
-	/**
-	 * The feature id for the '<em><b>SERVICE GALILEO</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAV_SAT_FIX__SERVICE_GALILEO = 8;
+	int NAV_SAT_FIX__STATUS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Service</b></em>' attribute.
@@ -1138,7 +1076,7 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAV_SAT_FIX__SERVICE = 9;
+	int NAV_SAT_FIX__SERVICE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' containment reference.
@@ -1147,7 +1085,7 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAV_SAT_FIX__HEADER = 10;
+	int NAV_SAT_FIX__HEADER = 2;
 
 	/**
 	 * The feature id for the '<em><b>Latitude</b></em>' attribute.
@@ -1156,7 +1094,7 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAV_SAT_FIX__LATITUDE = 11;
+	int NAV_SAT_FIX__LATITUDE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Longitude</b></em>' attribute.
@@ -1165,7 +1103,7 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAV_SAT_FIX__LONGITUDE = 12;
+	int NAV_SAT_FIX__LONGITUDE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Altitude</b></em>' attribute.
@@ -1174,7 +1112,7 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAV_SAT_FIX__ALTITUDE = 13;
+	int NAV_SAT_FIX__ALTITUDE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Position covariance</b></em>' attribute list.
@@ -1183,43 +1121,7 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAV_SAT_FIX__POSITION_COVARIANCE = 14;
-
-	/**
-	 * The feature id for the '<em><b>COVARIANCE TYPE UNKNOWN</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAV_SAT_FIX__COVARIANCE_TYPE_UNKNOWN = 15;
-
-	/**
-	 * The feature id for the '<em><b>COVARIANCE TYPE APPROXIMATED</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAV_SAT_FIX__COVARIANCE_TYPE_APPROXIMATED = 16;
-
-	/**
-	 * The feature id for the '<em><b>COVARIANCE TYPE DIAGONAL KNOWN</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAV_SAT_FIX__COVARIANCE_TYPE_DIAGONAL_KNOWN = 17;
-
-	/**
-	 * The feature id for the '<em><b>COVARIANCE TYPE KNOWN</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAV_SAT_FIX__COVARIANCE_TYPE_KNOWN = 18;
+	int NAV_SAT_FIX__POSITION_COVARIANCE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Position covariance type</b></em>' attribute.
@@ -1228,7 +1130,7 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAV_SAT_FIX__POSITION_COVARIANCE_TYPE = 19;
+	int NAV_SAT_FIX__POSITION_COVARIANCE_TYPE = 7;
 
 	/**
 	 * The number of structural features of the '<em>Nav Sat Fix</em>' class.
@@ -1237,7 +1139,7 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAV_SAT_FIX_FEATURE_COUNT = 20;
+	int NAV_SAT_FIX_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyImpl <em>Joy</em>}' class.
@@ -1523,6 +1425,36 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 */
 	int DIFFERENTIAL_ODOMETRY_FEATURE_COUNT = 5;
 
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE <em>STATUS TYPE</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl#getSTATUS_TYPE()
+	 * @generated
+	 */
+	int STATUS_TYPE = 19;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.SERVICE_TYPE <em>SERVICE TYPE</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.SERVICE_TYPE
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl#getSERVICE_TYPE()
+	 * @generated
+	 */
+	int SERVICE_TYPE = 20;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.COVARIANCE_TYPE <em>COVARIANCE TYPE</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.COVARIANCE_TYPE
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl#getCOVARIANCE_TYPE()
+	 * @generated
+	 */
+	int COVARIANCE_TYPE = 21;
+
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest <em>Region Of Interest</em>}'.
@@ -1577,6 +1509,17 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRegionOfInterest_Do_rectify();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getWidth <em>Width</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Width</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.RegionOfInterest#getWidth()
+	 * @see #getRegionOfInterest()
+	 * @generated
+	 */
+	EAttribute getRegionOfInterest_Width();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Range <em>Range</em>}'.
@@ -2567,50 +2510,6 @@ public interface Sensor_datatypesPackage extends EPackage {
 	EClass getNavSatFix();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSTATUS_NO_FIX <em>STATUS NO FIX</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>STATUS NO FIX</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSTATUS_NO_FIX()
-	 * @see #getNavSatFix()
-	 * @generated
-	 */
-	EAttribute getNavSatFix_STATUS_NO_FIX();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSTATUS_FIX <em>STATUS FIX</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>STATUS FIX</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSTATUS_FIX()
-	 * @see #getNavSatFix()
-	 * @generated
-	 */
-	EAttribute getNavSatFix_STATUS_FIX();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSTATUS_SBAS_FIX <em>STATUS SBAS FIX</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>STATUS SBAS FIX</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSTATUS_SBAS_FIX()
-	 * @see #getNavSatFix()
-	 * @generated
-	 */
-	EAttribute getNavSatFix_STATUS_SBAS_FIX();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSTATUS_GBAS_FIX <em>STATUS GBAS FIX</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>STATUS GBAS FIX</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSTATUS_GBAS_FIX()
-	 * @see #getNavSatFix()
-	 * @generated
-	 */
-	EAttribute getNavSatFix_STATUS_GBAS_FIX();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2620,50 +2519,6 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNavSatFix_Status();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSERVICE_GPS <em>SERVICE GPS</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>SERVICE GPS</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSERVICE_GPS()
-	 * @see #getNavSatFix()
-	 * @generated
-	 */
-	EAttribute getNavSatFix_SERVICE_GPS();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSERVICE_GLONASS <em>SERVICE GLONASS</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>SERVICE GLONASS</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSERVICE_GLONASS()
-	 * @see #getNavSatFix()
-	 * @generated
-	 */
-	EAttribute getNavSatFix_SERVICE_GLONASS();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSERVICE_COMPASS <em>SERVICE COMPASS</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>SERVICE COMPASS</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSERVICE_COMPASS()
-	 * @see #getNavSatFix()
-	 * @generated
-	 */
-	EAttribute getNavSatFix_SERVICE_COMPASS();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSERVICE_GALILEO <em>SERVICE GALILEO</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>SERVICE GALILEO</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getSERVICE_GALILEO()
-	 * @see #getNavSatFix()
-	 * @generated
-	 */
-	EAttribute getNavSatFix_SERVICE_GALILEO();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getService <em>Service</em>}'.
@@ -2730,50 +2585,6 @@ public interface Sensor_datatypesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNavSatFix_Position_covariance();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getCOVARIANCE_TYPE_UNKNOWN <em>COVARIANCE TYPE UNKNOWN</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>COVARIANCE TYPE UNKNOWN</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getCOVARIANCE_TYPE_UNKNOWN()
-	 * @see #getNavSatFix()
-	 * @generated
-	 */
-	EAttribute getNavSatFix_COVARIANCE_TYPE_UNKNOWN();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getCOVARIANCE_TYPE_APPROXIMATED <em>COVARIANCE TYPE APPROXIMATED</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>COVARIANCE TYPE APPROXIMATED</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getCOVARIANCE_TYPE_APPROXIMATED()
-	 * @see #getNavSatFix()
-	 * @generated
-	 */
-	EAttribute getNavSatFix_COVARIANCE_TYPE_APPROXIMATED();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#get_COVARIANCE_TYPE_DIAGONAL_KNOWN <em>COVARIANCE TYPE DIAGONAL KNOWN</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>COVARIANCE TYPE DIAGONAL KNOWN</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#get_COVARIANCE_TYPE_DIAGONAL_KNOWN()
-	 * @see #getNavSatFix()
-	 * @generated
-	 */
-	EAttribute getNavSatFix__COVARIANCE_TYPE_DIAGONAL_KNOWN();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getCOVARIANCE_TYPE_KNOWN <em>COVARIANCE TYPE KNOWN</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>COVARIANCE TYPE KNOWN</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getCOVARIANCE_TYPE_KNOWN()
-	 * @see #getNavSatFix()
-	 * @generated
-	 */
-	EAttribute getNavSatFix_COVARIANCE_TYPE_KNOWN();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.NavSatFix#getPosition_covariance_type <em>Position covariance type</em>}'.
@@ -3068,6 +2879,36 @@ public interface Sensor_datatypesPackage extends EPackage {
 	EAttribute getDifferentialOdometry_Right_velocity();
 
 	/**
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE <em>STATUS TYPE</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>STATUS TYPE</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE
+	 * @generated
+	 */
+	EEnum getSTATUS_TYPE();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.SERVICE_TYPE <em>SERVICE TYPE</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>SERVICE TYPE</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.SERVICE_TYPE
+	 * @generated
+	 */
+	EEnum getSERVICE_TYPE();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.COVARIANCE_TYPE <em>COVARIANCE TYPE</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>COVARIANCE TYPE</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.COVARIANCE_TYPE
+	 * @generated
+	 */
+	EEnum getCOVARIANCE_TYPE();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3130,6 +2971,14 @@ public interface Sensor_datatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REGION_OF_INTEREST__DO_RECTIFY = eINSTANCE.getRegionOfInterest_Do_rectify();
+
+		/**
+		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGION_OF_INTEREST__WIDTH = eINSTANCE.getRegionOfInterest_Width();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.RangeImpl <em>Range</em>}' class.
@@ -3886,76 +3735,12 @@ public interface Sensor_datatypesPackage extends EPackage {
 		EClass NAV_SAT_FIX = eINSTANCE.getNavSatFix();
 
 		/**
-		 * The meta object literal for the '<em><b>STATUS NO FIX</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAV_SAT_FIX__STATUS_NO_FIX = eINSTANCE.getNavSatFix_STATUS_NO_FIX();
-
-		/**
-		 * The meta object literal for the '<em><b>STATUS FIX</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAV_SAT_FIX__STATUS_FIX = eINSTANCE.getNavSatFix_STATUS_FIX();
-
-		/**
-		 * The meta object literal for the '<em><b>STATUS SBAS FIX</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAV_SAT_FIX__STATUS_SBAS_FIX = eINSTANCE.getNavSatFix_STATUS_SBAS_FIX();
-
-		/**
-		 * The meta object literal for the '<em><b>STATUS GBAS FIX</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAV_SAT_FIX__STATUS_GBAS_FIX = eINSTANCE.getNavSatFix_STATUS_GBAS_FIX();
-
-		/**
 		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute NAV_SAT_FIX__STATUS = eINSTANCE.getNavSatFix_Status();
-
-		/**
-		 * The meta object literal for the '<em><b>SERVICE GPS</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAV_SAT_FIX__SERVICE_GPS = eINSTANCE.getNavSatFix_SERVICE_GPS();
-
-		/**
-		 * The meta object literal for the '<em><b>SERVICE GLONASS</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAV_SAT_FIX__SERVICE_GLONASS = eINSTANCE.getNavSatFix_SERVICE_GLONASS();
-
-		/**
-		 * The meta object literal for the '<em><b>SERVICE COMPASS</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAV_SAT_FIX__SERVICE_COMPASS = eINSTANCE.getNavSatFix_SERVICE_COMPASS();
-
-		/**
-		 * The meta object literal for the '<em><b>SERVICE GALILEO</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAV_SAT_FIX__SERVICE_GALILEO = eINSTANCE.getNavSatFix_SERVICE_GALILEO();
 
 		/**
 		 * The meta object literal for the '<em><b>Service</b></em>' attribute feature.
@@ -4004,38 +3789,6 @@ public interface Sensor_datatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAV_SAT_FIX__POSITION_COVARIANCE = eINSTANCE.getNavSatFix_Position_covariance();
-
-		/**
-		 * The meta object literal for the '<em><b>COVARIANCE TYPE UNKNOWN</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAV_SAT_FIX__COVARIANCE_TYPE_UNKNOWN = eINSTANCE.getNavSatFix_COVARIANCE_TYPE_UNKNOWN();
-
-		/**
-		 * The meta object literal for the '<em><b>COVARIANCE TYPE APPROXIMATED</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAV_SAT_FIX__COVARIANCE_TYPE_APPROXIMATED = eINSTANCE.getNavSatFix_COVARIANCE_TYPE_APPROXIMATED();
-
-		/**
-		 * The meta object literal for the '<em><b>COVARIANCE TYPE DIAGONAL KNOWN</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAV_SAT_FIX__COVARIANCE_TYPE_DIAGONAL_KNOWN = eINSTANCE.getNavSatFix__COVARIANCE_TYPE_DIAGONAL_KNOWN();
-
-		/**
-		 * The meta object literal for the '<em><b>COVARIANCE TYPE KNOWN</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAV_SAT_FIX__COVARIANCE_TYPE_KNOWN = eINSTANCE.getNavSatFix_COVARIANCE_TYPE_KNOWN();
 
 		/**
 		 * The meta object literal for the '<em><b>Position covariance type</b></em>' attribute feature.
@@ -4262,6 +4015,36 @@ public interface Sensor_datatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DIFFERENTIAL_ODOMETRY__RIGHT_VELOCITY = eINSTANCE.getDifferentialOdometry_Right_velocity();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE <em>STATUS TYPE</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE
+		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl#getSTATUS_TYPE()
+		 * @generated
+		 */
+		EEnum STATUS_TYPE = eINSTANCE.getSTATUS_TYPE();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.SERVICE_TYPE <em>SERVICE TYPE</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.SERVICE_TYPE
+		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl#getSERVICE_TYPE()
+		 * @generated
+		 */
+		EEnum SERVICE_TYPE = eINSTANCE.getSERVICE_TYPE();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.COVARIANCE_TYPE <em>COVARIANCE TYPE</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.COVARIANCE_TYPE
+		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.Sensor_datatypesPackageImpl#getCOVARIANCE_TYPE()
+		 * @generated
+		 */
+		EEnum COVARIANCE_TYPE = eINSTANCE.getCOVARIANCE_TYPE();
 
 	}
 

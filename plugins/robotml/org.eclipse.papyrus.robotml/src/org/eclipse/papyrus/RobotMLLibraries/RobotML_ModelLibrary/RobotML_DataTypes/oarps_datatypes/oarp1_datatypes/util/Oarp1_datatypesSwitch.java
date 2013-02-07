@@ -66,12 +66,6 @@ public class Oarp1_datatypesSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case Oarp1_datatypesPackage.CAR_LIKE_ODOMETRY: {
-				CarLikeOdometry carLikeOdometry = (CarLikeOdometry)theEObject;
-				T result = caseCarLikeOdometry(carLikeOdometry);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case Oarp1_datatypesPackage.CAR_LIKE_COMMAND: {
 				CarLikeCommand carLikeCommand = (CarLikeCommand)theEObject;
 				T result = caseCarLikeCommand(carLikeCommand);
@@ -92,21 +86,6 @@ public class Oarp1_datatypesSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Car Like Odometry</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Car Like Odometry</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCarLikeOdometry(CarLikeOdometry object) {
-		return null;
 	}
 
 	/**

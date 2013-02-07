@@ -30,7 +30,6 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.Nav_datatypesPackageImpl;
 
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeCommand;
-import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.ExtentedLidarScan;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.MultiLayerLidarScan;
 import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.Oarp1_datatypesFactory;
@@ -57,13 +56,6 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class Oarp1_datatypesPackageImpl extends EPackageImpl implements Oarp1_datatypesPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass carLikeOdometryEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,51 +165,6 @@ public class Oarp1_datatypesPackageImpl extends EPackageImpl implements Oarp1_da
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(Oarp1_datatypesPackage.eNS_URI, theOarp1_datatypesPackage);
 		return theOarp1_datatypesPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCarLikeOdometry() {
-		return carLikeOdometryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCarLikeOdometry_RearLeftWheel() {
-		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCarLikeOdometry_RearRightWheel() {
-		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCarLikeOdometry_MotorSpeed() {
-		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCarLikeOdometry_SteeringAngle() {
-		return (EAttribute)carLikeOdometryEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -338,12 +285,6 @@ public class Oarp1_datatypesPackageImpl extends EPackageImpl implements Oarp1_da
 		isCreated = true;
 
 		// Create classes and their features
-		carLikeOdometryEClass = createEClass(CAR_LIKE_ODOMETRY);
-		createEAttribute(carLikeOdometryEClass, CAR_LIKE_ODOMETRY__REAR_LEFT_WHEEL);
-		createEAttribute(carLikeOdometryEClass, CAR_LIKE_ODOMETRY__REAR_RIGHT_WHEEL);
-		createEAttribute(carLikeOdometryEClass, CAR_LIKE_ODOMETRY__MOTOR_SPEED);
-		createEAttribute(carLikeOdometryEClass, CAR_LIKE_ODOMETRY__STEERING_ANGLE);
-
 		carLikeCommandEClass = createEClass(CAR_LIKE_COMMAND);
 		createEAttribute(carLikeCommandEClass, CAR_LIKE_COMMAND__VELOCITY);
 		createEAttribute(carLikeCommandEClass, CAR_LIKE_COMMAND__STEERING_ANGLE);
@@ -392,12 +333,6 @@ public class Oarp1_datatypesPackageImpl extends EPackageImpl implements Oarp1_da
 		// Add supertypes to classes
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(carLikeOdometryEClass, CarLikeOdometry.class, "CarLikeOdometry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCarLikeOdometry_RearLeftWheel(), theStd_datatypesPackage.getFloat64(), "rearLeftWheel", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCarLikeOdometry_RearRightWheel(), theStd_datatypesPackage.getFloat64(), "rearRightWheel", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCarLikeOdometry_MotorSpeed(), theStd_datatypesPackage.getFloat64(), "motorSpeed", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCarLikeOdometry_SteeringAngle(), theStd_datatypesPackage.getFloat64(), "steeringAngle", null, 1, 1, CarLikeOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(carLikeCommandEClass, CarLikeCommand.class, "CarLikeCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCarLikeCommand_Velocity(), theStd_datatypesPackage.getFloat64(), "velocity", "0", 1, 1, CarLikeCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCarLikeCommand_SteeringAngle(), theStd_datatypesPackage.getFloat64(), "steeringAngle", "0", 1, 1, CarLikeCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

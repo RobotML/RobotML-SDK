@@ -68,10 +68,6 @@ public class Oarp1_datatypesAdapterFactory extends AdapterFactoryImpl {
 	protected Oarp1_datatypesSwitch<Adapter> modelSwitch =
 		new Oarp1_datatypesSwitch<Adapter>() {
 			@Override
-			public Adapter caseCarLikeOdometry(CarLikeOdometry object) {
-				return createCarLikeOdometryAdapter();
-			}
-			@Override
 			public Adapter caseCarLikeCommand(CarLikeCommand object) {
 				return createCarLikeCommandAdapter();
 			}
@@ -102,20 +98,6 @@ public class Oarp1_datatypesAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry <em>Car Like Odometry</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry
-	 * @generated
-	 */
-	public Adapter createCarLikeOdometryAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeCommand <em>Car Like Command</em>}'.

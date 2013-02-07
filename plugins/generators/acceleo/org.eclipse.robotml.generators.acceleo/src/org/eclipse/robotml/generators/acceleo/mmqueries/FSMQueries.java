@@ -3,11 +3,11 @@ package org.eclipse.robotml.generators.acceleo.mmqueries;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
+
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.State;
-import org.eclipse.uml2.uml.Transition;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 public class FSMQueries {
 	/**
@@ -39,7 +39,7 @@ public class FSMQueries {
 		{
 			for(org.eclipse.uml2.uml.Transition transition : region.getTransitions())
 			{
-				org.eclipse.papyrus.RobotML.Transition robotml_transition = ElementUtil.getStereotypeApplication(transition, org.eclipse.papyrus.RobotML.Transition.class); 
+				org.eclipse.papyrus.RobotML.Transition robotml_transition = UMLUtil.getStereotypeApplication(transition, org.eclipse.papyrus.RobotML.Transition.class); 
 				if(robotml_transition != null)
 				{
 					res.add(robotml_transition);
@@ -76,7 +76,7 @@ public class FSMQueries {
 		String result = "";
 		if(vertex instanceof State)
 		{
-			org.eclipse.papyrus.RobotML.State state = ElementUtil.getStereotypeApplication(vertex, org.eclipse.papyrus.RobotML.State.class);
+			org.eclipse.papyrus.RobotML.State state = UMLUtil.getStereotypeApplication(vertex, org.eclipse.papyrus.RobotML.State.class);
 			if(state != null)
 			{
 				if(state.getOperation() != null)

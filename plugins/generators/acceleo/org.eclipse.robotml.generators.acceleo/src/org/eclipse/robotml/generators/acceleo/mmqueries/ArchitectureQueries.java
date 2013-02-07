@@ -13,9 +13,10 @@ import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.util.UMLUtil;
 import org.eclipse.papyrus.RobotML.*;
-import org.eclipse.papyrus.RobotML.System;
-import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
+
+
 
 /**
  * 
@@ -495,7 +496,7 @@ public class ArchitectureQueries {
 	 * @return is this a DataFlow port ?
 	 */
 	static public Boolean isDataFlowPort(Port port) {
-		DataFlowPort dfp = ElementUtil.getStereotypeApplication(port, DataFlowPort.class);
+		DataFlowPort dfp = UMLUtil.getStereotypeApplication(port, DataFlowPort.class);
 		if (dfp == null)
 			return false;
 		return true;
@@ -509,7 +510,7 @@ public class ArchitectureQueries {
 	static public Boolean isAnInputPort(Port port)
 	{
 		try {
-			DataFlowPort dfp = ElementUtil.getStereotypeApplication(port, DataFlowPort.class);
+			DataFlowPort dfp = UMLUtil.getStereotypeApplication(port, DataFlowPort.class);
 			if (dfp == null)
 				return false;
 			if (dfp.getDirection() == DataFlowDirectionKind.IN)
@@ -529,7 +530,7 @@ public class ArchitectureQueries {
 	static public Boolean isAnOutputPort(Port port)
 	{
 		try {
-			DataFlowPort dfp = ElementUtil.getStereotypeApplication(port, DataFlowPort.class);
+			DataFlowPort dfp = UMLUtil.getStereotypeApplication(port, DataFlowPort.class);
 			if (dfp == null)
 				return false;
 			if (dfp.getDirection() == DataFlowDirectionKind.OUT)
@@ -548,7 +549,7 @@ public class ArchitectureQueries {
 	 */
 	static public Boolean isAProvidedPort(Port port) {
 		try {
-			ServicePort sp = ElementUtil.getStereotypeApplication(port, ServicePort.class);
+			ServicePort sp = UMLUtil.getStereotypeApplication(port, ServicePort.class);
 			if (sp == null)
 				return false;
 			if (sp.getKind() == ServiceFlowKind.PROVIDED)
@@ -567,7 +568,7 @@ public class ArchitectureQueries {
 	 */
 	static public Boolean isARequiredPort(Port port) {
 		try {
-			ServicePort sp = ElementUtil.getStereotypeApplication(port, ServicePort.class);
+			ServicePort sp = UMLUtil.getStereotypeApplication(port, ServicePort.class);
 			if (sp == null)
 				return false;
 			if (sp.getKind() == ServiceFlowKind.REQUIRED)
@@ -585,7 +586,7 @@ public class ArchitectureQueries {
 	 * @return is this a service port ?
 	 */
 	static public Boolean isServicePort(Port port) {
-		ServicePort serviceport = ElementUtil.getStereotypeApplication(port, ServicePort.class);
+		ServicePort serviceport = UMLUtil.getStereotypeApplication(port, ServicePort.class);
 		return serviceport != null;
 	}
 	
@@ -750,7 +751,7 @@ public class ArchitectureQueries {
 	static public Boolean isAnInputOutputPort(Port port)
 	{
 		try {
-			DataFlowPort dfp = ElementUtil.getStereotypeApplication(port, DataFlowPort.class);
+			DataFlowPort dfp = UMLUtil.getStereotypeApplication(port, DataFlowPort.class);
 			if (dfp == null)
 				return false;
 			if (dfp.getDirection() == DataFlowDirectionKind.INOUT)

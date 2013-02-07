@@ -1,5 +1,13 @@
 package org.eclipse.robotml.generators.acceleo.alf.main;
 
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.CharBuffer;
 import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
@@ -33,6 +41,8 @@ import com.google.inject.Injector;
  */
 public class AlfServices
 {
+	private static final String FILE_PATH_PREFIX = "file://";
+	
 	/**
 	 * Create an Alf bloc code from UML element
 	 * @param ne : UML element
@@ -58,27 +68,35 @@ public class AlfServices
 
 		if(str.isEmpty() == false)
 		{			
-//			//parse alf string
-			OperationStandaloneSetupGenerated setup = new OperationStandaloneSetupGenerated();
-			Injector injector = setup.createInjectorAndDoEMFRegistration();
-			IParser parser = injector.getInstance(IParser.class);
-			OperationParser opParser = (OperationParser)parser;
-			
-			
-			IParseResult pResult = opParser.doParse(str);
-			if(pResult.hasSyntaxErrors() == false)
+			try
 			{
-				EObject eRoot = pResult.getRootASTElement();
-				OperationDefinitionOrStubImpl ope = (OperationDefinitionOrStubImpl) eRoot;
-				bloc = ope.getBody();
-			}
-			else
-			{
-				Iterator<INode> iter = pResult.getSyntaxErrors().iterator();
-				while(iter.hasNext())
+				//parse alf string
+				OperationStandaloneSetupGenerated setup = new OperationStandaloneSetupGenerated();
+				Injector injector = setup.createInjectorAndDoEMFRegistration();
+				IParser parser = injector.getInstance(IParser.class);
+				OperationParser opParser = (OperationParser)parser;
+				
+				
+				IParseResult pResult = opParser.doParse(str);
+				if(pResult.hasSyntaxErrors() == false)
 				{
-					System.out.println(iter.next().getText());
+					EObject eRoot = pResult.getRootASTElement();
+					OperationDefinitionOrStubImpl ope = (OperationDefinitionOrStubImpl) eRoot;
+					bloc = ope.getBody();
 				}
+				else
+				{
+					Iterator<INode> iter = pResult.getSyntaxErrors().iterator();
+					while(iter.hasNext())
+					{
+						System.out.println(iter.next().getText());
+					}
+				}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				bloc = null;
 			}
 		}
 		
@@ -250,28 +268,74 @@ public class AlfServices
 	private static String transcodeOpaqueBehavior(OpaqueBehavior opaque)
 	{
 		String str = "";
-		str = opaque.getVisibility().getName();
-		str += " " + opaque.getName() + "(";
 		
-		
-		//get opaque behavior parameters
-		Operation op = (Operation)opaque.getSpecification();
-		Iterator<Parameter> iter = op.getOwnedParameters().iterator();
-		while(iter.hasNext())
+		if(AlfServices.usingFile(opaque))
 		{
-			str += AlfServices.transcodeParameter(iter.next());
-			if(iter.hasNext()) str += ", ";
+			
 		}
-		str += ") {";
-		
+		else
+		{
+			str = opaque.getVisibility().getName();
+			str += " " + opaque.getName() + "(";
+			
+			
+			//get opaque behavior parameters
+			Operation op = (Operation)opaque.getSpecification();
+			Iterator<Parameter> iter = op.getOwnedParameters().iterator();
+			while(iter.hasNext())
+			{
+				str += AlfServices.transcodeParameter(iter.next());
+				if(iter.hasNext()) str += ", ";
+			}
+			str += ") {";
+			
+			for(String body : opaque.getBodies())
+			{
+				if(body.isEmpty() == false)
+				{
+					str += body;
+				}
+			}
+			str += "}";
+		}
+		return str;
+	}
+	
+	private static boolean usingFile(OpaqueBehavior opaque)
+	{
+		boolean result = false;
 		for(String body : opaque.getBodies())
 		{
-			if(body.isEmpty() == false)
+			result |= body.startsWith(AlfServices.FILE_PATH_PREFIX);
+		}
+		return result;
+	}
+	
+	private static String AlfDescriptionFromFile(String body)
+	{
+		String result = "";
+		
+		String path = body.substring(AlfServices.FILE_PATH_PREFIX.length());
+		File input = new File(path);
+		if(input.exists())
+		{
+			FileInputStream istream = null;
+			
+			try 
 			{
-				str += body;
+				istream = new FileInputStream(input);
+				
+				BufferedInputStream buffer = new BufferedInputStream(istream);
+				
+				
+			} 
+			catch (FileNotFoundException e1) {
+				e1.printStackTrace();
+			}
+			catch (IOException e) {
+				e.printStackTrace();
 			}
 		}
-		str += "}";
-		return str;
+		return result;
 	}
 }

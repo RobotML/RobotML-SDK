@@ -48,7 +48,7 @@ basic [ne.name/] begin
 	language CPP : "enum {
 [let literals : OrderedSet(EnumerationLiteral) = enum.ownedLiteral]
 [for(literal : EnumerationLiteral | literals)]
-		[literal.name/]=[if((literal.specification = null) =(false) )][literal.specification.integerValue()/][/if][if(literals->indexOf(literal) < literals->size())],[/if]
+		[literal.name/][if((literal.specification = null) =(false) )]=[literal.specification.integerValue()/][/if][if(literals->indexOf(literal) < literals->size())],[/if]
 [/for]
 	}" = "[literals->first().name/]"
 [/let]

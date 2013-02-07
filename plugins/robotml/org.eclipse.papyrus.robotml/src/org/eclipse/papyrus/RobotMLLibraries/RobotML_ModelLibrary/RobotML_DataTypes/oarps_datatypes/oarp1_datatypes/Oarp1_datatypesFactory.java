@@ -22,15 +22,6 @@ public interface Oarp1_datatypesFactory extends EFactory {
 	Oarp1_datatypesFactory eINSTANCE = org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Car Like Odometry</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Car Like Odometry</em>'.
-	 * @generated
-	 */
-	CarLikeOdometry createCarLikeOdometry();
-
-	/**
 	 * Returns a new object of class '<em>Car Like Command</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -10,16 +10,32 @@
 [template public generateRobot(aClass : Class, model : Model)]
 [comment encoding = UTF-8 /]
 
-[file ('scripts/' + model.name + '/' + aClass.name + '_.lua', false, 'UTF-8')]
+[file ('scripts/' + model.name + '/' + aClass.name + '.lua', false, 'UTF-8')]
 
-require "[aClass.name/]"
+--require "[aClass.name/]"
 
 [generateSystemCommonRequires(aClass, model)/]
 
---Definition of class [aClass.name/]_
-class '[aClass.name/]_' ([aClass.name/])
-function [aClass.name/]_:__init(name)
-	[aClass.name/].__init(self, name)
+[let libPath:String=getAttributeValue(aClass, 'libraryPath', 'Robot')]
+require "[libPath/]"
+[/let]
+
+-- [protected('User-specific include files')]
+-- [/protected]
+
+
+--Definition of class [aClass.name/]
+[if getAttributeValue(aClass, 'libraryComponentName', 'Robot') = null]
+class '[aClass.name/]':__init(name))
+function [aClass.name/]
+[else]
+[let componentName:String = getAttributeValue(aClass, 'libraryComponentName', 'Robot')]
+class '[aClass.name/]' ([componentName/])
+function [aClass.name/]:__init(name)
+	[componentName/].__init(self, name)
+[/let]
+[/if]
+
 	
 	[generateSystemCommon(aClass, model)/]
 	

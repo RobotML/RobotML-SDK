@@ -4,6 +4,7 @@ package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTy
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -206,6 +207,27 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	private EClass differentialOdometryEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum statuS_TYPEEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum servicE_TYPEEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum covariancE_TYPEEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -338,6 +360,15 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 */
 	public EAttribute getRegionOfInterest_Do_rectify() {
 		return (EAttribute)regionOfInterestEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRegionOfInterest_Width() {
+		return (EAttribute)regionOfInterestEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1164,7 +1195,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNavSatFix_STATUS_NO_FIX() {
+	public EAttribute getNavSatFix_Status() {
 		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1173,7 +1204,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNavSatFix_STATUS_FIX() {
+	public EAttribute getNavSatFix_Service() {
 		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1182,80 +1213,8 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNavSatFix_STATUS_SBAS_FIX() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNavSatFix_STATUS_GBAS_FIX() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNavSatFix_Status() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNavSatFix_SERVICE_GPS() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNavSatFix_SERVICE_GLONASS() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNavSatFix_SERVICE_COMPASS() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNavSatFix_SERVICE_GALILEO() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNavSatFix_Service() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getNavSatFix_Header() {
-		return (EReference)navSatFixEClass.getEStructuralFeatures().get(10);
+		return (EReference)navSatFixEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1264,7 +1223,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Latitude() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1273,7 +1232,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Longitude() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1282,7 +1241,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Altitude() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1291,43 +1250,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Position_covariance() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNavSatFix_COVARIANCE_TYPE_UNKNOWN() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNavSatFix_COVARIANCE_TYPE_APPROXIMATED() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNavSatFix__COVARIANCE_TYPE_DIAGONAL_KNOWN() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNavSatFix_COVARIANCE_TYPE_KNOWN() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(18);
+		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1336,7 +1259,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * @generated
 	 */
 	public EAttribute getNavSatFix_Position_covariance_type() {
-		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(19);
+		return (EAttribute)navSatFixEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1578,6 +1501,33 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getSTATUS_TYPE() {
+		return statuS_TYPEEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getSERVICE_TYPE() {
+		return servicE_TYPEEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getCOVARIANCE_TYPE() {
+		return covariancE_TYPEEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Sensor_datatypesFactory getSensor_datatypesFactory() {
 		return (Sensor_datatypesFactory)getEFactoryInstance();
 	}
@@ -1606,6 +1556,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		createEAttribute(regionOfInterestEClass, REGION_OF_INTEREST__YOFFSET);
 		createEAttribute(regionOfInterestEClass, REGION_OF_INTEREST__HEIGHT);
 		createEAttribute(regionOfInterestEClass, REGION_OF_INTEREST__DO_RECTIFY);
+		createEAttribute(regionOfInterestEClass, REGION_OF_INTEREST__WIDTH);
 
 		rangeEClass = createEClass(RANGE);
 		createEAttribute(rangeEClass, RANGE__ULTRASOUND);
@@ -1710,25 +1661,13 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		createEAttribute(navSatStatusEClass, NAV_SAT_STATUS__SERVICE);
 
 		navSatFixEClass = createEClass(NAV_SAT_FIX);
-		createEAttribute(navSatFixEClass, NAV_SAT_FIX__STATUS_NO_FIX);
-		createEAttribute(navSatFixEClass, NAV_SAT_FIX__STATUS_FIX);
-		createEAttribute(navSatFixEClass, NAV_SAT_FIX__STATUS_SBAS_FIX);
-		createEAttribute(navSatFixEClass, NAV_SAT_FIX__STATUS_GBAS_FIX);
 		createEAttribute(navSatFixEClass, NAV_SAT_FIX__STATUS);
-		createEAttribute(navSatFixEClass, NAV_SAT_FIX__SERVICE_GPS);
-		createEAttribute(navSatFixEClass, NAV_SAT_FIX__SERVICE_GLONASS);
-		createEAttribute(navSatFixEClass, NAV_SAT_FIX__SERVICE_COMPASS);
-		createEAttribute(navSatFixEClass, NAV_SAT_FIX__SERVICE_GALILEO);
 		createEAttribute(navSatFixEClass, NAV_SAT_FIX__SERVICE);
 		createEReference(navSatFixEClass, NAV_SAT_FIX__HEADER);
 		createEAttribute(navSatFixEClass, NAV_SAT_FIX__LATITUDE);
 		createEAttribute(navSatFixEClass, NAV_SAT_FIX__LONGITUDE);
 		createEAttribute(navSatFixEClass, NAV_SAT_FIX__ALTITUDE);
 		createEAttribute(navSatFixEClass, NAV_SAT_FIX__POSITION_COVARIANCE);
-		createEAttribute(navSatFixEClass, NAV_SAT_FIX__COVARIANCE_TYPE_UNKNOWN);
-		createEAttribute(navSatFixEClass, NAV_SAT_FIX__COVARIANCE_TYPE_APPROXIMATED);
-		createEAttribute(navSatFixEClass, NAV_SAT_FIX__COVARIANCE_TYPE_DIAGONAL_KNOWN);
-		createEAttribute(navSatFixEClass, NAV_SAT_FIX__COVARIANCE_TYPE_KNOWN);
 		createEAttribute(navSatFixEClass, NAV_SAT_FIX__POSITION_COVARIANCE_TYPE);
 
 		joyEClass = createEClass(JOY);
@@ -1761,6 +1700,11 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		createEAttribute(differentialOdometryEClass, DIFFERENTIAL_ODOMETRY__LEFT_DISTANCE);
 		createEAttribute(differentialOdometryEClass, DIFFERENTIAL_ODOMETRY__LEFT_VELOCITY);
 		createEAttribute(differentialOdometryEClass, DIFFERENTIAL_ODOMETRY__RIGHT_VELOCITY);
+
+		// Create enums
+		statuS_TYPEEEnum = createEEnum(STATUS_TYPE);
+		servicE_TYPEEEnum = createEEnum(SERVICE_TYPE);
+		covariancE_TYPEEEnum = createEEnum(COVARIANCE_TYPE);
 	}
 
 	/**
@@ -1802,6 +1746,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		initEAttribute(getRegionOfInterest_Y_offset(), theStd_datatypesPackage.getUInt32(), "y_offset", null, 1, 1, RegionOfInterest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRegionOfInterest_Height(), theStd_datatypesPackage.getUInt32(), "height", null, 1, 1, RegionOfInterest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRegionOfInterest_Do_rectify(), theStd_datatypesPackage.getBool(), "do_rectify", null, 1, 1, RegionOfInterest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRegionOfInterest_Width(), theStd_datatypesPackage.getUInt32(), "width", null, 1, 1, RegionOfInterest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(rangeEClass, Range.class, "Range", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRange_ULTRASOUND(), theStd_datatypesPackage.getUInt8(), "ULTRASOUND", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1906,26 +1851,14 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		initEAttribute(getNavSatStatus_Service(), theStd_datatypesPackage.getUInt16(), "service", null, 1, 1, NavSatStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(navSatFixEClass, NavSatFix.class, "NavSatFix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNavSatFix_STATUS_NO_FIX(), theStd_datatypesPackage.getInt8(), "STATUS_NO_FIX", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_STATUS_FIX(), theStd_datatypesPackage.getInt8(), "STATUS_FIX", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_STATUS_SBAS_FIX(), theStd_datatypesPackage.getInt8(), "STATUS_SBAS_FIX", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_STATUS_GBAS_FIX(), theStd_datatypesPackage.getInt8(), "STATUS_GBAS_FIX", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_Status(), theStd_datatypesPackage.getInt8(), "status", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_SERVICE_GPS(), theStd_datatypesPackage.getUInt16(), "SERVICE_GPS", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_SERVICE_GLONASS(), theStd_datatypesPackage.getUInt16(), "SERVICE_GLONASS", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_SERVICE_COMPASS(), theStd_datatypesPackage.getUInt16(), "SERVICE_COMPASS", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_SERVICE_GALILEO(), theStd_datatypesPackage.getUInt16(), "SERVICE_GALILEO", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_Service(), theStd_datatypesPackage.getUInt16(), "service", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getNavSatFix_Status(), this.getSTATUS_TYPE(), "status", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getNavSatFix_Service(), this.getSERVICE_TYPE(), "service", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getNavSatFix_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNavSatFix_Latitude(), theStd_datatypesPackage.getFloat64(), "latitude", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNavSatFix_Longitude(), theStd_datatypesPackage.getFloat64(), "longitude", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNavSatFix_Altitude(), theStd_datatypesPackage.getFloat64(), "altitude", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_Position_covariance(), theStd_datatypesPackage.getFloat64(), "position_covariance", null, 0, -1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_COVARIANCE_TYPE_UNKNOWN(), theStd_datatypesPackage.getUInt8(), "COVARIANCE_TYPE_UNKNOWN", "0", 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_COVARIANCE_TYPE_APPROXIMATED(), theStd_datatypesPackage.getUInt8(), "COVARIANCE_TYPE_APPROXIMATED", "1", 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix__COVARIANCE_TYPE_DIAGONAL_KNOWN(), theStd_datatypesPackage.getUInt8(), "_COVARIANCE_TYPE_DIAGONAL_KNOWN", "3", 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_COVARIANCE_TYPE_KNOWN(), theStd_datatypesPackage.getUInt8(), "COVARIANCE_TYPE_KNOWN", "3", 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNavSatFix_Position_covariance_type(), theStd_datatypesPackage.getUInt8(), "position_covariance_type", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getNavSatFix_Position_covariance(), theStd_datatypesPackage.getFloat64(), "position_covariance", null, 9, 9, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getNavSatFix_Position_covariance_type(), this.getCOVARIANCE_TYPE(), "position_covariance_type", null, 1, 1, NavSatFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(joyEClass, Joy.class, "Joy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getJoy_Header(), theStd_datatypesPackage.getHeader(), null, "header", null, 1, 1, Joy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1957,6 +1890,25 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		initEAttribute(getDifferentialOdometry_Left_distance(), theStd_datatypesPackage.getFloat64(), "left_distance", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDifferentialOdometry_Left_velocity(), theStd_datatypesPackage.getFloat64(), "left_velocity", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDifferentialOdometry_Right_velocity(), theStd_datatypesPackage.getFloat64(), "right_velocity", null, 1, 1, DifferentialOdometry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(statuS_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE.class, "STATUS_TYPE");
+		addEEnumLiteral(statuS_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE.STATUS_NO_FIX);
+		addEEnumLiteral(statuS_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE.STATUS_FIX);
+		addEEnumLiteral(statuS_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE.STATUS_SBAS_FIX);
+		addEEnumLiteral(statuS_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.STATUS_TYPE.STATUS_GBAS_FIX);
+
+		initEEnum(servicE_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.SERVICE_TYPE.class, "SERVICE_TYPE");
+		addEEnumLiteral(servicE_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.SERVICE_TYPE.SERVICE_GPS);
+		addEEnumLiteral(servicE_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.SERVICE_TYPE.SERVICE_GLONASS);
+		addEEnumLiteral(servicE_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.SERVICE_TYPE.SERVICE_COMPASS);
+		addEEnumLiteral(servicE_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.SERVICE_TYPE.SERVICE_GALILEO);
+
+		initEEnum(covariancE_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.COVARIANCE_TYPE.class, "COVARIANCE_TYPE");
+		addEEnumLiteral(covariancE_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.COVARIANCE_TYPE.COVARIANCE_TYPE_UNKNOWN);
+		addEEnumLiteral(covariancE_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.COVARIANCE_TYPE.COVARIANCE_TYPE_APPROXIMATED);
+		addEEnumLiteral(covariancE_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.COVARIANCE_TYPE._COVARIANCE_TYPE_DIAGONAL_KNOWN);
+		addEEnumLiteral(covariancE_TYPEEEnum, org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.COVARIANCE_TYPE.COVARIANCE_TYPE_KNOWN);
 
 		// Create resource
 		createResource(eNS_URI);

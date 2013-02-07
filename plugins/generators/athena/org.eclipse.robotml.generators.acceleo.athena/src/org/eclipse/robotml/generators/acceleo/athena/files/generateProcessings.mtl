@@ -42,7 +42,7 @@ end
 [let behavior : OpaqueBehavior = elt.oclAsType(OpaqueBehavior)]
 [if((behavior.specification = null) =(false))]
 [if(behavior.specification.name = proc.name)]
-[if(canConvertToAlfBlock(behavior.oclAsType(NamedElement)))]
+[if(canConvertToAlfBlock(behavior.oclAsType(NamedElement)) =(true))]
 [let bloc : alf::Block = createAlfBlockFromUML(behavior.oclAsType(NamedElement))]
 [translateAlfBlocTo_Athena(bloc)/]
 [/let]

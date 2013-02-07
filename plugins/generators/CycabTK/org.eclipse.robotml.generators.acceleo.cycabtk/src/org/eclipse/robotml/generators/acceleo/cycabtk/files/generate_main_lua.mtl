@@ -53,12 +53,14 @@ cont.RotationSpeed = 1.000000
 phyEng = cycabtk.StdPhysicsEngine "phyEng"
 
 -- Model instances --
-	[for( inst: InstanceSpecification | getInstanceSpecifications(model))]
+
+	[for( inst: InstanceSpecification | getInstanceSpecificationsForPlatform(model, 'cycabTK'))]
 		[comment][inst.name/] : [inst.classifier.name/] [inst.clientDependency.name/][/comment]
 		[let elt : Class =  findClassInModel(model, inst.classifier.name->asSequence()->first())]
+		[if( getAttributeValue(elt, 'native', getStereotype(elt), 'false' ) = 'false')]
 		[if(inheritsFrom(elt, 'Robot'))]
-require "[model.name/]/[inst.classifier.name/]_"
-[inst.name/] = [inst.classifier.name/]_( "[inst.name/]" )
+require "[model.name/]/[inst.classifier.name/]"
+[inst.name/] = [inst.classifier.name/]( "[inst.name/]" )
 			[let parentName : String = getParentName(inst)]
 [inst.name/]:MakeChildOf( "[parentName/]" )
 			[/let]
@@ -70,7 +72,19 @@ require "[model.name/]/[inst.classifier.name/]"
 [inst.name/]:MakeChildOf( "[parentName/]" )
 			[/let]
 		[/if]
+		[else]
+			[let libPath:String=getAttributeValue(elt, 'libraryPath', getStereotype(elt), null )]
+			[let componentName:String=getAttributeValue(elt, 'libraryComponentName', getStereotype(elt), null )]
+require "[libPath/]"
+[inst.name/] = [componentName/]( "[inst.name/]" )
+[let parentName : String = getParentName(inst)]
+[inst.name/]:MakeChildOf( "[parentName/]" )
+			[/let]
+			[/let]
+			[/let]
+		[/if]
 		[/let]
+
 	[/for]
 [/file]
 

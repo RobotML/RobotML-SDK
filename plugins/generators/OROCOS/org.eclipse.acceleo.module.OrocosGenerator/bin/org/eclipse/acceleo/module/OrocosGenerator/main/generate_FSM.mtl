@@ -2,7 +2,6 @@
 [module generate_FSM('http://www.eclipse.org/uml2/3.0.0/UML')]
 [import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::FSMQueries /]
-[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::StateMachineQueries/]
 [template public generateFSM(m: Model, c: Class,fsm: StateMachine)]
 [file ('/src/'+ c.name +'/'+fsm.name +'.lua', false, 'UTF-8')]
 -----create variables-----

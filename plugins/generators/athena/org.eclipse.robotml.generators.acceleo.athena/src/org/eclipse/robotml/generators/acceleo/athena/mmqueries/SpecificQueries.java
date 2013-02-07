@@ -37,6 +37,7 @@ import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.Vertex;
 
 import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
@@ -60,6 +61,7 @@ public class SpecificQueries {
 	static private HashSet<NamedElement> _structTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _defineTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _unionTypeUsed = new HashSet<NamedElement>();
+	static private NamedElement _model = null;
 	
 	static private void initDeclarationMap()
 	{
@@ -861,9 +863,12 @@ public class SpecificQueries {
 		SpecificQueries._structTypeUsed.clear();
 		SpecificQueries._defineTypeUsed.clear();
 		SpecificQueries._unionTypeUsed.clear();
+		SpecificQueries._model = model;
 		
 		HashSet<DataType> datatypes = SpecificQueries.getAllModelDataTypes(model);
 		Set<String> neededTypes = searchUsedDataTypeFromModel(model);
+		System.out.println("Needed dt:");
+		for(String dt : neededTypes) System.out.println(dt);
 		
 		HashSet<DataType> tmp = new HashSet<DataType>();
 		HashSet<DataType> savedTypes = new HashSet<DataType>();
@@ -1260,28 +1265,46 @@ public class SpecificQueries {
 	static public Set<String> searchUsedDataTypeFromModel(NamedElement elt)
 	{
 		HashSet<String> types = new HashSet<String>();
+		
 		TreeIterator<EObject> iter = elt.eAllContents();
 		while(iter.hasNext())
 		{
 			EObject elt_iter = (EObject)iter.next();
+			try
+			{
+			
 			if(elt_iter instanceof Parameter)
 			{
 				if(((Parameter)elt_iter).getType() != null)
-					types.add(((Parameter)elt_iter).getType().getName());
+				{
+					Type tmpType = ((Parameter)elt_iter).getType();
+					types.add(tmpType.getName());
+					types.addAll(SpecificQueries.checkTypeAsContainer(tmpType));
+				}
 				else
 					System.err.println("ERROR : null pointer type for " + ((Parameter)elt_iter).getName());
 			}
 			else if(elt_iter instanceof Property)
 			{
 				if(((Property)elt_iter).getType() != null)
-					types.add(((Property)elt_iter).getType().getName());
+				{
+					Type tmpType = ((Property)elt_iter).getType();
+					types.add(tmpType.getName());
+					types.addAll(SpecificQueries.checkTypeAsContainer(tmpType));
+				}
+					
 				else
 					System.err.println("ERROR : null pointer type for " + ((Property)elt_iter).getName());
 			}
 			else if(elt_iter instanceof Port)
 			{
 				if(((Port)elt_iter).getType() != null)
-					types.add(((Port)elt_iter).getType().getName());
+				{
+					Type tmpType = ((Port)elt_iter).getType();
+					types.add(tmpType.getName());
+					types.addAll(SpecificQueries.checkTypeAsContainer(tmpType));
+				}
+					
 				else
 					System.err.println("ERROR : null pointer type for " + ((Port)elt_iter).getName());
 			}
@@ -1290,12 +1313,46 @@ public class SpecificQueries {
 				PackageImport imp = (PackageImport)elt_iter;
 				types.addAll(searchUsedDataTypeFromModel((NamedElement)imp.getImportedPackage()));
 			}
+//			else if(elt_iter instanceof org.eclipse.uml2.uml.Comment)
+//			{
+//				Element owner = ((Comment)elt_iter).getOwner();
+//				if(owner instanceof Type)
+//					types.addAll(SpecificQueries.checkTypeAsContainer((Type)owner));
+//			}
 			else if(elt_iter instanceof NamedElement)
 			{
+//				if(SpecificQueries.isContainerType((NamedElement)elt_iter))
+//				{
+//					types.addAll(SpecificQueries.checkTypeAsContainer((Type)elt_iter));
+//				}
 				types.addAll(searchUsedDataTypeFromModel((NamedElement)elt_iter));
 			}
+			
 		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		}
+		
 		return types;
+	}
+	
+	static private List<String> checkTypeAsContainer(Type ne)
+	{
+		LinkedList<String> result = new LinkedList<String>();
+		for(Comment comment : ne.getOwnedComments())
+		{
+			if(comment.getBody() != null)
+			{
+				if(SpecificQueries.isContainerDeclaration(comment.getBody()))
+				{
+					result.addAll(SpecificQueries.getContainerType(ne));
+					break;
+				}
+			}
+		}
+		return result;
 	}
 	
 	/**
@@ -1345,13 +1402,35 @@ public class SpecificQueries {
 			//type array and vector
 			int index_begin = type_str.indexOf("<") + 1;
 			int index_sep = type_str.indexOf(",");
-			int index_end = type_str.indexOf(">") - 1;	
+			int index_end = type_str.indexOf(">");	
 			
-			String key = type_str.substring(index_begin, index_sep - 1);
+			String key = type_str.substring(index_begin, index_sep);
 			String value = type_str.substring(index_sep + 1, index_end);
+			key = key.trim();
+			value = value.trim();
 			
 			if(res.contains(key) == false) res.add(key);
 			if(res.contains(value) == false) res.add(value);
+			
+			/*
+			 * TODO : On recherche key value pour les traiter et les ajouter si besoin
+			 */
+			if(SpecificQueries._model != null)
+			{
+				HashSet<DataType> types = SpecificQueries.getAllModelDataTypes(SpecificQueries._model);
+				for(DataType data : types)
+				{
+					if(data.getName().equals(key) == true ||
+							data.getName().equals(value) == true)
+					{
+						if(SpecificQueries.isContainerType(data))
+						{
+							res.addAll(SpecificQueries.getContainerType(data));
+						}
+					}
+				}
+			}
+			
 		}
 		else
 		{
@@ -1361,6 +1440,24 @@ public class SpecificQueries {
 			
 			type_str = type_str.substring(index_begin, index_end).trim();
 			if(res.contains(type_str) == false) res.add(type_str);
+			
+			/*
+			 * TODO : On recherche value pour le traiter et l'ajouter si besoin
+			 */
+			if(SpecificQueries._model != null)
+			{
+				HashSet<DataType> types = SpecificQueries.getAllModelDataTypes(SpecificQueries._model);
+				for(DataType data : types)
+				{
+					if(data.getName().equals(type_str) == true)
+					{
+						if(SpecificQueries.isContainerType(data))
+						{
+							res.addAll(SpecificQueries.getContainerType(data));
+						}
+					}
+				}
+			}
 		}
 		
 		return res;

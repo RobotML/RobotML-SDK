@@ -329,6 +329,8 @@ public class GeneralQueries {
 							return null;
 						}
 						return ((EList<Object>) o).get(0).toString();
+					}else{
+						return o.toString();
 					}
 				}
 			}
@@ -344,7 +346,7 @@ public class GeneralQueries {
 	{
 		String result = null;
 		result = getAttributeValue(cl, attr, stname);
-		System.out.println("value : " + result);
+		//System.out.println("value : " + result);
 
 		if(result == null || result.length()==0){
 			return defaultValue;

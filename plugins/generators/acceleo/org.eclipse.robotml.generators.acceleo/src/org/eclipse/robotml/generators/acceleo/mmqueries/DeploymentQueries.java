@@ -3,22 +3,12 @@ package org.eclipse.robotml.generators.acceleo.mmqueries;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.uml2.uml.Connector;
-import org.eclipse.uml2.uml.ConnectorEnd;
-import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Operation;
-import org.eclipse.uml2.uml.PackageableElement;
-import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.Type;
 
 public class DeploymentQueries {
 	/**
@@ -179,20 +169,20 @@ public class DeploymentQueries {
 	 */
 	static public List<org.eclipse.uml2.uml.Class> getDefinedComponentsForPlatform(Model model, String platformName)
 	{
-		System.out.println("getDefinedComponentsForPlatform");
+		//System.out.println("getDefinedComponentsForPlatform");
 		LinkedList<org.eclipse.uml2.uml.Class> found_classes = new LinkedList<org.eclipse.uml2.uml.Class>();
 		
 		List<InstanceSpecification> instances = getInstanceSpecificationsForPlatform(model, platformName);
 		for(InstanceSpecification instanceSpecification : instances)
 		{
-			System.out.println("instance : " + instanceSpecification.getName()); 
+			//System.out.println("instance : " + instanceSpecification.getName()); 
 			
 			for(org.eclipse.uml2.uml.Classifier classifier : instanceSpecification.getClassifiers())
 			{
 				found_classes.add(GeneralQueries.findClassInModel(model, classifier.getName()));
 
-				org.eclipse.uml2.uml.Class theClass = GeneralQueries.findClassInModel(model, classifier.getName());
-				System.out.println("\tclass : " + theClass.getName());
+				//org.eclipse.uml2.uml.Class theClass = GeneralQueries.findClassInModel(model, classifier.getName());
+				//System.out.println("\tclass : " + theClass.getName());
 			}
 		}
 		return found_classes;

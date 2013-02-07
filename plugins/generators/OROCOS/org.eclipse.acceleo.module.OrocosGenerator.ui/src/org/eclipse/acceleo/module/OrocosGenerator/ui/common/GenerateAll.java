@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.robotml.generators.acceleo.mmqueries.MMQueries;
 import org.osgi.framework.Bundle;
 import org.eclipse.acceleo.module.OrocosGenerator.main.Generate_config_file;
 import org.eclipse.acceleo.module.OrocosGenerator.main.Generate_mapping_file;
@@ -149,7 +150,7 @@ public class GenerateAll {
 			//gen4.doGenerate(BasicMonitor.toMonitor(monitor));
 			
 			monitor.subTask("Loading...");
-			org.eclipse.acceleo.module.OrocosGenerator.mmqueries.MMQueries gen4 = new org.eclipse.acceleo.module.OrocosGenerator.mmqueries.MMQueries(model, targetFolder.getLocation().toFile(), arguments);
+			MMQueries gen4 = new MMQueries(model, targetFolder.getLocation().toFile(), arguments);
 			monitor.worked(1);
 			generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.eclipse.acceleo.module.OrocosGenerator", "org.eclipse.acceleo.module.OrocosGenerator.mmqueries.MMQueries", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 			gen4.setGenerationID(generationID);

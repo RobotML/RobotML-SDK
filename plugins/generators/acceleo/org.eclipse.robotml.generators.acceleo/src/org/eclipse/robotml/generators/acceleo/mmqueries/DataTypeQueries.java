@@ -153,7 +153,7 @@ public class DataTypeQueries{
 		return null;
 	}
 	
-	public boolean isPrimitiveType(Element elt) {
+	public static boolean isPrimitiveType(Element elt) {
 		if (elt instanceof PrimitiveType)
 			return true;
 		return false;

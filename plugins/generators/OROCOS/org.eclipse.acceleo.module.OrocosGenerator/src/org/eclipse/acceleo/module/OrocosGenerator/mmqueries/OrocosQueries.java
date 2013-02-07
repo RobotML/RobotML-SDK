@@ -11,17 +11,31 @@
 package org.eclipse.acceleo.module.OrocosGenerator.mmqueries;
 
 
-
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.papyrus.RobotML.Robot;
 import org.eclipse.papyrus.RobotML.ServiceFlowKind;
 import org.eclipse.papyrus.RobotML.ServicePort;
-import org.eclipse.papyrus.RobotML.State;
 import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
-import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
+
+import org.eclipse.papyrus.RobotML.Transition;
+import org.eclipse.papyrus.RobotML.State;
+
 import org.eclipse.robotml.generators.acceleo.mmqueries.DataTypeQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
+import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
+import org.eclipse.acceleo.engine.event.IAcceleoTextGenerationListener;
+import org.eclipse.acceleo.engine.generation.strategy.IAcceleoGenerationStrategy;
+import org.eclipse.acceleo.engine.service.AbstractAcceleoGenerator;
+import org.eclipse.emf.common.util.BasicMonitor;
+import org.eclipse.emf.common.util.Monitor;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.DataType;
@@ -30,17 +44,19 @@ import org.eclipse.uml2.uml.FunctionBehavior;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.OpaqueBehavior;
 import org.eclipse.uml2.uml.Operation;
+import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
+//import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.Type;
-//import org.eclipse.uml2.uml.State;
 //import org.eclipse.uml2.uml.Transition;
-import org.eclipse.uml2.uml.util.UMLUtil;
+import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.Vertex;
 
 public class OrocosQueries {
 	
@@ -353,7 +369,7 @@ public class OrocosQueries {
 	public String getTypeServicePort(Port port) {		
 		String res = "";
 		try {
-			ServicePort sp = UMLUtil.getStereotypeApplication(port, ServicePort.class);
+			ServicePort sp = ElementUtil.getStereotypeApplication(port, ServicePort.class);
 			if (sp == null) {
 				res += "null";
 				return res;
@@ -809,7 +825,7 @@ public class OrocosQueries {
 			|| typeName.equalsIgnoreCase("double"))
 				return "double";
 	    if (typeName.contains("Bool")) return "bool";
-		if(typeName.length()==0 || typeName.equalsIgnoreCase("invalid"))
+		if(typeName.isEmpty() || typeName.equalsIgnoreCase("invalid"))
 				return "void";
 		else
 				return typeName;
@@ -821,7 +837,6 @@ public class OrocosQueries {
 	public Operation getAssociatedOperation(Operation o){
 	String opName = o.getName();
 	Class c = o.getClass_();
-	
 	for(Operation elt : getOperations(c)){
 		if(elt.getName().equals(opName))
 			return (Operation) elt;
@@ -834,11 +849,11 @@ public class OrocosQueries {
 	 * @param op
 	 * @return
 	 */
-	public List<Behavior> getOperationMethod(Operation op){
-		List<Behavior> behaviors = new LinkedList<Behavior>();
+	public List<OpaqueBehavior> getOperationMethod(Operation op){
+		List<OpaqueBehavior> behaviors = new LinkedList<OpaqueBehavior>();
 		for(Behavior elt : op.getMethods()){
-				java.lang.System.out.println("elt" + elt);
-				behaviors.add(elt);
+		//		java.lang.System.out.println("elt" + elt);
+				behaviors.add((OpaqueBehavior) elt);
 		}
 		return behaviors;	
 		}

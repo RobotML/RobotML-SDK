@@ -43,7 +43,7 @@ knowledge of the CeCILL-C license and that you accept its terms.
 [template public generateRTMapsDiagramRTD(model : Model) {vert_spacing : Integer = 50; hor_spacing : Integer = 50;}]
 	[file (model.name + '.rtd', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<RTMapsDiagram xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" EngineVersion="4.0" version="4.0" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram_RTBoardView.xsd">
+<RTMapsDiagram xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" EngineVersion="4.1" version="4.1" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram_RTBoardView.xsd">
   <RequiredPackages>
     <File><!['['/]CDATA['['/]/dummy/absolute/path/for/rtmaps_[model.name/].pck[']'/][']'/]>
       <Relative><!['['/]CDATA['['/]%RTMAPS_DIAGRAMDIR%/user_sdk/[getPckOutputDir('dummy')/]rtmaps_[model.name/].pck[']'/][']'/]></Relative>

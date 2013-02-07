@@ -1,5 +1,7 @@
 *.class
 *.jar
+*.DS_Store
+
 # emacs temporary files
 *~
 

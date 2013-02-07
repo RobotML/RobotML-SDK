@@ -1,11 +1,3 @@
-[comment encoding = UTF-8 /]
-[module generate_config_file('http://www.eclipse.org/uml2/3.0.0/UML') /]
-
-[import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries /]
-
-[template public generateConfigFile(model : Model)]
-	
-[file ('CMakeLists.txt', false, 'UTF-8')]
 #
 # The find_package macro for Orocos-RTT works best with
 # cmake >= 2.6.3
@@ -21,7 +13,7 @@ cmake_minimum_required(VERSION 2.6.3)
 # macro, except for orocos_typekit, where the target is fully
 # controlled by generated code of 'typegen'.
 
-#project([model.name/])
+#project(RobotMLModel)
 
 #
 # Do setup in case of ros package, If ROS_ROOT is set, it is
@@ -50,14 +42,6 @@ link_libraries( ${OROCOS-RTT_RTT-SCRIPTING_LIBRARY} )
 
 # Creates a component library libHello-<target>.so
 # and installs in the directory lib/orocos/hello-7-deployment/
-	[for (elt: NamedElement | getSystems(model))] 
-		[let c : Class = elt.oclAsType(Class)]
-[comment] If an element have input or/and output port, then it must be system[/comment]
-			[if ( not hasStateMachine(c)) ]
-orocos_component([c.name/] [c.name/].cpp)
-			[/if]
-		[/let]
-	[/for]
 #
 # You may add multiple orocos_component statements.
 
@@ -77,6 +61,3 @@ orocos_generate_package()
  
 
 
-[/file]
-	
-[/template]

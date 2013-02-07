@@ -32,6 +32,7 @@ import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
 import org.eclipse.uml2.uml.Vertex;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 
 /**
@@ -710,7 +711,7 @@ public class GeneralQueries {
 	 */
 	public Boolean isAnInputPort(Port port)	{		
 		try {
-			DataFlowPort dfp = ElementUtil.getStereotypeApplication(port, DataFlowPort.class);
+			DataFlowPort dfp = UMLUtil.getStereotypeApplication(port, DataFlowPort.class);
 			if (dfp == null)
 				return false;
 			if (dfp.getDirection() == DataFlowDirectionKind.IN)
@@ -730,7 +731,7 @@ public class GeneralQueries {
 	public Boolean isAnOutputPort(Port port)
 	{
 		try {
-			DataFlowPort dfp = ElementUtil.getStereotypeApplication(port, DataFlowPort.class);
+			DataFlowPort dfp = UMLUtil.getStereotypeApplication(port, DataFlowPort.class);
 			if (dfp == null)
 				return false;
 			if (dfp.getDirection() == DataFlowDirectionKind.OUT)
@@ -749,7 +750,7 @@ public class GeneralQueries {
 	 */
 	public Boolean isAProvidedPort(Port port) {		
 		try {
-			ServicePort sp = ElementUtil.getStereotypeApplication(port, ServicePort.class);
+			ServicePort sp = UMLUtil.getStereotypeApplication(port, ServicePort.class);
 			if (sp == null)
 				return false;
 			if (sp.getKind() == ServiceFlowKind.PROVIDED)
@@ -769,7 +770,7 @@ public class GeneralQueries {
 	 */
 	public Boolean isARequiredPort(Port port) {
 		try {
-			ServicePort sp = ElementUtil.getStereotypeApplication(port, ServicePort.class);
+			ServicePort sp = UMLUtil.getStereotypeApplication(port, ServicePort.class);
 			if (sp == null)
 				return false;
 			if (sp.getKind() == ServiceFlowKind.REQUIRED)
@@ -862,6 +863,7 @@ public class GeneralQueries {
 	/**
 	 * Return the value of a given attribute using the given stereotype  
 	 */
+	@SuppressWarnings("unchecked")
 	public String getAttributeValue(org.eclipse.uml2.uml.Class cl, String attr, String stname)
 	{
 		for (Stereotype st : cl.getAppliedStereotypes()) {
@@ -885,6 +887,7 @@ public class GeneralQueries {
 	/**
 	 * Return the values of a given attribute using the given stereotype  
 	 */
+	@SuppressWarnings("unchecked")
 	public List<String> getAttributeValues(org.eclipse.uml2.uml.Class cl, String attr, String stname)
 	{
 		LinkedList<String> result = new LinkedList<String>();
@@ -1160,7 +1163,7 @@ public class GeneralQueries {
 	 */
 
 	public Boolean isDataFlowPort(Port port) {
-		DataFlowPort dfp = ElementUtil.getStereotypeApplication(port, DataFlowPort.class);
+		DataFlowPort dfp = UMLUtil.getStereotypeApplication(port, DataFlowPort.class);
 		if (dfp == null)
 			return false;
 		return true;
@@ -1385,7 +1388,7 @@ public class GeneralQueries {
 	public String getTypeServicePort(Port port) {		
 		String res = "";
 		try {
-			ServicePort sp = ElementUtil.getStereotypeApplication(port, ServicePort.class);
+			ServicePort sp = UMLUtil.getStereotypeApplication(port, ServicePort.class);
 			if (sp == null) {
 				res += "null";
 				return res;

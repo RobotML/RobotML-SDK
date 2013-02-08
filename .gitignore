@@ -16,6 +16,9 @@
 *.opensdf
 *.vcxproj.user
 
+#ignore binary files
+plugins/*/bin/*
+
 # Generators compiled binary files
 plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo/bin/*
 plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo.athena/bin/*

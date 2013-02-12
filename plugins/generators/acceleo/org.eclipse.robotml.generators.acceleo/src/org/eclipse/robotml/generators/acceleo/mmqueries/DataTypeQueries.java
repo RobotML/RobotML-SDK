@@ -15,6 +15,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 
 public class DataTypeQueries{
+	public static String newline = System.getProperty("line.separator");	
 	
 	public List<DataType> getMetamodelComposedDataTypes(Element rootelt) {
 		LinkedList<DataType> results = new LinkedList<DataType>();
@@ -85,7 +86,7 @@ public class DataTypeQueries{
 	
 	public String getCppClassForDatatType(DataType dt) {
 		try {
-		String s = "class " + dt.getName() + " {\n\tpublic:\n";
+		String s = "class " + dt.getName() + " {"+ newline + "\tpublic:" + newline;
 		EList<Property> members = dt.getAllAttributes();			
 		for (Property member : members) {
 			String type_name;
@@ -94,16 +95,16 @@ public class DataTypeQueries{
 			else
 				type_name = "Unknown_NULL_IN_MODEL";
 			if (member.getUpper()<0) {
-				s+="\tstd::vector<" + type_name + "> " + member.getName() + ";\n";
+				s+="\tstd::vector<" + type_name + "> " + member.getName() + ";" + newline;
 			} else if (member.getUpper() <= 1){
-				s+="\t" + type_name + " " + member.getName() + ";\n";
+				s+="\t" + type_name + " " + member.getName() + ";" + newline;
 			} else if (member.getUpper() == member.getLower()) {
-				s+="\t" + type_name + " " + member.getName() + "[" + member.getUpper() + "];\n";
+				s+="\t" + type_name + " " + member.getName() + "[" + member.getUpper() + "];" + newline;
 			} else {
-				s+="\tstd::vector<" + type_name + "> " + member.getName() + ";\n";
+				s+="\tstd::vector<" + type_name + "> " + member.getName() + ";" + newline;
 			}
 		}
-		s+= "};\n";
+		s+= "};" + newline;
 		return s;
 		} catch (Exception e) {
 			java.lang.System.out.println(e.getMessage());
@@ -152,7 +153,7 @@ public class DataTypeQueries{
 		return null;
 	}
 	
-	public boolean isPrimitiveType(Element elt) {
+	public static boolean isPrimitiveType(Element elt) {
 		if (elt instanceof PrimitiveType)
 			return true;
 		return false;

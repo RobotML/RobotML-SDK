@@ -32,11 +32,7 @@
                label="Generate to Morse"
                style="push"
                tooltip="Generate code to Morse simulator">
-            <visibleWhen>
-               <reference
-                     definitionId="org.eclipse.papyrus.proteus.diagram.common.IsPapyrusActiveWithProteus">
-               </reference>
-            </visibleWhen>
+           
          </command>
       </menuContribution>
    </extension>

@@ -233,7 +233,7 @@
     <genClasses ecoreClass="RobotML.ecore#//InfraRedProximetrySystem"/>
   </genPackages>
   <genPackages prefix="RobotMLLibraries" basePackage="org.eclipse.papyrus" disposableProviderFactory="true"
-      metaDataPackageSuffix="org.eclipse.papyrus" ecorePackage="RobotMLLibraries.ecore#/">
+      ecorePackage="RobotMLLibraries.ecore#/">
     <nestedGenPackages prefix="RobotML_ModelLibrary" disposableProviderFactory="true"
         ecorePackage="RobotMLLibraries.ecore#//RobotML_ModelLibrary">
       <nestedGenPackages prefix="RobotML_DataTypes" disposableProviderFactory="true"
@@ -381,11 +381,30 @@
         </nestedGenPackages>
         <nestedGenPackages prefix="Sensor_datatypes" disposableProviderFactory="true"
             ecorePackage="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes">
+          <genEnums typeSafeEnumCompatible="false" ecoreEnum="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/STATUS_TYPE">
+            <genEnumLiterals ecoreEnumLiteral="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/STATUS_TYPE/STATUS_NO_FIX"/>
+            <genEnumLiterals ecoreEnumLiteral="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/STATUS_TYPE/STATUS_FIX"/>
+            <genEnumLiterals ecoreEnumLiteral="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/STATUS_TYPE/STATUS_SBAS_FIX"/>
+            <genEnumLiterals ecoreEnumLiteral="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/STATUS_TYPE/STATUS_GBAS_FIX"/>
+          </genEnums>
+          <genEnums typeSafeEnumCompatible="false" ecoreEnum="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/SERVICE_TYPE">
+            <genEnumLiterals ecoreEnumLiteral="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/SERVICE_TYPE/SERVICE_GPS"/>
+            <genEnumLiterals ecoreEnumLiteral="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/SERVICE_TYPE/SERVICE_GLONASS"/>
+            <genEnumLiterals ecoreEnumLiteral="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/SERVICE_TYPE/SERVICE_COMPASS"/>
+            <genEnumLiterals ecoreEnumLiteral="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/SERVICE_TYPE/SERVICE_GALILEO"/>
+          </genEnums>
+          <genEnums typeSafeEnumCompatible="false" ecoreEnum="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/COVARIANCE_TYPE">
+            <genEnumLiterals ecoreEnumLiteral="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/COVARIANCE_TYPE/COVARIANCE_TYPE_UNKNOWN"/>
+            <genEnumLiterals ecoreEnumLiteral="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/COVARIANCE_TYPE/COVARIANCE_TYPE_APPROXIMATED"/>
+            <genEnumLiterals ecoreEnumLiteral="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/COVARIANCE_TYPE/_COVARIANCE_TYPE_DIAGONAL_KNOWN"/>
+            <genEnumLiterals ecoreEnumLiteral="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/COVARIANCE_TYPE/COVARIANCE_TYPE_KNOWN"/>
+          </genEnums>
           <genClasses ecoreClass="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/RegionOfInterest">
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/RegionOfInterest/x_offset"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/RegionOfInterest/y_offset"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/RegionOfInterest/height"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/RegionOfInterest/do_rectify"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/RegionOfInterest/width"/>
           </genClasses>
           <genClasses ecoreClass="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/Range">
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/Range/ULTRASOUND"/>
@@ -490,25 +509,13 @@
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatStatus/service"/>
           </genClasses>
           <genClasses ecoreClass="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix">
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/STATUS_NO_FIX"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/STATUS_FIX"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/STATUS_SBAS_FIX"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/STATUS_GBAS_FIX"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/status"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/SERVICE_GPS"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/SERVICE_GLONASS"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/SERVICE_COMPASS"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/SERVICE_GALILEO"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/service"/>
             <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/header"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/latitude"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/longitude"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/altitude"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/position_covariance"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/COVARIANCE_TYPE_UNKNOWN"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/COVARIANCE_TYPE_APPROXIMATED"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/_COVARIANCE_TYPE_DIAGONAL_KNOWN"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/COVARIANCE_TYPE_KNOWN"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/NavSatFix/position_covariance_type"/>
           </genClasses>
           <genClasses ecoreClass="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/Joy">
@@ -574,12 +581,6 @@
             ecorePackage="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/oarps_datatypes">
           <nestedGenPackages prefix="Oarp1_datatypes" disposableProviderFactory="true"
               ecorePackage="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/oarps_datatypes/oarp1_datatypes">
-            <genClasses ecoreClass="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/oarps_datatypes/oarp1_datatypes/CarLikeOdometry">
-              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/oarps_datatypes/oarp1_datatypes/CarLikeOdometry/rearLeftWheel"/>
-              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/oarps_datatypes/oarp1_datatypes/CarLikeOdometry/rearRightWheel"/>
-              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/oarps_datatypes/oarp1_datatypes/CarLikeOdometry/motorSpeed"/>
-              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/oarps_datatypes/oarp1_datatypes/CarLikeOdometry/steeringAngle"/>
-            </genClasses>
             <genClasses ecoreClass="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/oarps_datatypes/oarp1_datatypes/CarLikeCommand">
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/oarps_datatypes/oarp1_datatypes/CarLikeCommand/velocity"/>
               <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/oarps_datatypes/oarp1_datatypes/CarLikeCommand/steeringAngle"/>

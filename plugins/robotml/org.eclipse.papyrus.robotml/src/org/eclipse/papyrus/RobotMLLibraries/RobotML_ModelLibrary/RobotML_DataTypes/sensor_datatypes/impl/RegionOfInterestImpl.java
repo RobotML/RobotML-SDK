@@ -23,6 +23,7 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.RegionOfInterestImpl#getY_offset <em>Yoffset</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.RegionOfInterestImpl#getHeight <em>Height</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.RegionOfInterestImpl#isDo_rectify <em>Do rectify</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.RegionOfInterestImpl#getWidth <em>Width</em>}</li>
  * </ul>
  * </p>
  *
@@ -108,6 +109,26 @@ public class RegionOfInterestImpl extends EObjectImpl implements RegionOfInteres
 	 * @ordered
 	 */
 	protected boolean do_rectify = DO_RECTIFY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWidth()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long WIDTH_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWidth()
+	 * @generated
+	 * @ordered
+	 */
+	protected long width = WIDTH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -217,6 +238,27 @@ public class RegionOfInterestImpl extends EObjectImpl implements RegionOfInteres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public long getWidth() {
+		return width;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setWidth(long newWidth) {
+		long oldWidth = width;
+		width = newWidth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.REGION_OF_INTEREST__WIDTH, oldWidth, width));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -228,6 +270,8 @@ public class RegionOfInterestImpl extends EObjectImpl implements RegionOfInteres
 				return getHeight();
 			case Sensor_datatypesPackage.REGION_OF_INTEREST__DO_RECTIFY:
 				return isDo_rectify();
+			case Sensor_datatypesPackage.REGION_OF_INTEREST__WIDTH:
+				return getWidth();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -251,6 +295,9 @@ public class RegionOfInterestImpl extends EObjectImpl implements RegionOfInteres
 				return;
 			case Sensor_datatypesPackage.REGION_OF_INTEREST__DO_RECTIFY:
 				setDo_rectify((Boolean)newValue);
+				return;
+			case Sensor_datatypesPackage.REGION_OF_INTEREST__WIDTH:
+				setWidth((Long)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -276,6 +323,9 @@ public class RegionOfInterestImpl extends EObjectImpl implements RegionOfInteres
 			case Sensor_datatypesPackage.REGION_OF_INTEREST__DO_RECTIFY:
 				setDo_rectify(DO_RECTIFY_EDEFAULT);
 				return;
+			case Sensor_datatypesPackage.REGION_OF_INTEREST__WIDTH:
+				setWidth(WIDTH_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -296,6 +346,8 @@ public class RegionOfInterestImpl extends EObjectImpl implements RegionOfInteres
 				return height != HEIGHT_EDEFAULT;
 			case Sensor_datatypesPackage.REGION_OF_INTEREST__DO_RECTIFY:
 				return do_rectify != DO_RECTIFY_EDEFAULT;
+			case Sensor_datatypesPackage.REGION_OF_INTEREST__WIDTH:
+				return width != WIDTH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -318,6 +370,8 @@ public class RegionOfInterestImpl extends EObjectImpl implements RegionOfInteres
 		result.append(height);
 		result.append(", do_rectify: ");
 		result.append(do_rectify);
+		result.append(", width: ");
+		result.append(width);
 		result.append(')');
 		return result.toString();
 	}

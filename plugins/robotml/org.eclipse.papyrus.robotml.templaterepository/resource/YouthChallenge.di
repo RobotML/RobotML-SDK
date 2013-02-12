@@ -2,77 +2,122 @@
 <di:SashWindowsMngr xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.eclipse.org/papyrus/0.7.0/sashdi">
   <pageList>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_1YYu5qeoEeCu-MoaA7J4zQ"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0VVHjiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_1YYu6KeoEeCu-MoaA7J4zQ"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0VYBDiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_1YYu7qeoEeCu-MoaA7J4zQ"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0VYBjiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_xecCwBwJEeGcec5y3O28dw"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0VYCDiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_8T8XQBwKEeGcec5y3O28dw"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0VaYjiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_NAM1ABwSEeGLkp-G70uDww"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0VfGDiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_RzRkoBwhEeGLkp-G70uDww"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0VfojiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_j6_igBwiEeGLkp-G70uDww"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0VhEziAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_bgnhwBwjEeGLkp-G70uDww"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0ee0DiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_0t6QoBwjEeGLkp-G70uDww"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0efoDiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="../Challenge4_2011-07-07/model.notation#_U3KFABwkEeGLkp-G70uDww"/>
+      <emfPageIdentifier href="../../plugin/org.eclipse.papyrus.robotml.templaterepository/Challenge4_2011-07-07/model.notation#_U3KFABwkEeGLkp-G70uDww"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_AW20QBwlEeGLkp-G70uDww"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0ef6TiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_2aI3ABwlEeGLkp-G70uDww"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0ehlDiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_Nbvl4BwwEeGLkp-G70uDww"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0eicDiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_nSVJIGErEeG-n8ZSwRkhMg"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0elMjiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_R6InEGEsEeG-n8ZSwRkhMg"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0emyDiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_jcdHEGIYEeGH7cw3Ke0PxA"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0enODiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_ykJe8GIYEeGH7cw3Ke0PxA"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0enhDiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_GYZskGIZEeGH7cw3Ke0PxA"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0eoEjiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.notation#_6JDdwGK7EeGyA8hK1MhgBQ"/>
+      <emfPageIdentifier href="YouthChallenge.notation#_k0eoqDiAEeKDAMEjnOLmPA"/>
     </availablePage>
     <availablePage>
-      <emfPageIdentifier href="YouthChallenge.uml#_mdEfYLIDEeCwJ8JKZfJS1Q"/>
+      <emfPageIdentifier href="YouthChallenge.uml#_k0LoBTiAEeKDAMEjnOLmPA"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="YouthChallenge.notation#_WaH_MDiuEeKFHpsdOC1X1Q"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="YouthChallenge.notation#_NzHQoDivEeKFHpsdOC1X1Q"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="YouthChallenge.notation#_LuVHIHBiEeKpO-l0NGAU9Q"/>
     </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
       <children xsi:type="di:TabFolder">
         <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_8T8XQBwKEeGcec5y3O28dw"/>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0VaYjiAEeKDAMEjnOLmPA"/>
         </children>
         <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_1YYu5qeoEeCu-MoaA7J4zQ"/>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0enODiAEeKDAMEjnOLmPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0ehlDiAEeKDAMEjnOLmPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0VfGDiAEeKDAMEjnOLmPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0VfojiAEeKDAMEjnOLmPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0eicDiAEeKDAMEjnOLmPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0VYCDiAEeKDAMEjnOLmPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0ehlDiAEeKDAMEjnOLmPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0VhEziAEeKDAMEjnOLmPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0eicDiAEeKDAMEjnOLmPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_LuVHIHBiEeKpO-l0NGAU9Q"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0VVHjiAEeKDAMEjnOLmPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_WaH_MDiuEeKFHpsdOC1X1Q"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_NzHQoDivEeKFHpsdOC1X1Q"/>
         </children>
       </children>
     </windows>

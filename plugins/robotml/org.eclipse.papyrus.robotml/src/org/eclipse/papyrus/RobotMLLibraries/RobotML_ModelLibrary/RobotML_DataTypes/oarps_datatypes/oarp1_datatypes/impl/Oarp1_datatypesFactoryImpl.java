@@ -56,23 +56,12 @@ public class Oarp1_datatypesFactoryImpl extends EFactoryImpl implements Oarp1_da
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case Oarp1_datatypesPackage.CAR_LIKE_ODOMETRY: return createCarLikeOdometry();
 			case Oarp1_datatypesPackage.CAR_LIKE_COMMAND: return createCarLikeCommand();
 			case Oarp1_datatypesPackage.MULTI_LAYER_LIDAR_SCAN: return createMultiLayerLidarScan();
 			case Oarp1_datatypesPackage.EXTENTED_LIDAR_SCAN: return createExtentedLidarScan();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CarLikeOdometry createCarLikeOdometry() {
-		CarLikeOdometryImpl carLikeOdometry = new CarLikeOdometryImpl();
-		return carLikeOdometry;
 	}
 
 	/**

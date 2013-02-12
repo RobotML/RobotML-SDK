@@ -53,8 +53,8 @@
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'generateWrapperString(org.eclipse.uml2.uml.Class)', Sequence{classe})
 /]
 
-[query public generateOperationStateString(vertex : Vertex) : String =
-	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'generateOperationStateString(org.eclipse.uml2.uml.Vertex)', Sequence{vertex})
+[query public generateInteractionStateString(vertex : Vertex) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'generateInteractionStateString(org.eclipse.uml2.uml.Vertex)', Sequence{vertex})
 /]
 
 [query public getContainerTypeDeclaration(ne : NamedElement) : String =

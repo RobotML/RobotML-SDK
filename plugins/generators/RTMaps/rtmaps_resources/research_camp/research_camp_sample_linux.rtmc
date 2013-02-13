@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MacroPackage xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.1" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram_RTBoardView.xsd">
+<RequiredPackages>
+<File><![CDATA[/opt/rtmaps/packages/rtmaps_wifibot.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_wifibot.pck]]></Relative>
+</File>
+<File><![CDATA[/opt/rtmaps/packages/rtmaps_hokuyo.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_hokuyo.pck]]></Relative>
+</File>
+<File><![CDATA[/opt/rtmaps/packages/rtmaps_gps.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_gps.pck]]></Relative>
+</File>
+<File><![CDATA[/home/nicolas/proteus/github/RobotML-SDK/plugins/generators/RTMaps/rtmaps_resources/research_camp/user_sdk/packages/linux_x86/rtmaps_data_conversion.pck]]>
+<Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/user_sdk/packages/linux_x86/rtmaps_data_conversion.pck]]></Relative>
+</File>
+<File><![CDATA[/opt/rtmaps/packages/rtmaps_camera1394_dcam.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_camera1394_dcam.pck]]></Relative>
+</File>
+<File><![CDATA[/opt/rtmaps/packages/rtmaps_vectornav.pck]]>
+<Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_vectornav.pck]]></Relative>
+</File>
+</RequiredPackages>
+<RequiredMacroPackages/>
+<MacroComponentModel Model="hokuyo_wrapper" Version="">
+<Component InstanceName="SCIP2_laser_1" Model="SCIP2_laser" x="144" y="144" z="0">
+<Output LongName="SCIP2_laser_1.scan" Name="scan">
+<Property LongName="SCIP2_laser_1.scan.fifosize" Type="1">16</Property>
+<Property LongName="SCIP2_laser_1.scan.periodic" Type="0">false</Property>
+<Property LongName="SCIP2_laser_1.scan.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="SCIP2_laser_1.timestamp" Name="timestamp">
+<Property LongName="SCIP2_laser_1.timestamp.fifosize" Type="1">16</Property>
+<Property LongName="SCIP2_laser_1.timestamp.periodic" Type="0">false</Property>
+<Property LongName="SCIP2_laser_1.timestamp.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="SCIP2_laser_1.sensor_model" Type="4"><![CDATA[3|0|UTM-30LX|URG-04LX|UBG-05LX]]></Property>
+<Property LongName="SCIP2_laser_1.serial_port" Type="3"><![CDATA[/dev/ttyACM0]]></Property>
+<Property LongName="SCIP2_laser_1.serial_baudrate" Type="4"><![CDATA[7|3|19200|38400|57600|115200|250000|500000|750000]]></Property>
+<Property LongName="SCIP2_laser_1.serial_recv_buf_size" Type="1">1024</Property>
+<Property LongName="SCIP2_laser_1.serial_timeout" Type="1">10000</Property>
+<Property LongName="SCIP2_laser_1.acq_mode" Type="4"><![CDATA[3|0|Continuous|Single frame|Decode input raw stream]]></Property>
+<Property LongName="SCIP2_laser_1.output_raw_stream" Type="0">false</Property>
+<Property LongName="SCIP2_laser_1.threaded" Type="0">true</Property>
+<Property LongName="SCIP2_laser_1.priority" Type="1">255</Property>
+<Property LongName="SCIP2_laser_1.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="lidar_scan_rtmaps_to_robotml_2" Model="lidar_scan_rtmaps_to_robotml" x="392" y="144" z="0">
+<Input LongName="lidar_scan_rtmaps_to_robotml_2.scans_in" Name="scans_in">
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.scans_in.readerType" Type="1">0</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.scans_in.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="lidar_scan_rtmaps_to_robotml_2.status" Name="status">
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.status.fifosize" Type="1">16</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.status.periodic" Type="0">false</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.status.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="lidar_scan_rtmaps_to_robotml_2.laser_scan" Name="laser_scan">
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.laser_scan.fifosize" Type="1">16</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.laser_scan.periodic" Type="0">false</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.laser_scan.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.nb_layers" Type="1">1</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.angle_min" Type="2">-135.0</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.angle_max" Type="2">135.0</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.angle_increment" Type="2">0.25</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.range_min" Type="2">0.0</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.range_max" Type="2">30.0</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.threaded" Type="0">true</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.priority" Type="1">128</Property>
+<Property LongName="lidar_scan_rtmaps_to_robotml_2.autoStart" Type="0">false</Property>
+</Component>
+<Connection Input="lidar_scan_rtmaps_to_robotml_2.scans_in" Output="SCIP2_laser_1.scan"/>
+<Output Name="data" Target="lidar_scan_rtmaps_to_robotml_2.laser_scan"/>
+<Property Name="serial_port" Target="SCIP2_laser_1.serial_port"/>
+<Property Name="serial_baudrate" Target="SCIP2_laser_1.serial_baudrate"/>
+<RTBoardView ID="JavaStudio1.0">
+<Description/>
+<ComponentBox InstanceName="SCIP2_laser_1" reversed="false">
+<Description/>
+<OutputInfos Name="scan">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="timestamp">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="lidar_scan_rtmaps_to_robotml_2" reversed="false">
+<Description/>
+<InputInfos Name="scans_in">
+<Description/>
+</InputInfos>
+<OutputInfos Name="status">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="laser_scan">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<OutputBox InstanceName="data" reversed="false" x="568" y="168" z="0">
+<Description/>
+</OutputBox>
+<ConnectionShape InstanceName="lidar_scan_rtmaps_to_robotml_2.scans_in" color="0"/>
+</RTBoardView>
+</MacroComponentModel>
+<MacroComponentModel Model="imu_vectornav_vn100_wrapper" Version="">
+<Component InstanceName="imu_rtmaps_to_robotml_2" Model="imu_rtmaps_to_robotml" x="400" y="352" z="0">
+<Input LongName="imu_rtmaps_to_robotml_2.accelerations" Name="accelerations">
+<Property LongName="imu_rtmaps_to_robotml_2.accelerations.readerType" Type="1">0</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.accelerations.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="imu_rtmaps_to_robotml_2.angular_rates" Name="angular_rates">
+<Property LongName="imu_rtmaps_to_robotml_2.angular_rates.readerType" Type="1">0</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.angular_rates.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="imu_rtmaps_to_robotml_2.quaternion" Name="quaternion">
+<Property LongName="imu_rtmaps_to_robotml_2.quaternion.readerType" Type="1">0</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.quaternion.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="imu_rtmaps_to_robotml_2.accel_girat" Name="accel_girat">
+<Property LongName="imu_rtmaps_to_robotml_2.accel_girat.fifosize" Type="1">16</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.accel_girat.periodic" Type="0">false</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.accel_girat.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="imu_rtmaps_to_robotml_2.threaded" Type="0">true</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.priority" Type="1">128</Property>
+<Property LongName="imu_rtmaps_to_robotml_2.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="vn_100_1" Model="vn_100" x="144" y="320" z="0">
+<Input LongName="vn_100_1.iStream8" Name="iStream8">
+<Property LongName="vn_100_1.iStream8.readerType" Type="1">0</Property>
+<Property LongName="vn_100_1.iStream8.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="vn_100_1.oQuaternion" Name="oQuaternion">
+<Property LongName="vn_100_1.oQuaternion.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oQuaternion.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oQuaternion.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="vn_100_1.oYaw_Pitch_Roll" Name="oYaw_Pitch_Roll">
+<Property LongName="vn_100_1.oYaw_Pitch_Roll.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oYaw_Pitch_Roll.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oYaw_Pitch_Roll.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="vn_100_1.oStream8" Name="oStream8">
+<Property LongName="vn_100_1.oStream8.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oStream8.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oStream8.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="vn_100_1.oAngular_Rates" Name="oAngular_Rates">
+<Property LongName="vn_100_1.oAngular_Rates.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oAngular_Rates.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oAngular_Rates.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="vn_100_1.oMagnetic" Name="oMagnetic">
+<Property LongName="vn_100_1.oMagnetic.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oMagnetic.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oMagnetic.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="vn_100_1.oAcceleration" Name="oAcceleration">
+<Property LongName="vn_100_1.oAcceleration.fifosize" Type="1">16</Property>
+<Property LongName="vn_100_1.oAcceleration.periodic" Type="0">false</Property>
+<Property LongName="vn_100_1.oAcceleration.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="vn_100_1.pInputFIFOSize" Type="1">1000</Property>
+<Property LongName="vn_100_1.pOutputFIFOsSize" Type="1">10</Property>
+<Property LongName="vn_100_1.threaded" Type="0">true</Property>
+<Property LongName="vn_100_1.priority" Type="1">128</Property>
+<Property LongName="vn_100_1.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="SerialPort_3" Model="SerialPort" x="176" y="144" z="0">
+<Input LongName="SerialPort_3.streamInput" Name="streamInput">
+<Property LongName="SerialPort_3.streamInput.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_3.streamInput.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="SerialPort_3.rts_state" Name="rts_state">
+<Property LongName="SerialPort_3.rts_state.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_3.rts_state.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="SerialPort_3.dtr_state" Name="dtr_state">
+<Property LongName="SerialPort_3.dtr_state.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_3.dtr_state.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="SerialPort_3.streamOutput" Name="streamOutput">
+<Property LongName="SerialPort_3.streamOutput.fifosize" Type="1">32</Property>
+<Property LongName="SerialPort_3.streamOutput.periodic" Type="0">false</Property>
+<Property LongName="SerialPort_3.streamOutput.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="SerialPort_3.port" Type="3"><![CDATA[/dev/ttyUSB0]]></Property>
+<Property LongName="SerialPort_3.baudrate" Type="4"><![CDATA[10|9|110|300|1200|2400|4800|9600|19200|38400|57600|115200]]></Property>
+<Property LongName="SerialPort_3.parity" Type="4"><![CDATA[3|0|None|Even|Odd]]></Property>
+<Property LongName="SerialPort_3.stopbits" Type="4"><![CDATA[2|0|1|2]]></Property>
+<Property LongName="SerialPort_3.byteSize" Type="4"><![CDATA[4|3|5|6|7|8]]></Property>
+<Property LongName="SerialPort_3.flowControl" Type="4"><![CDATA[3|0|None|Xon/Xoff|Hardware (RTS/CTS)]]></Property>
+<Property LongName="SerialPort_3.XonChar" Type="1">17</Property>
+<Property LongName="SerialPort_3.XoffChar" Type="1">19</Property>
+<Property LongName="SerialPort_3.min" Type="1">50</Property>
+<Property LongName="SerialPort_3.wtime" Type="1">10000</Property>
+<Property LongName="SerialPort_3.use_non_standard_baudrate" Type="0">false</Property>
+<Property LongName="SerialPort_3.non_standard_baudrate" Type="1">10000</Property>
+<Property LongName="SerialPort_3.correct_timestamp_based_on_baudrate" Type="0">true</Property>
+<Property LongName="SerialPort_3.use_data_terminal_ready" Type="0">true</Property>
+<Property LongName="SerialPort_3.use_request_to_send" Type="0">true</Property>
+<Property LongName="SerialPort_3.use_carrier_detect" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_3.use_clear_to_send" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_3.use_data_set_ready" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_3.use_ring" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_3.verbose" Type="0">false</Property>
+<Property LongName="SerialPort_3.threaded" Type="0">true</Property>
+<Property LongName="SerialPort_3.priority" Type="1">255</Property>
+<Property LongName="SerialPort_3.autoStart" Type="0">false</Property>
+</Component>
+<Connection Input="imu_rtmaps_to_robotml_2.quaternion" Output="vn_100_1.oQuaternion"/>
+<Connection Input="imu_rtmaps_to_robotml_2.accelerations" Output="vn_100_1.oAcceleration"/>
+<Connection Input="imu_rtmaps_to_robotml_2.angular_rates" Output="vn_100_1.oAngular_Rates"/>
+<Connection Input="vn_100_1.iStream8" Output="SerialPort_3.streamOutput"/>
+<Connection Input="SerialPort_3.streamInput" Output="vn_100_1.oStream8"/>
+<Output Name="accel_girat" Target="imu_rtmaps_to_robotml_2.accel_girat"/>
+<Property Name="baudrate" Target="SerialPort_3.baudrate"/>
+<Property Name="serial_port" Target="SerialPort_3.port"/>
+<RTBoardView ID="JavaStudio1.0">
+<Description/>
+<ComponentBox InstanceName="imu_rtmaps_to_robotml_2" reversed="false">
+<Description/>
+<InputInfos Name="accelerations">
+<Description/>
+</InputInfos>
+<InputInfos Name="angular_rates">
+<Description/>
+</InputInfos>
+<InputInfos Name="quaternion">
+<Description/>
+</InputInfos>
+<OutputInfos Name="accel_girat">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="vn_100_1" reversed="false">
+<Description/>
+<InputInfos Name="iStream8">
+<Description/>
+</InputInfos>
+<OutputInfos Name="oQuaternion">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="oYaw_Pitch_Roll">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="oStream8">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="oAngular_Rates">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="oMagnetic">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="oAcceleration">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="SerialPort_3" reversed="false">
+<Description/>
+<InputInfos Name="streamInput">
+<Description/>
+</InputInfos>
+<InputInfos Name="rts_state">
+<Description/>
+</InputInfos>
+<InputInfos Name="dtr_state">
+<Description/>
+</InputInfos>
+<OutputInfos Name="streamOutput">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<OutputBox InstanceName="accel_girat" reversed="false" x="648" y="368" z="0">
+<Description/>
+</OutputBox>
+<ConnectionShape InstanceName="imu_rtmaps_to_robotml_2.quaternion" color="0"/>
+<ConnectionShape InstanceName="imu_rtmaps_to_robotml_2.accelerations" color="0"/>
+<ConnectionShape InstanceName="imu_rtmaps_to_robotml_2.angular_rates" color="0"/>
+<ConnectionShape InstanceName="vn_100_1.iStream8" color="0"/>
+<ConnectionShape InstanceName="SerialPort_3.streamInput" color="0"/>
+</RTBoardView>
+</MacroComponentModel>
+<MacroComponentModel Model="camera_image_wrapper" Version="">
+<Component InstanceName="camera_image_rtmaps_to_robotml_1" Model="camera_image_rtmaps_to_robotml" x="264" y="144" z="0">
+<Input LongName="camera_image_rtmaps_to_robotml_1.image_in" Name="image_in">
+<Property LongName="camera_image_rtmaps_to_robotml_1.image_in.readerType" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.image_in.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="camera_image_rtmaps_to_robotml_1.video" Name="video">
+<Property LongName="camera_image_rtmaps_to_robotml_1.video.fifosize" Type="1">16</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.video.periodic" Type="0">false</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.video.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="camera_image_rtmaps_to_robotml_1.calibrate" Name="calibrate">
+<Property LongName="camera_image_rtmaps_to_robotml_1.calibrate.fifosize" Type="1">16</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.calibrate.periodic" Type="0">false</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.calibrate.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="camera_image_rtmaps_to_robotml_1.distorsion_model" Type="3"><![CDATA[plumb_bob]]></Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.D" Type="3"><![CDATA[0.0;0.0;0.0;0.0;0.0]]></Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.K" Type="3"><![CDATA[0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0]]></Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.R" Type="3"><![CDATA[0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0]]></Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.P" Type="3"><![CDATA[0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0]]></Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.binning_x" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.binning_y" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.roi_x_offset" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.roi_y_offset" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.roi_width" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.roi_height" Type="1">0</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.roi_do_rectify" Type="0">false</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.threaded" Type="0">true</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.priority" Type="1">128</Property>
+<Property LongName="camera_image_rtmaps_to_robotml_1.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="Camera1394_DCAM_1" Model="Camera1394_DCAM" x="144" y="288" z="0">
+<Property LongName="Camera1394_DCAM_1.Camera" Type="4"><![CDATA[1|0|N/A]]></Property>
+<Property LongName="Camera1394_DCAM_1.VideoMode" Type="4"><![CDATA[1|0|N/A]]></Property>
+<Property LongName="Camera1394_DCAM_1.FrameRate" Type="4"><![CDATA[1|0|N/A]]></Property>
+<Property LongName="Camera1394_DCAM_1.CaptureMode" Type="4"><![CDATA[3|1|One shot|Continuous|Hardware triggered]]></Property>
+<Property LongName="Camera1394_DCAM_1.Enable_1394b" Type="4"><![CDATA[3|0|Auto|Yes|No]]></Property>
+<Property LongName="Camera1394_DCAM_1.AutoExposure" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Brightness" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Focus" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Gain" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Gamma" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Hue" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Iris" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Saturation" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Sharpness" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Shutter" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.WhiteBalanceU" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.WhiteBalanceV" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Zoom" Type="1">-2</Property>
+<Property LongName="Camera1394_DCAM_1.Nb_additional_registers" Type="1">0</Property>
+<Property LongName="Camera1394_DCAM_1.Additional_regs_values_format" Type="4"><![CDATA[2|1|Decimal|Hexadecimal]]></Property>
+<Property LongName="Camera1394_DCAM_1.threaded" Type="0">true</Property>
+<Property LongName="Camera1394_DCAM_1.priority" Type="1">128</Property>
+<Property LongName="Camera1394_DCAM_1.autoStart" Type="0">false</Property>
+</Component>
+<Output Name="video" Target="camera_image_rtmaps_to_robotml_1.video"/>
+<Output Name="calibrate" Target="camera_image_rtmaps_to_robotml_1.calibrate"/>
+<RTBoardView ID="JavaStudio1.0">
+<Description/>
+<ComponentBox InstanceName="camera_image_rtmaps_to_robotml_1" reversed="false">
+<Description/>
+<InputInfos Name="image_in">
+<Description/>
+</InputInfos>
+<OutputInfos Name="video">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="calibrate">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="Camera1394_DCAM_1" reversed="false">
+<Description/>
+</ComponentBox>
+<OutputBox InstanceName="video" reversed="false" x="472" y="168" z="0">
+<Description/>
+</OutputBox>
+<OutputBox InstanceName="calibrate" reversed="false" x="472" y="184" z="0">
+<Description/>
+</OutputBox>
+</RTBoardView>
+</MacroComponentModel>
+<MacroComponentModel Model="gps_wrapper" Version="">
+<Component InstanceName="SerialPort_1" Model="SerialPort" x="144" y="144" z="0">
+<Input LongName="SerialPort_1.rts_state" Name="rts_state">
+<Property LongName="SerialPort_1.rts_state.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_1.rts_state.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="SerialPort_1.dtr_state" Name="dtr_state">
+<Property LongName="SerialPort_1.dtr_state.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_1.dtr_state.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="SerialPort_1.streamInput" Name="streamInput">
+<Property LongName="SerialPort_1.streamInput.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_1.streamInput.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="SerialPort_1.streamOutput" Name="streamOutput">
+<Property LongName="SerialPort_1.streamOutput.fifosize" Type="1">32</Property>
+<Property LongName="SerialPort_1.streamOutput.periodic" Type="0">false</Property>
+<Property LongName="SerialPort_1.streamOutput.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="SerialPort_1.port" Type="3"><![CDATA[/dev/ttyUSB1]]></Property>
+<Property LongName="SerialPort_1.baudrate" Type="4"><![CDATA[10|4|110|300|1200|2400|4800|9600|19200|38400|57600|115200]]></Property>
+<Property LongName="SerialPort_1.parity" Type="4"><![CDATA[3|0|None|Even|Odd]]></Property>
+<Property LongName="SerialPort_1.stopbits" Type="4"><![CDATA[2|0|1|2]]></Property>
+<Property LongName="SerialPort_1.byteSize" Type="4"><![CDATA[4|3|5|6|7|8]]></Property>
+<Property LongName="SerialPort_1.flowControl" Type="4"><![CDATA[3|0|None|Xon/Xoff|Hardware (RTS/CTS)]]></Property>
+<Property LongName="SerialPort_1.XonChar" Type="1">17</Property>
+<Property LongName="SerialPort_1.XoffChar" Type="1">19</Property>
+<Property LongName="SerialPort_1.min" Type="1">50</Property>
+<Property LongName="SerialPort_1.wtime" Type="1">10000</Property>
+<Property LongName="SerialPort_1.use_non_standard_baudrate" Type="0">false</Property>
+<Property LongName="SerialPort_1.non_standard_baudrate" Type="1">10000</Property>
+<Property LongName="SerialPort_1.correct_timestamp_based_on_baudrate" Type="0">true</Property>
+<Property LongName="SerialPort_1.use_data_terminal_ready" Type="0">true</Property>
+<Property LongName="SerialPort_1.use_request_to_send" Type="0">true</Property>
+<Property LongName="SerialPort_1.use_carrier_detect" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_1.use_clear_to_send" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_1.use_data_set_ready" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_1.use_ring" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_1.verbose" Type="0">false</Property>
+<Property LongName="SerialPort_1.threaded" Type="0">true</Property>
+<Property LongName="SerialPort_1.priority" Type="1">255</Property>
+<Property LongName="SerialPort_1.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="NMEA_GPGGA_frame_decoder_2" Model="NMEA_GPGGA_frame_decoder" x="360" y="144" z="0">
+<Input LongName="NMEA_GPGGA_frame_decoder_2.iStream8" Name="iStream8">
+<Property LongName="NMEA_GPGGA_frame_decoder_2.iStream8.readerType" Type="1">0</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.iStream8.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="NMEA_GPGGA_frame_decoder_2.oStream8" Name="oStream8">
+<Property LongName="NMEA_GPGGA_frame_decoder_2.oStream8.fifosize" Type="1">16</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.oStream8.periodic" Type="0">false</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.oStream8.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="NMEA_GPGGA_frame_decoder_2.dgps_data_age" Name="dgps_data_age">
+<Property LongName="NMEA_GPGGA_frame_decoder_2.dgps_data_age.fifosize" Type="1">16</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.dgps_data_age.periodic" Type="0">false</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.dgps_data_age.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="NMEA_GPGGA_frame_decoder_2.position_lla" Name="position_lla">
+<Property LongName="NMEA_GPGGA_frame_decoder_2.position_lla.fifosize" Type="1">16</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.position_lla.periodic" Type="0">false</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.position_lla.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="NMEA_GPGGA_frame_decoder_2.dgps_station_id" Name="dgps_station_id">
+<Property LongName="NMEA_GPGGA_frame_decoder_2.dgps_station_id.fifosize" Type="1">16</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.dgps_station_id.periodic" Type="0">false</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.dgps_station_id.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="NMEA_GPGGA_frame_decoder_2.quality_indicator" Name="quality_indicator">
+<Property LongName="NMEA_GPGGA_frame_decoder_2.quality_indicator.fifosize" Type="1">16</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.quality_indicator.periodic" Type="0">false</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.quality_indicator.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="NMEA_GPGGA_frame_decoder_2.nb_satellites" Name="nb_satellites">
+<Property LongName="NMEA_GPGGA_frame_decoder_2.nb_satellites.fifosize" Type="1">16</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.nb_satellites.periodic" Type="0">false</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.nb_satellites.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="NMEA_GPGGA_frame_decoder_2.UTC_time" Name="UTC_time">
+<Property LongName="NMEA_GPGGA_frame_decoder_2.UTC_time.fifosize" Type="1">16</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.UTC_time.periodic" Type="0">false</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.UTC_time.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="NMEA_GPGGA_frame_decoder_2.hdop" Name="hdop">
+<Property LongName="NMEA_GPGGA_frame_decoder_2.hdop.fifosize" Type="1">16</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.hdop.periodic" Type="0">false</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.hdop.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.check_CRC" Type="0">true</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.force_output_when_no_fix" Type="0">false</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.pInputFIFOSize" Type="1">1000</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.pOutputFIFOsSize" Type="1">10</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.threaded" Type="0">true</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.priority" Type="1">128</Property>
+<Property LongName="NMEA_GPGGA_frame_decoder_2.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="gps_rtmaps_to_robotml_4" Model="gps_rtmaps_to_robotml" x="616" y="144" z="0">
+<Input LongName="gps_rtmaps_to_robotml_4.lla_pos" Name="lla_pos">
+<Property LongName="gps_rtmaps_to_robotml_4.lla_pos.readerType" Type="1">0</Property>
+<Property LongName="gps_rtmaps_to_robotml_4.lla_pos.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="gps_rtmaps_to_robotml_4.quality_indicator" Name="quality_indicator">
+<Property LongName="gps_rtmaps_to_robotml_4.quality_indicator.readerType" Type="1">0</Property>
+<Property LongName="gps_rtmaps_to_robotml_4.quality_indicator.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="gps_rtmaps_to_robotml_4.gps" Name="gps">
+<Property LongName="gps_rtmaps_to_robotml_4.gps.fifosize" Type="1">16</Property>
+<Property LongName="gps_rtmaps_to_robotml_4.gps.periodic" Type="0">false</Property>
+<Property LongName="gps_rtmaps_to_robotml_4.gps.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="gps_rtmaps_to_robotml_4.threaded" Type="0">true</Property>
+<Property LongName="gps_rtmaps_to_robotml_4.priority" Type="1">128</Property>
+<Property LongName="gps_rtmaps_to_robotml_4.autoStart" Type="0">false</Property>
+</Component>
+<Connection Input="NMEA_GPGGA_frame_decoder_2.iStream8" Output="SerialPort_1.streamOutput"/>
+<Connection Input="gps_rtmaps_to_robotml_4.lla_pos" Output="NMEA_GPGGA_frame_decoder_2.position_lla"/>
+<Connection Input="gps_rtmaps_to_robotml_4.quality_indicator" Output="NMEA_GPGGA_frame_decoder_2.quality_indicator"/>
+<Output Name="gps" Target="gps_rtmaps_to_robotml_4.gps"/>
+<Property Name="port" Target="SerialPort_1.port"/>
+<Property Name="baudrate" Target="SerialPort_1.baudrate"/>
+<RTBoardView ID="JavaStudio1.0">
+<Description/>
+<ComponentBox InstanceName="SerialPort_1" reversed="false">
+<Description/>
+<InputInfos Name="rts_state">
+<Description/>
+</InputInfos>
+<InputInfos Name="dtr_state">
+<Description/>
+</InputInfos>
+<InputInfos Name="streamInput">
+<Description/>
+</InputInfos>
+<OutputInfos Name="streamOutput">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="NMEA_GPGGA_frame_decoder_2" reversed="false">
+<Description/>
+<InputInfos Name="iStream8">
+<Description/>
+</InputInfos>
+<OutputInfos Name="oStream8">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="dgps_data_age">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="position_lla">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="dgps_station_id">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="quality_indicator">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="nb_satellites">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="UTC_time">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="hdop">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="gps_rtmaps_to_robotml_4" reversed="false">
+<Description/>
+<InputInfos Name="lla_pos">
+<Description/>
+</InputInfos>
+<InputInfos Name="quality_indicator">
+<Description/>
+</InputInfos>
+<OutputInfos Name="gps">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<OutputBox InstanceName="gps" reversed="false" x="720" y="168" z="0">
+<Description/>
+</OutputBox>
+<ConnectionShape InstanceName="NMEA_GPGGA_frame_decoder_2.iStream8" color="0"/>
+<ConnectionShape InstanceName="gps_rtmaps_to_robotml_4.lla_pos" color="0"/>
+<ConnectionShape InstanceName="gps_rtmaps_to_robotml_4.quality_indicator" color="0"/>
+</RTBoardView>
+</MacroComponentModel>
+<MacroComponentModel Model="wifibot_wrapper" Version="">
+<Component InstanceName="wifibot_outputs_rtmaps_to_robotml_7" Model="wifibot_outputs_rtmaps_to_robotml" x="776" y="328" z="0">
+<Input LongName="wifibot_outputs_rtmaps_to_robotml_7.speeds_left_right" Name="speeds_left_right">
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.speeds_left_right.readerType" Type="1">0</Property>
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.speeds_left_right.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="wifibot_outputs_rtmaps_to_robotml_7.odometers_left_right" Name="odometers_left_right">
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.odometers_left_right.readerType" Type="1">0</Property>
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.odometers_left_right.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="wifibot_outputs_rtmaps_to_robotml_7.infrared_left_right" Name="infrared_left_right">
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.infrared_left_right.readerType" Type="1">0</Property>
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.infrared_left_right.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="wifibot_outputs_rtmaps_to_robotml_7.proxi_left_right" Name="proxi_left_right">
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.proxi_left_right.fifosize" Type="1">16</Property>
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.proxi_left_right.periodic" Type="0">false</Property>
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.proxi_left_right.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="wifibot_outputs_rtmaps_to_robotml_7.velocity_tics_left_right" Name="velocity_tics_left_right">
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.velocity_tics_left_right.fifosize" Type="1">16</Property>
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.velocity_tics_left_right.periodic" Type="0">false</Property>
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.velocity_tics_left_right.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="wifibot_outputs_rtmaps_to_robotml_7.odometer_tics_left_right" Name="odometer_tics_left_right">
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.odometer_tics_left_right.fifosize" Type="1">16</Property>
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.odometer_tics_left_right.periodic" Type="0">false</Property>
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.odometer_tics_left_right.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.threaded" Type="0">true</Property>
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.priority" Type="1">128</Property>
+<Property LongName="wifibot_outputs_rtmaps_to_robotml_7.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="wifibot_inputs_robotml_to_rtmaps_8" Model="wifibot_inputs_robotml_to_rtmaps" x="208" y="328" z="0">
+<Input LongName="wifibot_inputs_robotml_to_rtmaps_8.speed_tics_left_right" Name="speed_tics_left_right">
+<Property LongName="wifibot_inputs_robotml_to_rtmaps_8.speed_tics_left_right.readerType" Type="1">0</Property>
+<Property LongName="wifibot_inputs_robotml_to_rtmaps_8.speed_tics_left_right.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="wifibot_inputs_robotml_to_rtmaps_8.left_right_speeds" Name="left_right_speeds">
+<Property LongName="wifibot_inputs_robotml_to_rtmaps_8.left_right_speeds.fifosize" Type="1">16</Property>
+<Property LongName="wifibot_inputs_robotml_to_rtmaps_8.left_right_speeds.periodic" Type="0">false</Property>
+<Property LongName="wifibot_inputs_robotml_to_rtmaps_8.left_right_speeds.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="wifibot_inputs_robotml_to_rtmaps_8.threaded" Type="0">false</Property>
+<Property LongName="wifibot_inputs_robotml_to_rtmaps_8.priority" Type="1">128</Property>
+<Property LongName="wifibot_inputs_robotml_to_rtmaps_8.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="wifibot_serial_1" Model="wifibot_serial" x="480" y="328" z="0">
+<Input LongName="wifibot_serial_1.iStream8" Name="iStream8">
+<Property LongName="wifibot_serial_1.iStream8.readerType" Type="1">0</Property>
+<Property LongName="wifibot_serial_1.iStream8.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="wifibot_serial_1.ileft_and_right_speeds" Name="ileft_and_right_speeds">
+<Property LongName="wifibot_serial_1.ileft_and_right_speeds.readerType" Type="1">2</Property>
+<Property LongName="wifibot_serial_1.ileft_and_right_speeds.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="wifibot_serial_1.version" Name="version">
+<Property LongName="wifibot_serial_1.version.fifosize" Type="1">16</Property>
+<Property LongName="wifibot_serial_1.version.periodic" Type="0">false</Property>
+<Property LongName="wifibot_serial_1.version.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="wifibot_serial_1.current" Name="current">
+<Property LongName="wifibot_serial_1.current.fifosize" Type="1">16</Property>
+<Property LongName="wifibot_serial_1.current.periodic" Type="0">false</Property>
+<Property LongName="wifibot_serial_1.current.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="wifibot_serial_1.battery" Name="battery">
+<Property LongName="wifibot_serial_1.battery.fifosize" Type="1">16</Property>
+<Property LongName="wifibot_serial_1.battery.periodic" Type="0">false</Property>
+<Property LongName="wifibot_serial_1.battery.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="wifibot_serial_1.infrared_left_right" Name="infrared_left_right">
+<Property LongName="wifibot_serial_1.infrared_left_right.fifosize" Type="1">16</Property>
+<Property LongName="wifibot_serial_1.infrared_left_right.periodic" Type="0">false</Property>
+<Property LongName="wifibot_serial_1.infrared_left_right.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="wifibot_serial_1.oStream8" Name="oStream8">
+<Property LongName="wifibot_serial_1.oStream8.fifosize" Type="1">16</Property>
+<Property LongName="wifibot_serial_1.oStream8.periodic" Type="0">false</Property>
+<Property LongName="wifibot_serial_1.oStream8.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="wifibot_serial_1.odometers_left_right" Name="odometers_left_right">
+<Property LongName="wifibot_serial_1.odometers_left_right.fifosize" Type="1">16</Property>
+<Property LongName="wifibot_serial_1.odometers_left_right.periodic" Type="0">false</Property>
+<Property LongName="wifibot_serial_1.odometers_left_right.subsampling" Type="1">1</Property>
+</Output>
+<Output LongName="wifibot_serial_1.speeds_left_right" Name="speeds_left_right">
+<Property LongName="wifibot_serial_1.speeds_left_right.fifosize" Type="1">16</Property>
+<Property LongName="wifibot_serial_1.speeds_left_right.periodic" Type="0">false</Property>
+<Property LongName="wifibot_serial_1.speeds_left_right.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="wifibot_serial_1.input_mode" Type="4"><![CDATA[2|0|Vectorized|Left/Right separated]]></Property>
+<Property LongName="wifibot_serial_1.commands_send_period" Type="1">10000</Property>
+<Property LongName="wifibot_serial_1.closed_loop_speed_control" Type="0">true</Property>
+<Property LongName="wifibot_serial_1.pid_speed" Type="4"><![CDATA[2|1|10 ms|50 ms]]></Property>
+<Property LongName="wifibot_serial_1.pInputFIFOSize" Type="1">1000</Property>
+<Property LongName="wifibot_serial_1.pOutputFIFOsSize" Type="1">10</Property>
+<Property LongName="wifibot_serial_1.threaded" Type="0">true</Property>
+<Property LongName="wifibot_serial_1.priority" Type="1">128</Property>
+<Property LongName="wifibot_serial_1.autoStart" Type="0">false</Property>
+</Component>
+<Component InstanceName="SerialPort_2" Model="SerialPort" x="384" y="144" z="0">
+<Input LongName="SerialPort_2.streamInput" Name="streamInput">
+<Property LongName="SerialPort_2.streamInput.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_2.streamInput.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="SerialPort_2.rts_state" Name="rts_state">
+<Property LongName="SerialPort_2.rts_state.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_2.rts_state.subsampling" Type="1">1</Property>
+</Input>
+<Input LongName="SerialPort_2.dtr_state" Name="dtr_state">
+<Property LongName="SerialPort_2.dtr_state.readerType" Type="1">0</Property>
+<Property LongName="SerialPort_2.dtr_state.subsampling" Type="1">1</Property>
+</Input>
+<Output LongName="SerialPort_2.streamOutput" Name="streamOutput">
+<Property LongName="SerialPort_2.streamOutput.fifosize" Type="1">32</Property>
+<Property LongName="SerialPort_2.streamOutput.periodic" Type="0">false</Property>
+<Property LongName="SerialPort_2.streamOutput.subsampling" Type="1">1</Property>
+</Output>
+<Property LongName="SerialPort_2.port" Type="3"><![CDATA[/dev/ttyS0]]></Property>
+<Property LongName="SerialPort_2.baudrate" Type="4"><![CDATA[10|7|110|300|1200|2400|4800|9600|19200|38400|57600|115200]]></Property>
+<Property LongName="SerialPort_2.parity" Type="4"><![CDATA[3|0|None|Even|Odd]]></Property>
+<Property LongName="SerialPort_2.stopbits" Type="4"><![CDATA[2|0|1|2]]></Property>
+<Property LongName="SerialPort_2.byteSize" Type="4"><![CDATA[4|3|5|6|7|8]]></Property>
+<Property LongName="SerialPort_2.flowControl" Type="4"><![CDATA[3|0|None|Xon/Xoff|Hardware (RTS/CTS)]]></Property>
+<Property LongName="SerialPort_2.XonChar" Type="1">17</Property>
+<Property LongName="SerialPort_2.XoffChar" Type="1">19</Property>
+<Property LongName="SerialPort_2.min" Type="1">50</Property>
+<Property LongName="SerialPort_2.wtime" Type="1">10000</Property>
+<Property LongName="SerialPort_2.use_non_standard_baudrate" Type="0">false</Property>
+<Property LongName="SerialPort_2.non_standard_baudrate" Type="1">10000</Property>
+<Property LongName="SerialPort_2.correct_timestamp_based_on_baudrate" Type="0">true</Property>
+<Property LongName="SerialPort_2.use_data_terminal_ready" Type="0">true</Property>
+<Property LongName="SerialPort_2.use_request_to_send" Type="0">true</Property>
+<Property LongName="SerialPort_2.use_carrier_detect" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_2.use_clear_to_send" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_2.use_data_set_ready" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_2.use_ring" Type="4"><![CDATA[4|0|No|Rising edge only|Falling edge only|Rising and falling edges]]></Property>
+<Property LongName="SerialPort_2.verbose" Type="0">false</Property>
+<Property LongName="SerialPort_2.threaded" Type="0">true</Property>
+<Property LongName="SerialPort_2.priority" Type="1">255</Property>
+<Property LongName="SerialPort_2.autoStart" Type="0">false</Property>
+</Component>
+<Connection Input="wifibot_outputs_rtmaps_to_robotml_7.speeds_left_right" Output="wifibot_serial_1.speeds_left_right"/>
+<Connection Input="wifibot_outputs_rtmaps_to_robotml_7.odometers_left_right" Output="wifibot_serial_1.odometers_left_right"/>
+<Connection Input="wifibot_outputs_rtmaps_to_robotml_7.infrared_left_right" Output="wifibot_serial_1.infrared_left_right"/>
+<Connection Input="wifibot_serial_1.ileft_and_right_speeds" Output="wifibot_inputs_robotml_to_rtmaps_8.left_right_speeds"/>
+<Connection Input="wifibot_serial_1.iStream8" Output="SerialPort_2.streamOutput"/>
+<Connection Input="SerialPort_2.streamInput" Output="wifibot_serial_1.oStream8"/>
+<Input Name="Input" Target="wifibot_inputs_robotml_to_rtmaps_8.speed_tics_left_right"/>
+<Output Name="Velocity_out" Target="wifibot_outputs_rtmaps_to_robotml_7.velocity_tics_left_right"/>
+<Output Name="OdoTics_out" Target="wifibot_outputs_rtmaps_to_robotml_7.odometer_tics_left_right"/>
+<Output Name="ProxiMeas_out" Target="wifibot_outputs_rtmaps_to_robotml_7.proxi_left_right"/>
+<Output Name="Battery_out" Target="wifibot_serial_1.battery"/>
+<Output Name="Current_out" Target="wifibot_serial_1.current"/>
+<Property Name="port" Target="SerialPort_2.port"/>
+<Property Name="PID_speed" Target="wifibot_serial_1.pid_speed"/>
+<Property Name="baudrate" Target="SerialPort_2.baudrate"/>
+<Property Name="closed_loop_speed_control" Target="wifibot_serial_1.closed_loop_speed_control"/>
+<Property Name="commands_send_period" Target="wifibot_serial_1.commands_send_period"/>
+<RTBoardView ID="JavaStudio1.0">
+<Description/>
+<ComponentBox InstanceName="wifibot_outputs_rtmaps_to_robotml_7" reversed="false">
+<Description/>
+<InputInfos Name="speeds_left_right">
+<Description/>
+</InputInfos>
+<InputInfos Name="odometers_left_right">
+<Description/>
+</InputInfos>
+<InputInfos Name="infrared_left_right">
+<Description/>
+</InputInfos>
+<OutputInfos Name="proxi_left_right">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="velocity_tics_left_right">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="odometer_tics_left_right">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="wifibot_inputs_robotml_to_rtmaps_8" reversed="false">
+<Description/>
+<InputInfos Name="speed_tics_left_right">
+<Description/>
+</InputInfos>
+<OutputInfos Name="left_right_speeds">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="wifibot_serial_1" reversed="false">
+<Description/>
+<InputInfos Name="iStream8">
+<Description/>
+</InputInfos>
+<InputInfos Name="ileft_and_right_speeds">
+<Description/>
+</InputInfos>
+<OutputInfos Name="version">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="current">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="battery">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="infrared_left_right">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="oStream8">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="odometers_left_right">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="speeds_left_right">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="SerialPort_2" reversed="false">
+<Description/>
+<InputInfos Name="streamInput">
+<Description/>
+</InputInfos>
+<InputInfos Name="rts_state">
+<Description/>
+</InputInfos>
+<InputInfos Name="dtr_state">
+<Description/>
+</InputInfos>
+<OutputInfos Name="streamOutput">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<InputBox InstanceName="Input" reversed="false" x="112" y="296" z="0">
+<Description/>
+</InputBox>
+<OutputBox InstanceName="Battery_out" reversed="false" x="1064" y="400" z="-1">
+<Description/>
+</OutputBox>
+<OutputBox InstanceName="ProxiMeas_out" reversed="false" x="1064" y="384" z="0">
+<Description/>
+</OutputBox>
+<OutputBox InstanceName="Velocity_out" reversed="false" x="1064" y="352" z="0">
+<Description/>
+</OutputBox>
+<OutputBox InstanceName="Current_out" reversed="false" x="1064" y="416" z="-1">
+<Description/>
+</OutputBox>
+<OutputBox InstanceName="OdoTics_out" reversed="false" x="1064" y="368" z="0">
+<Description/>
+</OutputBox>
+<ConnectionShape InstanceName="wifibot_outputs_rtmaps_to_robotml_7.speeds_left_right" color="0"/>
+<ConnectionShape InstanceName="wifibot_outputs_rtmaps_to_robotml_7.odometers_left_right" color="0"/>
+<ConnectionShape InstanceName="wifibot_outputs_rtmaps_to_robotml_7.infrared_left_right" color="0"/>
+<ConnectionShape InstanceName="wifibot_serial_1.ileft_and_right_speeds" color="0"/>
+<ConnectionShape InstanceName="wifibot_serial_1.iStream8" color="0"/>
+<ConnectionShape InstanceName="SerialPort_2.streamInput" color="0"/>
+</RTBoardView>
+</MacroComponentModel>
+</MacroPackage>

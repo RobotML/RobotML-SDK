@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.robotml.generators.acceleo.morse.feature"
-      label="Feature"
+      label="Morse code generator for RobotML"
       version="1.0.0.qualifier">
 
    <description url="http://www.example.com/description">
@@ -12,7 +12,7 @@
       [Enter Copyright Description here.]
    </copyright>
 
-   <license url="http://www.example.com/license">
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
       [Enter License Description here.]
    </license>
 

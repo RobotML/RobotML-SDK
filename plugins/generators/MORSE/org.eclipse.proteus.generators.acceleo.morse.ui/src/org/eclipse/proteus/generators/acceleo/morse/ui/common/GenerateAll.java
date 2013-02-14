@@ -79,17 +79,17 @@ public class GenerateAll {
 			targetFolder.getLocation().toFile().mkdirs();
 		}
 		
-		// final URI template0 = getTemplateURI("org.eclipse.proteus.generators.acceleo.morse", new Path("/org/eclipse/proteus/generators/acceleo/morse/main/generate.emtl"));
-		// org.eclipse.proteus.generators.acceleo.morse.main.Generate gen0 = new org.eclipse.proteus.generators.acceleo.morse.main.Generate(modelURI, targetFolder.getLocation().toFile(), arguments) {
+		// final URI template0 = getTemplateURI("org.eclipse.robotml.generators.acceleo.morse", new Path("/org/eclipse/proteus/generators/acceleo/morse/main/generate.emtl"));
+		// org.eclipse.robotml.generators.acceleo.morse.main.Generate gen0 = new org.eclipse.robotml.generators.acceleo.morse.main.Generate(modelURI, targetFolder.getLocation().toFile(), arguments) {
 		//	protected URI createTemplateURI(String entry) {
 		//		return template0;
 		//	}
 		//};
 		//gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		monitor.subTask("Loading...");
-		org.eclipse.proteus.generators.acceleo.morse.main.Generate gen0 = new org.eclipse.proteus.generators.acceleo.morse.main.Generate(modelURI, targetFolder.getLocation().toFile(), arguments);
+		org.eclipse.robotml.generators.acceleo.morse.main.Generate gen0 = new org.eclipse.robotml.generators.acceleo.morse.main.Generate(modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
-		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.eclipse.proteus.generators.acceleo.morse", "org.eclipse.proteus.generators.acceleo.morse.main.Generate", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.eclipse.robotml.generators.acceleo.morse", "org.eclipse.robotml.generators.acceleo.morse.main.Generate", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 			

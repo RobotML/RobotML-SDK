@@ -22,7 +22,7 @@ import org.eclipse.papyrus.infra.widgets.toolbox.notification.Type;
 import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.CombinedPopupAndViewBuilder;
 import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.NotificationBuilder;
 import org.eclipse.papyrus.infra.widgets.util.FileUtil;
-import org.eclipse.proteus.generators.acceleo.morse.main.Generate;
+import org.eclipse.robotml.generators.acceleo.morse.main.Generate;
 
 /**
  * The Class AcceleoMorseCodeGenerator.

@@ -6,14 +6,14 @@
             adaptable="true"
             objectClass="org.eclipse.core.resources.IFile"
             nameFilter="*.uml"
-            id="org.eclipse.proteus.generators.acceleo.morse.ui.popupMenus.contribution.IFile">
+            id="org.eclipse.robotml.generators.acceleo.morse.ui.popupMenus.contribution.IFile">
          <menu id="org.eclipse.acceleo.module.menu" label="Proteus UML Model" path="additionsAcceleo">
                <groupMarker name="acceleo"/> 
          </menu>
          <action
-               class="org.eclipse.proteus.generators.acceleo.morse.ui.popupMenus.AcceleoGenerateMorseAction"
+               class="org.eclipse.robotml.generators.acceleo.morse.ui.popupMenus.AcceleoGenerateMorseAction"
                enablesFor="+"
-               id="org.eclipse.proteus.generators.acceleo.morse.ui.popupMenus.acceleoGenerateMorseAction"
+               id="org.eclipse.robotml.generators.acceleo.morse.ui.popupMenus.acceleoGenerateMorseAction"
                icon="icons/default.gif"
                label="Generate to Morse"
                menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
@@ -48,7 +48,7 @@
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="org.eclipse.proteus.generators.acceleo.morse.ui.handler.AcceleoGenerateMorseCommandHandler"
+            class="org.eclipse.robotml.generators.acceleo.morse.ui.handler.AcceleoGenerateMorseCommandHandler"
             commandId="org.eclipse.robotML.generateMorseCommand">
       </handler>
    </extension>

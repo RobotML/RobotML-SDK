@@ -6,13 +6,15 @@
 [template public generateOpsFile(model : Model)]
 [file ('/connect.ops', false, 'UTF-8')]
 //-----import package-----
+import ("rtt_sensor_msgs")
+import ("rtt_nav_msgs")
+import ("rtt_geometry_msgs")
+import ("rtt_std_msgs")
 
-[for (elt: NamedElement | getSystems(model))]
-[setRttLibraries(elt)/]
-[/for]
 //-----load components-----
-	[for (elt: NamedElement | getSystems(model))] 
+	[for (elt: NamedElement | getComponentModels(model))] 
 		[let c : Class = elt.oclAsType(Class)]
+		[if (not isActuator(c)) and (not isSensor(c))]
 			[if (elt.getAllPorts() -> isEmpty() = false)]
 				[if (hasStateMachine(c))]
 loadComponent("[c.name/]","OCL::LuaComponent")
@@ -22,6 +24,7 @@ loadComponent("[c.name/]","OCL::LuaComponent")
 loadComponent("[c.name/]","[c.namespace.name/]::[c.name/]")
 				[/if]
 			[/if]
+		[/if]
 		[/let]
 	[/for]	
 
@@ -29,11 +32,13 @@ loadComponent("[c.name/]","[c.namespace.name/]::[c.name/]")
 var double period = 1.0; //in seconds, period of the activity (0.0 if non periodic)
 var int priority = LowestPriority; //LowestPriority = 1, HighestPriority = 99
 var int scheduler = ORO_SCHED_OTHER; // ORO_SCHED_OTHER = 0, ORO_SCHED_RT = 1
-	[for (elt: NamedElement | getSystems(model))] 
+	[for (elt: NamedElement | getComponentModels(model))] 
 		[let c : Class = elt.oclAsType(Class)]
+[if (not isActuator(c)) and (not isSensor(c))]
 			[if (elt.getAllPorts() -> isEmpty() = false)]
 setActivity("[c.name/]", period, priority, scheduler)
 			[/if]
+[/if]
 		[/let]
 	[/for]
 
@@ -72,29 +77,33 @@ stream("[c.name/].[port.name/]",cp_[c.name/]_[port.name/])
 [/for]
 [/comment]
 
-[for (elt: NamedElement | getSystems(model))] 
+[for (elt: NamedElement | getComponentModels(model))] 
 	[let count : Integer = 1]
 	[let c : Class = elt.oclAsType(Class)]
+[if (not isActuator(c)) and (not isSensor(c))]
 	[if (elt.getExternalInputConnectors(c) <> null)]
-	[for (conn  : Connector | getExternalInputConnectors(c))]						
+	[for (conn  : Connector | getExternalInputConnectors(c))]
 
-[if (getDestComponentForConnector(conn) <> null )]  
+[if (not isActuator(getDestComponentForConnector(conn).class)) and (not isSensor(getDestComponentForConnector(conn).class))]
+[comment if (getDestComponentForConnector(conn) <> null )/]  
 var ConnPolicy cp_[getDestComponentForConnector(conn).name/]_[getDestPortName(conn)/];
 cp_[getDestComponentForConnector(conn).name/]_[getDestPortName(conn)/].type = DATA; //DATA = 0, BUFFER = 1
 cp_[getDestComponentForConnector(conn).name/]_[getDestPortName(conn)/].size = 1; //size of the buffer
 cp_[getDestComponentForConnector(conn).name/]_[getDestPortName(conn)/].lock_policy = LOCK_FREE; //UNSYNC = 0, LOCKED = 1, LOCK_FREE = 2
 cp_[getDestComponentForConnector(conn).name/]_[getDestPortName(conn)/].transport = 3; //ROS = 3
 cp_[getDestComponentForConnector(conn).name/]_[getDestPortName(conn)/].name_id = "[getDestComponentForConnector(conn).name/]";
-
-[if(isConnectedSensor(getDestComponentTypeNameForConnector(conn)) or isConnectedActuator(getDestComponentTypeNameForConnector(conn)))]
-stream("[getDestComponentForConnector(conn).name/].[getDestPortName(conn)/]",cp_[c.name/]_[getDestPortName(conn)/])
-[else]
 connectPeers("[c.name/]", "[getDestComponentForConnector(conn).name/]")
-[/if]
 
+[else]
+stream("[getDestComponentForConnector(conn).name/].[getDestPortName(conn)/]",cp_[c.name/]_[getDestPortName(conn)/])
 [/if]
+	
     [/for]
+
+
+
 	[/if]
+[/if]
 	[/let]
     [/let]
 [/for]

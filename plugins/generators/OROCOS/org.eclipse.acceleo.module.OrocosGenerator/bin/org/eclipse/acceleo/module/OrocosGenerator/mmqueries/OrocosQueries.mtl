@@ -40,12 +40,12 @@
 [query public addType(t : Type) : OclAny = 
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries','addType(org.eclipse.uml2.uml.Type)',Sequence{t})/]
 
-[query public isConnectedActuator(st : String ) : Boolean =
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isConnectedActuator(java.lang.String)', Sequence{st})
+[query public isConnectedToActuator(st : String ) : Boolean =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isConnectedToActuator(java.lang.String)', Sequence{st})
 /]
 
-[query public isConnectedSensor(st : String) : Boolean =
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isConnectedSensor(java.lang.String)', Sequence{st})
+[query public isConnectedToSensor(st : Property) : Boolean =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isConnectedToSensor(org.eclipse.uml2.uml.Property)', Sequence{st})
 /]
 [query public getOperations(c : Class) : Sequence(Operation) =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperations(org.eclipse.uml2.uml.Class)', Sequence{c})

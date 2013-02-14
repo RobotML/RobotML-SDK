@@ -34,9 +34,10 @@ namespace [i.namespace.name.substitute(' ', '_')/]	 {
 		[for (op : Operation | i.getAllOperations())]	
 		[comment] virtual [getNameType(op.type)/] [op.name/] ([getOperationSignature(op)/]) = 0; [/comment]
 		[if(op.isStatic)]
-	    virtual [op.visibility/] static [convertType(op.type.name)/] [op.name/] (
-		[else]
-		virtual [op.visibility/] [convertType(op.type.name)/] [op.name/] (
+	    [op.visibility/] static [convertType(op.type.name)/] [op.name/] (
+		[/if]
+		[if(op.isAbstract and not op.isStatic)]
+		[op.visibility/] virtual [convertType(op.type.name)/] [op.name/] (
 		[/if]
 		[if(getOperationInputParameters(op) <> null)]
 		[for (input: Element | getOperationInputParameters(op))]

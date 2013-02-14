@@ -29,8 +29,9 @@ namespace [m.name.substitute(' ','_')/]{
 		[comment] [operation.visibility/]	[operation.type/] [operation.name/] ([getOperationSignature(operation)/]); [/comment]
 		[if(op.isStatic)]
 	    [op.visibility/] static [convertType(op.type.name)/] [op.name/] (
-		[else]
-		virtual [op.visibility/] [convertType(op.type.name)/] [op.name/] (
+		[/if]
+		[if(op.isAbstract and not op.isStatic)]
+		[op.visibility/] virtual [convertType(op.type.name)/] [op.name/] (
 		[/if]
 		[if(getOperationInputParameters(op) <> null)]
 		[for (input: Element | getOperationInputParameters(op))]
@@ -48,7 +49,7 @@ namespace [m.name.substitute(' ','_')/]{
 			[/let]
 		[/for]
 		[/if]
-
+        )
     [/for]
 }
 

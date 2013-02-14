@@ -393,11 +393,13 @@ public class OrocosQueries {
 		return false;
 	}	
 	
-	public Boolean isConnectedActuator(java.lang.String st) {						
-			if (st.compareTo("ActuatorSystem")==0)
+	public Boolean isConnectedToActuator(java.lang.String st) {						
+			if (st.equalsIgnoreCase("ActuatorSystem"))
 				return true;				
 		return false;
 	}
+	
+	
 	
    /**
     * Checks whether the component is a sensor	
@@ -406,20 +408,55 @@ public class OrocosQueries {
 	public Boolean isSensor(Class myClass) {		
 		for (Stereotype st : myClass.getAppliedStereotypes())				
 			if (st.getName().equalsIgnoreCase("Sensor") || 
-					st.getName().equalsIgnoreCase("SensorSystem") ||
-					st.getName().equalsIgnoreCase("GpsSystem") ||
-					st.getName().equalsIgnoreCase("LidarSystem") ||
-					st.getName().equalsIgnoreCase("CameraSystem") )
+					st.getName().equals("SensorSystem") ||
+					st.getName().equals("GPSSystem") ||
+					st.getName().equals("LidarSystem") ||
+					st.getName().equals("CameraSystem") )
 				return true;				
 		return false;
 	}
 
-		public Boolean isConnectedSensor(java.lang.String st) {						
-				if (st.equals("Sensor") || 
-						st.equals("SensorSystem") ||
-						st.equals("GpsSystem") ||
-						st.equals("LidarSystem") ||
-						st.equals("CameraSystem") )
+	/**
+     * getStreamConnection, return peer connection, return in ops scripts
+     * @param model
+     * @return list of getStreams
+     */
+	/*
+    public List<String> getStreamConnection(Model model)
+    {
+        int i = 0;
+        LinkedList<String> results = new LinkedList<String>();
+        for (NamedElement elt : getSystems(model))
+            if (getAllPorts(elt)!= null)
+                for (Port port : getAllPorts(elt))
+                    if (getOppositePort(port) != null)
+                    {
+                        Port oppositePort = getOppositePort(port);
+                        if (!isComponentSystem(oppositePort.getClass_()))
+                        {
+                            i++;
+                            StringBuffer item = new StringBuffer();
+                            item.append("var ConnPolicy cp_stream_" + i + ";\n")
+                            .append("cp_stream_" + i + ".type = DATA; //DATA = 0, BUFFER = 1\n")
+                            .append("cp_stream_" + i + ".size = 1; //size of the buffer\n")
+                            .append("cp_stream_" + i + ".lock_policy = LOCK_FREE; //UNSYNC = 0, LOCKED = 1, LOCK_FREE = 2\n")
+                            .append("cp_stream_" + i + ".transport = 3; //ROS = 3\n")
+                            .append("cp_stream_" + i + ".name_id = \"" + oppositePort.getClass_().getName() + "\"\n")
+                            .append("stream(\"" + elt.getName() + "." + port.getName() + "\", cp_stream_" + i + ")\n");
+                            results.add(item.toString());
+                        }
+                    }
+        return results;
+    }
+*/	
+		
+
+		public Boolean isConnectedToSensor(java.lang.String st) {						
+				if (st.equalsIgnoreCase("Sensor") || 
+						st.equalsIgnoreCase("SensorSystem") ||
+						st.equalsIgnoreCase("GpsSystem") ||
+						st.equalsIgnoreCase("LidarSystem") ||
+						st.equalsIgnoreCase("CameraSystem") )
 					return true;				
 			return false;
 		}

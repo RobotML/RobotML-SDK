@@ -1,5 +1,4 @@
 //-----import package-----
-
 import ("rtt_sensor_msgs")
 import ("rtt_nav_msgs")
 import ("rtt_geometry_msgs")
@@ -18,6 +17,15 @@ setActivity("SearchLandingSite", period, priority, scheduler)
 
 //-----set connections between components-----
 //-----connecting ports-----
+
+
+
+
+
+
+
+
+
 
 
 

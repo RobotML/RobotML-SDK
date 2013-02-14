@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.engine;bundle-version="3.1.0",
  org.eclipse.papyrus.robotml;bundle-version="0.9.1",
  org.eclipse.papyrus.uml.tools.utils;bundle-version="0.9.1",
- org.eclipse.uml2.uml;bundle-version="4.0.100"
+ org.eclipse.uml2.uml;bundle-version="4.0.1"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
@@ -31,4 +31,5 @@ Import-Package: com.cea.ec3m.gentools.core,
  org.eclipse.robotml.generators.acceleo,
  org.eclipse.robotml.generators.acceleo.mmqueries,
  org.eclipse.uml2.uml,
- org.eclipse.uml2.uml.resource
+ org.eclipse.uml2.uml.resource,
+ org.eclipse.uml2.uml.util

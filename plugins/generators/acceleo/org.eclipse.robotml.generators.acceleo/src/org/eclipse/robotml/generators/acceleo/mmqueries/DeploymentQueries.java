@@ -169,20 +169,20 @@ public class DeploymentQueries {
 	 */
 	static public List<org.eclipse.uml2.uml.Class> getDefinedComponentsForPlatform(Model model, String platformName)
 	{
-		System.out.println("getDefinedComponentsForPlatform");
+		//System.out.println("getDefinedComponentsForPlatform");
 		LinkedList<org.eclipse.uml2.uml.Class> found_classes = new LinkedList<org.eclipse.uml2.uml.Class>();
 		
 		List<InstanceSpecification> instances = getInstanceSpecificationsForPlatform(model, platformName);
 		for(InstanceSpecification instanceSpecification : instances)
 		{
-			System.out.println("instance : " + instanceSpecification.getName()); 
+			//System.out.println("instance : " + instanceSpecification.getName()); 
 			
 			for(org.eclipse.uml2.uml.Classifier classifier : instanceSpecification.getClassifiers())
 			{
 				found_classes.add(GeneralQueries.findClassInModel(model, classifier.getName()));
 
-				org.eclipse.uml2.uml.Class theClass = GeneralQueries.findClassInModel(model, classifier.getName());
-				System.out.println("\tclass : " + theClass.getName());
+				//org.eclipse.uml2.uml.Class theClass = GeneralQueries.findClassInModel(model, classifier.getName());
+				//System.out.println("\tclass : " + theClass.getName());
 			}
 		}
 		return found_classes;

@@ -10,9 +10,8 @@ import javax.swing.JOptionPane;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.papyrus.RobotML.Algorithm;
-import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.Transition;
+import org.eclipse.papyrus.RobotML.Algorithm;
 import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.FSMQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
@@ -39,8 +38,7 @@ import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.Vertex;
-
-import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 public class SpecificQueries {
 
@@ -666,18 +664,19 @@ public class SpecificQueries {
 	 * @param vertex
 	 * @return
 	 */
-	static public String generateOperationStateString(org.eclipse.uml2.uml.Vertex vertex)
+	static public String generateInteractionStateString(org.eclipse.uml2.uml.Vertex vertex)
 	{
 		String result = "";
-		if(vertex instanceof State)
-		{
-			org.eclipse.papyrus.RobotML.State state = ElementUtil.getStereotypeApplication(vertex, org.eclipse.papyrus.RobotML.State.class);
+//		if(vertex instanceof State)
+//		{
+			org.eclipse.papyrus.RobotML.State state = UMLUtil.getStereotypeApplication(vertex, org.eclipse.papyrus.RobotML.State.class);
 			if(state != null)
 			{
-				if(state.getOperation() != null)
+				Algorithm operation = state.getOperation();
+				if(operation != null)
 				{
-					String operation = state.getOperation().getBase_Operation().getName();
-					result = SpecificQueries._interactionTag + " " + operation + "(";
+					String opName = operation.getBase_Operation().getName();
+					result = SpecificQueries._interactionTag + " " + opName + "(";
 					for(Property prop : state.getArguments())
 					{
 						result += prop.getName() + ","; 
@@ -690,7 +689,7 @@ public class SpecificQueries {
 					result += ")";
 				}
 			}
-		}
+//		}
 		return result;
 	}
 	
@@ -1369,8 +1368,7 @@ public class SpecificQueries {
 			EObject obj = iter.next();
 			if(obj instanceof Class)
 			{
-				org.eclipse.papyrus.RobotML.Environment env = ElementUtil.getStereotypeApplication((Class)obj, org.eclipse.papyrus.RobotML.Environment.class);
-				result |= (env != null);
+				result |= GeneralQueries.hasStereotype((Class)obj, org.eclipse.papyrus.RobotML.Environment.class);
 			}
 		}
 		return result;
@@ -1553,4 +1551,5 @@ public class SpecificQueries {
 		}
  		return result;
 	}
+	
 }

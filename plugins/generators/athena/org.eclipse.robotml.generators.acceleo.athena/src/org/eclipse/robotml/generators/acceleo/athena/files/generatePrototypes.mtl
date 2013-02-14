@@ -153,9 +153,9 @@ end
 [for(sm : StateMachine | fsms)]
 [let objs : Sequence(Vertex) = getStates(sm)]
 [for(obj : Vertex | objs)]
-[let str : String = generateOperationStateString(obj)]
+[let str : String = generateInteractionStateString(obj)]
 //[str/]
-[if((str='') =(false))]
+[if(str.equalsIgnoreCase('') =(false))]
 when ( [sm.name/]::[obj.name/] ) begin
 	[str/]
 end

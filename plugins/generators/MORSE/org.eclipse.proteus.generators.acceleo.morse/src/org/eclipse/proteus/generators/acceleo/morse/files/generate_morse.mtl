@@ -12,7 +12,7 @@
 [/template]
 
 [template public generateRobot(aClass : Class, model : Model)]
-robot = Robot('[aClass.name/].blend')
+robot = Robot('[aClass.name/]')
 robot.name = "[aClass.name/]"
 	[for (elt: NamedElement | getElementsWithInheritedStereotype(model, 'RoboticSystem'))]
 		[let c : Class = elt.oclAsType(Class)]

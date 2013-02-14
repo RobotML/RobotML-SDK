@@ -14,7 +14,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.acceleo.engine.event.IAcceleoTextGenerationListener;
 import org.eclipse.acceleo.engine.generation.strategy.IAcceleoGenerationStrategy;
@@ -23,11 +22,7 @@ import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.uml2.uml.Profile;
-import org.eclipse.uml2.uml.resource.UMLResource;
 
 /**
  * Entry point of the 'Generate' generation module.
@@ -346,15 +341,7 @@ public class Generate extends AbstractAcceleoGenerator {
 	public void registerPackages(ResourceSet resourceSet) {
 		super.registerPackages(resourceSet);
 
-		// from rtmaps
-		EPackage.Registry packageRegistry = resourceSet.getPackageRegistry();
-		Resource.Factory.Registry factoryRegistry = resourceSet.getResourceFactoryRegistry();
-		// end from rtmaps
-
-		if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
-			resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
-			factoryRegistry.getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
-		}
+	
 
 		/*
 		 * TODO If you need additional package registrations, you can register them here. The following line
@@ -376,19 +363,14 @@ public class Generate extends AbstractAcceleoGenerator {
 		 *
 		 * To learn more about Package Registration, have a look at the Acceleo Launcher documentation (Help -> Help Contents).
 		 */
+		 if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
+	            resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
+	        }
+	        if (!isInWorkspace(org.eclipse.papyrus.RobotML.RobotMLPackage.class)) {
+	            resourceSet.getPackageRegistry().put(org.eclipse.papyrus.RobotML.RobotMLPackage.eINSTANCE.getNsURI(), org.eclipse.papyrus.RobotML.RobotMLPackage.eINSTANCE);
+	        }
 
-		// from rtmaps
-		try {
-			URI uri = URI.createPlatformPluginURI("org.eclipse.papyrus.proteus/model/ProteusProfile.profile.uml", true);
-			Resource res = resourceSet.getResource(uri, true);
-			Profile profile = (Profile)res.getContents().get(0);
-			EPackage epackage = profile.getDefinition();
-			packageRegistry.put(epackage.getNsURI(), epackage);
-		} catch (Exception e) {
-			System.out.println("---- error loading profile: " + e);
-			e.printStackTrace();
-		}
-		// end from rtmaps
+		
 	}
 
 	/**

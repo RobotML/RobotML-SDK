@@ -23,7 +23,7 @@ namespace [i.namespace.name.substitute(' ', '_')/]	 {
 		[let elt : Element = i.oclAsType(Element)]
 		[for (property : Property | i.getAllAttributes())]
 		[if(property.isStatic)]
-		[property.visibility/] static [getNameType(property.type)/] [property.name/];
+		[property.visibility/] static [convertType(property.type, root_model)/] [property.name/];
 		[else]
 		[property.visibility/] [getNameType(property.type)/] [property.name/];
 		[/if]
@@ -34,10 +34,10 @@ namespace [i.namespace.name.substitute(' ', '_')/]	 {
 		[for (op : Operation | i.getAllOperations())]	
 		[comment] virtual [getNameType(op.type)/] [op.name/] ([getOperationSignature(op)/]) = 0; [/comment]
 		[if(op.isStatic)]
-	    [op.visibility/] static [convertType(op.type.name)/] [op.name/] (
+	    [op.visibility/] static [convertType(op.type, root_model)/] [op.name/] (
 		[/if]
 		[if(op.isAbstract and not op.isStatic)]
-		[op.visibility/] virtual [convertType(op.type.name)/] [op.name/] (
+		[op.visibility/] virtual [convertType(op.type, root_model)/] [op.name/] (
 		[/if]
 		[if(getOperationInputParameters(op) <> null)]
 		[for (input: Element | getOperationInputParameters(op))]
@@ -55,7 +55,7 @@ namespace [i.namespace.name.substitute(' ', '_')/]	 {
 			[/let]
 		[/for]
 		[/if]
-		) = 0;
+		
 		[/for]
 		[comment constructor/]
 		[i.name/] (const std::string& name) = 0;

@@ -30,6 +30,12 @@
 [query public isUserDataType(t : Type) : Boolean =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isUserDataType(org.eclipse.uml2.uml.Type)', Sequence{t})
 /]
+
+
+[query public getDataTypesInElement(elt : Element) : Sequence(Type) =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getDataTypesInElement(org.eclipse.uml2.uml.Element)', Sequence{elt})
+/]
+
 [query public getOperationDataType(op : Operation) : Sequence(DataType) =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationDataType(org.eclipse.uml2.uml.Class)', Sequence{op})
 /]

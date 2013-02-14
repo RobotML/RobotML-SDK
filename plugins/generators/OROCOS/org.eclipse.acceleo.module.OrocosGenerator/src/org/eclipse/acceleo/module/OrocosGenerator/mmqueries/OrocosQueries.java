@@ -280,7 +280,29 @@ public class OrocosQueries {
 		return res;
 	}
 
+
 	
+	public List<Type> getDataTypesInElement(Element e)
+	{		
+		LinkedList<Type> elts = new LinkedList<Type>();
+		for (Element ne : e.getOwnedElements())
+		{	if(GeneralQueries.isProperty(ne)){
+				Property p = (Property) ne;
+				elts.add(p.getType());
+			}
+		if(GeneralQueries.isPort(ne)){
+			Port p = (Port) ne;
+			elts.add(p.getType());
+		}
+		if (ne instanceof org.eclipse.uml2.uml.Type) {
+			elts.add((Type)ne);
+		}
+		}
+		return elts;
+	}
+
+	
+
 	/**
 	 * Returns all the elements of an enumeration
 	 * @param c
@@ -465,7 +487,7 @@ public class OrocosQueries {
 		public Boolean isUserDataType(Type t) {		
 			EList<Stereotype> pst_list = t.getAppliedStereotypes();
 			for (Stereotype st : pst_list) {
-				if(st.getName().equals("EDataType"))
+				if(st.getName().equalsIgnoreCase("DataType"))
 				{
 					return true;
 				}
@@ -517,6 +539,12 @@ public class OrocosQueries {
 		{
 			Property p=(Property)e;
 			NamedElement n=(NamedElement)p.getType().getOwner();
+			res=n.getName();
+			res=res.replaceAll(" ", "_");
+			res=res.replaceAll("datatypes", "msgs");
+		}
+		else{
+			NamedElement n=(NamedElement)e.getOwner();
 			res=n.getName();
 			res=res.replaceAll(" ", "_");
 			res=res.replaceAll("datatypes", "msgs");
@@ -906,8 +934,7 @@ public class OrocosQueries {
 		}
 		return behaviors;	
 		}
-	
-	
+		
 	/**
 	 * Function to generate variable that may be used in lua fsm
 	 * for reading/writing to the component's ports

@@ -15,6 +15,19 @@
 #ifndef _[type.name.toUpper()/]_H_
 #define _[type.name.toUpper()/]_H_
 [addType(type)/]
+[for (elt : Element | getDataTypesInElement(type))]
+[let type: Type = elt] 
+[if(isRobotMLDataType(m, type.name))]
+[let ne : NamedElement = type.owner]
+#include <[ne.name.replace('_datatypes', '_msgs')/]/[type.name/].h>
+[/let]
+[else]
+	[if(not isPrimitiveType(type))]
+#include "[((type.qualifiedName).replaceAll(' ', '_')).replaceAll('::', '/')/].h"	
+	[/if]
+[/if]
+[/let]
+[/for]
 [comment get owner component and modify namespaces hierarchy/]
 namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_')/]{
 	[if(isEnumeration(type))]
@@ -34,20 +47,17 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 	[if(t.name.equalsIgnoreCase('boolean'))]
 	[property.visibility/] bool [property.name/];
 	[else]
-	[property.visibility/] [t.name/] [property.name/];
+		[property.visibility/] [t.name/] [property.name/];
 	[/if]
+	
+	[else]
+		[property.visibility/] [t.name/] [property.name/];
 	[/if]
 	[comment]
 	[if(isRobotMLDataType(m, t.name))]
 	[property.visibility/] [t.owner/]::[t.name/] [property.name/];
 	[/if]
 	[/comment]
-	[if(isUserDataType(t))]
-	[property.visibility/] [t.name/] [property.name/];
-	[/if]
-    [if(isEnumeration(t))]
-	[t.name/] [property.name/];
-	[/if]
 	[/let]	
 	[/for]	
   }

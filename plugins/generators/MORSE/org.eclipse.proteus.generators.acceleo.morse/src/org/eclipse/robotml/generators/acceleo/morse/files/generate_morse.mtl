@@ -93,9 +93,24 @@ robot.append(lidar)
 
 [template public generateCamera(aClass : Class, model : Model)]
 camera = Sensor('video_camera')
-camera.properties(cam_width = [getAttributeValue(aClass, 'width', 'CameraSystem', '128')/],
-                  cam_height = [getAttributeValue(aClass, 'height', 'CameraSystem', '128')/])
+
+[comment Used formula here: http://www.openrobots.org/morse/doc/stable/user/sensors/video_camera.html#camera-calibration-matrix /]
+height = [getAttributeValue(aClass, 'u_0', 'CameraSystem', '0')/]*2
+width = [getAttributeValue(aClass, 'v_0', 'CameraSystem', '0')/]*2
+alpha_u = [getAttributeValue(aClass, 'alpha_u', 'CameraSystem', '0')/]
+alpha_v = [getAttributeValue(aClass, 'alpha_v', 'CameraSystem', '0')/]
+
+if (width>height):
+	focal = (alpha_u+alpha_v)/2*32/width
+else:
+	focal = (alpha_u+alpha_v)/2*32/height
+
+camera.properties(cam_width = width,
+                  cam_height = height,
+				  cam_focal = focal)
+
 camera.frequency([getAttributeValue(aClass, 'frequency', 'CameraSystem', '25.')/])
+
 camera.configure_mw('ros')
 robot.append(camera)
 [/template]

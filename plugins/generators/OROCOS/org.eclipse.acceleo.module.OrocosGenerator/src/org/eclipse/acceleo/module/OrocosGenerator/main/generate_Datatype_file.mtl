@@ -40,48 +40,125 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 	struct [type.name/]{
 	[for (property : Property |getProperties(type))]
     [let t :Type = property.type]
-
- [comment] conversion to ROS types done using getNameType(t) but missing conversion 
-  to c++ types using convertType(type.name) => needs the use of the deploiement plan [/comment]
     [if(isPrimitiveType(t))]
 	[if(t.name.equalsIgnoreCase('boolean'))]
-	[property.visibility/] bool [property.name/];
+		[property.visibility/] bool [property.name/];
 	[else]
 		[property.visibility/] [t.name/] [property.name/];
 	[/if]
-	
 	[else]
-		[property.visibility/] [t.name/] [property.name/];
-	[/if]
-	[comment]
+	 [t.name/] [property.name/];
+	[/if]	
+	[comment in case of ros datatypes, uncomment]
 	[if(isRobotMLDataType(m, t.name))]
-	[property.visibility/] [t.owner/]::[t.name/] [property.name/];
-	[/if]
+	[let ne : NamedElement = t.owner]
+	[property.visibility/]	[ne.name.replace('_datatypes', '_msgs')/]::[t.name/] [property.name/];
+	[/let]
+	[else]
+	[t.name/] [property.name/];
 	[/comment]
+		
 	[/let]	
 	[/for]	
   }
  	[for (op : Operation |getOperations(type))]
-		[comment] [operation.visibility/]	[operation.type/] [operation.name/] ([getOperationSignature(operation)/]); [/comment]
+		[let t :Type = op.type]
+
 		[if(op.isStatic)]
-	    [op.visibility/] static [convertType(op.type, m)/] [op.name/] (
+	 		[if(isPrimitiveType(t))]
+				[if(t.name.equalsIgnoreCase('boolean'))]
+				[op.visibility/] static bool [op.name/](
+				[else]
+				[op.visibility/] static [t.name/] [op.name/](
+				[/if]
+			[else]
+	 			[op.visibility/] [t.name/] static [op.name/](
+			[/if]
+
+			[comment in case of ros datatypes, uncomment]
+			[if(isRobotMLDataType(m, t.name))]
+				[let ne : NamedElement = t.owner]
+				[op.visibility/] static [ne.name.replace('_datatypes', '_msgs')/]::[t.name/] [op.name/](
+				[/let]
+			[elseif(t.name.equalsIgnoreCase('invalid') or t.name.size() = 0)]
+				 static void [op.name/](
+			[else]
+			[/comment]
 		[/if]
+
 		[if(op.isAbstract and not op.isStatic)]
-		[op.visibility/] virtual [convertType(op.type, m)/] [op.name/] (
+			[if(isPrimitiveType(t))]
+				[if(t.name.equalsIgnoreCase('boolean'))]
+				[op.visibility/] virtual bool [op.name/](
+				[else]
+				[op.visibility/] virtual [t.name/] [op.name/](
+				[/if]
+			[else]
+		 		 virtual [t.name/] [op.name/](		
+			[/if]
+			[comment in case of ros datatypes, uncomment]
+			[if(isRobotMLDataType(m, t.name))]
+				[let ne : NamedElement = t.owner]
+				[op.visibility/] virtual [ne.name.replace('_datatypes', '_msgs')/]::[t.name/] [op.name/]( 
+				[/let]
+			[elseif(t.name.equalsIgnoreCase('invalid') or t.name.size() = 0)]
+				 virtual void [op.name/](
+			[else]
+		 		 virtual [t.name/] [op.name/](		
+			[/comment]
 		[/if]
+		[/let]
+		
 		[if(getOperationInputParameters(op) <> null)]
 		[for (input: Element | getOperationInputParameters(op))]
 			[let p : Parameter = input]
-			[comment] [getOperationParameterType(op, p)/] [/comment]
-			[p.type.name/] [p.name/] ,
+			[let paramType : Type = p.type]
+			[if(isPrimitiveType(paramType))]
+				[if(paramType.name.equalsIgnoreCase('boolean'))]
+				bool [p.name/],
+				[else]
+				[paramType.name/] [p.name/],
+				[/if]
+			[else]
+				[paramType.name/] [p.name/],
+			[/if]
+			[comment in case of ros datatypes, uncomment]
+			[if(isRobotMLDataType(m, paramType.name))]
+				[let ne : NamedElement = paramType.owner]
+				[ne.name.replace('_datatypes', '_msgs')/]::[paramType.name/] [p.name/], 
+				[/let]
+			[else]
+				[paramType.name/] [p.name/],
+			[/comment] 
+			[/let]
 			[/let]
 		[/for]
 		[/if]
+
 		[if(getOperationOutputParameters (op) <> null)]
 		[for (output: Element | getOperationOutputParameters(op))]
 			[let p : Parameter = output]
-			[comment] [getOperationParameterType(op, p)/] [/comment]
-			[p.type.name/] &[p.name/],
+			[let paramType : Type = p.type]
+			[if(isPrimitiveType(paramType))]
+				[if(paramType.name.equalsIgnoreCase('boolean'))]
+				bool &[p.name/],
+				[else]
+				[paramType.name/] &[p.name/],
+				[/if]
+			[else]
+		 		[paramType.name/] &[p.name/],
+			[/if]
+			[comment in case of ros datatypes, uncomment]
+			[if(isRobotMLDataType(m, paramType.name))]
+				[let ne : NamedElement = paramType.owner]
+				[ne.name.replace('_datatypes', '_msgs')/]::[paramType.name/] &[p.name/], 
+				[/let]
+			[else]
+		 		 [paramType.name/] &[p.name/],		
+
+			[/comment]
+ 
+			[/let]
 			[/let]
 		[/for]
 		[/if]

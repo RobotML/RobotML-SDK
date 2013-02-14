@@ -15,6 +15,13 @@
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isSensor(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
 
+[query public isRobot(c : Class) : Boolean =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isRobot(org.eclipse.uml2.uml.Class)', Sequence{c})
+/]
+[query public isEnvironment(c : Class) : Boolean =
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isEnvironment(org.eclipse.uml2.uml.Class)', Sequence{c})
+/]
+
 [query public getOperationDataType(op : Operation) : Sequence(DataType) =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationDataType(org.eclipse.uml2.uml.Class)', Sequence{op})
 /]

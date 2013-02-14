@@ -73,7 +73,7 @@ public class ArchitectureQueries {
 	 * Retrieves the destination port for a given connector 
 	 * @see isDestPort and isSourcePort
 	 */
-	static private int getDestPort(org.eclipse.uml2.uml.Connector conn, Port[] dest_port) {
+	public static int getDestPort(org.eclipse.uml2.uml.Connector conn, Port[] dest_port) {
 		if (conn.getEnds().get(0).getRole() instanceof Port) {
 			Port test_1 = (Port)conn.getEnds().get(0).getRole();
 			if (isDestPort(conn.getEnds().get(0),test_1)) {

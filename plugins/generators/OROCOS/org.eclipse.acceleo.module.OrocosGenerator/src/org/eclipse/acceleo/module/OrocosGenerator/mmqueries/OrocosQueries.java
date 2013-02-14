@@ -416,6 +416,33 @@ public class OrocosQueries {
 		return false;
 	}
 
+
+	
+	   /**
+	    * Checks whether the component is a hardware component(robot)	
+	    * 
+	    */
+		public Boolean isRobot(Class myClass) {		
+			for (Stereotype st : myClass.getAppliedStereotypes())				
+				if (st.getName().equalsIgnoreCase("Robot"))
+					return true;				
+			return false;
+		}
+	
+
+	 /**
+	    * Checks whether the component is an environment component	
+	    * 		
+	    */
+			public Boolean isEnvironment(Class myClass) {		
+				for (Stereotype st : myClass.getAppliedStereotypes())				
+					if (st.getName().equalsIgnoreCase("Environment"))
+						return true;				
+				return false;
+			}
+		
+			
+	
 	/**
      * getStreamConnection, return peer connection, return in ops scripts
      * @param model

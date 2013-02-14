@@ -2,7 +2,7 @@
 [module generate('http://www.eclipse.org/uml2/3.0.0/UML')]
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
-[import generate_morse /]
+[import org::eclipse::proteus::generators::acceleo::morse::files::generate_morse /]
 
 [template public generate(model : Model)]
 [comment @main/]

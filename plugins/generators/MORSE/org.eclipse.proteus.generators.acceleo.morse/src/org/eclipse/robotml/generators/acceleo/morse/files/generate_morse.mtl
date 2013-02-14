@@ -3,6 +3,7 @@
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 
+
 [template public generateRobots(model : Model)]
 	[for (elt: NamedElement | getElementsWithStereotype(model, 'Robot'))]
 		[let c : Class = elt.oclAsType(Class)]

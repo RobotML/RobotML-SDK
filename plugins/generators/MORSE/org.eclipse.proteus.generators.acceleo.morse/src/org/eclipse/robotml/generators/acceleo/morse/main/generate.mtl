@@ -5,9 +5,11 @@
 [import org::eclipse::robotml::generators::acceleo::morse::files::generate_morse /]
 
 [template public generate(model : Model)]
+
+# Model [model.name/]
+
 [comment @main/]
 	[if (isRootModel(model))]
 		[generateMorse(model)/]
 	[/if]
-[model.name/]
 [/template]

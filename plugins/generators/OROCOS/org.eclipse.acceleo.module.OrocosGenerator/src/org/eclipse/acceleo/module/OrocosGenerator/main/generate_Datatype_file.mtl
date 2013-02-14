@@ -16,7 +16,7 @@
 #define _[type.name.toUpper()/]_H_
 [addType(type)/]
 [comment get owner component and modify namespaces hierarchy/]
-namespace [m.name.substitute(' ','_')/]{
+namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_')/]{
 	[if(isEnumeration(type))]
 	enum [type.name/]{
 	[for (enumeration : EnumerationLiteral |getEnumeration(type))]
@@ -27,6 +27,7 @@ namespace [m.name.substitute(' ','_')/]{
 	struct [type.name/]{
 	[for (property : Property |getProperties(type))]
     [let t :Type = property.type]
+
  [comment] conversion to ROS types done using getNameType(t) but missing conversion 
   to c++ types using convertType(type.name) => needs the use of the deploiement plan [/comment]
     [if(isPrimitiveType(t))]

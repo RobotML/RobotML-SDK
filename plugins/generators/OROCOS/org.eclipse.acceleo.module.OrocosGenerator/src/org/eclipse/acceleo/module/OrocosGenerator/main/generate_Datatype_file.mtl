@@ -15,23 +15,48 @@
 #ifndef _[type.name.toUpper()/]_H_
 #define _[type.name.toUpper()/]_H_
 [addType(type)/]
+[comment get owner component and modify namespaces hierarchy/]
 namespace [m.name.substitute(' ','_')/]{
- struct [type.name/]{
+	[if(isEnumeration(type))]
+	enum [type.name/]{
+	[for (enumeration : EnumerationLiteral |getEnumeration(type))]
+	[enumeration.name/];
+	[/for]
+    }
+	[else]
+	struct [type.name/]{
 	[for (property : Property |getProperties(type))]
     [let t :Type = property.type]
  [comment] conversion to ROS types done using getNameType(t) but missing conversion 
   to c++ types using convertType(type.name) => needs the use of the deploiement plan [/comment]
-	[property.visibility/] [convertType(t.name)/] [property.name/];
-	[/let]
+    [if(isPrimitiveType(t))]
+	[if(t.name.equalsIgnoreCase('boolean'))]
+	[property.visibility/] bool [property.name/];
+	[else]
+	[property.visibility/] [t.name/] [property.name/];
+	[/if]
+	[/if]
+	[comment]
+	[if(isRobotMLDataType(m, t.name))]
+	[property.visibility/] [t.owner/]::[t.name/] [property.name/];
+	[/if]
+	[/comment]
+	[if(isUserDataType(t))]
+	[property.visibility/] [t.name/] [property.name/];
+	[/if]
+    [if(isEnumeration(t))]
+	[t.name/] [property.name/];
+	[/if]
+	[/let]	
 	[/for]	
   }
  	[for (op : Operation |getOperations(type))]
 		[comment] [operation.visibility/]	[operation.type/] [operation.name/] ([getOperationSignature(operation)/]); [/comment]
 		[if(op.isStatic)]
-	    [op.visibility/] static [convertType(op.type.name)/] [op.name/] (
+	    [op.visibility/] static [convertType(op.type, m)/] [op.name/] (
 		[/if]
 		[if(op.isAbstract and not op.isStatic)]
-		[op.visibility/] virtual [convertType(op.type.name)/] [op.name/] (
+		[op.visibility/] virtual [convertType(op.type, m)/] [op.name/] (
 		[/if]
 		[if(getOperationInputParameters(op) <> null)]
 		[for (input: Element | getOperationInputParameters(op))]
@@ -51,12 +76,13 @@ namespace [m.name.substitute(' ','_')/]{
 		[/if]
         )
     [/for]
+[/if]
 }
-
 #endif // _[type.name.toUpper()/]_H_
 [/file]
 [/if]
 [/if]
+
 [/let]
 [/for]
 [/template]

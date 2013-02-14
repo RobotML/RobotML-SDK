@@ -14,6 +14,7 @@ package org.eclipse.acceleo.module.OrocosGenerator.mmqueries;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.RobotML.ServiceFlowKind;
 import org.eclipse.papyrus.RobotML.ServicePort;
 import org.eclipse.papyrus.RobotML.State;
@@ -24,6 +25,8 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.FunctionBehavior;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Model;
@@ -277,6 +280,31 @@ public class OrocosQueries {
 		return res;
 	}
 
+	
+	/**
+	 * Returns all the elements of an enumeration
+	 * @param c
+	 * @param elt
+	 * @return properties list
+	 */ 
+
+	public List<EnumerationLiteral> getEnumeration(Element elt) {
+		LinkedList<EnumerationLiteral> found_enum = new LinkedList<org.eclipse.uml2.uml.EnumerationLiteral>();
+		for (Element lit : elt.getOwnedElements()) {
+		if (lit instanceof EnumerationLiteral){
+		EnumerationLiteral f_enum = (EnumerationLiteral)lit;
+		found_enum.add(f_enum);
+		}
+		}
+		return found_enum;
+	}
+
+	public Boolean isEnumeration(Element elt){
+			return elt instanceof Enumeration;
+		
+	}
+	
+	
 	/**
 	 * La signature de l'operation op
 	 * Juste le Type de chaque parametre
@@ -428,7 +456,23 @@ public class OrocosQueries {
 					return true;				
 			return false;
 		}
-	
+
+
+		/**
+	    * Checks whether the type is a user defined data type	
+	    * 		
+	    */
+		public Boolean isUserDataType(Type t) {		
+			EList<Stereotype> pst_list = t.getAppliedStereotypes();
+			for (Stereotype st : pst_list) {
+				if(st.getName().equals("EDataType"))
+				{
+					return true;
+				}
+			}
+			return false;		
+		}
+
 
 	 /**
 	    * Checks whether the component is an environment component	
@@ -442,41 +486,7 @@ public class OrocosQueries {
 			}
 		
 			
-	
-	/**
-     * getStreamConnection, return peer connection, return in ops scripts
-     * @param model
-     * @return list of getStreams
-     */
-	/*
-    public List<String> getStreamConnection(Model model)
-    {
-        int i = 0;
-        LinkedList<String> results = new LinkedList<String>();
-        for (NamedElement elt : getSystems(model))
-            if (getAllPorts(elt)!= null)
-                for (Port port : getAllPorts(elt))
-                    if (getOppositePort(port) != null)
-                    {
-                        Port oppositePort = getOppositePort(port);
-                        if (!isComponentSystem(oppositePort.getClass_()))
-                        {
-                            i++;
-                            StringBuffer item = new StringBuffer();
-                            item.append("var ConnPolicy cp_stream_" + i + ";\n")
-                            .append("cp_stream_" + i + ".type = DATA; //DATA = 0, BUFFER = 1\n")
-                            .append("cp_stream_" + i + ".size = 1; //size of the buffer\n")
-                            .append("cp_stream_" + i + ".lock_policy = LOCK_FREE; //UNSYNC = 0, LOCKED = 1, LOCK_FREE = 2\n")
-                            .append("cp_stream_" + i + ".transport = 3; //ROS = 3\n")
-                            .append("cp_stream_" + i + ".name_id = \"" + oppositePort.getClass_().getName() + "\"\n")
-                            .append("stream(\"" + elt.getName() + "." + port.getName() + "\", cp_stream_" + i + ")\n");
-                            results.add(item.toString());
-                        }
-                    }
-        return results;
-    }
-*/	
-		
+			
 
 		public Boolean isConnectedToSensor(java.lang.String st) {						
 				if (st.equalsIgnoreCase("Sensor") || 
@@ -514,21 +524,6 @@ public class OrocosQueries {
 		return res;
 	}
 
-	/*public void addDataType(String s){
-		dataTypes.add(s);
-		return ;
-	}*/
-	
-/*	public boolean isADataType(String s)
-	{
-		boolean found = false;
-		for(String elt: dataTypes){
-			if (elt.toString().equals(s))
-				found = true;
-		}
-		return found;
-	}*/
-	
 	/**
 	 * converts robotML libraries into ROS topics 	
 	 * 
@@ -862,21 +857,28 @@ public class OrocosQueries {
 
 	}
 /**
- * Converts the selected type into C++ type
- * @param type
- * @return
- */
-	public String convertType(String typeName){
-		if(typeName.contains("int")//Int, UInt, int32, uint16 and so on
-			|| typeName.contains("float")//float, float32 and float64
-			|| typeName.equalsIgnoreCase("double"))
-				return "double";
-	    if (typeName.contains("Bool")) return "bool";
-		if(typeName.length()==0 || typeName.equalsIgnoreCase("invalid"))
-				return "void";
-		else
-				return typeName;
-	}	
+	 * Converts the selected type into C++ type
+	 * @param type
+	 * @return
+	 */
+		public String convertType(Type t, Model m){
+		String typeName = t.getName();
+		String convertedType = "";
+		
+		 if(DataTypeQueries.isPrimitiveType(t)){
+			if (typeName.equals("Boolean"))
+				convertedType = "bool";
+			else convertedType = typeName;
+		}
+		 else if (DataTypeQueries.isRobotMLDataType(m, typeName)){
+				convertedType = getParentType(t)+"::"+typeName;
+		}
+		 else if(isUserDataType(t))
+			  convertedType = t.getName();
+		return convertedType;
+		}	
+		
+	
 	
 	/**
 	 * Returns the associated operation to the given guard

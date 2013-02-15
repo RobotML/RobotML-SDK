@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<project version="2.0" template="templateAppDefault">
+   <name>RobotMLModelApplication</name>
+		<interface model="model_simulated_ros_rangefinder" type="rangefinder">
+			<name>hokuyo3</name>
+			<driver id="driver_ros" configId="all">
+				<parameter id="timeout">1000</parameter>
+				<parameter id="topic_name">rangefinder</parameter>
+			</driver>
+			<event bufferSize="10" priority="0" id="distance" state="active">
+				<handler processingChoice="Acquisition + Visualization" state="0">framehokuyo3</handler>
+			</event>
+		</interface>
+</project>

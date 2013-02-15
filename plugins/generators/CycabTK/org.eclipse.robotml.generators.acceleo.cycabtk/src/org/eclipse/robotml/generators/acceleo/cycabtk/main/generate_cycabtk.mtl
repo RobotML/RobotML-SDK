@@ -34,7 +34,7 @@
 			[generateCamera(c, model)/]
 		[elseif (hasStereotype(c, 'GPSSystem'))]
 			[generateGPS(c, model)/]
-		[elseif (hasStereotype(c, 'IMU'))]
+		[elseif (hasStereotype(c, 'InertialMeasurementUnitSystem'))]
 			[generateIMU(c, model)/]
 		[elseif (inheritsFrom(c, 'RoboticSystem'))]
 			[generateSystem(c, model)/]

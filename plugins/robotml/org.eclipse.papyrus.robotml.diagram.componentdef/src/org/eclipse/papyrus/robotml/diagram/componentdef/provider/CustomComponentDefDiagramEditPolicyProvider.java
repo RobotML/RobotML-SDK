@@ -26,10 +26,10 @@ public class CustomComponentDefDiagramEditPolicyProvider extends ComponentdefDia
 	@Override
 	public void createEditPolicies(EditPart editPart) {
 		super.createEditPolicies(editPart);
-		editPart.installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new StereotypeNodeLabelDisplayEditPolicy());
-		if(editPart instanceof NamedElementEditPart ){
-            editPart.installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeCompartmentEditPolicy());
-     }
+//		editPart.installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new StereotypeNodeLabelDisplayEditPolicy());
+//		if(editPart instanceof NamedElementEditPart ){
+//            editPart.installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeCompartmentEditPolicy());
+//     }
 
 	}
 	

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<RTMapsDiagram xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" EngineVersion="4.1" version="4.1" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram_RTBoardView.xsd">
+  <RequiredPackages>
+    <File><![CDATA[/home/novales/work/researchCamp/rtmaps-generated-files/user_sdk/packages/linux_x86/rtmaps_RobotMLModel.pck]]>
+<Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/user_sdk/packages/linux_x86/rtmaps_RobotMLModel.pck]]></Relative>
+</File>
+  </RequiredPackages>
+<RequiredMacroPackages/>
+<MacroComponentDefinitions/>
+  <EngineProperties>
+    <Property LongName="Engine.startTimespeed" Type="1">1000</Property>
+    <Property LongName="Engine.startTime" Type="1">0</Property>
+    <Property LongName="Engine.session" Type="3"><![CDATA[unspecified]]></Property>
+    <Property LongName="Engine.recordingAtStart" Type="0">true</Property>
+    <Property LongName="Engine.recording" Type="0">true</Property>
+    <Property LongName="Engine.sequentialStart" Type="0">false</Property>
+    <Property LongName="Engine.shutdownTimeout" Type="1">10000000</Property>
+    <Property LongName="Engine.autoDetectStartTime" Type="0">true</Property>
+    <Property LongName="Engine.coreFunctionsToSaveInDiag" Type="4"><![CDATA[0|-1]]></Property>
+  </EngineProperties>
+  <ClocksManagement>
+    <Property LongName="ClocksManagement.activeClock" Type="4"><![CDATA[1|0|RTMaps_standard_clock]]></Property>
+  </ClocksManagement>
+  <Component InstanceName="Perception1" Model="Perception" x="48" y="48" z="0">
+    <Input LongName="Perception1.input" Name="input">
+      <Property LongName="Perception1.input.readerType" Type="1">0</Property>
+      <Property LongName="Perception1.input.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="Perception1.output" Name="output">
+      <Property LongName="Perception1.output.subsampling" Type="1">1</Property>
+      <Property LongName="Perception1.output.fifosize" Type="1">16</Property>
+      <Property LongName="Perception1.output.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="Perception1.threaded" Type="0">true</Property>
+    <Property LongName="Perception1.priority" Type="1">128</Property>
+    <Property LongName="Perception1.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="Pilote2" Model="Pilote" x="240" y="80" z="0">
+    <Input LongName="Pilote2.input" Name="input">
+      <Property LongName="Pilote2.input.readerType" Type="1">0</Property>
+      <Property LongName="Pilote2.input.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="Pilote2.ouput" Name="ouput">
+      <Property LongName="Pilote2.ouput.subsampling" Type="1">1</Property>
+      <Property LongName="Pilote2.ouput.fifosize" Type="1">16</Property>
+      <Property LongName="Pilote2.ouput.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="Pilote2.threaded" Type="0">true</Property>
+    <Property LongName="Pilote2.priority" Type="1">128</Property>
+    <Property LongName="Pilote2.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="hokuyo3" Model="hokuyo" x="64" y="232" z="0">
+    <Output LongName="hokuyo3.data" Name="data">
+      <Property LongName="hokuyo3.data.subsampling" Type="1">1</Property>
+      <Property LongName="hokuyo3.data.fifosize" Type="1">16</Property>
+      <Property LongName="hokuyo3.data.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="hokuyo3.threaded" Type="0">true</Property>
+    <Property LongName="hokuyo3.priority" Type="1">128</Property>
+    <Property LongName="hokuyo3.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="ChassisRobot_1" Model="ChassisRobot" x="408" y="80" z="0">
+    <Input LongName="ChassisRobot_1.Input" Name="Input">
+      <Property LongName="ChassisRobot_1.Input.readerType" Type="1">0</Property>
+      <Property LongName="ChassisRobot_1.Input.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="ChassisRobot_1.Velocity_out" Name="Velocity_out">
+      <Property LongName="ChassisRobot_1.Velocity_out.subsampling" Type="1">1</Property>
+      <Property LongName="ChassisRobot_1.Velocity_out.fifosize" Type="1">16</Property>
+      <Property LongName="ChassisRobot_1.Velocity_out.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="ChassisRobot_1.OdoTics_out" Name="OdoTics_out">
+      <Property LongName="ChassisRobot_1.OdoTics_out.subsampling" Type="1">1</Property>
+      <Property LongName="ChassisRobot_1.OdoTics_out.fifosize" Type="1">16</Property>
+      <Property LongName="ChassisRobot_1.OdoTics_out.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="ChassisRobot_1.ProxyMeas_out" Name="ProxyMeas_out">
+      <Property LongName="ChassisRobot_1.ProxyMeas_out.subsampling" Type="1">1</Property>
+      <Property LongName="ChassisRobot_1.ProxyMeas_out.fifosize" Type="1">16</Property>
+      <Property LongName="ChassisRobot_1.ProxyMeas_out.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="ChassisRobot_1.Battery_out" Name="Battery_out">
+      <Property LongName="ChassisRobot_1.Battery_out.subsampling" Type="1">1</Property>
+      <Property LongName="ChassisRobot_1.Battery_out.fifosize" Type="1">16</Property>
+      <Property LongName="ChassisRobot_1.Battery_out.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="ChassisRobot_1.Current_out" Name="Current_out">
+      <Property LongName="ChassisRobot_1.Current_out.subsampling" Type="1">1</Property>
+      <Property LongName="ChassisRobot_1.Current_out.fifosize" Type="1">16</Property>
+      <Property LongName="ChassisRobot_1.Current_out.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="ChassisRobot_1.threaded" Type="0">true</Property>
+    <Property LongName="ChassisRobot_1.priority" Type="1">128</Property>
+    <Property LongName="ChassisRobot_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Connection Input="Perception1.input" Output="hokuyo3.data"/>
+  <Connection Input="Pilote2.input" Output="Perception1.output"/>
+  <Connection Input="ChassisRobot_1.Input" Output="Pilote2.ouput"/>
+<RTBoardView ID="JavaStudio1.0">
+<Description/>
+<ComponentBox InstanceName="Pilote2" reversed="false">
+<Description/>
+<InputInfos Name="input">
+<Description/>
+</InputInfos>
+<OutputInfos Name="ouput">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="Perception1" reversed="false">
+<Description/>
+<InputInfos Name="input">
+<Description/>
+</InputInfos>
+<OutputInfos Name="output">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="ChassisRobot_1" reversed="false">
+<Description/>
+<InputInfos Name="Input">
+<Description/>
+</InputInfos>
+<OutputInfos Name="Velocity_out">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="OdoTics_out">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="ProxyMeas_out">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="Battery_out">
+<Description/>
+</OutputInfos>
+<OutputInfos Name="Current_out">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ComponentBox InstanceName="hokuyo3" reversed="false">
+<Description/>
+<OutputInfos Name="data">
+<Description/>
+</OutputInfos>
+</ComponentBox>
+<ConnectionShape InstanceName="Pilote2.input" color="0"/>
+<ConnectionShape InstanceName="Perception1.input" color="0"/>
+<ConnectionShape InstanceName="ChassisRobot_1.Input" color="0"/>
+</RTBoardView>
+</RTMapsDiagram>

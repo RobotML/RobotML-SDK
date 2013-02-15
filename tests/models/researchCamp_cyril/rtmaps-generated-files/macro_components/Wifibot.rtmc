@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MacroPackage xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram_RTBoardView.xsd">
+    <RequiredPackages>
+	    <File><![CDATA[/dummy/absolute/path/for/rtmaps_RobotMLModel.pck]]>
+	      <Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../user_sdk/packages/linux_x86/rtmaps_RobotMLModel.pck]]></Relative>
+	    </File>
+    </RequiredPackages>
+    <RequiredMacroPackages>
+	</RequiredMacroPackages>
+		  <MacroComponentModel Model="macro_Wifibot" Version="">
+		    <MacroComponentDefinitions/>
+		    	<Component InstanceName="Effibox1" Model="Effibox" x="100" y="100" z="0">
+		    	</Component>
+		    	<Component InstanceName="RoboticSimulator12" Model="RoboticSimulator1" x="150" y="150" z="0">
+		    	</Component>
+		    <RTBoardView ID="JavaStudio1.0">
+		      <Description/>
+			      <ComponentBox InstanceName="Effibox1" reversed="false">
+			        <Description/>
+			      </ComponentBox>
+			      <ComponentBox InstanceName="RoboticSimulator12" reversed="false">
+			        <Description/>
+			      </ComponentBox>
+		    </RTBoardView>
+	  </MacroComponentModel>
+</MacroPackage>

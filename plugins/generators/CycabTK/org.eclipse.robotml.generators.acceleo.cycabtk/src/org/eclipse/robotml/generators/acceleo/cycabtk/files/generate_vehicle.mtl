@@ -95,7 +95,6 @@ function [aClass.name/]:__init(name)
 	self:SetJoyStopSteer(0.5)
 	self:SetJoyVCont("v_linear")
 	self:SetJoyPhiCont("phi_steering")
-
 	
 	[generateSystemCommon(aClass, model)/]
 	

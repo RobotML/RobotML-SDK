@@ -24,15 +24,35 @@
 #include <ocl/Component.hpp>
 #include <iostream>
 #include <numeric>
-#include "[root_model.name.substitute(' ', '_')/]_types.h"
+[for (elt : Element | getDataTypesInElement(c))]
+[let type: Type = elt] 
+[if(isRobotMLDataType(root_model, type.name))]
+[let ne : NamedElement = type.owner]
+#include <[ne.name.replace('_datatypes', '_msgs')/]/[type.name/].h>
+[/let]
+[else]
+	[if(not isPrimitiveType(type))]
+#include "[(type.qualifiedName.substitute(' ', '_')).replaceAll('::', '/')/].h"	
+	[/if]
+[/if]
+[/let]
+[/for]
 #include <stdlib.h>
 #include <math.h>
-
 
 using namespace std;
 using namespace RTT;
 using namespace Orocos;
-using namespace [root_model.name.substitute(' ', '_')/]_types;
+[let included : Boolean = false]
+[for (elt : Element | getDataTypesInElement(c))]
+[let type: Type = elt] 
+[if(isPrimitiveType(type) = false) and not included]
+using namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_')/];
+
+[/if]
+[/let]
+[/for]
+[/let]
 
 [generate_Datatype_file(c, root_model)/]
 [comment]
@@ -42,35 +62,29 @@ using namespace [root_model.name.substitute(' ', '_')/]_types;
 [/let]
 [/comment]
 
-namespace [getRootClassForModel(root_model).name.substitute(' ', '_')/]	 {
+namespace [(c.qualifiedName.substitute('::'+c.name,'')).substitute(' ','_')/]{	 {
 class [c.name/]
 	: public RTT::TaskContext 
 {   [comment ports and services declaration/]
 	// ports, operations and attributes
 	[let elt : Element = c.oclAsType(Element)]
  		[for (port : Port | getInputPortsForElement(elt))] 
-			[comment][if (getParentType(port).toString().contains('sensor') or getParentType(port).toString().contains('std')
-			or getParentType(port).toString().contains('geometry') or getParentType(port).toString().contains('nav')
-			or getParentType(port).toString().contains('actionLib') or getParentType(port).toString().contains('stereo'))]
-			[port.visibility/]: InputPort<[getNameType(port.type)/]> [port.name/];
- 			[/if]
-			[/comment]
 			[if (isRobotMLDataType(root_model, port.type.name))]
-		    [port.visibility/]: InputPort<[getNameType(port.type)/]> [port.name/];
+			[let ne : NamedElement = port.type.owner]
+			[port.visibility/]: InputPort<[ne.name.replace('_datatypes', '_msgs')/]::[port.type.name/]> [port.name/];
+			[/let]
 			[else]
 			[port.visibility/]: InputPort<[port.type.name/]> [port.name/];
 			[/if]
 		[/for]
   		[for (port : Port | getOutputPortsForElement(elt))]
-		
-			[if (getParentType(port).toString().contains('sensor') or getParentType(port).toString().contains('std')
-			or getParentType(port).toString().contains('geometry') or getParentType(port).toString().contains('nav')
-			or getParentType(port).toString().contains('actionLib') or getParentType(port).toString().contains('stereo'))]
-			[port.visibility/]: OutputPort<[getNameType(port.type)/]> [port.name/];
- 			[/if]	
-			[if (isRobotMLDataType(root_model, port.type.name) = false)]
+			[if (isRobotMLDataType(root_model, port.type.name))]
+			[let ne : NamedElement = port.type.owner]
+			[port.visibility/]: OutputPort<[ne.name.replace('_datatypes', '_msgs')/]::[port.type.name/]> [port.name/];
+			[/let]
+			[else]
 			[port.visibility/]: OutputPort<[port.type.name/]> [port.name/];
-			[/if]
+			[/if]		
 		[/for]
 	[/let]
 
@@ -160,7 +174,7 @@ class [c.name/]
 					[for (op : Operation | interface.getAllOperations())]
 						[if (isAProvidedPort(sp))]
 		this->provides("[interface.name/]")
-			->addOperation("[op.name.substitute(' ', '_')/]",&[c.namespace/]::[c.name.substitute(' ', '_')/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
+			->addOperation("[op.name.substitute(' ', '_')/]",&[(c.qualifiedName.substitute('::'+c.name,'')).substitute(' ','_')/]::[c.name.substitute(' ', '_')/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
 				.doc("");
 						[/if]
 						[if (isARequiredPort(sp))]

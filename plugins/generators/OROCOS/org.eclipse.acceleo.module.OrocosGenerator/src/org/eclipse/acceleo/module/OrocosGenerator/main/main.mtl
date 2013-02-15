@@ -35,7 +35,7 @@
 [/comment]
 [for (elt: NamedElement | getComponentModels(model))]	
 	[let c : Class = elt.oclAsType(Class)]
-		[if (not isActuator(c)) and (not isSensor(c))]
+		[if (not isActuator(c)) and (not isSensor(c) and (not isEnvironment(c)) and (not isRobot(c)))]
 			[if (hasStateMachine(c))]
 				[generateOrocosComponentLua(c, model)/]				
 			[else]

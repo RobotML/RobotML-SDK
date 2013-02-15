@@ -54,7 +54,7 @@ public class DataTypeQueries{
 	 * @param dt
 	 * @return
 	 */
-	public boolean isRobotMLDataType(Element root_model, String datatype_name) {
+	public static boolean isRobotMLDataType(Element root_model, String datatype_name) {
 		try {
 		if (root_model instanceof Model) {
 			EList<Package> packages = ((Model)root_model).getImportedPackages();

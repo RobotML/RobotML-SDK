@@ -8,7 +8,7 @@
 
 [file (model.name + '.launch', false, 'UTF-8')]
 <launch>
-  <node pkg="CycabTKSimulator" type="cycabtk_simulator" name="[model.name/]_cycabtk" args="-f [getProperty('targetFolder')+'/'+model.name+'.conf'/] -l [getProperty('targetFolder')+'/scripts/'+model.name+'.lua'/] output="screen" launch-prefix="rlwrap" >
+  <node pkg="CycabTKSimulator" type="cycabtk_simulator" name="[model.name/]_cycabtk" args="-f [getProperty('targetFolder')+'/'+model.name+'.conf'/] -l [getProperty('targetFolder')+'/scripts/'+model.name+'.lua'/]" output="screen" launch-prefix="rlwrap" >
   </node>
 </launch>
 [/file]

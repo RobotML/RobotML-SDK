@@ -1,0 +1,11 @@
+# Package information
+# Start of user code Version number
+VERSION=1.0
+DESCRIPTION=User package
+# End of user code
+
+# LOG
+# Start of user code Version info
+# 1.0: initial release
+# End of user code
+

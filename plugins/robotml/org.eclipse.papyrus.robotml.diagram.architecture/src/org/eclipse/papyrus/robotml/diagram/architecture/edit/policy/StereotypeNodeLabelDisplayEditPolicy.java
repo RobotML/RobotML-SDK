@@ -13,10 +13,16 @@
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.diagram.architecture.edit.policy;
 
-import java.util.List;
 
+import java.util.StringTokenizer;
+
+
+import org.eclipse.gmf.runtime.notation.View;
+
+import org.eclipse.papyrus.uml.appearance.helper.AppliedStereotypeHelper;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
+
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
@@ -36,16 +42,16 @@ public class StereotypeNodeLabelDisplayEditPolicy extends AppliedStereotypeNodeL
 
 		// retrieve the first stereotype in the list of displayed stereotype
 		if(getUMLElement() instanceof Element) {
-			Element umlElement = getUMLElement();
-			List<Stereotype> appliedSt = umlElement.getAppliedStereotypes();
-			if(!appliedSt.isEmpty()) {
-				Image icon = Activator.getIconElement(getUMLElement(), appliedSt.get(0), false);
-				//return Activator.getIconElement(getUMLElement(), appliedSt.get(0), false);
-				return icon;
+			if(getUMLElement().getAppliedStereotypes().size()>0){
+				Stereotype stereotypesToDisplay = getUMLElement().getAppliedStereotypes().get(0);
+				return Activator.getIconElement(getUMLElement(), stereotypesToDisplay, false);
+
 			}
 		}
 		return null;
 
 
 	}
+	
+	
 }

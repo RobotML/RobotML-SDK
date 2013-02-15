@@ -2,7 +2,7 @@
 [module generate_morse('http://www.eclipse.org/uml2/3.0.0/UML')]
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
-
+[import org::eclipse::robotml::generators::acceleo::morse::files::generateCameraSystem /]
 
 [template public generateRobots(model : Model)]
 	[for (elt: NamedElement | getElementsWithStereotype(model, 'Robot'))]
@@ -21,7 +21,7 @@ robot.name = "[aClass.name/]"
 		[if (hasStereotype(c, 'LidarSystem'))]
 [generateLidar(c, model)/]
 		[elseif (hasStereotype(c, 'CameraSystem'))]
-[generateCamera(c, model)/]
+[generateCameraSystem(c, model)/]
 		[elseif (hasStereotype(c, 'GPSSystem'))]
 [generateGPS(c, model)/]
 		[elseif (hasStereotype(c, 'Servoings'))]
@@ -88,30 +88,6 @@ lidar.properties(scan_window = 180, resolution = 1, laser_range = [getAttributeV
 lidar.frequency([getAttributeValue(aClass, 'frequency', 'LidarSystem', '20.')/])
 lidar.configure_mw('ros')
 robot.append(lidar)
-[/template]
-
-[template public generateCamera(aClass : Class, model : Model)]
-camera = Sensor('video_camera')
-
-[comment Used formula here: http://www.openrobots.org/morse/doc/stable/user/sensors/video_camera.html#camera-calibration-matrix /]
-height = [getAttributeValue(aClass, 'u_0', 'CameraSystem', '0')/]*2
-width = [getAttributeValue(aClass, 'v_0', 'CameraSystem', '0')/]*2
-alpha_u = [getAttributeValue(aClass, 'alpha_u', 'CameraSystem', '0')/]
-alpha_v = [getAttributeValue(aClass, 'alpha_v', 'CameraSystem', '0')/]
-
-if (width>height):
-	focal = (alpha_u+alpha_v)/2*32/width
-else:
-	focal = (alpha_u+alpha_v)/2*32/height
-
-camera.properties(cam_width = width,
-                  cam_height = height,
-				  cam_focal = focal)
-
-camera.frequency([getAttributeValue(aClass, 'frequency', 'CameraSystem', '25.')/])
-
-camera.configure_mw('ros')
-robot.append(camera)
 [/template]
 
 [template public generateSystem(aClass : Class, model : Model)]

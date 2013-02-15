@@ -8,18 +8,7 @@
 			<aspectTool description="Create a new Package" id="componentdef.tool.package"
 				name="Package" refToolId="clazz.tool.package">
 			</aspectTool>
-			<aspectTool description="Create a new Robotic System" id="componentdef.tool.system"
-				name="RoboticSystem" refToolId="composite.tool.class"
-				iconpath="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/02_system.png">
-				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
-					<stereotypesToApply>
-						<stereotype stereotypeName="RobotML::RoboticSystem"></stereotype>
-					</stereotypesToApply>
-				</postAction>
-				<postAction
-					id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"
-					displayKind="IconStereotype" displayPlace="Compartment"></postAction>
-			</aspectTool>
+			
 			<aspectTool description="Create a new Hardware System" id="componentdef.tool.system"
 				name="Robot" refToolId="composite.tool.class"
 				iconpath="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/03_robot_system.png">
@@ -32,7 +21,31 @@
 					id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"
 					displayKind="IconStereotype" displayPlace="Compartment"></postAction>
 			</aspectTool>
-			<aspectTool description="Create a new Hardware System" id="componentdef.tool.system"
+			<aspectTool description="Create a new Robotic System" id="componentdef.tool.system"
+				name="RoboticSystem" refToolId="composite.tool.class"
+				iconpath="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/02_system.png">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="RobotML::RoboticSystem"></stereotype>
+					</stereotypesToApply>
+				</postAction>
+				<postAction
+					id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"
+					displayKind="IconStereotype" displayPlace="Compartment"></postAction>
+			</aspectTool>
+			<aspectTool description="Create a new Software" id="componentdef.tool.software"
+				name="Software" refToolId="composite.tool.class"
+				iconpath="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/18_software.png">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="RobotML::Software"></stereotype>
+					</stereotypesToApply>
+				</postAction>
+				<postAction
+					id="org.eclipse.papyrus.postaction.changeStereotypeDisplayProvider"
+					displayKind="IconStereotype" displayPlace="Compartment"></postAction>
+			</aspectTool>
+			<aspectTool description="Create a new Environment" id="componentdef.tool.system"
 				name="Environment" refToolId="composite.tool.class"
 				iconpath="platform:/plugin/org.eclipse.papyrus.robotml/icons/16x16/03_robot_system.png">
 				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">

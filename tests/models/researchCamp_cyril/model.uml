@@ -262,10 +262,10 @@
   <RobotML:Allocate xmi:id="__pSosHXXEeK88txytFnn8w" base_Abstraction="__pLT8HXXEeK88txytFnn8w"/>
   <RobotML:RoboticMiddleware xmi:id="_99hvgHdNEeKJB-EgqsNyTw" base_Class="_94b0IHdNEeKJB-EgqsNyTw" kind="OROCOS"/>
   <RobotML:RoboticSimulator xmi:id="_J1VrAHdOEeKJB-EgqsNyTw" base_Class="_J03w8HdOEeKJB-EgqsNyTw"/>
-  <RobotML:RoboticSystem xmi:id="_MhbL4HdQEeKJB-EgqsNyTw" base_Class="_MhHp4HdQEeKJB-EgqsNyTw"/>
   <FCM:DeploymentPlan xmi:id="_rOTv8HdQEeKJB-EgqsNyTw" mainInstance="_rOUXAHdQEeKJB-EgqsNyTw" base_Package="_rOPegHdQEeKJB-EgqsNyTw"/>
   <RobotML:Allocate xmi:id="_5xK8cHdQEeKJB-EgqsNyTw" base_Abstraction="_5xGD8HdQEeKJB-EgqsNyTw"/>
   <RobotML:Allocate xmi:id="_7QCHIHdQEeKJB-EgqsNyTw" base_Abstraction="_7P8AgHdQEeKJB-EgqsNyTw"/>
   <RobotML:Allocate xmi:id="_8C8KwHdQEeKJB-EgqsNyTw" base_Abstraction="_8C4gYHdQEeKJB-EgqsNyTw"/>
   <RobotML:Allocate xmi:id="_8ibjIHdQEeKJB-EgqsNyTw" base_Abstraction="_8iU1cHdQEeKJB-EgqsNyTw"/>
+  <RobotML:Platform xmi:id="_Ulu9kHdxEeKxAYZwSuF6ww" base_Class="_MhHp4HdQEeKJB-EgqsNyTw"/>
 </xmi:XMI>

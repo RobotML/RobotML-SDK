@@ -43,7 +43,6 @@ link_libraries( ${OROCOS-RTT_RTT-SCRIPTING_LIBRARY} )
 # Creates a component library libHello-<target>.so
 # and installs in the directory lib/orocos/hello-7-deployment/
 orocos_component(ChassisRobot ChassisRobot.cpp)
-orocos_component(ptf ptf.cpp)
 orocos_component(Perception Perception.cpp)
 orocos_component(Pilote Pilote.cpp)
 #

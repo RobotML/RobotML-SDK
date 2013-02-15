@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Acceleo Morse Module Runtime Plug-in
+Bundle-SymbolicName: org.eclipse.robotml.generators.acceleo.morse;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.robotml.generators.acceleo.morse.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.common,
+ org.eclipse.acceleo.parser;resolution:=optional,
+ org.eclipse.acceleo.model,
+ org.eclipse.acceleo.profiler,
+ org.eclipse.acceleo.engine,
+ org.eclipse.uml2.uml,
+ org.eclipse.core.resources,
+ org.eclipse.robotml.generators.acceleo,
+ org.eclipse.papyrus.robotml
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
+Export-Package: org.eclipse.robotml.generators.acceleo.morse.main;
+  uses:="org.eclipse.emf.ecore.resource,
+   org.eclipse.emf.ecore,
+   org.eclipse.emf.common.util,
+   org.eclipse.acceleo.engine.generation.strategy,
+   org.eclipse.acceleo.engine.service"
+
+
+

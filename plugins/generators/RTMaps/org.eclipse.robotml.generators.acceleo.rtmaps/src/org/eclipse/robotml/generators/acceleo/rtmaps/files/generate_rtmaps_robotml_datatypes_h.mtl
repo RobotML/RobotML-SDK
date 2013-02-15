@@ -50,7 +50,11 @@ knowledge of the CeCILL-C license and that you accept its terms.
 /*******************************************/
 
 [for (datatype : DataType | getMetamodelComposedDataTypes(root_model.oclAsType(Element)))]
+[if (datatype.oclIsKindOf(Enumeration))]
+enum [datatype.name/];
+[else]
 class [datatype.name/];
+[/if]
 [/for]
 
 /*******************************************/

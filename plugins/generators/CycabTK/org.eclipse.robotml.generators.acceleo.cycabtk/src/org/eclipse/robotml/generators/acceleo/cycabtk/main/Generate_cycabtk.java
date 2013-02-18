@@ -11,13 +11,19 @@
 package org.eclipse.robotml.generators.acceleo.cycabtk.main;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Properties;
 
 import org.eclipse.acceleo.engine.event.IAcceleoTextGenerationListener;
 import org.eclipse.acceleo.engine.generation.strategy.IAcceleoGenerationStrategy;
 import org.eclipse.acceleo.engine.service.AbstractAcceleoGenerator;
+import org.eclipse.acceleo.engine.service.AcceleoService;
+import org.eclipse.acceleo.engine.service.properties.AbstractAcceleoPropertiesLoaderService;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
@@ -408,5 +414,51 @@ public class Generate_cycabtk extends AbstractAcceleoGenerator {
         
         // resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
     }
+    
+    /**
+	 * 
+	 * @see org.eclipse.acceleo.engine.service.AbstractAcceleoGenerator#getPropertiesLoaderService(org.eclipse.acceleo.engine.service.AcceleoService)
+	 * 
+	 * @param acceleoService
+	 * @return
+	 * @notgenerated
+	 */
+	@Override
+	public AbstractAcceleoPropertiesLoaderService getPropertiesLoaderService(
+			final AcceleoService service) {
+		return new AbstractAcceleoPropertiesLoaderService() {
+
+			{
+				this.acceleoService = service;
+			}
+
+			@Override
+			public void initializeService(final List<String> propertiesFiles) {
+				super.initializeService(propertiesFiles);
+				Map<String, String> myCustomProperties = new HashMap<String, String>();
+				if (Generate_cycabtk.this.targetFolder != null) {
+					myCustomProperties.put("targetFolder", Generate_cycabtk.this.targetFolder.getPath());
+				}
+				service.addProperties(myCustomProperties);
+			}
+
+			@Override
+			protected Properties alternatePropertiesLoading(
+					final String filepath) {
+
+				try {
+					Properties properties = new Properties();
+					File file = new File(filepath);
+					properties.load(new FileInputStream(file));
+					return properties;
+				} catch (IOException ex) {
+					System.err.println(ex);
+					ex.printStackTrace(System.err);
+				}
+				return null;
+			}
+
+		};
+	}
     
 }

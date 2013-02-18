@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8,00"
+	Name="rtmaps_RobotMLModel"
+	ProjectGUID="{A36E0705-729F-4AFD-8DE7-EF205F5FBCEE}"
+	RootNamespace="rtmaps_RobotMLModel"
+	SccLocalPath="."
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(RTMAPS_SDKDIR)\templates.u\RTMaps_x86_Release_vc2005.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+<!-- Start of user code Additional includes - Release Win32 
+-->
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\include"
+			/>
+<!-- End of user code
+-->
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+<!-- Start of user code Additional libs - Release Win32 
+-->
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="msvcprt.lib"
+				AdditionalLibraryDirectories=""
+			/>
+<!-- End of user code
+-->
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(RTMAPS_SDKDIR)\templates.u\RTMaps_x86_Debug_vc2005.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+<!-- Start of user code Additional includes - Debug Win32 
+-->
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\include"
+			/>
+<!-- End of user code
+-->
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+<!-- Start of user code Additional libs - Debug Win32 
+-->
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="msvcprt.lib"
+				AdditionalLibraryDirectories=""
+			/>
+<!-- End of user code
+-->
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="src"
+			>
+			<File RelativePath=".\src\maps_hokuyo.cpp"/>
+			<File RelativePath=".\src\maps_ChassisRobot.cpp"/>
+			<File RelativePath=".\src\maps_Perception.cpp"/>
+			<File RelativePath=".\src\maps_Pilote.cpp"/>
+		</Filter>
+		<Filter
+			Name="local_interfaces"
+			>
+			<File RelativePath=".\local_interfaces\maps_hokuyo.h"/>
+			<File RelativePath=".\local_interfaces\maps_ChassisRobot.h"/>
+			<File RelativePath=".\local_interfaces\maps_Perception.h"/>
+			<File RelativePath=".\local_interfaces\maps_Pilote.h"/>
+		</Filter>
+		<File
+			RelativePath=".\RobotMLModel.pckinfo"
+			>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
+

@@ -7,11 +7,20 @@
 
 [template public generateCycabtkConf(model : Model)]
 
-[file ('run_' + model.name + '.sh', false, 'UTF-8')]
+[file (model.name + '.conf', false, 'UTF-8')]
+['['/]data path[']'/] "[getProperty('targetFolder')/]"
+['['/]configuration path[']'/] "$(configuration path);$(data path)/data/configuration"
+['['/]lua path[']'/] "$(lua path);$(data path)/scripts/?.lua"
+[/file]
+
+
+[comment][file ('run_' + model.name + '.sh', false, 'UTF-8')]
 #!/bin/bash
 #
 # run script for [model.name/] simulation with CycabTKSimulator
 #
+
+target Folder : [getProperty('targetFolder')/]
 
 FILE_CONF=$HOME/.config/mgengine/conf.d/[model.name/].conf
 
@@ -25,5 +34,6 @@ echo "['['/]lua path[']'/] \"\$(lua path);\$(data path)/scripts/?.lua\"" >> $FIL
 echo "require \"[model.name/]\"" | mgengine 
 
 rm $FILE_CONF
-[/file]
+[/file][/comment]
+
 [/template]

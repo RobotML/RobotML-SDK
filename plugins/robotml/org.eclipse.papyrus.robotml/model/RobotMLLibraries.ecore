@@ -3,11 +3,6 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="RobotMLLibraries" nsURI="http:///RobotMLLibraries.ecore" nsPrefix="RobotMLLibraries">
   <eSubpackages name="RobotML_ModelLibrary" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary.ecore"
       nsPrefix="RobotMLLibraries.RobotML_ModelLibrary">
-    <eSubpackages name="RobotML_Components" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_Components.ecore"
-        nsPrefix="RobotMLLibraries.RobotML_ModelLibrary.RobotML_Components">
-      <eSubpackages name="sensors" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_Components/sensors.ecore"
-          nsPrefix="RobotMLLibraries.RobotML_ModelLibrary.RobotML_Components.sensors"/>
-    </eSubpackages>
     <eSubpackages name="RobotML_DataTypes" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes.ecore"
         nsPrefix="RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes">
       <eSubpackages name="diagnostic_datatypes" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/diagnostic_datatypes.ecore"
@@ -278,6 +273,8 @@
               lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt32"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="do_rectify" ordered="false"
               lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Bool"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt32"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="Range">
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="ULTRASOUND" ordered="false"
@@ -483,26 +480,10 @@
               lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt16"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="NavSatFix">
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="STATUS_NO_FIX" ordered="false"
-              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Int8"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="STATUS_FIX" ordered="false"
-              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Int8"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="STATUS_SBAS_FIX"
-              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Int8"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="STATUS_GBAS_FIX"
-              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Int8"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" ordered="false"
-              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Int8"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="SERVICE_GPS" ordered="false"
-              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt16"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="SERVICE_GLONASS"
-              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt16"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="SERVICE_COMPASS"
-              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt16"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="SERVICE_GALILEO"
-              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt16"/>
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/STATUS_TYPE"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="service" ordered="false"
-              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt16"/>
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/SERVICE_TYPE"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="header" ordered="false"
               lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Header"
               containment="true"/>
@@ -513,21 +494,27 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="altitude" ordered="false"
               lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="position_covariance"
-              ordered="false" upperBound="-1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="COVARIANCE_TYPE_UNKNOWN"
-              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt8"
-              defaultValueLiteral="0"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="COVARIANCE_TYPE_APPROXIMATED"
-              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt8"
-              defaultValueLiteral="1"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="_COVARIANCE_TYPE_DIAGONAL_KNOWN"
-              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt8"
-              defaultValueLiteral="3"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="COVARIANCE_TYPE_KNOWN"
-              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt8"
-              defaultValueLiteral="3"/>
+              ordered="false" lowerBound="9" upperBound="9" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="position_covariance_type"
-              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt8"/>
+              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/COVARIANCE_TYPE"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EEnum" name="STATUS_TYPE">
+          <eLiterals name="STATUS_NO_FIX"/>
+          <eLiterals name="STATUS_FIX" value="1"/>
+          <eLiterals name="STATUS_SBAS_FIX" value="2"/>
+          <eLiterals name="STATUS_GBAS_FIX" value="3"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EEnum" name="SERVICE_TYPE">
+          <eLiterals name="SERVICE_GPS"/>
+          <eLiterals name="SERVICE_GLONASS" value="1"/>
+          <eLiterals name="SERVICE_COMPASS" value="2"/>
+          <eLiterals name="SERVICE_GALILEO" value="3"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EEnum" name="COVARIANCE_TYPE">
+          <eLiterals name="COVARIANCE_TYPE_UNKNOWN"/>
+          <eLiterals name="COVARIANCE_TYPE_APPROXIMATED" value="1"/>
+          <eLiterals name="_COVARIANCE_TYPE_DIAGONAL_KNOWN" value="2"/>
+          <eLiterals name="COVARIANCE_TYPE_KNOWN" value="3"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="Joy">
           <eStructuralFeatures xsi:type="ecore:EReference" name="header" ordered="false"
@@ -559,6 +546,34 @@
           <eStructuralFeatures xsi:type="ecore:EReference" name="array" ordered="false"
               upperBound="-1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/JoyFeedback"
               containment="true"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="CarLikeOdometry">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="header" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Header"
+              containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="steering_angle" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="left_rear_wheel_distance"
+              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="right_rear_wheel_distance"
+              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="right_rear_wheel_velocity"
+              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="left_rear_wheel_velocity"
+              ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="DifferentialOdometry">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="header" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Header"
+              containment="true"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="right_distance" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="left_distance" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="left_velocity" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="right_velocity" ordered="false"
+              lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
         </eClassifiers>
       </eSubpackages>
       <eSubpackages name="actionlib_datatypes" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/actionlib_datatypes.ecore"
@@ -613,16 +628,6 @@
           nsPrefix="RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes">
         <eSubpackages name="oarp1_datatypes" nsURI="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/oarps_datatypes/oarp1_datatypes.ecore"
             nsPrefix="RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes">
-          <eClassifiers xsi:type="ecore:EClass" name="CarLikeOdometry">
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="rearLeftWheel"
-                ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="rearRightWheel"
-                ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="motorSpeed" ordered="false"
-                lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="steeringAngle"
-                ordered="false" lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
-          </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="CarLikeCommand">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="velocity" ordered="false"
                 lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"
@@ -838,7 +843,7 @@
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" ordered="false"
               upperBound="-1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Int64"/>
         </eClassifiers>
-        <eClassifiers xsi:type="ecore:EDataType" name="Int64" instanceClassName="long"/>
+        <eClassifiers xsi:type="ecore:EDataType" name="Int64" instanceClassName="double"/>
         <eClassifiers xsi:type="ecore:EClass" name="Float64MultiArray">
           <eStructuralFeatures xsi:type="ecore:EReference" name="layout" ordered="false"
               lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/MultiArrayLayout"

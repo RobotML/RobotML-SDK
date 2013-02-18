@@ -56,61 +56,6 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	Oarp1_datatypesPackage eINSTANCE = org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.CarLikeOdometryImpl <em>Car Like Odometry</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.CarLikeOdometryImpl
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl#getCarLikeOdometry()
-	 * @generated
-	 */
-	int CAR_LIKE_ODOMETRY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Rear Left Wheel</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAR_LIKE_ODOMETRY__REAR_LEFT_WHEEL = 0;
-
-	/**
-	 * The feature id for the '<em><b>Rear Right Wheel</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAR_LIKE_ODOMETRY__REAR_RIGHT_WHEEL = 1;
-
-	/**
-	 * The feature id for the '<em><b>Motor Speed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAR_LIKE_ODOMETRY__MOTOR_SPEED = 2;
-
-	/**
-	 * The feature id for the '<em><b>Steering Angle</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAR_LIKE_ODOMETRY__STEERING_ANGLE = 3;
-
-	/**
-	 * The number of structural features of the '<em>Car Like Odometry</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAR_LIKE_ODOMETRY_FEATURE_COUNT = 4;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.CarLikeCommandImpl <em>Car Like Command</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,7 +63,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl#getCarLikeCommand()
 	 * @generated
 	 */
-	int CAR_LIKE_COMMAND = 1;
+	int CAR_LIKE_COMMAND = 0;
 
 	/**
 	 * The feature id for the '<em><b>Velocity</b></em>' attribute.
@@ -155,7 +100,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl#getMultiLayerLidarScan()
 	 * @generated
 	 */
-	int MULTI_LAYER_LIDAR_SCAN = 2;
+	int MULTI_LAYER_LIDAR_SCAN = 1;
 
 	/**
 	 * The feature id for the '<em><b>Layers</b></em>' containment reference.
@@ -192,7 +137,7 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl#getExtentedLidarScan()
 	 * @generated
 	 */
-	int EXTENTED_LIDAR_SCAN = 3;
+	int EXTENTED_LIDAR_SCAN = 2;
 
 	/**
 	 * The feature id for the '<em><b>Scan</b></em>' containment reference.
@@ -230,60 +175,6 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 */
 	int EXTENTED_LIDAR_SCAN_FEATURE_COUNT = 3;
 
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry <em>Car Like Odometry</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Car Like Odometry</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry
-	 * @generated
-	 */
-	EClass getCarLikeOdometry();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry#getRearLeftWheel <em>Rear Left Wheel</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Rear Left Wheel</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry#getRearLeftWheel()
-	 * @see #getCarLikeOdometry()
-	 * @generated
-	 */
-	EAttribute getCarLikeOdometry_RearLeftWheel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry#getRearRightWheel <em>Rear Right Wheel</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Rear Right Wheel</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry#getRearRightWheel()
-	 * @see #getCarLikeOdometry()
-	 * @generated
-	 */
-	EAttribute getCarLikeOdometry_RearRightWheel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry#getMotorSpeed <em>Motor Speed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Motor Speed</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry#getMotorSpeed()
-	 * @see #getCarLikeOdometry()
-	 * @generated
-	 */
-	EAttribute getCarLikeOdometry_MotorSpeed();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry#getSteeringAngle <em>Steering Angle</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Steering Angle</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeOdometry#getSteeringAngle()
-	 * @see #getCarLikeOdometry()
-	 * @generated
-	 */
-	EAttribute getCarLikeOdometry_SteeringAngle();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.CarLikeCommand <em>Car Like Command</em>}'.
@@ -414,48 +305,6 @@ public interface Oarp1_datatypesPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.CarLikeOdometryImpl <em>Car Like Odometry</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.CarLikeOdometryImpl
-		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.Oarp1_datatypesPackageImpl#getCarLikeOdometry()
-		 * @generated
-		 */
-		EClass CAR_LIKE_ODOMETRY = eINSTANCE.getCarLikeOdometry();
-
-		/**
-		 * The meta object literal for the '<em><b>Rear Left Wheel</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CAR_LIKE_ODOMETRY__REAR_LEFT_WHEEL = eINSTANCE.getCarLikeOdometry_RearLeftWheel();
-
-		/**
-		 * The meta object literal for the '<em><b>Rear Right Wheel</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CAR_LIKE_ODOMETRY__REAR_RIGHT_WHEEL = eINSTANCE.getCarLikeOdometry_RearRightWheel();
-
-		/**
-		 * The meta object literal for the '<em><b>Motor Speed</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CAR_LIKE_ODOMETRY__MOTOR_SPEED = eINSTANCE.getCarLikeOdometry_MotorSpeed();
-
-		/**
-		 * The meta object literal for the '<em><b>Steering Angle</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CAR_LIKE_ODOMETRY__STEERING_ANGLE = eINSTANCE.getCarLikeOdometry_SteeringAngle();
-
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp1_datatypes.impl.CarLikeCommandImpl <em>Car Like Command</em>}' class.
 		 * <!-- begin-user-doc -->

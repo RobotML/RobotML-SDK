@@ -11,12 +11,21 @@
 -- Model [model.name/] --
 ------------------------
 
+--[protected ('User defined code at beginning')]
+
+--[/protected]
+
 require "mgLuaCameraViewport"
 require "mgLuaAccurateRenderer"
 require "mgLuaPositionController"
 
 require "LuaCycabTK"
 require "LuaStdPhysicsEngine"
+
+--[protected ('User defined requires')]
+
+--[/protected]
+
 
 -- Default Renderer --
 renderer = mge.AccurateRenderer "renderer"
@@ -52,19 +61,53 @@ cont.RotationSpeed = 1.000000
 -- Physics Engine --
 phyEng = cycabtk.StdPhysicsEngine "phyEng"
 
+-- Simulation time
+require "LuaTimeRosInterface"
+timeRos = cycabtk.TimeRosInterface "timeRos"
+
+--[protected ('User defined code before instances')]
+
+--[/protected]
+
 -- Model instances --
-	[for( inst: InstanceSpecification | getInstanceSpecifications(model))]
+
+	[for( inst: InstanceSpecification | getInstanceSpecificationsForPlatform(model, 'cycabTK'))]
 		[comment][inst.name/] : [inst.classifier.name/] [inst.clientDependency.name/][/comment]
 		[let elt : Class =  findClassInModel(model, inst.classifier.name->asSequence()->first())]
-		[if(inheritsFrom(elt, 'RoboticSystem') or inheritsFrom(elt, 'Robot'))]
+		[if( getAttributeValue(elt, 'native', getStereotype(elt), 'false' ) = 'false')]
+		[if(inheritsFrom(elt, 'Robot'))]
 require "[model.name/]/[inst.classifier.name/]"
 [inst.name/] = [inst.classifier.name/]( "[inst.name/]" )
 			[let parentName : String = getParentName(inst)]
 [inst.name/]:MakeChildOf( "[parentName/]" )
 			[/let]
 		[/if]
+		[if(inheritsFrom(elt, 'RoboticSystem'))]
+require "[model.name/]/[inst.classifier.name/]"
+[inst.name/] = [inst.classifier.name/]( "[inst.name/]" )
+			[let parentName : String = getParentName(inst)]
+[inst.name/]:MakeChildOf( "[parentName/]" )
+			[/let]
+		[/if]
+		[else]
+			[let libPath:String=getAttributeValue(elt, 'libraryPath', getStereotype(elt), null )]
+			[let componentName:String=getAttributeValue(elt, 'libraryComponentName', getStereotype(elt), null )]
+require "[libPath/]"
+[inst.name/] = [componentName/]( "[inst.name/]" )
+[let parentName : String = getParentName(inst)]
+[inst.name/]:MakeChildOf( "[parentName/]" )
+			[/let]
+			[/let]
+			[/let]
+		[/if]
 		[/let]
+
 	[/for]
+
+--[protected ('User defined code at end')]
+
+--[/protected]
+
 [/file]
 
 

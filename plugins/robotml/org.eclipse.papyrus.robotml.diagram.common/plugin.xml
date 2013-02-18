@@ -69,4 +69,11 @@
             name="RobotML generation Category">
       </category>
    </extension>
+ <extension
+       point="org.eclipse.papyrus.uml.properties.languageEditor">
+    <editor
+          editor="org.eclipse.papyrus.uml.properties.widgets.NaturalLanguageEditor"
+          language="alf">
+    </editor>
+ </extension>
 </plugin>

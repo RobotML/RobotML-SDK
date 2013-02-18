@@ -1,0 +1,106 @@
+[comment encoding = UTF-8 /]
+[module generate_morse('http://www.eclipse.org/uml2/3.0.0/UML')]
+
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::morse::files::generateCameraSystem /]
+
+[template public generateRobots(aModel : Model)]
+	[for (elt: NamedElement | getElementsWithStereotype(aModel, 'Robot'))]
+		[let c : Class = elt.oclAsType(Class)]
+[generateRobot(c, aModel)/]
+		[/let]
+	[/for]
+[/template]
+
+[template public generateRobot(aClass : Class, aModel : Model)]
+robot = Robot('[aClass.name/]')
+robot.name = "[aClass.name/]"
+	[for (elt: NamedElement | getElementsWithInheritedStereotype(aModel, 'RoboticSystem'))]
+		[let aClass : Class = elt.oclAsType(Class)]
+# [aClass.name/]
+		[if (hasStereotype(aClass, 'LidarSystem'))]
+[generateLidar(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'CameraSystem'))]
+[generateCameraSystem(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'GPSSystem'))]
+[generateGPS(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'Servoings'))]
+[generateServoing(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'Odometer'))]
+[generateOdometry(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'IMU'))]
+[generateIMU(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'SensorSystem'))]
+[generateGenericSensor(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'ActuatorSystem'))]
+[generateGenericActuator(aClass, aModel)/]
+		[else]
+[generateSystem(aClass, aModel)/]
+		[/if]
+		[/let]
+	[/for]
+[/template]
+
+
+[template public generateGenericActuator(aClass : Class, model : Model)]
+#generic_actuator = Actuator('[aClass.name/]')
+#generic_actuator.configure_mw('ros')
+#robot.append(generic_actuator)
+[/template]
+
+[template public generateGenericSensor(aClass : Class, model : Model)]
+#generic_sensor = Sensor('[aClass.name/]')
+#generic_sensor.frequency([getAttributeValue(aClass, 'frequency', 'SensorSystem', '10.')/])
+#generic_sensor.configure_mw('ros')
+#robot.append(generic_sensor)
+[/template]
+
+[template public generateServoing(aClass : Class, model : Model)]
+motion = Actuator('v_omega')
+motion.configure_mw('ros')
+robot.append(motion)
+[/template]
+
+[template public generateIMU(aClass : Class, model : Model)]
+imu = Sensor('imu')
+imu.frequency([getAttributeValue(aClass, 'frequency', 'IMU', '10.')/])
+imu.configure_mw('ros')
+robot.append(imu)
+[/template]
+
+[template public generateOdometry(aClass : Class, model : Model)]
+odom = Sensor('pose')
+odom.frequency([getAttributeValue(aClass, 'frequency', 'Odometer', '10.')/])
+odom.configure_mw('ros')
+robot.append(odom)
+[/template]
+
+[template public generateGPS(aClass : Class, model : Model)]
+gps = Sensor('gps')
+gps.frequency([getAttributeValue(aClass, 'frequency', 'GPSSystem', '10.')/])
+gps.configure_mw('ros')
+robot.append(gps)
+[/template]
+
+[template public generateLidar(aClass : Class, model : Model)]
+lidar = Sensor('sick')
+lidar.properties(scan_window = 180, resolution = 1, laser_range = [getAttributeValue(aClass, 'range_max', 'LidarSystem', '25')/])
+lidar.frequency([getAttributeValue(aClass, 'frequency', 'LidarSystem', '20.')/])
+lidar.configure_mw('ros')
+robot.append(lidar)
+[/template]
+
+[template public generateSystem(aClass : Class, model : Model)]
+#   TBD
+[/template]
+
+[template public generateMorse(model : Model)]
+[file ('morse' + model.name + '.py', false, 'UTF-8')]
+from morse.builder import *
+# Generate robots
+[generateRobots(model)/]
+# Select the environement
+env = Environment("[model.name/].blend")
+
+[/file]
+[/template]

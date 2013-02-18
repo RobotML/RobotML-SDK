@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:l2="http://www.eclipse.org/uml2/4.0.0/UML/Profile/L2" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:l2="http://www.eclipse.org/uml2/4.0.0/UML/Profile/L2" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
   <uml:Model xmi:id="__GIkwALIEeCtYMXppfqLMw" name="RobotMLLibraries">
     <packagedElement xmi:type="uml:Package" xmi:id="_zRh3sAHrEeCQQOKrhO_fIQ" name="RobotML_ModelLibrary">
       <packagedElement xmi:type="uml:Package" xmi:id="_dt_y4AHtEeCQQOKrhO_fIQ" name="RobotML_DataTypes">
@@ -597,6 +597,13 @@
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j3pdMAKnEeCQReIOIWJ0nA" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j3pdMQKnEeCQReIOIWJ0nA" value="1"/>
             </ownedAttribute>
+            <ownedAttribute xmi:id="_nAld8FW0EeKGfqEoV0ekDw" name="width" visibility="public" type="_nCOuoAH-EeC_ZLzLQhW-TQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pBe-sFW0EeKGfqEoV0ekDw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pBe-sVW0EeKGfqEoV0ekDw" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_pBe-slW0EeKGfqEoV0ekDw">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
           </packagedElement>
           <packagedElement xmi:type="uml:DataType" xmi:id="_OHg8QAKoEeCQReIOIWJ0nA" name="Range">
             <ownedAttribute xmi:id="_P_d8YAKoEeCQReIOIWJ0nA" name="ULTRASOUND" visibility="public" type="_6NJfkAKnEeCQReIOIWJ0nA">
@@ -917,37 +924,17 @@
             <ownedAttribute xmi:id="_g8Cu0KlHEeCDX-R4upxIpg" name="service" type="_LmROoKlIEeCDX-R4upxIpg"/>
           </packagedElement>
           <packagedElement xmi:type="uml:DataType" xmi:id="_MwvvoKlGEeCDX-R4upxIpg" name="NavSatFix">
-            <ownedAttribute xmi:id="_oXP8IKlHEeCDX-R4upxIpg" name="STATUS_NO_FIX" type="_Wr9rwAK3EeCsG_V0R865wA"/>
-            <ownedAttribute xmi:id="_rZQ7oKlHEeCDX-R4upxIpg" name="STATUS_FIX" type="_Wr9rwAK3EeCsG_V0R865wA"/>
-            <ownedAttribute xmi:id="_uEfLwKlHEeCDX-R4upxIpg" name="STATUS_SBAS_FIX" type="_Wr9rwAK3EeCsG_V0R865wA"/>
-            <ownedAttribute xmi:id="_x6zWAKlHEeCDX-R4upxIpg" name="STATUS_GBAS_FIX" type="_Wr9rwAK3EeCsG_V0R865wA"/>
-            <ownedAttribute xmi:id="_2IhToKlHEeCDX-R4upxIpg" name="status" type="_Wr9rwAK3EeCsG_V0R865wA"/>
-            <ownedAttribute xmi:id="_6co0MKlHEeCDX-R4upxIpg" name="SERVICE_GPS" type="_LmROoKlIEeCDX-R4upxIpg"/>
-            <ownedAttribute xmi:id="_-LNXsKlHEeCDX-R4upxIpg" name="SERVICE_GLONASS" type="_LmROoKlIEeCDX-R4upxIpg"/>
-            <ownedAttribute xmi:id="_B7a58KlIEeCDX-R4upxIpg" name="SERVICE_COMPASS" type="_LmROoKlIEeCDX-R4upxIpg"/>
-            <ownedAttribute xmi:id="_XzjD0KlIEeCDX-R4upxIpg" name="SERVICE_GALILEO" type="_LmROoKlIEeCDX-R4upxIpg"/>
-            <ownedAttribute xmi:id="_alLd8KlIEeCDX-R4upxIpg" name="service" type="_LmROoKlIEeCDX-R4upxIpg"/>
+            <ownedAttribute xmi:id="_2IhToKlHEeCDX-R4upxIpg" name="status" type="_IYT60FW5EeKGfqEoV0ekDw"/>
+            <ownedAttribute xmi:id="_alLd8KlIEeCDX-R4upxIpg" name="service" type="_527VAFW4EeKGfqEoV0ekDw"/>
             <ownedAttribute xmi:id="_uJ3JEKlJEeCDX-R4upxIpg" name="header" type="_V8xCgAH-EeC_ZLzLQhW-TQ"/>
             <ownedAttribute xmi:id="_EQwHsKlKEeCDX-R4upxIpg" name="latitude" type="_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
             <ownedAttribute xmi:id="_I4iyMKlKEeCDX-R4upxIpg" name="longitude" type="_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
             <ownedAttribute xmi:id="_QmhKgKlKEeCDX-R4upxIpg" name="altitude" type="_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
             <ownedAttribute xmi:id="_VLCekKlKEeCDX-R4upxIpg" name="position_covariance" type="_Y9tAwAH6EeC_ZLzLQhW-TQ">
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aGDAAKlKEeCDX-R4upxIpg"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aGMxAKlKEeCDX-R4upxIpg" value="*"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aGDAAKlKEeCDX-R4upxIpg" value="9"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aGMxAKlKEeCDX-R4upxIpg" value="9"/>
             </ownedAttribute>
-            <ownedAttribute xmi:id="_rh3WoKlKEeCDX-R4upxIpg" name="COVARIANCE_TYPE_UNKNOWN" type="_6NJfkAKnEeCQReIOIWJ0nA">
-              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_S0JxcKuUEeCWFJzWkfhPHg"/>
-            </ownedAttribute>
-            <ownedAttribute xmi:id="_3V9PwKlKEeCDX-R4upxIpg" name="COVARIANCE_TYPE_APPROXIMATED" type="_6NJfkAKnEeCQReIOIWJ0nA">
-              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_h4AyMKuUEeCWFJzWkfhPHg" value="1"/>
-            </ownedAttribute>
-            <ownedAttribute xmi:id="_8MgH8KlKEeCDX-R4upxIpg" name=" COVARIANCE_TYPE_DIAGONAL_KNOWN" type="_6NJfkAKnEeCQReIOIWJ0nA">
-              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_lMXe4KuUEeCWFJzWkfhPHg" value="3"/>
-            </ownedAttribute>
-            <ownedAttribute xmi:id="_AEUHAKlLEeCDX-R4upxIpg" name="COVARIANCE_TYPE_KNOWN" type="_6NJfkAKnEeCQReIOIWJ0nA">
-              <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_fkGi8KuhEeCWFJzWkfhPHg" value="3"/>
-            </ownedAttribute>
-            <ownedAttribute xmi:id="_ExUosKlLEeCDX-R4upxIpg" name="position_covariance_type" type="_6NJfkAKnEeCQReIOIWJ0nA"/>
+            <ownedAttribute xmi:id="_ExUosKlLEeCDX-R4upxIpg" name="position_covariance_type" type="_UWn8YFW4EeKGfqEoV0ekDw"/>
           </packagedElement>
           <packagedElement xmi:type="uml:DataType" xmi:id="_0e_9oKujEeCWFJzWkfhPHg" name="Joy">
             <ownedAttribute xmi:id="_2b36AKujEeCWFJzWkfhPHg" name="header" type="_V8xCgAH-EeC_ZLzLQhW-TQ"/>
@@ -979,6 +966,105 @@
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FDdR0KvNEeCFvbtLV_zCHw"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FDdR0avNEeCFvbtLV_zCHw" value="*"/>
             </ownedAttribute>
+          </packagedElement>
+          <packagedElement xmi:type="uml:DataType" xmi:id="_TVk8ADihEeKrufJqxR6Wig" name="CarLikeOdometry">
+            <ownedAttribute xmi:id="_bNPb0DihEeKrufJqxR6Wig" name="header" visibility="public" type="_V8xCgAH-EeC_ZLzLQhW-TQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eI_bQDihEeKrufJqxR6Wig" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eI_bQTihEeKrufJqxR6Wig" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_eJJMQDihEeKrufJqxR6Wig">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_85IusDihEeKrufJqxR6Wig" name="steering_angle" visibility="public" type="_Y9tAwAH6EeC_ZLzLQhW-TQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-rbLsDihEeKrufJqxR6Wig" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-rbLsTihEeKrufJqxR6Wig" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_-rbLsjihEeKrufJqxR6Wig">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_BXr9oDiiEeKrufJqxR6Wig" name="left_rear_wheel_distance" visibility="public" type="_Y9tAwAH6EeC_ZLzLQhW-TQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_E0OV8DiiEeKrufJqxR6Wig" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_E0OV8TiiEeKrufJqxR6Wig" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_E0YG8DiiEeKrufJqxR6Wig">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_GUVd0DiiEeKrufJqxR6Wig" name="right_rear_wheel_distance" visibility="public" type="_Y9tAwAH6EeC_ZLzLQhW-TQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IeK4IDiiEeKrufJqxR6Wig" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IeK4ITiiEeKrufJqxR6Wig" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_IeK4IjiiEeKrufJqxR6Wig">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_NIfSMDiiEeKrufJqxR6Wig" name="right_rear_wheel_velocity" visibility="public" type="_Y9tAwAH6EeC_ZLzLQhW-TQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PEBx0DiiEeKrufJqxR6Wig" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PEBx0TiiEeKrufJqxR6Wig" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_PEK7wDiiEeKrufJqxR6Wig">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_PbkIEDiiEeKrufJqxR6Wig" name="left_rear_wheel_velocity" visibility="public" type="_Y9tAwAH6EeC_ZLzLQhW-TQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XBpIoDiiEeKrufJqxR6Wig" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XBy5oDiiEeKrufJqxR6Wig" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_XBy5oTiiEeKrufJqxR6Wig">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+          </packagedElement>
+          <packagedElement xmi:type="uml:DataType" xmi:id="_VqSwoDihEeKrufJqxR6Wig" name="DifferentialOdometry">
+            <ownedAttribute xmi:id="_6UCUsDihEeKrufJqxR6Wig" name="header" visibility="public" type="_V8xCgAH-EeC_ZLzLQhW-TQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7UQbkDihEeKrufJqxR6Wig" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7UQbkTihEeKrufJqxR6Wig" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_7UQbkjihEeKrufJqxR6Wig">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_ZLxd4DiiEeKrufJqxR6Wig" name="right_distance" visibility="public" type="_Y9tAwAH6EeC_ZLzLQhW-TQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bQiyADiiEeKrufJqxR6Wig" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bQiyATiiEeKrufJqxR6Wig" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_bQsjADiiEeKrufJqxR6Wig">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_bzj_gDiiEeKrufJqxR6Wig" name="left_distance" visibility="public" type="_Y9tAwAH6EeC_ZLzLQhW-TQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dS7ggDiiEeKrufJqxR6Wig" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dTFRgDiiEeKrufJqxR6Wig" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_dTObcDiiEeKrufJqxR6Wig">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_dxedsDiiEeKrufJqxR6Wig" name="left_velocity" visibility="public" type="_Y9tAwAH6EeC_ZLzLQhW-TQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gubXADiiEeKrufJqxR6Wig" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gubXATiiEeKrufJqxR6Wig" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_gukg8DiiEeKrufJqxR6Wig">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_hNt7EDiiEeKrufJqxR6Wig" name="right_velocity" visibility="public" type="_Y9tAwAH6EeC_ZLzLQhW-TQ">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iq_xYDiiEeKrufJqxR6Wig" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iq_xYTiiEeKrufJqxR6Wig" value="1"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_irJiYDiiEeKrufJqxR6Wig">
+                <value xsi:nil="true"/>
+              </defaultValue>
+            </ownedAttribute>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Enumeration" xmi:id="_UWn8YFW4EeKGfqEoV0ekDw" name="COVARIANCE_TYPE">
+            <ownedLiteral xmi:id="_ZvmMMFW4EeKGfqEoV0ekDw" name="COVARIANCE_TYPE_UNKNOWN"/>
+            <ownedLiteral xmi:id="_rH0cQFW4EeKGfqEoV0ekDw" name="COVARIANCE_TYPE_APPROXIMATED"/>
+            <ownedLiteral xmi:id="_swuTwFW4EeKGfqEoV0ekDw" name=" COVARIANCE_TYPE_DIAGONAL_KNOWN"/>
+            <ownedLiteral xmi:id="_wv1NoFW4EeKGfqEoV0ekDw" name="COVARIANCE_TYPE_KNOWN"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Enumeration" xmi:id="_527VAFW4EeKGfqEoV0ekDw" name="SERVICE_TYPE">
+            <ownedLiteral xmi:id="_8w5LwFW4EeKGfqEoV0ekDw" name="SERVICE_GPS"/>
+            <ownedLiteral xmi:id="_AKTXkFW5EeKGfqEoV0ekDw" name="SERVICE_GLONASS"/>
+            <ownedLiteral xmi:id="_BzzE8FW5EeKGfqEoV0ekDw" name="SERVICE_COMPASS"/>
+            <ownedLiteral xmi:id="_DPcjkFW5EeKGfqEoV0ekDw" name="SERVICE_GALILEO"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Enumeration" xmi:id="_IYT60FW5EeKGfqEoV0ekDw" name="STATUS_TYPE">
+            <ownedLiteral xmi:id="_KlSIsFW5EeKGfqEoV0ekDw" name="STATUS_NO_FIX"/>
+            <ownedLiteral xmi:id="_MXH5wFW5EeKGfqEoV0ekDw" name="STATUS_FIX"/>
+            <ownedLiteral xmi:id="_Q-BMYFW5EeKGfqEoV0ekDw" name="STATUS_SBAS_FIX"/>
+            <ownedLiteral xmi:id="_So29kFW5EeKGfqEoV0ekDw" name="STATUS_GBAS_FIX"/>
           </packagedElement>
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_MlyNYAHwEeCQQOKrhO_fIQ" name="actionlib_datatypes">
@@ -1063,28 +1149,6 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Package" xmi:id="_GCnKgCM_EeKwed7FEEF-4Q" name="oarps_datatypes">
           <packagedElement xmi:type="uml:Model" xmi:id="_cutLICNDEeKwed7FEEF-4Q" name="oarp1_datatypes">
-            <packagedElement xmi:type="uml:DataType" xmi:id="_cutLKiNDEeKwed7FEEF-4Q" name="CarLikeOdometry">
-              <ownedAttribute xmi:id="_cutLKyNDEeKwed7FEEF-4Q" name="rearLeftWheel">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cutLLCNDEeKwed7FEEF-4Q" value="1"/>
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cutLLSNDEeKwed7FEEF-4Q" value="1"/>
-              </ownedAttribute>
-              <ownedAttribute xmi:id="_cutLLiNDEeKwed7FEEF-4Q" name="rearRightWheel">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cutLLyNDEeKwed7FEEF-4Q" value="1"/>
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cutLMCNDEeKwed7FEEF-4Q" value="1"/>
-              </ownedAttribute>
-              <ownedAttribute xmi:id="_cutLMSNDEeKwed7FEEF-4Q" name="motorSpeed">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cutLMiNDEeKwed7FEEF-4Q" value="1"/>
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cutLMyNDEeKwed7FEEF-4Q" value="1"/>
-              </ownedAttribute>
-              <ownedAttribute xmi:id="_cutLNCNDEeKwed7FEEF-4Q" name="steeringAngle">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
-                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cutLNSNDEeKwed7FEEF-4Q" value="1"/>
-                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cutLNiNDEeKwed7FEEF-4Q" value="1"/>
-              </ownedAttribute>
-            </packagedElement>
             <packagedElement xmi:type="uml:DataType" xmi:id="_cutLNyNDEeKwed7FEEF-4Q" name="CarLikeCommand">
               <ownedAttribute xmi:id="_cutLOCNDEeKwed7FEEF-4Q" name="velocity">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_Y9tAwAH6EeC_ZLzLQhW-TQ"/>
@@ -1329,9 +1393,6 @@
           </packagedElement>
         </packagedElement>
       </packagedElement>
-      <packagedElement xmi:type="uml:Package" xmi:id="__iYKQCHWEeKDtOxlgk7bNA" name="RobotML_Components">
-        <packagedElement xmi:type="uml:Package" xmi:id="_IPr4oCHXEeKDtOxlgk7bNA" name="sensors"/>
-      </packagedElement>
     </packagedElement>
     <profileApplication xmi:id="_TMRTkDYaEeGUydwEzczV4w">
       <eAnnotations xmi:id="_TUUcUDYaEeGUydwEzczV4w" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -1356,4 +1417,5 @@
   <l2:ModelLibrary xmi:id="_9TtE0DYZEeGUydwEzczV4w" base_Package="_MlyNYAHwEeCQQOKrhO_fIQ"/>
   <l2:ModelLibrary xmi:id="_-FB0EDYZEeGUydwEzczV4w" base_Package="_QJC2AKxYEeCJD46GtDsABA"/>
   <l2:ModelLibrary xmi:id="_h26jEDYaEeGUydwEzczV4w" base_Package="__GIkwALIEeCtYMXppfqLMw"/>
+  <notation:Diagram xmi:id="_mvOrYFW4EeKGfqEoV0ekDw"/>
 </xmi:XMI>

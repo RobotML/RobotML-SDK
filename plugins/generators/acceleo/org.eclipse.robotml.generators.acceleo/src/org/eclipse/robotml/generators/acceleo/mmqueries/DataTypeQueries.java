@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.LinkedList;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
@@ -15,6 +17,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 
 public class DataTypeQueries{
+	public static String newline = System.getProperty("line.separator");	
 	
 	public List<DataType> getMetamodelComposedDataTypes(Element rootelt) {
 		LinkedList<DataType> results = new LinkedList<DataType>();
@@ -51,7 +54,7 @@ public class DataTypeQueries{
 	 * @param dt
 	 * @return
 	 */
-	public boolean isRobotMLDataType(Element root_model, String datatype_name) {
+	public static boolean isRobotMLDataType(Element root_model, String datatype_name) {
 		try {
 		if (root_model instanceof Model) {
 			EList<Package> packages = ((Model)root_model).getImportedPackages();
@@ -85,22 +88,38 @@ public class DataTypeQueries{
 	
 	public String getCppClassForDatatType(DataType dt) {
 		try {
-		String s = "class " + dt.getName() + " {\n\tpublic:\n";
-		EList<Property> members = dt.getAllAttributes();			
-		for (Property member : members) {
-			String type_name;
-			if (member.getType() != null)
-				type_name = member.getType().getName();
-			else
-				type_name = "Unknown_NULL_IN_MODEL";
-			if (member.getUpper()<0) {
-				s+="\tstd::vector<" + type_name + "> " + member.getName() + ";\n";
-			} else {
-				s+="\t" + type_name + " " + member.getName() + ";\n";
+			String s="";
+			if (dt instanceof Enumeration) {
+				Enumeration en = (Enumeration)dt;
+				s = "enum " + en.getName() + " {" + newline;
+				EList<EnumerationLiteral> literals = en.getOwnedLiterals();
+				for (EnumerationLiteral literal : literals) {
+					s += "\t" + literal.getName() + "," + newline;
+				}
+			} else if (dt instanceof EnumerationLiteral){
+				//do nothing.
+			} else { 
+				EList<Property> attributes = dt.getOwnedAttributes();
+				s = "class " + dt.getName() + " {"+ newline + "\tpublic:" + newline;
+				for (Property attribute : attributes) {
+					String type_name;
+					if (attribute.getType() != null)
+						type_name = attribute.getType().getName();
+					else
+						type_name = "Unknown_NULL_IN_MODEL";
+					if (attribute.getUpper()<0) {
+						s+="\tstd::vector<" + type_name + "> " + attribute.getName() + ";" + newline;
+					} else if (attribute.getUpper() <= 1){
+						s+="\t" + type_name + " " + attribute.getName() + ";" + newline;
+					} else if (attribute.getUpper() == attribute.getLower()) {
+						s+="\t" + type_name + " " + attribute.getName() + "[" + attribute.getUpper() + "];" + newline;
+					} else {
+						s+="\tstd::vector<" + type_name + "> " + attribute.getName() + ";" + newline;
+					}
+				}
 			}
-		}
-		s+= "};\n";
-		return s;
+			s+= "};" + newline;
+			return s;
 		} catch (Exception e) {
 			java.lang.System.out.println(e.getMessage());
 		}
@@ -148,7 +167,7 @@ public class DataTypeQueries{
 		return null;
 	}
 	
-	public boolean isPrimitiveType(Element elt) {
+	public static boolean isPrimitiveType(Element elt) {
 		if (elt instanceof PrimitiveType)
 			return true;
 		return false;

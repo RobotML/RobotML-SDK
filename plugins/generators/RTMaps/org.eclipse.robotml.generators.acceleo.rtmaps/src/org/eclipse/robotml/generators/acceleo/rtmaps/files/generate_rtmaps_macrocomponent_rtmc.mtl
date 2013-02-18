@@ -44,27 +44,35 @@ knowledge of the CeCILL-C license and that you accept its terms.
 	[for (elt: NamedElement | getComponentModels(root_model))]
 		[let c : Class = elt.oclAsType(Class)]
 			[if (isMacroComponent(c))]
-				[file ('macro_components/'+ c.name + '.rtmc', false, 'UTF-8')]
+				[file (c.name + '.rtmc', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<MacroPackage xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram_RTBoardView.xsd">
+<MacroPackage xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.1" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram_RTBoardView.xsd">
     <RequiredPackages>
 	    <File><!['['/]CDATA['['/]/dummy/absolute/path/for/rtmaps_[root_model.name/].pck[']'/][']'/]>
-	      <Relative><!['['/]CDATA['['/]%RTMAPS_DIAGRAMDIR%/../user_sdk/[getPckOutputDir('dummy')/]rtmaps_[root_model.name/].pck[']'/][']'/]></Relative>
+	      <Relative><!['['/]CDATA['['/]%RTMAPS_DIAGRAMDIR%/user_sdk/[getPckOutputDir('dummy')/]rtmaps_[root_model.name/].pck[']'/][']'/]></Relative>
 	    </File>
     </RequiredPackages>
     <RequiredMacroPackages>
 	[for (prop: Property | getLevel1SubComponentsForComponent(c))]
-		[if (isMacroComponent(prop.type.oclAsType(Class)))]
-	    <File><!['['/]CDATA['['/]/dummy/absolute/path/for/[prop.type.name/].rtmc[']'/][']'/]>
+		[if (prop.type.oclAsType(Class).hasRTMapsNativeImplementation() = true)]
+		<File><!['['/]CDATA['['/][prop.type.oclAsType(Class).getRTMapsNativeLibraryPathFromGenericAttribute()/][']'/][']'/]>
+	      <Relative><!['['/]CDATA['['/][prop.type.oclAsType(Class).getRTMapsNativeLibraryPathFromGenericAttribute()/][']'/][']'/]></Relative>
+	    </File>
+		[elseif (isMacroComponent(prop.type.oclAsType(Class)))]
+		<File><!['['/]CDATA['['/]/dummy/absolute/path/for/[prop.type.name/].rtmc[']'/][']'/]>
 	      <Relative><!['['/]CDATA['['/]%RTMAPS_DIAGRAMDIR%/[prop.type.name/].rtmc[']'/][']'/]></Relative>
 	    </File>
+		[else]
+			[comment]BOOOOOOOO: [prop.type.oclAsType(Class).name/][/comment]
 		[/if]
 	[/for]
 	</RequiredMacroPackages>
 		  <MacroComponentModel Model="macro_[c.name/]" Version="">
 		    <MacroComponentDefinitions/>
 			[for (prop: Property | getLevel1SubComponentsForComponent(c))]
-				[if (isMacroComponent(prop.type.oclAsType(Class)) = false)]
+				[if (prop.type.oclAsType(Class).hasRTMapsNativeImplementation() = true)]
+					[comment]Do nothing: it will be instanciated as a native macro-component.[/comment]
+				[elseif (isMacroComponent(prop.type.oclAsType(Class)) = false)]
 		    	<Component InstanceName="[prop.name/]" Model="[prop.type.name/]" x="[i * 50 + 50/]" y="[i * 50 + 50/]" z="0">
 				  [comment]
 			      <Input LongName="RGB2YUV_7.input" Name="input">
@@ -82,7 +90,14 @@ knowledge of the CeCILL-C license and that you accept its terms.
 				[/if]
 			[/for]
 			[for (prop: Property | getLevel1SubComponentsForComponent(c))]
-				[if (isMacroComponent(prop.type.oclAsType(Class)))]
+				[if (prop.type.oclAsType(Class).hasRTMapsNativeImplementation() = true)]
+			    <MacroComponent InstanceName="[prop.name/]" Model="[prop.type.oclAsType(Class).getRTMapsNativeComponentNameFromGenericAttribute()/]" x="[i * 50 + 50/]" y="[i * 50 + 150/]" z="0">
+			      [comment]
+				  <InputPropertyOverload LongName="stream_in.readerType" Type="1">0</InputPropertyOverload>
+			      <OutputPropertyOverload LongName="position.fifosize" Type="1">16</OutputPropertyOverload>
+				  [/comment]
+			    </MacroComponent>					
+				[elseif (isMacroComponent(prop.type.oclAsType(Class)))]
 			    <MacroComponent InstanceName="[prop.name/]" Model="macro_[prop.type.name/]" x="[i * 50 + 50/]" y="[i * 50 + 150/]" z="0">
 			      [comment]
 				  <InputPropertyOverload LongName="stream_in.readerType" Type="1">0</InputPropertyOverload>

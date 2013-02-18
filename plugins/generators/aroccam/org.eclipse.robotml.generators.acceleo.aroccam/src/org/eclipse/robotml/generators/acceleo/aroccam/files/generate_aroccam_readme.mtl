@@ -31,14 +31,18 @@ open a terminal
 cd applicationPath/build/
 effibox -a libApplicationName
 
+--------------------------------------------
+--------GENERATOR DEBUG INFORMATIONS--------
+--------------------------------------------
 
-[comment]
-----Deployment
-[for (elt: InstanceSpecification | getInstanceSpecifications(model))]
-	[elt.name/] - [elt.qualifiedName/] - [elt.getLabel()/]
-	[elt.getParentName()/]
+----DeploymentPlan
+List of components instances in the model :
+
+[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
+Name: [inst.name/] Allocation: [getAllocationName(inst)/] [let p: Property = getInstance(model, inst)][if (p.isProperty())]RealName:[p.name/], Type: [p.type.name/], Stereotype:[p.type.oclAsType(Class).getStereotype()/][/if][/let] 
 [/for]
 
+[comment]
 ----Stereotypes
 [comment] acceleo help [/comment]
 * Sensor systems:

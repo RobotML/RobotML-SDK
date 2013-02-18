@@ -101,8 +101,8 @@
 	invoke('org.eclipse.robotml.generators.xtext.athena.vle.main.DSLQueries', 'getDynamicAllocationFunctionArguments(org.xtext.athenaDSL.arrayType)', Sequence{type}) 
 /]
 
-[query  public getDynamicAllocationForStruct(name : String, struct : structType) : String = 
-	invoke('org.eclipse.robotml.generators.xtext.athena.vle.main.DSLQueries', 'getDynamicAllocationForStruct(java.lang.String,org.xtext.athenaDSL.structType)', Sequence{struct}) 
+[query  public getDynamicAllocationForStruct(name : String, struct : athenaDSL::structType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.vle.main.DSLQueries', 'getDynamicAllocationForStruct(java.lang.String,org.xtext.athenaDSL.structType)', Sequence{name, struct}) 
 /]
 
 [query public getDynamicAllocationFunctionForStruct(type : athenaDSL::structType) : String = 

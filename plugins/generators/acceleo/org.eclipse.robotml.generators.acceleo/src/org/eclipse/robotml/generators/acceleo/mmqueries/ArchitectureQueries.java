@@ -13,8 +13,10 @@ import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.util.UMLUtil;
 import org.eclipse.papyrus.RobotML.*;
-import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
+
+
 
 /**
  * 
@@ -71,7 +73,7 @@ public class ArchitectureQueries {
 	 * Retrieves the destination port for a given connector 
 	 * @see isDestPort and isSourcePort
 	 */
-	static private int getDestPort(org.eclipse.uml2.uml.Connector conn, Port[] dest_port) {
+	public static int getDestPort(org.eclipse.uml2.uml.Connector conn, Port[] dest_port) {
 		if (conn.getEnds().get(0).getRole() instanceof Port) {
 			Port test_1 = (Port)conn.getEnds().get(0).getRole();
 			if (isDestPort(conn.getEnds().get(0),test_1)) {
@@ -324,7 +326,7 @@ public class ArchitectureQueries {
 	static public List<org.eclipse.uml2.uml.Port> getOutputPortsForElement(Element elt) {
 		LinkedList<org.eclipse.uml2.uml.Port> found_output_ports = new LinkedList<org.eclipse.uml2.uml.Port>();		
 		for (Element child : elt.getOwnedElements()) {
-			if (child instanceof NamedElement && child instanceof org.eclipse.uml2.uml.Port) {
+			if (child instanceof org.eclipse.uml2.uml.Port) {
 				if (isAnOutputPort((org.eclipse.uml2.uml.Port)child)) {
 					found_output_ports.add((org.eclipse.uml2.uml.Port)child);
 				}
@@ -374,7 +376,8 @@ public class ArchitectureQueries {
 		LinkedList<NamedElement> found_elts = new LinkedList<NamedElement>();
 		for (Element elt : model.allOwnedElements()) {
 			if (elt instanceof org.eclipse.uml2.uml.Class) {
-				if (GeneralQueries.hasStereotype((org.eclipse.uml2.uml.Class)elt,org.eclipse.papyrus.RobotML.System.class)) {
+				if (GeneralQueries.hasStereotype((org.eclipse.uml2.uml.Class)elt,org.eclipse.papyrus.RobotML.System.class) &&
+					false == GeneralQueries.hasStereotype((org.eclipse.uml2.uml.Class)elt, org.eclipse.papyrus.RobotML.Platform.class)) {
 					found_elts.add((NamedElement)elt);
 				}
 			}
@@ -409,6 +412,29 @@ public class ArchitectureQueries {
 		return result;
 	}
 	
+	static public Boolean hasNativeImplementation(org.eclipse.uml2.uml.Class c)
+	{
+		org.eclipse.papyrus.RobotML.System sys = org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication(c, org.eclipse.papyrus.RobotML.System.class);
+		if (sys == null)
+			return false;
+		return sys.isNative();
+	}
+	
+	static public String getNativeLibraryPathForComponent(org.eclipse.uml2.uml.Class c) 
+	{
+		org.eclipse.papyrus.RobotML.System sys = org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication(c, org.eclipse.papyrus.RobotML.System.class);
+		if (sys == null)
+			return null;
+		return sys.getLibraryPath();
+	}
+	
+	static public String getNativeComponentNameForComponent(org.eclipse.uml2.uml.Class c) 
+	{
+		org.eclipse.papyrus.RobotML.System sys = org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication(c, org.eclipse.papyrus.RobotML.System.class);
+		if (sys == null)
+			return null;
+		return sys.getLibraryComponentName();
+	}
 	/**
 	 * 
 	 */
@@ -470,7 +496,7 @@ public class ArchitectureQueries {
 	 * @return is this a DataFlow port ?
 	 */
 	static public Boolean isDataFlowPort(Port port) {
-		DataFlowPort dfp = ElementUtil.getStereotypeApplication(port, DataFlowPort.class);
+		DataFlowPort dfp = UMLUtil.getStereotypeApplication(port, DataFlowPort.class);
 		if (dfp == null)
 			return false;
 		return true;
@@ -484,7 +510,7 @@ public class ArchitectureQueries {
 	static public Boolean isAnInputPort(Port port)
 	{
 		try {
-			DataFlowPort dfp = ElementUtil.getStereotypeApplication(port, DataFlowPort.class);
+			DataFlowPort dfp = UMLUtil.getStereotypeApplication(port, DataFlowPort.class);
 			if (dfp == null)
 				return false;
 			if (dfp.getDirection() == DataFlowDirectionKind.IN)
@@ -504,7 +530,7 @@ public class ArchitectureQueries {
 	static public Boolean isAnOutputPort(Port port)
 	{
 		try {
-			DataFlowPort dfp = ElementUtil.getStereotypeApplication(port, DataFlowPort.class);
+			DataFlowPort dfp = UMLUtil.getStereotypeApplication(port, DataFlowPort.class);
 			if (dfp == null)
 				return false;
 			if (dfp.getDirection() == DataFlowDirectionKind.OUT)
@@ -523,7 +549,7 @@ public class ArchitectureQueries {
 	 */
 	static public Boolean isAProvidedPort(Port port) {
 		try {
-			ServicePort sp = ElementUtil.getStereotypeApplication(port, ServicePort.class);
+			ServicePort sp = UMLUtil.getStereotypeApplication(port, ServicePort.class);
 			if (sp == null)
 				return false;
 			if (sp.getKind() == ServiceFlowKind.PROVIDED)
@@ -542,7 +568,7 @@ public class ArchitectureQueries {
 	 */
 	static public Boolean isARequiredPort(Port port) {
 		try {
-			ServicePort sp = ElementUtil.getStereotypeApplication(port, ServicePort.class);
+			ServicePort sp = UMLUtil.getStereotypeApplication(port, ServicePort.class);
 			if (sp == null)
 				return false;
 			if (sp.getKind() == ServiceFlowKind.REQUIRED)
@@ -560,7 +586,7 @@ public class ArchitectureQueries {
 	 * @return is this a service port ?
 	 */
 	static public Boolean isServicePort(Port port) {
-		ServicePort serviceport = ElementUtil.getStereotypeApplication(port, ServicePort.class);
+		ServicePort serviceport = UMLUtil.getStereotypeApplication(port, ServicePort.class);
 		return serviceport != null;
 	}
 	
@@ -610,6 +636,30 @@ public class ArchitectureQueries {
 		ConnectorEnd e1 = conn.getEnds().get(0);
 		ConnectorEnd e2 = conn.getEnds().get(1);
 		return (e1.getRole() == port) ? (Port)e2.getRole() : (Port)e1.getRole();
+	}
+	
+	/**
+	 * Get external connectors to a port 
+	 * @param port
+	 * @return a list of connectors which are connected to the port.
+	 */
+	static public List<org.eclipse.uml2.uml.Connector> getConnectionsFromPort(Port port)
+	{
+		LinkedList<org.eclipse.uml2.uml.Connector> connectors = new LinkedList<org.eclipse.uml2.uml.Connector>();
+		
+		for (ConnectorEnd connEnd : port.getEnds())
+		{
+			Connector conn = (Connector)connEnd.getOwner();
+
+			if (conn.getEnds().size() >= 2 &&
+				conn.getEnds().get(0).getPartWithPort() != null &&
+				conn.getEnds().get(1).getPartWithPort() != null)
+			{
+				connectors.add(conn);
+			}
+		}
+		
+		return connectors;
 	}
 
 	/**
@@ -691,6 +741,26 @@ public class ArchitectureQueries {
 		}
 		
 		return result;
+	}
+	
+	/**
+	 * For DataFlow ports: is it an Output Port ?
+	 * @param port
+	 * @return false if the port is not a DataFlowPort or not an input/output port.  
+	 */
+	static public Boolean isAnInputOutputPort(Port port)
+	{
+		try {
+			DataFlowPort dfp = UMLUtil.getStereotypeApplication(port, DataFlowPort.class);
+			if (dfp == null)
+				return false;
+			if (dfp.getDirection() == DataFlowDirectionKind.INOUT)
+				return true;
+			return false;
+		} catch (Exception e) {
+			java.lang.System.out.println("EXCEPTION caught:" + e.toString());
+		}
+		return false;
 	}
 	
 }

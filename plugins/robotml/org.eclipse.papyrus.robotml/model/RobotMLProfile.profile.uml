@@ -2245,6 +2245,18 @@ to have access to the operation defined in the AlgorithmLibrary</body>
     <packagedElement xmi:type="uml:Extension" xmi:id="_ndjEEY6xEeGdCeFFJlx8kA" name="E_Allocate_Abstraction1" memberEnd="_ndjEEo6xEeGdCeFFJlx8kA _ndjEEI6xEeGdCeFFJlx8kA">
       <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_ndjEEo6xEeGdCeFFJlx8kA" name="extension_Allocate" type="_OseXII6xEeGdCeFFJlx8kA" aggregation="composite" association="_ndjEEY6xEeGdCeFFJlx8kA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_c62fEDifEeKrufJqxR6Wig" name="InertialMeasurementUnitSystem">
+      <generalization xmi:id="_hyIXEDifEeKrufJqxR6Wig" general="_KTsPIF7bEeCGhLTjEDkxfg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_rWH10DifEeKrufJqxR6Wig" name="InertialNavigationSystem">
+      <generalization xmi:id="_zdIZMDifEeKrufJqxR6Wig" general="_58HD0ACYEeGXJOJtWKn8jQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_J2HtEDijEeKrufJqxR6Wig" name="OdometrySystem">
+      <generalization xmi:id="_MP5n4DijEeKrufJqxR6Wig" general="_2AIWcACYEeGXJOJtWKn8jQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_lUAlkDijEeKrufJqxR6Wig" name="InfraRedProximetrySystem">
+      <generalization xmi:id="_9_0_EDijEeKrufJqxR6Wig" general="_g7blsAB5EeGXJOJtWKn8jQ"/>
+    </packagedElement>
     <profileApplication xmi:id="_FtE1ECcoEeGXZ9Igmni1wg">
       <eAnnotations xmi:id="_FukC0CcoEeGXZ9Igmni1wg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>

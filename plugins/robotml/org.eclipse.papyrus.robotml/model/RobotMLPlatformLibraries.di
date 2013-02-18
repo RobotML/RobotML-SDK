@@ -48,9 +48,6 @@
     <windows>
       <children xsi:type="di:TabFolder">
         <children>
-          <emfPageIdentifier href="RobotMLPlatformLibraries.notation#_PfMN0AQ9EeC6AYK__wUU7g"/>
-        </children>
-        <children>
           <emfPageIdentifier href="RobotMLPlatformLibraries.notation#_kYxwUALTEeCtYMXppfqLMw"/>
         </children>
         <children>
@@ -70,6 +67,9 @@
         </children>
         <children>
           <emfPageIdentifier href="RobotMLPlatformLibraries.notation#_0wcb8ALLEeCtYMXppfqLMw"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="RobotMLPlatformLibraries.notation#_IXAZkALREeCtYMXppfqLMw"/>
         </children>
       </children>
     </windows>

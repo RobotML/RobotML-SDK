@@ -6,16 +6,21 @@
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::FSMQueries /]
 
-[template public generateAroccamComponentHpp(c : Class, root_model : Model)]
-[file ('src/' + root_model.name + 'Application/' + c.getStereotype() + '/' + c.name + '/' + c.name + '.hpp', false, 'UTF-8')]
+[template public generateAroccamComponentHpp(c : Class, model : Model)]
+[file ('src/' + model.name + 'Application/' + c.getStereotype() + '/' + c.name + '/' + c.name + '.hpp', false, 'UTF-8')]
 #ifndef __EFFIBOX_[c.name/]_HPP__
 #define __EFFIBOX_[c.name/]_HPP__
 
 //effitools
 #include <effitools/data/taskbuffer.hpp>
+#include <effitools/data/shareddata.hpp>
+#include <effitools/data/lock.hpp>
 
 //local includes
 #include "Datatypes/all.hpp"
+
+[comment]Generate Hpp sub-component[/comment]
+[if c.isMacroComponent()][for (prop: Property | getLevel1SubComponentsForComponent(c))][generateAroccamComponentHpp(prop.type.oclAsType(Class),model)/][/for][/if]
 
 [comment]Includes for subcomponents[/comment]
 [if c.isMacroComponent()]
@@ -27,14 +32,49 @@
 [/if]
 
 [comment]Component declaration[/comment]
-class [c.name/]
+class [c.name/]: public effitools::Lock
 {
 public:
 	//constructor
 	[c.name/]();
 
+	[let elt : Element = c.oclAsType(Element)]
+
+		[comment]Input ports declaration[/comment]
+		[for (port : Port | getInputPortsForElement(elt)) before('\t//input ports declaration (events)\n')]
+	void [port.name/]([port.type.name/] const& data);
+		[/for]
+
+		[comment]Ouput ports declaration[/comment]
+		[for (port : Port | getOutputPortsForElement(elt)) before('\t//output ports declaration (pointer on a concrete sub-component output port)\n')]
+	effitools::TaskBuffer<[port.type.name/]> * [port.name/];
+  		[/for]
+	[/let]
+
+	[comment]Operations declaration[/comment]
+	[for (op : Operation | c.ownedOperation) before('\t//operations\n')]
+	bool [op.name/]([for( param: Parameter | op.ownedParameter) separator(',')][if (param.direction.toString() = 'in')][param.type.name/] const& [param.name/][/if][/for]);
+	[/for]
+
+	[comment]Behaviours declaration[/comment]
+	[for (be : Behavior | c.ownedBehavior) before('\t//behaviors\n')]
+		[if (be.oclIsTypeOf(OpaqueBehavior))]
+	bool [be.name/]([for( param: Parameter | be.specification.ownedParameter) separator(',')][if (param.direction.toString() = 'in')][param.type.name/] const& [param.name/][/if][/for]);
+		[/if]
+	[/for]
+
+	[comment]State Machine[/comment]
+	[for (sm: StateMachine | c.getStateMachines())]
+	//states
+	enum [sm.name/]ListOfStates
+	{
+	[for (state: Vertex | getStates(sm)) before('\t') separator(',\n\t\t')][state.name/][/for]
+	};
+	[sm.name/]ListOfStates currentStateIn[sm.name/];
+
 	//evaluate FSM current state
-	void evaluateFSMTransitions();
+	void evaluateFSM[sm.name/]Transitions();
+	[/for]
 
 	[comment]Subcomponent declaration[/comment]
 	[if c.isMacroComponent()]
@@ -44,37 +84,11 @@ public:
 			[/if]
 		[/for]
 	[/if]
-	[let elt : Element = c.oclAsType(Element)]
-		[comment]Input ports declaration[/comment]
-		[for (port : Port | getInputPortsForElement(elt)) before('\t//input ports declaration (events)\n')]
-	void [port.name/]([port.type.name/] const& data);
-		[/for]
-		[comment]Ouput ports declaration[/comment]
-		[for (port : Port | getOutputPortsForElement(elt)) before('\t//output ports declaration (pointer on a concrete sub-component output port)\n')]
-	effitools::TaskBuffer<[port.type.name/]> * [port.name/];
-  		[/for]
-	[/let]
 
-	[comment]Operation declaration[/comment]
-	[for (op : Operation | c.getAllOperations()) before('\t//operations\n')]
-		[if (op.method->size() > 0)]
-			[for (m : Behavior | op.method)]
-	bool [m.name/]([for( param: Parameter | op.ownedParameter) separator(',')][param.type.name/] [if (param.direction.toString() = 'in')]const[/if]& [param.name/][/for]);
-			[/for]
-		[else]
-	bool [op.name/]([for( param: Parameter | op.ownedParameter) separator(',')][param.type.name/] [if (param.direction.toString() = 'in')]const[/if]& [param.name/][/for]);
-		[/if]
+private:
+	[for (port : Port | c.oclAsType(Element).getInputPortsForElement()) before('\t//last data on each input port\n')]
+	[port.type.name/] lastData[port.name/];
 	[/for]
-
-	[comment]State Machine[/comment]
-[for (sm: StateMachine | c.getStateMachines())]
-	//states
-	enum [sm.name/]ListOfStates
-	{
-	[for (state: Vertex | getStates(sm)) before('\t') separator(',\n\t\t')][state.name/][/for]
-	};
-	[sm.name/]ListOfStates currentStateIn[sm.name/];
-[/for]
 };
 
 #endif

@@ -29,11 +29,15 @@ import org.eclipse.papyrus.RobotML.Ground;
 import org.eclipse.papyrus.RobotML.Hardware;
 import org.eclipse.papyrus.RobotML.Human;
 import org.eclipse.papyrus.RobotML.ImageSensorSystem;
+import org.eclipse.papyrus.RobotML.InertialMeasurementUnitSystem;
+import org.eclipse.papyrus.RobotML.InertialNavigationSystem;
+import org.eclipse.papyrus.RobotML.InfraRedProximetrySystem;
 import org.eclipse.papyrus.RobotML.LandSurface;
 import org.eclipse.papyrus.RobotML.LidarSystem;
 import org.eclipse.papyrus.RobotML.LocalizationSensorSystem;
 import org.eclipse.papyrus.RobotML.ObjectDetectionSensorSystem;
 import org.eclipse.papyrus.RobotML.ObjectTrackingSensorSystem;
+import org.eclipse.papyrus.RobotML.OdometrySystem;
 import org.eclipse.papyrus.RobotML.OnPort;
 import org.eclipse.papyrus.RobotML.Pedestrian;
 import org.eclipse.papyrus.RobotML.PhysicalData;
@@ -310,6 +314,22 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAllocate(Allocate object) {
 				return createAllocateAdapter();
+			}
+			@Override
+			public Adapter caseInertialMeasurementUnitSystem(InertialMeasurementUnitSystem object) {
+				return createInertialMeasurementUnitSystemAdapter();
+			}
+			@Override
+			public Adapter caseInertialNavigationSystem(InertialNavigationSystem object) {
+				return createInertialNavigationSystemAdapter();
+			}
+			@Override
+			public Adapter caseOdometrySystem(OdometrySystem object) {
+				return createOdometrySystemAdapter();
+			}
+			@Override
+			public Adapter caseInfraRedProximetrySystem(InfraRedProximetrySystem object) {
+				return createInfraRedProximetrySystemAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -1014,6 +1034,62 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAllocateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotML.InertialMeasurementUnitSystem <em>Inertial Measurement Unit System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.RobotML.InertialMeasurementUnitSystem
+	 * @generated
+	 */
+	public Adapter createInertialMeasurementUnitSystemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotML.InertialNavigationSystem <em>Inertial Navigation System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.RobotML.InertialNavigationSystem
+	 * @generated
+	 */
+	public Adapter createInertialNavigationSystemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotML.OdometrySystem <em>Odometry System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.RobotML.OdometrySystem
+	 * @generated
+	 */
+	public Adapter createOdometrySystemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotML.InfraRedProximetrySystem <em>Infra Red Proximetry System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.RobotML.InfraRedProximetrySystem
+	 * @generated
+	 */
+	public Adapter createInfraRedProximetrySystemAdapter() {
 		return null;
 	}
 

@@ -95,19 +95,29 @@ function [aClass.name/]:__init(name)
 	self:SetJoyStopSteer(0.5)
 	self:SetJoyVCont("v_linear")
 	self:SetJoyPhiCont("phi_steering")
-
 	
 	[generateSystemCommon(aClass, model)/]
 	
+	---- add ROS connectors
+	[for(port : Port | getPortsWithType(aClass, 'VipalabOdometryMessage'))]
+		[if isAnOutputPort(port)]
+	require "LuaVipalabOdometryRosInterface"
+	self.[port.name/] = cycabtk.VipalabOdometryRosInterface( name.."['.' +port.name/]")
+	self:AddPostProcessing( name.."['.' +port.name/]" )
+		[/if]
+	[/for]
+	[for(port : Port | getPortsWithType(aClass, 'VipalabCommandMessage'))]
+		[if isAnOutputPort(port)]
+	require "LuaInputVipalabControllerRosInterface"
+	self.[port.name/] = cycabtk.InputVipalabControllerRosInterface( name.."['.' +port.name/]")
+	self:AddPreProcessing( name.."['.' +port.name/]" )
+		[/if]
+	[/for]
+
 	---- start the Simulated Actors ----
 	self:Start()
 end
-	
-PORTS : lijnlsfd
-	[for(port : Port | getPortsWithType(aClass, 'toto'))]
-		port : [port.type.name/]
-	[/for]
-	
+
 [/let]
 
 [/file]

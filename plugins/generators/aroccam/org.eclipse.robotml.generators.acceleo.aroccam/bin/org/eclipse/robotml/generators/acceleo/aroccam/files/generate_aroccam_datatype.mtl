@@ -54,14 +54,14 @@ struct MultiArrayDimension
 
 struct MultiArrayLayout
 {
-	MultiArrayDimension dim;
+	std::vector<MultiArrayDimension> dim;
 	UInt32 data_offset;
 };
 
 template <typename T>
 struct MultiArray
 {
-	T data;
+	std::vector<T> data;
 	MultiArrayLayout layout;
 };
 
@@ -109,7 +109,7 @@ struct Quaternion
 
 struct Polygon
 {
-	Point32 point;
+	std::vector<Point32> point; //must have minimum 3 elements 
 };
 
 struct Pose
@@ -127,8 +127,8 @@ struct Pose2D
 
 struct PoseArray
 {
-	Pose poses;
 	Header header;
+	std::vector<Pose> poses;
 };
 
 struct Transform
@@ -153,7 +153,7 @@ template<typename T>
 struct GenericWithCovariance
 {
 	T data;
-	Float64 covariance;
+	std::vector<Float64> covariance; //must be 6*6 matrix
 };
 
 typedef GenericWithCovariance<Twist> TwistWithCovariance;
@@ -180,7 +180,7 @@ typedef GenericStamped<Wrench> WrenchStamped;
 struct Path
 {
 	Header header;
-	PoseStamped poses;
+	std::vector<PoseStamped> poses;
 };
 
 struct Odometry
@@ -201,9 +201,9 @@ struct MapMetaData
 
 struct OccupancyGrid
 {
-	MapMetaData info;
-	Int8 data;
 	Header header;
+	MapMetaData info;
+	std::vector<Int8> data;
 };
 
 struct GridCells
@@ -211,7 +211,7 @@ struct GridCells
 	Header header;
 	Float32 cell_height;
 	Float32 cell_width;
-	Point cells;
+	std::vector<Point> cells;
 };
 
 [comment] Sensor Datatypes[/comment]
@@ -238,73 +238,73 @@ struct Range
 
 struct CameraInfo
 {
-	Float64 P;
-	Float64 K;
-	UInt32 beginning_y;
-	Float64 D;
-	UInt32 height;
-	Float64 R;
-	UInt32 beginning_x;
 	Header header;
-	String distorsion_model;
+	UInt32 height;
 	UInt32 width;
+	String distorsion_model;
+	std::vector<Float64> D;
+	std::vector<Float64> K; //must have 9 elements
+	std::vector<Float64> R; //must have 9 elements
+	std::vector<Float64> P; //must have 12 elements
+	UInt32 beginning_x;
+	UInt32 beginning_y;
 	RegionOfInterest roi;
 };
 
 struct Imu
 {
-	Float64 orientation_covariance;
-	Float64 linear_acceleration_covariance;
 	Header header;
-	Float64 angular_velocity_covariance;
 	Quaternion orientation;
-	Vector3 linear_acceleration;
+	std::vector<Float64> orientation_covariance; //must have 9 elements
 	Vector3 angular_velocity;
+	std::vector<Float64> angular_velocity_covariance; //must have 9 elements
+	Vector3 linear_acceleration;
+	std::vector<Float64> linear_acceleration_covariance; //must have 9 elements
 };
 
 struct LaserScan
 {
-	Float32 range_max;
-	Float32 intensities;
-	Float32 scan_time;
-	Float32 angle_min;
-	Float32 range_min;
 	Header header;
-	Float32 range;
-	Float32 angle_increment;
+	Float32 angle_min;
 	Float32 angle_max;
+	Float32 angle_increment;
 	Float32 time_increment;
+	Float32 scan_time;
+	Float32 range_min;
+	Float32 range_max;
+	std::vector<Float32> range;
+	std::vector<Float32> intensities;
 };
 
 struct Image
 {
-	UInt32 step;
 	Header header;
-	UInt8 data;
-	UInt8 is_bigendian;
 	UInt32 height;
-	String encoding;
 	UInt32 width;
+	String encoding;
+	UInt8 is_bigendian;
+	UInt32 step;
+	std::vector<UInt8> data;
 };
 
 struct ChannelFloat32
 {
-	Float32 values;
 	String name;
+	std::vector<Float32> values;
 };
 
 struct CompressedImage
 {
-	String format;
 	Header header;
-	UInt8 data;
+	String format;
+	std::vector<UInt8> data;
 };
 
 struct PointCloud
 {
 	Header header;
-	Point32 points;
-	ChannelFloat32 channels;
+	std::vector<Point32> points;
+	std::vector<ChannelFloat32> channels;
 };
 
 struct PointField
@@ -317,23 +317,23 @@ struct PointField
 
 struct PointCloud2
 {
-	UInt32 width;
-	Bool is_dense;
-	UInt32 point_step;
-	PointField fields;
-	UInt32 height;
-	Bool is_bigendian;
-	UInt8 data;
 	Header header;
+	UInt32 height;
+	UInt32 width;
+	std::vector<PointField> fields;
+	Bool is_bigendian;
+	UInt32 point_step;
 	UInt32 row_step;
+	std::vector<UInt8> data;
+	Bool is_dense;
 };
 
 struct JointState
 {
-	Float64 velocity;
-	Float64 position;
-	Float64 effort;
-	String name;
+	std::vector<Float64> velocity;
+	std::vector<Float64> position;
+	std::vector<Float64> effort;
+	std::vector<String> name;
 };
 
 struct NavSatStatus
@@ -352,34 +352,38 @@ struct NavSatStatus
 
 struct NavSatFix
 {
-	Float64 longitude;
-	UInt16 SERVICE_GLONASS;
-	UInt8 COVARIANCE_TYPE_UNKNOWN;
-	UInt8  COVARIANCE_TYPE_DIAGONAL_KNOWN;
 	Int8 STATUS_NO_FIX;
-	Float64 latitude;
-	NavSatFix * status;
-	UInt16 SERVICE_GALILEO;
-	Int8 STATUS_SBAS_FIX;
-	UInt8 COVARIANCE_TYPE_KNOWN;
-	Int8 STATUS_GBAS_FIX;
-	UInt8 position_covariance_type;
-	UInt16 SERVICE_COMPASS;
-	UInt16 SERVICE_GPS;
-	UInt8 COVARIANCE_TYPE_APPROXIMATED;
-	Header header;
-	UInt16 service;
-	Float64 altitude;
 	Int8 STATUS_FIX;
-	Int8 statusCode;
-	Float64 position_covariance;
+	Int8 STATUS_SBAS_FIX;
+	Int8 STATUS_GBAS_FIX;
+	Int8 status;
+
+	UInt16 SERVICE_GPS;
+	UInt16 SERVICE_GLONASS;
+	UInt16 SERVICE_COMPASS;
+	UInt16 SERVICE_GALILEO;
+
+	UInt16 service;
+
+	Header header;
+
+	Float64 latitude;
+	Float64 longitude;
+	Float64 altitude;
+	std::vector<Float64> position_covariance;
+
+	UInt8 COVARIANCE_TYPE_UNKNOWN;
+	UInt8 COVARIANCE_TYPE_APPROXIMATED;
+	UInt8 COVARIANCE_TYPE_DIAGONAL_KNOWN;
+	UInt8 COVARIANCE_TYPE_KNOWN;
+	UInt8 position_covariance_type;
 };
 
 struct Joy
 {
-	Int32 buttons;
-	Float32 axes;
 	Header header;
+	std::vector<Float32> axes;
+	std::vector<Int32> buttons;
 };
 
 struct JoyFeedback
@@ -394,7 +398,26 @@ struct JoyFeedback
 
 struct JoyFeedbackArray
 {
-	JoyFeedback array;
+	std::vector<JoyFeedback> array;
+};
+
+struct CarLikeOdometry
+{
+	Header header;
+	Float64 steering_angle;
+	Float64 left_rear_wheel_distance;
+	Float64 right_rear_wheel_distance;
+	Float64 right_rear_wheel_velocity;
+	Float64 left_rear_wheel_velocity;
+};
+
+struct DifferentialOdometry
+{
+	Header header;
+	Float64 right_distance;
+	Float64 left_distance;
+	Float64 left_velocity;
+	Float64 right_velocity;
 };
 
 [comment] Diagnostic Datatypes[/comment]
@@ -407,21 +430,21 @@ struct KeyValue
 
 struct DiagnosticStatus
 {
+	Byte OK;
 	Byte WARN;
 	Byte ERROR;
-	KeyValue values;
-	String hardware_id;
 	Byte level;
-	Byte OK;
 	String name;
 	String message;
+	String hardware_id;
+	std::vector<KeyValue> values;
 };
 
 struct DiagnosticArray
 {
 	Header header;
-	KeyValue values;
-	DiagnosticStatus status;
+	std::vector<DiagnosticStatus> status;
+	std::vector<KeyValue> values;
 };
 
 [comment] Actionlib Datatypes[/comment]
@@ -434,24 +457,24 @@ struct GoalID
 
 struct GoalStatus
 {
-	UInt8 RECALLING;
-	UInt8 REJECTED;
-	UInt8 LOST;
-	UInt8 SUCCEEDED;
-	UInt8 ABORTED;
-	UInt8 PREEMPTED;
-	UInt8 RECALLED;
 	UInt8 PENDING;
 	UInt8 ACTIVE;
-	UInt8 status;
-	String text;
+	UInt8 PREEMPTED;
+	UInt8 SUCCEEDED;
+	UInt8 ABORTED;
+	UInt8 REJECTED;
 	UInt8 PREEMPTING;
+	UInt8 RECALLING;
+	UInt8 RECALLED;
+	UInt8 LOST;
+	String text;
+	UInt8 status;
 };
 
 struct GoalStatusArray
 {
-	GoalStatus status_list;
 	Header header;
+	std::vector<GoalStatus> status_list;
 };
 
 #endif

@@ -1,15 +1,52 @@
 *.class
+*.jar
+*.DS_Store
+
+# emacs temporary files
+*~
 
 # Package Files #
 *.war
 *.ear
 *.emtl
+
+# Visual Studio secondary files
+*.suo
+*.sdf
+*.opensdf
+*.vcxproj.user
+
+#ignore binary files
+plugins/*/bin/*
+
+# Generators compiled binary files
 plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo/bin/*
-<<<<<<< HEAD
 plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo.athena/bin/*
+
 plugins/generators/RTMaps/org.eclipse.robotml.generators.acceleo.rtmaps/bin/*
 plugins/generators/RTMaps/org.eclipse.robotml.generators.acceleo.rtmaps.ui/bin/*
-=======
-plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo.rtmaps/bin/*
-plugins/generators/acceleo/org.eclipse.robotml.generators.acceleo.rtmaps/tasks/*
->>>>>>> origin/master
+
+plugins/generators/CycabTK/org.eclipse.robotml.generators.acceleo.cycabtk/bin/*
+plugins/generators/CycabTK/org.eclipse.robotml.generators.acceleo.cycabtk.ui/bin/*
+
+plugins/athenaDSL/org.xtext.AthenaDSL.ui/bin/*
+plugins/athenaDSL/org.xtext.AthenaDSL/bin/*
+
+plugins/athenaml/org.eclipse.papyrus.robotml.athenaml/bin/*
+
+plugins/generators/VLE/org.eclipse.robotml.generators.xtext.athena.vle/bin/*
+
+plugins/generators/athena/org.eclipse.robotml.generators.acceleo.athena/bin/*
+plugins/generators/athena/org.eclipse.robotml.generators.xtext.athena.simu/bin/*
+
+plugins/generators/MORSE/org.eclipse.robotml.generators.acceleo.morse/bin/*
+plugins/generators/MORSE/org.eclipse.robotml.generators.acceleo.morse.ui/bin/*
+
+# RTMaps resources intermediate binary files
+plugins/generators/RTMaps/rtmaps_resources/rtmaps_4_sdk_proteus/build/*
+plugins/generators/RTMaps/rtmaps_resources/rtmaps_4_sdk_proteus/ipch/*
+plugins/generators/RTMaps/rtmaps_resources/rtmaps_4_sdk_proteus/packages/debug/*
+
+# generated .html files
+plugins/robotml/*/*.html
+

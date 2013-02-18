@@ -1,0 +1,59 @@
+//-----import package-----
+
+import ("rtt_sensor_msgs")
+import ("rtt_nav_msgs")
+import ("rtt_geometry_msgs")
+import ("rtt_std_msgs")
+
+import ("rtt_sensor_msgs")
+import ("rtt_nav_msgs")
+import ("rtt_geometry_msgs")
+import ("rtt_std_msgs")
+import ("rtt_sensor_msgs")
+import ("rtt_nav_msgs")
+import ("rtt_geometry_msgs")
+import ("rtt_std_msgs")
+
+import ("rtt_sensor_msgs")
+import ("rtt_nav_msgs")
+import ("rtt_geometry_msgs")
+import ("rtt_std_msgs")
+import ("rtt_sensor_msgs")
+import ("rtt_nav_msgs")
+import ("rtt_geometry_msgs")
+import ("rtt_std_msgs")
+import ("rtt_sensor_msgs")
+import ("rtt_nav_msgs")
+import ("rtt_geometry_msgs")
+import ("rtt_std_msgs")
+
+//-----load components-----
+loadComponent("ChassisRobot","Sensors ::ChassisRobot")
+loadComponent("Perception","Robotic SubSystems::Perception")
+loadComponent("Pilote","Robotic SubSystems::Pilote")
+
+//-----setting components activities-----
+var double period = 1.0; //in seconds, period of the activity (0.0 if non periodic)
+var int priority = LowestPriority; //LowestPriority = 1, HighestPriority = 99
+var int scheduler = ORO_SCHED_OTHER; // ORO_SCHED_OTHER = 0, ORO_SCHED_RT = 1
+setActivity("ChassisRobot", period, priority, scheduler)
+setActivity("Perception", period, priority, scheduler)
+setActivity("Pilote", period, priority, scheduler)
+
+//-----set connections between components-----
+//-----connecting ports-----
+
+
+
+//-----configure components-----
+ChassisRobot.configure()
+Perception.configure()
+Pilote.configure()
+
+#configureComponents()
+
+//-----starting components-----
+ChassisRobot.start()
+Perception.start()
+Pilote.start()
+#startComponents()

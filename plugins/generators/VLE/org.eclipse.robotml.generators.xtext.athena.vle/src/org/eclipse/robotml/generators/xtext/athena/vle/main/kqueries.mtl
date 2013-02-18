@@ -82,8 +82,8 @@
 	invoke('org.eclipse.robotml.generators.xtext.athena.vle.main.JavaService', 'getStringFromQualifiedName(org.xtext.athenaDSL.qualifiedName)', Sequence{qn}) 
 /]
 
-[query  public getArrayAllocationCall(name : String,array : arrayType) : String = 
-	invoke('org.eclipse.robotml.generators.xtext.athena.vle.main.JavaService', 'getArrayAllocationCall(java.lang.String,org.xtext.athenaDSL.arrayType)', Sequence{array}) 
+[query  public getArrayAllocationCall(name : String, array : athenaDSL::arrayType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.vle.main.JavaService', 'getArrayAllocationCall(java.lang.String, org.xtext.athenaDSL.arrayType)', Sequence{name, array}) 
 /]
 
 [query  public getParameterNbWriters(param : athenaDSL::parameterDeclaration) : Integer = 

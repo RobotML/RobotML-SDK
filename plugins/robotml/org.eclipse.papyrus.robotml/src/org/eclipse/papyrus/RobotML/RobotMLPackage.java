@@ -3859,6 +3859,379 @@ public interface RobotMLPackage extends EPackage {
 	int ALLOCATE_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.InertialMeasurementUnitSystemImpl <em>Inertial Measurement Unit System</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.RobotML.impl.InertialMeasurementUnitSystemImpl
+	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getInertialMeasurementUnitSystem()
+	 * @generated
+	 */
+	int INERTIAL_MEASUREMENT_UNIT_SYSTEM = 49;
+
+	/**
+	 * The feature id for the '<em><b>Base Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_MEASUREMENT_UNIT_SYSTEM__BASE_CLASS = SENSOR_SYSTEM__BASE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Native</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_MEASUREMENT_UNIT_SYSTEM__NATIVE = SENSOR_SYSTEM__NATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Library Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_MEASUREMENT_UNIT_SYSTEM__LIBRARY_PATH = SENSOR_SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_MEASUREMENT_UNIT_SYSTEM__LIBRARY_COMPONENT_NAME = SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_MEASUREMENT_UNIT_SYSTEM__LOCAL_POSITION = SENSOR_SYSTEM__LOCAL_POSITION;
+
+	/**
+	 * The feature id for the '<em><b>Local Orientation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_MEASUREMENT_UNIT_SYSTEM__LOCAL_ORIENTATION = SENSOR_SYSTEM__LOCAL_ORIENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_MEASUREMENT_UNIT_SYSTEM__FREQUENCY = SENSOR_SYSTEM__FREQUENCY;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_MEASUREMENT_UNIT_SYSTEM__IDENTIFIER = SENSOR_SYSTEM__IDENTIFIER;
+
+	/**
+	 * The number of structural features of the '<em>Inertial Measurement Unit System</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_MEASUREMENT_UNIT_SYSTEM_FEATURE_COUNT = SENSOR_SYSTEM_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.InertialNavigationSystemImpl <em>Inertial Navigation System</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.RobotML.impl.InertialNavigationSystemImpl
+	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getInertialNavigationSystem()
+	 * @generated
+	 */
+	int INERTIAL_NAVIGATION_SYSTEM = 50;
+
+	/**
+	 * The feature id for the '<em><b>Base Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_NAVIGATION_SYSTEM__BASE_CLASS = GPS_SYSTEM__BASE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Native</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_NAVIGATION_SYSTEM__NATIVE = GPS_SYSTEM__NATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Library Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_NAVIGATION_SYSTEM__LIBRARY_PATH = GPS_SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_NAVIGATION_SYSTEM__LIBRARY_COMPONENT_NAME = GPS_SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_NAVIGATION_SYSTEM__LOCAL_POSITION = GPS_SYSTEM__LOCAL_POSITION;
+
+	/**
+	 * The feature id for the '<em><b>Local Orientation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_NAVIGATION_SYSTEM__LOCAL_ORIENTATION = GPS_SYSTEM__LOCAL_ORIENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_NAVIGATION_SYSTEM__FREQUENCY = GPS_SYSTEM__FREQUENCY;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_NAVIGATION_SYSTEM__IDENTIFIER = GPS_SYSTEM__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Origin Position</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_NAVIGATION_SYSTEM__ORIGIN_POSITION = GPS_SYSTEM__ORIGIN_POSITION;
+
+	/**
+	 * The number of structural features of the '<em>Inertial Navigation System</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INERTIAL_NAVIGATION_SYSTEM_FEATURE_COUNT = GPS_SYSTEM_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.OdometrySystemImpl <em>Odometry System</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.RobotML.impl.OdometrySystemImpl
+	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getOdometrySystem()
+	 * @generated
+	 */
+	int ODOMETRY_SYSTEM = 51;
+
+	/**
+	 * The feature id for the '<em><b>Base Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODOMETRY_SYSTEM__BASE_CLASS = LOCALIZATION_SENSOR_SYSTEM__BASE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Native</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODOMETRY_SYSTEM__NATIVE = LOCALIZATION_SENSOR_SYSTEM__NATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Library Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODOMETRY_SYSTEM__LIBRARY_PATH = LOCALIZATION_SENSOR_SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODOMETRY_SYSTEM__LIBRARY_COMPONENT_NAME = LOCALIZATION_SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODOMETRY_SYSTEM__LOCAL_POSITION = LOCALIZATION_SENSOR_SYSTEM__LOCAL_POSITION;
+
+	/**
+	 * The feature id for the '<em><b>Local Orientation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODOMETRY_SYSTEM__LOCAL_ORIENTATION = LOCALIZATION_SENSOR_SYSTEM__LOCAL_ORIENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODOMETRY_SYSTEM__FREQUENCY = LOCALIZATION_SENSOR_SYSTEM__FREQUENCY;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODOMETRY_SYSTEM__IDENTIFIER = LOCALIZATION_SENSOR_SYSTEM__IDENTIFIER;
+
+	/**
+	 * The number of structural features of the '<em>Odometry System</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODOMETRY_SYSTEM_FEATURE_COUNT = LOCALIZATION_SENSOR_SYSTEM_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.InfraRedProximetrySystemImpl <em>Infra Red Proximetry System</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.RobotML.impl.InfraRedProximetrySystemImpl
+	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getInfraRedProximetrySystem()
+	 * @generated
+	 */
+	int INFRA_RED_PROXIMETRY_SYSTEM = 52;
+
+	/**
+	 * The feature id for the '<em><b>Base Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_PROXIMETRY_SYSTEM__BASE_CLASS = OBJECT_DETECTION_SENSOR_SYSTEM__BASE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Native</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_PROXIMETRY_SYSTEM__NATIVE = OBJECT_DETECTION_SENSOR_SYSTEM__NATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Library Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_PROXIMETRY_SYSTEM__LIBRARY_PATH = OBJECT_DETECTION_SENSOR_SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_PROXIMETRY_SYSTEM__LIBRARY_COMPONENT_NAME = OBJECT_DETECTION_SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_PROXIMETRY_SYSTEM__LOCAL_POSITION = OBJECT_DETECTION_SENSOR_SYSTEM__LOCAL_POSITION;
+
+	/**
+	 * The feature id for the '<em><b>Local Orientation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_PROXIMETRY_SYSTEM__LOCAL_ORIENTATION = OBJECT_DETECTION_SENSOR_SYSTEM__LOCAL_ORIENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_PROXIMETRY_SYSTEM__FREQUENCY = OBJECT_DETECTION_SENSOR_SYSTEM__FREQUENCY;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_PROXIMETRY_SYSTEM__IDENTIFIER = OBJECT_DETECTION_SENSOR_SYSTEM__IDENTIFIER;
+
+	/**
+	 * The number of structural features of the '<em>Infra Red Proximetry System</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFRA_RED_PROXIMETRY_SYSTEM_FEATURE_COUNT = OBJECT_DETECTION_SENSOR_SYSTEM_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.RobotKind <em>Robot Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3866,7 +4239,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getRobotKind()
 	 * @generated
 	 */
-	int ROBOT_KIND = 49;
+	int ROBOT_KIND = 53;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.UGVKind <em>UGV Kind</em>}' enum.
@@ -3876,7 +4249,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getUGVKind()
 	 * @generated
 	 */
-	int UGV_KIND = 50;
+	int UGV_KIND = 54;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.SynchronizationKind <em>Synchronization Kind</em>}' enum.
@@ -3886,7 +4259,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getSynchronizationKind()
 	 * @generated
 	 */
-	int SYNCHRONIZATION_KIND = 51;
+	int SYNCHRONIZATION_KIND = 55;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.DataFlowDirectionKind <em>Data Flow Direction Kind</em>}' enum.
@@ -3896,7 +4269,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getDataFlowDirectionKind()
 	 * @generated
 	 */
-	int DATA_FLOW_DIRECTION_KIND = 52;
+	int DATA_FLOW_DIRECTION_KIND = 56;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.ServiceFlowKind <em>Service Flow Kind</em>}' enum.
@@ -3906,7 +4279,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getServiceFlowKind()
 	 * @generated
 	 */
-	int SERVICE_FLOW_KIND = 53;
+	int SERVICE_FLOW_KIND = 57;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.UnitKind <em>Unit Kind</em>}' enum.
@@ -3916,7 +4289,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getUnitKind()
 	 * @generated
 	 */
-	int UNIT_KIND = 54;
+	int UNIT_KIND = 58;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.RoboticMiddlewareKind <em>Robotic Middleware Kind</em>}' enum.
@@ -3926,7 +4299,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getRoboticMiddlewareKind()
 	 * @generated
 	 */
-	int ROBOTIC_MIDDLEWARE_KIND = 55;
+	int ROBOTIC_MIDDLEWARE_KIND = 59;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.Shade <em>Shade</em>}' enum.
@@ -3936,7 +4309,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getShade()
 	 * @generated
 	 */
-	int SHADE = 56;
+	int SHADE = 60;
 
 
 	/**
@@ -5508,6 +5881,46 @@ public interface RobotMLPackage extends EPackage {
 	EReference getAllocate_Base_Abstraction();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.InertialMeasurementUnitSystem <em>Inertial Measurement Unit System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Inertial Measurement Unit System</em>'.
+	 * @see org.eclipse.papyrus.RobotML.InertialMeasurementUnitSystem
+	 * @generated
+	 */
+	EClass getInertialMeasurementUnitSystem();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.InertialNavigationSystem <em>Inertial Navigation System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Inertial Navigation System</em>'.
+	 * @see org.eclipse.papyrus.RobotML.InertialNavigationSystem
+	 * @generated
+	 */
+	EClass getInertialNavigationSystem();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.OdometrySystem <em>Odometry System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Odometry System</em>'.
+	 * @see org.eclipse.papyrus.RobotML.OdometrySystem
+	 * @generated
+	 */
+	EClass getOdometrySystem();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.InfraRedProximetrySystem <em>Infra Red Proximetry System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Infra Red Proximetry System</em>'.
+	 * @see org.eclipse.papyrus.RobotML.InfraRedProximetrySystem
+	 * @generated
+	 */
+	EClass getInfraRedProximetrySystem();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.RobotML.RobotKind <em>Robot Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6882,6 +7295,46 @@ public interface RobotMLPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ALLOCATE__BASE_ABSTRACTION = eINSTANCE.getAllocate_Base_Abstraction();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.InertialMeasurementUnitSystemImpl <em>Inertial Measurement Unit System</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.RobotML.impl.InertialMeasurementUnitSystemImpl
+		 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getInertialMeasurementUnitSystem()
+		 * @generated
+		 */
+		EClass INERTIAL_MEASUREMENT_UNIT_SYSTEM = eINSTANCE.getInertialMeasurementUnitSystem();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.InertialNavigationSystemImpl <em>Inertial Navigation System</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.RobotML.impl.InertialNavigationSystemImpl
+		 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getInertialNavigationSystem()
+		 * @generated
+		 */
+		EClass INERTIAL_NAVIGATION_SYSTEM = eINSTANCE.getInertialNavigationSystem();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.OdometrySystemImpl <em>Odometry System</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.RobotML.impl.OdometrySystemImpl
+		 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getOdometrySystem()
+		 * @generated
+		 */
+		EClass ODOMETRY_SYSTEM = eINSTANCE.getOdometrySystem();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.InfraRedProximetrySystemImpl <em>Infra Red Proximetry System</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.RobotML.impl.InfraRedProximetrySystemImpl
+		 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getInfraRedProximetrySystem()
+		 * @generated
+		 */
+		EClass INFRA_RED_PROXIMETRY_SYSTEM = eINSTANCE.getInfraRedProximetrySystem();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.RobotKind <em>Robot Kind</em>}' enum.

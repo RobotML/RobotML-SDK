@@ -17,20 +17,24 @@ public class CycabTKQueries {
 	 */
 	static public List<org.eclipse.uml2.uml.Port> getPortsWithType(org.eclipse.uml2.uml.Class c, String typeName)
 	{
-		System.out.println("Entering query getPortsWithType");
-		System.out.println("class name : " + c.getName()); 
+//		System.out.println("Entering query getPortsWithType");
+//		System.out.println("class name : " + c.getName()); 
+//		System.out.println("Search typeName : " + typeName);
 				
 		LinkedList<org.eclipse.uml2.uml.Port> ports = new LinkedList<org.eclipse.uml2.uml.Port>();	
 		
 		for(Property component : ArchitectureQueries.getAllSubComponentsInClass(c))
 		{
-			System.out.println("component : " + component.getName());
+			//System.out.println("component : " + component.getName());
 			Type propType = component.getType();
 			if (GeneralQueries.isClass(propType)) {
 				for( org.eclipse.uml2.uml.Property prop :((org.eclipse.uml2.uml.Class) propType).getAllAttributes()){
 					if(prop instanceof org.eclipse.uml2.uml.Port){
-						System.out.println("\tport : " + prop.getName()); 
-						ports.add((Port) prop);
+						//System.out.println("\tports : " + prop.getName() + " / " + prop.getType().getName());
+						if (typeName.equals(prop.getType().getName())) {
+							//System.out.println("\t\t tototo port : " + prop.getName() + " / " + prop.getType().getName()); 
+							ports.add((Port) prop);							
+						}
 					}
 				}
 				

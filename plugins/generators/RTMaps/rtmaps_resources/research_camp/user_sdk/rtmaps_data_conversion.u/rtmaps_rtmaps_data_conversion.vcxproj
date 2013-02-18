@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>rtmaps_data_conversion</ProjectName>
+    <ProjectGuid>{E6548F6C-CC5C-4A05-99F0-66D7E4BE1A8A}</ProjectGuid>
+    <RootNamespace>rtmaps_data_conversion</RootNamespace>
+    <SccLocalPath>.</SccLocalPath>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(RTMAPS_SDKDIR)\templates.u\RTMaps_x86_Debug_vc2010.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(RTMAPS_SDKDIR)\templates.u\RTMaps_x86_Release_vc2010.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Link>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <AdditionalDependencies>rtmaps_pck.lib;msvcrt.lib;msvcprt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Link>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <AdditionalDependencies>rtmaps_pck.lib;msvcrt.lib;msvcprt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup Label="RTMaps_sources">
+    <None Include="rtmaps_data_conversion.pckinfo" />
+  </ItemGroup>
+  <ItemGroup Label="RTMaps_headers">
+    <ClCompile Include="src\maps_camera_image_rtmaps_to_robotml.cpp" />
+    <ClCompile Include="src\maps_gps_rtmaps_to_robotml.cpp" />
+    <ClCompile Include="src\maps_imu_rtmaps_to_robotml.cpp" />
+    <ClCompile Include="src\maps_lidar_scan_rtmaps_to_robotml.cpp" />
+    <ClCompile Include="src\maps_wifibot_inputs_robotml_to_rtmaps.cpp" />
+    <ClCompile Include="src\maps_wifibot_outputs_rtmaps_to_robotml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="local_interfaces\maps_camera_image_rtmaps_to_robotml.h" />
+    <ClInclude Include="local_interfaces\maps_gps_rtmaps_to_robotml.h" />
+    <ClInclude Include="local_interfaces\maps_imu_rtmaps_to_robotml.h" />
+    <ClInclude Include="local_interfaces\maps_lidar_scan_rtmaps_to_robotml.h" />
+    <ClInclude Include="local_interfaces\maps_proxi_rtmaps_to_robotml.h" />
+    <ClInclude Include="local_interfaces\maps_wifibot_inputs_robotml_to_rtmaps.h" />
+    <ClInclude Include="local_interfaces\maps_wifibot_odometry_rtmaps_to_robotml.h" />
+    <ClInclude Include="local_interfaces\maps_wifibot_outputs_rtmaps_to_robotml.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

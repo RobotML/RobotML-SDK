@@ -1,15 +1,11 @@
-RobotML-SDK
-===========
+RobotML-SDK 1.0
+===============
 
 Documentation of the project is available here: http://robotml.github.com/
 
-This repository includes every part of the RobotML development. It means:
+This repository includes every part of the RobotML development. It includes:
 
-  - installer: for the different Robotic middleware defined in the project to be installed onto the UBUNTU 12.04 OS
-  - plugins: that groups all the different eclipse development allowing the RObotML-platform to exist
-
-The other folders are only for the sake of future data
-
-  - tests: is to be linked to the work done by OARPS / challenge
-  - examples: is also to be linked to above folder
+  - installer: for the different Robotic middleware defined in the project to be installed onto the Linux UBUNTU 12.04 OS,
+  - plugins: contains the RoboML generator to different middlewares.
+  - tests: contains tests ressources like models
   - documents: it is necessary to load error files or other data useful for the different issues

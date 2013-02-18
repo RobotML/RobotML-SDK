@@ -275,6 +275,8 @@ void MAPS[c.name/]::FreeBuffers()
 			[/if]
 		[/for]
 		[/let]
+	
+	MAPSComponent::FreeBuffers();
 }
 [/if]
 

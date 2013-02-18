@@ -24,6 +24,7 @@
 #include <boost/function.hpp>
 #include "Compatibility.hpp"
 #include "FunctionDirectory.hpp"
+#include "FunctionLibrary.hpp"
 
 namespace vd = vle::devs;
 namespace vv = vle::value;
@@ -33,6 +34,10 @@ namespace vu = vle::utils;
 [comment]extern "C" __IMPORT__ void* getUserFunction(const std::string&);[/comment]
 
 namespace generated {
+
+extern "C++" FunctionDirectory* FunctionDirectory::_instance;
+extern "C++" FunctionLibrary* FunctionLibrary::_instance;
+
 class [proto.name/] : public vd::Dynamics {
 
 private:
@@ -257,6 +262,9 @@ virtual ~[proto.name/]() {
 
 virtual vd::Time init(const vd::Time& time) {
 	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - Init at time : " + time.toString());
+
+	FunctionLibrary::getInstance();
+	FunctionDirectory::getInstance();
 
 [for (p : prototypeDeclaration | project.prototypes)]
 [if (isAnAncestorOf(proto, p))]

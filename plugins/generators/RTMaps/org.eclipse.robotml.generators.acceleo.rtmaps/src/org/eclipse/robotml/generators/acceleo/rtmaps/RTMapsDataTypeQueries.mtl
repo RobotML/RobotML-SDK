@@ -52,3 +52,12 @@ knowledge of the CeCILL-C license and that you accept its terms.
 
 [query public setVectorSizeForVector(type_name : String, nb_elements : Integer, ioelt_name : String) : String
 	= invoke('org.eclipse.robotml.generators.acceleo.rtmaps.RTMapsDataTypeQueries', 'setVectorSizeForVector(java.lang.String, int, java.lang.String)', Sequence{type_name, nb_elements, ioelt_name}) /]
+
+[query public hasRTMapsNativeImplementation(c : Class) : Boolean
+	= invoke('org.eclipse.robotml.generators.acceleo.rtmaps.RTMapsDataTypeQueries', 'hasRTMapsNativeImplementation(org.eclipse.uml2.uml.Class)', Sequence{c}) /]
+
+[query public getRTMapsNativeComponentNameFromGenericAttribute(c : Class) : String
+	= invoke('org.eclipse.robotml.generators.acceleo.rtmaps.RTMapsDataTypeQueries', 'getRTMapsNativeComponentNameFromGenericAttribute(org.eclipse.uml2.uml.Class)', Sequence{c}) /]
+
+[query public getRTMapsNativeLibraryPathFromGenericAttribute(c : Class) : String
+	= invoke('org.eclipse.robotml.generators.acceleo.rtmaps.RTMapsDataTypeQueries', 'getRTMapsNativeLibraryPathFromGenericAttribute(org.eclipse.uml2.uml.Class)', Sequence{c}) /]

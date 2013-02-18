@@ -3,6 +3,7 @@
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -73,8 +74,48 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 			case Sensor_datatypesPackage.JOY: return createJoy();
 			case Sensor_datatypesPackage.JOY_FEEDBACK: return createJoyFeedback();
 			case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY: return createJoyFeedbackArray();
+			case Sensor_datatypesPackage.CAR_LIKE_ODOMETRY: return createCarLikeOdometry();
+			case Sensor_datatypesPackage.DIFFERENTIAL_ODOMETRY: return createDifferentialOdometry();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case Sensor_datatypesPackage.STATUS_TYPE:
+				return createSTATUS_TYPEFromString(eDataType, initialValue);
+			case Sensor_datatypesPackage.SERVICE_TYPE:
+				return createSERVICE_TYPEFromString(eDataType, initialValue);
+			case Sensor_datatypesPackage.COVARIANCE_TYPE:
+				return createCOVARIANCE_TYPEFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case Sensor_datatypesPackage.STATUS_TYPE:
+				return convertSTATUS_TYPEToString(eDataType, instanceValue);
+			case Sensor_datatypesPackage.SERVICE_TYPE:
+				return convertSERVICE_TYPEToString(eDataType, instanceValue);
+			case Sensor_datatypesPackage.COVARIANCE_TYPE:
+				return convertCOVARIANCE_TYPEToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -246,6 +287,86 @@ public class Sensor_datatypesFactoryImpl extends EFactoryImpl implements Sensor_
 	public JoyFeedbackArray createJoyFeedbackArray() {
 		JoyFeedbackArrayImpl joyFeedbackArray = new JoyFeedbackArrayImpl();
 		return joyFeedbackArray;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CarLikeOdometry createCarLikeOdometry() {
+		CarLikeOdometryImpl carLikeOdometry = new CarLikeOdometryImpl();
+		return carLikeOdometry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DifferentialOdometry createDifferentialOdometry() {
+		DifferentialOdometryImpl differentialOdometry = new DifferentialOdometryImpl();
+		return differentialOdometry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public STATUS_TYPE createSTATUS_TYPEFromString(EDataType eDataType, String initialValue) {
+		STATUS_TYPE result = STATUS_TYPE.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSTATUS_TYPEToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SERVICE_TYPE createSERVICE_TYPEFromString(EDataType eDataType, String initialValue) {
+		SERVICE_TYPE result = SERVICE_TYPE.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSERVICE_TYPEToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public COVARIANCE_TYPE createCOVARIANCE_TYPEFromString(EDataType eDataType, String initialValue) {
+		COVARIANCE_TYPE result = COVARIANCE_TYPE.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCOVARIANCE_TYPEToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

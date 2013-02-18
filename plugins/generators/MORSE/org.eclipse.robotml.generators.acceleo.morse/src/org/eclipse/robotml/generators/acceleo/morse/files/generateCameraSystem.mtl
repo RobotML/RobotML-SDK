@@ -1,0 +1,42 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generateCameraSystem.
+ */]
+[module generateCameraSystem('http://www.eclipse.org/uml2/3.0.0/UML')]
+
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+
+[**
+ * The documentation of the template generateCameraSystem.
+ * @param aClass
+ * @param aModel
+ */]
+
+[template public generateCameraSystem(aClass : Class, aModel : Model)]
+[comment TODO: Generate a class for Video Camera instead of an instance /]
+
+[file (aClass.name, false, 'UTF-8')]
+
+camera = Sensor('video_camera')
+
+[comment Used formula here: http://www.openrobots.org/morse/doc/stable/user/sensors/video_camera.html#camera-calibration-matrix /]
+height = [getAttributeValue(aClass, 'u_0', 'CameraSystem', '0')/]*2
+width = [getAttributeValue(aClass, 'v_0', 'CameraSystem', '0')/]*2
+alpha_u = [getAttributeValue(aClass, 'alpha_u', 'CameraSystem', '0')/]
+alpha_v = [getAttributeValue(aClass, 'alpha_v', 'CameraSystem', '0')/]
+
+if (width>height):
+	focal = (alpha_u+alpha_v)/2*32/width
+else:
+	focal = (alpha_u+alpha_v)/2*32/height
+
+camera.properties(cam_width = width,
+                  cam_height = height,
+				  cam_focal = focal)
+
+camera.frequency([getAttributeValue(aClass, 'frequency', 'CameraSystem', '25.')/])
+
+camera.configure_mw('ros')
+robot.append(camera)
+[/file]
+[/template]

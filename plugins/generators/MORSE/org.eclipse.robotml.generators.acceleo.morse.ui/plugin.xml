@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.uml"
+            id="org.eclipse.robotml.generators.acceleo.morse.ui.popupMenus.contribution.IFile">
+         <menu id="org.eclipse.acceleo.module.menu" label="Proteus UML Model" path="additionsAcceleo">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               class="org.eclipse.robotml.generators.acceleo.morse.ui.popupMenus.AcceleoGenerateMorseAction"
+               enablesFor="+"
+               id="org.eclipse.robotml.generators.acceleo.morse.ui.popupMenus.acceleoGenerateMorseAction"
+               icon="icons/default.gif"
+               label="Generate to Morse"
+               menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
+      </objectContribution>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.papyrus.robotML.modelexplorer.popupmenu.generate">
+         <command
+               commandId="org.eclipse.robotML.generateMorseCommand"
+               icon="icons/default.gif"
+               id="org.eclipse.robotML.generateMorse"
+               label="Generate to Morse"
+               style="push"
+               tooltip="Generate code to Morse simulator">
+           
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            description="Generate to Morse simulator"
+            id="org.eclipse.robotML.generateMorseCommand"
+            name="Generate to Morse">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.eclipse.robotml.generators.acceleo.morse.ui.handler.AcceleoGenerateMorseCommandHandler"
+            commandId="org.eclipse.robotML.generateMorseCommand">
+      </handler>
+   </extension>
+
+</plugin>

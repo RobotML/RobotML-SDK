@@ -1,4 +1,4 @@
-RobotML-SDK 1.0
+RobotML-SDK 1.1
 ===============
 
 Documentation of the project is available here: http://robotml.github.com/

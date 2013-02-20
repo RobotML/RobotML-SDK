@@ -2558,20 +2558,4 @@
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_GqMPrHUwEeKtkpd6W4BP5g"/>
   </notation:Diagram>
-  <notation:Diagram xmi:id="_GqOEIHUwEeKtkpd6W4BP5g" type="DatatypeDef" name="A detruire" measurementUnit="Pixel">
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_GqOEIXUwEeKtkpd6W4BP5g"/>
-    <element xmi:type="uml:Model" href="model.uml#_GqCd8HUwEeKtkpd6W4BP5g"/>
-  </notation:Diagram>
-  <notation:Diagram xmi:id="_GqOrMHUwEeKtkpd6W4BP5g" type="InterfaceDef" name="A detruire" measurementUnit="Pixel">
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_GqOrMXUwEeKtkpd6W4BP5g"/>
-    <element xmi:type="uml:Model" href="model.uml#_GqCd8HUwEeKtkpd6W4BP5g"/>
-  </notation:Diagram>
-  <notation:Diagram xmi:id="_GqP5UHUwEeKtkpd6W4BP5g" type="architecture" name="A detruire" measurementUnit="Pixel">
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_GqP5UXUwEeKtkpd6W4BP5g"/>
-    <element xmi:type="uml:Model" href="model.uml#_GqCd8HUwEeKtkpd6W4BP5g"/>
-  </notation:Diagram>
-  <notation:Diagram xmi:id="_GqS8oHUwEeKtkpd6W4BP5g" type="componentdef" name="A detruire" measurementUnit="Pixel">
-    <styles xmi:type="notation:DiagramStyle" xmi:id="_GqS8oXUwEeKtkpd6W4BP5g"/>
-    <element xmi:type="uml:Model" href="model.uml#_GqCd8HUwEeKtkpd6W4BP5g"/>
-  </notation:Diagram>
 </xmi:XMI>

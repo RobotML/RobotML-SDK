@@ -268,4 +268,5 @@
   <RobotML:Allocate xmi:id="_8C8KwHdQEeKJB-EgqsNyTw" base_Abstraction="_8C4gYHdQEeKJB-EgqsNyTw"/>
   <RobotML:Allocate xmi:id="_8ibjIHdQEeKJB-EgqsNyTw" base_Abstraction="_8iU1cHdQEeKJB-EgqsNyTw"/>
   <RobotML:Platform xmi:id="_Ulu9kHdxEeKxAYZwSuF6ww" base_Class="_MhHp4HdQEeKJB-EgqsNyTw"/>
+  <RobotML:Hardware xmi:id="_9oZfUHoGEeK0butXHmh4AA" base_Class="_goYqkHUVEeKE7psSa9LELw"/>
 </xmi:XMI>

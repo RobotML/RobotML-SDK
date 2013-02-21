@@ -1,13 +1,10 @@
 package org.eclipse.robotml.generators.acceleo.alf.main;
 
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.CharBuffer;
 import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
@@ -108,39 +105,6 @@ public class AlfServices
 		return (AlfServices.createAlfBlockFromUML(ne) != null);
 	}
 	
-//	/**
-//	 * Transcoding on string a class declaration
-//	 * @param classe
-//	 * @return
-//	 */
-//	private static String transcodeClass(org.eclipse.uml2.uml.Class classe)
-//	{
-//		String str = "";
-//		str = classe.getVisibility().getName() + " class " + classe.getQualifiedName() + " {";
-//		
-//		//browse for attribute
-//		for(Property prop : classe.getAllAttributes())
-//		{
-//			String tmp = AlfServices.transcodeProperty(prop);
-//			if(tmp.isEmpty() == false)
-//			{
-//				str += tmp;
-//			}
-//		}
-//		
-//		//browse for operation
-//		for(Operation op : classe.getAllOperations())
-//		{
-//			String tmp = AlfServices.transcodeOperation(op);
-//			if(tmp.isEmpty() == false)
-//			{
-//				str += tmp;
-//			}
-//		}
-//			
-//		str += "}";
-//		return str;
-//	}
 	
 	/**
 	 * Translate Alf bloc code to C++
@@ -271,7 +235,8 @@ public class AlfServices
 		
 		if(AlfServices.usingFile(opaque))
 		{
-			
+			for(String body : opaque.getBodies())
+				str += AlfServices.AlfDescriptionFromFile(body);
 		}
 		else
 		{
@@ -324,10 +289,13 @@ public class AlfServices
 			try 
 			{
 				istream = new FileInputStream(input);
-				
-				BufferedInputStream buffer = new BufferedInputStream(istream);
-				
-				
+				InputStreamReader reader = new InputStreamReader(istream);
+				int length = reader.read();
+				char[] buffer = new char[length];
+				reader.read(buffer);
+				result = new String(buffer);
+				reader.close();
+				istream.close();
 			} 
 			catch (FileNotFoundException e1) {
 				e1.printStackTrace();

@@ -3,9 +3,11 @@ package org.eclipse.robotml.generators.xtext.athena.simu.main;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.antlr.runtime.tree.TreeIterator;
 import org.eclipse.emf.common.util.EList;
 import org.xtext.athenaDSL.DataType;
 import org.xtext.athenaDSL.FuncProc;
+import org.xtext.athenaDSL.Import;
 import org.xtext.athenaDSL.LanguageDeclaration;
 import org.xtext.athenaDSL.ProcessingDeclaration;
 import org.xtext.athenaDSL.Project;
@@ -1087,6 +1089,20 @@ public class JavaService {
 						res.add((interactionDeclaration)elt);
 				}
 			}
+		}
+		return res;
+	}
+	
+	public List<DataType> getDataTypes(Project project)
+	{
+		LinkedList<DataType> res = new LinkedList<DataType>();
+		for(Import imp : project.getImports()) {
+			TreeIterator iter = (TreeIterator) imp.eAllContents();
+			while(iter.hasNext())
+			{
+				iter.next();
+				System.out.println(iter.toString());
+		}
 		}
 		return res;
 	}

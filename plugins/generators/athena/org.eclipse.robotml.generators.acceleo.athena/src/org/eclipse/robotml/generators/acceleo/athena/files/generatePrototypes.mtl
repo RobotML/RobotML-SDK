@@ -151,7 +151,7 @@ end
 [comment]Generate prototype's interactions[/comment]
 [template private generateInteractions(fsms : Sequence(StateMachine))]
 [for(sm : StateMachine | fsms)]
-[let objs : Sequence(Vertex) = getStates(sm)]
+[let objs : Sequence(Vertex) = getFSMStates(sm)]
 [for(obj : Vertex | objs)]
 [let str : String = generateInteractionStateString(obj)]
 //[str/]

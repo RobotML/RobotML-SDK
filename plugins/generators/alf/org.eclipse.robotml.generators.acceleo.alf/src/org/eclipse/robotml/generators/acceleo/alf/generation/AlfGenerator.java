@@ -55,6 +55,7 @@ import org.eclipse.papyrus.uml.alf.alf.NonFinalClause;
 import org.eclipse.papyrus.uml.alf.alf.NonLiteralValueSpecification;
 import org.eclipse.papyrus.uml.alf.alf.NullExpression;
 import org.eclipse.papyrus.uml.alf.alf.OperationCallExpression;
+import org.eclipse.papyrus.uml.alf.alf.SequenceConstructionCompletion;
 //import org.eclipse.papyrus.uml.alf.alf.OperationCallExpressionWithoutDot;
 import org.eclipse.papyrus.uml.alf.alf.ParenthesizedExpression;
 import org.eclipse.papyrus.uml.alf.alf.PrimaryExpression;
@@ -539,7 +540,7 @@ public abstract class AlfGenerator implements IAlfGenerator {
 		return generateConditionalTestExpression((ConditionalTestExpression)aTupleElement.getArgument());
 	}
 
-	// TODO a faire...
+//	 TODO a faire...
 //	/**
 //	 * Generate operation call expression without '.'
 //	 * @param aOperationCallExpressionWithoutDot : Alf::OperationCallExpressionWithoutDot
@@ -1059,16 +1060,15 @@ public abstract class AlfGenerator implements IAlfGenerator {
 		return "";
 	}
 	
-	//TODO : A faire ...
-//	/**
-//	 * Generate sequence construction completion
-//	 * @param aSequenceConstructionCompletion : Alf::SequenceConstructionCompletion
-//	 * @return code translation : String
-//	 */
-//	protected String generateSequenceConstructionCompletion(SequenceConstructionCompletion aSequenceConstructionCompletion) {
-//		return "";
-//
-//	}
+	/**
+	 * Generate sequence construction completion
+	 * @param aSequenceConstructionCompletion : Alf::SequenceConstructionCompletion
+	 * @return code translation : String
+	 */
+	protected String generateSequenceConstructionCompletion(SequenceConstructionCompletion aSequenceConstructionCompletion) {
+		return "";
+
+	}
 
 	/**
 	 * Inspect literal
@@ -1218,6 +1218,7 @@ public abstract class AlfGenerator implements IAlfGenerator {
 		if(aLinkOperationExpression != null)
 		{
 			//TODO : a faire ...
+			
 //			result += generateLinkOperationKind((aLinkOperationExpression).getKind());
 //			result += generateLinkOperationTuple(aLinkOperationExpression.getTuple());
 		}

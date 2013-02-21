@@ -207,12 +207,12 @@
 	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getStringFromQualifiedName(org.xtext.athenaDSL.qualifiedName)', Sequence{qn}) 
 /]
 
-[query  public getDynamicAllocationForStruct(name : String, struct : structType) : String = 
-	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getDynamicAllocationForStruct(java.lang.String,org.xtext.athenaDSL.structType)', Sequence{struct}) 
+[query  public getDynamicAllocationForStruct(name : String, struct : athenaDSL::structType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getDynamicAllocationForStruct(java.lang.String,org.xtext.athenaDSL.structType)', Sequence{name, struct}) 
 /]
 
-[query  public getArrayAllocationCall(name : String,array : arrayType) : String = 
-	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getArrayAllocationCall(java.lang.String,org.xtext.athenaDSL.arrayType)', Sequence{array}) 
+[query  public getArrayAllocationCall(name : String, array : athenaDSL::arrayType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getArrayAllocationCall(java.lang.String,org.xtext.athenaDSL.arrayType)', Sequence{name, array}) 
 /]
 
 [query  public getParameterNbWriters(param : athenaDSL::parameterDeclaration) : Integer = 
@@ -226,7 +226,6 @@
 [query  public getInitValue(type : athenaDSL::basicType) : String = 
 	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getInitValue(org.xtext.athenaDSL.basicType)', Sequence{type}) 
 /]
-
 
 [query public isFunctionCall(elt : athenaDSL::statement) : Boolean = 
 	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isFunctionCall(org.xtext.athenaDSL.statement)', Sequence{elt}) 
@@ -280,4 +279,8 @@
 
 [query public getInteractions(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::interactionDeclaration) = 
 	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getInteractions(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]
+
+[query public getDataTypes(project : athenaDSL::Project) : Sequence(athenaDSL::DataType) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getDataTypes(org.xtext.athenaDSL.Project)', Sequence{project})
 /]

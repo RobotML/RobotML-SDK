@@ -160,3 +160,11 @@
 [query public isEffect(model : NamedElement, opName : String) : Boolean = 
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isEffect(org.eclipse.uml2.uml.NamedElement, java.lang.String)', Sequence{model, opName})
 /]
+
+[query public isAlfProcessingBody(ne : NamedElement) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isAlfProcessingBody(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public isAthenaProcessingBody(ne : NamedElement) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isAthenaProcessingBody(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]

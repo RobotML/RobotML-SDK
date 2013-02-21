@@ -33,7 +33,6 @@ end
 [/let]
 [/template]
 
-
 [template private generateProcessingBody(model : Model, proc : Operation)]
  [comment]Find connection with an opaque behavior to define the processing body	
  Processing body is defined by Afl description (OpaqueExpression)[/comment] 
@@ -42,14 +41,18 @@ end
 [let behavior : OpaqueBehavior = elt.oclAsType(OpaqueBehavior)]
 [if((behavior.specification = null) =(false))]
 [if(behavior.specification.name = proc.name)]
+[if(isAlfProcessingBody(behavior.oclAsType(NamedElement)) =(true))]
 [if(canConvertToAlfBlock(behavior.oclAsType(NamedElement)) =(true))]
 [let bloc : alf::Block = createAlfBlockFromUML(behavior.oclAsType(NamedElement))]
 [translateAlfBlocTo_Athena(bloc)/]
 [/let]
 [else]
-[comment]By default if Alf bloc is null we consider as been Athena code[/comment]
 /*Error : Bad ALf block ! */
+[/if]
+[elseif(isAthenaProcessingBody(behavior.oclAsType(NamedElement)) =(true))]
 [behavior._body.toString()/]
+[else]
+/* ERROR : unknown language code!!! */
 [/if]
 [/if]
 [/if]

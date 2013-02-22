@@ -68,7 +68,7 @@ public class DepPlanSync {
 	public static void syncDepPlan(Package depPlan) {
 		removeUnusedSlots(depPlan);
 		// EList<InstanceSpecification> list = new BasicEList<InstanceSpecification>();
-		DeploymentPlan cdp = StUtils.getApplication(depPlan, DeploymentPlan.class);
+		org.eclipse.papyrus.RobotML.DeploymentPlan cdp = StUtils.getApplication(depPlan, org.eclipse.papyrus.RobotML.DeploymentPlan.class);
 		if(cdp == null) {
 			return;
 		}

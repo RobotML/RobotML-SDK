@@ -34,7 +34,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Package;
 
-import FCM.DeploymentPlan;
+import org.eclipse.papyrus.RobotML.DeploymentPlan;
 
 import com.cea.ec3m.gentools.core.StUtils;
 import com.cea.ec3m.gentools.core.Utils;

@@ -41,7 +41,7 @@ import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-import FCM.DeploymentPlan;
+import org.eclipse.papyrus.RobotML.DeploymentPlan;
 import FCM.ImplementationGroup;
 import FCM.ImplementationProperties;
 import FCM.InteractionComponent;

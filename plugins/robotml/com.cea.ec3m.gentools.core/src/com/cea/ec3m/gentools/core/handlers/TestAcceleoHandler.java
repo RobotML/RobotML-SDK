@@ -59,24 +59,26 @@ public class TestAcceleoHandler extends CmdHandler {
 	// TODO: This code is here for testing the copy mechanisms. It should move to a separate
 	// plugin (it can be called by "execute" above).
 	public static void test(NamedElement selectedNE) {
-		try {
-			org.eclipse.uml2.uml.Package top = Utils.getTop(selectedNE);
-
-			ModelManagement tst = InstantiateDepPlan.createTargetModel((Model)top, new NullProgressMonitor(), "Test", false);
-			Model target = tst.getModel();
-			Copy myCopy = new Copy(top, target, false);
-			NamedElement copy = myCopy.getCopy(selectedNE);
-
-			//copy = (NamedElement)copier.copy(selectedNE);
-			System.err.println("orig");
-			for(EObject eobj : selectedNE.getStereotypeApplications()) {
-				System.err.println(eobj);
-			}
-			System.err.println("copy");
-			for(EObject eobj : copy.getStereotypeApplications()) {
-				System.err.println(eobj);
-			}
-		} catch (TransformationException e) {
-		}
+		
+		//This method is deactivated because it is not used in RobotML platform, RobotML generators are used instead
+//		try {
+//			org.eclipse.uml2.uml.Package top = Utils.getTop(selectedNE);
+//
+//			ModelManagement tst = InstantiateDepPlan.createTargetModel((Model)top, new NullProgressMonitor(), "Test", false);
+//			Model target = tst.getModel();
+//			Copy myCopy = new Copy(top, target, false);
+//			NamedElement copy = myCopy.getCopy(selectedNE);
+//
+//			//copy = (NamedElement)copier.copy(selectedNE);
+//			System.err.println("orig");
+//			for(EObject eobj : selectedNE.getStereotypeApplications()) {
+//				System.err.println(eobj);
+//			}
+//			System.err.println("copy");
+//			for(EObject eobj : copy.getStereotypeApplications()) {
+//				System.err.println(eobj);
+//			}
+//		} catch (TransformationException e) {
+//		}
 	}
 }

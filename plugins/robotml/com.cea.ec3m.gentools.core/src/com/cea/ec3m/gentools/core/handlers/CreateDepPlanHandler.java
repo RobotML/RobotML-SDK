@@ -16,6 +16,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.papyrus.RobotML.DeploymentPlan;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.InstanceSpecification;
@@ -109,10 +110,10 @@ public class CreateDepPlanHandler extends CmdHandler {
 
 				public CommandResult run() {
 					Package cdp = depPlans.createNestedPackage(depPlanName);
-					Stereotype st = StUtils.apply(cdp, FCM.DeploymentPlan.class);
+					Stereotype st = StUtils.apply(cdp, DeploymentPlan.class);
 					if(st == null) {
 						MessageDialog.openInformation(new Shell(), "Cannot create deployment plan",
-							"Application of stereotype \"FCM::DeploymentPlan\" failed. Check, if FCM profile is applied");
+							"Application of stereotype \"RobotML::DeploymentPlan\" failed. Check, if RobotML profile is applied");
 						return CommandResult.newErrorCommandResult("cannot create deployment plan");
 					}
 					try {

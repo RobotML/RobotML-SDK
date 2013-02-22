@@ -43,7 +43,7 @@ public class DepPlanListener implements IPapyrusListener {
 		if(evtType == Notification.SET) {
 			// Object oldValue = notification.getOldValue ();
 			if(notifier instanceof Package) {
-				DeploymentPlan de = StUtils.getApplication((Package) notifier, DeploymentPlan.class);
+				org.eclipse.papyrus.RobotML.DeploymentPlan de = StUtils.getApplication((Package) notifier, org.eclipse.papyrus.RobotML.DeploymentPlan.class);
 				Object mainInstance = (de != null) ? de.getMainInstance() : null;
 				if(mainInstance instanceof InstanceSpecification) {
 					// TODO user wants to declare the system component, the instance specification should be created

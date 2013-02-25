@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
-  <uml:Profile xmi:id="_3QOHEPcEEd-J06U5HM_o-Q" name="RobotML" metaclassReference="_7budMPcPEd-J06U5HM_o-Q _8_Y_UClXEeCiVZQ9o-1H2A _ubL34GAyEeCUQf3vpAG6JA _wuaewGAyEeCUQf3vpAG6JA _6eK1kBtTEeGZBqQLK2tPRA _NIDh0BtUEeGZBqQLK2tPRA _XUmMUBtqEeGZBqQLK2tPRA __HKUgCDmEeGCc9sHkrvZbg _IOXiwCJqEeGXbb453tP0yA _KUx1oCJqEeGXbb453tP0yA _rMqAIEaREeG1RvxKgcDZmw _qZCxkGLPEeGyA8hK1MhgBQ _m0angI6xEeGdCeFFJlx8kA">
+  <uml:Profile xmi:id="_3QOHEPcEEd-J06U5HM_o-Q" name="RobotML" metaclassReference="_7budMPcPEd-J06U5HM_o-Q _8_Y_UClXEeCiVZQ9o-1H2A _ubL34GAyEeCUQf3vpAG6JA _wuaewGAyEeCUQf3vpAG6JA _6eK1kBtTEeGZBqQLK2tPRA _NIDh0BtUEeGZBqQLK2tPRA _XUmMUBtqEeGZBqQLK2tPRA __HKUgCDmEeGCc9sHkrvZbg _IOXiwCJqEeGXbb453tP0yA _KUx1oCJqEeGXbb453tP0yA _rMqAIEaREeG1RvxKgcDZmw _qZCxkGLPEeGyA8hK1MhgBQ _m0angI6xEeGdCeFFJlx8kA _vy6V0HwtEeKlDbCLaIz6tg _eAAB8Hw6EeKk3aX-P_okJw">
     <eAnnotations xmi:id="_VoRqoR4VEeCKot0rXi6qrg" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <contents xmi:type="ecore:EPackage" xmi:id="_y9FUACpMEeG6s9S7mBw2fQ" name="RobotML" nsURI="http://Papyrus/RobotML/1" nsPrefix="RobotML">
         <eAnnotations xmi:id="_0E53sCpMEeG6s9S7mBw2fQ" source="PapyrusVersion">
@@ -98,27 +98,27 @@
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_y9FUXypMEeG6s9S7mBw2fQ" name="PhysicalData">
-          <eAnnotations xmi:id="_y9FUYCpMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_QIccsGAzEeCUQf3vpAG6JA"/>
+          <eAnnotations xmi:id="_y9FUYCpMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_y9FUYSpMEeG6s9S7mBw2fQ" name="base_DataType" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_y9FUYypMEeG6s9S7mBw2fQ" name="unit" ordered="false" lowerBound="1" eType="_y9FUZSpMEeG6s9S7mBw2fQ"/>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EEnum" xmi:id="_y9FUZSpMEeG6s9S7mBw2fQ" name="UnitKind">
-          <eAnnotations xmi:id="_y9FUZipMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_tqujAKPYEeCgderbpw7img"/>
+          <eAnnotations xmi:id="_y9FUZipMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eLiterals xmi:id="_y9FUZypMEeG6s9S7mBw2fQ" name="inch"/>
           <eLiterals xmi:id="_y9FUaCpMEeG6s9S7mBw2fQ" name="meter" value="1"/>
           <eLiterals xmi:id="_y9FUaSpMEeG6s9S7mBw2fQ" name="degree" value="2"/>
           <eLiterals xmi:id="_y9FUaipMEeG6s9S7mBw2fQ" name="radian" value="3"/>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_y9FUaypMEeG6s9S7mBw2fQ" name="ComposedData">
-          <eAnnotations xmi:id="_y9FUbCpMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_U7accGAzEeCUQf3vpAG6JA"/>
+          <eAnnotations xmi:id="_y9FUbCpMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_y9FUbSpMEeG6s9S7mBw2fQ" name="base_DataType" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_y9FUbypMEeG6s9S7mBw2fQ" name="Collection">
-          <eAnnotations xmi:id="_y9FUcCpMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Z9IC0GAzEeCUQf3vpAG6JA"/>
+          <eAnnotations xmi:id="_y9FUcCpMEeG6s9S7mBw2fQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_y9FUcSpMEeG6s9S7mBw2fQ" name="base_DataType" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
           </eStructuralFeatures>
@@ -369,27 +369,27 @@
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_QBG_DycqEeGXZ9Igmni1wg" name="PhysicalData">
-          <eAnnotations xmi:id="_QBG_ECcqEeGXZ9Igmni1wg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_QIccsGAzEeCUQf3vpAG6JA"/>
+          <eAnnotations xmi:id="_QBG_ECcqEeGXZ9Igmni1wg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_QBG_EScqEeGXZ9Igmni1wg" name="base_DataType" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_QBG_EycqEeGXZ9Igmni1wg" name="unit" ordered="false" lowerBound="1" eType="_QBG_FScqEeGXZ9Igmni1wg"/>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EEnum" xmi:id="_QBG_FScqEeGXZ9Igmni1wg" name="UnitKind">
-          <eAnnotations xmi:id="_QBG_FicqEeGXZ9Igmni1wg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_tqujAKPYEeCgderbpw7img"/>
+          <eAnnotations xmi:id="_QBG_FicqEeGXZ9Igmni1wg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eLiterals xmi:id="_QBG_FycqEeGXZ9Igmni1wg" name="inch"/>
           <eLiterals xmi:id="_QBG_GCcqEeGXZ9Igmni1wg" name="meter" value="1"/>
           <eLiterals xmi:id="_QBG_GScqEeGXZ9Igmni1wg" name="degree" value="2"/>
           <eLiterals xmi:id="_QBG_GicqEeGXZ9Igmni1wg" name="radian" value="3"/>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_QBG_GycqEeGXZ9Igmni1wg" name="ComposedData">
-          <eAnnotations xmi:id="_QBG_HCcqEeGXZ9Igmni1wg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_U7accGAzEeCUQf3vpAG6JA"/>
+          <eAnnotations xmi:id="_QBG_HCcqEeGXZ9Igmni1wg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_QBG_HScqEeGXZ9Igmni1wg" name="base_DataType" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_QBG_HycqEeGXZ9Igmni1wg" name="Collection">
-          <eAnnotations xmi:id="_QBG_ICcqEeGXZ9Igmni1wg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Z9IC0GAzEeCUQf3vpAG6JA"/>
+          <eAnnotations xmi:id="_QBG_ICcqEeGXZ9Igmni1wg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_QBG_IScqEeGXZ9Igmni1wg" name="base_DataType" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
           </eStructuralFeatures>
@@ -683,27 +683,27 @@
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_AiNSKSWrEeG_-sWkIeldHw" name="PhysicalData">
-          <eAnnotations xmi:id="_AiNSKiWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_QIccsGAzEeCUQf3vpAG6JA"/>
+          <eAnnotations xmi:id="_AiNSKiWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_AiNSKyWrEeG_-sWkIeldHw" name="base_DataType" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_AiNSLSWrEeG_-sWkIeldHw" name="unit" ordered="false" lowerBound="1" eType="_AiNSLyWrEeG_-sWkIeldHw"/>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EEnum" xmi:id="_AiNSLyWrEeG_-sWkIeldHw" name="UnitKind">
-          <eAnnotations xmi:id="_AiNSMCWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_tqujAKPYEeCgderbpw7img"/>
+          <eAnnotations xmi:id="_AiNSMCWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eLiterals xmi:id="_AiNSMSWrEeG_-sWkIeldHw" name="inch"/>
           <eLiterals xmi:id="_AiNSMiWrEeG_-sWkIeldHw" name="meter" value="1"/>
           <eLiterals xmi:id="_AiNSMyWrEeG_-sWkIeldHw" name="degree" value="2"/>
           <eLiterals xmi:id="_AiNSNCWrEeG_-sWkIeldHw" name="radian" value="3"/>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_AiNSNSWrEeG_-sWkIeldHw" name="ComposedData">
-          <eAnnotations xmi:id="_AiNSNiWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_U7accGAzEeCUQf3vpAG6JA"/>
+          <eAnnotations xmi:id="_AiNSNiWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_AiNSNyWrEeG_-sWkIeldHw" name="base_DataType" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_AiNSOSWrEeG_-sWkIeldHw" name="Collection">
-          <eAnnotations xmi:id="_AiNSOiWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Z9IC0GAzEeCUQf3vpAG6JA"/>
+          <eAnnotations xmi:id="_AiNSOiWrEeG_-sWkIeldHw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_AiNSOyWrEeG_-sWkIeldHw" name="base_DataType" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
           </eStructuralFeatures>
@@ -955,27 +955,27 @@
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_GHX1ySWpEeGy06XMF1Yb0w" name="PhysicalData">
-          <eAnnotations xmi:id="_GHX1yiWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_QIccsGAzEeCUQf3vpAG6JA"/>
+          <eAnnotations xmi:id="_GHX1yiWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_GHX1yyWpEeGy06XMF1Yb0w" name="base_DataType" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
           </eStructuralFeatures>
           <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_GHX1zSWpEeGy06XMF1Yb0w" name="unit" ordered="false" lowerBound="1" eType="_GHX1zyWpEeGy06XMF1Yb0w"/>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EEnum" xmi:id="_GHX1zyWpEeGy06XMF1Yb0w" name="UnitKind">
-          <eAnnotations xmi:id="_GHX10CWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_tqujAKPYEeCgderbpw7img"/>
+          <eAnnotations xmi:id="_GHX10CWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eLiterals xmi:id="_GHX10SWpEeGy06XMF1Yb0w" name="inch"/>
           <eLiterals xmi:id="_GHX10iWpEeGy06XMF1Yb0w" name="meter" value="1"/>
           <eLiterals xmi:id="_GHX10yWpEeGy06XMF1Yb0w" name="degree" value="2"/>
           <eLiterals xmi:id="_GHX11CWpEeGy06XMF1Yb0w" name="radian" value="3"/>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_GHX11SWpEeGy06XMF1Yb0w" name="ComposedData">
-          <eAnnotations xmi:id="_GHX11iWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_U7accGAzEeCUQf3vpAG6JA"/>
+          <eAnnotations xmi:id="_GHX11iWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_GHX11yWpEeGy06XMF1Yb0w" name="base_DataType" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
           </eStructuralFeatures>
         </eClassifiers>
         <eClassifiers xmi:type="ecore:EClass" xmi:id="_GHX12SWpEeGy06XMF1Yb0w" name="Collection">
-          <eAnnotations xmi:id="_GHX12iWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Z9IC0GAzEeCUQf3vpAG6JA"/>
+          <eAnnotations xmi:id="_GHX12iWpEeGy06XMF1Yb0w" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
           <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_GHX12yWpEeGy06XMF1Yb0w" name="base_DataType" ordered="false" lowerBound="1">
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
           </eStructuralFeatures>
@@ -1285,6 +1285,12 @@ to have access to the operation defined in the AlgorithmLibrary</body>
     <elementImport xmi:id="_m0angI6xEeGdCeFFJlx8kA" alias="Abstraction">
       <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Abstraction"/>
     </elementImport>
+    <elementImport xmi:id="_vy6V0HwtEeKlDbCLaIz6tg" alias="Package">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+    </elementImport>
+    <elementImport xmi:id="_eAAB8Hw6EeKk3aX-P_okJw" alias="InstanceSpecification">
+      <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#InstanceSpecification"/>
+    </elementImport>
     <packageImport xmi:id="_I8XAwGBEEeCUQf3vpAG6JA">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
@@ -1316,7 +1322,7 @@ to have access to the operation defined in the AlgorithmLibrary</body>
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_syMfECpMEeG6s9S7mBw2fQ" name="ugvKind" visibility="public" type="_qeBukBtaEeGZBqQLK2tPRA">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vqrIECpMEeG6s9S7mBw2fQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vqrIECpMEeG6s9S7mBw2fQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vrH0ACpMEeG6s9S7mBw2fQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_vruQ8CpMEeG6s9S7mBw2fQ">
           <value xsi:nil="true"/>
@@ -1362,7 +1368,8 @@ to have access to the operation defined in the AlgorithmLibrary</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_deUHMAHkEeCQQOKrhO_fIQ" name="RobotKind">
       <ownedLiteral xmi:id="_fuahkAHkEeCQQOKrhO_fIQ" name="UUV"/>
-      <ownedLiteral xmi:id="_gdM6MAHkEeCQQOKrhO_fIQ" name="UGV"/>
+      <ownedLiteral xmi:id="_3VQpkHwEEeKXhbwN3WXO6A" name="UGV-car"/>
+      <ownedLiteral xmi:id="_gdM6MAHkEeCQQOKrhO_fIQ" name="UGV-differential"/>
       <ownedLiteral xmi:id="_hUo4gAHkEeCQQOKrhO_fIQ" name="UAV"/>
       <ownedLiteral xmi:id="_iNaTkAHkEeCQQOKrhO_fIQ" name="USV"/>
       <ownedLiteral xmi:id="_js4_sF9iEeCXnIQslxvv3A" name="piloted"/>
@@ -1489,37 +1496,13 @@ to have access to the operation defined in the AlgorithmLibrary</body>
       </icon>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_OMwzIGAzEeCUQf3vpAG6JA" name="PrimitiveData">
+      <generalization xmi:id="_u6hqYHwvEeKlDbCLaIz6tg" general="_yxOEkHwuEeKlDbCLaIz6tg"/>
       <ownedAttribute xmi:id="_bW-xsGAzEeCUQf3vpAG6JA" name="base_PrimitiveType" association="_bW-xsWAzEeCUQf3vpAG6JA">
         <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#PrimitiveType"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Stereotype" xmi:id="_QIccsGAzEeCUQf3vpAG6JA" name="PhysicalData">
-      <ownedAttribute xmi:id="_fOfOwGAzEeCUQf3vpAG6JA" name="base_DataType" association="_fOfOwWAzEeCUQf3vpAG6JA">
-        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DataType"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_vFbooKPnEeCgderbpw7img" name="unit" type="_tqujAKPYEeCgderbpw7img"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Stereotype" xmi:id="_U7accGAzEeCUQf3vpAG6JA" name="ComposedData">
-      <ownedAttribute xmi:id="_exSVYGAzEeCUQf3vpAG6JA" name="base_DataType" association="_exSVYWAzEeCUQf3vpAG6JA">
-        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DataType"/>
-      </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Stereotype" xmi:id="_Z9IC0GAzEeCUQf3vpAG6JA" name="Collection">
-      <ownedAttribute xmi:id="_f2uTcGAzEeCUQf3vpAG6JA" name="base_DataType" association="_f2uTcWAzEeCUQf3vpAG6JA">
-        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DataType"/>
-      </ownedAttribute>
-    </packagedElement>
     <packagedElement xmi:type="uml:Extension" xmi:id="_bW-xsWAzEeCUQf3vpAG6JA" name="E_PrimitiveData_PrimitiveType0" memberEnd="_bW-xsmAzEeCUQf3vpAG6JA _bW-xsGAzEeCUQf3vpAG6JA">
       <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_bW-xsmAzEeCUQf3vpAG6JA" name="extension_PrimitiveData" type="_OMwzIGAzEeCUQf3vpAG6JA" aggregation="composite" association="_bW-xsWAzEeCUQf3vpAG6JA"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Extension" xmi:id="_exSVYWAzEeCUQf3vpAG6JA" name="E_ComposedData_DataType0" memberEnd="_exSVYmAzEeCUQf3vpAG6JA _exSVYGAzEeCUQf3vpAG6JA">
-      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_exSVYmAzEeCUQf3vpAG6JA" name="extension_ComposedData" type="_U7accGAzEeCUQf3vpAG6JA" aggregation="composite" association="_exSVYWAzEeCUQf3vpAG6JA"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Extension" xmi:id="_fOfOwWAzEeCUQf3vpAG6JA" name="E_PhysicalData_DataType0" memberEnd="_fOfOwmAzEeCUQf3vpAG6JA _fOfOwGAzEeCUQf3vpAG6JA">
-      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_fOfOwmAzEeCUQf3vpAG6JA" name="extension_PhysicalData" type="_QIccsGAzEeCUQf3vpAG6JA" aggregation="composite" association="_fOfOwWAzEeCUQf3vpAG6JA"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Extension" xmi:id="_f2uTcWAzEeCUQf3vpAG6JA" name="E_Collection_DataType0" memberEnd="_f2uTcmAzEeCUQf3vpAG6JA _f2uTcGAzEeCUQf3vpAG6JA">
-      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_f2uTcmAzEeCUQf3vpAG6JA" name="extension_Collection" type="_Z9IC0GAzEeCUQf3vpAG6JA" aggregation="composite" association="_f2uTcWAzEeCUQf3vpAG6JA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_1tdN0GBBEeCUQf3vpAG6JA" name="Port" isAbstract="true">
       <ownedAttribute xmi:id="_7Rv80GBBEeCUQf3vpAG6JA" name="base_Port" association="_7Rv80WBBEeCUQf3vpAG6JA">
@@ -1537,12 +1520,6 @@ to have access to the operation defined in the AlgorithmLibrary</body>
       <ownedLiteral xmi:id="_Ou5SAGBCEeCUQf3vpAG6JA" name="SYNCH"/>
       <ownedLiteral xmi:id="_Pk_MgGBCEeCUQf3vpAG6JA" name="ASYNCH"/>
       <ownedLiteral xmi:id="_9Oh9IGBCEeCUQf3vpAG6JA" name="undefined"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_tqujAKPYEeCgderbpw7img" name="UnitKind">
-      <ownedLiteral xmi:id="_wpnWAKPYEeCgderbpw7img" name="inch"/>
-      <ownedLiteral xmi:id="_0Y7gYKPYEeCgderbpw7img" name="meter"/>
-      <ownedLiteral xmi:id="_t9oIgKPmEeCgderbpw7img" name="degree"/>
-      <ownedLiteral xmi:id="_AoazsKPnEeCgderbpw7img" name="radian"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_y3QTIP-qEeCPK4YnMRh6Aw" name="EngineSystem">
       <generalization xmi:id="_8gM0MBtSEeGZBqQLK2tPRA" general="_HlVygF7bEeCGhLTjEDkxfg"/>
@@ -1732,13 +1709,13 @@ to have access to the operation defined in the AlgorithmLibrary</body>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_fea8gAB2EeGXJOJtWKn8jQ" name="CameraSystem">
       <generalization xmi:id="_gw0_kAB2EeGXJOJtWKn8jQ" general="_ZeQw4AB2EeGXJOJtWKn8jQ"/>
       <ownedAttribute xmi:id="_sDpswAB4EeGXJOJtWKn8jQ" name="width" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vOwW0AB4EeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vOwW0QB4EeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VTJokAt9EeGG0dvmRn5y7Q" name=""/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_xOA40AB4EeGXJOJtWKn8jQ" name="height" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_nCOuoAH-EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2x2U0AB4EeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2yJ20AB4EeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_2ymiwAB4EeGXJOJtWKn8jQ">
@@ -1772,19 +1749,27 @@ to have access to the operation defined in the AlgorithmLibrary</body>
           <value xsi:nil="true"/>
         </defaultValue>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_Jx8hoAB5EeGXJOJtWKn8jQ" name="frequency" visibility="public">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Kv7z4AB5EeGXJOJtWKn8jQ" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Kv7z4QB5EeGXJOJtWKn8jQ" value="1"/>
-        <defaultValue xmi:type="uml:LiteralString" xmi:id="_KwOu0AB5EeGXJOJtWKn8jQ">
-          <value xsi:nil="true"/>
-        </defaultValue>
-      </ownedAttribute>
       <ownedAttribute xmi:id="_MWdFwAB5EeGXJOJtWKn8jQ" name="color_format" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NEWGgAB5EeGXJOJtWKn8jQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NEf3gAB5EeGXJOJtWKn8jQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_NE8jcAB5EeGXJOJtWKn8jQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_5ixwYHwMEeKXhbwN3WXO6A" name="translate" visibility="public">
+        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7NnhkHwMEeKXhbwN3WXO6A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7NwrgHwMEeKXhbwN3WXO6A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_7N6cgHwMEeKXhbwN3WXO6A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_0BWSsHwNEeKXhbwN3WXO6A" name="rotate" visibility="public">
+        <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_uUJZ4AH6EeC_ZLzLQhW-TQ"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1hAuoHwNEeKXhbwN3WXO6A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1hAuoXwNEeKXhbwN3WXO6A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_1hKfoHwNEeKXhbwN3WXO6A">
           <value xsi:nil="true"/>
         </defaultValue>
       </ownedAttribute>
@@ -2256,6 +2241,44 @@ to have access to the operation defined in the AlgorithmLibrary</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="_lUAlkDijEeKrufJqxR6Wig" name="InfraRedProximetrySystem">
       <generalization xmi:id="_9_0_EDijEeKrufJqxR6Wig" general="_g7blsAB5EeGXJOJtWKn8jQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_q4ecIHwtEeKlDbCLaIz6tg" name="DeploymentPlan">
+      <ownedAttribute xmi:id="_wXtsAHwtEeKlDbCLaIz6tg" name="base_Package" association="_wXtsAXwtEeKlDbCLaIz6tg">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_hDpZIHw6EeKk3aX-P_okJw" name="mainInstance" association="_hDpZI3w6EeKk3aX-P_okJw">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#InstanceSpecification"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hDpZIXw6EeKk3aX-P_okJw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hDpZInw6EeKk3aX-P_okJw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_wXtsAXwtEeKlDbCLaIz6tg" name="E_DeploymentPlan_Package1" memberEnd="_wXtsAnwtEeKlDbCLaIz6tg _wXtsAHwtEeKlDbCLaIz6tg">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_wXtsAnwtEeKlDbCLaIz6tg" name="extension_DeploymentPlan" type="_q4ecIHwtEeKlDbCLaIz6tg" aggregation="composite" association="_wXtsAXwtEeKlDbCLaIz6tg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="_yxOEkHwuEeKlDbCLaIz6tg" name="DataType">
+      <ownedAttribute xmi:id="_0QmMoHwuEeKlDbCLaIz6tg" name="base_DataType" association="_0QmMoXwuEeKlDbCLaIz6tg">
+        <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DataType"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_X8ExoHwvEeKlDbCLaIz6tg" name="native">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_kYi5YHwvEeKlDbCLaIz6tg" name="libraryPath" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ld1GcHwvEeKlDbCLaIz6tg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ld1GcXwvEeKlDbCLaIz6tg" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_ld1GcnwvEeKlDbCLaIz6tg">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Extension" xmi:id="_0QmMoXwuEeKlDbCLaIz6tg" name="E_DataType_DataType1" memberEnd="_0QmMonwuEeKlDbCLaIz6tg _0QmMoHwuEeKlDbCLaIz6tg">
+      <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_0QmMonwuEeKlDbCLaIz6tg" name="extension_DataType" type="_yxOEkHwuEeKlDbCLaIz6tg" aggregation="composite" association="_0QmMoXwuEeKlDbCLaIz6tg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_hDpZI3w6EeKk3aX-P_okJw" name="deploymentPlan_instanceSpecification_1" memberEnd="_hDpZJHw6EeKk3aX-P_okJw _hDpZIHw6EeKk3aX-P_okJw">
+      <ownedEnd xmi:id="_hDpZJHw6EeKk3aX-P_okJw" name="deploymentPlan" type="_q4ecIHwtEeKlDbCLaIz6tg" association="_hDpZI3w6EeKk3aX-P_okJw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hDpZJXw6EeKk3aX-P_okJw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hDpZJnw6EeKk3aX-P_okJw" value="1"/>
+      </ownedEnd>
     </packagedElement>
     <profileApplication xmi:id="_FtE1ECcoEeGXZ9Igmni1wg">
       <eAnnotations xmi:id="_FukC0CcoEeGXZ9Igmni1wg" source="http://www.eclipse.org/uml2/2.0.0/UML">

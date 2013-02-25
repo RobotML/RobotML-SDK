@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.PrimitiveType;
  * @model
  * @generated
  */
-public interface PrimitiveData extends EObject {
+public interface PrimitiveData extends DataType {
 	/**
 	 * Returns the value of the '<em><b>Base Primitive Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

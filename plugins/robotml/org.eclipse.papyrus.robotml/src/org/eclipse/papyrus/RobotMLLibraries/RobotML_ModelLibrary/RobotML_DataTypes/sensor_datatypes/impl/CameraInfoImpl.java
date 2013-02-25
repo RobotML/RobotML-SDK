@@ -38,8 +38,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getK <em>K</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getR <em>R</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getP <em>P</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getBeginning_x <em>Beginning x</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getBeginning_y <em>Beginning y</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getBinning_x <em>Binning x</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getBinning_y <em>Binning y</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.CameraInfoImpl#getRoi <em>Roi</em>}</li>
  * </ul>
  * </p>
@@ -158,44 +158,44 @@ public class CameraInfoImpl extends EObjectImpl implements CameraInfo {
 	protected EList<Double> p;
 
 	/**
-	 * The default value of the '{@link #getBeginning_x() <em>Beginning x</em>}' attribute.
+	 * The default value of the '{@link #getBinning_x() <em>Binning x</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBeginning_x()
+	 * @see #getBinning_x()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long BEGINNING_X_EDEFAULT = 0L;
+	protected static final long BINNING_X_EDEFAULT = 0L;
 
 	/**
-	 * The cached value of the '{@link #getBeginning_x() <em>Beginning x</em>}' attribute.
+	 * The cached value of the '{@link #getBinning_x() <em>Binning x</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBeginning_x()
+	 * @see #getBinning_x()
 	 * @generated
 	 * @ordered
 	 */
-	protected long beginning_x = BEGINNING_X_EDEFAULT;
+	protected long binning_x = BINNING_X_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getBeginning_y() <em>Beginning y</em>}' attribute.
+	 * The default value of the '{@link #getBinning_y() <em>Binning y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBeginning_y()
+	 * @see #getBinning_y()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long BEGINNING_Y_EDEFAULT = 0L;
+	protected static final long BINNING_Y_EDEFAULT = 0L;
 
 	/**
-	 * The cached value of the '{@link #getBeginning_y() <em>Beginning y</em>}' attribute.
+	 * The cached value of the '{@link #getBinning_y() <em>Binning y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBeginning_y()
+	 * @see #getBinning_y()
 	 * @generated
 	 * @ordered
 	 */
-	protected long beginning_y = BEGINNING_Y_EDEFAULT;
+	protected long binning_y = BINNING_Y_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getRoi() <em>Roi</em>}' containment reference.
@@ -385,8 +385,8 @@ public class CameraInfoImpl extends EObjectImpl implements CameraInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public long getBeginning_x() {
-		return beginning_x;
+	public long getBinning_x() {
+		return binning_x;
 	}
 
 	/**
@@ -394,11 +394,11 @@ public class CameraInfoImpl extends EObjectImpl implements CameraInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBeginning_x(long newBeginning_x) {
-		long oldBeginning_x = beginning_x;
-		beginning_x = newBeginning_x;
+	public void setBinning_x(long newBinning_x) {
+		long oldBinning_x = binning_x;
+		binning_x = newBinning_x;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__BEGINNING_X, oldBeginning_x, beginning_x));
+			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__BINNING_X, oldBinning_x, binning_x));
 	}
 
 	/**
@@ -406,8 +406,8 @@ public class CameraInfoImpl extends EObjectImpl implements CameraInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public long getBeginning_y() {
-		return beginning_y;
+	public long getBinning_y() {
+		return binning_y;
 	}
 
 	/**
@@ -415,11 +415,11 @@ public class CameraInfoImpl extends EObjectImpl implements CameraInfo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBeginning_y(long newBeginning_y) {
-		long oldBeginning_y = beginning_y;
-		beginning_y = newBeginning_y;
+	public void setBinning_y(long newBinning_y) {
+		long oldBinning_y = binning_y;
+		binning_y = newBinning_y;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__BEGINNING_Y, oldBeginning_y, beginning_y));
+			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y, oldBinning_y, binning_y));
 	}
 
 	/**
@@ -505,10 +505,10 @@ public class CameraInfoImpl extends EObjectImpl implements CameraInfo {
 				return getR();
 			case Sensor_datatypesPackage.CAMERA_INFO__P:
 				return getP();
-			case Sensor_datatypesPackage.CAMERA_INFO__BEGINNING_X:
-				return getBeginning_x();
-			case Sensor_datatypesPackage.CAMERA_INFO__BEGINNING_Y:
-				return getBeginning_y();
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_X:
+				return getBinning_x();
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y:
+				return getBinning_y();
 			case Sensor_datatypesPackage.CAMERA_INFO__ROI:
 				return getRoi();
 		}
@@ -552,11 +552,11 @@ public class CameraInfoImpl extends EObjectImpl implements CameraInfo {
 				getP().clear();
 				getP().addAll((Collection<? extends Double>)newValue);
 				return;
-			case Sensor_datatypesPackage.CAMERA_INFO__BEGINNING_X:
-				setBeginning_x((Long)newValue);
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_X:
+				setBinning_x((Long)newValue);
 				return;
-			case Sensor_datatypesPackage.CAMERA_INFO__BEGINNING_Y:
-				setBeginning_y((Long)newValue);
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y:
+				setBinning_y((Long)newValue);
 				return;
 			case Sensor_datatypesPackage.CAMERA_INFO__ROI:
 				setRoi((RegionOfInterest)newValue);
@@ -597,11 +597,11 @@ public class CameraInfoImpl extends EObjectImpl implements CameraInfo {
 			case Sensor_datatypesPackage.CAMERA_INFO__P:
 				getP().clear();
 				return;
-			case Sensor_datatypesPackage.CAMERA_INFO__BEGINNING_X:
-				setBeginning_x(BEGINNING_X_EDEFAULT);
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_X:
+				setBinning_x(BINNING_X_EDEFAULT);
 				return;
-			case Sensor_datatypesPackage.CAMERA_INFO__BEGINNING_Y:
-				setBeginning_y(BEGINNING_Y_EDEFAULT);
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y:
+				setBinning_y(BINNING_Y_EDEFAULT);
 				return;
 			case Sensor_datatypesPackage.CAMERA_INFO__ROI:
 				setRoi((RegionOfInterest)null);
@@ -634,10 +634,10 @@ public class CameraInfoImpl extends EObjectImpl implements CameraInfo {
 				return r != null && !r.isEmpty();
 			case Sensor_datatypesPackage.CAMERA_INFO__P:
 				return p != null && !p.isEmpty();
-			case Sensor_datatypesPackage.CAMERA_INFO__BEGINNING_X:
-				return beginning_x != BEGINNING_X_EDEFAULT;
-			case Sensor_datatypesPackage.CAMERA_INFO__BEGINNING_Y:
-				return beginning_y != BEGINNING_Y_EDEFAULT;
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_X:
+				return binning_x != BINNING_X_EDEFAULT;
+			case Sensor_datatypesPackage.CAMERA_INFO__BINNING_Y:
+				return binning_y != BINNING_Y_EDEFAULT;
 			case Sensor_datatypesPackage.CAMERA_INFO__ROI:
 				return roi != null;
 		}
@@ -668,10 +668,10 @@ public class CameraInfoImpl extends EObjectImpl implements CameraInfo {
 		result.append(r);
 		result.append(", P: ");
 		result.append(p);
-		result.append(", beginning_x: ");
-		result.append(beginning_x);
-		result.append(", beginning_y: ");
-		result.append(beginning_y);
+		result.append(", binning_x: ");
+		result.append(binning_x);
+		result.append(", binning_y: ");
+		result.append(binning_y);
 		result.append(')');
 		return result.toString();
 	}

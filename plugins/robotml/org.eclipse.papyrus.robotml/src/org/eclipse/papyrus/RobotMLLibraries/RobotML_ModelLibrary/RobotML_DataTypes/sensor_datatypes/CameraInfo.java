@@ -24,8 +24,8 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getK <em>K</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getR <em>R</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getP <em>P</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBeginning_x <em>Beginning x</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBeginning_y <em>Beginning y</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBinning_x <em>Binning x</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBinning_y <em>Binning y</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getRoi <em>Roi</em>}</li>
  * </ul>
  * </p>
@@ -204,56 +204,56 @@ public interface CameraInfo extends EObject {
 	EList<Double> getP();
 
 	/**
-	 * Returns the value of the '<em><b>Beginning x</b></em>' attribute.
+	 * Returns the value of the '<em><b>Binning x</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Beginning x</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Binning x</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Beginning x</em>' attribute.
-	 * @see #setBeginning_x(long)
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getCameraInfo_Beginning_x()
+	 * @return the value of the '<em>Binning x</em>' attribute.
+	 * @see #setBinning_x(long)
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getCameraInfo_Binning_x()
 	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32" required="true" ordered="false"
 	 * @generated
 	 */
-	long getBeginning_x();
+	long getBinning_x();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBeginning_x <em>Beginning x</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBinning_x <em>Binning x</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Beginning x</em>' attribute.
-	 * @see #getBeginning_x()
+	 * @param value the new value of the '<em>Binning x</em>' attribute.
+	 * @see #getBinning_x()
 	 * @generated
 	 */
-	void setBeginning_x(long value);
+	void setBinning_x(long value);
 
 	/**
-	 * Returns the value of the '<em><b>Beginning y</b></em>' attribute.
+	 * Returns the value of the '<em><b>Binning y</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Beginning y</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Binning y</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Beginning y</em>' attribute.
-	 * @see #setBeginning_y(long)
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getCameraInfo_Beginning_y()
+	 * @return the value of the '<em>Binning y</em>' attribute.
+	 * @see #setBinning_y(long)
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.Sensor_datatypesPackage#getCameraInfo_Binning_y()
 	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32" required="true" ordered="false"
 	 * @generated
 	 */
-	long getBeginning_y();
+	long getBinning_y();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBeginning_y <em>Beginning y</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBinning_y <em>Binning y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Beginning y</em>' attribute.
-	 * @see #getBeginning_y()
+	 * @param value the new value of the '<em>Binning y</em>' attribute.
+	 * @see #getBinning_y()
 	 * @generated
 	 */
-	void setBeginning_y(long value);
+	void setBinning_y(long value);
 
 	/**
 	 * Returns the value of the '<em><b>Roi</b></em>' containment reference.

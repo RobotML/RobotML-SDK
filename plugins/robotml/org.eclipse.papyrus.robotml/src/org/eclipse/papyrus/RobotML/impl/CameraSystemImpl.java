@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.papyrus.RobotML.CameraSystem;
 import org.eclipse.papyrus.RobotML.RobotMLPackage;
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Point32;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +26,8 @@ import org.eclipse.papyrus.RobotML.RobotMLPackage;
  *   <li>{@link org.eclipse.papyrus.RobotML.impl.CameraSystemImpl#getU0 <em>U0</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotML.impl.CameraSystemImpl#getV0 <em>V0</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotML.impl.CameraSystemImpl#getColor_format <em>Color format</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.CameraSystemImpl#getTranslate <em>Translate</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.CameraSystemImpl#getRotate <em>Rotate</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,7 +42,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float WIDTH_EDEFAULT = 0.0F;
+	protected static final long WIDTH_EDEFAULT = 0L;
 
 	/**
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
@@ -49,7 +52,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * @generated
 	 * @ordered
 	 */
-	protected float width = WIDTH_EDEFAULT;
+	protected long width = WIDTH_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
@@ -59,7 +62,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float HEIGHT_EDEFAULT = 0.0F;
+	protected static final long HEIGHT_EDEFAULT = 0L;
 
 	/**
 	 * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
@@ -69,7 +72,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * @generated
 	 * @ordered
 	 */
-	protected float height = HEIGHT_EDEFAULT;
+	protected long height = HEIGHT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAlpha_u() <em>Alpha u</em>}' attribute.
@@ -172,6 +175,46 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	protected String color_format = COLOR_FORMAT_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getTranslate() <em>Translate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTranslate()
+	 * @generated
+	 * @ordered
+	 */
+	
+
+	/**
+	 * The cached value of the '{@link #getTranslate() <em>Translate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTranslate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Point32 translate ;
+
+	/**
+	 * The default value of the '{@link #getRotate() <em>Rotate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRotate()
+	 * @generated
+	 * @ordered
+	 */
+
+
+	/**
+	 * The cached value of the '{@link #getRotate() <em>Rotate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRotate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Point32 rotate ;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -195,7 +238,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getWidth() {
+	public long getWidth() {
 		return width;
 	}
 
@@ -204,8 +247,8 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setWidth(float newWidth) {
-		float oldWidth = width;
+	public void setWidth(long newWidth) {
+		long oldWidth = width;
 		width = newWidth;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.CAMERA_SYSTEM__WIDTH, oldWidth, width));
@@ -216,7 +259,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getHeight() {
+	public long getHeight() {
 		return height;
 	}
 
@@ -225,8 +268,8 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHeight(float newHeight) {
-		float oldHeight = height;
+	public void setHeight(long newHeight) {
+		long oldHeight = height;
 		height = newHeight;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.CAMERA_SYSTEM__HEIGHT, oldHeight, height));
@@ -342,6 +385,48 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Point32 getTranslate() {
+		return translate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTranslate(Point32 newTranslate) {
+		Point32 oldTranslate = translate;
+		translate = newTranslate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.CAMERA_SYSTEM__TRANSLATE, oldTranslate, translate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Point32 getRotate() {
+		return rotate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRotate(Point32 newRotate) {
+		Point32 oldRotate = rotate;
+		rotate = newRotate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.CAMERA_SYSTEM__ROTATE, oldRotate, rotate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -359,6 +444,10 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 				return getV0();
 			case RobotMLPackage.CAMERA_SYSTEM__COLOR_FORMAT:
 				return getColor_format();
+			case RobotMLPackage.CAMERA_SYSTEM__TRANSLATE:
+				return getTranslate();
+			case RobotMLPackage.CAMERA_SYSTEM__ROTATE:
+				return getRotate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -372,10 +461,10 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RobotMLPackage.CAMERA_SYSTEM__WIDTH:
-				setWidth((Float)newValue);
+				setWidth((Long)newValue);
 				return;
 			case RobotMLPackage.CAMERA_SYSTEM__HEIGHT:
-				setHeight((Float)newValue);
+				setHeight((Long)newValue);
 				return;
 			case RobotMLPackage.CAMERA_SYSTEM__ALPHA_U:
 				setAlpha_u((Float)newValue);
@@ -391,6 +480,12 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 				return;
 			case RobotMLPackage.CAMERA_SYSTEM__COLOR_FORMAT:
 				setColor_format((String)newValue);
+				return;
+			case RobotMLPackage.CAMERA_SYSTEM__TRANSLATE:
+				setTranslate((Point32)newValue);
+				return;
+			case RobotMLPackage.CAMERA_SYSTEM__ROTATE:
+				setRotate((Point32)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -425,6 +520,12 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 			case RobotMLPackage.CAMERA_SYSTEM__COLOR_FORMAT:
 				setColor_format(COLOR_FORMAT_EDEFAULT);
 				return;
+			case RobotMLPackage.CAMERA_SYSTEM__TRANSLATE:
+				setTranslate(null);
+				return;
+			case RobotMLPackage.CAMERA_SYSTEM__ROTATE:
+				setRotate(null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -451,6 +552,10 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 				return v0 != V0_EDEFAULT;
 			case RobotMLPackage.CAMERA_SYSTEM__COLOR_FORMAT:
 				return COLOR_FORMAT_EDEFAULT == null ? color_format != null : !COLOR_FORMAT_EDEFAULT.equals(color_format);
+			case RobotMLPackage.CAMERA_SYSTEM__TRANSLATE:
+				return translate != null;
+			case RobotMLPackage.CAMERA_SYSTEM__ROTATE:
+				return rotate != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -479,6 +584,10 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 		result.append(v0);
 		result.append(", color_format: ");
 		result.append(color_format);
+		result.append(", translate: ");
+		result.append(translate);
+		result.append(", rotate: ");
+		result.append(rotate);
 		result.append(')');
 		return result.toString();
 	}

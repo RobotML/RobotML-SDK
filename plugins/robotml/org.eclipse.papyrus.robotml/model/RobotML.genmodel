@@ -8,7 +8,8 @@
       ecorePackage="RobotML.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="RobotML.ecore#//RobotKind">
       <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//RobotKind/UUV"/>
-      <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//RobotKind/UGV"/>
+      <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//RobotKind/UGVcar"/>
+      <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//RobotKind/UGVdifferential"/>
       <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//RobotKind/UAV"/>
       <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//RobotKind/USV"/>
       <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//RobotKind/piloted"/>
@@ -30,12 +31,6 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="RobotML.ecore#//ServiceFlowKind">
       <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//ServiceFlowKind/provided"/>
       <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//ServiceFlowKind/required"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="RobotML.ecore#//UnitKind">
-      <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//UnitKind/inch"/>
-      <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//UnitKind/meter"/>
-      <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//UnitKind/degree"/>
-      <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//UnitKind/radian"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="RobotML.ecore#//RoboticMiddlewareKind">
       <genEnumLiterals ecoreEnumLiteral="RobotML.ecore#//RoboticMiddlewareKind/RTMaps"/>
@@ -113,15 +108,10 @@
     <genClasses ecoreClass="RobotML.ecore#//PrimitiveData">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//PrimitiveData/base_PrimitiveType"/>
     </genClasses>
-    <genClasses ecoreClass="RobotML.ecore#//PhysicalData">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//PhysicalData/base_DataType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//PhysicalData/unit"/>
-    </genClasses>
-    <genClasses ecoreClass="RobotML.ecore#//ComposedData">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//ComposedData/base_DataType"/>
-    </genClasses>
-    <genClasses ecoreClass="RobotML.ecore#//Collection">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//Collection/base_DataType"/>
+    <genClasses ecoreClass="RobotML.ecore#//DataType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//DataType/base_DataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//DataType/native"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//DataType/libraryPath"/>
     </genClasses>
     <genClasses ecoreClass="RobotML.ecore#//EngineSystem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//EngineSystem/vehicleTraction"/>
@@ -158,6 +148,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//CameraSystem/u0"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//CameraSystem/v0"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//CameraSystem/color_format"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//CameraSystem/translate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//CameraSystem/rotate"/>
     </genClasses>
     <genClasses ecoreClass="RobotML.ecore#//ObjectDetectionSensorSystem"/>
     <genClasses ecoreClass="RobotML.ecore#//ObjectTrackingSensorSystem"/>
@@ -231,6 +223,10 @@
     <genClasses ecoreClass="RobotML.ecore#//InertialNavigationSystem"/>
     <genClasses ecoreClass="RobotML.ecore#//OdometrySystem"/>
     <genClasses ecoreClass="RobotML.ecore#//InfraRedProximetrySystem"/>
+    <genClasses ecoreClass="RobotML.ecore#//DeploymentPlan">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//DeploymentPlan/base_Package"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//DeploymentPlan/mainInstance"/>
+    </genClasses>
   </genPackages>
   <genPackages prefix="RobotMLLibraries" basePackage="org.eclipse.papyrus" disposableProviderFactory="true"
       ecorePackage="RobotMLLibraries.ecore#/">
@@ -425,8 +421,8 @@
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CameraInfo/K"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CameraInfo/R"/>
             <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CameraInfo/P"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CameraInfo/beginning_x"/>
-            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CameraInfo/beginning_y"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CameraInfo/binning_x"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CameraInfo/binning_y"/>
             <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/CameraInfo/roi"/>
           </genClasses>
           <genClasses ecoreClass="RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/Imu">

@@ -672,11 +672,11 @@
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vJmnsAKpEeCQReIOIWJ0nA" value="12"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vKDToAKpEeCQReIOIWJ0nA" value="12"/>
             </ownedAttribute>
-            <ownedAttribute xmi:id="_yzjw8AKpEeCQReIOIWJ0nA" name="beginning_x" visibility="public" type="_nCOuoAH-EeC_ZLzLQhW-TQ">
+            <ownedAttribute xmi:id="_yzjw8AKpEeCQReIOIWJ0nA" name="binning_x" visibility="public" type="_nCOuoAH-EeC_ZLzLQhW-TQ">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1c-qQAKpEeCQReIOIWJ0nA" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1dRlMAKpEeCQReIOIWJ0nA" value="1"/>
             </ownedAttribute>
-            <ownedAttribute xmi:id="_2V52UAKpEeCQReIOIWJ0nA" name="beginning_y" visibility="public" type="_nCOuoAH-EeC_ZLzLQhW-TQ">
+            <ownedAttribute xmi:id="_2V52UAKpEeCQReIOIWJ0nA" name="binning_y" visibility="public" type="_nCOuoAH-EeC_ZLzLQhW-TQ">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4Z7jkAKpEeCQReIOIWJ0nA" value="1"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4aOegAKpEeCQReIOIWJ0nA" value="1"/>
             </ownedAttribute>

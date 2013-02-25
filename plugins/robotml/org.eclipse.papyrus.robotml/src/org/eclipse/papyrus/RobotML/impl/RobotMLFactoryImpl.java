@@ -19,11 +19,12 @@ import org.eclipse.papyrus.RobotML.Allocate;
 import org.eclipse.papyrus.RobotML.BlenderMorse;
 import org.eclipse.papyrus.RobotML.Building;
 import org.eclipse.papyrus.RobotML.CameraSystem;
-import org.eclipse.papyrus.RobotML.Collection;
-import org.eclipse.papyrus.RobotML.ComposedData;
+
 import org.eclipse.papyrus.RobotML.CycabTK;
 import org.eclipse.papyrus.RobotML.DataFlowDirectionKind;
 import org.eclipse.papyrus.RobotML.DataFlowPort;
+import org.eclipse.papyrus.RobotML.DataType;
+import org.eclipse.papyrus.RobotML.DeploymentPlan;
 import org.eclipse.papyrus.RobotML.EngineSystem;
 import org.eclipse.papyrus.RobotML.Environment;
 import org.eclipse.papyrus.RobotML.Floor;
@@ -42,7 +43,7 @@ import org.eclipse.papyrus.RobotML.ObjectTrackingSensorSystem;
 import org.eclipse.papyrus.RobotML.OdometrySystem;
 import org.eclipse.papyrus.RobotML.OnPort;
 import org.eclipse.papyrus.RobotML.Pedestrian;
-import org.eclipse.papyrus.RobotML.PhysicalData;
+
 import org.eclipse.papyrus.RobotML.PhysicalObject;
 import org.eclipse.papyrus.RobotML.Planet;
 import org.eclipse.papyrus.RobotML.Platform;
@@ -68,7 +69,7 @@ import org.eclipse.papyrus.RobotML.Surface;
 import org.eclipse.papyrus.RobotML.SynchronizationKind;
 import org.eclipse.papyrus.RobotML.Transition;
 import org.eclipse.papyrus.RobotML.UGVKind;
-import org.eclipse.papyrus.RobotML.UnitKind;
+
 import org.eclipse.papyrus.RobotML.WaterSurface;
 import org.eclipse.papyrus.RobotML.WheelSystem;
 
@@ -132,9 +133,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 			case RobotMLPackage.HARDWARE: return createHardware();
 			case RobotMLPackage.SOFTWARE: return createSoftware();
 			case RobotMLPackage.PRIMITIVE_DATA: return createPrimitiveData();
-			case RobotMLPackage.PHYSICAL_DATA: return createPhysicalData();
-			case RobotMLPackage.COMPOSED_DATA: return createComposedData();
-			case RobotMLPackage.COLLECTION: return createCollection();
+			case RobotMLPackage.DATA_TYPE: return createDataType();
 			case RobotMLPackage.ENGINE_SYSTEM: return createEngineSystem();
 			case RobotMLPackage.WHEEL_SYSTEM: return createWheelSystem();
 			case RobotMLPackage.IMAGE_SENSOR_SYSTEM: return createImageSensorSystem();
@@ -167,6 +166,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 			case RobotMLPackage.INERTIAL_NAVIGATION_SYSTEM: return createInertialNavigationSystem();
 			case RobotMLPackage.ODOMETRY_SYSTEM: return createOdometrySystem();
 			case RobotMLPackage.INFRA_RED_PROXIMETRY_SYSTEM: return createInfraRedProximetrySystem();
+			case RobotMLPackage.DEPLOYMENT_PLAN: return createDeploymentPlan();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -190,8 +190,6 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 				return createDataFlowDirectionKindFromString(eDataType, initialValue);
 			case RobotMLPackage.SERVICE_FLOW_KIND:
 				return createServiceFlowKindFromString(eDataType, initialValue);
-			case RobotMLPackage.UNIT_KIND:
-				return createUnitKindFromString(eDataType, initialValue);
 			case RobotMLPackage.ROBOTIC_MIDDLEWARE_KIND:
 				return createRoboticMiddlewareKindFromString(eDataType, initialValue);
 			case RobotMLPackage.SHADE:
@@ -219,8 +217,6 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 				return convertDataFlowDirectionKindToString(eDataType, instanceValue);
 			case RobotMLPackage.SERVICE_FLOW_KIND:
 				return convertServiceFlowKindToString(eDataType, instanceValue);
-			case RobotMLPackage.UNIT_KIND:
-				return convertUnitKindToString(eDataType, instanceValue);
 			case RobotMLPackage.ROBOTIC_MIDDLEWARE_KIND:
 				return convertRoboticMiddlewareKindToString(eDataType, instanceValue);
 			case RobotMLPackage.SHADE:
@@ -395,29 +391,9 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PhysicalData createPhysicalData() {
-		PhysicalDataImpl physicalData = new PhysicalDataImpl();
-		return physicalData;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComposedData createComposedData() {
-		ComposedDataImpl composedData = new ComposedDataImpl();
-		return composedData;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Collection createCollection() {
-		CollectionImpl collection = new CollectionImpl();
-		return collection;
+	public DataType createDataType() {
+		DataTypeImpl dataType = new DataTypeImpl();
+		return dataType;
 	}
 
 	/**
@@ -745,6 +721,16 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DeploymentPlan createDeploymentPlan() {
+		DeploymentPlanImpl deploymentPlan = new DeploymentPlanImpl();
+		return deploymentPlan;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RobotKind createRobotKindFromString(EDataType eDataType, String initialValue) {
 		RobotKind result = RobotKind.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -837,26 +823,6 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	 * @generated
 	 */
 	public String convertServiceFlowKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UnitKind createUnitKindFromString(EDataType eDataType, String initialValue) {
-		UnitKind result = UnitKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertUnitKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

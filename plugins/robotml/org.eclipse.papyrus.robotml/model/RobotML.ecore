@@ -30,7 +30,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" ordered="false"
         lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ugvKind" ordered="false"
-        lowerBound="1" eType="#//UGVKind"/>
+        eType="#//UGVKind"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
@@ -56,10 +56,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Surface" eSuperTypes="#//PhysicalObject"/>
   <eClassifiers xsi:type="ecore:EEnum" name="RobotKind">
     <eLiterals name="UUV"/>
-    <eLiterals name="UGV" value="1"/>
-    <eLiterals name="UAV" value="2"/>
-    <eLiterals name="USV" value="3"/>
-    <eLiterals name="piloted" value="4"/>
+    <eLiterals name="UGVcar" value="1"/>
+    <eLiterals name="UGVdifferential" value="2"/>
+    <eLiterals name="UAV" value="3"/>
+    <eLiterals name="USV" value="4"/>
+    <eLiterals name="piloted" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="UGVKind">
     <eLiterals name="differential"/>
@@ -124,29 +125,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcet" ordered="false" lowerBound="1"
         eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveData">
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveData" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_PrimitiveType" ordered="false"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//PrimitiveType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PhysicalData">
+  <eClassifiers xsi:type="ecore:EClass" name="DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_DataType" ordered="false"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" ordered="false" lowerBound="1"
-        eType="#//UnitKind"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="UnitKind">
-    <eLiterals name="inch"/>
-    <eLiterals name="meter" value="1"/>
-    <eLiterals name="degree" value="2"/>
-    <eLiterals name="radian" value="3"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComposedData">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="base_DataType" ordered="false"
-        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Collection">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="base_DataType" ordered="false"
-        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="native" ordered="false"
+        lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="libraryPath" ordered="false"
+        lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EngineSystem" eSuperTypes="#//ActuatorSystem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="vehicleTraction" ordered="false"
@@ -198,17 +187,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImageSensorSystem" eSuperTypes="#//SensorSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="CameraSystem" eSuperTypes="#//ImageSensorSystem">
-    <eAnnotations source="duplicates">
-      <contents xsi:type="ecore:EAttribute" name="frequency" ordered="false" lowerBound="1"
-          eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32">
-        <eAnnotations source="redefines" references="#//SensorSystem/frequency"/>
-      </contents>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" ordered="false"
-        lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"
+        lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt32"
         defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" ordered="false"
-        lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
+        lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt32"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alpha_u" ordered="false"
         lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alpha_v" ordered="false"
@@ -219,6 +202,10 @@
         eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color_format" ordered="false"
         lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="translate" ordered="false"
+        lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotate" ordered="false"
+        lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectDetectionSensorSystem" eSuperTypes="#//SensorSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectTrackingSensorSystem" eSuperTypes="#//SensorSystem"/>
@@ -338,4 +325,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="InertialNavigationSystem" eSuperTypes="#//GPSSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="OdometrySystem" eSuperTypes="#//LocalizationSensorSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="InfraRedProximetrySystem" eSuperTypes="#//ObjectDetectionSensorSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentPlan">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mainInstance" ordered="false"
+        lowerBound="1" eType="#//System"/>
+  </eClassifiers>
 </ecore:EPackage>

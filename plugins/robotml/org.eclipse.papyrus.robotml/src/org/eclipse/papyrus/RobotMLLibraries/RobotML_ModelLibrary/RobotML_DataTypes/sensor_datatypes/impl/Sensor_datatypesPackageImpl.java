@@ -538,7 +538,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCameraInfo_Beginning_x() {
+	public EAttribute getCameraInfo_Binning_x() {
 		return (EAttribute)cameraInfoEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -547,7 +547,7 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCameraInfo_Beginning_y() {
+	public EAttribute getCameraInfo_Binning_y() {
 		return (EAttribute)cameraInfoEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -1577,8 +1577,8 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		createEAttribute(cameraInfoEClass, CAMERA_INFO__K);
 		createEAttribute(cameraInfoEClass, CAMERA_INFO__R);
 		createEAttribute(cameraInfoEClass, CAMERA_INFO__P);
-		createEAttribute(cameraInfoEClass, CAMERA_INFO__BEGINNING_X);
-		createEAttribute(cameraInfoEClass, CAMERA_INFO__BEGINNING_Y);
+		createEAttribute(cameraInfoEClass, CAMERA_INFO__BINNING_X);
+		createEAttribute(cameraInfoEClass, CAMERA_INFO__BINNING_Y);
 		createEReference(cameraInfoEClass, CAMERA_INFO__ROI);
 
 		imuEClass = createEClass(IMU);
@@ -1767,8 +1767,8 @@ public class Sensor_datatypesPackageImpl extends EPackageImpl implements Sensor_
 		initEAttribute(getCameraInfo_K(), theStd_datatypesPackage.getFloat64(), "K", null, 9, 9, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCameraInfo_R(), theStd_datatypesPackage.getFloat64(), "R", null, 9, 9, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCameraInfo_P(), theStd_datatypesPackage.getFloat64(), "P", null, 12, 12, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCameraInfo_Beginning_x(), theStd_datatypesPackage.getUInt32(), "beginning_x", null, 1, 1, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCameraInfo_Beginning_y(), theStd_datatypesPackage.getUInt32(), "beginning_y", null, 1, 1, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCameraInfo_Binning_x(), theStd_datatypesPackage.getUInt32(), "binning_x", null, 1, 1, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCameraInfo_Binning_y(), theStd_datatypesPackage.getUInt32(), "binning_y", null, 1, 1, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCameraInfo_Roi(), this.getRegionOfInterest(), null, "roi", null, 1, 1, CameraInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(imuEClass, Imu.class, "Imu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -166,31 +166,13 @@ public interface RobotMLFactory extends EFactory {
 	PrimitiveData createPrimitiveData();
 
 	/**
-	 * Returns a new object of class '<em>Physical Data</em>'.
+	 * Returns a new object of class '<em>Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Physical Data</em>'.
+	 * @return a new object of class '<em>Data Type</em>'.
 	 * @generated
 	 */
-	PhysicalData createPhysicalData();
-
-	/**
-	 * Returns a new object of class '<em>Composed Data</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Composed Data</em>'.
-	 * @generated
-	 */
-	ComposedData createComposedData();
-
-	/**
-	 * Returns a new object of class '<em>Collection</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Collection</em>'.
-	 * @generated
-	 */
-	Collection createCollection();
+	DataType createDataType();
 
 	/**
 	 * Returns a new object of class '<em>Engine System</em>'.
@@ -479,6 +461,15 @@ public interface RobotMLFactory extends EFactory {
 	 * @generated
 	 */
 	InfraRedProximetrySystem createInfraRedProximetrySystem();
+
+	/**
+	 * Returns a new object of class '<em>Deployment Plan</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Deployment Plan</em>'.
+	 * @generated
+	 */
+	DeploymentPlan createDeploymentPlan();
 
 	/**
 	 * Returns the package supported by this factory.

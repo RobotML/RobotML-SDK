@@ -2,6 +2,8 @@
  */
 package org.eclipse.papyrus.RobotML;
 
+import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Point32;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +20,8 @@ package org.eclipse.papyrus.RobotML;
  *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getU0 <em>U0</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getV0 <em>V0</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getColor_format <em>Color format</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getTranslate <em>Translate</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.CameraSystem#getRotate <em>Rotate</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,12 +40,12 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Width</em>' attribute.
-	 * @see #setWidth(float)
+	 * @see #setWidth(long)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Width()
-	 * @model default="0" dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model default="0" dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32" required="true" ordered="false"
 	 * @generated
 	 */
-	float getWidth();
+	long getWidth();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getWidth <em>Width</em>}' attribute.
@@ -51,7 +55,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * @see #getWidth()
 	 * @generated
 	 */
-	void setWidth(float value);
+	void setWidth(long value);
 
 	/**
 	 * Returns the value of the '<em><b>Height</b></em>' attribute.
@@ -62,12 +66,12 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Height</em>' attribute.
-	 * @see #setHeight(float)
+	 * @see #setHeight(long)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Height()
-	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32" required="true" ordered="false"
 	 * @generated
 	 */
-	float getHeight();
+	long getHeight();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getHeight <em>Height</em>}' attribute.
@@ -77,7 +81,7 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * @see #getHeight()
 	 * @generated
 	 */
-	void setHeight(float value);
+	void setHeight(long value);
 
 	/**
 	 * Returns the value of the '<em><b>Alpha u</b></em>' attribute.
@@ -208,5 +212,57 @@ public interface CameraSystem extends ImageSensorSystem {
 	 * @generated
 	 */
 	void setColor_format(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Translate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Translate</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Translate</em>' attribute.
+	 * @see #setTranslate(float)
+	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Translate()
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @generated
+	 */
+	Point32 getTranslate();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getTranslate <em>Translate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Translate</em>' attribute.
+	 * @see #getTranslate()
+	 * @generated
+	 */
+	void setTranslate(Point32 value);
+
+	/**
+	 * Returns the value of the '<em><b>Rotate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rotate</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rotate</em>' attribute.
+	 * @see #setRotate(float)
+	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Rotate()
+	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @generated
+	 */
+	Point32 getRotate();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getRotate <em>Rotate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rotate</em>' attribute.
+	 * @see #getRotate()
+	 * @generated
+	 */
+	void setRotate(Point32 value);
 
 } // CameraSystem

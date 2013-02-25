@@ -1144,6 +1144,52 @@ public interface RobotMLPackage extends EPackage {
 	int SOFTWARE_FEATURE_COUNT = SYSTEM_FEATURE_COUNT + 5;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.DataTypeImpl <em>Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.RobotML.impl.DataTypeImpl
+	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getDataType()
+	 * @generated
+	 */
+	int DATA_TYPE = 17;
+
+	/**
+	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__BASE_DATA_TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Native</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__NATIVE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Library Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE__LIBRARY_PATH = 2;
+
+	/**
+	 * The number of structural features of the '<em>Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FEATURE_COUNT = 3;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.PrimitiveDataImpl <em>Primitive Data</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1154,13 +1200,40 @@ public interface RobotMLPackage extends EPackage {
 	int PRIMITIVE_DATA = 16;
 
 	/**
+	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_DATA__BASE_DATA_TYPE = DATA_TYPE__BASE_DATA_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Native</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_DATA__NATIVE = DATA_TYPE__NATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Library Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_DATA__LIBRARY_PATH = DATA_TYPE__LIBRARY_PATH;
+
+	/**
 	 * The feature id for the '<em><b>Base Primitive Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_DATA__BASE_PRIMITIVE_TYPE = 0;
+	int PRIMITIVE_DATA__BASE_PRIMITIVE_TYPE = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Primitive Data</em>' class.
@@ -1169,100 +1242,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_DATA_FEATURE_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.PhysicalDataImpl <em>Physical Data</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.RobotML.impl.PhysicalDataImpl
-	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getPhysicalData()
-	 * @generated
-	 */
-	int PHYSICAL_DATA = 17;
-
-	/**
-	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHYSICAL_DATA__BASE_DATA_TYPE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHYSICAL_DATA__UNIT = 1;
-
-	/**
-	 * The number of structural features of the '<em>Physical Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHYSICAL_DATA_FEATURE_COUNT = 2;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.ComposedDataImpl <em>Composed Data</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.RobotML.impl.ComposedDataImpl
-	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getComposedData()
-	 * @generated
-	 */
-	int COMPOSED_DATA = 18;
-
-	/**
-	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSED_DATA__BASE_DATA_TYPE = 0;
-
-	/**
-	 * The number of structural features of the '<em>Composed Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSED_DATA_FEATURE_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.CollectionImpl <em>Collection</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.RobotML.impl.CollectionImpl
-	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getCollection()
-	 * @generated
-	 */
-	int COLLECTION = 19;
-
-	/**
-	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION__BASE_DATA_TYPE = 0;
-
-	/**
-	 * The number of structural features of the '<em>Collection</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION_FEATURE_COUNT = 1;
+	int PRIMITIVE_DATA_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.EngineSystemImpl <em>Engine System</em>}' class.
@@ -1272,7 +1252,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getEngineSystem()
 	 * @generated
 	 */
-	int ENGINE_SYSTEM = 20;
+	int ENGINE_SYSTEM = 18;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -1399,7 +1379,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getWheelSystem()
 	 * @generated
 	 */
-	int WHEEL_SYSTEM = 21;
+	int WHEEL_SYSTEM = 19;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -1616,7 +1596,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getImageSensorSystem()
 	 * @generated
 	 */
-	int IMAGE_SENSOR_SYSTEM = 22;
+	int IMAGE_SENSOR_SYSTEM = 20;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -1707,7 +1687,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getCameraSystem()
 	 * @generated
 	 */
-	int CAMERA_SYSTEM = 23;
+	int CAMERA_SYSTEM = 21;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -1845,13 +1825,31 @@ public interface RobotMLPackage extends EPackage {
 	int CAMERA_SYSTEM__COLOR_FORMAT = IMAGE_SENSOR_SYSTEM_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Translate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAMERA_SYSTEM__TRANSLATE = IMAGE_SENSOR_SYSTEM_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Rotate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAMERA_SYSTEM__ROTATE = IMAGE_SENSOR_SYSTEM_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Camera System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAMERA_SYSTEM_FEATURE_COUNT = IMAGE_SENSOR_SYSTEM_FEATURE_COUNT + 7;
+	int CAMERA_SYSTEM_FEATURE_COUNT = IMAGE_SENSOR_SYSTEM_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.ObjectDetectionSensorSystemImpl <em>Object Detection Sensor System</em>}' class.
@@ -1861,7 +1859,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getObjectDetectionSensorSystem()
 	 * @generated
 	 */
-	int OBJECT_DETECTION_SENSOR_SYSTEM = 24;
+	int OBJECT_DETECTION_SENSOR_SYSTEM = 22;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -1952,7 +1950,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getObjectTrackingSensorSystem()
 	 * @generated
 	 */
-	int OBJECT_TRACKING_SENSOR_SYSTEM = 25;
+	int OBJECT_TRACKING_SENSOR_SYSTEM = 23;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -2043,7 +2041,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getLidarSystem()
 	 * @generated
 	 */
-	int LIDAR_SYSTEM = 26;
+	int LIDAR_SYSTEM = 24;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -2242,7 +2240,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getLocalizationSensorSystem()
 	 * @generated
 	 */
-	int LOCALIZATION_SENSOR_SYSTEM = 27;
+	int LOCALIZATION_SENSOR_SYSTEM = 25;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -2333,7 +2331,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getGPSSystem()
 	 * @generated
 	 */
-	int GPS_SYSTEM = 28;
+	int GPS_SYSTEM = 26;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -2433,7 +2431,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getSimulatedSystem()
 	 * @generated
 	 */
-	int SIMULATED_SYSTEM = 29;
+	int SIMULATED_SYSTEM = 27;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -2551,7 +2549,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getAlgorithmLibrary()
 	 * @generated
 	 */
-	int ALGORITHM_LIBRARY = 30;
+	int ALGORITHM_LIBRARY = 28;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -2588,7 +2586,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 31;
+	int STATE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Base State</b></em>' reference.
@@ -2634,7 +2632,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getSensorDriver()
 	 * @generated
 	 */
-	int SENSOR_DRIVER = 32;
+	int SENSOR_DRIVER = 30;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -2734,7 +2732,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getBuilding()
 	 * @generated
 	 */
-	int BUILDING = 33;
+	int BUILDING = 31;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -2807,7 +2805,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getPlanet()
 	 * @generated
 	 */
-	int PLANET = 34;
+	int PLANET = 32;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -2880,7 +2878,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getGround()
 	 * @generated
 	 */
-	int GROUND = 36;
+	int GROUND = 34;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -2953,7 +2951,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getLandSurface()
 	 * @generated
 	 */
-	int LAND_SURFACE = 35;
+	int LAND_SURFACE = 33;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -3026,7 +3024,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getFloor()
 	 * @generated
 	 */
-	int FLOOR = 37;
+	int FLOOR = 35;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -3099,7 +3097,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getWaterSurface()
 	 * @generated
 	 */
-	int WATER_SURFACE = 38;
+	int WATER_SURFACE = 36;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -3172,7 +3170,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getHuman()
 	 * @generated
 	 */
-	int HUMAN = 39;
+	int HUMAN = 37;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -3254,7 +3252,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getPedestrian()
 	 * @generated
 	 */
-	int PEDESTRIAN = 40;
+	int PEDESTRIAN = 38;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -3336,7 +3334,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getStairs()
 	 * @generated
 	 */
-	int STAIRS = 41;
+	int STAIRS = 39;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -3409,7 +3407,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getPlatform()
 	 * @generated
 	 */
-	int PLATFORM = 42;
+	int PLATFORM = 40;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -3473,7 +3471,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getRoboticMiddleware()
 	 * @generated
 	 */
-	int ROBOTIC_MIDDLEWARE = 43;
+	int ROBOTIC_MIDDLEWARE = 41;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -3546,7 +3544,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getRoboticSimulator()
 	 * @generated
 	 */
-	int ROBOTIC_SIMULATOR = 44;
+	int ROBOTIC_SIMULATOR = 42;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -3610,7 +3608,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getCycabTK()
 	 * @generated
 	 */
-	int CYCAB_TK = 45;
+	int CYCAB_TK = 43;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -3701,7 +3699,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getBlenderMorse()
 	 * @generated
 	 */
-	int BLENDER_MORSE = 46;
+	int BLENDER_MORSE = 44;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -3801,7 +3799,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getOnPort()
 	 * @generated
 	 */
-	int ON_PORT = 47;
+	int ON_PORT = 45;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference.
@@ -3838,7 +3836,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getAllocate()
 	 * @generated
 	 */
-	int ALLOCATE = 48;
+	int ALLOCATE = 46;
 
 	/**
 	 * The feature id for the '<em><b>Base Abstraction</b></em>' reference.
@@ -3866,7 +3864,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getInertialMeasurementUnitSystem()
 	 * @generated
 	 */
-	int INERTIAL_MEASUREMENT_UNIT_SYSTEM = 49;
+	int INERTIAL_MEASUREMENT_UNIT_SYSTEM = 47;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -3957,7 +3955,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getInertialNavigationSystem()
 	 * @generated
 	 */
-	int INERTIAL_NAVIGATION_SYSTEM = 50;
+	int INERTIAL_NAVIGATION_SYSTEM = 48;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -4057,7 +4055,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getOdometrySystem()
 	 * @generated
 	 */
-	int ODOMETRY_SYSTEM = 51;
+	int ODOMETRY_SYSTEM = 49;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -4148,7 +4146,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getInfraRedProximetrySystem()
 	 * @generated
 	 */
-	int INFRA_RED_PROXIMETRY_SYSTEM = 52;
+	int INFRA_RED_PROXIMETRY_SYSTEM = 50;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -4232,6 +4230,43 @@ public interface RobotMLPackage extends EPackage {
 	int INFRA_RED_PROXIMETRY_SYSTEM_FEATURE_COUNT = OBJECT_DETECTION_SENSOR_SYSTEM_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.DeploymentPlanImpl <em>Deployment Plan</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.RobotML.impl.DeploymentPlanImpl
+	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getDeploymentPlan()
+	 * @generated
+	 */
+	int DEPLOYMENT_PLAN = 51;
+
+	/**
+	 * The feature id for the '<em><b>Base Package</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT_PLAN__BASE_PACKAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Main Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT_PLAN__MAIN_INSTANCE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Deployment Plan</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT_PLAN_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.RobotKind <em>Robot Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4239,7 +4274,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getRobotKind()
 	 * @generated
 	 */
-	int ROBOT_KIND = 53;
+	int ROBOT_KIND = 52;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.UGVKind <em>UGV Kind</em>}' enum.
@@ -4249,7 +4284,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getUGVKind()
 	 * @generated
 	 */
-	int UGV_KIND = 54;
+	int UGV_KIND = 53;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.SynchronizationKind <em>Synchronization Kind</em>}' enum.
@@ -4259,7 +4294,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getSynchronizationKind()
 	 * @generated
 	 */
-	int SYNCHRONIZATION_KIND = 55;
+	int SYNCHRONIZATION_KIND = 54;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.DataFlowDirectionKind <em>Data Flow Direction Kind</em>}' enum.
@@ -4269,7 +4304,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getDataFlowDirectionKind()
 	 * @generated
 	 */
-	int DATA_FLOW_DIRECTION_KIND = 56;
+	int DATA_FLOW_DIRECTION_KIND = 55;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.ServiceFlowKind <em>Service Flow Kind</em>}' enum.
@@ -4279,17 +4314,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getServiceFlowKind()
 	 * @generated
 	 */
-	int SERVICE_FLOW_KIND = 57;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.UnitKind <em>Unit Kind</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.RobotML.UnitKind
-	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getUnitKind()
-	 * @generated
-	 */
-	int UNIT_KIND = 58;
+	int SERVICE_FLOW_KIND = 56;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.RoboticMiddlewareKind <em>Robotic Middleware Kind</em>}' enum.
@@ -4299,7 +4324,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getRoboticMiddlewareKind()
 	 * @generated
 	 */
-	int ROBOTIC_MIDDLEWARE_KIND = 59;
+	int ROBOTIC_MIDDLEWARE_KIND = 57;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.Shade <em>Shade</em>}' enum.
@@ -4309,7 +4334,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getShade()
 	 * @generated
 	 */
-	int SHADE = 60;
+	int SHADE = 58;
 
 
 	/**
@@ -4846,78 +4871,47 @@ public interface RobotMLPackage extends EPackage {
 	EReference getPrimitiveData_Base_PrimitiveType();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.PhysicalData <em>Physical Data</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Physical Data</em>'.
-	 * @see org.eclipse.papyrus.RobotML.PhysicalData
+	 * @return the meta object for class '<em>Data Type</em>'.
+	 * @see org.eclipse.papyrus.RobotML.DataType
 	 * @generated
 	 */
-	EClass getPhysicalData();
+	EClass getDataType();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.RobotML.PhysicalData#getBase_DataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.RobotML.DataType#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see org.eclipse.papyrus.RobotML.PhysicalData#getBase_DataType()
-	 * @see #getPhysicalData()
+	 * @see org.eclipse.papyrus.RobotML.DataType#getBase_DataType()
+	 * @see #getDataType()
 	 * @generated
 	 */
-	EReference getPhysicalData_Base_DataType();
+	EReference getDataType_Base_DataType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotML.PhysicalData#getUnit <em>Unit</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotML.DataType#isNative <em>Native</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Unit</em>'.
-	 * @see org.eclipse.papyrus.RobotML.PhysicalData#getUnit()
-	 * @see #getPhysicalData()
+	 * @return the meta object for the attribute '<em>Native</em>'.
+	 * @see org.eclipse.papyrus.RobotML.DataType#isNative()
+	 * @see #getDataType()
 	 * @generated
 	 */
-	EAttribute getPhysicalData_Unit();
+	EAttribute getDataType_Native();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.ComposedData <em>Composed Data</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotML.DataType#getLibraryPath <em>Library Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Composed Data</em>'.
-	 * @see org.eclipse.papyrus.RobotML.ComposedData
+	 * @return the meta object for the attribute '<em>Library Path</em>'.
+	 * @see org.eclipse.papyrus.RobotML.DataType#getLibraryPath()
+	 * @see #getDataType()
 	 * @generated
 	 */
-	EClass getComposedData();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.RobotML.ComposedData#getBase_DataType <em>Base Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see org.eclipse.papyrus.RobotML.ComposedData#getBase_DataType()
-	 * @see #getComposedData()
-	 * @generated
-	 */
-	EReference getComposedData_Base_DataType();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.Collection <em>Collection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Collection</em>'.
-	 * @see org.eclipse.papyrus.RobotML.Collection
-	 * @generated
-	 */
-	EClass getCollection();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.RobotML.Collection#getBase_DataType <em>Base Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see org.eclipse.papyrus.RobotML.Collection#getBase_DataType()
-	 * @see #getCollection()
-	 * @generated
-	 */
-	EReference getCollection_Base_DataType();
+	EAttribute getDataType_LibraryPath();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.EngineSystem <em>Engine System</em>}'.
@@ -5277,6 +5271,28 @@ public interface RobotMLPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCameraSystem_Color_format();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotML.CameraSystem#getTranslate <em>Translate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Translate</em>'.
+	 * @see org.eclipse.papyrus.RobotML.CameraSystem#getTranslate()
+	 * @see #getCameraSystem()
+	 * @generated
+	 */
+	EAttribute getCameraSystem_Translate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotML.CameraSystem#getRotate <em>Rotate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Rotate</em>'.
+	 * @see org.eclipse.papyrus.RobotML.CameraSystem#getRotate()
+	 * @see #getCameraSystem()
+	 * @generated
+	 */
+	EAttribute getCameraSystem_Rotate();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.ObjectDetectionSensorSystem <em>Object Detection Sensor System</em>}'.
@@ -5921,6 +5937,38 @@ public interface RobotMLPackage extends EPackage {
 	EClass getInfraRedProximetrySystem();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.DeploymentPlan <em>Deployment Plan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Deployment Plan</em>'.
+	 * @see org.eclipse.papyrus.RobotML.DeploymentPlan
+	 * @generated
+	 */
+	EClass getDeploymentPlan();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.RobotML.DeploymentPlan#getBase_Package <em>Base Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Package</em>'.
+	 * @see org.eclipse.papyrus.RobotML.DeploymentPlan#getBase_Package()
+	 * @see #getDeploymentPlan()
+	 * @generated
+	 */
+	EReference getDeploymentPlan_Base_Package();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.RobotML.DeploymentPlan#getMainInstance <em>Main Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Main Instance</em>'.
+	 * @see org.eclipse.papyrus.RobotML.DeploymentPlan#getMainInstance()
+	 * @see #getDeploymentPlan()
+	 * @generated
+	 */
+	EReference getDeploymentPlan_MainInstance();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.RobotML.RobotKind <em>Robot Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5969,16 +6017,6 @@ public interface RobotMLPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getServiceFlowKind();
-
-	/**
-	 * Returns the meta object for enum '{@link org.eclipse.papyrus.RobotML.UnitKind <em>Unit Kind</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Unit Kind</em>'.
-	 * @see org.eclipse.papyrus.RobotML.UnitKind
-	 * @generated
-	 */
-	EEnum getUnitKind();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.RobotML.RoboticMiddlewareKind <em>Robotic Middleware Kind</em>}'.
@@ -6457,14 +6495,14 @@ public interface RobotMLPackage extends EPackage {
 		EReference PRIMITIVE_DATA__BASE_PRIMITIVE_TYPE = eINSTANCE.getPrimitiveData_Base_PrimitiveType();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.PhysicalDataImpl <em>Physical Data</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.DataTypeImpl <em>Data Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.RobotML.impl.PhysicalDataImpl
-		 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getPhysicalData()
+		 * @see org.eclipse.papyrus.RobotML.impl.DataTypeImpl
+		 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getDataType()
 		 * @generated
 		 */
-		EClass PHYSICAL_DATA = eINSTANCE.getPhysicalData();
+		EClass DATA_TYPE = eINSTANCE.getDataType();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
@@ -6472,51 +6510,23 @@ public interface RobotMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PHYSICAL_DATA__BASE_DATA_TYPE = eINSTANCE.getPhysicalData_Base_DataType();
+		EReference DATA_TYPE__BASE_DATA_TYPE = eINSTANCE.getDataType_Base_DataType();
 
 		/**
-		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Native</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PHYSICAL_DATA__UNIT = eINSTANCE.getPhysicalData_Unit();
+		EAttribute DATA_TYPE__NATIVE = eINSTANCE.getDataType_Native();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.ComposedDataImpl <em>Composed Data</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.RobotML.impl.ComposedDataImpl
-		 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getComposedData()
-		 * @generated
-		 */
-		EClass COMPOSED_DATA = eINSTANCE.getComposedData();
-
-		/**
-		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Library Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPOSED_DATA__BASE_DATA_TYPE = eINSTANCE.getComposedData_Base_DataType();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.CollectionImpl <em>Collection</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.RobotML.impl.CollectionImpl
-		 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getCollection()
-		 * @generated
-		 */
-		EClass COLLECTION = eINSTANCE.getCollection();
-
-		/**
-		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COLLECTION__BASE_DATA_TYPE = eINSTANCE.getCollection_Base_DataType();
+		EAttribute DATA_TYPE__LIBRARY_PATH = eINSTANCE.getDataType_LibraryPath();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.EngineSystemImpl <em>Engine System</em>}' class.
@@ -6789,6 +6799,22 @@ public interface RobotMLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CAMERA_SYSTEM__COLOR_FORMAT = eINSTANCE.getCameraSystem_Color_format();
+
+		/**
+		 * The meta object literal for the '<em><b>Translate</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CAMERA_SYSTEM__TRANSLATE = eINSTANCE.getCameraSystem_Translate();
+
+		/**
+		 * The meta object literal for the '<em><b>Rotate</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CAMERA_SYSTEM__ROTATE = eINSTANCE.getCameraSystem_Rotate();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.ObjectDetectionSensorSystemImpl <em>Object Detection Sensor System</em>}' class.
@@ -7337,6 +7363,32 @@ public interface RobotMLPackage extends EPackage {
 		EClass INFRA_RED_PROXIMETRY_SYSTEM = eINSTANCE.getInfraRedProximetrySystem();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.DeploymentPlanImpl <em>Deployment Plan</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.RobotML.impl.DeploymentPlanImpl
+		 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getDeploymentPlan()
+		 * @generated
+		 */
+		EClass DEPLOYMENT_PLAN = eINSTANCE.getDeploymentPlan();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Package</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPLOYMENT_PLAN__BASE_PACKAGE = eINSTANCE.getDeploymentPlan_Base_Package();
+
+		/**
+		 * The meta object literal for the '<em><b>Main Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPLOYMENT_PLAN__MAIN_INSTANCE = eINSTANCE.getDeploymentPlan_MainInstance();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.RobotKind <em>Robot Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7385,16 +7437,6 @@ public interface RobotMLPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum SERVICE_FLOW_KIND = eINSTANCE.getServiceFlowKind();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.UnitKind <em>Unit Kind</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.RobotML.UnitKind
-		 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getUnitKind()
-		 * @generated
-		 */
-		EEnum UNIT_KIND = eINSTANCE.getUnitKind();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.RoboticMiddlewareKind <em>Robotic Middleware Kind</em>}' enum.

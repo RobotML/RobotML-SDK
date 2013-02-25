@@ -118,7 +118,7 @@ public interface Robot extends Agent, org.eclipse.papyrus.RobotML.System {
 	 * @see org.eclipse.papyrus.RobotML.UGVKind
 	 * @see #setUgvKind(UGVKind)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getRobot_UgvKind()
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	UGVKind getUgvKind();

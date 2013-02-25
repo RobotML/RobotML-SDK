@@ -294,22 +294,22 @@ public interface Sensor_datatypesPackage extends EPackage {
 	int CAMERA_INFO__P = 7;
 
 	/**
-	 * The feature id for the '<em><b>Beginning x</b></em>' attribute.
+	 * The feature id for the '<em><b>Binning x</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAMERA_INFO__BEGINNING_X = 8;
+	int CAMERA_INFO__BINNING_X = 8;
 
 	/**
-	 * The feature id for the '<em><b>Beginning y</b></em>' attribute.
+	 * The feature id for the '<em><b>Binning y</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAMERA_INFO__BEGINNING_Y = 9;
+	int CAMERA_INFO__BINNING_Y = 9;
 
 	/**
 	 * The feature id for the '<em><b>Roi</b></em>' containment reference.
@@ -1718,26 +1718,26 @@ public interface Sensor_datatypesPackage extends EPackage {
 	EAttribute getCameraInfo_P();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBeginning_x <em>Beginning x</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBinning_x <em>Binning x</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Beginning x</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBeginning_x()
+	 * @return the meta object for the attribute '<em>Binning x</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBinning_x()
 	 * @see #getCameraInfo()
 	 * @generated
 	 */
-	EAttribute getCameraInfo_Beginning_x();
+	EAttribute getCameraInfo_Binning_x();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBeginning_y <em>Beginning y</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBinning_y <em>Binning y</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Beginning y</em>'.
-	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBeginning_y()
+	 * @return the meta object for the attribute '<em>Binning y</em>'.
+	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getBinning_y()
 	 * @see #getCameraInfo()
 	 * @generated
 	 */
-	EAttribute getCameraInfo_Beginning_y();
+	EAttribute getCameraInfo_Binning_y();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.CameraInfo#getRoi <em>Roi</em>}'.
@@ -3129,20 +3129,20 @@ public interface Sensor_datatypesPackage extends EPackage {
 		EAttribute CAMERA_INFO__P = eINSTANCE.getCameraInfo_P();
 
 		/**
-		 * The meta object literal for the '<em><b>Beginning x</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Binning x</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAMERA_INFO__BEGINNING_X = eINSTANCE.getCameraInfo_Beginning_x();
+		EAttribute CAMERA_INFO__BINNING_X = eINSTANCE.getCameraInfo_Binning_x();
 
 		/**
-		 * The meta object literal for the '<em><b>Beginning y</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Binning y</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAMERA_INFO__BEGINNING_Y = eINSTANCE.getCameraInfo_Beginning_y();
+		EAttribute CAMERA_INFO__BINNING_Y = eINSTANCE.getCameraInfo_Binning_y();
 
 		/**
 		 * The meta object literal for the '<em><b>Roi</b></em>' containment reference feature.

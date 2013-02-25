@@ -13,30 +13,28 @@
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.diagram.componentdef.edit.policy;
 
-import java.util.List;
-
-
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeNodeLabelDisplayEditPolicy;
-
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 
-public class StereotypeNodeLabelDisplayEditPolicy extends AppliedStereotypeNodeLabelDisplayEditPolicy {
+//public class StereotypeNodeLabelDisplayEditPolicy extends AppliedStereotypeNodeLabelDisplayEditPolicy {
+//
+//	// Always show the stereotype as icon
+//	@Override
+//	public Image stereotypeIconToDisplay() {
+//
+//		// retrieve the first stereotype in the list of displayed stereotype
+//		if(getUMLElement() instanceof Element) {
+//			if(getUMLElement().getAppliedStereotypes().size()>0){
+//				Stereotype stereotypesToDisplay = getUMLElement().getAppliedStereotypes().get(0);
+//				return Activator.getIconElement(getUMLElement(), stereotypesToDisplay, false);
+//
+//			}
+//		}
+//		return null;
+//	}
 
-	// Always show the stereotype as icon
-	@Override
-	public Image stereotypeIconToDisplay() {
 
-		// retrieve the first stereotype in the list of displayed stereotype
-		if(getUMLElement() instanceof Element) {
-			List<Stereotype> appliedSt = getUMLElement().getAppliedStereotypes();
-			if(!appliedSt.isEmpty()) {
-				
-				return Activator.getIconElement(getUMLElement(), appliedSt.get(0), false);
-			}
-		}
-		return null;
-	}
-}
+//}

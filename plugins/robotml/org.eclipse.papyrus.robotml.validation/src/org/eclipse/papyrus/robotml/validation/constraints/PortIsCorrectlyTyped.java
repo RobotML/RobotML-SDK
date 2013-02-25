@@ -18,10 +18,11 @@ import org.eclipse.emf.validation.AbstractModelConstraint;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.papyrus.RobotML.DataFlowPort;
 import org.eclipse.papyrus.RobotML.ServicePort;
-import org.eclipse.papyrus.uml.tools.utils.ElementUtil;
+
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 public class PortIsCorrectlyTyped extends AbstractModelConstraint {
 
@@ -34,13 +35,14 @@ public class PortIsCorrectlyTyped extends AbstractModelConstraint {
 		if(elt.getType() == null) {
 			return ctx.createFailureStatus("Port should have a type (" + elt.getQualifiedName() + ")");
 		} else {//2. verify if the port is correctly typed
-			ServicePort serviceport = ElementUtil.getStereotypeApplication(elt, ServicePort.class);			
+			ServicePort serviceport = UMLUtil.getStereotypeApplication(elt, ServicePort.class);			
 			if(serviceport != null) {
 				if(!(elt.getType() instanceof Interface)) {
+					
 					return ctx.createFailureStatus("Port should be typed by an Interface (" + elt.getQualifiedName() + ")");
 				}
 			} else {
-				DataFlowPort flowport = ElementUtil.getStereotypeApplication(elt, DataFlowPort.class);
+				DataFlowPort flowport = UMLUtil.getStereotypeApplication(elt, DataFlowPort.class);
 				if(flowport != null) {
 					if(!(elt.getType() instanceof DataType)) {
 						return ctx.createFailureStatus("Port should be typed by a DataType (" + elt.getQualifiedName() + ")");

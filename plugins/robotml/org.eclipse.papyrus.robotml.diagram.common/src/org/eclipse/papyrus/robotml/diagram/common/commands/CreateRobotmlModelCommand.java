@@ -33,7 +33,7 @@ public class CreateRobotmlModelCommand extends ModelCreationCommandBase {
 
 
 	public static final String ROBOTML_PROFILE_URI = PROFILES_PATHMAP + "RobotMLProfile.profile.uml"; //$NON-NLS-1$
-	public static final String FCM_PROFILE_URI = "pathmap://FCM_PROFILES/FCM.profile.uml";
+	//public static final String FCM_PROFILE_URI = "pathmap://FCM_PROFILES/FCM.profile.uml";
 
 	//public static final String ROBOTML_PROFILE_URI = PROFILES_PATHMAP + "RobotML.profile.uml"; //$NON-NLS-1$
 
@@ -62,10 +62,10 @@ public class CreateRobotmlModelCommand extends ModelCreationCommandBase {
 
 		// Retrieve robotml profile and apply with Sub-profile
 		org.eclipse.uml2.uml.Package robotml = PackageUtil.loadPackage(URI.createURI(ROBOTML_PROFILE_URI), owner.eResource().getResourceSet());
-		org.eclipse.uml2.uml.Package fcm = PackageUtil.loadPackage(URI.createURI(FCM_PROFILE_URI), owner.eResource().getResourceSet());
+		//org.eclipse.uml2.uml.Package fcm = PackageUtil.loadPackage(URI.createURI(FCM_PROFILE_URI), owner.eResource().getResourceSet());
 		if((robotml != null) && (robotml instanceof Profile)) {
 			PackageUtil.applyProfile(((org.eclipse.uml2.uml.Package)owner), (org.eclipse.uml2.uml.Profile) robotml, true);
-			PackageUtil.applyProfile(((org.eclipse.uml2.uml.Package)owner), (org.eclipse.uml2.uml.Profile) fcm, true);
+			//PackageUtil.applyProfile(((org.eclipse.uml2.uml.Package)owner), (org.eclipse.uml2.uml.Profile) fcm, true);
 		}
 	}
 

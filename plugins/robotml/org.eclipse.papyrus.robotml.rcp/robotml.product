@@ -24,7 +24,7 @@
 -XX:MaxPermSize=256m</vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-16x16-32bits.png" i32="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-32x32-32bits.png" i48="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-48x48-32bits.png"/>
+   <windowImages i16="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-16x16-32bits.png" i32="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-32x32-32bits.bmp" i48="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-48x48-32bits.bmp"/>
 
    <splash
       location="org.eclipse.papyrus.robotml.rcp" />
@@ -32,22 +32,21 @@
       <solaris/>
       <win useIco="false">
          <bmp
-            winSmallHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-16x16-32bits.bmp"
+            winSmallHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone4-16x16-32bits.bmp"
             winSmallLow="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-16x16-8bits.bmp"
-            winMediumHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-32x32-32bits.bmp"
+            winMediumHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone4-32x32-32bits.bmp"
             winMediumLow="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-32x32-8bits.bmp"
-            winLargeHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-48x48-32bits.bmp"
+            winLargeHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone4-48x48-32bits.bmp"
             winLargeLow="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-48x48-8bits.bmp"
-            winExtraLargeHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-256x256-32bits.bmp"/>
+            winExtraLargeHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone4-256x256-32bits.bmp"/>
       </win>
    </launcher>
-
 
    <vm>
       <linux include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5</linux>
       <macos include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5</macos>
       <solaris include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5</solaris>
-      <windows include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5</windows>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5</windows>
    </vm>
 
    <license>

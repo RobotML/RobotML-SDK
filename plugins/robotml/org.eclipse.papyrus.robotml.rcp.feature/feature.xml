@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.papyrus.robotml.rcp.feature"
+      label="robotml rcp feature"
+      version="0.9.2.qualifier">
+
+   <description>
+      This modeling package contains a collection of Eclipse Modeling
+Project components, including Papyrus and RobotML modeling platforms.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="org.eclipse.papyrus.robotml.rcp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

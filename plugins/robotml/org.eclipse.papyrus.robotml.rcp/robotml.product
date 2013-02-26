@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="RobotML RCP Product" uid="org.eclipse.papyrus.robotml" id="org.eclipse.papyrus.robotml.rcp.product" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="RobotML RCP Product" id="org.eclipse.papyrus.robotml.rcp.product" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="product_lg.gif"/>
+      <image path="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-48x48-32bits.png"/>
       <text>
-         RCP Mail template created by PDE
+         RobotML : Robotic Modelling Environment based on the eclipse platform.
       </text>
    </aboutInfo>
 
@@ -24,20 +24,17 @@
 -XX:MaxPermSize=256m</vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-16x16-32bits.png" i32="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-32x32-32bits.bmp" i48="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-48x48-32bits.bmp"/>
+   <windowImages i16="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-16x16-32bits.png" i32="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-32x32-32bits.png" i48="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-48x48-32bits.png"/>
 
    <splash
       location="org.eclipse.papyrus.robotml.rcp" />
-   <launcher>
+   <launcher name="robotml">
       <solaris/>
       <win useIco="false">
          <bmp
             winSmallHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone4-16x16-32bits.bmp"
-            winSmallLow="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-16x16-8bits.bmp"
             winMediumHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone4-32x32-32bits.bmp"
-            winMediumLow="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-32x32-8bits.bmp"
-            winLargeHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone4-48x48-32bits.bmp"
-            winLargeLow="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-48x48-8bits.bmp"
+            winLargeHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone1-48x48-32bits.bmp"
             winExtraLargeHigh="/org.eclipse.papyrus.robotml.rcp/icons/Icone4-256x256-32bits.bmp"/>
       </win>
    </launcher>
@@ -146,22 +143,24 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </plugins>
 
    <features>
-      <feature id="org.eclipse.platform" version="4.2.1.v20120814-120134-9JF7BHVGFyMveli1uX6aTH0q-eAap6PAgOP5mO"/>
-      <feature id="org.eclipse.rcp" version="4.2.1.v20120814-120134-7IAPA8BrHQicS-rjP0GbqK780kMy"/>
-      <feature id="org.eclipse.papyrus.sdk.feature" version="0.9.1.v201211140558"/>
-      <feature id="org.eclipse.papyrus.robotml.feature" version="0.9.1.201301221359"/>
-      <feature id="org.eclipse.acceleo.module.OrocosGenerator.feature" version="1.0.0.201211140942"/>
-      <feature id="org.eclipse.robotml.generators.acceleo.cycabtk.feature" version="1.0.0.201211140942"/>
-      <feature id="org.eclipse.robotml.generators.acceleo.rtmaps.feature" version="1.1.0.201211140942"/>
-      <feature id="org.eclipse.robotml.generators.acceleo.aroccam.feature" version="1.0.0.201301141001"/>
-      <feature id="org.eclipse.robotml.generic.generator.feature" version="1.0.0.201301141001"/>
-      <feature id="org.eclipse.papyrus.uml.alf.feature" version="0.9.1.v201211140558"/>
-      <feature id="com.cea.papyrus.gendoc2.feature" version="0.9.0.201301141518"/>
-      <feature id="org.eclipse.mylyn.team_feature" version="3.8.2.v20120916-1200"/>
-      <feature id="org.eclipse.team.svn" version="1.0.0.I20120818-1700"/>
-      <feature id="org.eclipse.team.svn.mylyn" version="1.0.0.I20120601-1700"/>
-      <feature id="org.polarion.eclipse.team.svn.connector" version="3.0.0.I20121013-1700"/>
-      <feature id="org.polarion.eclipse.team.svn.connector.svnkit17" version="3.0.0.I20121013-1700"/>
+      <feature id="org.eclipse.platform"/>
+      <feature id="org.eclipse.rcp"/>
+      <feature id="org.eclipse.papyrus.robotml.rcp.feature" version="0.9.2.qualifier"/>
+      <feature id="org.eclipse.mylyn.team_feature"/>
+      <feature id="org.eclipse.team.svn"/>
+      <feature id="org.eclipse.team.svn.mylyn"/>
+      <feature id="org.polarion.eclipse.team.svn.connector"/>
+      <feature id="org.polarion.eclipse.team.svn.connector.svnkit17"/>
+      <feature id="org.eclipse.papyrus.sdk.feature"/>
+      <feature id="org.eclipse.papyrus.robotml.feature"/>
+      <feature id="org.eclipse.robotml.generic.generator.feature"/>
+      <feature id="org.eclipse.robotml.generators.acceleo.aroccam.feature"/>
+      <feature id="org.eclipse.robotml.generators.acceleo.cycabtk.feature"/>
+      <feature id="org.eclipse.robotml.generators.acceleo.morse.feature"/>
+      <feature id="org.eclipse.acceleo.module.OrocosGenerator.feature" version="1.0.0.201302111947"/>
+      <feature id="org.eclipse.robotml.generators.acceleo.rtmaps.feature"/>
+      <feature id="org.eclipse.papyrus.uml.alf.feature"/>
+      <feature id="com.cea.papyrus.gendoc2.feature"/>
    </features>
 
 

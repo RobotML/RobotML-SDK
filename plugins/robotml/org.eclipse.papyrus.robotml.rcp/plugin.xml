@@ -3,78 +3,7 @@
 <plugin>
 
    <extension
-         id="application"
-         point="org.eclipse.core.runtime.applications">
-      <application>
-         <run
-               class="org.eclipse.papyrus.robotml.rcp.Application">
-         </run>
-      </application>
-   </extension>
-   <extension
-         point="org.eclipse.ui.perspectives">
-      <perspective
-            name="RCP Perspective"
-            class="org.eclipse.papyrus.robotml.rcp.Perspective"
-            id="org.eclipse.papyrus.robotml.rcp.perspective">
-      </perspective>
-   </extension>
-   <extension
-         point="org.eclipse.ui.views">
-      <view
-            name="Message"
-            allowMultiple="true"
-            icon="icons/sample2.gif"
-            class="org.eclipse.papyrus.robotml.rcp.View"
-            id="org.eclipse.papyrus.robotml.rcp.view">
-      </view>
-      <view
-            name="Mailboxes"
-            allowMultiple="true"
-            icon="icons/sample3.gif"
-            class="org.eclipse.papyrus.robotml.rcp.NavigationView"
-            id="org.eclipse.papyrus.robotml.rcp.navigationView">
-      </view>
-   </extension>
-   <extension
-         point="org.eclipse.ui.commands">
-      <category
-            name="Mail"
-            id="org.eclipse.papyrus.robotml.rcp.category">
-      </category>
-      <command
-            name="Open Mailbox"
-            description="Opens a mailbox"
-            categoryId="org.eclipse.papyrus.robotml.rcp.category"
-            id="org.eclipse.papyrus.robotml.rcp.open">
-      </command>
-      <command
-            name="Open Message Dialog"
-            description="Open a message dialog"
-            categoryId="org.eclipse.papyrus.robotml.rcp.category"
-            id="org.eclipse.papyrus.robotml.rcp.openMessage">
-      </command>
-   </extension>
-   <extension
-         point="org.eclipse.ui.bindings">
-      <key
-            commandId="org.eclipse.papyrus.robotml.rcp.open"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="CTRL+2">
-      </key>
-      <key
-            commandId="org.eclipse.papyrus.robotml.rcp.openMessage"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="CTRL+3">
-      </key>
-      <key
-            commandId="org.eclipse.ui.file.exit"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="CTRL+X">
-      </key>
-   </extension>
-   <extension
-         id="product"
+         id="RobotML product"
          point="org.eclipse.core.runtime.products">
       <product
             application="org.eclipse.ui.ide.workbench"
@@ -98,6 +27,30 @@
          <property
                name="aboutImage"
                value="product_lg.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="RobotML RCP Product">
+         <property
+               name="windowImages"
+               value="icons/Icone1-16x16-32bits.png,icons/Icone1-32x32-32bits.png,icons/Icone1-48x48-32bits.png">
+         </property>
+         <property
+               name="aboutText"
+               value="RobotML : Robotic Modelling Environment based on the eclipse platform.">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/Icone1-48x48-32bits.png">
+         </property>
+         <property
+               name="appName"
+               value="RobotML RCP Product">
          </property>
       </product>
    </extension>

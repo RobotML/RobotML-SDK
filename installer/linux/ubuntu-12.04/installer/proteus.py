@@ -14,7 +14,7 @@ import gobject
 
 UI_FILE = "data/ui/proteus.glade"
 SH_FILE = "data/sh/install.sh"
-PACKAGES = ['proteus-urbanoarp', 'proteus-airlandoarp','proteus-offroadoarp', 'proteus-interventionoarp', 'proteus-rycchallenge', 'proteus-base-eclipse']
+PACKAGES = ['proteus-urbanoarp', 'proteus-airlandoarp','proteus-offroadoarp', 'proteus-interventionoarp', 'proteus-rycchallenge', 'robotml']
 
 app = None
 

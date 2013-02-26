@@ -7,9 +7,9 @@
 
 check_and_install() {
   if  dpkg -l $1 > /dev/null 2>&1  ;
-  then 
+  then
     echo "$1 already installed"
-  else 
+  else
     echo "Installing $1"
     sudo apt-get -q -y install $1
   fi
@@ -24,7 +24,7 @@ check_and_install "python-gtk2"
 #
 # Fetching login from input
 #
-if [ 2 -gt $# ]; 
+if [ 2 -gt $# ];
 then
   echo "usage: $0 login password [pkg...]"
   echo "  proteus.bourges.univ-orleans.fr - anr-proteus.fr"
@@ -71,7 +71,7 @@ fi
 
 # check if you can access the server
 echo "[INFO] Login proteus.bourges.univ-orleans.fr ..."
-wget http://proteus.bourges.univ-orleans.fr/proteus-precise/ --http-user=${LOGIN} --http-password=${PASSW} --no-cache --spider -q
+wget http://proteus.bourges.univ-orleans.fr/pacakges/ --http-user=${LOGIN} --http-password=${PASSW} --no-cache --spider -q
 if [ 0 -ne $? ]; then
     read -p "[WARNING] Can't access proteus.bourges.univ-orleans.fr, continue anyway? [y/N]: " CONT
     if [ "$CONT" != "y"  ]; then
@@ -92,7 +92,7 @@ echo "deb http://packages.ros.org/ros/ubuntu ${DISTRIBUTION} main
 " | sudo tee /etc/apt/sources.list.d/ros-latest.list > /dev/null
 
 echo "# PROTEUS repositories ( http://anr-proteus.fr )
-deb http://${LOGIN}:${PASSW}@proteus.bourges.univ-orleans.fr/proteus-precise stable main
+deb http://${LOGIN}:${PASSW}@proteus.bourges.univ-orleans.fr/packages precise stable
 deb http://downloads.effidence.com/repository/public/effibox precise universe
 " | sudo tee /etc/apt/sources.list.d/proteus.list > /dev/null
 
@@ -120,6 +120,21 @@ if ! apt-key list | grep -q "contact@effidence.com"; then
 #        echo "[WARNING] keys.gnupg.net timed out, use proteus.bourges.univ-orleans.fr"
 #        wget -q http://proteus.bourges.univ-orleans.fr/contact.effidence.com.gpg -O - | sudo apt-key add -
     fi
+fi
+
+echo "[INFO] Adding gpg key for Proteus apt-repository"
+if ! apt-key list | grep -q "45928983" ; then
+ if ping -c 1 -w 5 pool.sks-keyservers.net > /dev/null 2>&1 ;
+ then
+  gpg --keyserver pool.sks-keyservers.net --recv-keys 45928983
+  gpg --export 45928983 | sudo apt-key add -
+ else
+  echo "-> Unable to connect to keyserver."
+  echo "-> Aborting"
+  exit 1
+ fi
+else
+ echo "Key already added"
 fi
 
 echo "

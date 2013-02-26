@@ -1,9 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.eclipse.e4.ui.workbench.swt.E4Application
+Bundle-Name: RobotML RCP Bundle
 Bundle-SymbolicName: org.eclipse.papyrus.robotml.rcp; singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: org.eclipse.papyrus.robotml.rcp.Activator
+Bundle-Version: 0.9.2.qualifier
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy

@@ -4030,7 +4030,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pZElAALUEeCLyPho7UHVHQ"/>
           </children>
           <element xmi:type="uml:DataType" href="RobotMLPlatformLibraries.uml#_HfDGkALAEeCsG_V0R865wA"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pZEk8QLUEeCLyPho7UHVHQ" x="230" y="10" height="201"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pZEk8QLUEeCLyPho7UHVHQ" x="230" y="10" width="171" height="241"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_pZ0L0ALUEeCLyPho7UHVHQ" type="3027" fontHeight="8" transparency="0" gradient="13420443, 16777215, 0" lineColor="0">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pZ0L0gLUEeCLyPho7UHVHQ" source="ShadowFigure">

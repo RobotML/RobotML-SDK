@@ -313,9 +313,9 @@
               lowerBound="9" upperBound="9" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
           <eStructuralFeatures xsi:type="ecore:EAttribute" name="P" ordered="false"
               lowerBound="12" upperBound="12" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float64"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="beginning_x" ordered="false"
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="binning_x" ordered="false"
               lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt32"/>
-          <eStructuralFeatures xsi:type="ecore:EAttribute" name="beginning_y" ordered="false"
+          <eStructuralFeatures xsi:type="ecore:EAttribute" name="binning_y" ordered="false"
               lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/UInt32"/>
           <eStructuralFeatures xsi:type="ecore:EReference" name="roi" ordered="false"
               lowerBound="1" eType="#//RobotML_ModelLibrary/RobotML_DataTypes/sensor_datatypes/RegionOfInterest"

@@ -47,7 +47,7 @@ public class InstantiateDepPlanHandler extends CmdHandler {
 		updateSelectedEObject();
 		EObject selectedObj = getSelectedEObject();
 		if(selectedObj instanceof Element) {
-			if(StUtils.isApplied((Element)selectedObj, DeploymentPlan.class) ||
+			if(StUtils.isApplied((Element)selectedObj, org.eclipse.papyrus.RobotML.DeploymentPlan.class) ||
 				StUtils.isApplied((Element)selectedObj, Configuration.class)) {
 				return true;
 			}
@@ -79,7 +79,8 @@ public class InstantiateDepPlanHandler extends CmdHandler {
 				@Override
 				protected IStatus run(IProgressMonitor monitor) {
 					// execute the task ...
-					InstantiateDepPlan.instantiate(selectedCDP, monitor, project, genOptions);
+					//The command is deactivated, It is not used in the case or RobotML, RobotML generators are used instead
+					//InstantiateDepPlan.instantiate(selectedCDP, monitor, project, genOptions);
 					monitor.done();
 					return Status.OK_STATUS;
 				}

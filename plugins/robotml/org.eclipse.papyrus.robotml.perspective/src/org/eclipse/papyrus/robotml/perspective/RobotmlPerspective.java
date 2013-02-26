@@ -33,7 +33,7 @@ public class RobotmlPerspective extends PapyrusPerspective {
 		//super.defineActions(layout);
 		layout.addNewWizardShortcut("org.eclipse.papyrus.wizards.createrobotmlwizard");
 		layout.addNewWizardShortcut("org.eclipse.ui.wizards.new.folder");
-		layout.addNewWizardShortcut("org.eclipse.papyrus.wizards.createproteusmodel");
+		layout.addNewWizardShortcut("org.eclipse.papyrus.wizards.createrobotmlmodel");
 		// Add "show views".
 		layout.addShowViewShortcut(IPageLayout.ID_PROJECT_EXPLORER);
 		layout.addShowViewShortcut(IPageLayout.ID_OUTLINE);

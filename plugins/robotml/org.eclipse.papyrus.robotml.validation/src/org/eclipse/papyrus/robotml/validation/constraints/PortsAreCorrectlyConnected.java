@@ -35,58 +35,7 @@ import org.eclipse.uml2.uml.Stereotype;
  */
 public class PortsAreCorrectlyConnected extends AbstractModelConstraint {
 
-	// /** The data flow port stereotype. */
-	// private final String dataFlowPortStereotype = "DataFlowPort";
-	//
-	// /** The service port stereotype. */
-	// private final String servicePortStereotype = "ServicePort";
-
-	// /**
-	// * Checks if the connection is between ports.
-	// *
-	// * @param connectorEndRole0 the connector end role0
-	// * @param connectorEndRole1 the connector end role1
-	// * @return the boolean
-	// */
-	// public Boolean ISConnectionBetweenSubSystems(ConnectableElement
-	// connectorEndRole0, ConnectableElement connectorEndRole1) {
-	// //1. verify that connection is between ports
-	// if((connectorEndRole0 instanceof Port) && (connectorEndRole1 instanceof
-	// Port)) {
-	// //2. verify that ports are owned by a classifier
-	// if((connectorEndRole0.getOwner() instanceof Classifier) &&
-	// (connectorEndRole1.getOwner() instanceof Classifier)) {
-	// //3. verify that the connection is between sub systems that are contained
-	// in the same system
-	// // List<Element> ownedAttr0 = new ArrayList<Element>();
-	// // List<Element> ownedAttr1 = new ArrayList<Element>();
-	// // ownedAttr0 = connectorEndRole0.getOwner().getOwnedElements();
-	// // ownedAttr1 = connectorEndRole1.getOwner().getOwnedElements();
-	// // loop1: for(int i = 0; i < ownedAttr0.size(); i++) {
-	// // loop2: for(int j = 0; j < ownedAttr1.size(); j++) {
-	// // if((ownedAttr0.get(i) instanceof Property)) {
-	// //
-	// if(((Property)(ownedAttr0.get(i))).getType().equals(connectorEndRole1.getOwner()))
-	// {
-	// // return false;
-	// // }
-	// // }
-	// // if((ownedAttr1.get(j) instanceof Property)) {
-	// //
-	// if(((Property)(ownedAttr1.get(j))).getType().equals(connectorEndRole0.getOwner()))
-	// {
-	// // return false;
-	// // }
-	// // }
-	// // }
-	// // }
-	// return true;
-	// }
-	//
-	// }
-	//
-	// return false;
-	// }
+	
 
 	/*
 	 * (non-Javadoc)

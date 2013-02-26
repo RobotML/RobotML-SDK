@@ -14,9 +14,18 @@
 package org.eclipse.papyrus.robotml.diagram.architecture.provider;
 
 import org.eclipse.gef.EditPart;
-import org.eclipse.papyrus.robotml.diagram.architecture.edit.policy.StereotypeNodeLabelDisplayEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.robotml.diagram.common.editpolicies.CustomPropertyLabelEditPolicy;
+import org.eclipse.papyrus.robotml.diagram.common.editpolicies.StereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.robotml.diagram.architecture.provider.ArchitectureDiagramEditPolicyProvider;
+import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
+
+import org.eclipse.papyrus.uml.diagram.composite.edit.parts.PortNameEditPart;
+
+import org.eclipse.papyrus.uml.diagram.composite.edit.parts.PropertyPartNameEditPartCN;
+
+
 
 // TODO: Auto-generated Javadoc
 /**
@@ -30,7 +39,12 @@ public class CustomArchitectureDiagramEditPolicyProvider extends ArchitectureDia
 	@Override
 	public void createEditPolicies(EditPart editPart) {
 		super.createEditPolicies(editPart);
+		
+		//if (editPart instanceof NamedElementEditPart)
 		editPart.installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new StereotypeNodeLabelDisplayEditPolicy());
+		
+		if (editPart instanceof PortNameEditPart || editPart instanceof PropertyPartNameEditPartCN)
+		editPart.installEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY, new CustomPropertyLabelEditPolicy());
 	}
 
 }

@@ -19,7 +19,13 @@
 [comment @main/]
 [trace ('Project generation begin')]
 	[project.toString()/]
-[/trace]e
+[/trace]
+
+[file('trace.txt', false, 'UTF-8')]
+[for(imp : Import | project.imports)]
+[imp.toString()/]
+[/for]
+[/file]
 
 [cppTypeDefs(project)/]              
 [cppTypeImpls(project)/]            

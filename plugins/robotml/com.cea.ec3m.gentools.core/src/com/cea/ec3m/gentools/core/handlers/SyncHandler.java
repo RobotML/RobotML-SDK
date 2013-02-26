@@ -40,7 +40,7 @@ public class SyncHandler extends CmdHandler {
 			}
 		}
 		if(selectedObj instanceof Package) {
-			if(StUtils.isApplied((Package)selectedObj, DeploymentPlan.class)) {
+			if(StUtils.isApplied((Package)selectedObj, org.eclipse.papyrus.RobotML.DeploymentPlan.class)) {
 				return true;
 			}
 		}

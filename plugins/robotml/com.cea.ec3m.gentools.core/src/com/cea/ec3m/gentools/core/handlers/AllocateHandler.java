@@ -21,7 +21,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Package;
 
-import FCM.DeploymentPlan;
+import org.eclipse.papyrus.RobotML.DeploymentPlan;
 
 import com.cea.ec3m.gentools.core.CommandSupport;
 import com.cea.ec3m.gentools.core.RunnableWithResult;

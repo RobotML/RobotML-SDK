@@ -15,10 +15,11 @@ import org.eclipse.papyrus.RobotML.Allocate;
 import org.eclipse.papyrus.RobotML.BlenderMorse;
 import org.eclipse.papyrus.RobotML.Building;
 import org.eclipse.papyrus.RobotML.CameraSystem;
-import org.eclipse.papyrus.RobotML.Collection;
-import org.eclipse.papyrus.RobotML.ComposedData;
+
 import org.eclipse.papyrus.RobotML.CycabTK;
 import org.eclipse.papyrus.RobotML.DataFlowPort;
+import org.eclipse.papyrus.RobotML.DataType;
+import org.eclipse.papyrus.RobotML.DeploymentPlan;
 import org.eclipse.papyrus.RobotML.EngineSystem;
 import org.eclipse.papyrus.RobotML.Environment;
 import org.eclipse.papyrus.RobotML.Floor;
@@ -38,7 +39,7 @@ import org.eclipse.papyrus.RobotML.ObjectTrackingSensorSystem;
 import org.eclipse.papyrus.RobotML.OdometrySystem;
 import org.eclipse.papyrus.RobotML.OnPort;
 import org.eclipse.papyrus.RobotML.Pedestrian;
-import org.eclipse.papyrus.RobotML.PhysicalData;
+
 import org.eclipse.papyrus.RobotML.PhysicalObject;
 import org.eclipse.papyrus.RobotML.Planet;
 import org.eclipse.papyrus.RobotML.Platform;
@@ -235,24 +236,13 @@ public class RobotMLSwitch<T> extends Switch<T> {
 			case RobotMLPackage.PRIMITIVE_DATA: {
 				PrimitiveData primitiveData = (PrimitiveData)theEObject;
 				T result = casePrimitiveData(primitiveData);
+				if (result == null) result = caseDataType(primitiveData);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RobotMLPackage.PHYSICAL_DATA: {
-				PhysicalData physicalData = (PhysicalData)theEObject;
-				T result = casePhysicalData(physicalData);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RobotMLPackage.COMPOSED_DATA: {
-				ComposedData composedData = (ComposedData)theEObject;
-				T result = caseComposedData(composedData);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RobotMLPackage.COLLECTION: {
-				Collection collection = (Collection)theEObject;
-				T result = caseCollection(collection);
+			case RobotMLPackage.DATA_TYPE: {
+				DataType dataType = (DataType)theEObject;
+				T result = caseDataType(dataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -545,6 +535,12 @@ public class RobotMLSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RobotMLPackage.DEPLOYMENT_PLAN: {
+				DeploymentPlan deploymentPlan = (DeploymentPlan)theEObject;
+				T result = caseDeploymentPlan(deploymentPlan);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -805,47 +801,17 @@ public class RobotMLSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Physical Data</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Physical Data</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePhysicalData(PhysicalData object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Composed Data</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Composed Data</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseComposedData(ComposedData object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Collection</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Collection</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCollection(Collection object) {
+	public T caseDataType(DataType object) {
 		return null;
 	}
 
@@ -1341,6 +1307,21 @@ public class RobotMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInfraRedProximetrySystem(InfraRedProximetrySystem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Deployment Plan</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Deployment Plan</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDeploymentPlan(DeploymentPlan object) {
 		return null;
 	}
 

@@ -17,10 +17,11 @@ import org.eclipse.papyrus.RobotML.Allocate;
 import org.eclipse.papyrus.RobotML.BlenderMorse;
 import org.eclipse.papyrus.RobotML.Building;
 import org.eclipse.papyrus.RobotML.CameraSystem;
-import org.eclipse.papyrus.RobotML.Collection;
-import org.eclipse.papyrus.RobotML.ComposedData;
+
 import org.eclipse.papyrus.RobotML.CycabTK;
 import org.eclipse.papyrus.RobotML.DataFlowPort;
+import org.eclipse.papyrus.RobotML.DataType;
+import org.eclipse.papyrus.RobotML.DeploymentPlan;
 import org.eclipse.papyrus.RobotML.EngineSystem;
 import org.eclipse.papyrus.RobotML.Environment;
 import org.eclipse.papyrus.RobotML.Floor;
@@ -40,7 +41,7 @@ import org.eclipse.papyrus.RobotML.ObjectTrackingSensorSystem;
 import org.eclipse.papyrus.RobotML.OdometrySystem;
 import org.eclipse.papyrus.RobotML.OnPort;
 import org.eclipse.papyrus.RobotML.Pedestrian;
-import org.eclipse.papyrus.RobotML.PhysicalData;
+
 import org.eclipse.papyrus.RobotML.PhysicalObject;
 import org.eclipse.papyrus.RobotML.Planet;
 import org.eclipse.papyrus.RobotML.Platform;
@@ -188,16 +189,8 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 				return createPrimitiveDataAdapter();
 			}
 			@Override
-			public Adapter casePhysicalData(PhysicalData object) {
-				return createPhysicalDataAdapter();
-			}
-			@Override
-			public Adapter caseComposedData(ComposedData object) {
-				return createComposedDataAdapter();
-			}
-			@Override
-			public Adapter caseCollection(Collection object) {
-				return createCollectionAdapter();
+			public Adapter caseDataType(DataType object) {
+				return createDataTypeAdapter();
 			}
 			@Override
 			public Adapter caseEngineSystem(EngineSystem object) {
@@ -330,6 +323,10 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseInfraRedProximetrySystem(InfraRedProximetrySystem object) {
 				return createInfraRedProximetrySystemAdapter();
+			}
+			@Override
+			public Adapter caseDeploymentPlan(DeploymentPlan object) {
+				return createDeploymentPlanAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -590,44 +587,16 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotML.PhysicalData <em>Physical Data</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotML.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.RobotML.PhysicalData
+	 * @see org.eclipse.papyrus.RobotML.DataType
 	 * @generated
 	 */
-	public Adapter createPhysicalDataAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotML.ComposedData <em>Composed Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.RobotML.ComposedData
-	 * @generated
-	 */
-	public Adapter createComposedDataAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotML.Collection <em>Collection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.RobotML.Collection
-	 * @generated
-	 */
-	public Adapter createCollectionAdapter() {
+	public Adapter createDataTypeAdapter() {
 		return null;
 	}
 
@@ -1090,6 +1059,20 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInfraRedProximetrySystemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotML.DeploymentPlan <em>Deployment Plan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.RobotML.DeploymentPlan
+	 * @generated
+	 */
+	public Adapter createDeploymentPlanAdapter() {
 		return null;
 	}
 

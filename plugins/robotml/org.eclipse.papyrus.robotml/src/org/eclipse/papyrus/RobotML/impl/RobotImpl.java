@@ -35,7 +35,7 @@ public class RobotImpl extends AgentImpl implements Robot {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final RobotKind KIND_EDEFAULT = RobotKind.UGV;
+	protected static final RobotKind KIND_EDEFAULT = RobotKind.UUV;
 
 	/**
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.

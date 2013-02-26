@@ -29,16 +29,22 @@ public enum RobotKind implements Enumerator {
 	UUV(0, "UUV", "UUV"),
 
 	/**
-	 * The '<em><b>UGV</b></em>' literal object.
+	 * The '<em><b>UG Vcar</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #UGV_VALUE
+	 * @see #UG_VCAR_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	UGV(1, "UGV", "UGV"),
-
-	/**
+	UG_VCAR(1, "UGVcar", "UGVcar"), /**
+	 * The '<em><b>UG Vdifferential</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UG_VDIFFERENTIAL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UG_VDIFFERENTIAL(2, "UGVdifferential", "UGVdifferential"), /**
 	 * The '<em><b>UAV</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,7 +52,7 @@ public enum RobotKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UAV(2, "UAV", "UAV"),
+	UAV(3, "UAV", "UAV"),
 
 	/**
 	 * The '<em><b>USV</b></em>' literal object.
@@ -56,7 +62,7 @@ public enum RobotKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	USV(3, "USV", "USV"),
+	USV(4, "USV", "USV"),
 
 	/**
 	 * The '<em><b>Piloted</b></em>' literal object.
@@ -66,7 +72,7 @@ public enum RobotKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PILOTED(4, "piloted", "piloted");
+	PILOTED(5, "piloted", "piloted");
 
 	/**
 	 * The '<em><b>UUV</b></em>' literal value.
@@ -84,19 +90,34 @@ public enum RobotKind implements Enumerator {
 	public static final int UUV_VALUE = 0;
 
 	/**
-	 * The '<em><b>UGV</b></em>' literal value.
+	 * The '<em><b>UG Vcar</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>UGV</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>UG Vcar</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #UGV
-	 * @model
+	 * @see #UG_VCAR
+	 * @model name="UGVcar"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UGV_VALUE = 1;
+	public static final int UG_VCAR_VALUE = 1;
+
+	/**
+	 * The '<em><b>UG Vdifferential</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>UG Vdifferential</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UG_VDIFFERENTIAL
+	 * @model name="UGVdifferential"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UG_VDIFFERENTIAL_VALUE = 2;
 
 	/**
 	 * The '<em><b>UAV</b></em>' literal value.
@@ -111,7 +132,7 @@ public enum RobotKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UAV_VALUE = 2;
+	public static final int UAV_VALUE = 3;
 
 	/**
 	 * The '<em><b>USV</b></em>' literal value.
@@ -126,7 +147,7 @@ public enum RobotKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int USV_VALUE = 3;
+	public static final int USV_VALUE = 4;
 
 	/**
 	 * The '<em><b>Piloted</b></em>' literal value.
@@ -141,7 +162,7 @@ public enum RobotKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PILOTED_VALUE = 4;
+	public static final int PILOTED_VALUE = 5;
 
 	/**
 	 * An array of all the '<em><b>Robot Kind</b></em>' enumerators.
@@ -152,7 +173,8 @@ public enum RobotKind implements Enumerator {
 	private static final RobotKind[] VALUES_ARRAY =
 		new RobotKind[] {
 			UUV,
-			UGV,
+			UG_VCAR,
+			UG_VDIFFERENTIAL,
 			UAV,
 			USV,
 			PILOTED,
@@ -207,7 +229,8 @@ public enum RobotKind implements Enumerator {
 	public static RobotKind get(int value) {
 		switch (value) {
 			case UUV_VALUE: return UUV;
-			case UGV_VALUE: return UGV;
+			case UG_VCAR_VALUE: return UG_VCAR;
+			case UG_VDIFFERENTIAL_VALUE: return UG_VDIFFERENTIAL;
 			case UAV_VALUE: return UAV;
 			case USV_VALUE: return USV;
 			case PILOTED_VALUE: return PILOTED;

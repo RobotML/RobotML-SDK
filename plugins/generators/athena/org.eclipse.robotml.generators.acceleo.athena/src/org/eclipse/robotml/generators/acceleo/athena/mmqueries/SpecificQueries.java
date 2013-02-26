@@ -53,6 +53,9 @@ public class SpecificQueries {
 	static final private String _vectorKeyword = "vector";
 	static final private String _unionKeyword = "union";
 	
+	static final private String ALF_LANGUAGE = "Alf";
+	static final private String ATHENA_LANGUAGE = "Athena";
+	
 	static private HashSet<NamedElement> _basicTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _enumTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _containerTypeUsed = new HashSet<NamedElement>();
@@ -1550,6 +1553,28 @@ public class SpecificQueries {
 			}
 		}
  		return result;
+	}
+	
+	static public Boolean isAlfProcessingBody(NamedElement ne)
+	{
+		Boolean result = false;
+		if(ne instanceof OpaqueBehavior)
+		{
+			List<String> languages = ((OpaqueBehavior)ne).getLanguages();
+			result = languages.contains(ALF_LANGUAGE);
+		}
+		return result;
+	}
+	
+	static public Boolean isAthenaProcessingBody(NamedElement ne)
+	{
+		Boolean result = false;
+		if(ne instanceof OpaqueBehavior)
+		{
+			List<String> languages = ((OpaqueBehavior)ne).getLanguages();
+			result = languages.contains(ATHENA_LANGUAGE);
+		}
+		return result;
 	}
 	
 }

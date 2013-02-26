@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-import FCM.DeploymentPlan;
+import org.eclipse.papyrus.RobotML.DeploymentPlan;
 
 import com.cea.ec3m.gentools.core.StUtils;
 import com.cea.ec3m.gentools.core.Utils;

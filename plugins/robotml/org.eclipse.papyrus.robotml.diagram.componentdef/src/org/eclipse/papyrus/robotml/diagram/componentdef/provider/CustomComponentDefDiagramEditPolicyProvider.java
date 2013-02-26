@@ -14,11 +14,16 @@
 package org.eclipse.papyrus.robotml.diagram.componentdef.provider;
 
 import org.eclipse.gef.EditPart;
-import org.eclipse.papyrus.robotml.diagram.componentdef.edit.policy.StereotypeNodeLabelDisplayEditPolicy;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.robotml.diagram.common.editpolicies.CustomPropertyLabelEditPolicy;
+import org.eclipse.papyrus.robotml.diagram.common.editpolicies.StereotypeNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.robotml.diagram.componentdef.provider.ComponentdefDiagramEditPolicyProvider;
 import org.eclipse.papyrus.uml.diagram.common.editparts.NamedElementEditPart;
-import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeCompartmentEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
+
+import org.eclipse.papyrus.uml.diagram.composite.edit.parts.PortNameEditPart;
+import org.eclipse.papyrus.uml.diagram.composite.edit.parts.PropertyPartNameEditPartCN;
+
 
 
 public class CustomComponentDefDiagramEditPolicyProvider extends ComponentdefDiagramEditPolicyProvider {
@@ -26,10 +31,12 @@ public class CustomComponentDefDiagramEditPolicyProvider extends ComponentdefDia
 	@Override
 	public void createEditPolicies(EditPart editPart) {
 		super.createEditPolicies(editPart);
-//		editPart.installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new StereotypeNodeLabelDisplayEditPolicy());
-//		if(editPart instanceof NamedElementEditPart ){
-//            editPart.installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeCompartmentEditPolicy());
-//     }
+		
+		
+		editPart.installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new StereotypeNodeLabelDisplayEditPolicy());
+		
+		if (editPart instanceof PortNameEditPart || editPart instanceof PropertyPartNameEditPartCN)
+			editPart.installEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY, new CustomPropertyLabelEditPolicy());
 
 	}
 	

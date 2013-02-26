@@ -24,7 +24,7 @@ import org.eclipse.uml2.uml.PrimitiveType;
  *
  * @generated
  */
-public class PrimitiveDataImpl extends EObjectImpl implements PrimitiveData {
+public class PrimitiveDataImpl extends DataTypeImpl implements PrimitiveData {
 	/**
 	 * The cached value of the '{@link #getBase_PrimitiveType() <em>Base Primitive Type</em>}' reference.
 	 * <!-- begin-user-doc -->

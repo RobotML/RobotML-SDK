@@ -71,7 +71,7 @@ fi
 
 # check if you can access the server
 echo "[INFO] Login proteus.bourges.univ-orleans.fr ..."
-wget http://proteus.bourges.univ-orleans.fr/pacakges/ --http-user=${LOGIN} --http-password=${PASSW} --no-cache --spider -q
+wget http://proteus.bourges.univ-orleans.fr/packages/ --http-user=${LOGIN} --http-password=${PASSW} --no-cache --spider -q
 if [ 0 -ne $? ]; then
     read -p "[WARNING] Can't access proteus.bourges.univ-orleans.fr, continue anyway? [y/N]: " CONT
     if [ "$CONT" != "y"  ]; then

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <di:SashWindowsMngr xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.eclipse.org/papyrus/0.7.0/sashdi" xmi:id="_3Q-VAvcEEd-J06U5HM_o-Q">
   <pageList xmi:id="_3Q-VA_cEEd-J06U5HM_o-Q">
     <availablePage xmi:id="_3Q-VB_cEEd-J06U5HM_o-Q">

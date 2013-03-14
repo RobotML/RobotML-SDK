@@ -23,3 +23,5 @@ Export-Package: org.eclipse.papyrus.robotml.diagram.common.commands,
  org.eclipse.papyrus.robotml.diagram.common.editpolicies
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: plugin
+Import-Package: org.eclipse.papyrus.uml.appearance.helper,
+ org.eclipse.papyrus.uml.diagram.communication.custom.helper

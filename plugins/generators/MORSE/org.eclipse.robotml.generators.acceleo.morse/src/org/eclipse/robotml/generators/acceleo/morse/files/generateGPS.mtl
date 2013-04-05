@@ -1,0 +1,26 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generateCameraSystem.
+ */]
+[module generateGPS('http://www.eclipse.org/uml2/4.0.0/UML', 'http://Papyrus/RobotML/1')]
+
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+
+[**
+ * The documentation of the template generateGPS.
+ * @param aClass
+ * @param aModel
+ */]
+
+[template public generateGPS(aClass : Class, aModel: Model)]
+[file (aClass.name+'.py', false, 'UTF-8')]
+
+class [aClass.name/]:
+	def __init(self, myRobot):
+		self.sensor = Sensor('gps')
+
+		self.sensor.frequency([getAttributeValue(aClass, 'frequency', 'GPSSystem', '10.')/])
+		self.sensor.configure_mw('ros')
+		myRobot.append(self.sensor)
+[/file]
+[/template]

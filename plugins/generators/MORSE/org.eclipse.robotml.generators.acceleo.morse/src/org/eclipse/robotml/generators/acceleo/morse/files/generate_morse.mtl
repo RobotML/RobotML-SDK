@@ -3,6 +3,7 @@
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::morse::files::generateCameraSystem /]
+[import org::eclipse::robotml::generators::acceleo::morse::files::generateGPS /]
 
 [template public generateRobots(aModel : Model)]
 	[for (elt: NamedElement | getElementsWithStereotype(aModel, 'Robot'))]
@@ -74,12 +75,6 @@ odom.configure_mw('ros')
 robot.append(odom)
 [/template]
 
-[template public generateGPS(aClass : Class, model : Model)]
-gps = Sensor('gps')
-gps.frequency([getAttributeValue(aClass, 'frequency', 'GPSSystem', '10.')/])
-gps.configure_mw('ros')
-robot.append(gps)
-[/template]
 
 [template public generateLidar(aClass : Class, model : Model)]
 lidar = Sensor('sick')

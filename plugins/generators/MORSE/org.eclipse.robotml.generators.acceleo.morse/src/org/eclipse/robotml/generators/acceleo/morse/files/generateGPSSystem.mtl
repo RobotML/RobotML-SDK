@@ -2,7 +2,7 @@
 [**
  * The documentation of the module generateCameraSystem.
  */]
-[module generateGPS('http://www.eclipse.org/uml2/4.0.0/UML', 'http://Papyrus/RobotML/1')]
+[module generateGPSSystem('http://www.eclipse.org/uml2/4.0.0/UML', 'http://Papyrus/RobotML/1')]
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 

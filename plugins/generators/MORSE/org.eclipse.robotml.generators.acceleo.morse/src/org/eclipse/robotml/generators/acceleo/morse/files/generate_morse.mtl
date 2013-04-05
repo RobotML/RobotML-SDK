@@ -3,8 +3,8 @@
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::morse::files::generateCameraSystem /]
-[import org::eclipse::robotml::generators::acceleo::morse::files::generateGPS /]
-[import org::eclipse::robotml::generators::acceleo::morse::files::generateLidar /]
+[import org::eclipse::robotml::generators::acceleo::morse::files::generateGPSSystem /]
+[import org::eclipse::robotml::generators::acceleo::morse::files::generateLidarSystem /]
 
 [template public generateRobots(aModel : Model)]
 	[for (elt: NamedElement | getElementsWithStereotype(aModel, 'Robot'))]
@@ -20,7 +20,7 @@ robot.name = "[aClass.name/]"
 	[for (elt: NamedElement | getElementsWithInheritedStereotype(aModel, 'RoboticSystem'))]
 		[let aClass : Class = elt.oclAsType(Class)]
 		[if (hasStereotype(aClass, 'LidarSystem'))]
-[generateLidar(aClass, aModel)/]
+[generateLidarSystem(aClass, aModel)/]
 		[elseif (hasStereotype(aClass, 'CameraSystem'))]
 [generateCameraSystem(aClass, aModel)/]
 		[elseif (hasStereotype(aClass, 'GPSSystem'))]

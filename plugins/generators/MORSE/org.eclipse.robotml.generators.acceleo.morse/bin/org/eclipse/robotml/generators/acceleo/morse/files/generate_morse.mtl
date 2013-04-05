@@ -2,40 +2,40 @@
 [module generate_morse('http://www.eclipse.org/uml2/3.0.0/UML')]
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::morse::files::generateCameraSystem /]
 
-
-[template public generateRobots(model : Model)]
-	[for (elt: NamedElement | getElementsWithStereotype(model, 'Robot'))]
+[template public generateRobots(aModel : Model)]
+	[for (elt: NamedElement | getElementsWithStereotype(aModel, 'Robot'))]
 		[let c : Class = elt.oclAsType(Class)]
-[generateRobot(c, model)/]
+[generateRobot(c, aModel)/]
 		[/let]
 	[/for]
 [/template]
 
-[template public generateRobot(aClass : Class, model : Model)]
+[template public generateRobot(aClass : Class, aModel : Model)]
 robot = Robot('[aClass.name/]')
 robot.name = "[aClass.name/]"
-	[for (elt: NamedElement | getElementsWithInheritedStereotype(model, 'RoboticSystem'))]
-		[let c : Class = elt.oclAsType(Class)]
-# [c.name/]
-		[if (hasStereotype(c, 'LidarSystem'))]
-[generateLidar(c, model)/]
-		[elseif (hasStereotype(c, 'CameraSystem'))]
-[generateCamera(c, model)/]
-		[elseif (hasStereotype(c, 'GPSSystem'))]
-[generateGPS(c, model)/]
-		[elseif (hasStereotype(c, 'Servoings'))]
-[generateServoing(c, model)/]
-		[elseif (hasStereotype(c, 'Odometer'))]
-[generateOdometry(c, model)/]
-		[elseif (hasStereotype(c, 'IMU'))]
-[generateIMU(c, model)/]
-		[elseif (hasStereotype(c, 'SensorSystem'))]
-[generateGenericSensor(c, model)/]
-		[elseif (hasStereotype(c, 'ActuatorSystem'))]
-[generateGenericActuator(c, model)/]
+	[for (elt: NamedElement | getElementsWithInheritedStereotype(aModel, 'RoboticSystem'))]
+		[let aClass : Class = elt.oclAsType(Class)]
+# [aClass.name/]
+		[if (hasStereotype(aClass, 'LidarSystem'))]
+[generateLidar(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'CameraSystem'))]
+[generateCameraSystem(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'GPSSystem'))]
+[generateGPS(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'Servoings'))]
+[generateServoing(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'Odometer'))]
+[generateOdometry(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'IMU'))]
+[generateIMU(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'SensorSystem'))]
+[generateGenericSensor(aClass, aModel)/]
+		[elseif (hasStereotype(aClass, 'ActuatorSystem'))]
+[generateGenericActuator(aClass, aModel)/]
 		[else]
-[generateSystem(c, model)/]
+[generateSystem(aClass, aModel)/]
 		[/if]
 		[/let]
 	[/for]
@@ -88,30 +88,6 @@ lidar.properties(scan_window = 180, resolution = 1, laser_range = [getAttributeV
 lidar.frequency([getAttributeValue(aClass, 'frequency', 'LidarSystem', '20.')/])
 lidar.configure_mw('ros')
 robot.append(lidar)
-[/template]
-
-[template public generateCamera(aClass : Class, model : Model)]
-camera = Sensor('video_camera')
-
-[comment Used formula here: http://www.openrobots.org/morse/doc/stable/user/sensors/video_camera.html#camera-calibration-matrix /]
-height = [getAttributeValue(aClass, 'u_0', 'CameraSystem', '0')/]*2
-width = [getAttributeValue(aClass, 'v_0', 'CameraSystem', '0')/]*2
-alpha_u = [getAttributeValue(aClass, 'alpha_u', 'CameraSystem', '0')/]
-alpha_v = [getAttributeValue(aClass, 'alpha_v', 'CameraSystem', '0')/]
-
-if (width>height):
-	focal = (alpha_u+alpha_v)/2*32/width
-else:
-	focal = (alpha_u+alpha_v)/2*32/height
-
-camera.properties(cam_width = width,
-                  cam_height = height,
-				  cam_focal = focal)
-
-camera.frequency([getAttributeValue(aClass, 'frequency', 'CameraSystem', '25.')/])
-
-camera.configure_mw('ros')
-robot.append(camera)
 [/template]
 
 [template public generateSystem(aClass : Class, model : Model)]

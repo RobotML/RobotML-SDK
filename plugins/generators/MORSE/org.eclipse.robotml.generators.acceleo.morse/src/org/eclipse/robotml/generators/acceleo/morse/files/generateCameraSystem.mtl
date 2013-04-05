@@ -20,8 +20,8 @@
 camera = Sensor('video_camera')
 
 [comment Used formula here: http://www.openrobots.org/morse/doc/stable/user/sensors/video_camera.html#camera-calibration-matrix /]
-height = [getAttributeValue(aClass, 'u_0', 'CameraSystem', '0')/]*2
-width = [getAttributeValue(aClass, 'v_0', 'CameraSystem', '0')/]*2
+height = [getAttributeValue(aClass, 'u0', 'CameraSystem', '0')/]*2
+width = [getAttributeValue(aClass, 'v0', 'CameraSystem', '0')/]*2
 alpha_u = [getAttributeValue(aClass, 'alpha_u', 'CameraSystem', '0')/]
 alpha_v = [getAttributeValue(aClass, 'alpha_v', 'CameraSystem', '0')/]
 

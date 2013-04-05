@@ -26,7 +26,7 @@ import org.eclipse.uml2.uml.Property;
 
 public class VerifyAlphanumericNamedElement extends AbstractModelConstraint {
 
-	public static Pattern ALPHANUMERIC = Pattern.compile("[A-Za-z][A-Za-z0-9_]+");
+	public static Pattern ALPHANUMERIC = Pattern.compile("[A-Za-z][A-Za-z0-9_]*");
 	public boolean checkAlphaNumeric(String s)
 	{
 	if( s == null){ return false; }

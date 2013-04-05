@@ -22,6 +22,7 @@
 [comment] [setLibraries(c)/] [/comment]
 #include <rtt/TaskContext.hpp>
 #include <ocl/Component.hpp>
+#include <rtt/Port.hpp>
 #include <iostream>
 #include <numeric>
 [for (elt : Element | getDataTypesInElement(c))]

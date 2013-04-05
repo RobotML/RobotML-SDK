@@ -17,7 +17,6 @@ robot = Robot('[aClass.name/]')
 robot.name = "[aClass.name/]"
 	[for (elt: NamedElement | getElementsWithInheritedStereotype(aModel, 'RoboticSystem'))]
 		[let aClass : Class = elt.oclAsType(Class)]
-# [aClass.name/]
 		[if (hasStereotype(aClass, 'LidarSystem'))]
 [generateLidar(aClass, aModel)/]
 		[elseif (hasStereotype(aClass, 'CameraSystem'))]

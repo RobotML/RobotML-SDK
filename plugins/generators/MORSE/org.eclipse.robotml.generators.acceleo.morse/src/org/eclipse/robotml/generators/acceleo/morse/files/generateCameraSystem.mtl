@@ -13,30 +13,29 @@
  */]
 
 [template public generateCameraSystem(aClass : Class, aModel : Model)]
-[comment TODO: Generate a class for Video Camera instead of an instance /]
 
-[file (aClass.name, false, 'UTF-8')]
+[file (aClass.name+'.py', false, 'UTF-8')]
 
-camera = Sensor('video_camera')
+class [aClass.name/]:
+	def __init(self, myRobot):
+		self.sensor = Sensor('video_camera')
 
-[comment Used formula here: http://www.openrobots.org/morse/doc/stable/user/sensors/video_camera.html#camera-calibration-matrix /]
-height = [getAttributeValue(aClass, 'u0', 'CameraSystem', '0')/]*2
-width = [getAttributeValue(aClass, 'v0', 'CameraSystem', '0')/]*2
-alpha_u = [getAttributeValue(aClass, 'alpha_u', 'CameraSystem', '0')/]
-alpha_v = [getAttributeValue(aClass, 'alpha_v', 'CameraSystem', '0')/]
+		[comment Used formula here: http://www.openrobots.org/morse/doc/stable/user/sensors/video_camera.html#camera-calibration-matrix /]
+		height = [getAttributeValue(aClass, 'u0', 'CameraSystem', '0')/]*2
+		width = [getAttributeValue(aClass, 'v0', 'CameraSystem', '0')/]*2
+		alpha_u = [getAttributeValue(aClass, 'alpha_u', 'CameraSystem', '0')/]
+		alpha_v = [getAttributeValue(aClass, 'alpha_v', 'CameraSystem', '0')/]
 
-if (width>height):
-	focal = (alpha_u+alpha_v)/2*32/width
-else:
-	focal = (alpha_u+alpha_v)/2*32/height
+		if (width>height):
+			focal = (alpha_u+alpha_v)/2*32/width
+		else:
+			focal = (alpha_u+alpha_v)/2*32/height
 
-camera.properties(cam_width = width,
-                  cam_height = height,
-				  cam_focal = focal)
+		self.sensor.properties(cam_width = width, cam_height = height, cam_focal = focal)
 
-camera.frequency([getAttributeValue(aClass, 'frequency', 'CameraSystem', '25.')/])
+		self.sensor.frequency([getAttributeValue(aClass, 'frequency', 'CameraSystem', '25.')/])
 
-camera.configure_mw('ros')
-robot.append(camera)
+		self.sensor.configure_mw('ros')
+		myRobot.append(camera)
 [/file]
 [/template]

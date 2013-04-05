@@ -32,8 +32,9 @@
 namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_')/]{
 	[if(isEnumeration(type))]
 	enum [type.name/]{
+
 	[for (enumeration : EnumerationLiteral |getEnumeration(type))]
-	[enumeration.name/];
+	[enumeration.name/] ,
 	[/for]
     }
 	[else]
@@ -60,7 +61,7 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 		
 	[/let]	
 	[/for]	
-  }
+  };
  	[for (op : Operation |getOperations(type))]
 		[let t :Type = op.type]
 

@@ -39,12 +39,12 @@
             notation_file="resource/BasicRobotMLModel.notation">
       </template>
       <template
-            di_file="resource/TALC-Challenge.di"
-            file="resource/TALC-Challenge.uml"
+            di_file="resource/SearchLanding.di"
+            file="resource/SearchLanding.uml"
             id="org.eclipse.papyrus.templaterepository.Model-TALC-Challenge"
             language="robotML"
             name="A RobotML Model with TALC challenge basic architecture"
-            notation_file="resource/TALC-Challenge.notation"
+            notation_file="resource/SearchLanding.notation"
             >
       </template>
    </extension>

@@ -2207,7 +2207,6 @@ transform the velocities from the operational space to the articular space (left
   <RobotML:RoboticSystem xmi:id="_k0LpGjiAEeKDAMEjnOLmPA" base_Class="_k0LnOTiAEeKDAMEjnOLmPA"/>
   <RobotML:SensorSystem xmi:id="_k0LpGziAEeKDAMEjnOLmPA" base_Class="_k0LnTjiAEeKDAMEjnOLmPA"/>
   <RobotML:GPSSystem xmi:id="_k0LpHDiAEeKDAMEjnOLmPA" base_Class="_k0LnXziAEeKDAMEjnOLmPA"/>
-  <RobotML:SensorSystem xmi:id="_k0LpHTiAEeKDAMEjnOLmPA" base_Class="_k0LnZDiAEeKDAMEjnOLmPA"/>
   <RobotML:LidarSystem xmi:id="_k0LpHjiAEeKDAMEjnOLmPA" base_Class="_k0LnaTiAEeKDAMEjnOLmPA" libraryPath="" libraryComponentName=""/>
   <RobotML:CameraSystem xmi:id="_k0LpHziAEeKDAMEjnOLmPA" base_Class="_k0LnbziAEeKDAMEjnOLmPA"/>
   <RobotML:Software xmi:id="_k0LpIDiAEeKDAMEjnOLmPA" base_Class="_k0Ln8jiAEeKDAMEjnOLmPA"/>
@@ -2362,4 +2361,5 @@ transform the velocities from the operational space to the articular space (left
   <RobotML:Allocate xmi:id="_mEVjYDiwEeKFHpsdOC1X1Q" base_Abstraction="_mELyYDiwEeKFHpsdOC1X1Q"/>
   <RobotML:Allocate xmi:id="_mhpKcDiwEeKFHpsdOC1X1Q" base_Abstraction="_mhfZcDiwEeKFHpsdOC1X1Q"/>
   <RobotML:Allocate xmi:id="_nLTLcDiwEeKFHpsdOC1X1Q" base_Abstraction="_nLJacDiwEeKFHpsdOC1X1Q"/>
+  <RobotML:InertialMeasurementUnitSystem xmi:id="_HEDvQJ3nEeKaDJbg6baweA" base_Class="_k0LnZDiAEeKDAMEjnOLmPA"/>
 </xmi:XMI>

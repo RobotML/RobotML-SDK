@@ -11,13 +11,20 @@
  *****************************************************************************/
 package com.cea.ec3m.gentools.core.handlers;
 
+import java.util.List;
+
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.papyrus.RobotML.Environment;
+import org.eclipse.papyrus.RobotML.Platform;
+import org.eclipse.uml2.uml.util.UMLUtil;
+
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Package;
+
 
 import com.cea.ec3m.gentools.core.CommandSupport;
 import com.cea.ec3m.gentools.core.Utils;
@@ -35,12 +42,21 @@ public class CreatePlatformHandler extends CmdHandler {
 	public boolean isEnabled() {
 		updateSelectedEObject();
 		EObject selectedObj = getSelectedEObject();
-		if(selectedObj instanceof Class) {
+		if(selectedObj instanceof Class && isPlatform((Class)selectedObj)) {
 			return true;
 		}
 		return false;
 	}
 
+	private boolean isPlatform(Class elt){
+		Platform platform = UMLUtil.getStereotypeApplication((Class)elt, Platform.class);
+		if (platform != null){
+			return true;
+		}
+		return false;
+		
+		
+	}
 	/**
 	 * {@inheritDoc}
 	 */

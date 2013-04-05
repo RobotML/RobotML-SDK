@@ -17,12 +17,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.RobotML.DeploymentPlan;
+import org.eclipse.papyrus.RobotML.Environment;
+
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 import com.cea.ec3m.gentools.core.CommandSupport;
 import com.cea.ec3m.gentools.core.RunnableWithResult;
@@ -46,12 +49,21 @@ public class CreateDepPlanHandler extends CmdHandler {
 	public boolean isEnabled() {
 		updateSelectedEObject();
 		EObject selectedObj = getSelectedEObject();
-		if((selectedObj instanceof Class) && Utils.isCompImpl((Class)selectedObj)) {
+		if((selectedObj instanceof Class) && Utils.isCompImpl((Class)selectedObj) && isEnvironment((Class)selectedObj)) {
 			return true;
 		}
 		return false;
 	}
 
+	private boolean isEnvironment(Class elt){
+		Environment environment = UMLUtil.getStereotypeApplication(elt, Environment.class);
+		if (environment != null){
+			return true;
+		}
+		
+		return false;
+		
+	}
 	/**
 	 * {@inheritDoc}
 	 */

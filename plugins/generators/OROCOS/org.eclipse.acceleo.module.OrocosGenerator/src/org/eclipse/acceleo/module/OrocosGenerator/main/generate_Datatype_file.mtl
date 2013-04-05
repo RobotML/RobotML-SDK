@@ -42,9 +42,9 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
     [let t :Type = property.type]
     [if(isPrimitiveType(t))]
 	[if(t.name.equalsIgnoreCase('boolean'))]
-		[property.visibility/] bool [property.name/];
+		[property.visibility/]: bool [property.name/];
 	[else]
-		[property.visibility/] [t.name/] [property.name/];
+		[property.visibility/]: [t.name/] [property.name/];
 	[/if]
 	[else]
 	 [t.name/] [property.name/];
@@ -52,7 +52,7 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 	[comment in case of ros datatypes, uncomment]
 	[if(isRobotMLDataType(m, t.name))]
 	[let ne : NamedElement = t.owner]
-	[property.visibility/]	[ne.name.replace('_datatypes', '_msgs')/]::[t.name/] [property.name/];
+	[property.visibility/]:	[ne.name.replace('_datatypes', '_msgs')/]::[t.name/] [property.name/];
 	[/let]
 	[else]
 	[t.name/] [property.name/];
@@ -67,18 +67,18 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 		[if(op.isStatic)]
 	 		[if(isPrimitiveType(t))]
 				[if(t.name.equalsIgnoreCase('boolean'))]
-				[op.visibility/] static bool [op.name/](
+				[op.visibility/]: static bool [op.name/](
 				[else]
-				[op.visibility/] static [t.name/] [op.name/](
+				[op.visibility/]: static [t.name/] [op.name/](
 				[/if]
 			[else]
-	 			[op.visibility/] [t.name/] static [op.name/](
+	 			[op.visibility/]: [t.name/] static [op.name/](
 			[/if]
 
 			[comment in case of ros datatypes, uncomment]
 			[if(isRobotMLDataType(m, t.name))]
 				[let ne : NamedElement = t.owner]
-				[op.visibility/] static [ne.name.replace('_datatypes', '_msgs')/]::[t.name/] [op.name/](
+				[op.visibility/]: static [ne.name.replace('_datatypes', '_msgs')/]::[t.name/] [op.name/](
 				[/let]
 			[elseif(t.name.equalsIgnoreCase('invalid') or t.name.size() = 0)]
 				 static void [op.name/](
@@ -89,9 +89,9 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 		[if(op.isAbstract and not op.isStatic)]
 			[if(isPrimitiveType(t))]
 				[if(t.name.equalsIgnoreCase('boolean'))]
-				[op.visibility/] virtual bool [op.name/](
+				[op.visibility/]: virtual bool [op.name/](
 				[else]
-				[op.visibility/] virtual [t.name/] [op.name/](
+				[op.visibility/]: virtual [t.name/] [op.name/](
 				[/if]
 			[else]
 		 		 virtual [t.name/] [op.name/](		
@@ -99,7 +99,7 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 			[comment in case of ros datatypes, uncomment]
 			[if(isRobotMLDataType(m, t.name))]
 				[let ne : NamedElement = t.owner]
-				[op.visibility/] virtual [ne.name.replace('_datatypes', '_msgs')/]::[t.name/] [op.name/]( 
+				[op.visibility/]: virtual [ne.name.replace('_datatypes', '_msgs')/]::[t.name/] [op.name/]( 
 				[/let]
 			[elseif(t.name.equalsIgnoreCase('invalid') or t.name.size() = 0)]
 				 virtual void [op.name/](
@@ -165,7 +165,7 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
         )
     [/for]
 [/if]
-}
+};
 #endif // _[type.name.toUpper()/]_H_
 [/file]
 [/if]

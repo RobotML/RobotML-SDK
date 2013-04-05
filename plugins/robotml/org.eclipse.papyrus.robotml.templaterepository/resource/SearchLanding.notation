@@ -979,6 +979,13 @@
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_13IHgnCnEeKfLd758TNm-w" source="QualifiedName">
               <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_13IHg3CnEeKfLd758TNm-w" key="QualifiedNameDepth" value="1000"/>
             </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_OIb9gJ3SEeKBXMKYRRb21w" source="Stereotype_Annotation">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OIb9gZ3SEeKBXMKYRRb21w" key="StereotypeWithQualifiedNameList" value=""/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OIckkJ3SEeKBXMKYRRb21w" key="StereotypeList" value="RobotML::DataFlowPort"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OIckkZ3SEeKBXMKYRRb21w" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OIckkp3SEeKBXMKYRRb21w" key="PropStereoDisplay" value=""/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OIckk53SEeKBXMKYRRb21w" key="StereotypePropertyLocation" value="Compartment"/>
+            </eAnnotations>
             <children xmi:type="notation:DecorationNode" xmi:id="_13IHhHCnEeKfLd758TNm-w" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_13IHhXCnEeKfLd758TNm-w" x="25" y="3"/>
             </children>
@@ -1015,6 +1022,13 @@
             </eAnnotations>
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5GK2ZXCnEeKfLd758TNm-w" source="QualifiedName">
               <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5GK2ZnCnEeKfLd758TNm-w" key="QualifiedNameDepth" value="1000"/>
+            </eAnnotations>
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YHXEwJ3SEeKBXMKYRRb21w" source="Stereotype_Annotation">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YHXEwZ3SEeKBXMKYRRb21w" key="StereotypeWithQualifiedNameList" value=""/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YHXEwp3SEeKBXMKYRRb21w" key="StereotypeList" value="RobotML::DataFlowPort"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YHXEw53SEeKBXMKYRRb21w" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YHXExJ3SEeKBXMKYRRb21w" key="PropStereoDisplay" value=""/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YHXExZ3SEeKBXMKYRRb21w" key="StereotypePropertyLocation" value="Compartment"/>
             </eAnnotations>
             <children xmi:type="notation:DecorationNode" xmi:id="_5GK2Z3CnEeKfLd758TNm-w" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_5GK2aHCnEeKfLd758TNm-w" x="25" y="3"/>

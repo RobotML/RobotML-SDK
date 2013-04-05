@@ -254,9 +254,7 @@ end</body>
         <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_es7RwHCnEeKfLd758TNm-w" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_es8f4HCnEeKfLd758TNm-w" value="1"/>
-        <defaultValue xmi:type="uml:LiteralString" xmi:id="_etAxUHCnEeKfLd758TNm-w">
-          <value xsi:nil="true"/>
-        </defaultValue>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_etAxUHCnEeKfLd758TNm-w" value=""/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_XhpW0HCnEeKfLd758TNm-w" name="CameraSystem">
@@ -307,4 +305,6 @@ end</body>
   <RobotML:Robot xmi:id="_1410MHCmEeKfLd758TNm-w" base_Class="_14i5QHCmEeKfLd758TNm-w"/>
   <RobotML:SensorSystem xmi:id="_RINvkHCnEeKfLd758TNm-w" base_Class="_RH60oHCnEeKfLd758TNm-w"/>
   <RobotML:SensorSystem xmi:id="_XiAjMHCnEeKfLd758TNm-w" base_Class="_XhpW0HCnEeKfLd758TNm-w"/>
+  <RobotML:DataFlowPort xmi:id="_OIQXUJ3SEeKBXMKYRRb21w" base_Port="_dq1ioHCnEeKfLd758TNm-w" direction="out"/>
+  <RobotML:DataFlowPort xmi:id="_YHSMQJ3SEeKBXMKYRRb21w" base_Port="_ojOBcHCnEeKfLd758TNm-w" direction="out"/>
 </xmi:XMI>

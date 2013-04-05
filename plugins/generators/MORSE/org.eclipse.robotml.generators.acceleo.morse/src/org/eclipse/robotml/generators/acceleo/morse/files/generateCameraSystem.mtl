@@ -13,9 +13,7 @@
  */]
 
 [template public generateCameraSystem(aClass : Class, aModel : Model)]
-
 [file (aClass.name+'.py', false, 'UTF-8')]
-
 class [aClass.name/]:
 	def __init(self, myRobot):
 		self.sensor = Sensor('video_camera')

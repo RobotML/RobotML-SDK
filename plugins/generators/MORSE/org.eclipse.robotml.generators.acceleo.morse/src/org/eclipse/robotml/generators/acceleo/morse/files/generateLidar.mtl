@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generateLidar.
+ */]
+[module generateLidar('http://Papyrus/RobotML/1', 'http://www.eclipse.org/uml2/4.0.0/UML')]
+
+[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+
+[**
+ * The documentation of the template generateLidar.
+ * @param anActuatorSystem
+ */]
+[template public generateLidar(aClass: Class, aModel: Model)]
+[file (aClass.name+'.py', false, 'UTF-8')]
+class [aClass.name/]:
+	def __init(self, myRobot):
+		self.sensor = Sensor('sick')
+		self.sensor.properties(scan_window = 180, resolution = 1, laser_range = [getAttributeValue(aClass, 'range_max', 'LidarSystem', '25')/])
+		self.sensor.frequency([getAttributeValue(aClass, 'frequency', 'LidarSystem', '20.')/])
+		self.sensor.configure_mw('ros')
+		myRobot.append(lidar)
+[/file]
+
+[/template]

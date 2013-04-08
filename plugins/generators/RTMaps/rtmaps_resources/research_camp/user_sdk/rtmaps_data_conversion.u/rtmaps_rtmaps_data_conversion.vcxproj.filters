@@ -30,6 +30,9 @@
     <ClCompile Include="src\maps_wifibot_inputs_robotml_to_rtmaps.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\maps_lidar_scan_robotml_to_rtmaps.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="local_interfaces\maps_lidar_scan_rtmaps_to_robotml.h">
@@ -54,6 +57,9 @@
       <Filter>local_interfaces</Filter>
     </ClInclude>
     <ClInclude Include="local_interfaces\maps_wifibot_inputs_robotml_to_rtmaps.h">
+      <Filter>local_interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="local_interfaces\maps_lidar_scan_robotml_to_rtmaps.h">
       <Filter>local_interfaces</Filter>
     </ClInclude>
   </ItemGroup>

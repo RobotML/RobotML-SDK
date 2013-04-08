@@ -50,7 +50,11 @@ knowledge of the CeCILL-C license and that you accept its terms.
 /*******************************************/
 
 [for (datatype : NamedElement | getElementsDataType(root_model))]
+[if (datatype.oclIsKindOf(Enumeration))]
+enum [datatype.name/];
+[else]
 class [datatype.name/];
+[/if]
 [/for]
 
 /*******************************************/

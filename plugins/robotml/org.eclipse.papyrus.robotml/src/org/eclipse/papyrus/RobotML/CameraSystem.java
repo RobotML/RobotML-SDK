@@ -214,52 +214,52 @@ public interface CameraSystem extends ImageSensorSystem {
 	void setColor_format(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Translate</b></em>' attribute.
+	 * Returns the value of the '<em><b>Translate</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Translate</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Translate</em>' attribute.
-	 * @see #setTranslate(float)
+	 * @return the value of the '<em>Translate</em>' containment reference.
+	 * @see #setTranslate(Point32)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Translate()
-	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Point32 getTranslate();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getTranslate <em>Translate</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getTranslate <em>Translate</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Translate</em>' attribute.
+	 * @param value the new value of the '<em>Translate</em>' containment reference.
 	 * @see #getTranslate()
 	 * @generated
 	 */
 	void setTranslate(Point32 value);
 
 	/**
-	 * Returns the value of the '<em><b>Rotate</b></em>' attribute.
+	 * Returns the value of the '<em><b>Rotate</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Rotate</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rotate</em>' attribute.
-	 * @see #setRotate(float)
+	 * @return the value of the '<em>Rotate</em>' containment reference.
+	 * @see #setRotate(Point32)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getCameraSystem_Rotate()
-	 * @model dataType="org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32" required="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Point32 getRotate();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getRotate <em>Rotate</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.CameraSystem#getRotate <em>Rotate</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rotate</em>' attribute.
+	 * @param value the new value of the '<em>Rotate</em>' containment reference.
 	 * @see #getRotate()
 	 * @generated
 	 */

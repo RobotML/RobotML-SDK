@@ -58,7 +58,7 @@ public interface DeploymentPlan extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Main Instance</em>' reference.
-	 * @see #setMainInstance(org.eclipse.papyrus.RobotML.System)
+	 * @see #setMainInstance(InstanceSpecification)
 	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getDeploymentPlan_MainInstance()
 	 * @model required="true" ordered="false"
 	 * @generated

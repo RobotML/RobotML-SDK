@@ -18,11 +18,11 @@ PropertyLabelEditPolicy {
 		return DEFAULT_ROBOTML_PROPERTY;
 	}
 	
-	@Override
-	public int getCurrentDisplayValue() {
-		// TODO Auto-generated method stub
-		 return DEFAULT_ROBOTML_PROPERTY;
-	}
+//	@Override
+//	public int getCurrentDisplayValue() {
+//		// TODO Auto-generated method stub
+//		 return DEFAULT_ROBOTML_PROPERTY;
+//	}
 
 
 

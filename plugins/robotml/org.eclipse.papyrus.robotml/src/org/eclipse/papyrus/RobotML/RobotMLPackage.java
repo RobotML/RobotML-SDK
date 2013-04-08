@@ -140,13 +140,22 @@ public interface RobotMLPackage extends EPackage {
 	int ALGORITHM__EXT_FUNCTION_NAME = 2;
 
 	/**
-	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * The feature id for the '<em><b>Lib Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALGORITHM__PATH = 3;
+	int ALGORITHM__LIB_PATH = 3;
+
+	/**
+	 * The feature id for the '<em><b>Lib File Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALGORITHM__LIB_FILE_FORMAT = 4;
 
 	/**
 	 * The number of structural features of the '<em>Algorithm</em>' class.
@@ -155,7 +164,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALGORITHM_FEATURE_COUNT = 4;
+	int ALGORITHM_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.SystemImpl <em>System</em>}' class.
@@ -1825,7 +1834,7 @@ public interface RobotMLPackage extends EPackage {
 	int CAMERA_SYSTEM__COLOR_FORMAT = IMAGE_SENSOR_SYSTEM_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Translate</b></em>' attribute.
+	 * The feature id for the '<em><b>Translate</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1834,7 +1843,7 @@ public interface RobotMLPackage extends EPackage {
 	int CAMERA_SYSTEM__TRANSLATE = IMAGE_SENSOR_SYSTEM_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Rotate</b></em>' attribute.
+	 * The feature id for the '<em><b>Rotate</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4267,6 +4276,97 @@ public interface RobotMLPackage extends EPackage {
 	int DEPLOYMENT_PLAN_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.impl.GyroscopeImpl <em>Gyroscope</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.papyrus.RobotML.impl.GyroscopeImpl
+	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getGyroscope()
+	 * @generated
+	 */
+	int GYROSCOPE = 52;
+
+	/**
+	 * The feature id for the '<em><b>Base Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GYROSCOPE__BASE_CLASS = SENSOR_SYSTEM__BASE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Native</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GYROSCOPE__NATIVE = SENSOR_SYSTEM__NATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Library Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GYROSCOPE__LIBRARY_PATH = SENSOR_SYSTEM__LIBRARY_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Library Component Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GYROSCOPE__LIBRARY_COMPONENT_NAME = SENSOR_SYSTEM__LIBRARY_COMPONENT_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Local Position</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GYROSCOPE__LOCAL_POSITION = SENSOR_SYSTEM__LOCAL_POSITION;
+
+	/**
+	 * The feature id for the '<em><b>Local Orientation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GYROSCOPE__LOCAL_ORIENTATION = SENSOR_SYSTEM__LOCAL_ORIENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GYROSCOPE__FREQUENCY = SENSOR_SYSTEM__FREQUENCY;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GYROSCOPE__IDENTIFIER = SENSOR_SYSTEM__IDENTIFIER;
+
+	/**
+	 * The number of structural features of the '<em>Gyroscope</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GYROSCOPE_FEATURE_COUNT = SENSOR_SYSTEM_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.RobotKind <em>Robot Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4274,7 +4374,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getRobotKind()
 	 * @generated
 	 */
-	int ROBOT_KIND = 52;
+	int ROBOT_KIND = 53;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.UGVKind <em>UGV Kind</em>}' enum.
@@ -4284,7 +4384,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getUGVKind()
 	 * @generated
 	 */
-	int UGV_KIND = 53;
+	int UGV_KIND = 54;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.SynchronizationKind <em>Synchronization Kind</em>}' enum.
@@ -4294,7 +4394,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getSynchronizationKind()
 	 * @generated
 	 */
-	int SYNCHRONIZATION_KIND = 54;
+	int SYNCHRONIZATION_KIND = 55;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.DataFlowDirectionKind <em>Data Flow Direction Kind</em>}' enum.
@@ -4304,7 +4404,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getDataFlowDirectionKind()
 	 * @generated
 	 */
-	int DATA_FLOW_DIRECTION_KIND = 55;
+	int DATA_FLOW_DIRECTION_KIND = 56;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.ServiceFlowKind <em>Service Flow Kind</em>}' enum.
@@ -4314,7 +4414,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getServiceFlowKind()
 	 * @generated
 	 */
-	int SERVICE_FLOW_KIND = 56;
+	int SERVICE_FLOW_KIND = 57;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.RoboticMiddlewareKind <em>Robotic Middleware Kind</em>}' enum.
@@ -4324,7 +4424,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getRoboticMiddlewareKind()
 	 * @generated
 	 */
-	int ROBOTIC_MIDDLEWARE_KIND = 57;
+	int ROBOTIC_MIDDLEWARE_KIND = 58;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.RobotML.Shade <em>Shade</em>}' enum.
@@ -4334,7 +4434,7 @@ public interface RobotMLPackage extends EPackage {
 	 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getShade()
 	 * @generated
 	 */
-	int SHADE = 58;
+	int SHADE = 59;
 
 
 	/**
@@ -4424,15 +4524,26 @@ public interface RobotMLPackage extends EPackage {
 	EAttribute getAlgorithm_ExtFunctionName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotML.Algorithm#getPath <em>Path</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotML.Algorithm#getLibPath <em>Lib Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Path</em>'.
-	 * @see org.eclipse.papyrus.RobotML.Algorithm#getPath()
+	 * @return the meta object for the attribute '<em>Lib Path</em>'.
+	 * @see org.eclipse.papyrus.RobotML.Algorithm#getLibPath()
 	 * @see #getAlgorithm()
 	 * @generated
 	 */
-	EAttribute getAlgorithm_Path();
+	EAttribute getAlgorithm_LibPath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotML.Algorithm#getLibFileFormat <em>Lib File Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lib File Format</em>'.
+	 * @see org.eclipse.papyrus.RobotML.Algorithm#getLibFileFormat()
+	 * @see #getAlgorithm()
+	 * @generated
+	 */
+	EAttribute getAlgorithm_LibFileFormat();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.Robot <em>Robot</em>}'.
@@ -5273,26 +5384,26 @@ public interface RobotMLPackage extends EPackage {
 	EAttribute getCameraSystem_Color_format();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotML.CameraSystem#getTranslate <em>Translate</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotML.CameraSystem#getTranslate <em>Translate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Translate</em>'.
+	 * @return the meta object for the containment reference '<em>Translate</em>'.
 	 * @see org.eclipse.papyrus.RobotML.CameraSystem#getTranslate()
 	 * @see #getCameraSystem()
 	 * @generated
 	 */
-	EAttribute getCameraSystem_Translate();
+	EReference getCameraSystem_Translate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotML.CameraSystem#getRotate <em>Rotate</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotML.CameraSystem#getRotate <em>Rotate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Rotate</em>'.
+	 * @return the meta object for the containment reference '<em>Rotate</em>'.
 	 * @see org.eclipse.papyrus.RobotML.CameraSystem#getRotate()
 	 * @see #getCameraSystem()
 	 * @generated
 	 */
-	EAttribute getCameraSystem_Rotate();
+	EReference getCameraSystem_Rotate();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.ObjectDetectionSensorSystem <em>Object Detection Sensor System</em>}'.
@@ -5969,6 +6080,16 @@ public interface RobotMLPackage extends EPackage {
 	EReference getDeploymentPlan_MainInstance();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotML.Gyroscope <em>Gyroscope</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Gyroscope</em>'.
+	 * @see org.eclipse.papyrus.RobotML.Gyroscope
+	 * @generated
+	 */
+	EClass getGyroscope();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.RobotML.RobotKind <em>Robot Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6129,12 +6250,20 @@ public interface RobotMLPackage extends EPackage {
 		EAttribute ALGORITHM__EXT_FUNCTION_NAME = eINSTANCE.getAlgorithm_ExtFunctionName();
 
 		/**
-		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Lib Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ALGORITHM__PATH = eINSTANCE.getAlgorithm_Path();
+		EAttribute ALGORITHM__LIB_PATH = eINSTANCE.getAlgorithm_LibPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Lib File Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ALGORITHM__LIB_FILE_FORMAT = eINSTANCE.getAlgorithm_LibFileFormat();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.RobotImpl <em>Robot</em>}' class.
@@ -6801,20 +6930,20 @@ public interface RobotMLPackage extends EPackage {
 		EAttribute CAMERA_SYSTEM__COLOR_FORMAT = eINSTANCE.getCameraSystem_Color_format();
 
 		/**
-		 * The meta object literal for the '<em><b>Translate</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Translate</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAMERA_SYSTEM__TRANSLATE = eINSTANCE.getCameraSystem_Translate();
+		EReference CAMERA_SYSTEM__TRANSLATE = eINSTANCE.getCameraSystem_Translate();
 
 		/**
-		 * The meta object literal for the '<em><b>Rotate</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Rotate</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CAMERA_SYSTEM__ROTATE = eINSTANCE.getCameraSystem_Rotate();
+		EReference CAMERA_SYSTEM__ROTATE = eINSTANCE.getCameraSystem_Rotate();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.ObjectDetectionSensorSystemImpl <em>Object Detection Sensor System</em>}' class.
@@ -7387,6 +7516,16 @@ public interface RobotMLPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DEPLOYMENT_PLAN__MAIN_INSTANCE = eINSTANCE.getDeploymentPlan_MainInstance();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.impl.GyroscopeImpl <em>Gyroscope</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.papyrus.RobotML.impl.GyroscopeImpl
+		 * @see org.eclipse.papyrus.RobotML.impl.RobotMLPackageImpl#getGyroscope()
+		 * @generated
+		 */
+		EClass GYROSCOPE = eINSTANCE.getGyroscope();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotML.RobotKind <em>Robot Kind</em>}' enum.

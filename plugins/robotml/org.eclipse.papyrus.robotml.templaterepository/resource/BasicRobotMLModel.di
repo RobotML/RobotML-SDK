@@ -24,9 +24,6 @@
     <windows>
       <children xsi:type="di:TabFolder">
         <children>
-          <emfPageIdentifier href="BasicRobotMLModel.notation#_P3Vb5iY6EeG5htLAfvhNWA"/>
-        </children>
-        <children>
           <emfPageIdentifier href="BasicRobotMLModel.notation#_P3Vb6CY6EeG5htLAfvhNWA"/>
         </children>
         <children>
@@ -40,6 +37,9 @@
         </children>
         <children>
           <emfPageIdentifier href="BasicRobotMLModel.notation#_P3Vb8CY6EeG5htLAfvhNWA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="BasicRobotMLModel.notation#_P3Vb5iY6EeG5htLAfvhNWA"/>
         </children>
       </children>
     </windows>

@@ -5,7 +5,7 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             class="org.eclipse.papyrus.robotml.perspective.RobotmlPerspective"
-            icon="platform:/plugin/org.eclipse.papyrus.robotml/icons/32x32/robotml_32_32.png"
+            icon="platform:/plugin/org.eclipse.papyrus.robotml/icons/robotml/RobotML-16x16-8bits.png"
             id="org.eclipse.papyrus.robotml.perspective"
             name="robotML">
       </perspective>

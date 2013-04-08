@@ -29,6 +29,7 @@ import org.eclipse.papyrus.RobotML.EngineSystem;
 import org.eclipse.papyrus.RobotML.Environment;
 import org.eclipse.papyrus.RobotML.Floor;
 import org.eclipse.papyrus.RobotML.GPSSystem;
+import org.eclipse.papyrus.RobotML.Gyroscope;
 import org.eclipse.papyrus.RobotML.Hardware;
 import org.eclipse.papyrus.RobotML.Human;
 import org.eclipse.papyrus.RobotML.ImageSensorSystem;
@@ -167,6 +168,7 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 			case RobotMLPackage.ODOMETRY_SYSTEM: return createOdometrySystem();
 			case RobotMLPackage.INFRA_RED_PROXIMETRY_SYSTEM: return createInfraRedProximetrySystem();
 			case RobotMLPackage.DEPLOYMENT_PLAN: return createDeploymentPlan();
+			case RobotMLPackage.GYROSCOPE: return createGyroscope();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -724,6 +726,16 @@ public class RobotMLFactoryImpl extends EFactoryImpl implements RobotMLFactory {
 	public DeploymentPlan createDeploymentPlan() {
 		DeploymentPlanImpl deploymentPlan = new DeploymentPlanImpl();
 		return deploymentPlan;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Gyroscope createGyroscope() {
+		GyroscopeImpl gyroscope = new GyroscopeImpl();
+		return gyroscope;
 	}
 
 	/**

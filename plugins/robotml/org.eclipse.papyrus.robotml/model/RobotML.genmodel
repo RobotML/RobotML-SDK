@@ -54,7 +54,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//Algorithm/base_Operation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//Algorithm/isExternal"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//Algorithm/extFunctionName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//Algorithm/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//Algorithm/libPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//Algorithm/libFileFormat"/>
     </genClasses>
     <genClasses ecoreClass="RobotML.ecore#//Robot">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//Robot/kind"/>
@@ -148,8 +149,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//CameraSystem/u0"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//CameraSystem/v0"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//CameraSystem/color_format"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//CameraSystem/translate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobotML.ecore#//CameraSystem/rotate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobotML.ecore#//CameraSystem/translate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobotML.ecore#//CameraSystem/rotate"/>
     </genClasses>
     <genClasses ecoreClass="RobotML.ecore#//ObjectDetectionSensorSystem"/>
     <genClasses ecoreClass="RobotML.ecore#//ObjectTrackingSensorSystem"/>
@@ -227,6 +228,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//DeploymentPlan/base_Package"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobotML.ecore#//DeploymentPlan/mainInstance"/>
     </genClasses>
+    <genClasses ecoreClass="RobotML.ecore#//Gyroscope"/>
   </genPackages>
   <genPackages prefix="RobotMLLibraries" basePackage="org.eclipse.papyrus" disposableProviderFactory="true"
       ecorePackage="RobotMLLibraries.ecore#/">

@@ -52,9 +52,6 @@
     <windows xmi:id="_3Q-VBfcEEd-J06U5HM_o-Q">
       <children xsi:type="di:TabFolder" xmi:id="_3Q-VBvcEEd-J06U5HM_o-Q">
         <children>
-          <emfPageIdentifier href="RobotMLProfile.profile.notation#_3Q-VAPcEEd-J06U5HM_o-Q"/>
-        </children>
-        <children>
           <emfPageIdentifier href="RobotMLProfile.profile.notation#_r4USgGAyEeCUQf3vpAG6JA"/>
         </children>
         <children>
@@ -67,13 +64,16 @@
           <emfPageIdentifier href="RobotMLProfile.profile.notation#_GGKgICJqEeGXbb453tP0yA"/>
         </children>
         <children>
+          <emfPageIdentifier href="RobotMLProfile.profile.notation#_tFd6AGwvEeGmceXllYzFRQ"/>
+        </children>
+        <children>
           <emfPageIdentifier href="RobotMLProfile.profile.notation#_YOV8EEXNEeGe3M3N_846rw"/>
         </children>
         <children>
           <emfPageIdentifier href="RobotMLProfile.profile.notation#_W_06cEaREeG1RvxKgcDZmw"/>
         </children>
         <children>
-          <emfPageIdentifier href="RobotMLProfile.profile.notation#_tFd6AGwvEeGmceXllYzFRQ"/>
+          <emfPageIdentifier href="RobotMLProfile.profile.notation#_3Q-VAPcEEd-J06U5HM_o-Q"/>
         </children>
       </children>
     </windows>

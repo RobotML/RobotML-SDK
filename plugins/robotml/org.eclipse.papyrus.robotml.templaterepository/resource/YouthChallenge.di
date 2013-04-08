@@ -119,6 +119,12 @@
         <children>
           <emfPageIdentifier href="YouthChallenge.notation#_NzHQoDivEeKFHpsdOC1X1Q"/>
         </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0VfojiAEeKDAMEjnOLmPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="YouthChallenge.notation#_k0VfojiAEeKDAMEjnOLmPA"/>
+        </children>
       </children>
     </windows>
   </sashModel>

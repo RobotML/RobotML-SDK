@@ -25,6 +25,7 @@ import org.eclipse.papyrus.RobotML.Environment;
 import org.eclipse.papyrus.RobotML.Floor;
 import org.eclipse.papyrus.RobotML.GPSSystem;
 import org.eclipse.papyrus.RobotML.Ground;
+import org.eclipse.papyrus.RobotML.Gyroscope;
 import org.eclipse.papyrus.RobotML.Hardware;
 import org.eclipse.papyrus.RobotML.Human;
 import org.eclipse.papyrus.RobotML.ImageSensorSystem;
@@ -538,6 +539,15 @@ public class RobotMLSwitch<T> extends Switch<T> {
 			case RobotMLPackage.DEPLOYMENT_PLAN: {
 				DeploymentPlan deploymentPlan = (DeploymentPlan)theEObject;
 				T result = caseDeploymentPlan(deploymentPlan);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotMLPackage.GYROSCOPE: {
+				Gyroscope gyroscope = (Gyroscope)theEObject;
+				T result = caseGyroscope(gyroscope);
+				if (result == null) result = caseSensorSystem(gyroscope);
+				if (result == null) result = caseRoboticSystem(gyroscope);
+				if (result == null) result = caseSystem(gyroscope);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1322,6 +1332,21 @@ public class RobotMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDeploymentPlan(DeploymentPlan object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Gyroscope</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Gyroscope</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGyroscope(Gyroscope object) {
 		return null;
 	}
 

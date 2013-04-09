@@ -73,6 +73,9 @@
     <availablePage>
       <emfPageIdentifier href="YouthChallenge.notation#_LuVHIHBiEeKpO-l0NGAU9Q"/>
     </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="YouthChallenge.notation#_rc51sKEKEeKLUqX9IJq2Gg"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
@@ -81,49 +84,7 @@
           <emfPageIdentifier href="YouthChallenge.notation#_k0VaYjiAEeKDAMEjnOLmPA"/>
         </children>
         <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_k0enODiAEeKDAMEjnOLmPA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_k0ehlDiAEeKDAMEjnOLmPA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_k0VfGDiAEeKDAMEjnOLmPA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_k0VfojiAEeKDAMEjnOLmPA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_k0eicDiAEeKDAMEjnOLmPA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_k0VYCDiAEeKDAMEjnOLmPA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_k0ehlDiAEeKDAMEjnOLmPA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_k0VhEziAEeKDAMEjnOLmPA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_k0eicDiAEeKDAMEjnOLmPA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_LuVHIHBiEeKpO-l0NGAU9Q"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_k0VVHjiAEeKDAMEjnOLmPA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_WaH_MDiuEeKFHpsdOC1X1Q"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_NzHQoDivEeKFHpsdOC1X1Q"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_k0VfojiAEeKDAMEjnOLmPA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="YouthChallenge.notation#_k0VfojiAEeKDAMEjnOLmPA"/>
+          <emfPageIdentifier href="YouthChallenge.notation#_rc51sKEKEeKLUqX9IJq2Gg"/>
         </children>
       </children>
     </windows>

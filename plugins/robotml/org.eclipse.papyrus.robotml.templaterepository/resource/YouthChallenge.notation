@@ -641,10 +641,10 @@
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VYDjiAEeKDAMEjnOLmPA" source="QualifiedName">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VYDziAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
       </eAnnotations>
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VYEDiAEeKDAMEjnOLmPA" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VYETiAEeKDAMEjnOLmPA" key="tooltip_text" value="WifiBot"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VYEjiAEeKDAMEjnOLmPA" key="diagram_name" value="WifiBot"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VYEziAEeKDAMEjnOLmPA" key="is_default_navigation" value="false"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mCL2QKEGEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mCL2QaEGEeKNa6EfGASSWw" key="tooltip_text" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mCL2QqEGEeKNa6EfGASSWw" key="diagram_name" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mCL2Q6EGEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_k0VYFDiAEeKDAMEjnOLmPA" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_k0VYFTiAEeKDAMEjnOLmPA" type="7073">
@@ -687,7 +687,7 @@
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VYMTiAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmkziAEeKDAMEjnOLmPA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VYMjiAEeKDAMEjnOLmPA" x="381" y="120"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VYMjiAEeKDAMEjnOLmPA" x="380" y="104" width="20" height="20"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_k0VYMziAEeKDAMEjnOLmPA" type="3069" fontName="Segoe UI" lineColor="0">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VYNDiAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -713,7 +713,7 @@
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VYQziAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmlziAEeKDAMEjnOLmPA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VYRDiAEeKDAMEjnOLmPA" x="381" y="160"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VYRDiAEeKDAMEjnOLmPA" x="380" y="144" width="20" height="20"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_k0VYRTiAEeKDAMEjnOLmPA" type="3069" fontName="Segoe UI" lineColor="0">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VYRjiAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -873,7 +873,7 @@
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VYrziAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmtDiAEeKDAMEjnOLmPA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VYsDiAEeKDAMEjnOLmPA" x="-10" y="43"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VYsDiAEeKDAMEjnOLmPA" x="-11" y="27" width="20" height="20"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_k0VYsTiAEeKDAMEjnOLmPA" type="3069" fontName="Segoe UI" lineColor="0">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VYsjiAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -936,7 +936,7 @@
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VY2TiAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmuziAEeKDAMEjnOLmPA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VY2jiAEeKDAMEjnOLmPA" x="-10" y="50"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VY2jiAEeKDAMEjnOLmPA" x="-11" y="34" width="20" height="20"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_k0VY2ziAEeKDAMEjnOLmPA" type="3069" fontHeight="8" lineColor="0">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VY3DiAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -981,7 +981,7 @@
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VY9ziAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmwziAEeKDAMEjnOLmPA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VY-DiAEeKDAMEjnOLmPA" x="-10" y="77" width="20" height="20"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VY-DiAEeKDAMEjnOLmPA" x="-11" y="61" width="20" height="20"/>
           </children>
           <element xmi:type="uml:Property" href="YouthChallenge.uml#_k0Lm3DiAEeKDAMEjnOLmPA"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VY-TiAEeKDAMEjnOLmPA" x="145" y="230" width="176"/>
@@ -1013,7 +1013,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VZDDiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmxjiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZDTiAEeKDAMEjnOLmPA" x="-10" y="84" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZDTiAEeKDAMEjnOLmPA" x="-11" y="98" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0VZDjiAEeKDAMEjnOLmPA" type="3069" fontName="Segoe UI" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VZDziAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -1042,7 +1042,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VZIDiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmyjiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZITiAEeKDAMEjnOLmPA" x="-10" y="114" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZITiAEeKDAMEjnOLmPA" x="-11" y="128" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0VZIjiAEeKDAMEjnOLmPA" type="3069" fontName="Segoe UI" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VZIziAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -1068,7 +1068,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VZMjiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmzjiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZMziAEeKDAMEjnOLmPA" x="-10" y="144" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZMziAEeKDAMEjnOLmPA" x="-11" y="158" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0VZNDiAEeKDAMEjnOLmPA" type="3069" fontName="Segoe UI" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VZNTiAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -1094,7 +1094,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VZRDiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0Lm0jiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZRTiAEeKDAMEjnOLmPA" x="-10" y="185"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZRTiAEeKDAMEjnOLmPA" x="-11" y="197" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0VZRjiAEeKDAMEjnOLmPA" type="3069" fontName="Segoe UI" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VZRziAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -1198,7 +1198,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VZjDiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0Lm3ziAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZjTiAEeKDAMEjnOLmPA" x="801" y="174" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZjTiAEeKDAMEjnOLmPA" x="826" y="174" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0VZjjiAEeKDAMEjnOLmPA" type="3069" fontHeight="8" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VZjziAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -1224,7 +1224,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VZnjiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0Lm4DiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZnziAEeKDAMEjnOLmPA" x="801" y="214" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZnziAEeKDAMEjnOLmPA" x="826" y="214" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0VZoDiAEeKDAMEjnOLmPA" type="3069" fontHeight="8" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VZoTiAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -1250,7 +1250,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VZsDiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0Lm4TiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZsTiAEeKDAMEjnOLmPA" x="825" y="294" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZsTiAEeKDAMEjnOLmPA" x="825" y="308" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0VZsjiAEeKDAMEjnOLmPA" type="3069" fontHeight="8" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VZsziAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -1276,7 +1276,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VZwjiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0Lm4jiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZwziAEeKDAMEjnOLmPA" x="825" y="414" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZwziAEeKDAMEjnOLmPA" x="825" y="428" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0VZxDiAEeKDAMEjnOLmPA" type="3069" fontName="Segoe UI" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VZxTiAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -1305,7 +1305,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZ1TiAEeKDAMEjnOLmPA" x="-10" y="450" width="20" height="20"/>
       </children>
       <element xmi:type="uml:Class" href="YouthChallenge.uml#_k0LmxDiAEeKDAMEjnOLmPA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZ1jiAEeKDAMEjnOLmPA" x="110" y="-15" width="836" height="476"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VZ1jiAEeKDAMEjnOLmPA" x="110" y="-15" width="836" height="551"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0VZ1ziAEeKDAMEjnOLmPA"/>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LmkDiAEeKDAMEjnOLmPA"/>
@@ -1521,7 +1521,7 @@
     </edges>
   </notation:Diagram>
   <notation:Diagram xmi:id="_k0VaYjiAEeKDAMEjnOLmPA" type="architecture" name="WifiBot" measurementUnit="Pixel">
-    <children xmi:type="notation:Shape" xmi:id="_k0VaYziAEeKDAMEjnOLmPA" type="2073" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:Shape" xmi:id="_k0VaYziAEeKDAMEjnOLmPA" type="2073" fontName="Segoe UI" fontHeight="12" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VaZDiAEeKDAMEjnOLmPA" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VaZTiAEeKDAMEjnOLmPA" key="ShadowFigure_Value" value="false"/>
       </eAnnotations>
@@ -1530,6 +1530,11 @@
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VaaDiAEeKDAMEjnOLmPA" source="QualifiedName">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VaaTiAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_F8hIEKELEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_rc51sKEKEeKLUqX9IJq2Gg">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_F8hIEaELEeKLUqX9IJq2Gg" key="tooltip_text" value="WifibotEnvironmentDiagram"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_F8hIEqELEeKLUqX9IJq2Gg" key="diagram_name" value="WifibotEnvironmentDiagram"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_F8hIE6ELEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_k0VaajiAEeKDAMEjnOLmPA" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_k0VaaziAEeKDAMEjnOLmPA" type="7073">
@@ -1548,7 +1553,13 @@
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VadTiAEeKDAMEjnOLmPA" key="diagram_name" value="PathPlannerA4"/>
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VadjiAEeKDAMEjnOLmPA" key="is_default_navigation" value="false"/>
           </eAnnotations>
-          <children xmi:type="notation:DecorationNode" xmi:id="_k0VadziAEeKDAMEjnOLmPA" type="5126"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_k0VadziAEeKDAMEjnOLmPA" type="5126">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YkPf4KEFEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0ee0DiAEeKDAMEjnOLmPA">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YkPf4aEFEeKNa6EfGASSWw" key="tooltip_text" value="A4-PathPlanner"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YkPf4qEFEeKNa6EfGASSWw" key="diagram_name" value="A4-PathPlanner"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YkPf46EFEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
+            </eAnnotations>
+          </children>
           <children xmi:type="notation:BasicCompartment" xmi:id="_k0VaeDiAEeKDAMEjnOLmPA" type="7077">
             <styles xmi:type="notation:TitleStyle" xmi:id="_k0VaeTiAEeKDAMEjnOLmPA"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VaejiAEeKDAMEjnOLmPA"/>
@@ -1654,7 +1665,18 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VauTiAEeKDAMEjnOLmPA" source="QualifiedName">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VaujiAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
           </eAnnotations>
-          <children xmi:type="notation:DecorationNode" xmi:id="_k0VauziAEeKDAMEjnOLmPA" type="5126"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bY1ucKEFEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0efoDiAEeKDAMEjnOLmPA">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bY1ucaEFEeKNa6EfGASSWw" key="tooltip_text" value="A5-MissionGenerator"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bY1ucqEFEeKNa6EfGASSWw" key="diagram_name" value="A5-MissionGenerator"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_bY1uc6EFEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
+          </eAnnotations>
+          <children xmi:type="notation:DecorationNode" xmi:id="_k0VauziAEeKDAMEjnOLmPA" type="5126">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0qi4sKEEEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0efoDiAEeKDAMEjnOLmPA">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0qi4saEEEeKNa6EfGASSWw" key="tooltip_text" value="A5-MissionGenerator"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0qi4sqEEEeKNa6EfGASSWw" key="diagram_name" value="A5-MissionGenerator"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0qi4s6EEEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
+            </eAnnotations>
+          </children>
           <children xmi:type="notation:BasicCompartment" xmi:id="_k0VavDiAEeKDAMEjnOLmPA" type="7077">
             <styles xmi:type="notation:TitleStyle" xmi:id="_k0VavTiAEeKDAMEjnOLmPA"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VavjiAEeKDAMEjnOLmPA"/>
@@ -1694,12 +1716,18 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0Va0ziAEeKDAMEjnOLmPA" source="QualifiedName">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0Va1DiAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
           </eAnnotations>
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0Va1TiAEeKDAMEjnOLmPA" source="PapyrusHyperLink_Diagram" references="_k0VhEziAEeKDAMEjnOLmPA">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0Va1jiAEeKDAMEjnOLmPA" key="tooltip_text" value="NavigatorA3"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0Va1ziAEeKDAMEjnOLmPA" key="diagram_name" value="NavigatorA3"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0Va2DiAEeKDAMEjnOLmPA" key="is_default_navigation" value="false"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__W3G4KEDEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VhEziAEeKDAMEjnOLmPA">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__W3G4aEDEeKNa6EfGASSWw" key="tooltip_text" value="NavigatorA3"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__W3G4qEDEeKNa6EfGASSWw" key="diagram_name" value="A3-Navigator"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__W3G46EDEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
           </eAnnotations>
-          <children xmi:type="notation:DecorationNode" xmi:id="_k0Va2TiAEeKDAMEjnOLmPA" type="5126"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_k0Va2TiAEeKDAMEjnOLmPA" type="5126">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-GZkkKEDEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VhEziAEeKDAMEjnOLmPA">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GZkkaEDEeKNa6EfGASSWw" key="tooltip_text" value="A3-Navigator"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GZkkqEDEeKNa6EfGASSWw" key="diagram_name" value="A3-Navigator"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GZkk6EDEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
+            </eAnnotations>
+          </children>
           <children xmi:type="notation:BasicCompartment" xmi:id="_k0Va2jiAEeKDAMEjnOLmPA" type="7077">
             <styles xmi:type="notation:TitleStyle" xmi:id="_k0Va2ziAEeKDAMEjnOLmPA"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0Va3DiAEeKDAMEjnOLmPA"/>
@@ -1786,7 +1814,7 @@
               </eAnnotations>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VbETiAEeKDAMEjnOLmPA" x="-51" y="5"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_k0VbEjiAEeKDAMEjnOLmPA" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_k0VbEjiAEeKDAMEjnOLmPA" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VbEziAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LoYTiAEeKDAMEjnOLmPA"/>
@@ -1808,7 +1836,7 @@
               </eAnnotations>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VbHziAEeKDAMEjnOLmPA" x="-51" y="5"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_k0VbIDiAEeKDAMEjnOLmPA" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_k0VbIDiAEeKDAMEjnOLmPA" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VbITiAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LoYjiAEeKDAMEjnOLmPA"/>
@@ -1938,12 +1966,18 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VbjTiAEeKDAMEjnOLmPA" source="QualifiedName">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VbjjiAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
           </eAnnotations>
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VbjziAEeKDAMEjnOLmPA" source="PapyrusHyperLink_Diagram" references="_k0VfGDiAEeKDAMEjnOLmPA">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VbkDiAEeKDAMEjnOLmPA" key="tooltip_text" value="ServoingsA1"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VbkTiAEeKDAMEjnOLmPA" key="diagram_name" value="ServoingsA1"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VbkjiAEeKDAMEjnOLmPA" key="is_default_navigation" value="false"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8k4AEKEGEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VfGDiAEeKDAMEjnOLmPA">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8k4AEaEGEeKNa6EfGASSWw" key="tooltip_text" value="ServoingsA1"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8k4AEqEGEeKNa6EfGASSWw" key="diagram_name" value="A1-Servoings"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8k4AE6EGEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
           </eAnnotations>
-          <children xmi:type="notation:DecorationNode" xmi:id="_k0VbkziAEeKDAMEjnOLmPA" type="5126"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_k0VbkziAEeKDAMEjnOLmPA" type="5126">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7W8NUKEGEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VfGDiAEeKDAMEjnOLmPA">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7W8NUaEGEeKNa6EfGASSWw" key="tooltip_text" value="A1-Servoings"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7W8NUqEGEeKNa6EfGASSWw" key="diagram_name" value="A1-Servoings"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7W8NU6EGEeKNa6EfGASSWw" key="is_default_navigation" value="false"/>
+            </eAnnotations>
+          </children>
           <children xmi:type="notation:BasicCompartment" xmi:id="_k0VblDiAEeKDAMEjnOLmPA" type="7077">
             <styles xmi:type="notation:TitleStyle" xmi:id="_k0VblTiAEeKDAMEjnOLmPA"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VbljiAEeKDAMEjnOLmPA"/>
@@ -1983,10 +2017,10 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VbqziAEeKDAMEjnOLmPA" source="QualifiedName">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VbrDiAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
           </eAnnotations>
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VbrTiAEeKDAMEjnOLmPA" source="PapyrusHyperLink_Diagram" references="_k0eicDiAEeKDAMEjnOLmPA">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VbrjiAEeKDAMEjnOLmPA" key="tooltip_text" value="P1Sensors"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VbrziAEeKDAMEjnOLmPA" key="diagram_name" value="P1Sensors"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VbsDiAEeKDAMEjnOLmPA" key="is_default_navigation" value="false"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pSV_cKEGEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0eicDiAEeKDAMEjnOLmPA">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pSV_caEGEeKNa6EfGASSWw" key="tooltip_text" value="P1Sensors"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pSV_cqEGEeKNa6EfGASSWw" key="diagram_name" value="P1-Sensors"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pSV_c6EGEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
           </eAnnotations>
           <children xmi:type="notation:DecorationNode" xmi:id="_k0VbsTiAEeKDAMEjnOLmPA" type="5126"/>
           <children xmi:type="notation:BasicCompartment" xmi:id="_k0VbsjiAEeKDAMEjnOLmPA" type="7077">
@@ -2239,12 +2273,18 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VcTziAEeKDAMEjnOLmPA" source="QualifiedName">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VcUDiAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
           </eAnnotations>
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VcUTiAEeKDAMEjnOLmPA" source="PapyrusHyperLink_Diagram" references="_k0VYCDiAEeKDAMEjnOLmPA">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VcUjiAEeKDAMEjnOLmPA" key="tooltip_text" value="ProximetrieP2"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VcUziAEeKDAMEjnOLmPA" key="diagram_name" value="ProximetrieP2"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VcVDiAEeKDAMEjnOLmPA" key="is_default_navigation" value="false"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_YwFuEKEGEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VYCDiAEeKDAMEjnOLmPA">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YwFuEaEGEeKNa6EfGASSWw" key="tooltip_text" value="ProximetrieP2"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YwFuEqEGEeKNa6EfGASSWw" key="diagram_name" value="P2-Proximetrie"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_YwFuE6EGEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
           </eAnnotations>
-          <children xmi:type="notation:DecorationNode" xmi:id="_k0VcVTiAEeKDAMEjnOLmPA" type="5126"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_k0VcVTiAEeKDAMEjnOLmPA" type="5126">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XmCVwKEGEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VYCDiAEeKDAMEjnOLmPA">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XmCVwaEGEeKNa6EfGASSWw" key="tooltip_text" value="P2-Proximetrie"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XmCVwqEGEeKNa6EfGASSWw" key="diagram_name" value="P2-Proximetrie"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XmCVw6EGEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
+            </eAnnotations>
+          </children>
           <children xmi:type="notation:BasicCompartment" xmi:id="_k0VcVjiAEeKDAMEjnOLmPA" type="7077">
             <styles xmi:type="notation:TitleStyle" xmi:id="_k0VcVziAEeKDAMEjnOLmPA"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VcWDiAEeKDAMEjnOLmPA"/>
@@ -2526,12 +2566,18 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VdBziAEeKDAMEjnOLmPA" source="QualifiedName">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VdCDiAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
           </eAnnotations>
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VdCTiAEeKDAMEjnOLmPA" source="PapyrusHyperLink_Diagram" references="_k0ehlDiAEeKDAMEjnOLmPA">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VdCjiAEeKDAMEjnOLmPA" key="tooltip_text" value="GlobalP4"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VdCziAEeKDAMEjnOLmPA" key="diagram_name" value="GlobalP4"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VdDDiAEeKDAMEjnOLmPA" key="is_default_navigation" value="false"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rVQH0KEFEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0ehlDiAEeKDAMEjnOLmPA">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rVQH0aEFEeKNa6EfGASSWw" key="tooltip_text" value="GlobalP4"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rVQH0qEFEeKNa6EfGASSWw" key="diagram_name" value="P4-Global"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rVQH06EFEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
           </eAnnotations>
-          <children xmi:type="notation:DecorationNode" xmi:id="_k0VdDTiAEeKDAMEjnOLmPA" type="5126"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_k0VdDTiAEeKDAMEjnOLmPA" type="5126">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lvL3MKEFEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0ehlDiAEeKDAMEjnOLmPA">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lvL3MaEFEeKNa6EfGASSWw" key="tooltip_text" value="P4-Global"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lvL3MqEFEeKNa6EfGASSWw" key="diagram_name" value="P4-Global"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lvL3M6EFEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
+            </eAnnotations>
+          </children>
           <children xmi:type="notation:BasicCompartment" xmi:id="_k0VdDjiAEeKDAMEjnOLmPA" type="7077">
             <styles xmi:type="notation:TitleStyle" xmi:id="_k0VdDziAEeKDAMEjnOLmPA"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VdEDiAEeKDAMEjnOLmPA"/>
@@ -2631,7 +2677,13 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VdSziAEeKDAMEjnOLmPA" source="QualifiedName">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VdTDiAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
           </eAnnotations>
-          <children xmi:type="notation:DecorationNode" xmi:id="_k0VdTTiAEeKDAMEjnOLmPA" type="5126"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_k0VdTTiAEeKDAMEjnOLmPA" type="5126">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Nh4JMKEGEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0ef6TiAEeKDAMEjnOLmPA">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Nh4JMaEGEeKNa6EfGASSWw" key="tooltip_text" value="P3-Local"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Nh4JMqEGEeKNa6EfGASSWw" key="diagram_name" value="P3-Local"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Nh4JM6EGEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
+            </eAnnotations>
+          </children>
           <children xmi:type="notation:BasicCompartment" xmi:id="_k0VdTjiAEeKDAMEjnOLmPA" type="7077">
             <styles xmi:type="notation:TitleStyle" xmi:id="_k0VdTziAEeKDAMEjnOLmPA"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VdUDiAEeKDAMEjnOLmPA"/>
@@ -3308,10 +3360,10 @@
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VfHjiAEeKDAMEjnOLmPA" source="QualifiedName">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VfHziAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
       </eAnnotations>
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VfIDiAEeKDAMEjnOLmPA" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VfITiAEeKDAMEjnOLmPA" key="tooltip_text" value="WifiBot"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VfIjiAEeKDAMEjnOLmPA" key="diagram_name" value="WifiBot"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VfIziAEeKDAMEjnOLmPA" key="is_default_navigation" value="false"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QqzzkKEHEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QqzzkaEHEeKNa6EfGASSWw" key="tooltip_text" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QqzzkqEHEeKNa6EfGASSWw" key="diagram_name" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Qqzzk6EHEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_k0VfJDiAEeKDAMEjnOLmPA" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_k0VfJTiAEeKDAMEjnOLmPA" type="7073">
@@ -3424,7 +3476,7 @@
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VfcTiAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0Lo9jiAEeKDAMEjnOLmPA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VfcjiAEeKDAMEjnOLmPA" x="-10" y="48"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VfcjiAEeKDAMEjnOLmPA" x="-11" y="45" width="20" height="20"/>
           </children>
           <element xmi:type="uml:Property" href="YouthChallenge.uml#_k0LpADiAEeKDAMEjnOLmPA"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VfcziAEeKDAMEjnOLmPA" x="435" y="20" width="318" height="116"/>
@@ -3456,7 +3508,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0VfhjiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0Lo-ziAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VfhziAEeKDAMEjnOLmPA" x="-10" y="90"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VfhziAEeKDAMEjnOLmPA" x="-11" y="104" width="20" height="20"/>
       </children>
       <element xmi:type="uml:Class" href="YouthChallenge.uml#_k0Lo-jiAEeKDAMEjnOLmPA"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0VfiDiAEeKDAMEjnOLmPA" x="70" y="40" width="796" height="196"/>
@@ -3510,6 +3562,11 @@
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VfqDiAEeKDAMEjnOLmPA" source="QualifiedName">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VfqTiAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_57YVoKEDEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_57YVoaEDEeKNa6EfGASSWw" key="tooltip_text" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_57YVoqEDEeKNa6EfGASSWw" key="diagram_name" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_57YVo6EDEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_k0VfqjiAEeKDAMEjnOLmPA" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_k0VfqziAEeKDAMEjnOLmPA" type="7073">
@@ -3978,6 +4035,11 @@
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0VhGTiAEeKDAMEjnOLmPA" source="QualifiedName">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0VhGjiAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_f4uaIKEFEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f4uaIaEFEeKNa6EfGASSWw" key="tooltip_text" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f4uaIqEFEeKNa6EfGASSWw" key="diagram_name" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_f4uaI6EFEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_k0VhGziAEeKDAMEjnOLmPA" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_k0VhHDiAEeKDAMEjnOLmPA" type="7073">
@@ -4673,6 +4735,11 @@
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0efpjiAEeKDAMEjnOLmPA" source="QualifiedName">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0efpziAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
       </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dEk3gKEFEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dEk3gaEFEeKNa6EfGASSWw" key="tooltip_text" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dEk3gqEFEeKNa6EfGASSWw" key="diagram_name" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dEk3g6EFEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
+      </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_k0efqDiAEeKDAMEjnOLmPA" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_k0efqTiAEeKDAMEjnOLmPA" type="7073">
         <children xmi:type="notation:Shape" xmi:id="_k0efqjiAEeKDAMEjnOLmPA" type="3070" fontName="Segoe UI" lineColor="0">
@@ -4783,16 +4850,16 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ef8DiAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0ef8TiAEeKDAMEjnOLmPA" source="Stereotype_Annotation">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ef8jiAEeKDAMEjnOLmPA" key="StereotypeWithQualifiedNameList" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ef8ziAEeKDAMEjnOLmPA" key="StereotypeList" value="ProteusProfile::System"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ef9DiAEeKDAMEjnOLmPA" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ef9TiAEeKDAMEjnOLmPA" key="PropStereoDisplay" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ef9jiAEeKDAMEjnOLmPA" key="StereotypePropertyLocation" value="Compartment"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OoDuIKEGEeKNa6EfGASSWw" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OoDuIaEGEeKNa6EfGASSWw" key="StereotypeList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OoDuIqEGEeKNa6EfGASSWw" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OoDuI6EGEeKNa6EfGASSWw" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OoDuJKEGEeKNa6EfGASSWw" key="StereotypePropertyLocation" value="Compartment"/>
       </eAnnotations>
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0ef9ziAEeKDAMEjnOLmPA" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ef-DiAEeKDAMEjnOLmPA" key="tooltip_text" value="WifiBot"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ef-TiAEeKDAMEjnOLmPA" key="diagram_name" value="WifiBot"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ef-jiAEeKDAMEjnOLmPA" key="is_default_navigation" value="false"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Qn6GAKEGEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Qn6GAaEGEeKNa6EfGASSWw" key="tooltip_text" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Qn6GAqEGEeKNa6EfGASSWw" key="diagram_name" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Qn6GA6EGEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_k0ef-ziAEeKDAMEjnOLmPA" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_k0ef_DiAEeKDAMEjnOLmPA" type="7073">
@@ -5089,7 +5156,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0egxjiAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0egxziAEeKDAMEjnOLmPA" x="25" y="-5"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0egyDiAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0egyDiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0egyTiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmUTiAEeKDAMEjnOLmPA"/>
@@ -5115,7 +5182,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0eg2DiAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eg2TiAEeKDAMEjnOLmPA" x="25" y="-4"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0eg2jiAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0eg2jiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eg2ziAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmUjiAEeKDAMEjnOLmPA"/>
@@ -5141,7 +5208,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0eg6jiAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eg6ziAEeKDAMEjnOLmPA" x="25" y="-4"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0eg7DiAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0eg7DiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eg7TiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmUziAEeKDAMEjnOLmPA"/>
@@ -5167,7 +5234,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0eg_DiAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eg_TiAEeKDAMEjnOLmPA" x="25" y="-4"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0eg_jiAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0eg_jiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eg_ziAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmVDiAEeKDAMEjnOLmPA"/>
@@ -5193,7 +5260,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0ehDjiAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ehDziAEeKDAMEjnOLmPA" x="25" y="-9"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0ehEDiAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0ehEDiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ehETiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmVTiAEeKDAMEjnOLmPA"/>
@@ -5219,7 +5286,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0ehIDiAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ehITiAEeKDAMEjnOLmPA" x="-81" y="26"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0ehIjiAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0ehIjiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ehIziAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmVjiAEeKDAMEjnOLmPA"/>
@@ -5245,7 +5312,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0ehMjiAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ehMziAEeKDAMEjnOLmPA" x="25" y="15"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0ehNDiAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0ehNDiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ehNTiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmVziAEeKDAMEjnOLmPA"/>
@@ -5414,6 +5481,11 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FQIq41jYEeKfV8GUW17iZg" key="PropStereoDisplay" value=""/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FQIq5FjYEeKfV8GUW17iZg" key="StereotypePropertyLocation" value="Compartment"/>
       </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KKaeIKEGEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KKaeIaEGEeKNa6EfGASSWw" key="tooltip_text" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KKaeIqEGEeKNa6EfGASSWw" key="diagram_name" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KKaeI6EGEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
+      </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_k0ehojiAEeKDAMEjnOLmPA" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_k0ehoziAEeKDAMEjnOLmPA" type="7073">
         <children xmi:type="notation:Shape" xmi:id="_k0ehpDiAEeKDAMEjnOLmPA" type="3070" fontName="Segoe UI" lineColor="0">
@@ -5561,7 +5633,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0eiBziAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eiCDiAEeKDAMEjnOLmPA" x="25" y="-6"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0eiCTiAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0eiCTiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eiCjiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmBjiAEeKDAMEjnOLmPA"/>
@@ -5587,7 +5659,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0eiGTiAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eiGjiAEeKDAMEjnOLmPA" x="15" y="-3"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0eiGziAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0eiGziAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eiHDiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmBziAEeKDAMEjnOLmPA"/>
@@ -5613,7 +5685,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0eiKziAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eiLDiAEeKDAMEjnOLmPA" x="25" y="-5"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0eiLTiAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0eiLTiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eiLjiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmCDiAEeKDAMEjnOLmPA"/>
@@ -5639,7 +5711,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0eiPTiAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eiPjiAEeKDAMEjnOLmPA" x="-86" y="-13"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0eiPziAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0eiPziAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eiQDiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LmCTiAEeKDAMEjnOLmPA"/>
@@ -5730,10 +5802,10 @@
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0eidjiAEeKDAMEjnOLmPA" source="QualifiedName">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0eidziAEeKDAMEjnOLmPA" key="QualifiedNameDepth" value="1000"/>
       </eAnnotations>
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0eieDiAEeKDAMEjnOLmPA" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0eieTiAEeKDAMEjnOLmPA" key="tooltip_text" value="WifiBot"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0eiejiAEeKDAMEjnOLmPA" key="diagram_name" value="WifiBot"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0eieziAEeKDAMEjnOLmPA" key="is_default_navigation" value="false"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_1WqF4KEGEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1WqF4aEGEeKNa6EfGASSWw" key="tooltip_text" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1WqF4qEGEeKNa6EfGASSWw" key="diagram_name" value="WifiBot"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1WqF46EGEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_k0eifDiAEeKDAMEjnOLmPA" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_k0eifTiAEeKDAMEjnOLmPA" type="7073">
@@ -5772,7 +5844,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_k0eiljiAEeKDAMEjnOLmPA" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eilziAEeKDAMEjnOLmPA" x="-271"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_k0eimDiAEeKDAMEjnOLmPA" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_k0eimDiAEeKDAMEjnOLmPA" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eimTiAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnOjiAEeKDAMEjnOLmPA"/>
@@ -5798,7 +5870,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_k0eiqDiAEeKDAMEjnOLmPA" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eiqTiAEeKDAMEjnOLmPA" x="-301" y="5"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_k0eiqjiAEeKDAMEjnOLmPA" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_k0eiqjiAEeKDAMEjnOLmPA" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eiqziAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnPjiAEeKDAMEjnOLmPA"/>
@@ -5824,7 +5896,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_k0eiujiAEeKDAMEjnOLmPA" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eiuziAEeKDAMEjnOLmPA" x="-221" y="4"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_k0eivDiAEeKDAMEjnOLmPA" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_k0eivDiAEeKDAMEjnOLmPA" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eivTiAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnQjiAEeKDAMEjnOLmPA"/>
@@ -5850,7 +5922,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_k0eizDiAEeKDAMEjnOLmPA" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eizTiAEeKDAMEjnOLmPA" x="-166" y="-1"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_k0eizjiAEeKDAMEjnOLmPA" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_k0eizjiAEeKDAMEjnOLmPA" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0eizziAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnRjiAEeKDAMEjnOLmPA"/>
@@ -5876,7 +5948,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_k0ei3jiAEeKDAMEjnOLmPA" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ei3ziAEeKDAMEjnOLmPA" x="-186" y="4"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_k0ei4DiAEeKDAMEjnOLmPA" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_k0ei4DiAEeKDAMEjnOLmPA" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ei4TiAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnSjiAEeKDAMEjnOLmPA"/>
@@ -6090,7 +6162,7 @@
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ejcTiAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnZTiAEeKDAMEjnOLmPA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ejcjiAEeKDAMEjnOLmPA" x="133" y="71"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ejcjiAEeKDAMEjnOLmPA" x="185" y="55" width="20" height="20"/>
           </children>
           <element xmi:type="uml:Property" href="YouthChallenge.uml#_k0LnjTiAEeKDAMEjnOLmPA"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ejcziAEeKDAMEjnOLmPA" x="475" y="575" width="196"/>
@@ -6156,11 +6228,11 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_k0ejnjiAEeKDAMEjnOLmPA" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ejnziAEeKDAMEjnOLmPA" x="-136" y="2"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_k0ejoDiAEeKDAMEjnOLmPA" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_k0ejoDiAEeKDAMEjnOLmPA" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ejoTiAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnbjiAEeKDAMEjnOLmPA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ejojiAEeKDAMEjnOLmPA" x="216" y="43" width="20" height="20"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ejojiAEeKDAMEjnOLmPA" x="215" y="31" width="20" height="20"/>
           </children>
           <element xmi:type="uml:Property" href="YouthChallenge.uml#_k0LnjjiAEeKDAMEjnOLmPA"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ejoziAEeKDAMEjnOLmPA" x="440" y="465" width="226"/>
@@ -6226,7 +6298,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_k0ejzjiAEeKDAMEjnOLmPA" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ejzziAEeKDAMEjnOLmPA" x="-126" y="1"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_k0ej0DiAEeKDAMEjnOLmPA" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_k0ej0DiAEeKDAMEjnOLmPA" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ej0TiAEeKDAMEjnOLmPA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LndDiAEeKDAMEjnOLmPA"/>
@@ -6256,13 +6328,13 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_k0ej4jiAEeKDAMEjnOLmPA" key="StereotypePropertyLocation" value="Compartment"/>
         </eAnnotations>
         <children xmi:type="notation:DecorationNode" xmi:id="_k0ej4ziAEeKDAMEjnOLmPA" type="5125">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ej5DiAEeKDAMEjnOLmPA" x="-301" y="25"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ej5DiAEeKDAMEjnOLmPA" x="-291" y="22"/>
         </children>
         <children xmi:type="notation:DecorationNode" xmi:id="_k0ej5TiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ej5jiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LndjiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ej5ziAEeKDAMEjnOLmPA" x="836" y="320"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ej5ziAEeKDAMEjnOLmPA" x="835" y="343" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0ej6DiAEeKDAMEjnOLmPA" type="3069" fontName="Segoe UI" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0ej6TiAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -6288,7 +6360,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ej-DiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnejiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ej-TiAEeKDAMEjnOLmPA" x="836" y="290"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ej-TiAEeKDAMEjnOLmPA" x="835" y="302" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0ej-jiAEeKDAMEjnOLmPA" type="3069" fontName="Segoe UI" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0ej-ziAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -6314,7 +6386,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekCjiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnfjiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ekCziAEeKDAMEjnOLmPA" x="836" y="400"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ekCziAEeKDAMEjnOLmPA" x="835" y="418" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0ekDDiAEeKDAMEjnOLmPA" type="3069" fontName="Segoe UI" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0ekDTiAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -6366,7 +6438,7 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekLjiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnhjiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ekLziAEeKDAMEjnOLmPA" x="836" y="559" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ekLziAEeKDAMEjnOLmPA" x="835" y="573" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0ekMDiAEeKDAMEjnOLmPA" type="3069" fontHeight="8" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0ekMTiAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -6388,7 +6460,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0ekPTiAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekPjiAEeKDAMEjnOLmPA" x="-126" y="-8"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0ekPziAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0ekPziAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekQDiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnkDiAEeKDAMEjnOLmPA"/>
@@ -6414,7 +6486,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0ekTziAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekUDiAEeKDAMEjnOLmPA" x="-86" y="-10"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0ekUTiAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0ekUTiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekUjiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnkTiAEeKDAMEjnOLmPA"/>
@@ -6440,7 +6512,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0ekYTiAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekYjiAEeKDAMEjnOLmPA" x="-136" y="-6"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0ekYziAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0ekYziAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekZDiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnkjiAEeKDAMEjnOLmPA"/>
@@ -6466,11 +6538,11 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0ekcziAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekdDiAEeKDAMEjnOLmPA" x="-116" y="-6"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0ekdTiAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0ekdTiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekdjiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnkziAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ekdziAEeKDAMEjnOLmPA" x="836" y="56" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ekdziAEeKDAMEjnOLmPA" x="835" y="73" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0ekeDiAEeKDAMEjnOLmPA" type="3069" fontHeight="8" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0ekeTiAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -6492,11 +6564,11 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0ekhTiAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekhjiAEeKDAMEjnOLmPA" x="-136" y="-9"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0ekhziAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0ekhziAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekiDiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnlDiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ekiTiAEeKDAMEjnOLmPA" x="835" y="84" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ekiTiAEeKDAMEjnOLmPA" x="835" y="98" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_k0ekijiAEeKDAMEjnOLmPA" type="3069" fontHeight="8" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_k0ekiziAEeKDAMEjnOLmPA" source="ShadowFigure">
@@ -6518,14 +6590,14 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_k0eklziAEeKDAMEjnOLmPA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekmDiAEeKDAMEjnOLmPA" x="-186" y="-9"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_k0ekmTiAEeKDAMEjnOLmPA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_k0ekmTiAEeKDAMEjnOLmPA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_k0ekmjiAEeKDAMEjnOLmPA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="YouthChallenge.uml#_k0LnlTiAEeKDAMEjnOLmPA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ekmziAEeKDAMEjnOLmPA" x="835" y="114" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0ekmziAEeKDAMEjnOLmPA" x="835" y="128" width="20" height="20"/>
       </children>
       <element xmi:type="uml:Class" href="YouthChallenge.uml#_k0LndTiAEeKDAMEjnOLmPA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0eknDiAEeKDAMEjnOLmPA" x="-320" y="20" width="846" height="811"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k0eknDiAEeKDAMEjnOLmPA" x="-320" y="20" width="846" height="851"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_k0eknTiAEeKDAMEjnOLmPA"/>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LnODiAEeKDAMEjnOLmPA"/>
@@ -8549,5 +8621,55 @@
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_LuVHIXBiEeKpO-l0NGAU9Q"/>
     <element xmi:type="uml:Package" href="YouthChallenge.uml#_k0LnODiAEeKDAMEjnOLmPA"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_rc51sKEKEeKLUqX9IJq2Gg" type="architecture" name="WifibotEnvironmentDiagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_sAx-0KEKEeKLUqX9IJq2Gg" type="2073" gradient="8905185, 16777215, 0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sG4m0KEKEeKLUqX9IJq2Gg" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sJHbcKEKEeKLUqX9IJq2Gg" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sJHbcaEKEeKLUqX9IJq2Gg" key="StereotypeList" value="RobotML::Environment"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sJHbcqEKEeKLUqX9IJq2Gg" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sJHbc6EKEeKLUqX9IJq2Gg" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sJHbdKEKEeKLUqX9IJq2Gg" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_sA7v0KEKEeKLUqX9IJq2Gg" type="5156"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_sA7v0aEKEeKLUqX9IJq2Gg" type="7073">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sA7v1KEKEeKLUqX9IJq2Gg" source="PapyrusCSSForceValue">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sA7v1aEKEeKLUqX9IJq2Gg" key="showTitle" value="true"/>
+        </eAnnotations>
+        <children xmi:type="notation:Shape" xmi:id="_wPdlwKEKEeKLUqX9IJq2Gg" type="3070" gradient="10265827, 16777215, 0">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BBnUUKELEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BBnUUaELEeKLUqX9IJq2Gg" key="tooltip_text" value="WifiBot"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BBnUUqELEeKLUqX9IJq2Gg" key="diagram_name" value="WifiBot"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BBnUU6ELEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
+          </eAnnotations>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Mym2IKELEeKLUqX9IJq2Gg" source="PapyrusCSSForceValue">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MywnIKELEeKLUqX9IJq2Gg" key="gradient" value="true"/>
+          </eAnnotations>
+          <children xmi:type="notation:DecorationNode" xmi:id="_wPdlwqEKEeKLUqX9IJq2Gg" type="5126">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-TL_MKEKEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_k0VaYjiAEeKDAMEjnOLmPA">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-TL_MaEKEeKLUqX9IJq2Gg" key="tooltip_text" value="WifiBot"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-TL_MqEKEeKLUqX9IJq2Gg" key="diagram_name" value="WifiBot"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-TL_M6EKEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
+            </eAnnotations>
+          </children>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_wPdlw6EKEeKLUqX9IJq2Gg" type="7077">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wPdlxqEKEeKLUqX9IJq2Gg" source="PapyrusCSSForceValue">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wPdlx6EKEeKLUqX9IJq2Gg" key="showTitle" value="true"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zroKoKEKEeKLUqX9IJq2Gg" key="visible" value="true"/>
+            </eAnnotations>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_wPdlxKEKEeKLUqX9IJq2Gg"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wPdlxaEKEeKLUqX9IJq2Gg"/>
+          </children>
+          <element xmi:type="uml:Property" href="YouthChallenge.uml#_wOk08KEKEeKLUqX9IJq2Gg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wPdlwaEKEeKLUqX9IJq2Gg" x="148" y="115"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_sA7v0qEKEeKLUqX9IJq2Gg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sA7v06EKEeKLUqX9IJq2Gg"/>
+      </children>
+      <element xmi:type="uml:Class" href="YouthChallenge.uml#_r_SxEKEKEeKLUqX9IJq2Gg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sAx-0aEKEeKLUqX9IJq2Gg" x="137" y="70" width="449" height="381"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_rc51saEKEeKLUqX9IJq2Gg"/>
+    <element xmi:type="uml:Model" href="YouthChallenge.uml#_k0Lj4DiAEeKDAMEjnOLmPA"/>
   </notation:Diagram>
 </xmi:XMI>

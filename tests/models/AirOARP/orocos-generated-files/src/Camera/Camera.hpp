@@ -1,28 +1,67 @@
 #include <rtt/TaskContext.hpp>
 #include <ocl/Component.hpp>
+#include <rtt/Port.hpp>
 #include <iostream>
 #include <numeric>
-#include "Talc_types.h"
+#include <sensor_msgs/Image.h>
+#include <sensor_msgs/Image.h>
+#include <sensor_msgs/CameraInfo.h>
+#include <sensor_msgs/CameraInfo.h>
+#include <Video/Image.h>
+#include <Video/Image.h>
+#include "Talc/Video/Thumb.h"	
+#include "Talc/Video/Thumb.h"	
+#include "Talc/Video/CameraInterface.h"	
+#include "Talc/Video/CameraInterface.h"	
 #include <stdlib.h>
 #include <math.h>
-
 
 using namespace std;
 using namespace RTT;
 using namespace Orocos;
-using namespace Talc_types;
+using namespace RobotMLLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes;
+
+using namespace RobotMLLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes;
+
+using namespace RobotMLLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes;
+
+using namespace RobotMLLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes;
+
+using namespace Talc::Video;
+
+using namespace Talc::Video;
+
+using namespace Talc::Video;
+
+using namespace Talc::Video;
+
+using namespace Talc::Video;
+
+using namespace Talc::Video;
 
 
 
-namespace Orocos	 {
+
+
+
+
+
+
+
+
+
+
+
+
+
+namespace Talc::Video::Orocos{	 {
 class Camera
 	: public RTT::TaskContext 
 {   
 	// ports, operations and attributes
-		    public: InputPort<::Image> Image;
-		    public: InputPort<::CameraInfo> Info;
-		
-		
+			public: InputPort<sensor_msgs::Image> Image;
+			public: InputPort<sensor_msgs::CameraInfo> Info;
+			public: OutputPort<Video::Image> image;
 			public: OutputPort<Thumb> thumb;
 
 	
@@ -44,61 +83,64 @@ class Camera
 
 
 		this->provides("CameraInterface")
-			->addOperation("getShuter",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::getShuter, this, ClientThread)
+			->addOperation("setBrightness",&Talc::Video::Orocos::Camera::setBrightness, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("setShutter",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::setShutter, this, ClientThread)
+			->addOperation("getGainAuto",&Talc::Video::Orocos::Camera::getGainAuto, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("getGain",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::getGain, this, ClientThread)
+			->addOperation("setGain",&Talc::Video::Orocos::Camera::setGain, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("setShutterAutoMin",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::setShutterAutoMin, this, ClientThread)
+			->addOperation("setShutter",&Talc::Video::Orocos::Camera::setShutter, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("getShutterAutoMax",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::getShutterAutoMax, this, ClientThread)
+			->addOperation("init",&Talc::Video::Orocos::Camera::init, this, ClientThread).arg("null", "Description of parameter : ")
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("getGainAutoMax",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::getGainAutoMax, this, ClientThread)
+			->addOperation("getShutterAutoMax",&Talc::Video::Orocos::Camera::getShutterAutoMax, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("getShutterAuto",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::getShutterAuto, this, ClientThread)
+			->addOperation("getShutterAutoMin",&Talc::Video::Orocos::Camera::getShutterAutoMin, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("setShutterAuto",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::setShutterAuto, this, ClientThread)
+			->addOperation("getGainAutoMin",&Talc::Video::Orocos::Camera::getGainAutoMin, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("getGainAutoMin",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::getGainAutoMin, this, ClientThread)
+			->addOperation("getGain",&Talc::Video::Orocos::Camera::getGain, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("getInterfaceName",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::getInterfaceName, this, ClientThread)
+			->addOperation("getBrightness",&Talc::Video::Orocos::Camera::getBrightness, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("setGainAutoMin",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::setGainAutoMin, this, ClientThread)
+			->addOperation("setShutterAutoMax",&Talc::Video::Orocos::Camera::setShutterAutoMax, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("getBrightness",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::getBrightness, this, ClientThread)
+			->addOperation("getShutterAuto",&Talc::Video::Orocos::Camera::getShutterAuto, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("setShutterAutoMax",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::setShutterAutoMax, this, ClientThread)
+			->addOperation("setGainAutoMin",&Talc::Video::Orocos::Camera::setGainAutoMin, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("getShutterAutoMin",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::getShutterAutoMin, this, ClientThread)
+			->addOperation("setGainAuto",&Talc::Video::Orocos::Camera::setGainAuto, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("getGainAuto",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::getGainAuto, this, ClientThread)
+			->addOperation("setShutterAuto",&Talc::Video::Orocos::Camera::setShutterAuto, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("setGainAuto",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::setGainAuto, this, ClientThread)
+			->addOperation("getShuter",&Talc::Video::Orocos::Camera::getShuter, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("setGain",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::setGain, this, ClientThread)
+			->addOperation("setGainAutoMax",&Talc::Video::Orocos::Camera::setGainAutoMax, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("setGainAutoMax",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::setGainAutoMax, this, ClientThread)
+			->addOperation("setShutterAutoMin",&Talc::Video::Orocos::Camera::setShutterAutoMin, this, ClientThread)
 				.doc("");
 		this->provides("CameraInterface")
-			->addOperation("setBrightness",&org.eclipse.uml2.uml.internal.impl.PackageImpl@1969478 (name: Orocos, visibility: <unset>) (URI: null)::Camera::setBrightness, this, ClientThread)
+			->addOperation("getGainAutoMax",&Talc::Video::Orocos::Camera::getGainAutoMax, this, ClientThread)
+				.doc("");
+		this->provides("CameraInterface")
+			->addOperation("getInterfaceName",&Talc::Video::Orocos::Camera::getInterfaceName, this, ClientThread)
 				.doc("");
 	}
 	// Destructor

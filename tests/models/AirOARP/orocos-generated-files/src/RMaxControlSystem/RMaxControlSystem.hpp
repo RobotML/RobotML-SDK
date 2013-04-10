@@ -1,26 +1,60 @@
 #include <rtt/TaskContext.hpp>
 #include <ocl/Component.hpp>
+#include <rtt/Port.hpp>
 #include <iostream>
 #include <numeric>
-#include "Talc_types.h"
+#include "Talc/Avionique/State.h"	
+#include "Talc/Avionique/State.h"	
+#include <Video/Image.h>
+#include <Video/Image.h>
+#include "Talc/Avionique/ObcInterface.h"	
+#include "Talc/Avionique/ObcInterface.h"	
+#include "Talc/Video/CameraInterface.h"	
+#include "Talc/Video/CameraInterface.h"	
 #include <stdlib.h>
 #include <math.h>
-
 
 using namespace std;
 using namespace RTT;
 using namespace Orocos;
-using namespace Talc_types;
+using namespace Talc::Avionique;
+
+using namespace Talc::Avionique;
+
+using namespace Talc::Video;
+
+using namespace Talc::Video;
+
+using namespace Talc::Avionique;
+
+using namespace Talc::Avionique;
+
+using namespace Talc::Video;
+
+using namespace Talc::Video;
 
 
 
-namespace Orocos	 {
+
+
+
+
+
+
+
+
+
+
+
+
+
+namespace Talc{	 {
 class RMaxControlSystem
 	: public RTT::TaskContext 
 {   
 	// ports, operations and attributes
 			public: InputPort<State> state;
-		    public: InputPort<Image> image;
+			public: InputPort<Video::Image> image;
 
 	
 	
@@ -29,50 +63,51 @@ class RMaxControlSystem
 		: TaskContext(name) 						//Add Rostopics		
 			, state("state")	
 			, image("image")	
-			, waypointAdd ("waypointAdd")
-			, getState ("getState")
-			, obstacleDel ("obstacleDel")
-			, quickWaypointDel ("quickWaypointDel")
-			, getPhaseStr ("getPhaseStr")
-			, getPhase ("getPhase")
-			, wayPop ("wayPop")
-			, getMaxV ("getMaxV")
-			, getMaxA ("getMaxA")
-			, quickSetObj ("quickSetObj")
-			, altitude ("altitude")
-			, getInterfaceName ("getInterfaceName")
 			, getMinDt ("getMinDt")
-			, obstacleAdd ("obstacleAdd")
+			, obstacleDel ("obstacleDel")
+			, track ("track")
 			, wayPush ("wayPush")
 			, setPhase ("setPhase")
-			, wayAdd ("wayAdd")
-			, wayDel ("wayDel")
-			, move ("move")
-			, waypointDel ("waypointDel")
+			, getMaxA ("getMaxA")
 			, gotou ("gotou")
-			, setPhaseStr ("setPhaseStr")
+			, getPhase ("getPhase")
 			, setPhaseDescente ("setPhaseDescente")
 			, setObj ("setObj")
-			, track ("track")
-			, getShuter ("getShuter")
-			, setShutter ("setShutter")
-			, getGain ("getGain")
-			, setShutterAutoMin ("setShutterAutoMin")
-			, getShutterAutoMax ("getShutterAutoMax")
-			, getGainAutoMax ("getGainAutoMax")
-			, getShutterAuto ("getShutterAuto")
-			, setShutterAuto ("setShutterAuto")
-			, getGainAutoMin ("getGainAutoMin")
+			, waypointAdd ("waypointAdd")
+			, wayDel ("wayDel")
+			, getPhaseStr ("getPhaseStr")
+			, getState ("getState")
+			, quickSetObj ("quickSetObj")
+			, obstacleAdd ("obstacleAdd")
+			, setPhaseStr ("setPhaseStr")
+			, altitude ("altitude")
+			, wayPop ("wayPop")
+			, waypointDel ("waypointDel")
+			, wayAdd ("wayAdd")
+			, quickWaypointDel ("quickWaypointDel")
 			, getInterfaceName ("getInterfaceName")
-			, setGainAutoMin ("setGainAutoMin")
+			, getMaxV ("getMaxV")
+			, move ("move")
+			, setBrightness ("setBrightness")
+			, getGainAuto ("getGainAuto")
+			, setGain ("setGain")
+			, setShutter ("setShutter")
+			, init ("init")
+			, getShutterAutoMax ("getShutterAutoMax")
+			, getShutterAutoMin ("getShutterAutoMin")
+			, getGainAutoMin ("getGainAutoMin")
+			, getGain ("getGain")
 			, getBrightness ("getBrightness")
 			, setShutterAutoMax ("setShutterAutoMax")
-			, getShutterAutoMin ("getShutterAutoMin")
-			, getGainAuto ("getGainAuto")
+			, getShutterAuto ("getShutterAuto")
+			, setGainAutoMin ("setGainAutoMin")
 			, setGainAuto ("setGainAuto")
-			, setGain ("setGain")
+			, setShutterAuto ("setShutterAuto")
+			, getShuter ("getShuter")
 			, setGainAutoMax ("setGainAutoMax")
-			, setBrightness ("setBrightness")
+			, setShutterAutoMin ("setShutterAutoMin")
+			, getGainAutoMax ("getGainAutoMax")
+			, getInterfaceName ("getInterfaceName")
   		{ 	
 		this->ports()->addPort(state);	
 		this->ports()->addPort(image);	
@@ -81,93 +116,95 @@ class RMaxControlSystem
 
 
 		this->requires("ObcInterface")
-			->addOperationCaller(waypointAdd);
-		this->requires("ObcInterface")
-			->addOperationCaller(getState);
+			->addOperationCaller(getMinDt);
 		this->requires("ObcInterface")
 			->addOperationCaller(obstacleDel);
 		this->requires("ObcInterface")
-			->addOperationCaller(quickWaypointDel);
-		this->requires("ObcInterface")
-			->addOperationCaller(getPhaseStr);
-		this->requires("ObcInterface")
-			->addOperationCaller(getPhase);
-		this->requires("ObcInterface")
-			->addOperationCaller(wayPop);
-		this->requires("ObcInterface")
-			->addOperationCaller(getMaxV);
-		this->requires("ObcInterface")
-			->addOperationCaller(getMaxA);
-		this->requires("ObcInterface")
-			->addOperationCaller(quickSetObj);
-		this->requires("ObcInterface")
-			->addOperationCaller(altitude);
-		this->requires("ObcInterface")
-			->addOperationCaller(getInterfaceName);
-		this->requires("ObcInterface")
-			->addOperationCaller(getMinDt);
-		this->requires("ObcInterface")
-			->addOperationCaller(obstacleAdd);
+			->addOperationCaller(track);
 		this->requires("ObcInterface")
 			->addOperationCaller(wayPush);
 		this->requires("ObcInterface")
 			->addOperationCaller(setPhase);
 		this->requires("ObcInterface")
-			->addOperationCaller(wayAdd);
-		this->requires("ObcInterface")
-			->addOperationCaller(wayDel);
-		this->requires("ObcInterface")
-			->addOperationCaller(move);
-		this->requires("ObcInterface")
-			->addOperationCaller(waypointDel);
+			->addOperationCaller(getMaxA);
 		this->requires("ObcInterface")
 			->addOperationCaller(gotou);
 		this->requires("ObcInterface")
-			->addOperationCaller(setPhaseStr);
+			->addOperationCaller(getPhase);
 		this->requires("ObcInterface")
 			->addOperationCaller(setPhaseDescente);
 		this->requires("ObcInterface")
 			->addOperationCaller(setObj);
 		this->requires("ObcInterface")
-			->addOperationCaller(track);
+			->addOperationCaller(waypointAdd);
+		this->requires("ObcInterface")
+			->addOperationCaller(wayDel);
+		this->requires("ObcInterface")
+			->addOperationCaller(getPhaseStr);
+		this->requires("ObcInterface")
+			->addOperationCaller(getState);
+		this->requires("ObcInterface")
+			->addOperationCaller(quickSetObj);
+		this->requires("ObcInterface")
+			->addOperationCaller(obstacleAdd);
+		this->requires("ObcInterface")
+			->addOperationCaller(setPhaseStr);
+		this->requires("ObcInterface")
+			->addOperationCaller(altitude);
+		this->requires("ObcInterface")
+			->addOperationCaller(wayPop);
+		this->requires("ObcInterface")
+			->addOperationCaller(waypointDel);
+		this->requires("ObcInterface")
+			->addOperationCaller(wayAdd);
+		this->requires("ObcInterface")
+			->addOperationCaller(quickWaypointDel);
+		this->requires("ObcInterface")
+			->addOperationCaller(getInterfaceName);
+		this->requires("ObcInterface")
+			->addOperationCaller(getMaxV);
+		this->requires("ObcInterface")
+			->addOperationCaller(move);
 		this->requires("CameraInterface")
-			->addOperationCaller(getShuter);
+			->addOperationCaller(setBrightness);
+		this->requires("CameraInterface")
+			->addOperationCaller(getGainAuto);
+		this->requires("CameraInterface")
+			->addOperationCaller(setGain);
 		this->requires("CameraInterface")
 			->addOperationCaller(setShutter);
 		this->requires("CameraInterface")
-			->addOperationCaller(getGain);
-		this->requires("CameraInterface")
-			->addOperationCaller(setShutterAutoMin);
+			->addOperationCaller(init);
 		this->requires("CameraInterface")
 			->addOperationCaller(getShutterAutoMax);
 		this->requires("CameraInterface")
-			->addOperationCaller(getGainAutoMax);
-		this->requires("CameraInterface")
-			->addOperationCaller(getShutterAuto);
-		this->requires("CameraInterface")
-			->addOperationCaller(setShutterAuto);
+			->addOperationCaller(getShutterAutoMin);
 		this->requires("CameraInterface")
 			->addOperationCaller(getGainAutoMin);
 		this->requires("CameraInterface")
-			->addOperationCaller(getInterfaceName);
-		this->requires("CameraInterface")
-			->addOperationCaller(setGainAutoMin);
+			->addOperationCaller(getGain);
 		this->requires("CameraInterface")
 			->addOperationCaller(getBrightness);
 		this->requires("CameraInterface")
 			->addOperationCaller(setShutterAutoMax);
 		this->requires("CameraInterface")
-			->addOperationCaller(getShutterAutoMin);
+			->addOperationCaller(getShutterAuto);
 		this->requires("CameraInterface")
-			->addOperationCaller(getGainAuto);
+			->addOperationCaller(setGainAutoMin);
 		this->requires("CameraInterface")
 			->addOperationCaller(setGainAuto);
 		this->requires("CameraInterface")
-			->addOperationCaller(setGain);
+			->addOperationCaller(setShutterAuto);
+		this->requires("CameraInterface")
+			->addOperationCaller(getShuter);
 		this->requires("CameraInterface")
 			->addOperationCaller(setGainAutoMax);
 		this->requires("CameraInterface")
-			->addOperationCaller(setBrightness);
+			->addOperationCaller(setShutterAutoMin);
+		this->requires("CameraInterface")
+			->addOperationCaller(getGainAutoMax);
+		this->requires("CameraInterface")
+			->addOperationCaller(getInterfaceName);
 	}
 	// Destructor
     ~RMaxControlSystem() {}

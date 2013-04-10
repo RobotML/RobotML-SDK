@@ -1,22 +1,34 @@
 #ifndef _STATE_H_
 #define _STATE_H_
 
-namespace Talc{
- struct State{
-	public Float32 m_ts_ref;
-	public Float32 m_ts;
-	public Float32 m_ts_remote;
-	public UInt32 m_phase;
-	public UInt32 m_wp;
-	public UInt32 m_cpt;
-	public Float32 m_h_int_time;
-	public Float32 m_h;
-	public Float32 m_gps_int_time;
-	public Float32 m_pos;
-	public Float32 m_att;
-	public Float32 m_vel;
-	public Float32 m_acc;
-  }
-}
-
+namespace Talc::Avionique{
+	struct State{
+		public: double m_ts_ref;
+		
+		public: double m_ts;
+		
+		public: double m_ts_remote;
+		
+		public: unsigned m_phase;
+		
+		public: unsigned m_wp;
+		
+		public: unsigned m_cpt;
+		
+		public: double m_h_int_time;
+		
+		public: double m_h;
+		
+		public: double m_gps_int_time;
+		
+		public: double m_pos;
+		
+		public: double m_att;
+		
+		public: double m_vel;
+		
+		public: double m_acc;
+		
+  };
+};
 #endif // _STATE_H_

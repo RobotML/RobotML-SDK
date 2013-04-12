@@ -47,6 +47,11 @@ knowledge of the CeCILL-C license and that you accept its terms.
 [import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_pckinfo /]
 [import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_vc2005_project_vcproj /] 
 [import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_vc2005_solution_sln /]
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_vc2008_project_vcproj /] 
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_vc2008_solution_sln /]
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_vc2010_project_vcxproj /] 
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_vc2010_project_vcxproj_filters /] 
+[import org::eclipse::robotml::generators::acceleo::rtmaps::files::generate_rtmaps_vc2010_solution_sln /]
 
 [template public generateRTMapsDiagram(model : Model)]
 [comment @main/]
@@ -60,8 +65,13 @@ knowledge of the CeCILL-C license and that you accept its terms.
 		[generateRTMapsPckInfo(model) /]
 	
 		[generateRTMapsVC2005ProjectVCPROJ(model) /]
+		[generateRTMapsVC2008ProjectVCPROJ(model) /]
+		[generateRTMapsVC2010ProjectVCXPROJ(model) /]
+		[generateRTMapsVC2010ProjectVCXPROJFILTERS(model) /]
 	
 		[generateRTMapsVC2005SolutionSLN(model) /]
+		[generateRTMapsVC2008SolutionSLN(model) /]
+		[generateRTMapsVC2010SolutionSLN(model) /]
 	
 		[generateRTMapsRobotMLPrimitiveDataTypes(model)/]
 		[generateRTMapsRobotMLDataTypes(model) /]

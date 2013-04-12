@@ -6,7 +6,7 @@
       <diagramCategory
             class="org.eclipse.papyrus.robotml.diagram.common.commands.CreateRobotmlModelCommand"
             description="RobotML diagrams"
-            icon="platform:/plugin/org.eclipse.papyrus.robotml/icons/32x32/robotml_32_32.png"
+            icon="platform:/plugin/org.eclipse.papyrus.robotml/icons/robotml/RobotML-32x32.png"
             id="robotML"
             label="RobotML">
       </diagramCategory>

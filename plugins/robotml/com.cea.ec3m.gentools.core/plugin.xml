@@ -29,34 +29,6 @@
       </command>
       <command
             categoryId="org.eclipse.papyrus.editor.category"
-            defaultHandler="com.cea.ec3m.gentools.core.handlers.InstantiateDepPlanHandler"
-            description="Generate deployment models and code from plan"
-            id="com.cea.ec3m.gentools.core.menuActions.InstantiateDepPlanAction"
-            name="dummy">
-      </command>
-      <command
-            categoryId="org.eclipse.papyrus.editor.category"
-            defaultHandler="com.cea.ec3m.gentools.core.handlers.SyncHandler"
-            description="Synchronize derived elements"
-            id="com.cea.ec3m.gentools.core.menuActions.SyncCmd"
-            name="dummy">
-      </command>
-      <command
-            categoryId="org.eclipse.papyrus.editor.category"
-            defaultHandler="com.cea.ec3m.gentools.core.handlers.SelectConnectorHandler"
-            description="Choose connector type and implementation"
-            id="com.cea.ec3m.gentools.core.menuActions.SelectionConnectorCmd"
-            name="dummy">
-      </command>
-      <command
-            categoryId="org.eclipse.papyrus.editor.category"
-            defaultHandler="com.cea.ec3m.gentools.core.handlers.SelectContainerHandler"
-            description="Choose container properties"
-            id="com.cea.ec3m.gentools.core.menuActions.SelectionContainerCmd"
-            name="dummy">
-      </command>
-      <command
-            categoryId="org.eclipse.papyrus.editor.category"
             defaultHandler="com.cea.ec3m.gentools.core.handlers.ConfigureInstanceHandler"
             description="Configure instance"
             id="com.cea.ec3m.gentools.core.menuActions.ConfigureInstanceCmd"
@@ -64,30 +36,9 @@
       </command>
       <command
             categoryId="org.eclipse.papyrus.editor.category"
-            defaultHandler="com.cea.ec3m.gentools.core.handlers.ConfigurePortHandler"
-            description="Configure ports"
-            id="com.cea.ec3m.gentools.core.menuActions.ConfigurePortsCmd"
-            name="dummy">
-      </command>
-      <command
-            categoryId="org.eclipse.papyrus.editor.category"
-            defaultHandler="com.cea.ec3m.gentools.core.handlers.AddProfileAndModelLibsHandler"
-            description="Add eC3M profiles and model libraries"
-            id="com.cea.ec3m.gentools.core.menuActions.AddProfileAndModelLibsCmd"
-            name="dummy">
-      </command>
-      <command
-            categoryId="org.eclipse.papyrus.editor.category"
             defaultHandler="com.cea.ec3m.gentools.core.handlers.AllocateHandler"
             description="Allocate to node"
             id="com.cea.ec3m.gentools.core.menuActions.AllocateCmd"
-            name="dummy">
-      </command>
-      <command
-            categoryId="org.eclipse.papyrus.editor.category"
-            defaultHandler="com.cea.ec3m.gentools.core.handlers.TestAcceleoHandler"
-            description="Test Acceleo Template"
-            id="com.cea.ec3m.gentools.core.menuActions.TestAcceleoCmd"
             name="dummy">
       </command>
    </extension>
@@ -167,7 +118,7 @@
                   checkEnabled="true">
             </visibleWhen>
          </command-->
-         <command
+         <!--command
                commandId="com.cea.ec3m.gentools.core.menuActions.ConfigureInstanceCmd"
                icon="icons/selContainer.gif"
                id="com.cea.ec3m.gentools.core.menuActions.ConfigureInstanceMenu"
@@ -177,7 +128,7 @@
             <visibleWhen
                   checkEnabled="true">
             </visibleWhen>
-         </command>
+         </command-->
          <!--command
                commandId="com.cea.ec3m.gentools.core.menuActions.ConfigurePortsCmd"
                icon="icons/selContainer.gif"
@@ -300,7 +251,7 @@
                   checkEnabled="true">
             </visibleWhen>
          </command-->
-         <command
+         <!--command
                commandId="com.cea.ec3m.gentools.core.menuActions.ConfigureInstanceCmd"
                icon="icons/selContainer.gif"
                id="com.cea.ec3m.gentools.core.menuActions.ConfigureInstanceMenu"
@@ -310,7 +261,7 @@
             <visibleWhen
                   checkEnabled="true">
             </visibleWhen>
-         </command>
+         </command-->
          <!--command
                commandId="com.cea.ec3m.gentools.core.menuActions.ConfigurePortsCmd"
                icon="icons/selContainer.gif"

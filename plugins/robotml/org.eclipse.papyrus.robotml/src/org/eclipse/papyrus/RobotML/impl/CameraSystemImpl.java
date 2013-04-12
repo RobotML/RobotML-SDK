@@ -4,8 +4,10 @@ package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.papyrus.RobotML.CameraSystem;
@@ -185,7 +187,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	
 
 	/**
-	 * The cached value of the '{@link #getTranslate() <em>Translate</em>}' attribute.
+	 * The cached value of the '{@link #getTranslate() <em>Translate</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTranslate()
@@ -205,7 +207,7 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 
 
 	/**
-	 * The cached value of the '{@link #getRotate() <em>Rotate</em>}' attribute.
+	 * The cached value of the '{@link #getRotate() <em>Rotate</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRotate()
@@ -394,11 +396,33 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTranslate(Point32 newTranslate) {
+	public NotificationChain basicSetTranslate(Point32 newTranslate, NotificationChain msgs) {
 		Point32 oldTranslate = translate;
 		translate = newTranslate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.CAMERA_SYSTEM__TRANSLATE, oldTranslate, translate));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotMLPackage.CAMERA_SYSTEM__TRANSLATE, oldTranslate, newTranslate);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTranslate(Point32 newTranslate) {
+		if (newTranslate != translate) {
+			NotificationChain msgs = null;
+			if (translate != null)
+				msgs = ((InternalEObject)translate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RobotMLPackage.CAMERA_SYSTEM__TRANSLATE, null, msgs);
+			if (newTranslate != null)
+				msgs = ((InternalEObject)newTranslate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RobotMLPackage.CAMERA_SYSTEM__TRANSLATE, null, msgs);
+			msgs = basicSetTranslate(newTranslate, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.CAMERA_SYSTEM__TRANSLATE, newTranslate, newTranslate));
 	}
 
 	/**
@@ -415,11 +439,49 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRotate(Point32 newRotate) {
+	public NotificationChain basicSetRotate(Point32 newRotate, NotificationChain msgs) {
 		Point32 oldRotate = rotate;
 		rotate = newRotate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.CAMERA_SYSTEM__ROTATE, oldRotate, rotate));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotMLPackage.CAMERA_SYSTEM__ROTATE, oldRotate, newRotate);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRotate(Point32 newRotate) {
+		if (newRotate != rotate) {
+			NotificationChain msgs = null;
+			if (rotate != null)
+				msgs = ((InternalEObject)rotate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RobotMLPackage.CAMERA_SYSTEM__ROTATE, null, msgs);
+			if (newRotate != null)
+				msgs = ((InternalEObject)newRotate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RobotMLPackage.CAMERA_SYSTEM__ROTATE, null, msgs);
+			msgs = basicSetRotate(newRotate, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.CAMERA_SYSTEM__ROTATE, newRotate, newRotate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RobotMLPackage.CAMERA_SYSTEM__TRANSLATE:
+				return basicSetTranslate(null, msgs);
+			case RobotMLPackage.CAMERA_SYSTEM__ROTATE:
+				return basicSetRotate(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -521,10 +583,10 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 				setColor_format(COLOR_FORMAT_EDEFAULT);
 				return;
 			case RobotMLPackage.CAMERA_SYSTEM__TRANSLATE:
-				setTranslate(null);
+				setTranslate((Point32)null);
 				return;
 			case RobotMLPackage.CAMERA_SYSTEM__ROTATE:
-				setRotate(null);
+				setRotate((Point32)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -584,10 +646,6 @@ public class CameraSystemImpl extends ImageSensorSystemImpl implements CameraSys
 		result.append(v0);
 		result.append(", color_format: ");
 		result.append(color_format);
-		result.append(", translate: ");
-		result.append(translate);
-		result.append(", rotate: ");
-		result.append(rotate);
 		result.append(')');
 		return result.toString();
 	}

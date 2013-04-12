@@ -58,18 +58,15 @@
     <availablePage>
       <emfPageIdentifier href="RoboCab.notation#_Cwt3MGbaEeGTV_735pzUXQ"/>
     </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="RoboCab.notation#_-IQaMKENEeKLUqX9IJq2Gg"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
       <children xsi:type="di:TabFolder">
         <children>
-          <emfPageIdentifier href="RoboCab.notation#_glL5wBwhEeGa5bH_RJFzBQ"/>
-        </children>
-        <children>
           <emfPageIdentifier href="RoboCab.notation#_O43JEB8uEeG4gPCEznVNOA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="RoboCab.notation#_A0k2UB8rEeG4gPCEznVNOA"/>
         </children>
         <children>
           <emfPageIdentifier href="RoboCab.notation#_feP4_Kk_EeCXqcRV-18f6Q"/>
@@ -84,13 +81,31 @@
           <emfPageIdentifier href="RoboCab.notation#_OCVFkBwAEeGa5bH_RJFzBQ"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboCab.notation#_zyLisGbWEeGGNuX1IHg1zg"/>
+          <emfPageIdentifier href="RoboCab.notation#_OCVFkBwAEeGa5bH_RJFzBQ"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboCab.notation#_Cwt3MGbaEeGTV_735pzUXQ"/>
+          <emfPageIdentifier href="RoboCab.notation#_O43JEB8uEeG4gPCEznVNOA"/>
         </children>
         <children>
-          <emfPageIdentifier href="RoboCab.notation#_QwFooEHZEeG8nvjGjD0Mrg"/>
+          <emfPageIdentifier href="RoboCab.notation#_OCVFkBwAEeGa5bH_RJFzBQ"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="RoboCab.notation#_O43JEB8uEeG4gPCEznVNOA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="RoboCab.notation#_OCVFkBwAEeGa5bH_RJFzBQ"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="RoboCab.notation#_-IQaMKENEeKLUqX9IJq2Gg"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="RoboCab.notation#_OCVFkBwAEeGa5bH_RJFzBQ"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="RoboCab.notation#_-IQaMKENEeKLUqX9IJq2Gg"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="RoboCab.notation#_OCVFkBwAEeGa5bH_RJFzBQ"/>
         </children>
       </children>
     </windows>

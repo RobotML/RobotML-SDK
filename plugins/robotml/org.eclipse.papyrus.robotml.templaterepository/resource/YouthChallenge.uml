@@ -513,7 +513,7 @@ et d'un solide d'une couleur </body>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k0LleziAEeKDAMEjnOLmPA" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k0LlfDiAEeKDAMEjnOLmPA" value="1"/>
         </end>
-        <end xmi:id="_k0LlfTiAEeKDAMEjnOLmPA" partWithPort="_k0LlGDiAEeKDAMEjnOLmPA" role="_k0LotziAEeKDAMEjnOLmPA">
+        <end xmi:id="_k0LlfTiAEeKDAMEjnOLmPA" partWithPort="_k0LlGDiAEeKDAMEjnOLmPA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k0LlfjiAEeKDAMEjnOLmPA" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k0LlfziAEeKDAMEjnOLmPA" value="1"/>
         </end>
@@ -523,7 +523,7 @@ et d'un solide d'une couleur </body>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k0LlgjiAEeKDAMEjnOLmPA" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k0LlgziAEeKDAMEjnOLmPA" value="1"/>
         </end>
-        <end xmi:id="_k0LlhDiAEeKDAMEjnOLmPA" partWithPort="_k0LlGDiAEeKDAMEjnOLmPA" role="_k0LotjiAEeKDAMEjnOLmPA">
+        <end xmi:id="_k0LlhDiAEeKDAMEjnOLmPA" partWithPort="_k0LlGDiAEeKDAMEjnOLmPA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k0LlhTiAEeKDAMEjnOLmPA" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k0LlhjiAEeKDAMEjnOLmPA" value="1"/>
         </end>
@@ -1890,8 +1890,6 @@ transform the velocities from the operational space to the articular space (left
         </ownedAttribute>
         <ownedAttribute xmi:id="_k0LotDiAEeKDAMEjnOLmPA" name="Pilot" type="_k0LohziAEeKDAMEjnOLmPA"/>
         <ownedAttribute xmi:id="_k0LotTiAEeKDAMEjnOLmPA" name="IKM" type="_k0LooTiAEeKDAMEjnOLmPA"/>
-        <ownedAttribute xmi:type="uml:Port" xmi:id="_k0LotjiAEeKDAMEjnOLmPA" name="proxy_map" type="_k0LlCDiAEeKDAMEjnOLmPA" aggregation="composite"/>
-        <ownedAttribute xmi:type="uml:Port" xmi:id="_k0LotziAEeKDAMEjnOLmPA" name="position" type="_k0Lj9jiAEeKDAMEjnOLmPA" aggregation="composite"/>
         <ownedAttribute xmi:type="uml:Port" xmi:id="_k0LouDiAEeKDAMEjnOLmPA" name="velocity" aggregation="composite">
           <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_A3LUpiN8EeKwed7FEEF-4Q"/>
         </ownedAttribute>
@@ -1929,7 +1927,7 @@ transform the velocities from the operational space to the articular space (left
           </end>
         </ownedConnector>
         <ownedConnector xmi:id="_k0LozziAEeKDAMEjnOLmPA" name="Connector3">
-          <end xmi:id="_k0Lo0DiAEeKDAMEjnOLmPA" role="_k0LotjiAEeKDAMEjnOLmPA">
+          <end xmi:id="_k0Lo0DiAEeKDAMEjnOLmPA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k0Lo0TiAEeKDAMEjnOLmPA" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k0Lo0jiAEeKDAMEjnOLmPA" value="1"/>
           </end>
@@ -1939,7 +1937,7 @@ transform the velocities from the operational space to the articular space (left
           </end>
         </ownedConnector>
         <ownedConnector xmi:id="_k0Lo1jiAEeKDAMEjnOLmPA" name="Connector4">
-          <end xmi:id="_k0Lo1ziAEeKDAMEjnOLmPA" role="_k0LotziAEeKDAMEjnOLmPA">
+          <end xmi:id="_k0Lo1ziAEeKDAMEjnOLmPA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k0Lo2DiAEeKDAMEjnOLmPA" value="1"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k0Lo2TiAEeKDAMEjnOLmPA" value="1"/>
           </end>
@@ -2182,6 +2180,9 @@ transform the velocities from the operational space to the articular space (left
         <packagedElement xmi:type="uml:Abstraction" xmi:id="_nLJacDiwEeKFHpsdOC1X1Q" name="allocate to RTmaps1" client="_KvM-RjiwEeKFHpsdOC1X1Q" supplier="_1dVjITivEeKFHpsdOC1X1Q"/>
       </packagedElement>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_r_SxEKEKEeKLUqX9IJq2Gg" name="Environment">
+      <ownedAttribute xmi:id="_wOk08KEKEeKLUqX9IJq2Gg" name="wifibot" type="_k0LlFDiAEeKDAMEjnOLmPA"/>
+    </packagedElement>
     <profileApplication xmi:id="_k0LpDziAEeKDAMEjnOLmPA">
       <eAnnotations xmi:id="_k0LpEDiAEeKDAMEjnOLmPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
@@ -2298,8 +2299,8 @@ transform the velocities from the operational space to the articular space (left
   <RobotML:DataFlowPort xmi:id="_k0VU6TiAEeKDAMEjnOLmPA" base_Port="_k0LndDiAEeKDAMEjnOLmPA" direction="out"/>
   <RobotML:DataFlowPort xmi:id="_k0VU6jiAEeKDAMEjnOLmPA" base_Port="_k0LnbjiAEeKDAMEjnOLmPA" direction="out"/>
   <RobotML:DataFlowPort xmi:id="_k0VU6ziAEeKDAMEjnOLmPA" base_Port="_k0LmwziAEeKDAMEjnOLmPA" bufferSize="6"/>
-  <RobotML:DataFlowPort xmi:id="_k0VU7DiAEeKDAMEjnOLmPA" base_Port="_k0LotjiAEeKDAMEjnOLmPA" bufferSize="6"/>
-  <RobotML:DataFlowPort xmi:id="_k0VU7TiAEeKDAMEjnOLmPA" base_Port="_k0LotziAEeKDAMEjnOLmPA" bufferSize="6"/>
+  <RobotML:DataFlowPort xmi:id="_k0VU7DiAEeKDAMEjnOLmPA" bufferSize="6"/>
+  <RobotML:DataFlowPort xmi:id="_k0VU7TiAEeKDAMEjnOLmPA" bufferSize="6"/>
   <RobotML:DataFlowPort xmi:id="_k0VU7jiAEeKDAMEjnOLmPA" base_Port="_k0LouDiAEeKDAMEjnOLmPA" bufferSize="6"/>
   <RobotML:DataFlowPort xmi:id="_k0VU7ziAEeKDAMEjnOLmPA" base_Port="_k0LouTiAEeKDAMEjnOLmPA" bufferSize="6"/>
   <RobotML:DataFlowPort xmi:id="_k0VU8DiAEeKDAMEjnOLmPA" base_Port="_k0LoYDiAEeKDAMEjnOLmPA" bufferSize="6"/>
@@ -2362,4 +2363,5 @@ transform the velocities from the operational space to the articular space (left
   <RobotML:Allocate xmi:id="_mhpKcDiwEeKFHpsdOC1X1Q" base_Abstraction="_mhfZcDiwEeKFHpsdOC1X1Q"/>
   <RobotML:Allocate xmi:id="_nLTLcDiwEeKFHpsdOC1X1Q" base_Abstraction="_nLJacDiwEeKFHpsdOC1X1Q"/>
   <RobotML:InertialMeasurementUnitSystem xmi:id="_HEDvQJ3nEeKaDJbg6baweA" base_Class="_k0LnZDiAEeKDAMEjnOLmPA"/>
+  <RobotML:Environment xmi:id="_sGvc4KEKEeKLUqX9IJq2Gg" base_Class="_r_SxEKEKEeKLUqX9IJq2Gg"/>
 </xmi:XMI>

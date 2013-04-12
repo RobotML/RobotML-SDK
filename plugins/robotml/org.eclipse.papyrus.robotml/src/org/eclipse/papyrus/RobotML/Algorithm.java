@@ -10,13 +10,18 @@ import org.eclipse.uml2.uml.Operation;
  * A representation of the model object '<em><b>Algorithm</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * LibFileFormat can be elf, matlab, etc
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
  *   <li>{@link org.eclipse.papyrus.RobotML.Algorithm#getBase_Operation <em>Base Operation</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotML.Algorithm#isIsExternal <em>Is External</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotML.Algorithm#getExtFunctionName <em>Ext Function Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.Algorithm#getPath <em>Path</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.Algorithm#getLibPath <em>Lib Path</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.Algorithm#getLibFileFormat <em>Lib File Format</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,29 +109,56 @@ public interface Algorithm extends EObject {
 	void setExtFunctionName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Path</b></em>' attribute.
+	 * Returns the value of the '<em><b>Lib Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Lib Path</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Path</em>' attribute.
-	 * @see #setPath(String)
-	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getAlgorithm_Path()
+	 * @return the value of the '<em>Lib Path</em>' attribute.
+	 * @see #setLibPath(String)
+	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getAlgorithm_LibPath()
 	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
-	String getPath();
+	String getLibPath();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Algorithm#getPath <em>Path</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Algorithm#getLibPath <em>Lib Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Path</em>' attribute.
-	 * @see #getPath()
+	 * @param value the new value of the '<em>Lib Path</em>' attribute.
+	 * @see #getLibPath()
 	 * @generated
 	 */
-	void setPath(String value);
+	void setLibPath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Lib File Format</b></em>' attribute.
+	 * The default value is <code>"elf"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lib File Format</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lib File Format</em>' attribute.
+	 * @see #setLibFileFormat(String)
+	 * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getAlgorithm_LibFileFormat()
+	 * @model default="elf" dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getLibFileFormat();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.RobotML.Algorithm#getLibFileFormat <em>Lib File Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Lib File Format</em>' attribute.
+	 * @see #getLibFileFormat()
+	 * @generated
+	 */
+	void setLibFileFormat(String value);
 
 } // Algorithm

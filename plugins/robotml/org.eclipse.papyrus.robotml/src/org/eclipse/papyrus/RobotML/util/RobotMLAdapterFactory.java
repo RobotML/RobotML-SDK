@@ -27,6 +27,7 @@ import org.eclipse.papyrus.RobotML.Environment;
 import org.eclipse.papyrus.RobotML.Floor;
 import org.eclipse.papyrus.RobotML.GPSSystem;
 import org.eclipse.papyrus.RobotML.Ground;
+import org.eclipse.papyrus.RobotML.Gyroscope;
 import org.eclipse.papyrus.RobotML.Hardware;
 import org.eclipse.papyrus.RobotML.Human;
 import org.eclipse.papyrus.RobotML.ImageSensorSystem;
@@ -327,6 +328,10 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDeploymentPlan(DeploymentPlan object) {
 				return createDeploymentPlanAdapter();
+			}
+			@Override
+			public Adapter caseGyroscope(Gyroscope object) {
+				return createGyroscopeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -1073,6 +1078,20 @@ public class RobotMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDeploymentPlanAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.RobotML.Gyroscope <em>Gyroscope</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.papyrus.RobotML.Gyroscope
+	 * @generated
+	 */
+	public Adapter createGyroscopeAdapter() {
 		return null;
 	}
 

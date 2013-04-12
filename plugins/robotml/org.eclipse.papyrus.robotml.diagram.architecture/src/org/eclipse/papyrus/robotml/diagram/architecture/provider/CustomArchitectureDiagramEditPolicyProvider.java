@@ -18,15 +18,25 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPoliciesOperation;
 import org.eclipse.gmf.runtime.notation.LayoutConstraint;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.IMaskManagedLabelEditPolicy;
+import org.eclipse.papyrus.robotml.diagram.architecture.edit.part.ArchitectureDiagramEditPart;
+import org.eclipse.papyrus.robotml.diagram.architecture.edit.policy.ArchitectureDiagramDragDropEditPolicy;
 import org.eclipse.papyrus.robotml.diagram.common.editpolicies.CustomPropertyLabelEditPolicy;
 import org.eclipse.papyrus.robotml.diagram.common.editpolicies.PortNodeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.robotml.diagram.common.editpolicies.StereotypeNodeLabelDisplayEditPolicy;
+
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.HyperLinkPopupBarEditPolicy;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.NavigationEditPolicy;
 import org.eclipse.papyrus.uml.diagram.composite.custom.edit.policies.EncapsulatedClassifierResizableShapeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.composite.edit.parts.PortEditPart;
 import org.eclipse.papyrus.uml.diagram.composite.edit.parts.PortNameEditPart;
@@ -49,6 +59,13 @@ public class CustomArchitectureDiagramEditPolicyProvider extends ArchitectureDia
 	@Override
 	public void createEditPolicies(EditPart editPart) {
 		super.createEditPolicies(editPart);
+		
+	
+			
+			editPart.installEditPolicy(NavigationEditPolicy.NAVIGATION_POLICY, new NavigationEditPolicy());
+			if(!(editPart instanceof ConnectionEditPart)) {
+				editPart.installEditPolicy(EditPolicyRoles.POPUPBAR_ROLE, new HyperLinkPopupBarEditPolicy());
+			}
 
 		//if (editPart instanceof NamedElementEditPart)
 		editPart.installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new StereotypeNodeLabelDisplayEditPolicy());
@@ -69,6 +86,32 @@ public class CustomArchitectureDiagramEditPolicyProvider extends ArchitectureDia
 		}
 
 
+	}
+	
+	@Override
+	public boolean provides(IOperation operation) {
+		// TODO Auto-generated method stub
+		
+
+			CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
+			if(!(epOperation.getEditPart() instanceof GraphicalEditPart)) {
+				return false;
+			}
+			GraphicalEditPart gep = (GraphicalEditPart)epOperation.getEditPart();
+			String diagramType = gep.getNotationView().getDiagram().getType();
+			if(!ArchitectureDiagramEditPart.DIAGRAM_ID.equals(diagramType)) {
+				return false;
+			}
+
+			if(gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.PortNameEditPart) {
+				return true;
+			}
+			
+			if(gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.PropertyPartNameEditPartCN) {
+				return true;
+			}
+		return super.provides(operation);
+		
 	}
 
 }

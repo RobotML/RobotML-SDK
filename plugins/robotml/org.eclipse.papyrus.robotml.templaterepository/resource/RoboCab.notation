@@ -1208,7 +1208,7 @@
     <element xmi:type="uml:Class" href="RoboCab.uml#_fdzJWqk_EeCXqcRV-18f6Q"/>
   </notation:Diagram>
   <notation:Diagram xmi:id="_OCVFkBwAEeGa5bH_RJFzBQ" type="architecture" name="RobocabDefaultArchitecture" measurementUnit="Pixel">
-    <children xmi:type="notation:Shape" xmi:id="_ly27gBwAEeGa5bH_RJFzBQ" type="2073" fontName="Ubuntu" fontHeight="7" fillColor="12632256" lineColor="0">
+    <children xmi:type="notation:Shape" xmi:id="_ly27gBwAEeGa5bH_RJFzBQ" type="2073" fontName="Ubuntu" fontHeight="12" bold="true" fillColor="12632256" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ly3ikBwAEeGa5bH_RJFzBQ" source="ShadowFigure">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ly3ikRwAEeGa5bH_RJFzBQ" key="ShadowFigure_Value" value="false"/>
       </eAnnotations>
@@ -1217,6 +1217,11 @@
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ly3ilBwAEeGa5bH_RJFzBQ" source="QualifiedName">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ly3ilRwAEeGa5bH_RJFzBQ" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iTOXkKEOEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_-IQaMKENEeKLUqX9IJq2Gg">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iTOXkaEOEeKLUqX9IJq2Gg" key="tooltip_text" value="RoboCabEnvironmentDiagram"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iTOXkqEOEeKLUqX9IJq2Gg" key="diagram_name" value="RoboCabEnvironmentDiagram"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iTOXk6EOEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_ly3ilhwAEeGa5bH_RJFzBQ" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_ly3ilxwAEeGa5bH_RJFzBQ" type="7073">
@@ -1230,7 +1235,18 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7f7r8BwAEeGa5bH_RJFzBQ" source="QualifiedName">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7f7r8RwAEeGa5bH_RJFzBQ" key="QualifiedNameDepth" value="1000"/>
           </eAnnotations>
-          <children xmi:type="notation:DecorationNode" xmi:id="_7f7r8hwAEeGa5bH_RJFzBQ" type="5126"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qVugUKEMEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_A0k2UB8rEeG4gPCEznVNOA">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qVugUaEMEeKLUqX9IJq2Gg" key="tooltip_text" value="OrganizerSystemDiagram"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qVugUqEMEeKLUqX9IJq2Gg" key="diagram_name" value="OrganizerSystemDiagram"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qVugU6EMEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
+          </eAnnotations>
+          <children xmi:type="notation:DecorationNode" xmi:id="_7f7r8hwAEeGa5bH_RJFzBQ" type="5126">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nfWJEKEMEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_A0k2UB8rEeG4gPCEznVNOA">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nfWJEaEMEeKLUqX9IJq2Gg" key="tooltip_text" value="OrganizerSystemDiagram"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nfWJEqEMEeKLUqX9IJq2Gg" key="diagram_name" value="OrganizerSystemDiagram"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nfWJE6EMEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
+            </eAnnotations>
+          </children>
           <children xmi:type="notation:BasicCompartment" xmi:id="_7f7r8xwAEeGa5bH_RJFzBQ" type="7077">
             <styles xmi:type="notation:TitleStyle" xmi:id="_7f7r9BwAEeGa5bH_RJFzBQ"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7f7r9RwAEeGa5bH_RJFzBQ"/>
@@ -1248,7 +1264,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_a3j_pB9CEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_a3j_pR9CEeGetOLfkLNwfg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_a3j_ph9CEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_a3j_ph9CEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_a3j_px9CEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_tRMrYB8sEeG4gPCEznVNOA"/>
@@ -1267,7 +1283,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_a3lNwR9CEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_a3lNwh9CEeGetOLfkLNwfg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_a3lNwx9CEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_a3lNwx9CEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_a3lNxB9CEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_00caYB8sEeG4gPCEznVNOA"/>
@@ -1286,7 +1302,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_X8_6szU1EeG5pL_fpN2DgQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_X8_6tDU1EeG5pL_fpN2DgQ" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_X8_6tTU1EeG5pL_fpN2DgQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_X8_6tTU1EeG5pL_fpN2DgQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_X8_6tjU1EeG5pL_fpN2DgQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_vP_roDUrEeG5pL_fpN2DgQ"/>
@@ -1305,7 +1321,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_X9AhyDU1EeG5pL_fpN2DgQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_X9BI0DU1EeG5pL_fpN2DgQ" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_X9BI0TU1EeG5pL_fpN2DgQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_X9BI0TU1EeG5pL_fpN2DgQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_X9BI0jU1EeG5pL_fpN2DgQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#__UwIsDUrEeG5pL_fpN2DgQ"/>
@@ -1324,7 +1340,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_X9Bv5jU1EeG5pL_fpN2DgQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_X9Bv5zU1EeG5pL_fpN2DgQ" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_X9Bv6DU1EeG5pL_fpN2DgQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_X9Bv6DU1EeG5pL_fpN2DgQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_X9Bv6TU1EeG5pL_fpN2DgQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#__vhZIDUrEeG5pL_fpN2DgQ"/>
@@ -1361,7 +1377,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_cnoFkxwBEeGa5bH_RJFzBQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_cnoFlBwBEeGa5bH_RJFzBQ" x="51" y="5"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_cnoFlRwBEeGa5bH_RJFzBQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_cnoFlRwBEeGa5bH_RJFzBQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_cnoFlhwBEeGa5bH_RJFzBQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_cPiaEKlgEeCYfbnxVSyZ9g"/>
@@ -1380,8 +1396,24 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ri9AIxwnEeGa5bH_RJFzBQ" source="QualifiedName">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ri9AJBwnEeGa5bH_RJFzBQ" key="QualifiedNameDepth" value="1000"/>
           </eAnnotations>
-          <children xmi:type="notation:DecorationNode" xmi:id="_ri9AJRwnEeGa5bH_RJFzBQ" type="5126"/>
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xi0OkKELEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_O43JEB8uEeG4gPCEznVNOA">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xi0OkaELEeKLUqX9IJq2Gg" key="tooltip_text" value="ChallengerSpaceDiagram"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xi0OkqELEeKLUqX9IJq2Gg" key="diagram_name" value="ChallengerSpaceDiagram"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xi0Ok6ELEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
+          </eAnnotations>
+          <children xmi:type="notation:DecorationNode" xmi:id="_ri9AJRwnEeGa5bH_RJFzBQ" type="5126">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uf7sYKELEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_O43JEB8uEeG4gPCEznVNOA">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uf7sYaELEeKLUqX9IJq2Gg" key="tooltip_text" value="ChallengerSpaceDiagram"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uf7sYqELEeKLUqX9IJq2Gg" key="diagram_name" value="ChallengerSpaceDiagram"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uf7sY6ELEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
+            </eAnnotations>
+          </children>
           <children xmi:type="notation:BasicCompartment" xmi:id="_ri9AJhwnEeGa5bH_RJFzBQ" type="7077">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_h9nl4KEMEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_O43JEB8uEeG4gPCEznVNOA">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h9nl4aEMEeKLUqX9IJq2Gg" key="tooltip_text" value="ChallengerSpaceDiagram"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h9nl4qEMEeKLUqX9IJq2Gg" key="diagram_name" value="ChallengerSpaceDiagram"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_h9nl46EMEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
+            </eAnnotations>
             <styles xmi:type="notation:TitleStyle" xmi:id="_ri9AJxwnEeGa5bH_RJFzBQ"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ri9AKBwnEeGa5bH_RJFzBQ"/>
           </children>
@@ -1398,7 +1430,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_uTZugxwnEeGa5bH_RJFzBQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_uTZuhBwnEeGa5bH_RJFzBQ" x="-110" y="5"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_uTZuhRwnEeGa5bH_RJFzBQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_uTZuhRwnEeGa5bH_RJFzBQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_uTZuhhwnEeGa5bH_RJFzBQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_fdzLNqk_EeCXqcRV-18f6Q"/>
@@ -1417,7 +1449,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_uTa8ohwnEeGa5bH_RJFzBQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_uTa8oxwnEeGa5bH_RJFzBQ" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_uTa8pBwnEeGa5bH_RJFzBQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_uTa8pBwnEeGa5bH_RJFzBQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_uTa8pRwnEeGa5bH_RJFzBQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_LA8qUKlkEeCLku4RFrI7uw"/>
@@ -1455,7 +1487,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_MCJqlh9CEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCJqlx9CEeGetOLfkLNwfg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_MCJqmB9CEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_MCJqmB9CEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCJqmR9CEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_egSUcB8vEeG4gPCEznVNOA"/>
@@ -1474,7 +1506,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_MCK4sB9CEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCK4sR9CEeGetOLfkLNwfg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_MCK4sh9CEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_MCK4sh9CEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCK4sx9CEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_FgbvMB8wEeGetOLfkLNwfg"/>
@@ -1493,7 +1525,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_MCLfwx9CEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCLfxB9CEeGetOLfkLNwfg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_MCLfxR9CEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_MCLfxR9CEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCLfxh9CEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_NkEOcB8wEeGetOLfkLNwfg"/>
@@ -1512,11 +1544,11 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_MCMG1h9CEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCMG1x9CEeGetOLfkLNwfg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_MCMG2B9CEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_MCMG2B9CEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCMG2R9CEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_WZjocB8wEeGetOLfkLNwfg"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MCLfyB9CEeGetOLfkLNwfg" x="-10" y="427"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MCLfyB9CEeGetOLfkLNwfg" x="-11" y="406" width="20" height="20"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_MCMG2h9CEeGetOLfkLNwfg" type="3069" fontName="Ubuntu" lineColor="0">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MCMt4B9CEeGetOLfkLNwfg" source="ShadowFigure">
@@ -1531,7 +1563,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_MCMt5h9CEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCMt5x9CEeGetOLfkLNwfg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_MCMt6B9CEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_MCMt6B9CEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCMt6R9CEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_x9oBcB8wEeGetOLfkLNwfg"/>
@@ -1550,7 +1582,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_MCNU-B9CEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCNU-R9CEeGetOLfkLNwfg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_MCNU-h9CEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_MCNU-h9CEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCNU-x9CEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_WC5TkB8-EeGetOLfkLNwfg"/>
@@ -1569,7 +1601,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_MCOjER9CEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCOjEh9CEeGetOLfkLNwfg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_MCOjEx9CEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_MCOjEx9CEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MCOjFB9CEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_a8AXkB8-EeGetOLfkLNwfg"/>
@@ -1588,7 +1620,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_6fTtoTU0EeG5pL_fpN2DgQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_6fTtojU0EeG5pL_fpN2DgQ" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_6fTtozU0EeG5pL_fpN2DgQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_6fTtozU0EeG5pL_fpN2DgQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_6fTtpDU0EeG5pL_fpN2DgQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_qPrSwDUzEeG5pL_fpN2DgQ"/>
@@ -1607,7 +1639,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_6fUUtjU0EeG5pL_fpN2DgQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_6fUUtzU0EeG5pL_fpN2DgQ" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_6fUUuDU0EeG5pL_fpN2DgQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_6fUUuDU0EeG5pL_fpN2DgQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_6fUUuTU0EeG5pL_fpN2DgQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_0-eXwDUzEeG5pL_fpN2DgQ"/>
@@ -1626,7 +1658,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_6fU7yDU0EeG5pL_fpN2DgQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_6fU7yTU0EeG5pL_fpN2DgQ" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_6fVi0DU0EeG5pL_fpN2DgQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_6fVi0DU0EeG5pL_fpN2DgQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_6fVi0TU0EeG5pL_fpN2DgQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_2izRQDUzEeG5pL_fpN2DgQ"/>
@@ -1645,7 +1677,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_6fWJ5TU0EeG5pL_fpN2DgQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_6fWJ5jU0EeG5pL_fpN2DgQ" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_6fWJ5zU0EeG5pL_fpN2DgQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_6fWJ5zU0EeG5pL_fpN2DgQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_6fWJ6DU0EeG5pL_fpN2DgQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_3wKcQDUzEeG5pL_fpN2DgQ"/>
@@ -1680,9 +1712,9 @@
               <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TSTGJTU1EeG5pL_fpN2DgQ" key="QualifiedNameDepth" value="1000"/>
             </eAnnotations>
             <children xmi:type="notation:DecorationNode" xmi:id="_TSTGJjU1EeG5pL_fpN2DgQ" type="5125">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_TSTGJzU1EeG5pL_fpN2DgQ" x="25" y="3"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_TSTGJzU1EeG5pL_fpN2DgQ" x="-144" y="9"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_TSTGKDU1EeG5pL_fpN2DgQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_TSTGKDU1EeG5pL_fpN2DgQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_TSTGKTU1EeG5pL_fpN2DgQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_zEf_YDUoEeG5pL_fpN2DgQ"/>
@@ -1699,9 +1731,9 @@
               <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TSUUQzU1EeG5pL_fpN2DgQ" key="QualifiedNameDepth" value="1000"/>
             </eAnnotations>
             <children xmi:type="notation:DecorationNode" xmi:id="_TSUURDU1EeG5pL_fpN2DgQ" type="5125">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_TSUURTU1EeG5pL_fpN2DgQ" x="25" y="3"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_TSUURTU1EeG5pL_fpN2DgQ" x="-129" y="4"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_TSUURjU1EeG5pL_fpN2DgQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_TSUURjU1EeG5pL_fpN2DgQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_TSUURzU1EeG5pL_fpN2DgQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_2hQaIDUoEeG5pL_fpN2DgQ"/>
@@ -1738,7 +1770,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_R--Ugx8lEeG4gPCEznVNOA" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_R--UhB8lEeG4gPCEznVNOA" x="-112" y="5"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_R--UhR8lEeG4gPCEznVNOA" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_R--UhR8lEeG4gPCEznVNOA" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_R--Uhh8lEeG4gPCEznVNOA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_lpqYsKlAEeCYaYi0hzq5kg"/>
@@ -1775,7 +1807,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_TGcS4h8lEeG4gPCEznVNOA" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_TGcS4x8lEeG4gPCEznVNOA" x="-114" y="5"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_TGcS5B8lEeG4gPCEznVNOA" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_TGcS5B8lEeG4gPCEznVNOA" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_TGcS5R8lEeG4gPCEznVNOA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_lpqYsKlAEeCYaYi0hzq5kg"/>
@@ -1856,7 +1888,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_M3EV1B9BEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_M3EV1R9BEeGetOLfkLNwfg" x="-116" y="4"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_M3EV1h9BEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_M3EV1h9BEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_M3EV1x9BEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_fdzJfak_EeCXqcRV-18f6Q"/>
@@ -1875,7 +1907,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_M3E86B9BEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_M3Fj8B9BEeGetOLfkLNwfg" x="-181" y="4"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_M3Fj8R9BEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_M3Fj8R9BEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_M3Fj8h9BEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_4xF7kKlLEeCYfbnxVSyZ9g"/>
@@ -1912,7 +1944,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_dQIO9B9BEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_dQIO9R9BEeGetOLfkLNwfg" x="-141" y="2"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_dQIO9h9BEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_dQIO9h9BEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_dQIO9x9BEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_9cOsYB8oEeG4gPCEznVNOA"/>
@@ -1949,7 +1981,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_EOGC9R9DEeGetOLfkLNwfg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_EOGC9h9DEeGetOLfkLNwfg" x="-159" y="5"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_EOGC9x9DEeGetOLfkLNwfg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_EOGC9x9DEeGetOLfkLNwfg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_EOGC-B9DEeGetOLfkLNwfg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_fdzJY6k_EeCXqcRV-18f6Q"/>
@@ -1986,7 +2018,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_MrjbpjU1EeG5pL_fpN2DgQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MrjbpzU1EeG5pL_fpN2DgQ" x="-141" y="9"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_MrjbqDU1EeG5pL_fpN2DgQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_MrjbqDU1EeG5pL_fpN2DgQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MrjbqTU1EeG5pL_fpN2DgQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_fdzJcKk_EeCXqcRV-18f6Q"/>
@@ -2005,7 +2037,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_MrkpxDU1EeG5pL_fpN2DgQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MrkpxTU1EeG5pL_fpN2DgQ" x="-161" y="4"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_MrkpxjU1EeG5pL_fpN2DgQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_MrkpxjU1EeG5pL_fpN2DgQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MrkpxzU1EeG5pL_fpN2DgQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_UMascKlFEeCgdMhwEBuWIg"/>
@@ -2024,7 +2056,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_MrlQ1jU1EeG5pL_fpN2DgQ" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MrlQ1zU1EeG5pL_fpN2DgQ" x="-136" y="4"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_Mrl34DU1EeG5pL_fpN2DgQ" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_Mrl34DU1EeG5pL_fpN2DgQ" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_Mrl34TU1EeG5pL_fpN2DgQ" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_nCjE8KlFEeCniaMk5QUBRg"/>
@@ -3169,10 +3201,10 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Cp71ex8rEeG4gPCEznVNOA" key="PropStereoDisplay" value=""/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Cp71fB8rEeG4gPCEznVNOA" key="StereotypePropertyLocation" value="Compartment"/>
       </eAnnotations>
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Cp71fR8rEeG4gPCEznVNOA" source="PapyrusHyperLink_Diagram">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Cp71fh8rEeG4gPCEznVNOA" key="tooltip_text" value="OrganizerSpace"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Cp71fx8rEeG4gPCEznVNOA" key="diagram_name" value="OrganizerSpace"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Cp71gB8rEeG4gPCEznVNOA" key="is_default_navigation" value="false"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tC61cKEDEeKNa6EfGASSWw" source="PapyrusHyperLink_Diagram" references="_OCVFkBwAEeGa5bH_RJFzBQ">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tC61caEDEeKNa6EfGASSWw" key="tooltip_text" value="RobocabDefaultArchitecture"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tC61cqEDEeKNa6EfGASSWw" key="diagram_name" value="RobocabDefaultArchitecture"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tC61c6EDEeKNa6EfGASSWw" key="is_default_navigation" value="true"/>
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_Cp71gR8rEeG4gPCEznVNOA" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_Cp71gh8rEeG4gPCEznVNOA" type="7073">
@@ -3365,7 +3397,7 @@
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MroACR8vEeG4gPCEznVNOA" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_GJzrUKlbEeCYfbnxVSyZ9g"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MrnY-h8vEeG4gPCEznVNOA" x="-10" y="92"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MrnY-h8vEeG4gPCEznVNOA" x="-10" y="75"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_MroACh8vEeG4gPCEznVNOA" type="3069" fontName="Ubuntu" lineColor="0">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MronEB8vEeG4gPCEznVNOA" source="ShadowFigure">
@@ -3378,7 +3410,7 @@
               <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MronFR8vEeG4gPCEznVNOA" key="QualifiedNameDepth" value="1000"/>
             </eAnnotations>
             <children xmi:type="notation:DecorationNode" xmi:id="_MronFh8vEeG4gPCEznVNOA" type="5125">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_MronFx8vEeG4gPCEznVNOA" x="-72" y="-55"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_MronFx8vEeG4gPCEznVNOA" x="-146" y="-22"/>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_MronGB8vEeG4gPCEznVNOA" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_MronGR8vEeG4gPCEznVNOA" x="25" y="-10"/>
@@ -3428,7 +3460,7 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tT_gsB8sEeG4gPCEznVNOA" key="StereotypePropertyLocation" value="Compartment"/>
         </eAnnotations>
         <children xmi:type="notation:DecorationNode" xmi:id="_tRfmVh8sEeG4gPCEznVNOA" type="5125">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_tRfmVx8sEeG4gPCEznVNOA" x="25" y="3"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_tRfmVx8sEeG4gPCEznVNOA" x="26" y="-8"/>
         </children>
         <children xmi:type="notation:DecorationNode" xmi:id="_tRfmWB8sEeG4gPCEznVNOA" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_tRfmWR8sEeG4gPCEznVNOA" x="25" y="-10"/>
@@ -3454,13 +3486,13 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_03HT5B8sEeG4gPCEznVNOA" key="StereotypePropertyLocation" value="Compartment"/>
         </eAnnotations>
         <children xmi:type="notation:DecorationNode" xmi:id="_00uHNB8sEeG4gPCEznVNOA" type="5125">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_00uHNR8sEeG4gPCEznVNOA" x="25" y="3"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_00uHNR8sEeG4gPCEznVNOA" x="25" y="-8"/>
         </children>
         <children xmi:type="notation:DecorationNode" xmi:id="_00uHNh8sEeG4gPCEznVNOA" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_00uHNx8sEeG4gPCEznVNOA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_00caYB8sEeG4gPCEznVNOA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_00tgIR8sEeG4gPCEznVNOA" x="-10" y="351" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_00tgIR8sEeG4gPCEznVNOA" x="-10" y="366" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_vQRYcDUrEeG5pL_fpN2DgQ" type="3069" fontName="Ubuntu" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vQR_gDUrEeG5pL_fpN2DgQ" source="ShadowFigure">
@@ -3480,7 +3512,7 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vSg0JDUrEeG5pL_fpN2DgQ" key="StereotypePropertyLocation" value="Compartment"/>
         </eAnnotations>
         <children xmi:type="notation:DecorationNode" xmi:id="_vQR_hjUrEeG5pL_fpN2DgQ" type="5125">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_vQR_hzUrEeG5pL_fpN2DgQ" x="25" y="3"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_vQR_hzUrEeG5pL_fpN2DgQ" x="25" y="-5"/>
         </children>
         <children xmi:type="notation:DecorationNode" xmi:id="_vQR_iDUrEeG5pL_fpN2DgQ" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_vQR_iTUrEeG5pL_fpN2DgQ" x="25" y="-10"/>
@@ -3506,7 +3538,7 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__XPcBDUrEeG5pL_fpN2DgQ" key="StereotypePropertyLocation" value="Compartment"/>
         </eAnnotations>
         <children xmi:type="notation:DecorationNode" xmi:id="__VBOeDUrEeG5pL_fpN2DgQ" type="5125">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="__VB1gDUrEeG5pL_fpN2DgQ" x="25" y="3"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="__VB1gDUrEeG5pL_fpN2DgQ" x="25" y="-4"/>
         </children>
         <children xmi:type="notation:DecorationNode" xmi:id="__VB1gTUrEeG5pL_fpN2DgQ" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="__VB1gjUrEeG5pL_fpN2DgQ" x="25" y="-10"/>
@@ -3532,7 +3564,7 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__x4wpDUrEeG5pL_fpN2DgQ" key="StereotypePropertyLocation" value="Compartment"/>
         </eAnnotations>
         <children xmi:type="notation:DecorationNode" xmi:id="__vye5jUrEeG5pL_fpN2DgQ" type="5125">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="__vye5zUrEeG5pL_fpN2DgQ" x="25" y="3"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="__vye5zUrEeG5pL_fpN2DgQ" x="25" y="-1"/>
         </children>
         <children xmi:type="notation:DecorationNode" xmi:id="__vzF8DUrEeG5pL_fpN2DgQ" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="__vzF8TUrEeG5pL_fpN2DgQ" x="25" y="-10"/>
@@ -3700,8 +3732,18 @@
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_eY_bY0HmEeGGXpGscpkjdg" key="PropStereoDisplay" value=""/>
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_eY_bZEHmEeGGXpGscpkjdg" key="StereotypePropertyLocation" value="Compartment"/>
       </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MaxIcKEMEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_OCVFkBwAEeGa5bH_RJFzBQ">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MaxIcaEMEeKLUqX9IJq2Gg" key="tooltip_text" value="RobocabDefaultArchitecture"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MaxIcqEMEeKLUqX9IJq2Gg" key="diagram_name" value="RobocabDefaultArchitecture"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MaxIc6EMEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
+      </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_REnO_R8uEeG4gPCEznVNOA" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_REnO_h8uEeG4gPCEznVNOA" type="7073">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_COLYoKEMEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_O43JEB8uEeG4gPCEznVNOA">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_COLYoaEMEeKLUqX9IJq2Gg" key="tooltip_text" value="ChallengerSpaceDiagram"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_COLYoqEMEeKLUqX9IJq2Gg" key="diagram_name" value="ChallengerSpaceDiagram"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_COLYo6EMEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
+        </eAnnotations>
         <children xmi:type="notation:Shape" xmi:id="_REnPCx8uEeG4gPCEznVNOA" type="3070" fontName="Ubuntu" fontHeight="7" lineColor="0">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_REnPDB8uEeG4gPCEznVNOA" source="ShadowFigure">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_REnPDR8uEeG4gPCEznVNOA" key="ShadowFigure_Value" value="false"/>
@@ -3728,13 +3770,13 @@
               <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ChLOF2bUEeGGNuX1IHg1zg" key="QualifiedNameDepth" value="1000"/>
             </eAnnotations>
             <children xmi:type="notation:DecorationNode" xmi:id="_ChLOGGbUEeGGNuX1IHg1zg" type="5125">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_ChLOGWbUEeGGNuX1IHg1zg" x="20" y="5"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ChLOGWbUEeGGNuX1IHg1zg" x="20" y="15"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_ChLOGmbUEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_ChLOGmbUEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_ChLOG2bUEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_Rsb1cBwkEeGa5bH_RJFzBQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ChLOEWbUEeGGNuX1IHg1zg" x="-10" y="70"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ChLOEWbUEeGGNuX1IHg1zg" x="-11" y="54" width="20" height="20"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_ChLOHGbUEeGGNuX1IHg1zg" type="3069" fontHeight="8" lineColor="0">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ChLOHmbUEeGGNuX1IHg1zg" source="ShadowFigure">
@@ -3749,7 +3791,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_ChLOJGbUEeGGNuX1IHg1zg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_ChLOJWbUEeGGNuX1IHg1zg" x="25" y="5"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_ChLOJmbUEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_ChLOJmbUEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_ChLOJ2bUEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_W2W8oBwkEeGa5bH_RJFzBQ"/>
@@ -3768,7 +3810,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_ChLOMGbUEeGGNuX1IHg1zg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_ChLOMWbUEeGGNuX1IHg1zg" x="-131" y="5"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_ChLOMmbUEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_ChLOMmbUEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_ChLOM2bUEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_f6a-IBwkEeGa5bH_RJFzBQ"/>
@@ -3808,11 +3850,11 @@
               </eAnnotations>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_HSgPGWbUEeGGNuX1IHg1zg" x="20"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_HSgPGmbUEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_HSgPGmbUEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_HSgPG2bUEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_fdzKI6k_EeCXqcRV-18f6Q"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSgPEWbUEeGGNuX1IHg1zg" x="-11" y="84" width="20" height="20"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HSgPEWbUEeGGNuX1IHg1zg" x="-11" y="70" width="20" height="20"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_HSgPHGbUEeGGNuX1IHg1zg" type="3069" fontHeight="8" lineColor="0">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HSgPHmbUEeGGNuX1IHg1zg" source="ShadowFigure">
@@ -3828,9 +3870,9 @@
               <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JmnmwGbUEeGGNuX1IHg1zg" source="CustomAppearance_Annotation">
                 <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OHtMUGbUEeGGNuX1IHg1zg" key="CustomAppearance_MaskValue" value="60"/>
               </eAnnotations>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_HSgPJWbUEeGGNuX1IHg1zg" x="10" y="21"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_HSgPJWbUEeGGNuX1IHg1zg" x="15" y="-13"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_HSgPJmbUEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_HSgPJmbUEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_HSgPJ2bUEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_fdzKJ6k_EeCXqcRV-18f6Q"/>
@@ -3850,7 +3892,7 @@
               <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NdYc8GbUEeGGNuX1IHg1zg" source="CustomAppearance_Annotation">
                 <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NoQ3QGbUEeGGNuX1IHg1zg" key="CustomAppearance_MaskValue" value="52"/>
               </eAnnotations>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_HSgPMWbUEeGGNuX1IHg1zg" x="-81" y="5"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_HSgPMWbUEeGGNuX1IHg1zg" x="-101" y="1"/>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_HSgPMmbUEeGGNuX1IHg1zg" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_HSgPM2bUEeGGNuX1IHg1zg" x="25" y="-10"/>
@@ -3872,7 +3914,7 @@
               <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MAQXoGbUEeGGNuX1IHg1zg" source="CustomAppearance_Annotation">
                 <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MumEUGbUEeGGNuX1IHg1zg" key="CustomAppearance_MaskValue" value="60"/>
               </eAnnotations>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_HSgPPWbUEeGGNuX1IHg1zg" x="-91" y="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_HSgPPWbUEeGGNuX1IHg1zg" x="-111" y="2"/>
             </children>
             <children xmi:type="notation:DecorationNode" xmi:id="_HSgPPmbUEeGGNuX1IHg1zg" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_HSgPP2bUEeGGNuX1IHg1zg" x="25" y="-10"/>
@@ -3914,7 +3956,7 @@
               </eAnnotations>
               <layoutConstraint xmi:type="notation:Location" xmi:id="__qpF2WbTEeGGNuX1IHg1zg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="__qpF2mbTEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="__qpF2mbTEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="__qpF22bTEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_fdzKZak_EeCXqcRV-18f6Q"/>
@@ -3936,7 +3978,7 @@
               </eAnnotations>
               <layoutConstraint xmi:type="notation:Location" xmi:id="__qpF5WbTEeGGNuX1IHg1zg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="__qpF5mbTEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="__qpF5mbTEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="__qpF52bTEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_fdzKaak_EeCXqcRV-18f6Q"/>
@@ -3958,7 +4000,7 @@
               </eAnnotations>
               <layoutConstraint xmi:type="notation:Location" xmi:id="__qpF8WbTEeGGNuX1IHg1zg" x="-116" y="15"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="__qpF8mbTEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="__qpF8mbTEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="__qpF82bTEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_fdzKcak_EeCXqcRV-18f6Q"/>
@@ -3980,7 +4022,7 @@
               </eAnnotations>
               <layoutConstraint xmi:type="notation:Location" xmi:id="__qpF_WbTEeGGNuX1IHg1zg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="__qpF_mbTEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="__qpF_mbTEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="__qpF_2bTEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_gFYxYB8sEeG4gPCEznVNOA"/>
@@ -4017,7 +4059,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_gVY6NmbTEeGGNuX1IHg1zg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_gVY6N2bTEeGGNuX1IHg1zg" x="20" y="5"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_gVY6OGbTEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_gVY6OGbTEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_gVY6OWbTEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_fdzK6ak_EeCXqcRV-18f6Q"/>
@@ -4039,7 +4081,7 @@
               </eAnnotations>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_gVY6Q2bTEeGGNuX1IHg1zg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_gVY6RGbTEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_gVY6RGbTEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_gVY6RWbTEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_fdzK9ak_EeCXqcRV-18f6Q"/>
@@ -4061,7 +4103,7 @@
               </eAnnotations>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_gVY6T2bTEeGGNuX1IHg1zg" x="-81" y="5"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_gVY6UGbTEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_gVY6UGbTEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_gVY6UWbTEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_fdzK-ak_EeCXqcRV-18f6Q"/>
@@ -4080,11 +4122,11 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_gVY6WmbTEeGGNuX1IHg1zg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_gVY6W2bTEeGGNuX1IHg1zg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_gVY6XGbTEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_gVY6XGbTEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_gVY6XWbTEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_UIObEKloEeCLku4RFrI7uw"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gVY6U2bTEeGGNuX1IHg1zg" x="-10" y="115"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gVY6U2bTEeGGNuX1IHg1zg" x="-11" y="99" width="20" height="20"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_gVY6XmbTEeGGNuX1IHg1zg" type="3069" fontHeight="8" lineColor="0">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gVY6YGbTEeGGNuX1IHg1zg" source="ShadowFigure">
@@ -4099,11 +4141,11 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_gVY6ZmbTEeGGNuX1IHg1zg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_gVY6Z2bTEeGGNuX1IHg1zg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_gVY6aGbTEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_gVY6aGbTEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_gVY6aWbTEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_UegmIDUrEeG5pL_fpN2DgQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gVY6X2bTEeGGNuX1IHg1zg" x="-10" y="45"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gVY6X2bTEeGGNuX1IHg1zg" x="-11" y="29" width="20" height="20"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_gVY6ambTEeGGNuX1IHg1zg" type="3069" fontHeight="8" lineColor="0">
             <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gVY6bGbTEeGGNuX1IHg1zg" source="ShadowFigure">
@@ -4118,7 +4160,7 @@
             <children xmi:type="notation:DecorationNode" xmi:id="_gVY6cmbTEeGGNuX1IHg1zg" type="5125">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_gVY6c2bTEeGGNuX1IHg1zg" x="25" y="3"/>
             </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_gVY6dGbTEeGGNuX1IHg1zg" type="6029">
+            <children xmi:type="notation:DecorationNode" xmi:id="_gVY6dGbTEeGGNuX1IHg1zg" visible="false" type="6029">
               <layoutConstraint xmi:type="notation:Location" xmi:id="_gVY6dWbTEeGGNuX1IHg1zg" x="25" y="-10"/>
             </children>
             <element xmi:type="uml:Port" href="RoboCab.uml#_beSbsDUrEeG5pL_fpN2DgQ"/>
@@ -4142,7 +4184,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_REn2Ch8uEeG4gPCEznVNOA" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_REn2Cx8uEeG4gPCEznVNOA" x="25" y="-4"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_REn2DB8uEeG4gPCEznVNOA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_REn2DB8uEeG4gPCEznVNOA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_REn2DR8uEeG4gPCEznVNOA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_fdzLNqk_EeCXqcRV-18f6Q"/>
@@ -4159,9 +4201,9 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_REn2FR8uEeG4gPCEznVNOA" key="QualifiedNameDepth" value="1000"/>
         </eAnnotations>
         <children xmi:type="notation:DecorationNode" xmi:id="_REn2Fh8uEeG4gPCEznVNOA" type="5125">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_REn2Fx8uEeG4gPCEznVNOA" x="25" y="3"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_REn2Fx8uEeG4gPCEznVNOA" x="25" y="-9"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_REn2GB8uEeG4gPCEznVNOA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_REn2GB8uEeG4gPCEznVNOA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_REn2GR8uEeG4gPCEznVNOA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_LA8qUKlkEeCLku4RFrI7uw"/>
@@ -4183,11 +4225,11 @@
           </eAnnotations>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_REn2Lx8uEeG4gPCEznVNOA" x="-136" y="10"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_REn2MB8uEeG4gPCEznVNOA" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_REn2MB8uEeG4gPCEznVNOA" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_REn2MR8uEeG4gPCEznVNOA" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_ImFDAKlnEeCLku4RFrI7uw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_REn2Mh8uEeG4gPCEznVNOA" x="1051" y="300"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_REn2Mh8uEeG4gPCEznVNOA" x="1050" y="318" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_eguZUB8vEeG4gPCEznVNOA" type="3069" fontName="Ubuntu" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_egvAYB8vEeG4gPCEznVNOA" source="ShadowFigure">
@@ -4200,17 +4242,17 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_egvAZR8vEeG4gPCEznVNOA" key="QualifiedNameDepth" value="1000"/>
         </eAnnotations>
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_egzR0B8vEeG4gPCEznVNOA" source="Stereotype_Annotation">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_elZd8B8vEeG4gPCEznVNOA" key="StereotypeWithQualifiedNameList" value=""/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_elZd8R8vEeG4gPCEznVNOA" key="StereotypeList" value="RobotML::DataFlowPort"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_elZd8h8vEeG4gPCEznVNOA" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_elZd8x8vEeG4gPCEznVNOA" key="PropStereoDisplay" value=""/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_elZd9B8vEeG4gPCEznVNOA" key="StereotypePropertyLocation" value="Compartment"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V8U-QKEMEeKLUqX9IJq2Gg" key="StereotypeWithQualifiedNameList" value="RobotML::DataFlowPort"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V8U-QaEMEeKLUqX9IJq2Gg" key="StereotypeList" value="RobotML::DataFlowPort"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V8U-QqEMEeKLUqX9IJq2Gg" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V8U-Q6EMEeKLUqX9IJq2Gg" key="PropStereoDisplay" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V8U-RKEMEeKLUqX9IJq2Gg" key="StereotypePropertyLocation" value="Compartment"/>
         </eAnnotations>
         <children xmi:type="notation:DecorationNode" xmi:id="_egvAZh8vEeG4gPCEznVNOA" type="5125">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_egvAZx8vEeG4gPCEznVNOA" x="25" y="3"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_egvAZx8vEeG4gPCEznVNOA" x="20" y="-9"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_egvAaB8vEeG4gPCEznVNOA" type="6029">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_egvAaR8vEeG4gPCEznVNOA" x="25" y="-10"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_egvAaB8vEeG4gPCEznVNOA" visible="false" type="6029">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_egvAaR8vEeG4gPCEznVNOA" x="45" y="-14"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_egSUcB8vEeG4gPCEznVNOA"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eguZUR8vEeG4gPCEznVNOA" x="-11" y="99" width="20" height="20"/>
@@ -4235,7 +4277,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_Fg6QUx8wEeGetOLfkLNwfg" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_Fg6QVB8wEeGetOLfkLNwfg" x="20" y="-4"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_Fg6QVR8wEeGetOLfkLNwfg" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Fg6QVR8wEeGetOLfkLNwfg" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_Fg6QVh8wEeGetOLfkLNwfg" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_FgbvMB8wEeGetOLfkLNwfg"/>
@@ -4261,7 +4303,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_NkZlph8wEeGetOLfkLNwfg" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_NkZlpx8wEeGetOLfkLNwfg" x="25" y="3"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_NkZlqB8wEeGetOLfkLNwfg" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_NkZlqB8wEeGetOLfkLNwfg" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_NkZlqR8wEeGetOLfkLNwfg" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_NkEOcB8wEeGetOLfkLNwfg"/>
@@ -4287,7 +4329,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_WZ5mth8wEeGetOLfkLNwfg" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_WZ5mtx8wEeGetOLfkLNwfg" x="25" y="3"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_WZ5muB8wEeGetOLfkLNwfg" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_WZ5muB8wEeGetOLfkLNwfg" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_WZ6NwB8wEeGetOLfkLNwfg" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_WZjocB8wEeGetOLfkLNwfg"/>
@@ -4313,7 +4355,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_x-BDAh8wEeGetOLfkLNwfg" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_x-BDAx8wEeGetOLfkLNwfg" x="25" y="3"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_x-BDBB8wEeGetOLfkLNwfg" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_x-BDBB8wEeGetOLfkLNwfg" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_x-BDBR8wEeGetOLfkLNwfg" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_x9oBcB8wEeGetOLfkLNwfg"/>
@@ -4339,7 +4381,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_WDRuFh8-EeGetOLfkLNwfg" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_WDRuFx8-EeGetOLfkLNwfg" x="25" y="3"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_WDRuGB8-EeGetOLfkLNwfg" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_WDRuGB8-EeGetOLfkLNwfg" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_WDRuGR8-EeGetOLfkLNwfg" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_WC5TkB8-EeGetOLfkLNwfg"/>
@@ -4365,7 +4407,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_a8YyFh8-EeGetOLfkLNwfg" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_a8YyFx8-EeGetOLfkLNwfg" x="25" y="3"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_a8YyGB8-EeGetOLfkLNwfg" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_a8YyGB8-EeGetOLfkLNwfg" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_a8YyGR8-EeGetOLfkLNwfg" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_a8AXkB8-EeGetOLfkLNwfg"/>
@@ -4391,7 +4433,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_qP-NszUzEeG5pL_fpN2DgQ" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_qP-NtDUzEeG5pL_fpN2DgQ" x="25" y="3"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_qP-NtTUzEeG5pL_fpN2DgQ" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_qP-NtTUzEeG5pL_fpN2DgQ" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_qP-NtjUzEeG5pL_fpN2DgQ" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_qPrSwDUzEeG5pL_fpN2DgQ"/>
@@ -4417,11 +4459,11 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_0-wrpjUzEeG5pL_fpN2DgQ" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_0-wrpzUzEeG5pL_fpN2DgQ" x="25" y="-9"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_0-wrqDUzEeG5pL_fpN2DgQ" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_0-wrqDUzEeG5pL_fpN2DgQ" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_0-wrqTUzEeG5pL_fpN2DgQ" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_0-eXwDUzEeG5pL_fpN2DgQ"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0-wEkTUzEeG5pL_fpN2DgQ" x="-10" y="285" width="20" height="20"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0-wEkTUzEeG5pL_fpN2DgQ" x="-10" y="300" width="20" height="20"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_2jFlIDUzEeG5pL_fpN2DgQ" type="3069" fontName="Ubuntu" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2jGMMDUzEeG5pL_fpN2DgQ" source="ShadowFigure">
@@ -4443,7 +4485,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_2jGMNjUzEeG5pL_fpN2DgQ" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_2jGMNzUzEeG5pL_fpN2DgQ" x="25" y="3"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_2jGMODUzEeG5pL_fpN2DgQ" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_2jGMODUzEeG5pL_fpN2DgQ" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_2jGMOTUzEeG5pL_fpN2DgQ" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_2izRQDUzEeG5pL_fpN2DgQ"/>
@@ -4469,7 +4511,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_3wdXMTUzEeG5pL_fpN2DgQ" type="5125">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_3wdXMjUzEeG5pL_fpN2DgQ" x="25" y="3"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_3wdXMzUzEeG5pL_fpN2DgQ" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_3wdXMzUzEeG5pL_fpN2DgQ" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_3wdXNDUzEeG5pL_fpN2DgQ" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_3wKcQDUzEeG5pL_fpN2DgQ"/>
@@ -4967,25 +5009,6 @@
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_UB2DlEH1EeGwG_JKFhyhxw" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_UB2DlUH1EeGwG_JKFhyhxw" type="7073">
-        <children xmi:type="notation:Shape" xmi:id="_ODK24EK_EeGv-54Wm4mRWQ" type="3069" fontName="Ubuntu" lineColor="0">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ODLd8EK_EeGv-54Wm4mRWQ" source="ShadowFigure">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ODLd8UK_EeGv-54Wm4mRWQ" key="ShadowFigure_Value" value="false"/>
-          </eAnnotations>
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ODLd8kK_EeGv-54Wm4mRWQ" source="displayNameLabelIcon">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ODLd80K_EeGv-54Wm4mRWQ" key="displayNameLabelIcon_value" value="false"/>
-          </eAnnotations>
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ODLd9EK_EeGv-54Wm4mRWQ" source="QualifiedName">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ODLd9UK_EeGv-54Wm4mRWQ" key="QualifiedNameDepth" value="1000"/>
-          </eAnnotations>
-          <children xmi:type="notation:DecorationNode" xmi:id="_ODMFAEK_EeGv-54Wm4mRWQ" type="5125">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_ODMFAUK_EeGv-54Wm4mRWQ" x="25" y="3"/>
-          </children>
-          <children xmi:type="notation:DecorationNode" xmi:id="_ODMFAkK_EeGv-54Wm4mRWQ" type="6029">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_ODMFA0K_EeGv-54Wm4mRWQ" x="25" y="-10"/>
-          </children>
-          <element xmi:type="uml:Port" href="RoboCab.uml#_mJzj8EH0EeGwG_JKFhyhxw"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ODK24UK_EeGv-54Wm4mRWQ" x="10" y="10"/>
-        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_UB2DlkH1EeGwG_JKFhyhxw"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UB2Dl0H1EeGwG_JKFhyhxw"/>
       </children>
@@ -5000,9 +5023,9 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WDZroUH1EeGwG_JKFhyhxw" key="QualifiedNameDepth" value="1000"/>
         </eAnnotations>
         <children xmi:type="notation:DecorationNode" xmi:id="_WDZrokH1EeGwG_JKFhyhxw" type="5125">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_WDZro0H1EeGwG_JKFhyhxw" x="20" y="-15"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_WDZro0H1EeGwG_JKFhyhxw" x="25"/>
         </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_WDZrpEH1EeGwG_JKFhyhxw" type="6029">
+        <children xmi:type="notation:DecorationNode" xmi:id="_WDZrpEH1EeGwG_JKFhyhxw" visible="false" type="6029">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_WDZrpUH1EeGwG_JKFhyhxw" x="25" y="-10"/>
         </children>
         <element xmi:type="uml:Port" href="RoboCab.uml#_mJzj8EH0EeGwG_JKFhyhxw"/>
@@ -5079,13 +5102,13 @@
                 <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_13Le5EK8EeGv-54Wm4mRWQ" key="StereotypePropertyLocation" value="Compartment"/>
               </eAnnotations>
               <children xmi:type="notation:DecorationNode" xmi:id="_M9y8hkK6EeGv-54Wm4mRWQ" type="6001">
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IX0lAEK8EeGv-54Wm4mRWQ" width="191" height="15"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IX0lAEK8EeGv-54Wm4mRWQ" width="191" height="81"/>
               </children>
               <children xmi:type="notation:DecorationNode" xmi:id="_M9y8h0K6EeGv-54Wm4mRWQ" type="6002">
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M9y8iEK6EeGv-54Wm4mRWQ" y="15" width="191" height="87"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M9y8iEK6EeGv-54Wm4mRWQ" y="81" width="191" height="87"/>
               </children>
               <element xmi:type="uml:State" href="RoboCab.uml#_M9id0EK6EeGv-54Wm4mRWQ"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M9yVcUK6EeGv-54Wm4mRWQ" x="35" y="262" width="191" height="102"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_M9yVcUK6EeGv-54Wm4mRWQ" x="35" y="262" width="191" height="168"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_AsIEoEK8EeGv-54Wm4mRWQ" type="6000" fontName="UnBatang" lineColor="0">
               <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AsIEokK8EeGv-54Wm4mRWQ" source="ShadowFigure">
@@ -5105,13 +5128,13 @@
                 <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uHIC9EK8EeGv-54Wm4mRWQ" key="StereotypePropertyLocation" value="Compartment"/>
               </eAnnotations>
               <children xmi:type="notation:DecorationNode" xmi:id="_AsIrtUK8EeGv-54Wm4mRWQ" type="6001">
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NsoGgEK8EeGv-54Wm4mRWQ" width="196" height="15"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NsoGgEK8EeGv-54Wm4mRWQ" width="196" height="81"/>
               </children>
               <children xmi:type="notation:DecorationNode" xmi:id="_AsIrtkK8EeGv-54Wm4mRWQ" type="6002">
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AsIrt0K8EeGv-54Wm4mRWQ" y="15" width="196" height="84"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AsIrt0K8EeGv-54Wm4mRWQ" y="81" width="196" height="84"/>
               </children>
               <element xmi:type="uml:State" href="RoboCab.uml#_Ar40EEK8EeGv-54Wm4mRWQ"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AsIEoUK8EeGv-54Wm4mRWQ" x="295" y="17" width="196" height="99"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AsIEoUK8EeGv-54Wm4mRWQ" x="295" y="17" width="196" height="165"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_Pv0GQEK8EeGv-54Wm4mRWQ" type="6000" fontName="Ubuntu" lineColor="0">
               <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Pv0GQkK8EeGv-54Wm4mRWQ" source="ShadowFigure">
@@ -5131,13 +5154,13 @@
                 <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_s3hcREK8EeGv-54Wm4mRWQ" key="StereotypePropertyLocation" value="Compartment"/>
               </eAnnotations>
               <children xmi:type="notation:DecorationNode" xmi:id="_Pv0GSEK8EeGv-54Wm4mRWQ" type="6001">
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kYurAEK8EeGv-54Wm4mRWQ" width="191" height="15"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kYurAEK8EeGv-54Wm4mRWQ" width="191" height="81"/>
               </children>
               <children xmi:type="notation:DecorationNode" xmi:id="_Pv0tUEK8EeGv-54Wm4mRWQ" type="6002">
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pv0tUUK8EeGv-54Wm4mRWQ" y="15" width="191" height="91"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pv0tUUK8EeGv-54Wm4mRWQ" y="81" width="191" height="91"/>
               </children>
               <element xmi:type="uml:State" href="RoboCab.uml#_PvjnkEK8EeGv-54Wm4mRWQ"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pv0GQUK8EeGv-54Wm4mRWQ" x="545" y="262" width="191" height="106"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pv0GQUK8EeGv-54Wm4mRWQ" x="545" y="262" width="191" height="172"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_exomkGLwEeGQvv5wJEmGUQ" type="8000" fontHeight="8" lineColor="0">
               <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_exomkmLwEeGQvv5wJEmGUQ" source="ShadowFigure">
@@ -5219,7 +5242,7 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0kJ7U0K9EeGv-54Wm4mRWQ" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0kJ7VEK9EeGv-54Wm4mRWQ" key="StereotypePropertyLocation" value="Compartment"/>
         </eAnnotations>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_4nzMYUK8EeGv-54Wm4mRWQ" x="-3" y="-38"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_4nzMYUK8EeGv-54Wm4mRWQ" x="9" y="-33"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_4nzMYkK8EeGv-54Wm4mRWQ" type="7002">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_4nzMY0K8EeGv-54Wm4mRWQ"/>
@@ -5247,7 +5270,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_6CYUA0K8EeGv-54Wm4mRWQ"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_6CYUBEK8EeGv-54Wm4mRWQ" type="7003">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_6CYUBUK8EeGv-54Wm4mRWQ" x="-12" y="-34"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_6CYUBUK8EeGv-54Wm4mRWQ" x="-2" y="-33"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_6CXs8UK8EeGv-54Wm4mRWQ" fontName="Ubuntu"/>
       <element xmi:type="uml:Transition" href="RoboCab.uml#_6CGnMEK8EeGv-54Wm4mRWQ"/>
@@ -5644,35 +5667,6 @@
         <styles xmi:type="notation:TitleStyle" xmi:id="_OlEEembZEeGTV_735pzUXQ"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OlEEe2bZEeGTV_735pzUXQ"/>
       </children>
-      <children xmi:type="notation:Shape" xmi:id="_66PqMGbZEeGTV_735pzUXQ" type="3069" fontHeight="8" lineColor="0">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_66ZbMGbZEeGTV_735pzUXQ" source="ShadowFigure">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_66ZbMWbZEeGTV_735pzUXQ" key="ShadowFigure_Value" value="false"/>
-        </eAnnotations>
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_66ZbMmbZEeGTV_735pzUXQ" source="displayNameLabelIcon">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_66ZbM2bZEeGTV_735pzUXQ" key="displayNameLabelIcon_value" value="false"/>
-        </eAnnotations>
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_66ZbNGbZEeGTV_735pzUXQ" source="QualifiedName">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_66ZbNWbZEeGTV_735pzUXQ" key="QualifiedNameDepth" value="1000"/>
-        </eAnnotations>
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_66ilIGbZEeGTV_735pzUXQ" source="Stereotype_Annotation">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_68CZ8GbZEeGTV_735pzUXQ" key="StereotypeWithQualifiedNameList" value=""/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_68CZ8WbZEeGTV_735pzUXQ" key="StereotypeList" value="RobotML::DataFlowPort"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_68CZ8mbZEeGTV_735pzUXQ" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_68CZ82bZEeGTV_735pzUXQ" key="PropStereoDisplay" value=""/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_68CZ9GbZEeGTV_735pzUXQ" key="StereotypePropertyLocation" value="Compartment"/>
-        </eAnnotations>
-        <children xmi:type="notation:DecorationNode" xmi:id="_66ZbNmbZEeGTV_735pzUXQ" type="5125">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__WHYkGbZEeGTV_735pzUXQ" source="CustomAppearance_Annotation">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__wfAYGbZEeGTV_735pzUXQ" key="CustomAppearance_MaskValue" value="44"/>
-          </eAnnotations>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_66ZbN2bZEeGTV_735pzUXQ" x="25" y="3"/>
-        </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_66ZbOGbZEeGTV_735pzUXQ" type="6029">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_66ZbOWbZEeGTV_735pzUXQ" x="25" y="-10"/>
-        </children>
-        <element xmi:type="uml:Port" href="RoboCab.uml#_658vQGbZEeGTV_735pzUXQ"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_66PqMWbZEeGTV_735pzUXQ" x="90" y="55" width="20" height="20"/>
-      </children>
       <element xmi:type="uml:Class" href="RoboCab.uml#_Oj3xoGbZEeGTV_735pzUXQ"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OlEEcWbZEeGTV_735pzUXQ" x="155" y="190"/>
     </children>
@@ -5697,35 +5691,6 @@
       <children xmi:type="notation:BasicCompartment" xmi:id="_jdQbWWbZEeGTV_735pzUXQ" type="7073">
         <styles xmi:type="notation:TitleStyle" xmi:id="_jdQbWmbZEeGTV_735pzUXQ"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jdQbW2bZEeGTV_735pzUXQ"/>
-      </children>
-      <children xmi:type="notation:Shape" xmi:id="_3SPBsGbZEeGTV_735pzUXQ" type="3069" fontHeight="8" lineColor="0">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3SPBsmbZEeGTV_735pzUXQ" source="ShadowFigure">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3SPBs2bZEeGTV_735pzUXQ" key="ShadowFigure_Value" value="false"/>
-        </eAnnotations>
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3SPBtGbZEeGTV_735pzUXQ" source="displayNameLabelIcon">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3SPBtWbZEeGTV_735pzUXQ" key="displayNameLabelIcon_value" value="false"/>
-        </eAnnotations>
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3SPBtmbZEeGTV_735pzUXQ" source="QualifiedName">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3SPBt2bZEeGTV_735pzUXQ" key="QualifiedNameDepth" value="1000"/>
-        </eAnnotations>
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3Sh8oGbZEeGTV_735pzUXQ" source="Stereotype_Annotation">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3TuPcGbZEeGTV_735pzUXQ" key="StereotypeWithQualifiedNameList" value=""/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3TuPcWbZEeGTV_735pzUXQ" key="StereotypeList" value="RobotML::DataFlowPort"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3T4AcGbZEeGTV_735pzUXQ" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3T4AcWbZEeGTV_735pzUXQ" key="PropStereoDisplay" value=""/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3T4AcmbZEeGTV_735pzUXQ" key="StereotypePropertyLocation" value="Compartment"/>
-        </eAnnotations>
-        <children xmi:type="notation:DecorationNode" xmi:id="_3SPBuGbZEeGTV_735pzUXQ" type="5125">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5q-asGbZEeGTV_735pzUXQ" source="CustomAppearance_Annotation">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6IVFEGbZEeGTV_735pzUXQ" key="CustomAppearance_MaskValue" value="44"/>
-          </eAnnotations>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_3SPBuWbZEeGTV_735pzUXQ" x="25" y="3"/>
-        </children>
-        <children xmi:type="notation:DecorationNode" xmi:id="_3SPBumbZEeGTV_735pzUXQ" type="6029">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_3SPBu2bZEeGTV_735pzUXQ" x="25" y="-10"/>
-        </children>
-        <element xmi:type="uml:Port" href="RoboCab.uml#_3QmC8GbZEeGTV_735pzUXQ"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3SPBsWbZEeGTV_735pzUXQ" x="90" y="59" width="20" height="20"/>
       </children>
       <element xmi:type="uml:Class" href="RoboCab.uml#_jcp-YGbZEeGTV_735pzUXQ"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jdQbUWbZEeGTV_735pzUXQ" x="160" y="300"/>
@@ -5761,28 +5726,6 @@
             <styles xmi:type="notation:TitleStyle" xmi:id="_EmSRumbaEeGTV_735pzUXQ"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EmSRu2baEeGTV_735pzUXQ"/>
           </children>
-          <children xmi:type="notation:Shape" xmi:id="_I5gaYGbaEeGTV_735pzUXQ" type="3069" fontHeight="8" lineColor="0">
-            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_I5gaYmbaEeGTV_735pzUXQ" source="ShadowFigure">
-              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I5gaY2baEeGTV_735pzUXQ" key="ShadowFigure_Value" value="false"/>
-            </eAnnotations>
-            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_I5gaZGbaEeGTV_735pzUXQ" source="displayNameLabelIcon">
-              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I5gaZWbaEeGTV_735pzUXQ" key="displayNameLabelIcon_value" value="false"/>
-            </eAnnotations>
-            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_I5gaZmbaEeGTV_735pzUXQ" source="QualifiedName">
-              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I5gaZ2baEeGTV_735pzUXQ" key="QualifiedNameDepth" value="1000"/>
-            </eAnnotations>
-            <children xmi:type="notation:DecorationNode" xmi:id="_I5gaaGbaEeGTV_735pzUXQ" visible="false" type="5125">
-              <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_J7rCAGbaEeGTV_735pzUXQ" source="CustomAppearance_Annotation">
-                <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_K2Fb0GbaEeGTV_735pzUXQ" key="CustomAppearance_MaskValue" value="44"/>
-              </eAnnotations>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_I5gaaWbaEeGTV_735pzUXQ" x="25" y="3"/>
-            </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_I5gaambaEeGTV_735pzUXQ" type="6029">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_I5gaa2baEeGTV_735pzUXQ" x="25" y="-10"/>
-            </children>
-            <element xmi:type="uml:Port" href="RoboCab.uml#_658vQGbZEeGTV_735pzUXQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I5gaYWbaEeGTV_735pzUXQ" x="-10" y="49"/>
-          </children>
           <element xmi:type="uml:Property" href="RoboCab.uml#_El_WwGbaEeGTV_735pzUXQ"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EmSRsWbaEeGTV_735pzUXQ" x="261" y="32"/>
         </children>
@@ -5801,28 +5744,6 @@
             <styles xmi:type="notation:TitleStyle" xmi:id="_Maq0CmbaEeGTV_735pzUXQ"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Maq0C2baEeGTV_735pzUXQ"/>
           </children>
-          <children xmi:type="notation:Shape" xmi:id="_PW3fYGbaEeGTV_735pzUXQ" type="3069" fontHeight="8" lineColor="0">
-            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PXBQYGbaEeGTV_735pzUXQ" source="ShadowFigure">
-              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PXBQYWbaEeGTV_735pzUXQ" key="ShadowFigure_Value" value="false"/>
-            </eAnnotations>
-            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PXBQYmbaEeGTV_735pzUXQ" source="displayNameLabelIcon">
-              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PXBQY2baEeGTV_735pzUXQ" key="displayNameLabelIcon_value" value="false"/>
-            </eAnnotations>
-            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PXBQZGbaEeGTV_735pzUXQ" source="QualifiedName">
-              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PXBQZWbaEeGTV_735pzUXQ" key="QualifiedNameDepth" value="1000"/>
-            </eAnnotations>
-            <children xmi:type="notation:DecorationNode" xmi:id="_PXBQZmbaEeGTV_735pzUXQ" visible="false" type="5125">
-              <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RJAycGbaEeGTV_735pzUXQ" source="CustomAppearance_Annotation">
-                <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_R6eroGbaEeGTV_735pzUXQ" key="CustomAppearance_MaskValue" value="44"/>
-              </eAnnotations>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_PXBQZ2baEeGTV_735pzUXQ" x="-40"/>
-            </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_PXBQaGbaEeGTV_735pzUXQ" type="6029">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_PXBQaWbaEeGTV_735pzUXQ" x="25" y="-10"/>
-            </children>
-            <element xmi:type="uml:Port" href="RoboCab.uml#_3QmC8GbZEeGTV_735pzUXQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PW3fYWbaEeGTV_735pzUXQ" x="90" y="45"/>
-          </children>
           <element xmi:type="uml:Property" href="RoboCab.uml#_MaXSAGbaEeGTV_735pzUXQ"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Maq0AWbaEeGTV_735pzUXQ" x="21" y="37"/>
         </children>
@@ -5834,22 +5755,52 @@
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_Cwt3MWbaEeGTV_735pzUXQ"/>
     <element xmi:type="uml:Package" href="RoboCab.uml#_tR1bIGbWEeGGNuX1IHg1zg"/>
-    <edges xmi:type="notation:Connector" xmi:id="_Viy2IGbaEeGTV_735pzUXQ" type="4013" source="_PW3fYGbaEeGTV_735pzUXQ" target="_I5gaYGbaEeGTV_735pzUXQ" lineColor="0">
-      <children xmi:type="notation:DecorationNode" xmi:id="_Vi8AEGbaEeGTV_735pzUXQ" visible="false" type="6025">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_Vi8AEWbaEeGTV_735pzUXQ" y="60"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_-IQaMKENEeKLUqX9IJq2Gg" type="architecture" name="RoboCabEnvironmentDiagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_--MjsKENEeKLUqX9IJq2Gg" type="2073" gradient="8905185, 16777215, 0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_--WUsKENEeKLUqX9IJq2Gg" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__A4rUKENEeKLUqX9IJq2Gg" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__A4rUaENEeKLUqX9IJq2Gg" key="StereotypeList" value="RobotML::Environment"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__A4rUqENEeKLUqX9IJq2Gg" key="Stereotype_Presentation_Kind" value="IconStereotype"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__A4rU6ENEeKLUqX9IJq2Gg" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__A4rVKENEeKLUqX9IJq2Gg" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_--MjsqENEeKLUqX9IJq2Gg" type="5156"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_--Mjs6ENEeKLUqX9IJq2Gg" type="7073">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_--MjtqENEeKLUqX9IJq2Gg" source="PapyrusCSSForceValue">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_--Mjt6ENEeKLUqX9IJq2Gg" key="showTitle" value="true"/>
+        </eAnnotations>
+        <children xmi:type="notation:Shape" xmi:id="_K94BwKEOEeKLUqX9IJq2Gg" type="3070" gradient="10265827, 16777215, 0">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aNbVIKEOEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_OCVFkBwAEeGa5bH_RJFzBQ">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aNbVIaEOEeKLUqX9IJq2Gg" key="tooltip_text" value="RobocabDefaultArchitecture"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aNbVIqEOEeKLUqX9IJq2Gg" key="diagram_name" value="RobocabDefaultArchitecture"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aNbVI6EOEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
+          </eAnnotations>
+          <children xmi:type="notation:DecorationNode" xmi:id="_K94BwqEOEeKLUqX9IJq2Gg" type="5126">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VaLBgKEOEeKLUqX9IJq2Gg" source="PapyrusHyperLink_Diagram" references="_OCVFkBwAEeGa5bH_RJFzBQ">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VaLBgaEOEeKLUqX9IJq2Gg" key="tooltip_text" value="RobocabDefaultArchitecture"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VaLBgqEOEeKLUqX9IJq2Gg" key="diagram_name" value="RobocabDefaultArchitecture"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VaLBg6EOEeKLUqX9IJq2Gg" key="is_default_navigation" value="true"/>
+            </eAnnotations>
+          </children>
+          <children xmi:type="notation:BasicCompartment" xmi:id="_K94Bw6EOEeKLUqX9IJq2Gg" type="7077">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_K-BywKEOEeKLUqX9IJq2Gg" source="PapyrusCSSForceValue">
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_K-BywaEOEeKLUqX9IJq2Gg" key="showTitle" value="true"/>
+              <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_R0svoKEOEeKLUqX9IJq2Gg" key="visible" value="true"/>
+            </eAnnotations>
+            <styles xmi:type="notation:TitleStyle" xmi:id="_K94BxKEOEeKLUqX9IJq2Gg"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K94BxaEOEeKLUqX9IJq2Gg"/>
+          </children>
+          <element xmi:type="uml:Property" href="RoboCab.uml#_K9lG0KEOEeKLUqX9IJq2Gg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_K94BwaEOEeKLUqX9IJq2Gg" x="178" y="115" width="185"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_--MjtKENEeKLUqX9IJq2Gg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_--MjtaENEeKLUqX9IJq2Gg"/>
       </children>
-      <children xmi:type="notation:DecorationNode" xmi:id="_Vi8AEmbaEeGTV_735pzUXQ" visible="false" type="6050">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_Vi8AE2baEeGTV_735pzUXQ" y="-20"/>
-      </children>
-      <children xmi:type="notation:DecorationNode" xmi:id="_Vi8AFGbaEeGTV_735pzUXQ" visible="false" type="6051">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_Vi8AFWbaEeGTV_735pzUXQ" y="20"/>
-      </children>
-      <children xmi:type="notation:DecorationNode" xmi:id="_Vi8AFmbaEeGTV_735pzUXQ" visible="false" type="6052">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_Vi8AF2baEeGTV_735pzUXQ" y="20"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_Viy2IWbaEeGTV_735pzUXQ" fontHeight="8"/>
-      <element xmi:type="uml:Connector" href="RoboCab.uml#_VifUIGbaEeGTV_735pzUXQ"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Viy2ImbaEeGTV_735pzUXQ" points="[10, -3, -130, -2]$[138, -11, -2, -10]"/>
-    </edges>
+      <element xmi:type="uml:Class" href="RoboCab.uml#_-9mt0KENEeKLUqX9IJq2Gg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_--MjsaENEeKLUqX9IJq2Gg" x="97" y="90" width="634" height="436"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_-IQaMaENEeKLUqX9IJq2Gg"/>
+    <element xmi:type="uml:Model" href="RoboCab.uml#_fdzI0ak_EeCXqcRV-18f6Q"/>
   </notation:Diagram>
 </xmi:XMI>

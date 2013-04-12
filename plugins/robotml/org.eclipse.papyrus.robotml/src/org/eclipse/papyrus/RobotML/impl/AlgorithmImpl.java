@@ -21,7 +21,8 @@ import org.eclipse.uml2.uml.Operation;
  *   <li>{@link org.eclipse.papyrus.RobotML.impl.AlgorithmImpl#getBase_Operation <em>Base Operation</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotML.impl.AlgorithmImpl#isIsExternal <em>Is External</em>}</li>
  *   <li>{@link org.eclipse.papyrus.RobotML.impl.AlgorithmImpl#getExtFunctionName <em>Ext Function Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.AlgorithmImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.AlgorithmImpl#getLibPath <em>Lib Path</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.RobotML.impl.AlgorithmImpl#getLibFileFormat <em>Lib File Format</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,24 +80,44 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 	protected String extFunctionName = EXT_FUNCTION_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * The default value of the '{@link #getLibPath() <em>Lib Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPath()
+	 * @see #getLibPath()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PATH_EDEFAULT = null;
+	protected static final String LIB_PATH_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * The cached value of the '{@link #getLibPath() <em>Lib Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPath()
+	 * @see #getLibPath()
 	 * @generated
 	 * @ordered
 	 */
-	protected String path = PATH_EDEFAULT;
+	protected String libPath = LIB_PATH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLibFileFormat() <em>Lib File Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLibFileFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LIB_FILE_FORMAT_EDEFAULT = "elf";
+
+	/**
+	 * The cached value of the '{@link #getLibFileFormat() <em>Lib File Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLibFileFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected String libFileFormat = LIB_FILE_FORMAT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,8 +223,8 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPath() {
-		return path;
+	public String getLibPath() {
+		return libPath;
 	}
 
 	/**
@@ -211,11 +232,32 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPath(String newPath) {
-		String oldPath = path;
-		path = newPath;
+	public void setLibPath(String newLibPath) {
+		String oldLibPath = libPath;
+		libPath = newLibPath;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.ALGORITHM__PATH, oldPath, path));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.ALGORITHM__LIB_PATH, oldLibPath, libPath));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLibFileFormat() {
+		return libFileFormat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLibFileFormat(String newLibFileFormat) {
+		String oldLibFileFormat = libFileFormat;
+		libFileFormat = newLibFileFormat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.ALGORITHM__LIB_FILE_FORMAT, oldLibFileFormat, libFileFormat));
 	}
 
 	/**
@@ -233,8 +275,10 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 				return isIsExternal();
 			case RobotMLPackage.ALGORITHM__EXT_FUNCTION_NAME:
 				return getExtFunctionName();
-			case RobotMLPackage.ALGORITHM__PATH:
-				return getPath();
+			case RobotMLPackage.ALGORITHM__LIB_PATH:
+				return getLibPath();
+			case RobotMLPackage.ALGORITHM__LIB_FILE_FORMAT:
+				return getLibFileFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,8 +300,11 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 			case RobotMLPackage.ALGORITHM__EXT_FUNCTION_NAME:
 				setExtFunctionName((String)newValue);
 				return;
-			case RobotMLPackage.ALGORITHM__PATH:
-				setPath((String)newValue);
+			case RobotMLPackage.ALGORITHM__LIB_PATH:
+				setLibPath((String)newValue);
+				return;
+			case RobotMLPackage.ALGORITHM__LIB_FILE_FORMAT:
+				setLibFileFormat((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,8 +327,11 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 			case RobotMLPackage.ALGORITHM__EXT_FUNCTION_NAME:
 				setExtFunctionName(EXT_FUNCTION_NAME_EDEFAULT);
 				return;
-			case RobotMLPackage.ALGORITHM__PATH:
-				setPath(PATH_EDEFAULT);
+			case RobotMLPackage.ALGORITHM__LIB_PATH:
+				setLibPath(LIB_PATH_EDEFAULT);
+				return;
+			case RobotMLPackage.ALGORITHM__LIB_FILE_FORMAT:
+				setLibFileFormat(LIB_FILE_FORMAT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -301,8 +351,10 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 				return isExternal != IS_EXTERNAL_EDEFAULT;
 			case RobotMLPackage.ALGORITHM__EXT_FUNCTION_NAME:
 				return EXT_FUNCTION_NAME_EDEFAULT == null ? extFunctionName != null : !EXT_FUNCTION_NAME_EDEFAULT.equals(extFunctionName);
-			case RobotMLPackage.ALGORITHM__PATH:
-				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
+			case RobotMLPackage.ALGORITHM__LIB_PATH:
+				return LIB_PATH_EDEFAULT == null ? libPath != null : !LIB_PATH_EDEFAULT.equals(libPath);
+			case RobotMLPackage.ALGORITHM__LIB_FILE_FORMAT:
+				return LIB_FILE_FORMAT_EDEFAULT == null ? libFileFormat != null : !LIB_FILE_FORMAT_EDEFAULT.equals(libFileFormat);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -321,8 +373,10 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 		result.append(isExternal);
 		result.append(", extFunctionName: ");
 		result.append(extFunctionName);
-		result.append(", path: ");
-		result.append(path);
+		result.append(", libPath: ");
+		result.append(libPath);
+		result.append(", libFileFormat: ");
+		result.append(libFileFormat);
 		result.append(')');
 		return result.toString();
 	}

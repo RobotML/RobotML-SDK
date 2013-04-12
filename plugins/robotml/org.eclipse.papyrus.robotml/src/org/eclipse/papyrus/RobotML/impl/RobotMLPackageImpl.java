@@ -29,6 +29,7 @@ import org.eclipse.papyrus.RobotML.Environment;
 import org.eclipse.papyrus.RobotML.Floor;
 import org.eclipse.papyrus.RobotML.GPSSystem;
 import org.eclipse.papyrus.RobotML.Ground;
+import org.eclipse.papyrus.RobotML.Gyroscope;
 import org.eclipse.papyrus.RobotML.Hardware;
 import org.eclipse.papyrus.RobotML.Human;
 import org.eclipse.papyrus.RobotML.ImageSensorSystem;
@@ -486,6 +487,13 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass gyroscopeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum robotKindEEnum = null;
 
 	/**
@@ -697,8 +705,17 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAlgorithm_Path() {
+	public EAttribute getAlgorithm_LibPath() {
 		return (EAttribute)algorithmEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAlgorithm_LibFileFormat() {
+		return (EAttribute)algorithmEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1408,8 +1425,8 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCameraSystem_Translate() {
-		return (EAttribute)cameraSystemEClass.getEStructuralFeatures().get(7);
+	public EReference getCameraSystem_Translate() {
+		return (EReference)cameraSystemEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1417,8 +1434,8 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCameraSystem_Rotate() {
-		return (EAttribute)cameraSystemEClass.getEStructuralFeatures().get(8);
+	public EReference getCameraSystem_Rotate() {
+		return (EReference)cameraSystemEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2002,6 +2019,15 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getGyroscope() {
+		return gyroscopeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getRobotKind() {
 		return robotKindEEnum;
 	}
@@ -2097,7 +2123,8 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		createEReference(algorithmEClass, ALGORITHM__BASE_OPERATION);
 		createEAttribute(algorithmEClass, ALGORITHM__IS_EXTERNAL);
 		createEAttribute(algorithmEClass, ALGORITHM__EXT_FUNCTION_NAME);
-		createEAttribute(algorithmEClass, ALGORITHM__PATH);
+		createEAttribute(algorithmEClass, ALGORITHM__LIB_PATH);
+		createEAttribute(algorithmEClass, ALGORITHM__LIB_FILE_FORMAT);
 
 		robotEClass = createEClass(ROBOT);
 		createEAttribute(robotEClass, ROBOT__KIND);
@@ -2196,8 +2223,8 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		createEAttribute(cameraSystemEClass, CAMERA_SYSTEM__U0);
 		createEAttribute(cameraSystemEClass, CAMERA_SYSTEM__V0);
 		createEAttribute(cameraSystemEClass, CAMERA_SYSTEM__COLOR_FORMAT);
-		createEAttribute(cameraSystemEClass, CAMERA_SYSTEM__TRANSLATE);
-		createEAttribute(cameraSystemEClass, CAMERA_SYSTEM__ROTATE);
+		createEReference(cameraSystemEClass, CAMERA_SYSTEM__TRANSLATE);
+		createEReference(cameraSystemEClass, CAMERA_SYSTEM__ROTATE);
 
 		objectDetectionSensorSystemEClass = createEClass(OBJECT_DETECTION_SENSOR_SYSTEM);
 
@@ -2293,6 +2320,8 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		createEReference(deploymentPlanEClass, DEPLOYMENT_PLAN__BASE_PACKAGE);
 		createEReference(deploymentPlanEClass, DEPLOYMENT_PLAN__MAIN_INSTANCE);
 
+		gyroscopeEClass = createEClass(GYROSCOPE);
+
 		// Create enums
 		robotKindEEnum = createEEnum(ROBOT_KIND);
 		ugvKindEEnum = createEEnum(UGV_KIND);
@@ -2381,6 +2410,7 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		inertialNavigationSystemEClass.getESuperTypes().add(this.getGPSSystem());
 		odometrySystemEClass.getESuperTypes().add(this.getLocalizationSensorSystem());
 		infraRedProximetrySystemEClass.getESuperTypes().add(this.getObjectDetectionSensorSystem());
+		gyroscopeEClass.getESuperTypes().add(this.getSensorSystem());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2392,7 +2422,8 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		initEReference(getAlgorithm_Base_Operation(), theUMLPackage.getOperation(), null, "base_Operation", null, 1, 1, Algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAlgorithm_IsExternal(), theTypesPackage.getBoolean(), "isExternal", null, 1, 1, Algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAlgorithm_ExtFunctionName(), theTypesPackage.getString(), "extFunctionName", null, 1, 1, Algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getAlgorithm_Path(), theTypesPackage.getString(), "path", null, 1, 1, Algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAlgorithm_LibPath(), theTypesPackage.getString(), "libPath", null, 1, 1, Algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAlgorithm_LibFileFormat(), theTypesPackage.getString(), "libFileFormat", "elf", 1, 1, Algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(robotEClass, Robot.class, "Robot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRobot_Kind(), this.getRobotKind(), "kind", "UGV", 1, 1, Robot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2491,8 +2522,8 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 		initEAttribute(getCameraSystem_U0(), theStd_datatypesPackage.getFloat32(), "u0", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCameraSystem_V0(), theStd_datatypesPackage.getFloat32(), "v0", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCameraSystem_Color_format(), theStd_datatypesPackage.getString(), "color_format", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCameraSystem_Translate(), theStd_datatypesPackage.getFloat32(), "translate", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCameraSystem_Rotate(), theStd_datatypesPackage.getFloat32(), "rotate", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getCameraSystem_Translate(), theGeometry_datatypesPackage.getPoint32(), null, "translate", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getCameraSystem_Rotate(), theGeometry_datatypesPackage.getPoint32(), null, "rotate", null, 1, 1, CameraSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(objectDetectionSensorSystemEClass, ObjectDetectionSensorSystem.class, "ObjectDetectionSensorSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2586,7 +2617,9 @@ public class RobotMLPackageImpl extends EPackageImpl implements RobotMLPackage {
 
 		initEClass(deploymentPlanEClass, DeploymentPlan.class, "DeploymentPlan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDeploymentPlan_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 1, 1, DeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getDeploymentPlan_MainInstance(), this.getSystem(), null, "mainInstance", null, 1, 1, DeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDeploymentPlan_MainInstance(), theUMLPackage.getInstanceSpecification(), null, "mainInstance", null, 1, 1, DeploymentPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(gyroscopeEClass, Gyroscope.class, "Gyroscope", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(robotKindEEnum, RobotKind.class, "RobotKind");

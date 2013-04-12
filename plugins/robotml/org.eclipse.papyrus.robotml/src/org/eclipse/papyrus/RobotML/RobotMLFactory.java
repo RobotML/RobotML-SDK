@@ -472,6 +472,15 @@ public interface RobotMLFactory extends EFactory {
 	DeploymentPlan createDeploymentPlan();
 
 	/**
+	 * Returns a new object of class '<em>Gyroscope</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Gyroscope</em>'.
+	 * @generated
+	 */
+	Gyroscope createGyroscope();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

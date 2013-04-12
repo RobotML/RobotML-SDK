@@ -13,14 +13,20 @@
         lowerBound="1" eType="#//Algorithm"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Algorithm">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="LibFileFormat can be elf, matlab, etc"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Operation" ordered="false"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Operation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isExternal" ordered="false"
         lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="extFunctionName" ordered="false"
         lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" ordered="false" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="libPath" ordered="false"
+        lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="libFileFormat" ordered="false"
+        lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"
+        defaultValueLiteral="elf"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Robot" eSuperTypes="#//Agent #//System">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" ordered="false" lowerBound="1"
@@ -202,10 +208,12 @@
         eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color_format" ordered="false"
         lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="translate" ordered="false"
-        lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotate" ordered="false"
-        lowerBound="1" eType="ecore:EDataType RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes/Float32"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="translate" ordered="false"
+        lowerBound="1" eType="ecore:EClass RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/geometry_datatypes/Point32"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rotate" ordered="false"
+        lowerBound="1" eType="ecore:EClass RobotMLLibraries.ecore#//RobotML_ModelLibrary/RobotML_DataTypes/geometry_datatypes/Point32"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectDetectionSensorSystem" eSuperTypes="#//SensorSystem"/>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectTrackingSensorSystem" eSuperTypes="#//SensorSystem"/>
@@ -329,6 +337,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mainInstance" ordered="false"
-        lowerBound="1" eType="#//System"/>
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//InstanceSpecification"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gyroscope" eSuperTypes="#//SensorSystem"/>
 </ecore:EPackage>

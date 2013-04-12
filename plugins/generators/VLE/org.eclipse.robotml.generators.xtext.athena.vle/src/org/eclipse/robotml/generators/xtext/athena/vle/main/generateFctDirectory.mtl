@@ -51,7 +51,7 @@ public:
 	    if (it!=functions.end()) return (*it).second;
 	    else {
 			TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionDirectory::getFunction - Failed for " + name); 
-			throw "getUserFunction failed for " + name;
+			/*throw "getUserFunction failed for " + name;*/
 			return NULL;
 		}
 	}

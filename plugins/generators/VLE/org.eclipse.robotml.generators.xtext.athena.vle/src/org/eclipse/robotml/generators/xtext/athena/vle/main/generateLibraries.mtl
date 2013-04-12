@@ -118,7 +118,7 @@ Stub_[wrapper.name/] Stub_[wrapper.name/]_Obj;
 [for (stub : functionDeclaration | project.functions)]
 [if (isCPPFunction(stub) and (stub.name.equalsIgnoreCase(func)))]
 /**
- *
+ * stub function
  */
 __EXPORT__ void [stub.name/]([getCPPFunctionSignature(stub)/])
 {
@@ -143,7 +143,7 @@ __EXPORT__ void [stub.name/]([getCPPFunctionSignature(stub)/])
 [for (stub : ProcessingDeclaration | project.processings)]
 [if (stub.name.equalsIgnoreCase(func))]
 /**
-*
+* stub processing
 */
 __EXPORT__ void [stub.name/]([getProcessingSignature(stub)/])
 {

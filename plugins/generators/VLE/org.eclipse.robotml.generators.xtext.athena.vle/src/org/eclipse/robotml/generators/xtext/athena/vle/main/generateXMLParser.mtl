@@ -14,6 +14,8 @@
 [file('generated/src/FunctionLibrary.hpp', false, 'UTF-8')]
 #ifndef FunctionLibrary_H
 #define FunctionLibrary_H
+#include <vle/utils/DateTime.hpp>
+#include <vle/utils/Trace.hpp>
 #include <vector>
 #include "xml.hpp"
 #include "FunctionDirectory.hpp"
@@ -28,7 +30,8 @@ private:
 
 	FunctionLibrary() {	
 
-		Xml conf("~/vle/pkgs/generated/exp/configTemplate.xml", true);
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionLibrary::FunctionLibrary (BEGIN)"); 
+		Xml conf("../exp/configTemplate.xml", true);
 		XmlNode* xlibs = conf.get("config.user-libraries");
 		if(xlibs != NULL) {
 			for(unsigned int cpt = 0; cpt < xlibs->size(); cpt ++) {
@@ -36,22 +39,27 @@ private:
 				_libraries.push_back(new LibraryLoader(libName.c_str()));
 			}
 		}
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionLibrary::FunctionLibrary (END)");
 	}
 	
 public:
 
 	~FunctionLibrary() {
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionLibrary::~FunctionLibrary (BEGIN)");
 		while(_libraries.size() > 0) {
 			delete *_libraries.begin();
 			_libraries.erase(_libraries.begin());
 		}
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionLibrary::~FunctionLibrary (END)");
 	}
 
 	__EXPORT__ static FunctionLibrary* getInstance() {
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionLibrary::getInstance (BEGIN)");
 		if(FunctionLibrary::_instance == NULL)
 		{
 			FunctionLibrary::_instance = new FunctionLibrary();
 		}
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionLibrary::getInstance (END)");
 		return FunctionLibrary::_instance;
 	} 
 };
@@ -99,6 +107,7 @@ namespace generated {
 
 [template private generateXMLParserImplementation(project : Project)]
 [file('generated/src/xml.cpp',false, 'UTF-8')]
+//#define __DEBUG_XML__
 #include <assert.h>
 #include <boost/format.hpp>
 #include <boost/lexical_cast.hpp>
@@ -1595,7 +1604,7 @@ void    XmlParser::startElement(const XML_Char*         name,
 }
 
 /** End something */
-void    XmlParser::endElement(const XML_Char*   name)
+void    XmlParser::endElement(const XML_Char*   /*name*/)
 {
   XmlNode*      parent = current->getParent();
 
@@ -1697,14 +1706,33 @@ Xml::Xml(const string&  buffer,
 void    Xml::readFile(const string&     buffer,
                       bool              fnew)
 {
-  ifstream      file(buffer.c_str());
-  string      data;
-  string      line;
 
-  if (file.fail())
-    __FAIL("readFile error for " + buffer);
-  while (getline(file, line))
-    data += "\n"+line;
+//  ifstream      file(buffer.c_str());
+//  string      data;
+//  string      line;
+
+//  if (file.fail())
+//    __FAIL("readFile error for " + buffer);
+//  while (getline(file, line))
+//    data += "\n"+line;
+
+	string data;
+	FILE *pFile = NULL;
+	pFile = fopen(buffer.c_str(), "r");
+	if(pFile != NULL)
+	{
+		while(!feof(pFile))
+		{
+			char ch = getc(pFile);
+			if(ch != EOF && ch != '\t' && ch != '\n' && ch != '\r')
+				data += ch;
+		}
+	}
+	else
+	{
+		__FAIL("readFile error for " + buffer);
+	}
+
   parse(data,fnew);
 }
 

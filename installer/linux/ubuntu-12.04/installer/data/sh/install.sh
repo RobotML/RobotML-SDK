@@ -15,6 +15,21 @@ check_and_install() {
   fi
 }
 
+add_gpg_key() {
+if ! apt-key list | grep -q $1 ; then
+ if ping -c 1 -w 5 keyserver.ubuntu.com > /dev/null 2>&1 ;
+ then
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys $1
+ else
+  echo "-> Unable to connect to keyserver."
+  echo "-> Aborting"
+  exit 1
+ fi
+else
+ echo "Key already added"
+fi
+}
+
 #
 # Installing python-gtk2, required for pygtk interface.
 #
@@ -111,37 +126,16 @@ wget -q http://packages.ros.org/ros.key -O - | sudo apt-key add -
 mkdir -p ~/.gnupg
 
 echo "[INFO] Add Effidence GPG key"
-if ! apt-key list | grep -q "contact@effidence.com"; then
-    # XXX keys.gnupg.net is weak
-    if ping -c 1 -w 5 keys.gnupg.net > /dev/null 2>&1 ; then
-        gpg -q --keyserver keys.gnupg.net --recv-keys A41212AD
-        gpg -q --export A41212AD | sudo apt-key add -
-#    else
-#        echo "[WARNING] keys.gnupg.net timed out, use proteus.bourges.univ-orleans.fr"
-#        wget -q http://proteus.bourges.univ-orleans.fr/contact.effidence.com.gpg -O - | sudo apt-key add -
-    fi
-fi
+add_gpg_key "A41212AD"
 
 echo "[INFO] Adding gpg key for Proteus apt-repository"
-if ! apt-key list | grep -q "45928983" ; then
- if ping -c 1 -w 5 pool.sks-keyservers.net > /dev/null 2>&1 ;
- then
-  gpg --keyserver pool.sks-keyservers.net --recv-keys 45928983
-  gpg --export 45928983 | sudo apt-key add -
- else
-  echo "-> Unable to connect to keyserver."
-  echo "-> Aborting"
-  exit 1
- fi
-else
- echo "Key already added"
-fi
+apt_gpg_key "45928983"
 
 echo "
--------------------------------------------------------------------------------
-[INFO] Update APT cache
--------------------------------------------------------------------------------"
-# update repo
+
+# -------------------------------------------------------------------------------
+# [INFO] Update APT cache
+# -------------------------------------------------------------------------------"
 sudo apt-get -q update
 if [ 0 -ne $? ]; then
     read -p "[WARNING] It seems that APT could not update, continue anyway? [y/N]: " CONT

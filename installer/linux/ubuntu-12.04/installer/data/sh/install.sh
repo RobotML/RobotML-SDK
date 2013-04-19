@@ -30,6 +30,24 @@ fi
 }
 
 #
+# Check OS Release
+#
+OS_ID=`lsb_release -si`;
+OS_RELEASE=`lsb_release -sr`;
+OS_BIT=`uname -i` ;
+
+if [ "${OS_ID}" != "Ubuntu" ] & [ "${OS_RELEASE}" != "12.04" ] ;
+then
+  echo "Wrong OS Release :\n\t- Supported OS is Ubuntu 12.04 LTS precise" ;
+  exit 1 ;
+elif [ "${OS_BIT}" != "i386" ] ; then
+  echo "Wrong OS Architecture :\n\t- Supported Architecture is 32bits" ;
+  exit 1 ;
+else
+  echo "OS Ok: Proceed to install"
+fi
+
+#
 # Installing python-gtk2, required for pygtk interface.
 #
 sudo apt-get update
@@ -125,10 +143,10 @@ wget -q http://packages.ros.org/ros.key -O - | sudo apt-key add -
 mkdir -p ~/.gnupg
 
 echo "[INFO] Add Effidence GPG key"
-add_gpg_key "A41212AD"
+add_gpg_key A41212AD
 
 echo "[INFO] Adding gpg key for Proteus apt-repository"
-apt_gpg_key "45928983"
+add_gpg_key 45928983
 
 echo "
 

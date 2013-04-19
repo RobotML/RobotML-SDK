@@ -23,7 +23,6 @@ if ! apt-key list | grep -q $1 ; then
  else
   echo "-> Unable to connect to keyserver."
   echo "-> Aborting"
-  exit 1
  fi
 else
  echo "Key already added"

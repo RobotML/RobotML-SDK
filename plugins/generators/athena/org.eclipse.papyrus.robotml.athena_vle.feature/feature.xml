@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.papyrus.robotml.athenaml.feature"
       label="AthenaML_Feature"
-      version="1.0.0.qualifier">
+      version="0.5.0.qualifier">
 
    <description url="http://www.example.com/description">
       Feature for Athena profil, athena code generation and VLE code generation.

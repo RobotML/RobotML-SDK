@@ -15,7 +15,7 @@
 #ifndef _[type.name.toUpper()/]_H_
 #define _[type.name.toUpper()/]_H_
 [addType(type)/]
-[comment]
+
 [for (elt : Element | getDataTypesInElement(type))]
 [let type: Type = elt] 
 [if(isRobotMLDataType(m, type.name))]
@@ -29,8 +29,8 @@
 [/if]
 [/let]
 [/for]
-[/comment]
-#include <CppDataTypes.hpp>
+
+#include "CppDataTypes.hpp"
 [comment get owner component and modify namespaces hierarchy/]
 namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_')/]{
 	[if(isEnumeration(type))]

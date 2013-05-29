@@ -33,7 +33,12 @@
 [/let]
 [else]
 	[if(not isPrimitiveType(type))]
-#include "[(type.qualifiedName.substitute(' ', '_')).replaceAll('::', '/')/].h"	
+		[if (isInterface(type))]
+		#include "[(type.qualifiedName.substitute(' ', '_')).replaceAll('::', '/')/].h"
+		[else]
+		#include "Datatypes/[type.name/].h"
+		[/if]
+[comment]#include "[(type.qualifiedName.substitute(' ', '_')).replaceAll('::', '/')/].h"[/comment]	
 	[/if]
 [/if]
 [/let]

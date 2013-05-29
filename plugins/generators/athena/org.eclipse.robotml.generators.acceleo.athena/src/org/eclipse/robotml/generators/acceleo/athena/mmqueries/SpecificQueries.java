@@ -1,5 +1,11 @@
 package org.eclipse.robotml.generators.acceleo.athena.mmqueries;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -11,10 +17,10 @@ import javax.swing.JOptionPane;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.uml2.uml.Transition;
-import org.eclipse.papyrus.RobotML.Algorithm;
 import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.FSMQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
+import org.eclipse.robotml.generators.acceleo.athena.files.AthenaServices;
 import org.eclipse.robotml.generators.acceleo.athena.files.configGenerator;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehavioralFeature;
@@ -25,6 +31,7 @@ import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.FunctionBehavior;
 import org.eclipse.uml2.uml.Interval;
 import org.eclipse.uml2.uml.OpaqueBehavior;
 import org.eclipse.uml2.uml.Operation;
@@ -40,6 +47,13 @@ import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.Vertex;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
+import org.eclipse.papyrus.robotML.AthenaML.Map;
+import org.eclipse.papyrus.robotML.AthenaML.Vector;
+import org.eclipse.papyrus.robotML.AthenaML.Array;
+import org.eclipse.papyrus.robotML.AthenaML.Define;
+import org.eclipse.papyrus.robotML.AthenaML.Union;
+import org.xtext.athenaDSL.ProcessingDeclaration;
+
 public class SpecificQueries {
 
 	
@@ -51,10 +65,11 @@ public class SpecificQueries {
 	static final private String _arrayKeyword = "array";
 	static final private String _mapKeyword = "map";
 	static final private String _vectorKeyword = "vector";
-	static final private String _unionKeyword = "union";
+//	static final private String _unionKeyword = "union";
 	
 	static final private String ALF_LANGUAGE = "Alf";
 	static final private String ATHENA_LANGUAGE = "Athena";
+	static final private String FILE_PATH_PREFIX = "file://";
 	
 	static private HashSet<NamedElement> _basicTypeUsed = new HashSet<NamedElement>();
 	static private HashSet<NamedElement> _enumTypeUsed = new HashSet<NamedElement>();
@@ -66,6 +81,7 @@ public class SpecificQueries {
 	
 	static private void initDeclarationMap()
 	{
+		
 		if(SpecificQueries._mapDeclaration.isEmpty())
 		{
 			String decl = "";
@@ -394,6 +410,37 @@ public class SpecificQueries {
 		return res;
 	}
 	
+	public static List<NamedElement> findAllProcessingModel(NamedElement model)
+	{
+		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
+		
+		for(Element elt : model.getOwnedElements())
+		{
+			if(elt instanceof org.eclipse.uml2.uml.Package ||
+					elt instanceof org.eclipse.uml2.uml.Model ||
+					elt instanceof org.eclipse.uml2.uml.Class)
+			{
+				res.addAll(SpecificQueries.findAllOperationModel((NamedElement)elt));
+			}
+			else if(elt instanceof org.eclipse.uml2.uml.PackageImport)
+			{
+				PackageImport imp = (PackageImport)elt;
+				res.addAll(SpecificQueries.findAllOperationModel((NamedElement)imp.getImportedPackage()));
+			}
+			else if(elt instanceof org.eclipse.uml2.uml.Behavior)
+			{
+				String opName = ((org.eclipse.uml2.uml.Operation) elt).getName();
+				if(SpecificQueries.temp.contains(opName) == false)
+				{
+					SpecificQueries.temp.add(opName);
+					res.add((NamedElement)elt);
+				}
+			}
+		}
+		
+		return res;
+	}
+	
 	/**
 	 * Check if the property have a default value
 	 * @param prop
@@ -484,8 +531,8 @@ public class SpecificQueries {
 		{
 			if(str.getBody() != null)
 			{
-				if(str.getBody().isEmpty() == false && 
-						(SpecificQueries.isContainerDeclaration(str.getBody()) == false))
+				if(str.getBody().isEmpty() == false /*&& 
+						(SpecificQueries.isContainerDeclaration(str.getBody()) == false)*/)
 				{	
 					if(result.isEmpty() == false)
 					{
@@ -509,13 +556,14 @@ public class SpecificQueries {
 	 */
 	static public Boolean hasComment(NamedElement elt)
 	{
-		Boolean result = false;
-		for(Comment comment : elt.getOwnedComments())
-		{
-			if(comment.getBody() != null)
-				result |= !SpecificQueries.isContainerDeclaration(comment.getBody());
-		}
-		return result;
+		return !elt.getOwnedComments().isEmpty();
+//		Boolean result = false;
+//		for(Comment comment : elt.getOwnedComments())
+//		{
+//			if(comment.getBody() != null)
+//				result |= !SpecificQueries.isContainerDeclaration(comment.getBody());
+//		}
+//		return result;
 	}
 	
 	/**
@@ -597,7 +645,7 @@ public class SpecificQueries {
 	 * @param ne
 	 * @return
 	 */
-	static private List<NamedElement> getAllOpaqueBehaviorFromModel(NamedElement ne)
+	static private List<NamedElement> getAllBehaviorFromModel(NamedElement ne)
 	{
 		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
 		
@@ -605,19 +653,19 @@ public class SpecificQueries {
 		{
 			for(Element elt : ne.getOwnedElements())
 			{
-				if(elt instanceof OpaqueBehavior)
+				if(elt instanceof Behavior)
 				{
 					res.add((NamedElement)elt);
 				}
 				else if(elt instanceof PackageImport)
 				{
 					PackageImport imp = (PackageImport)elt;
-					res.addAll(SpecificQueries.getAllOpaqueBehaviorFromModel((NamedElement)imp.getImportedPackage()));
+					res.addAll(SpecificQueries.getAllBehaviorFromModel((NamedElement)imp.getImportedPackage()));
 				}
 				else if((elt instanceof org.eclipse.uml2.uml.Class) || 
 						(elt instanceof org.eclipse.uml2.uml.Package))
 				{
-					res.addAll(SpecificQueries.getAllOpaqueBehaviorFromModel((NamedElement)elt));
+					res.addAll(SpecificQueries.getAllBehaviorFromModel((NamedElement)elt));
 				}
 			}
 		}
@@ -625,17 +673,62 @@ public class SpecificQueries {
 		return res;
 	}
 	
-	static public List<NamedElement> getOpaqueBehaviorFromModel(NamedElement ne)
+	static public List<NamedElement> getBehaviorFromModel(NamedElement ne)
 	{
-		List<NamedElement> res = getAllOpaqueBehaviorFromModel(ne);
+		List<NamedElement> res = getAllBehaviorFromModel(ne);
 		FSMQueries query = new FSMQueries();
 		List<StateMachine> sms = query.getStateMachines(ne);
 		
 		for(StateMachine sm : sms)
 		{
-			res.removeAll(SpecificQueries.getFSMOpaqueBehavior((Model)ne, sm));
+			res.removeAll(SpecificQueries.getTransitionBehavior((Model)ne, sm));
 		}
 		
+		return res;
+	}
+	
+	static public List<NamedElement> getOpaqueBehaviorFromModel(NamedElement ne)
+	{
+		List<NamedElement> res = getAllBehaviorFromModel(ne);
+		FSMQueries query = new FSMQueries();
+		List<StateMachine> sms = query.getStateMachines(ne);
+		
+		res.removeAll(sms);
+		for(StateMachine sm : sms)
+		{
+			res.removeAll(SpecificQueries.getTransitionBehavior((Model)ne, sm));
+		}
+		
+		ArrayList<NamedElement> tmp = new ArrayList<NamedElement>();
+		for(NamedElement elem : res)
+		{
+			if(elem instanceof FunctionBehavior)
+				tmp.add(elem);
+		}
+		res.removeAll(tmp);
+		
+		return res;
+	}
+	
+	static public List<NamedElement> getUniqueBehaviorFromModel(NamedElement ne)
+	{
+		List<NamedElement> res = getAllBehaviorFromModel(ne);
+		FSMQueries query = new FSMQueries();
+		List<StateMachine> sms = query.getStateMachines(ne);
+		
+		res.removeAll(sms);
+		for(StateMachine sm : sms)
+		{
+			res.removeAll(SpecificQueries.getTransitionBehavior((Model)ne, sm));
+		}
+		
+		ArrayList<NamedElement> tmp = new ArrayList<NamedElement>();
+		for(NamedElement elem : res)
+		{
+			if(elem instanceof OpaqueBehavior)
+				tmp.add(elem);
+		}
+		res.removeAll(tmp);
 		return res;
 	}
 	
@@ -675,20 +768,34 @@ public class SpecificQueries {
 			org.eclipse.papyrus.RobotML.State state = UMLUtil.getStereotypeApplication(vertex, org.eclipse.papyrus.RobotML.State.class);
 			if(state != null)
 			{
-				Algorithm operation = state.getOperation();
-				if(operation != null)
+				Behavior behavior = state.getBehavior();
+				if(behavior != null)
 				{
-					String opName = operation.getBase_Operation().getName();
+					String opName = behavior.getName();
 					result = SpecificQueries._interactionTag + " " + opName + "(";
-					for(Property prop : state.getArguments())
-					{
-						result += prop.getName() + ","; 
-					}
-					int index = result.lastIndexOf(",");
-					if(index > -1)
-					{
-						result = result.substring(0, index);
-					}
+////					if(behavior instanceof OpaqueBehavior)
+////					{
+////						/*
+////						 * TODO : Si opaque behavior, alors il faut verifier l''enssemble de l''implémentation du body
+////						 */
+////					}
+////					else
+////					{
+////						/*
+////						 * Sinon on va chercher la spécification avec les parameètres
+////						 */
+////						BehavioralFeature feature = behavior.getSpecification();
+////						
+////					}
+//					for(Property prop : state.getArguments())
+//					{
+//						result += prop.getName() + ","; 
+//					}
+//					int index = result.lastIndexOf(",");
+//					if(index > -1)
+//					{
+//						result = result.substring(0, index);
+//					}
 					result += ")";
 				}
 			}
@@ -704,32 +811,41 @@ public class SpecificQueries {
 	static public Boolean isContainerType(NamedElement ne)
 	{
 		Boolean result = false;
-		for(Comment comment : ne.getOwnedComments())
-		{
-			if(comment.getBody() != null)
-				result |= SpecificQueries.isContainerDeclaration(comment.getBody());
-		}
+		org.eclipse.papyrus.robotML.AthenaML.Map map = UMLUtil.getStereotypeApplication(ne, org.eclipse.papyrus.robotML.AthenaML.Map.class);
+		org.eclipse.papyrus.robotML.AthenaML.Vector vector = UMLUtil.getStereotypeApplication(ne, org.eclipse.papyrus.robotML.AthenaML.Vector.class);
+		org.eclipse.papyrus.robotML.AthenaML.Array array = UMLUtil.getStereotypeApplication(ne, org.eclipse.papyrus.robotML.AthenaML.Array.class);
+		
+		result |= (map != null);
+		result |= (vector != null);
+		result |= (array != null);
+			
+		
+//		for(Comment comment : ne.getOwnedComments())
+//		{
+//			if(comment.getBody() != null)
+//				result |= SpecificQueries.isContainerDeclaration(comment.getBody());
+//		}
 		return result;
 	}
 	
-	/**
-	 * Check if string is a container declaration
-	 * @param str
-	 * @return
-	 */
-	static private Boolean isContainerDeclaration(String str)
-	{
-		Boolean result = false;
-		result |= str.startsWith(_arrayKeyword);
-		result |= str.startsWith(_mapKeyword);
-		result |= str.startsWith(_vectorKeyword);
-		result &= str.contains("<");
-		result &= str.contains(">");
-		
-		result &= (str.split(" ").length >= 3);
-		
-		return result;
-	}
+//	/**
+//	 * Check if string is a container declaration
+//	 * @param str
+//	 * @return
+//	 */
+//	static private Boolean isContainerDeclaration(String str)
+//	{
+//		Boolean result = false;
+//		result |= str.startsWith(_arrayKeyword);
+//		result |= str.startsWith(_mapKeyword);
+//		result |= str.startsWith(_vectorKeyword);
+//		result &= str.contains("<");
+//		result &= str.contains(">");
+//		
+//		result &= (str.split(" ").length >= 3);
+//		
+//		return result;
+//	}
 	
 	/**
 	 * 
@@ -772,12 +888,16 @@ public class SpecificQueries {
 		 * Datatype have 1 attribute with the same name.
 		 */
 		Boolean result = false;
-		DataType dt = (DataType) ne;
-		if(dt.getAttributes().size() == 1 &&
-				dt.getAllAttributes().get(0).getType() != null)
-		{
-			result = dt.getName().equals(dt.getAttributes().get(0).getName());
-		}
+		//TODO:
+		Define define = UMLUtil.getStereotypeApplication(ne,  Define.class);
+		result = (define != null);
+		
+//		DataType dt = (DataType) ne;
+//		if(dt.getAttributes().size() == 1 &&
+//				dt.getAllAttributes().get(0).getType() != null)
+//		{
+//			result = dt.getName().equals(dt.getAttributes().get(0).getName());
+//		}
 		
 		return result;
 	}
@@ -790,17 +910,18 @@ public class SpecificQueries {
 		 * For type "container", declaration is tsocked in the comment
 		 * Format : <type> <<template>> <name> <dimension>;
 		 */
-		
-		for(Comment comment : ne.getOwnedComments())
-		{
-			if(comment.getBody() != null)
-			{
-				if(comment.getBody().startsWith(_unionKeyword) == true)
-				{
-					result = true;
-				}
-			}
-		}
+		Union union = UMLUtil.getStereotypeApplication(ne, Union.class);
+		result = (union != null);
+//		for(Comment comment : ne.getOwnedComments())
+//		{
+//			if(comment.getBody() != null)
+//			{
+//				if(comment.getBody().startsWith(_unionKeyword) == true)
+//				{
+//					result = true;
+//				}
+//			}
+//		}
 		
 		return result;
 	}
@@ -858,6 +979,10 @@ public class SpecificQueries {
 	//static public Boolean sortUsedDataType(NamedElement model)
 	static public Boolean searchUsedDataType(Model model)
 	{
+		
+//		AthenaServices services = new AthenaServices();
+//		String test = "processing toto() begin\nexecute titi()\nend";
+//		ProcessingDeclaration procdecl = services.parseProcessingDeclaration(test);
 		
 		SpecificQueries._basicTypeUsed.clear();
 		SpecificQueries._containerTypeUsed.clear();
@@ -1030,9 +1155,9 @@ public class SpecificQueries {
 	 * @param model
 	 * @return
 	 */
-	static private List<Operation> getFSMOperation(Model model)
+	static private List<Behavior> getFSMOperation(Model model)
 	{
-		LinkedList<Operation> res = new LinkedList<Operation>();
+		LinkedList<Behavior> res = new LinkedList<Behavior>();
 		FSMQueries queries = new FSMQueries();
 		List<StateMachine> sms = queries.getStateMachines(model);
 		for(StateMachine sm : sms)
@@ -1041,10 +1166,10 @@ public class SpecificQueries {
 			for(org.eclipse.papyrus.RobotML.Transition transition : transitions)
 			{
 				if(transition.getGuard() != null)
-					res.add(transition.getGuard().getBase_Operation());
+					res.add(transition.getGuard());
 				
 				if(transition.getEffect()  != null)
-					res.add(transition.getEffect().getBase_Operation());
+					res.add(transition.getEffect());
 			}
 		}
 		return res;
@@ -1056,30 +1181,19 @@ public class SpecificQueries {
 	 * @param sm
 	 * @return
 	 */
-	static public List<OpaqueBehavior> getFSMOpaqueBehavior(Model model, StateMachine sm)
+	static public List<Behavior> getTransitionBehavior(Model model, StateMachine sm)
 	{
-		LinkedList<OpaqueBehavior> res = new LinkedList<OpaqueBehavior>();
+		LinkedList<Behavior> res = new LinkedList<Behavior>();
 		
 		FSMQueries query = new FSMQueries();
-		HashSet<String> funcName = new HashSet<String>();
+
 		List<org.eclipse.papyrus.RobotML.Transition> transitions = query.getTransitions(sm);
 		for(org.eclipse.papyrus.RobotML.Transition transition : transitions)
 		{
 			if(transition.getGuard() != null)
-				funcName.add(transition.getGuard().getBase_Operation().getName());
-			
-			if(transition.getEffect()  != null)
-				funcName.add(transition.getEffect().getBase_Operation().getName());
-		}
-		
-		List<NamedElement> behaviors = getAllOpaqueBehaviorFromModel(model);
-		for(NamedElement behavior : behaviors)
-		{
-			String op_name = ((OpaqueBehavior)behavior).getSpecification().getName();
-			if(funcName.contains(op_name))
-			{
-				res.add((OpaqueBehavior)behavior);
-			}
+				res.add(transition.getGuard());
+			if(transition.getEffect() != null)
+				res.add(transition.getEffect());
 		}
 		return res;
 	}
@@ -1259,6 +1373,8 @@ public class SpecificQueries {
 		return res;
 	}
 	
+	
+	
 	/**
 	 * Search the used datatype in the model
 	 * @param elt
@@ -1281,6 +1397,7 @@ public class SpecificQueries {
 				{
 					Type tmpType = ((Parameter)elt_iter).getType();
 					types.add(tmpType.getName());
+					
 					types.addAll(SpecificQueries.checkTypeAsContainer(tmpType));
 				}
 				else
@@ -1342,18 +1459,41 @@ public class SpecificQueries {
 	
 	static private List<String> checkTypeAsContainer(Type ne)
 	{
+		
 		LinkedList<String> result = new LinkedList<String>();
-		for(Comment comment : ne.getOwnedComments())
+		
+		if(SpecificQueries.isContainerType((NamedElement)ne))
 		{
-			if(comment.getBody() != null)
+			if(UMLUtil.getStereotypeApplication(ne, Vector.class) != null)
 			{
-				if(SpecificQueries.isContainerDeclaration(comment.getBody()))
-				{
-					result.addAll(SpecificQueries.getContainerType(ne));
-					break;
-				}
+				Vector tmp = UMLUtil.getStereotypeApplication(ne, Vector.class);
+				result.add(tmp.getType_template().getName());
 			}
+			else if(UMLUtil.getStereotypeApplication(ne, Array.class) != null)
+			{
+				Array tmp = UMLUtil.getStereotypeApplication(ne, Array.class);
+				result.add(tmp.getType_template().getName());
+			}
+			else if(UMLUtil.getStereotypeApplication(ne, Map.class) != null)
+			{
+				Map tmp = UMLUtil.getStereotypeApplication(ne, Map.class);
+				result.add(tmp.getKeys_type().getName());
+				result.add(tmp.getValues_type().getName());
+			}
+			
 		}
+		
+//		for(Comment comment : ne.getOwnedComments())
+//		{
+//			if(comment.getBody() != null)
+//			{
+//				if(SpecificQueries.isContainerDeclaration(comment.getBody()))
+//				{
+//					result.addAll(SpecificQueries.getContainerType(ne));
+//					break;
+//				}
+//			}
+//		}
 		return result;
 	}
 	
@@ -1534,7 +1674,7 @@ public class SpecificQueries {
 		{
 			if(trans.getGuard() != null)
 			{
-				result = trans.getGuard().getBase_Operation().getName().equals(opName);
+				result = trans.getGuard().getName().equals(opName);
 			}
 		}
  		return result;
@@ -1549,7 +1689,7 @@ public class SpecificQueries {
 		{
 			if(trans.getEffect() != null)
 			{
-				result = trans.getEffect().getBase_Operation().getName().equals(opName);
+				result = trans.getEffect().getName().equals(opName);
 			}
 		}
  		return result;
@@ -1574,6 +1714,37 @@ public class SpecificQueries {
 			List<String> languages = ((OpaqueBehavior)ne).getLanguages();
 			result = languages.contains(ATHENA_LANGUAGE);
 		}
+		return result;
+	}
+	
+	static public String getAthenaBodyDecriptionFromFile(String body)
+	{
+		String result = "";
+		String path = body.substring(FILE_PATH_PREFIX.length());
+		File input = new File(path);
+		if(input.exists())
+		{
+			FileInputStream istream = null;
+			
+			try 
+			{
+				istream = new FileInputStream(input);
+				InputStreamReader reader = new InputStreamReader(istream);
+				int length = reader.read();
+				char[] buffer = new char[length];
+				reader.read(buffer);
+				result = new String(buffer);
+				reader.close();
+				istream.close();
+			} 
+			catch (FileNotFoundException e1) {
+				e1.printStackTrace();
+			}
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
 		return result;
 	}
 	

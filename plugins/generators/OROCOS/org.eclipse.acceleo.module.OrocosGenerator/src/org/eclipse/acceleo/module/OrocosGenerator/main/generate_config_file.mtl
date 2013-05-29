@@ -47,15 +47,14 @@ find_package(Orocos-RTT REQUIRED ${RTT_HINTS})
 # documentation.
 include(${OROCOS-RTT_USE_FILE_PATH}/UseOROCOS-RTT.cmake)
 link_libraries( ${OROCOS-RTT_RTT-SCRIPTING_LIBRARY} )
-
-# Creates a component library libHello-<target>.so
-# and installs in the directory lib/orocos/hello-7-deployment/
 	[for (elt: NamedElement | getSystems(model))] 
 		[let c : Class = elt.oclAsType(Class)]
+[if (not isEnvironment(c))]
 [comment] If an element have input or/and output port, then it must be system[/comment]
 			[if ( not hasStateMachine(c)) ]
 orocos_component([c.name/] [c.name/].cpp)
 			[/if]
+[/if]
 		[/let]
 	[/for]
 #

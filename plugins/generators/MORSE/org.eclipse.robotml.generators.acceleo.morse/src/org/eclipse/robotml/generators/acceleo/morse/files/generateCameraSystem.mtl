@@ -2,7 +2,7 @@
 [**
  * The documentation of the module generateCameraSystem.
  */]
-[module generateCameraSystem('http://www.eclipse.org/uml2/3.0.0/UML')]
+[module generateCameraSystem('http://www.eclipse.org/uml2/4.0.0/UML', 'http://Papyrus/RobotML/1')]
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 
@@ -16,8 +16,16 @@
 [file (aClass.name+'.py', false, 'UTF-8')]
 class [aClass.name/]:
 	def __init(self, myRobot):
-		self.sensor = Sensor('video_camera')
+		self.sensor = VideoCamera()
 
+		[comment Generate translation command for this sensor /]
+		#TBD
+		self.translate(x=?,y=?)
+
+		[comment Generate rotation command for this sensor /]
+		#TBD
+		self.rotate(x=?)
+ 
 		[comment Used formula here: http://www.openrobots.org/morse/doc/stable/user/sensors/video_camera.html#camera-calibration-matrix /]
 		height = [getAttributeValue(aClass, 'u0', 'CameraSystem', '0')/]*2
 		width = [getAttributeValue(aClass, 'v0', 'CameraSystem', '0')/]*2

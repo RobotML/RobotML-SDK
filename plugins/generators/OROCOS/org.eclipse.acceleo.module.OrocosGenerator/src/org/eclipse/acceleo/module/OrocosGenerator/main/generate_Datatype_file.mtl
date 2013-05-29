@@ -15,11 +15,12 @@
 #ifndef _[type.name.toUpper()/]_H_
 #define _[type.name.toUpper()/]_H_
 [addType(type)/]
+
 [for (elt : Element | getDataTypesInElement(type))]
 [let type: Type = elt] 
 [if(isRobotMLDataType(m, type.name))]
 [let ne : NamedElement = type.owner]
-#include <[ne.name.replace('_datatypes', '_msgs')/]/[type.name/].h>
+#include <[ne.name.replace('_datatypes', '_msgs')/]/[type.name/].hpp>
 [/let]
 [else]
 	[if(not isPrimitiveType(type))]
@@ -28,11 +29,12 @@
 [/if]
 [/let]
 [/for]
+
+#include "CppDataTypes.hpp"
 [comment get owner component and modify namespaces hierarchy/]
 namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_')/]{
 	[if(isEnumeration(type))]
 	enum [type.name/]{
-
 	[for (enumeration : EnumerationLiteral |getEnumeration(type))]
 	[enumeration.name/] ,
 	[/for]
@@ -45,7 +47,7 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 	[if(t.name.equalsIgnoreCase('boolean'))]
 		[property.visibility/]: bool [property.name/];
 	[else]
-		[property.visibility/]: [t.name/] [property.name/];
+		[property.visibility/]: [t.name/] [property.name/] [getInstanceMultiplicity(property)/];
 	[/if]
 	[else]
 	 [t.name/] [property.name/];
@@ -53,7 +55,7 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 	[comment in case of ros datatypes, uncomment]
 	[if(isRobotMLDataType(m, t.name))]
 	[let ne : NamedElement = t.owner]
-	[property.visibility/]:	[ne.name.replace('_datatypes', '_msgs')/]::[t.name/] [property.name/];
+	[property.visibility/]:	[ne.name.replace('_datatypes', '_msgs')/]::[t.name/] [property.name/] [getInstanceMultiplicity(property)/];
 	[/let]
 	[else]
 	[t.name/] [property.name/];

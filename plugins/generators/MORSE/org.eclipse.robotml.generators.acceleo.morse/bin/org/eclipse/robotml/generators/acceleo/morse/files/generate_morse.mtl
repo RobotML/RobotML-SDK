@@ -3,6 +3,8 @@
 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::morse::files::generateCameraSystem /]
+[import org::eclipse::robotml::generators::acceleo::morse::files::generateGPSSystem /]
+[import org::eclipse::robotml::generators::acceleo::morse::files::generateLidarSystem /]
 
 [template public generateRobots(aModel : Model)]
 	[for (elt: NamedElement | getElementsWithStereotype(aModel, 'Robot'))]
@@ -17,9 +19,8 @@ robot = Robot('[aClass.name/]')
 robot.name = "[aClass.name/]"
 	[for (elt: NamedElement | getElementsWithInheritedStereotype(aModel, 'RoboticSystem'))]
 		[let aClass : Class = elt.oclAsType(Class)]
-# [aClass.name/]
 		[if (hasStereotype(aClass, 'LidarSystem'))]
-[generateLidar(aClass, aModel)/]
+[generateLidarSystem(aClass, aModel)/]
 		[elseif (hasStereotype(aClass, 'CameraSystem'))]
 [generateCameraSystem(aClass, aModel)/]
 		[elseif (hasStereotype(aClass, 'GPSSystem'))]
@@ -56,38 +57,23 @@ robot.name = "[aClass.name/]"
 [/template]
 
 [template public generateServoing(aClass : Class, model : Model)]
-motion = Actuator('v_omega')
+motion = MotionVW()
 motion.configure_mw('ros')
 robot.append(motion)
 [/template]
 
 [template public generateIMU(aClass : Class, model : Model)]
-imu = Sensor('imu')
+imu = IMU()
 imu.frequency([getAttributeValue(aClass, 'frequency', 'IMU', '10.')/])
 imu.configure_mw('ros')
 robot.append(imu)
 [/template]
 
 [template public generateOdometry(aClass : Class, model : Model)]
-odom = Sensor('pose')
+odom = Pose()
 odom.frequency([getAttributeValue(aClass, 'frequency', 'Odometer', '10.')/])
 odom.configure_mw('ros')
 robot.append(odom)
-[/template]
-
-[template public generateGPS(aClass : Class, model : Model)]
-gps = Sensor('gps')
-gps.frequency([getAttributeValue(aClass, 'frequency', 'GPSSystem', '10.')/])
-gps.configure_mw('ros')
-robot.append(gps)
-[/template]
-
-[template public generateLidar(aClass : Class, model : Model)]
-lidar = Sensor('sick')
-lidar.properties(scan_window = 180, resolution = 1, laser_range = [getAttributeValue(aClass, 'range_max', 'LidarSystem', '25')/])
-lidar.frequency([getAttributeValue(aClass, 'frequency', 'LidarSystem', '20.')/])
-lidar.configure_mw('ros')
-robot.append(lidar)
 [/template]
 
 [template public generateSystem(aClass : Class, model : Model)]

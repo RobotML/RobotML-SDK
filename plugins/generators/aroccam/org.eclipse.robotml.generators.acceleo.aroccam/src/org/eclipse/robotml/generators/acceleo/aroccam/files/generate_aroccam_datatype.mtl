@@ -77,6 +77,9 @@ typedef MultiArray<UInt16> UInt16MultiArray;
 typedef MultiArray<UInt32> UInt32MultiArray;
 typedef MultiArray<UInt64> UInt64MultiArray;
 
+//temporary hack because of a bad name in robotml std datatypes
+typedef UInt16MultiArray UIint16MultiArray;
+
 struct ColorRGBA
 {
 	Float32 r;
@@ -350,20 +353,34 @@ struct NavSatStatus
 	Int8 STATUS_FIX;
 };
 
+enum COVARIANCE_TYPE
+{
+  COVARIANCE_TYPE_UNKNOWN,
+	COVARIANCE_TYPE_APPROXIMATED,
+	COVARIANCE_TYPE_DIAGONAL_KNOWN,
+	COVARIANCE_TYPE_KNOWN,
+};
+
+enum STATUS_TYPE
+{
+	STATUS_NO_FIX,
+	STATUS_FIX,
+	STATUS_SBAS_FIX,
+	STATUS_GBAS_FIX,
+};
+
+enum SERVICE_TYPE
+{
+  SERVICE_GPS,
+  SERVICE_GLONASS,
+	SERVICE_COMPASS,
+	SERVICE_GALILEO,
+};
+
 struct NavSatFix
 {
-	Int8 STATUS_NO_FIX;
-	Int8 STATUS_FIX;
-	Int8 STATUS_SBAS_FIX;
-	Int8 STATUS_GBAS_FIX;
-	Int8 status;
-
-	UInt16 SERVICE_GPS;
-	UInt16 SERVICE_GLONASS;
-	UInt16 SERVICE_COMPASS;
-	UInt16 SERVICE_GALILEO;
-
-	UInt16 service;
+	STATUS_TYPE status;
+	SERVICE_TYPE service;
 
 	Header header;
 
@@ -372,11 +389,7 @@ struct NavSatFix
 	Float64 altitude;
 	std::vector<Float64> position_covariance;
 
-	UInt8 COVARIANCE_TYPE_UNKNOWN;
-	UInt8 COVARIANCE_TYPE_APPROXIMATED;
-	UInt8 COVARIANCE_TYPE_DIAGONAL_KNOWN;
-	UInt8 COVARIANCE_TYPE_KNOWN;
-	UInt8 position_covariance_type;
+  COVARIANCE_TYPE position_covariance_type;
 };
 
 struct Joy
@@ -475,6 +488,86 @@ struct GoalStatusArray
 {
 	Header header;
 	std::vector<GoalStatus> status_list;
+};
+
+[comment] OARP1 Datatypes[/comment]
+
+struct CarLikeCommand
+{
+	Float64 steeringAngle;
+	Float64 velocity;
+};
+
+struct ExtentedLidarScan
+{
+	Float32 layerAngle;
+	LaserScan scan;
+	UInt8 layerId;
+};
+
+struct MultiLayerLidarScan
+{
+	UInt8 nbLayer;
+	ExtentedLidarScan layers;
+};
+
+[comment] OARP4 Datatypes[/comment]
+
+typedef UInt32 Distance;
+typedef UInt32 Angular;
+typedef Float64 Metric;
+typedef Int32 Velocity_Linear;
+typedef Float64 Velocity_Angular;
+typedef Int32 Speed_Tics;
+typedef Int32 Odometer_Tics;
+typedef UInt32 Milli_Amp;
+
+struct Art_Set_Point
+{
+	Velocity_Angular omega_left;
+	Velocity_Angular omega_right;
+};
+
+struct Op_Set_Point
+{
+	Velocity_Linear velocity;
+	Angular orientation;
+};
+
+struct Speed_Tics_Left_Right
+{
+	Speed_Tics speed_tics_left;
+	Speed_Tics speed_tics_right;
+};
+
+struct Odometer_Tics_Left_Right
+{
+	Odometer_Tics odometer_tics_left;
+	Odometer_Tics odometer_tics_right;
+};
+
+struct Proxi_Left_Right
+{
+	Distance proxi_left;
+	Distance proxi_right;
+};
+
+struct Odometer_Linear_Left_Right
+{
+	Metric odometer_linear_left;
+	Metric odometer_linear_right;
+};
+
+struct Velocity_Angular_Left_Right
+{
+	Velocity_Angular velocity_angular_right;
+	Velocity_Angular velocity_angular_left;
+};
+
+struct Velocity
+{
+	Velocity_Linear velocity_linear;
+	Velocity_Angular velocity_angular;
 };
 
 #endif

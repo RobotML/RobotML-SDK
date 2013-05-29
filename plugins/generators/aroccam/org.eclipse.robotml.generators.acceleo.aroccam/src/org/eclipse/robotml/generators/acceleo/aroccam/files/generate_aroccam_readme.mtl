@@ -22,9 +22,8 @@ roscore
 
 #execute cycabtk
 open a new terminal
-ls /opt/UrbanChallenge/scripts/Scenario/ #to see available scenario
-mgengine
-mgengine> require "Scenario/UrbanChallenge" #adapt the scenario name
+ls /opt/oarp/Urban/scripts/Scenario/ #to see available scenario
+rosrun CycabTKSimulator cycabtk_simulator -l file.lua #adapt "file" to the scenario name
 
 #execute effibox
 open a terminal

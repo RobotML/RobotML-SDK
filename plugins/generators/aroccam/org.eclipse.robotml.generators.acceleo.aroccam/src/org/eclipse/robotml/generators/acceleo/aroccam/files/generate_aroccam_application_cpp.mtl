@@ -37,6 +37,12 @@ using namespace qtviewer;
 
 void [model.name/]Application::initialization(const std::string &)
 {
+  //connexion to the clock of the simulator
+  if (!Core::Instance().isReplayMode())
+  {
+      effibox::useRosClock("timeRos");
+  }
+
 [for (inst: InstanceSpecification | getInstanceSpecifications(model)) before('\t//robotML component connections\n')]
 	[let p: Property = getInstance(model, inst)]
 		[if (p.isProperty() and inst.isAllocatedTo('aroccam'))]
@@ -250,8 +256,8 @@ void [model.name/]Application::frame[instance.name/]_genericodometry(const effib
 	static double precLeftRearDistance = 0.0;
 	static double precRightRearDistance = 0.0;
 	CarLikeOdometry carLikeOdometry;
-	carLikeOdometry.header.stamp                        = frame->getDate();
-	carLikeOdometry.steering_angle                      = frame->getWheelSteeringFront().directionAngle;
+	carLikeOdometry.header.stamp              = frame->getDate();
+	carLikeOdometry.steering_angle            = frame->getWheelSteeringFront().directionAngle;
 	carLikeOdometry.left_rear_wheel_velocity  = frame->getWheelSteeringRear().linearSpeedLeft;
 	carLikeOdometry.right_rear_wheel_velocity = frame->getWheelSteeringRear().linearSpeedRight;
 	carLikeOdometry.left_rear_wheel_distance  = precLeftRearDistance  + deltaT*frame->getWheelSteeringRear().linearSpeedLeft;

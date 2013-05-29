@@ -578,7 +578,6 @@
             <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_1_-5oAH5EeC_ZLzLQhW-TQ"/>
           </ownedAttribute>
           <ownedAttribute xmi:type="uml:Port" xmi:id="_GqCeE3UwEeKtkpd6W4BP5g" name="state" type="_GqCeonUwEeKtkpd6W4BP5g" aggregation="composite"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_GqCeFHUwEeKtkpd6W4BP5g" name="Property1" type="_GqCeAXUwEeKtkpd6W4BP5g"/>
           <ownedAttribute xmi:type="uml:Port" xmi:id="_GqCeFXUwEeKtkpd6W4BP5g" name="RmaxControlPro" type="_GqDFGnUwEeKtkpd6W4BP5g" aggregation="composite"/>
         </packagedElement>
       </packagedElement>

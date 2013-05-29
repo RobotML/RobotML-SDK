@@ -1,0 +1,111 @@
+[comment encoding = UTF-8 /]
+[module valueTypeDefs('http://www.xtext.org/AthenaDSL')/]
+
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::DSLQueries /]
+
+[template public valueTypeDefs(project : Project)]
+	
+[file ('generated/src/TypeDefs_Values.h', false, 'UTF-8')] 
+
+#ifndef _TypeDefs_Values_h_
+#define _TypeDefs_Values_h_
+
+// 
+// Includes ----------------------------------------------------------------------
+// 
+
+#include "TypeDefs.h"
+#include <vle/value.hpp>
+
+using namespace vle;
+
+//
+namespace generated
+{
+
+//
+// Data type definitions ----------------------------------------------------------
+//
+
+	[for (type : DataType | project.types)]
+// -------------------------------------------------------- [type.name/]
+		[if (isBasicType(type))]
+[processBasicType(type.oclAsType(basicType))/]
+		[elseif (isArrayType(type))]
+[processArrayType(type.oclAsType(arrayType))/]
+		[elseif (isVectorType(type))] 
+[processVectorType(type.oclAsType(vectorType))/]
+		[elseif (isMapType(type))]
+[processMapType(type.oclAsType(mapType))/]
+		[elseif (isStructType(type))]
+[processStructType(type.oclAsType(structType))/]
+		[elseif (isDefineType(type))]
+[processDefineType(type.oclAsType(defineType))/]
+		[else]
+///
+/// ERROR [type.name/] is unrecognized by the generator - [type.eClass()/]
+///
+		[/if]
+		
+	[/for]
+
+//
+// --------------------------------------------------------------------------------
+//
+
+} // eof namespace generated
+
+#endif
+
+
+[/file]
+	
+[/template]
+
+
+[template public processBasicType(type : basicType)]
+	[let cpp : languageDecl = getCPPLanguageDecl(type) ]
+// basic type [type.name/]	
+value::Value* [type.name/]_toValue(const [type.name/]& _val);
+[type.name/] [type.name/]_fromValue(const value::Value* _node, const [type.name/]& _initialValue = [cpp.value/]);
+	[/let]
+[/template]
+
+
+[template public processArrayType(array : arrayType)]
+// [array.name/] is an array of [getArrayDatatypeName(array)/]
+value::Value* [array.name/]_toValue(const [array.name/]& _val);
+void [array.name/]_fromValue(const value::Value* _node,[array.name/]& _val);
+[/template]
+
+
+[template public processVectorType(vector : vectorType)]
+// [vector.name/] is a vector of [getVectorDatatypeName(vector)/]
+value::Value* [vector.name/]_toValue(const [vector.name/]& _val); 
+void [vector.name/]_fromValue(const value::Value* _node, [vector.name/]& _val);
+[/template]
+
+
+[template public processMapType(map : mapType)]
+// [map.name/] is a map with key type [getMapKeyTypeName(map)/] and value type [getMapValueTypeName(map)/]
+value::Value* [map.name/]_toValue(const [map.name/]& _val);
+void [map.name/]_fromValue(const value::Value* _node, [map.name/]& _val);
+[/template]
+
+
+[template public processStructType(struct : structType)]
+// [struct.name/] is a structure
+value::Value* [struct.name/]_toValue(const [struct.name/]& _val) ;
+void [struct.name/]_fromValue(const value::Value* _node, [struct.name/]& _val);
+[/template]
+
+
+[template public processDefineType(define : defineType)]
+// [define.name/] is a [getDefineTypeName(define)/]
+// Not processed
+[/template]
+
+
+
+
+

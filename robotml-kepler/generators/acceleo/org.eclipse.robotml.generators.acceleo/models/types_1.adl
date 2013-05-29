@@ -1,0 +1,44 @@
+// 20/10/2011
+
+// 
+language CPP
+
+//
+basic String begin
+	include < CPP > "string"
+	language < CPP > "std::string" = '""'
+end
+
+// 
+basic Boolean begin
+	language < CPP > "bool" = "false"
+end
+
+//
+basic Integer begin
+	language < CPP > "int32_t" = "0"
+end
+
+//
+basic Double begin
+	language < CPP > "double" = "0"
+end
+
+//
+
+//
+vector<Integer> Integers
+map<String,String> ismap
+array < Double > Vec3 [ x=3 ]
+array < Double > VecX [ x ]
+
+//
+struct TestStruct begin
+	Integer symetric
+	Boolean ok
+	Double azimuth
+	Vec3 pos
+	VecX history
+	Integers p
+end
+

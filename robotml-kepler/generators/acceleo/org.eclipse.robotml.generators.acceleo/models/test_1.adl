@@ -1,0 +1,10 @@
+// There must be no definitions in this file
+// All definitions are in the imports !!!
+
+// 20/10/2011
+
+import "types_1.adl"
+import "functions_1.adl"
+import "architecture_1.adl"
+import "libraries_1.adl"
+

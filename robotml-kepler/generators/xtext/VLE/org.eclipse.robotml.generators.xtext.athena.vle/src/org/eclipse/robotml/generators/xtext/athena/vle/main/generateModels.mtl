@@ -1,0 +1,528 @@
+[comment encoding = UTF-8 /]
+[module generateModels('http://www.xtext.org/AthenaDSL')]
+
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::DSLQueries /]
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::kqueries /]
+
+[template public generateModels(project : Project)]
+[for (proto : prototypeDeclaration | project.prototypes)]
+[let fname : String = 'generated/src/'.concat(getPrototypeFileName(proto,'.cpp'))]
+[file (fname, false, 'UTF-8')]
+[generateHeaderObject(project, proto)/]
+[/file]
+[/let]
+[/for]
+[/template]
+
+[template private generateHeaderObject(project : Project, proto : prototypeDeclaration)]
+#include <vle/value.hpp>
+#include <vle/devs.hpp>
+#include <vle/utils/DateTime.hpp>
+#include <vle/utils/Trace.hpp>
+#include <TypeDefs.h>
+#include <TypeDefs_Values.h>
+#include <boost/function.hpp>
+#include "Compatibility.hpp"
+#include "FunctionDirectory.hpp"
+#include "FunctionLibrary.hpp"
+
+namespace vd = vle::devs;
+namespace vv = vle::value;
+namespace vu = vle::utils;
+
+
+[comment]extern "C" __IMPORT__ void* getUserFunction(const std::string&);[/comment]
+
+namespace generated {
+
+extern "C++" FunctionDirectory* FunctionDirectory::_instance;
+extern "C++" FunctionLibrary* FunctionLibrary::_instance;
+
+class [proto.name/] : public vd::Dynamics {
+
+private:
+	[generateReferences(project, proto)/]
+	[generateParameters(project, proto)/]
+	[generateStatesDeclaration(project, proto)/]
+	[generateFunctionsPtrDeclaration(project, proto)/]
+	[generateInteractions(project, proto)/]
+	[generateEvent(proto)/]
+	[generateAction(project, proto)/]
+	[generateTransition(project, proto)/]
+
+public:
+	[generateConstructor(project, proto)/]
+	[generateDestructor(proto)/]
+	[generateInitMethod(project, proto)/]
+	[generateOutputMethod(project, proto)/]
+	[generateInternalTransitionMethod(project, proto)/]
+	[generateExternalTransitionMethod(project, proto)/]
+	[generateObservationMethod(proto)/]
+};
+}
+DECLARE_DYNAMICS(generated::[proto.name/])
+[/template]
+
+[template private generateReferences(project : Project, proto : prototypeDeclaration)]
+
+// references ----------------------------------------------------------------------------------------------
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for (elt : architectureElement | p.definitions)]
+[if (isReference(elt))]
+[let ref : referenceDeclaration = elt.oclAsType(referenceDeclaration)]
+[ref.typeName.name/] [getReferenceName(ref)/];
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+[/template]
+
+[template private generateParameters(project : Project, proto : prototypeDeclaration)]
+
+// parameters ----------------------------------------------------------------------------------------------
+
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for (elt : architectureElement | p.definitions)]
+[if (isParameter(elt))]
+[let param : parameterDeclaration = elt.oclAsType(parameterDeclaration)]
+[param.typeName.name/] [param.name/];		
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+[/template]
+
+[template private generateStatesDeclaration(project : Project,  proto : prototypeDeclaration)]
+
+// states ---------------------------------------------------------------------------------------------------
+
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[if(hasStateSet(p))]
+[for(elt : architectureElement | p.definitions)]
+[if(isStateSet(elt))]
+[let ss : statesetDeclaration = elt.oclAsType(statesetDeclaration)]
+enum E[ss.name/]_State {
+	Initial,
+[for(state : stateDeclaration | ss.states)]
+	[state.name/][if(ss.states->indexOf(state) < ss.states->size())],[/if]
+[/for]
+ };
+E[ss.name/]_State _[ss.name/]_state;
+[/let]
+[/if]
+[/for]
+[/if]
+[/if]
+[/for]
+[/template]
+
+[template private generateInteractions(project : Project, proto : prototypeDeclaration)]
+
+// interactions ----------------------------------------------------------------------------------------------
+
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for(elt : architectureElement | p.definitions)]
+[if(elt.oclIsKindOf(interactionDeclaration))]
+[let action : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
+[for(call : interactionCall | action.icalls)]
+void interaction_[call.fctName.name/](const vd::Time& time) {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/]::interaction_[call.fctName.name/] - request at time : " + time.toString());
+	try
+	{
+		_[call.fctName.name/]([for(argument : farg | call.arguments)]this->[argument.varName/][if(call.arguments->indexOf(argument) < call.arguments->size())],[/if][/for]);
+	}
+	catch(...)
+	{
+		TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/]::interaction_[call.fctName.name/] - Error in calling function [call.fctName.name/] at time : " + time.toString());
+	}
+}
+[/for]
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+[/template]
+
+[template private generateEvent(project : Project, proto : prototypeDeclaration)]
+
+// events -------------------------------------------------------------------------------------------------------
+
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for(elt : architectureElement | p.definitions)]
+[if(elt.oclIsKindOf(eventDeclaration))]
+[let event : eventDeclaration = elt.oclAsType(eventDeclaration)]
+bool guard_[event.name/](const vd::Time& time) const {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/]::guard_[event.name/] - request at time : " + time.toString());
+	bool result = true;
+[for(condition : eventCondition | event.conditions)]
+	result &= ([if((condition.leftPart = null) =(false))]this->[condition.leftPart/][/if][if((condition.cond = null) =(false))][condition.cond/][/if][if((condition.rightPartI = null) =(false))]this->[condition.rightPartI/][elseif((condition.rightPartS = null) =(false))][condition.rightPartS/][elseif((condition.rightPartN = null) =(false))][condition.rightPartN/][/if]); 
+[/for]
+	return result;
+};
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+[/template]
+
+[template private generateTransition(project : Project, proto : prototypeDeclaration)]
+// Transitions -------------------------------------------------------------------------------------------------------
+
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for(elt : architectureElement | p.definitions)]
+[if(elt.oclIsKindOf(statesetDeclaration))]
+[let ss : statesetDeclaration = elt.oclAsType(statesetDeclaration)]
+[for(transition : transitionDeclaration | ss.transitions)]
+void transition_[transition.from/]_to_[transition.to/]_for_[ss.name/](const vd::Time& time) {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/]::transition_[transition.from/]_to_[transition.to/]_for_[ss.name/]] - request at time : " + time.toString());
+[if(transition.raise)]
+	if(guard_[transition.evt/](time)) {
+		action_[transition.sig/](time);
+		this->_[ss.name/]_state = [transition.to/];
+	}
+[else]
+	this->_[ss.name/]_state = guard_[transition.evt/](time) ? [transition.to/] : [transition.from/];
+[/if]
+}
+[/for]
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+[/template]
+
+[template private generateAction(project : Project, proto : prototypeDeclaration)]
+// Signal  -------------------------------------------------------------------------------------------------------
+
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for(elt : architectureElement | p.definitions)]
+[if(elt.oclIsKindOf(signalDeclaration))]
+[let signal : signalDeclaration = elt.oclAsType(signalDeclaration)]
+bool _signal_[signal.name/];
+void action_[signal.name/] (const vd::Time& time) {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/]::action_[signal.name/] - request at time : " + time.toString());
+	this->_signal_[signal.name/] = true; }
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+[/template]
+
+[template private generateConstructor(project : Project, proto : prototypeDeclaration)]
+
+// Constructor -------------------------------------------------------------------------------------------------------
+
+[proto.name/](const vd::DynamicsInit& init, const vd::InitEventList& events) : vd::Dynamics(init, events) {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/]::[proto.name/]");
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[if(hasStateSet(p))]
+[for(elt : architectureElement | p.definitions)]
+[if(isStateSet(elt))]
+[let ss : statesetDeclaration = elt.oclAsType(statesetDeclaration)]
+	this->_[ss.name/]_state = Initial;
+[/let]
+[elseif(isSignal(elt))]
+[let signal : signalDeclaration = elt.oclAsType(signalDeclaration)]
+	this->_signal_[signal.name/] = false;
+[/let]
+[/if]
+[/for]
+[/if]
+[/if]
+[/for]
+} 
+[/template]
+
+[template private generateDestructor(proto : prototypeDeclaration)]
+
+// Destructor -------------------------------------------------------------------------------------------------------
+
+virtual ~[proto.name/]() {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/]::~[proto.name/]");
+}
+[/template]
+
+[template private generateInitMethod(project : Project, proto : prototypeDeclaration)]
+
+// Init -------------------------------------------------------------------------------------------------------
+
+virtual vd::Time init(const vd::Time& time) {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - Init at time : " + time.toString());
+
+	FunctionLibrary::getInstance();
+	FunctionDirectory::getInstance();
+
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for(elt : architectureElement | p.definitions)]
+[if(elt.oclIsKindOf(interactionDeclaration))]
+[let action : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
+[for(call : interactionCall | action.icalls)]
+[comment]_[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) getUserFunction("[call.fctName.name/]");[/comment]
+_[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) FunctionDirectory::getInstance()->getFunction("[call.fctName.name/]");
+[/for]
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+
+
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for (elt : architectureElement | p.definitions)]
+	[if(elt.isParameter())]
+		[let param : parameterDeclaration = elt.oclAsType(parameterDeclaration)]
+			[if(param.hasConfigWithDefaultValue)]
+		this->[param.name/] = [param.value/];
+		TraceModel(vu::DateTime::simpleCurrentDate() + " - Initialize parameter \"[param.name/]\" to \"[param.value/]\" at time : " + time.toString());
+			[/if]
+		[/let]
+	[elseif(elt.isReference())]
+		[let ref : referenceDeclaration = elt.oclAsType(referenceDeclaration)]
+			[if(ref.typeName.hasInitValue())]
+	this->[getReferenceName(ref)/] = [getInitValue(ref.typeName.oclAsType(basicType))/];
+	TraceModel(vu::DateTime::simpleCurrentDate() + " - Initialize reference \"[getReferenceName(ref)/]\" to \"[getInitValue(ref.typeName.oclAsType(basicType))/]\" at time : " + time.toString());
+			[/if]
+		[/let]
+	[/if]
+[/for]
+[/if]
+[/for]
+return vd::Dynamics::init(time);
+}
+[/template] 
+
+[template private generateOutputMethod(project : Project, proto : prototypeDeclaration)]
+
+// Output -------------------------------------------------------------------------------------------------------
+
+virtual void output(const vd::Time& time, vd::ExternalEventList& output) const {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - Output at time : " + time.toString());
+	//Send event on external port (port "OUT")
+[if(hasParameter(project, proto))]
+	vd::ExternalEvent* evt = NULL;
+[/if]
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for (elt : architectureElement | p.definitions)]
+[if (isParameter(elt))]
+[let param : parameterDeclaration = elt.oclAsType(parameterDeclaration)]
+	evt = new vd::ExternalEvent("[param.name/]");
+	if(evt != NULL)
+	{
+		vv::Value* val = [param.typeName.name/]_toValue(this->[param.name/]);
+		if(val != NULL)
+		{			
+			evt << vd::attribute("[param.name/]", val);
+			output.addEvent(evt);
+			TraceModel(vu::DateTime::simpleCurrentDate() + " - Output port [param.name/] is changed to " + val->writeToString() + " at time " + time.toString());
+		}
+	} 
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+}
+[/template]
+
+[template private generateInternalTransitionMethod(project : Project, proto : prototypeDeclaration)]
+
+// Internal transition -------------------------------------------------------------------------------------------------------
+
+virtual void internalTransition(const vd::Time& time) {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - internal transition at time : " + time.toString());
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for (elt : architectureElement | p.definitions)]
+[if(isStateSet(elt))]
+[let ss : statesetDeclaration = oclAsType(statesetDeclaration)]
+	switch(this->_[ss.name/]_state) {
+[for(state : stateDeclaration | ss.states)]
+	case [state.name/]:
+		[generateStateAction(project, proto, ss, state)/]
+		break;
+[/for]
+[if((ss._init = null) =(false))]
+	default:
+		this->_[ss.name/]_state = [ss._init.name/];
+	};
+[/if]
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+} 
+[/template]
+
+[template private generateStateAction(project : Project, proto : prototypeDeclaration, ss : statesetDeclaration, state : stateDeclaration)]
+[for(transition : transitionDeclaration | ss.transitions)]
+[if(transition.from.equalsIgnoreCase(state.name))]
+transition_[transition.from/]_to_[transition.to/]_for_[ss.name/](time);
+[/if]
+[/for]
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for (elt : architectureElement | p.definitions)]
+[if(elt.oclIsKindOf(interactionDeclaration))]
+[let action : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
+[if(action.stateset.equalsIgnoreCase(ss.name) and action.wstate.equalsIgnoreCase(state.name))]
+[for(icall : interactionCall | action.icalls)]
+interaction_[icall.fctName.name/](time);
+[/for]
+[/if]
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+[/template]
+
+[template private generateExternalTransitionMethod(project : Project, proto : prototypeDeclaration)]
+
+// External transition -------------------------------------------------------------------------------------------------------
+
+virtual void externalTransition(const vd::ExternalEventList& eventList, const vd::Time& time) {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - externalTransition at time : " + time.toString());
+[if(hasReference(project, proto))]
+	//Update input port 
+    vd::ExternalEventList::const_iterator it = eventList.begin();
+    for (;it != eventList.end(); it++)
+    {
+		const vd::ExternalEvent& event = *(*it);
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for (elt : architectureElement | p.definitions)]
+[if (isReference(elt))]
+[let ref : referenceDeclaration = elt.oclAsType(referenceDeclaration)] 
+		if (event.onPort("[getReferenceName(ref)/]"))
+	    {
+			TraceModel(vu::DateTime::simpleCurrentDate() + " - Trying to update \"[getReferenceName(ref)/]\" port");
+			if(event.existAttributeValue("[getReferenceName(ref)/]"))
+			{
+			    const vv::Value& val = event.getAttributeValue("[getReferenceName(ref)/]");
+					
+[if(isStructType(ref.typeName) or isArrayType(ref.typeName) or isVectorType(ref.typeName) or isMapType(ref.typeName))]
+				[ref.typeName.name/]_fromValue(&val, this->[getReferenceName(ref)/]);
+[else]
+				this->[getReferenceName(ref)/] = [ref.typeName.name/]_fromValue(&val);
+[/if]					
+				if(val.isNull() == false)
+				{
+					TraceModel(vu::DateTime::simpleCurrentDate() + " - Update \"[getReferenceName(ref)/]\" input port to \"" + val.writeToString() + "\" at time " + time.toString());
+				}
+				else
+				{
+					TraceModel(vu::DateTime::simpleCurrentDate() + " - NULL value for  \"[getReferenceName(ref)/]\" input port at time " + time.toString());
+				}
+						
+			}
+			else
+			{
+				TraceModel(vu::DateTime::simpleCurrentDate() + " - Unknown attribute value \"[getReferenceName(ref)/]\" for the port \"[getReferenceName(ref)/]\"");
+			}
+	    }
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+	}
+[/if]
+}
+[/template]
+
+[template private generateObservationMethod(proto : prototypeDeclaration)]
+
+// observation -------------------------------------------------------------------------------------------------------
+
+virtual vv::Value* observation(const vd::ObservationEvent& event) const {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - observation");
+	return vd::Dynamics::observation(event);
+}
+[/template]
+
+[comment][template private generateStatesetConfiguration(proto : prototypeDeclaration, ss : statesetDeclaration)]
+[if(ss.states->notEmpty())]
+/*configure stateset*/
+states(this) <<Initial << [for(state : stateDeclaration | ss.states)][state.name/][if(ss.states->indexOf(state) < ss.states->size())] << [/if][/for];
+/*transition*/
+transition(this, Initial, [ss.states->first().name/]);
+[for(transition : transitionDeclaration | ss.transitions)]
+transition(this, [transition.from/], [transition.to/]) [if(transition.evt->notEmpty())]<< guard(&[proto.name/]::guard_[transition.evt/])[/if][if(transition.raise)] << event("[transition.sig/]")[/if];
+[/for]
+/*stateActivity*/
+[for(elt : architectureElement | proto.definitions)]
+[if(elt.oclIsKindOf(interactionDeclaration))]
+[let action : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
+[if(action.wwhen = true)]
+[for(call : interactionCall | action.icalls)]
+activity(this, &[proto.name/]::interaction_[call.fctName.name/]) >> [action.wstate/];
+[/for]
+[/if]
+[/let]
+[/if]
+[/for]
+initialState(Initial);
+timeStep(1.0);
+[/if]
+[/template][/comment]
+
+[template private generateFunctionsPtrDeclaration(project : Project, proto : prototypeDeclaration)]
+
+// function pointers ----------------------------------------------------------------------------------------------
+
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for(elt : architectureElement | p.definitions)]
+[if(elt.oclIsKindOf(interactionDeclaration))]
+[let action : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
+[for(call : interactionCall | action.icalls)]
+	boost::function<void ([getFunctorDeclaration(call.fctName)/])> _[call.fctName.name/];
+[/for]
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+[/template]
+
+[template private generateFunctionsPtrInit(project : Project , proto : prototypeDeclaration)]
+try
+{
+[for (p : prototypeDeclaration | project.prototypes)]
+[if (isAnAncestorOf(proto, p))]
+[for(elt : architectureElement | p.definitions)]
+[if(elt.oclIsKindOf(interactionDeclaration))]
+[let action : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
+[for(call : interactionCall | action.icalls)]
+	[comment]_[call.fctName.name/] = (void(*)([getFunctorDeclaration(call.fctName)/])) getUserFunction("[call.fctName.name/]");[/comment]
+	_[call.fctName.name/] = (void(*)([getFunctorDeclaration(call.fctName)/])) FunctionDirectory::getInstance()->getFunction("[call.fctName.name/]");
+[/for]
+[/let]
+[/if]
+[/for]
+[/if]
+[/for]
+}
+catch(...)
+{
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - Problem on loading function pointers.");
+}
+[/template] 

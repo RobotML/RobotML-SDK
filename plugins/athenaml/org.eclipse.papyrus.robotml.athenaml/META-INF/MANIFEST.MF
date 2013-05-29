@@ -10,3 +10,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.uml.extensionpoints
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+EXport-Package: org.eclipse.papyrus.robotML.AthenaML,
+ org.eclipse.papyrus.robotML.AthenaML.impl,
+ org.eclipse.papyrus.robotML.AthenaML.util

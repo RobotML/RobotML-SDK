@@ -151,17 +151,14 @@ end
 [comment]Generate prototype's interactions[/comment]
 [template private generateInteractions(fsms : Sequence(StateMachine))]
 [for(sm : StateMachine | fsms)]
-[let objs : Sequence(Vertex) = getFSMStates(sm)]
-[for(obj : Vertex | objs)]
-[let str : String = generateInteractionStateString(obj)]
-//[str/]
-[if(str.equalsIgnoreCase('') =(false))]
-when ( [sm.name/]::[obj.name/] ) begin
-	[str/]
+[let states : Sequence(Vertex) = getFSMStates(sm)]
+[for(state : Vertex | states)]
+[let stateObj : RobotML::State = state.oclAsType(RobotML::State)]
+when ([sm.name/]::[state.name/]) begin
+	interaction [stateObj.behavior.name/]()
 end
-[/if]
 [/let]
-[/for]			
+[/for]
 [/let]
 [/for]
 [/template]
@@ -171,25 +168,19 @@ end
 [for(transition : RobotML::Transition | transitions)]
 [let guard : Behavior = transition.guard]
 [if((guard = null) =(false))]
-[let behaviors : Sequence(OpaqueBehavior) = getTransitionBehavior(model, fsm)]
-[for( behavior : OpaqueBehavior | behaviors)]
-[if((behavior.specification = null) =(false))]
-[if(behavior.specification.name.equalsIgnoreCase(guard.name))]
-[if(canConvertToAlfBlock(behavior.oclAsType(NamedElement)) =(true))]
-[let bloc : alf::Block = createAlfBlockFromUML(behavior.oclAsType(NamedElement))]
-event [guard.name/] { [translateAlfBlocTo_Athena(bloc)/] }
-[/let]
-[else]
-event [guard.name/] {  [behavior._body/] }
-[/if]
-[/if]
-[/if]
-[/for] 
-[/let]
+event [guard.name/] { [generateGuardBody(guard)/] }
 [/if]
 [/let]
 [/for]
 [/let]
+[/template]
+
+[template private generateGuardBody(guard : Behavior)]
+[if(guard.oclIsKindOf(OpaqueBehavior) =(true))]
+[comment]Detect has body specification or using file[/comment]
+[elseif(guard.oclIsKindOf(FunctionBehavior) =(true))]
+[comment]Search the function used[/comment]
+[/if]
 [/template]
 
 [template private generateFSMEffect(fsm : StateMachine)]

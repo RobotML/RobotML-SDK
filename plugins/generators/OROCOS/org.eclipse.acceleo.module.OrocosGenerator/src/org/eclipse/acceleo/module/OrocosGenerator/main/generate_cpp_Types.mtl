@@ -8,8 +8,8 @@
 
 [template public generateCppTypes(model : Model) ]
 [file ('src/DataTypes/CppDataTypes.hpp', false, 'UTF-8')]
-#ifndef _CPP_DATATYPE_H_
-#define _CPP_DATATYPE_H_
+#ifndef _CPP_DATATYPES_HPP_
+#define _CPP_DATATYPES_HPP_
 
 #include <string>
 

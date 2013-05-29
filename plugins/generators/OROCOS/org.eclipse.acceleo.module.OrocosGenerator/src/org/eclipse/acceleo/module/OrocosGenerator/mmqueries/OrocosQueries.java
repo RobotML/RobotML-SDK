@@ -468,6 +468,18 @@ public class OrocosQueries {
 
 
 	
+	/**
+	    * Checks whether the component is a hardware component(robot)	
+	    * 
+	    */
+		public Boolean isEnvionment(Class myClass) {		
+			for (Stereotype st : myClass.getAppliedStereotypes())				
+				if (st.getName().equalsIgnoreCase("Envionment"))
+					return true;				
+			return false;
+		}
+
+	
 	   /**
 	    * Checks whether the component is a hardware component(robot)	
 	    * 

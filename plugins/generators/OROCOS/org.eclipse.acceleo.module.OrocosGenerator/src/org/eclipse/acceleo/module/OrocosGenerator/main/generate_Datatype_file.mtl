@@ -19,7 +19,7 @@
 [let type: Type = elt] 
 [if(isRobotMLDataType(m, type.name))]
 [let ne : NamedElement = type.owner]
-#include <[ne.name.replace('_datatypes', '_msgs')/]/[type.name/].h>
+#include <[ne.name.replace('_datatypes', '_msgs')/]/[type.name/].hpp>
 [/let]
 [else]
 	[if(not isPrimitiveType(type))]
@@ -32,7 +32,6 @@
 namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_')/]{
 	[if(isEnumeration(type))]
 	enum [type.name/]{
-
 	[for (enumeration : EnumerationLiteral |getEnumeration(type))]
 	[enumeration.name/] ,
 	[/for]

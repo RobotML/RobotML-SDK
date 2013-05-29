@@ -42,7 +42,7 @@
 			[if (hasStateMachine(c))]
 				[generateOrocosComponentLua(c, model)/]				
 			[else]
-			[if(isMacroComponent(c) = false)]
+			[if(isMacroComponent(c) = false)] 
 					[generateOrocosComponentHpp(c, model)/]
 					[generateOrocosComponentCpp(c, model)/]				
 			[/if]

@@ -57,7 +57,7 @@ using namespace RTT;
 [/let]
 [/comment]
 
-namespace [(c.qualifiedName.substitute('::'+c.name,'')).substitute(' ','_')/]{	 {
+namespace [(c.qualifiedName.substitute('::'+c.name,'')).substitute(' ','_')/]{
 class [c.name/]
 	: public RTT::TaskContext 
 {   [comment ports and services declaration/]

@@ -15,6 +15,7 @@
 [/template]
 
 [template public generateRobot(aClass : Class, aModel : Model)]
+
 robot = Robot('[aClass.name/]')
 robot.name = "[aClass.name/]"
 	[for (elt: NamedElement | getElementsWithInheritedStereotype(aModel, 'RoboticSystem'))]

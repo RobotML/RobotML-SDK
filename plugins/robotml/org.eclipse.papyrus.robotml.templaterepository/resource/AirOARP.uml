@@ -592,7 +592,7 @@
     </profileApplication>
   </uml:Model>
   <RobotML:RoboticMiddleware xmi:id="_GqE6MHUwEeKtkpd6W4BP5g" base_Class="_GqCeAXUwEeKtkpd6W4BP5g"/>
-  <RobotML:CameraSystem xmi:id="_GqE6MXUwEeKtkpd6W4BP5g" base_Class="_GqCeAnUwEeKtkpd6W4BP5g" width="128" height="128" alpha_u="140.0" alpha_v="140.0" u0="64.0" v0="64.0">
+  <RobotML:CameraSystem xmi:id="_GqE6MXUwEeKtkpd6W4BP5g" base_Class="_GqCeAnUwEeKtkpd6W4BP5g" frequency="1.0" width="128" height="128" alpha_u="140.0" alpha_v="140.0" u0="64.0" v0="64.0">
     <translate xmi:type="RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes:Point32" xmi:id="_hGmi4MhfEeKRBcG405q6rA"/>
   </RobotML:CameraSystem>
   <RobotML:RoboticSimulator xmi:id="_GqE6MnUwEeKtkpd6W4BP5g" base_Class="_GqCeBXUwEeKtkpd6W4BP5g"/>

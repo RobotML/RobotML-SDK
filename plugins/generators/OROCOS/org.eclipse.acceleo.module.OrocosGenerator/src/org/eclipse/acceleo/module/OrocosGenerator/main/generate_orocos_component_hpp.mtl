@@ -62,6 +62,20 @@ class [c.name/]
 	: public RTT::TaskContext 
 {   [comment ports and services declaration/]
 	// ports, operations and attributes
+
+[let elt : Element = c.oclAsType(Element)]
+			[for (sp : Port | getServicePort())]				
+				[let interface : Interface = sp.type]
+					[for (op : Operation | interface.getAllOperations())]
+						[if (isARequiredPort(sp))]
+		RTT::OperationCaller [op.name/];
+						[/if]
+       				[/for]
+				[/let]				
+			[/for]
+		[/let]
+
+
 	[let elt : Element = c.oclAsType(Element)]
  		[for (port : Port | getInputPortsForElement(elt))] 
 			[if (isRobotMLDataType(root_model, port.type.name))]

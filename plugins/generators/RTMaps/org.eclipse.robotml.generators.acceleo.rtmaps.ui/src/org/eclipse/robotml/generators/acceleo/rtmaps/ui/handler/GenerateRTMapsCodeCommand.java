@@ -84,9 +84,13 @@ public class GenerateRTMapsCodeCommand extends AbstractTransactionalCommand {
 		//System.err.println("Model Exlorer generation menu RTMaps");
 		
 		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-		final ProgressMonitorDialog monitordialog = new ProgressMonitorDialog(shell);
-		try {
-			monitordialog.run(true, true, new IRunnableWithProgress() {
+		//final ProgressMonitorDialog monitordialog = new ProgressMonitorDialog(shell);
+		AcceleoRTMapsCodeGenerator codeGenerator = new AcceleoRTMapsCodeGenerator();
+		codeGenerator.runAcceleoTransformation(selectedElement, rtmapsTargetFolderPath);
+		/*try {
+			*
+			 * monitordialog.run(true, true, new IRunnableWithProgress() {
+			 
 
 				public void run(IProgressMonitor monitor)
 						throws InvocationTargetException, InterruptedException {
@@ -97,14 +101,14 @@ public class GenerateRTMapsCodeCommand extends AbstractTransactionalCommand {
 				}
 				
 			});
-			
+			*
 		} catch (InvocationTargetException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 
 		return CommandResult.newOKCommandResult();

@@ -31,6 +31,7 @@
 #include <effibox/interfaces/timer/all.hpp>
 #include <effibox/interfaces/thread/all.hpp>
 #include <effibox/interface/frameerror.hpp>
+#include <effibox/clock/rosclockdriver.hpp>
 
 using namespace effibox;
 using namespace qtviewer;

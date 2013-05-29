@@ -1580,24 +1580,6 @@
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_GqKZ6XUwEeKtkpd6W4BP5g" type="5156"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_GqKZ6nUwEeKtkpd6W4BP5g" type="7073" collapsed="true">
-        <children xmi:type="notation:Shape" xmi:id="_GqKZ63UwEeKtkpd6W4BP5g" type="3070" fontName="Sans" fontHeight="10" lineColor="0">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GqKZ7HUwEeKtkpd6W4BP5g" source="ShadowFigure">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GqKZ7XUwEeKtkpd6W4BP5g" key="ShadowFigure_Value" value="false"/>
-          </eAnnotations>
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GqKZ7nUwEeKtkpd6W4BP5g" source="displayNameLabelIcon">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GqKZ73UwEeKtkpd6W4BP5g" key="displayNameLabelIcon_value" value="false"/>
-          </eAnnotations>
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GqKZ8HUwEeKtkpd6W4BP5g" source="QualifiedName">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GqKZ8XUwEeKtkpd6W4BP5g" key="QualifiedNameDepth" value="1000"/>
-          </eAnnotations>
-          <children xmi:type="notation:DecorationNode" xmi:id="_GqKZ8nUwEeKtkpd6W4BP5g" type="5126"/>
-          <children xmi:type="notation:BasicCompartment" xmi:id="_GqKZ83UwEeKtkpd6W4BP5g" visible="false" type="7077">
-            <styles xmi:type="notation:TitleStyle" xmi:id="_GqKZ9HUwEeKtkpd6W4BP5g"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GqKZ9XUwEeKtkpd6W4BP5g"/>
-          </children>
-          <element xmi:type="uml:Property" href="AirOARP.uml#_GqCeFHUwEeKtkpd6W4BP5g"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GqKZ9nUwEeKtkpd6W4BP5g" x="62" y="127"/>
-        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_GqKZ93UwEeKtkpd6W4BP5g"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GqKZ-HUwEeKtkpd6W4BP5g"/>
       </children>

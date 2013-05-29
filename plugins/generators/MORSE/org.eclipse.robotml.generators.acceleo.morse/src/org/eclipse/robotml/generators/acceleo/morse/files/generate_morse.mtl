@@ -78,7 +78,7 @@ robot.append(odom)
 [/template]
 
 [template public generateSystem(aClass : Class, model : Model)]
-#   TBD
+#   Generate System [aClass.name/]
 [/template]
 
 [template public generateMorse(model : Model)]

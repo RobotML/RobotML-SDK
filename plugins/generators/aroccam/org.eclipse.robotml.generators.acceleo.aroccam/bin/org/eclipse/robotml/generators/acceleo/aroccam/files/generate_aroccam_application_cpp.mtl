@@ -250,8 +250,8 @@ void [model.name/]Application::frame[instance.name/]_genericodometry(const effib
 	static double precLeftRearDistance = 0.0;
 	static double precRightRearDistance = 0.0;
 	CarLikeOdometry carLikeOdometry;
-	carLikeOdometry.header.stamp                        = frame->getDate();
-	carLikeOdometry.steering_angle                      = frame->getWheelSteeringFront().directionAngle;
+	carLikeOdometry.header.stamp              = frame->getDate();
+	carLikeOdometry.steering_angle            = frame->getWheelSteeringFront().directionAngle;
 	carLikeOdometry.left_rear_wheel_velocity  = frame->getWheelSteeringRear().linearSpeedLeft;
 	carLikeOdometry.right_rear_wheel_velocity = frame->getWheelSteeringRear().linearSpeedRight;
 	carLikeOdometry.left_rear_wheel_distance  = precLeftRearDistance  + deltaT*frame->getWheelSteeringRear().linearSpeedLeft;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate_aroccam" name="org.eclipse.robotml.generators.acceleo.aroccam">
-    <property name="ECLIPSE_HOME" value="../../../../../../../eclipse/eclipse-juno"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../eclipse/eclipse-juno/workspace"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../../eclipse-juno"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../eclipse-juno/workspace"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.eclipse.robotml.generators.acceleo.aroccam.libraryclasspath">
@@ -35,7 +35,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.mapping.ecore2xml_2.7.0.v20120917-0436.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.validation_1.4.0.v20100428-2315.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.8.1.v20120802-154922.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.papyrus.robotml_0.9.1.201211281158.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.papyrus.robotml_0.9.1.201301221359.jar"/>
     </path>
 
     <path id="org.eclipse.robotml.generators.acceleo.aroccam.classpath">

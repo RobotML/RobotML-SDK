@@ -29,6 +29,9 @@ plugins/generators/RTMaps/org.eclipse.robotml.generators.acceleo.rtmaps.ui/bin/*
 plugins/generators/CycabTK/org.eclipse.robotml.generators.acceleo.cycabtk/bin/*
 plugins/generators/CycabTK/org.eclipse.robotml.generators.acceleo.cycabtk.ui/bin/*
 
+plugins/generators/aroccam/org.eclipse.robotml.generators.acceleo.aroccam/bin/*
+plugins/generators/aroccam/org.eclipse.robotml.generators.acceleo.aroccam.ui/bin/*
+
 plugins/athenaDSL/org.xtext.AthenaDSL.ui/bin/*
 plugins/athenaDSL/org.xtext.AthenaDSL/bin/*
 

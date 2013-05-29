@@ -18,12 +18,12 @@
 	
 [if(isModelSaved())]
 [if(isModelValid(model))]
-[comment][searchUsedDataType(model)/]
-[generateDataTypeFile(model)/][/comment]
+[searchUsedDataType(model)/]
+[generateDataTypeFile(model)/]
 [generateFunctionFile(model)/]
 [generateProcessingFile(model)/]
-[comment][generatePrototypeFile(model)/]
-[generateOutputSimulatorFile(model)/][/comment]
+[generatePrototypeFile(model)/]
+[generateOutputSimulatorFile(model)/]
 [else]
 [let msg : String = 'Can\'t generate model, because not have an environment component.']
 [showErrorMessageDlg(msg)/]
@@ -52,7 +52,7 @@ wrapper [classe.name/] begin
 	external-libraries {  }
 	test-apps {  } 
 end
-[/if]undesired
+[/if]
 [/for]
 [/let]
 [/template]

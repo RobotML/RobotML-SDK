@@ -14,47 +14,43 @@
 	[/for]
 [/template]
 
-[template public generateRobot(aClass : Class, aModel : Model)]
+[template public generateRobot(aRobotClass : Class, aModel : Model)]
 
-robot = Robot('[aClass.name/]')
-robot.name = "[aClass.name/]"
+robot[aRobotClass.name/] = Robot('[aRobotClass.name/]')
 	[for (elt: NamedElement | getElementsWithInheritedStereotype(aModel, 'RoboticSystem'))]
 		[let aClass : Class = elt.oclAsType(Class)]
 		[if (hasStereotype(aClass, 'LidarSystem'))]
 [generateLidarSystem(aClass, aModel)/]
+[aClass.name/]([aRobotClass.name/])
 		[elseif (hasStereotype(aClass, 'CameraSystem'))]
 [generateCameraSystem(aClass, aModel)/]
+[aClass.name/]([aRobotClass.name/])
 		[elseif (hasStereotype(aClass, 'GPSSystem'))]
 [generateGPS(aClass, aModel)/]
+[aClass.name/]([aRobotClass.name/])
 		[elseif (hasStereotype(aClass, 'Servoings'))]
 [generateServoing(aClass, aModel)/]
+[aClass.name/]([aRobotClass.name/])
 		[elseif (hasStereotype(aClass, 'Odometer'))]
 [generateOdometry(aClass, aModel)/]
+[aClass.name/]([aRobotClass.name/])
 		[elseif (hasStereotype(aClass, 'IMU'))]
 [generateIMU(aClass, aModel)/]
-		[elseif (hasStereotype(aClass, 'SensorSystem'))]
-[generateGenericSensor(aClass, aModel)/]
+[aClass.name/]([aRobotClass.name/])
 		[elseif (hasStereotype(aClass, 'ActuatorSystem'))]
 [generateGenericActuator(aClass, aModel)/]
-		[else]
-[generateSystem(aClass, aModel)/]
+#[aClass.name/]([aRobotClass.name/])
 		[/if]
 		[/let]
 	[/for]
 [/template]
 
-
 [template public generateGenericActuator(aClass : Class, model : Model)]
+
+#TBD: at the moment, we have no way in the meta-model to know what is the type of Actuator used
 #generic_actuator = Actuator('[aClass.name/]')
 #generic_actuator.configure_mw('ros')
 #robot.append(generic_actuator)
-[/template]
-
-[template public generateGenericSensor(aClass : Class, model : Model)]
-#generic_sensor = Sensor('[aClass.name/]')
-#generic_sensor.frequency([getAttributeValue(aClass, 'frequency', 'SensorSystem', '10.')/])
-#generic_sensor.configure_mw('ros')
-#robot.append(generic_sensor)
 [/template]
 
 [template public generateServoing(aClass : Class, model : Model)]
@@ -77,10 +73,6 @@ odom.configure_mw('ros')
 robot.append(odom)
 [/template]
 
-[template public generateSystem(aClass : Class, model : Model)]
-#   Generate System [aClass.name/]
-[/template]
-
 [template public generateMorse(model : Model)]
 [file ('morse' + model.name + '.py', false, 'UTF-8')]
 from morse.builder import *
@@ -88,6 +80,5 @@ from morse.builder import *
 [generateRobots(model)/]
 # Select the environement
 env = Environment("[model.name/].blend")
-
 [/file]
 [/template]

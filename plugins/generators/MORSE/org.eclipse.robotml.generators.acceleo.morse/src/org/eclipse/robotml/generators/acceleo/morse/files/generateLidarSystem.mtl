@@ -21,12 +21,10 @@ class [aClass.name/]:
 		self.sensor = Sick()
 
 		[comment Generate translation command for this sensor /]
-		#TBD
-		self.translate(x=?,y=?)
+		self.translate([getAttributeValue(aClass, 'localPosition', 'LidarSystem', 'x=0, y=0, z=0')/])
 
 		[comment Generate rotation command for this sensor /]
-		#TBD
-		self.rotate(x=?)
+		self.rotate([getAttributeValue(aClass, 'localOrientation', 'LidarSystem', 'x=0')/])
 
 		self.sensor.properties(scan_window = 180, resolution = 1, laser_range = [getAttributeValue(aClass, 'range_max', 'LidarSystem', '25')/])
 		self.sensor.frequency([getAttributeValue(aClass, 'frequency', 'LidarSystem', '20.')/])

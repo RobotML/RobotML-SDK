@@ -16,7 +16,7 @@
 [file (aClass.name+'.py', false, 'UTF-8')]
 class [aClass.name/]:
 	def __init(self, myRobot):
-		self.sensor = Sensor('video_camera')
+		self.sensor = VideoCamera()
 
 		[comment Used formula here: http://www.openrobots.org/morse/doc/stable/user/sensors/video_camera.html#camera-calibration-matrix /]
 		height = [getAttributeValue(aClass, 'u0', 'CameraSystem', '0')/]*2

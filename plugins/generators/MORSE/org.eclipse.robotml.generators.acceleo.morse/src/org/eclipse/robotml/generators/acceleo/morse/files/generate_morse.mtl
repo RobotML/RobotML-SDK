@@ -57,20 +57,20 @@ robot.name = "[aClass.name/]"
 [/template]
 
 [template public generateServoing(aClass : Class, model : Model)]
-motion = Actuator('v_omega')
+motion = MotionVW()
 motion.configure_mw('ros')
 robot.append(motion)
 [/template]
 
 [template public generateIMU(aClass : Class, model : Model)]
-imu = Sensor('imu')
+imu = IMU()
 imu.frequency([getAttributeValue(aClass, 'frequency', 'IMU', '10.')/])
 imu.configure_mw('ros')
 robot.append(imu)
 [/template]
 
 [template public generateOdometry(aClass : Class, model : Model)]
-odom = Sensor('pose')
+odom = Pose()
 odom.frequency([getAttributeValue(aClass, 'frequency', 'Odometer', '10.')/])
 odom.configure_mw('ros')
 robot.append(odom)

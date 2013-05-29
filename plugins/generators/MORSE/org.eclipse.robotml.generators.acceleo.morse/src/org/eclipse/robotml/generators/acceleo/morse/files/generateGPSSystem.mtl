@@ -16,7 +16,7 @@
 [file (aClass.name+'.py', false, 'UTF-8')]
 class [aClass.name/]:
 	def __init(self, myRobot):
-		self.sensor = Sensor('gps')
+		self.sensor = GPS()
 
 		self.sensor.frequency([getAttributeValue(aClass, 'frequency', 'GPSSystem', '10.')/])
 		self.sensor.configure_mw('ros')

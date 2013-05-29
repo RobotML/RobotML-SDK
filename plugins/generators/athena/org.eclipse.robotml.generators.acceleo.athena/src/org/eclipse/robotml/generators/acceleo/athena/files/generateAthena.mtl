@@ -9,6 +9,8 @@
 [import org::eclipse::robotml::generators::acceleo::athena::files::generatePrototypes/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::configGenerator/]
 
+[import org::eclipse::robotml::generators::acceleo::athena::files::generateBehaviorDeclaration/]
+
 [import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries /]
 
 [template public generateAthena(model : Model)]
@@ -16,12 +18,12 @@
 	
 [if(isModelSaved())]
 [if(isModelValid(model))]
-[searchUsedDataType(model)/]
-[generateDataTypeFile(model)/]
+[comment][searchUsedDataType(model)/]
+[generateDataTypeFile(model)/][/comment]
 [generateFunctionFile(model)/]
 [generateProcessingFile(model)/]
-[generatePrototypeFile(model)/]
-[generateOutputSimulatorFile(model)/]
+[comment][generatePrototypeFile(model)/]
+[generateOutputSimulatorFile(model)/][/comment]
 [else]
 [let msg : String = 'Can\'t generate model, because not have an environment component.']
 [showErrorMessageDlg(msg)/]
@@ -50,7 +52,7 @@ wrapper [classe.name/] begin
 	external-libraries {  }
 	test-apps {  } 
 end
-[/if]
+[/if]undesired
 [/for]
 [/let]
 [/template]
@@ -62,15 +64,28 @@ end
 [/template]
 
 [template private generateFunctionFile(model : Model)]
-[file('FunctionDecl.adl', false, 'UTF-8')]
-[generateFunctions(model)/]
+[let behaviors : Sequence(Behavior) = getUniqueBehaviorFromModel(model)]
+[file ('FunctionDecl.adl', false, 'UTF-8')]
+[generateBehaviors(behaviors)/]
 [/file]
+[/let]
+
+
+[comment][file('FunctionDecl.adl', false, 'UTF-8')]
+[generateFunctions(model)/]
+[/file][/comment]
 [/template]
 
 [template private generateProcessingFile(model : Model)]
-[file('ProcessingDecl.adl', false, 'UTF-8')]
-[generateProcessings(model)/]
+[let behaviors : Sequence(Behavior) = getOpaqueBehaviorFromModel(model)]
+[file ('ProcessingDecl.adl', false, 'UTF-8')]
+[generateBehaviors(behaviors)/]
 [/file]
+[/let]
+
+[comment][file('ProcessingDecl.adl', false, 'UTF-8')]
+[generateProcessings(model)/]
+[/file][/comment]
 [/template]
 
 [template private generatePrototypeFile(model : Model)]

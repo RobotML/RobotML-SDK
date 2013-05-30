@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:j="clr-namespace:java.lang"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets" xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:nav_datatypes:Odometry:child_frame_id"></ppe:StringEditor>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<Group text="Header">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor view="ProteusLibraries:Single Header"
+				property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:nav_datatypes:Odometry:header"
+				input="{Binding}"></ppe:ViewEditor>
+		</Group>
+		<Group text="Pose">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor view="ProteusLibraries:Single PoseWithCovariance"
+				property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:nav_datatypes:Odometry:pose"
+				input="{Binding}"></ppe:ViewEditor>
+		</Group>
+		<Group text="Twist">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor view="ProteusLibraries:Single TwistWithCovariance"
+				property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:nav_datatypes:Odometry:twist"
+				input="{Binding}"></ppe:ViewEditor>
+		</Group>
+	</Composite>
+</Composite>

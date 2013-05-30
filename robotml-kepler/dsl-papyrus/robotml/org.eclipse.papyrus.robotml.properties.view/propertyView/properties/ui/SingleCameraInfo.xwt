@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:j="clr-namespace:java.lang"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets" xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:CameraInfo:K"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:CameraInfo:height"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:CameraInfo:distorsion_model"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:CameraInfo:beginning_y"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:CameraInfo:D"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:CameraInfo:width"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:CameraInfo:beginning_x"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:CameraInfo:R"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:CameraInfo:P"></ppe:StringEditor>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<Group text="Header">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor view="ProteusLibraries:Single Header"
+				property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:CameraInfo:header"
+				input="{Binding}"></ppe:ViewEditor>
+		</Group>
+		<Group text="Roi">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor view="ProteusLibraries:Single RegionOfInterest"
+				property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:CameraInfo:roi"
+				input="{Binding}"></ppe:ViewEditor>
+		</Group>
+	</Composite>
+</Composite>

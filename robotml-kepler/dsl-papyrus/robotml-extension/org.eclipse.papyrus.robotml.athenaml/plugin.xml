@@ -4,32 +4,32 @@
    <extension
          point="org.eclipse.emf.ecore.uri_mapping">
       <mapping
-            source="pathmap://Athenaml_PROFILES/"
-            target="platform:/plugin/org.eclipse.papyrus.robotml.athenaml/model/">
+            source="pathmap://RobotmlExtension_PROFILES/"
+            target="platform:/plugin/org.eclipse.papyrus.robotml.extension/model/">
       </mapping>
    </extension>
    <extension
          point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
       <profile
             description="RobotML extended profil"
-            name="AthenaML"
-            path="pathmap://Athenaml_PROFILES/model.profile.uml"
+            name="RobotMLExtension"
+            path="pathmap://RobotmlExtension_PROFILES/model.profile.uml"
             provider="Dassault Aviation">
       </profile>
    </extension>
    <extension
          point="org.eclipse.uml2.uml.generated_package">
       <profile
-            location="pathmap://Athenaml_PROFILES/model.profile.uml#_tZec8ELMEeKtKeKgzv7YFw"
-            uri="http://papyrus/AthenaML/1.0">
+            location="pathmap://RobotmlExtension_PROFILES/model.profile.uml#_tZec8ELMEeKtKeKgzv7YFw"
+            uri="http://papyrus/RobotML/Extension/1.0">
       </profile>
    </extension>
    <extension
          point="org.eclipse.emf.ecore.generated_package">
       <package
-            class="org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage"
-            genModel="model/AthenaML.genmodel"
-            uri="http://papyrus/AthenaML/1.0">
+            class="RobotMLExtension.RobotMLExtensionPackage"
+            genModel="model/RobotMLExtension.genmodel"
+            uri="http://papyrus/RobotML/Extension/1.0">
       </package>
    </extension>
 

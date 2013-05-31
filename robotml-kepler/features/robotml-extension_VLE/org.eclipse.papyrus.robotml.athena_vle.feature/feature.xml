@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.papyrus.robotml.athenaml.feature"
-      label="AthenaML_Feature"
-      version="0.5.1.qualifier">
+      id="org.eclipse.papyrus.robotml.extension.feature"
+      label="RobotML-Extension"
+      version="1.0.0">
 
    <description url="http://www.example.com/description">
-      Feature for Athena profil, athena code generation and VLE code generation.
+      Feature for RobotML extension profil, athena code generation and VLE code
+generation.
    </description>
 
    <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+      Dassault Aviation
    </copyright>
 
    <license url="http://www.eclipse.org/legal/epl-v10.html">
@@ -20,58 +21,51 @@
    </license>
 
    <plugin
-         id="org.eclipse.papyrus.robotml.athenaml"
-         download-size="0"
-         install-size="0"
-         version="1.0.0.qualifier"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.robotml.generators.acceleo.alf"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.0"
          unpack="false"/>
 
    <plugin
          id="org.eclipse.robotml.generators.acceleo.athena"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.0"
          unpack="false"/>
 
    <plugin
          id="org.eclipse.robotml.generators.acceleo.athena.ui"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.0"
          unpack="false"/>
 
    <plugin
          id="org.eclipse.robotml.generators.xtext.athena.simu"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.0"
          unpack="false"/>
 
    <plugin
          id="org.eclipse.robotml.generators.xtext.athena.simu.ui"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.0"
          unpack="false"/>
 
    <plugin
          id="org.eclipse.robotml.generators.xtext.athena.vle"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"/>
+         version="1.0.0"/>
 
    <plugin
          id="org.eclipse.robotml.generators.xtext.athena.vle.ui"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.0"
          unpack="false"/>
 
    <plugin
@@ -92,7 +86,14 @@
          id="org.eclipse.robotml.generators.acceleo"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.robotml.extension"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
          unpack="false"/>
 
 </feature>

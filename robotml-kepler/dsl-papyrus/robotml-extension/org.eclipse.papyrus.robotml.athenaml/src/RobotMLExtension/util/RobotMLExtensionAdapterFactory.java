@@ -1,6 +1,8 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML.util;
+package RobotMLExtension.util;
+
+import RobotMLExtension.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -9,24 +11,22 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.papyrus.robotML.AthenaML.*;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage
+ * @see RobotMLExtension.RobotMLExtensionPackage
  * @generated
  */
-public class AthenaMLAdapterFactory extends AdapterFactoryImpl {
+public class RobotMLExtensionAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static AthenaMLPackage modelPackage;
+	protected static RobotMLExtensionPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -34,9 +34,9 @@ public class AthenaMLAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AthenaMLAdapterFactory() {
+	public RobotMLExtensionAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = AthenaMLPackage.eINSTANCE;
+			modelPackage = RobotMLExtensionPackage.eINSTANCE;
 		}
 	}
 
@@ -65,8 +65,8 @@ public class AthenaMLAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AthenaMLSwitch<Adapter> modelSwitch =
-		new AthenaMLSwitch<Adapter>() {
+	protected RobotMLExtensionSwitch<Adapter> modelSwitch =
+		new RobotMLExtensionSwitch<Adapter>() {
 			@Override
 			public Adapter caseArray(Array object) {
 				return createArrayAdapter();
@@ -116,13 +116,13 @@ public class AthenaMLAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.robotML.AthenaML.Array <em>Array</em>}'.
+	 * Creates a new adapter for an object of class '{@link RobotMLExtension.Array <em>Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Array
+	 * @see RobotMLExtension.Array
 	 * @generated
 	 */
 	public Adapter createArrayAdapter() {
@@ -130,13 +130,13 @@ public class AthenaMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.robotML.AthenaML.Vector <em>Vector</em>}'.
+	 * Creates a new adapter for an object of class '{@link RobotMLExtension.Vector <em>Vector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Vector
+	 * @see RobotMLExtension.Vector
 	 * @generated
 	 */
 	public Adapter createVectorAdapter() {
@@ -144,13 +144,13 @@ public class AthenaMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.robotML.AthenaML.Map <em>Map</em>}'.
+	 * Creates a new adapter for an object of class '{@link RobotMLExtension.Map <em>Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Map
+	 * @see RobotMLExtension.Map
 	 * @generated
 	 */
 	public Adapter createMapAdapter() {
@@ -158,13 +158,13 @@ public class AthenaMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.robotML.AthenaML.Alias <em>Alias</em>}'.
+	 * Creates a new adapter for an object of class '{@link RobotMLExtension.Alias <em>Alias</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Alias
+	 * @see RobotMLExtension.Alias
 	 * @generated
 	 */
 	public Adapter createAliasAdapter() {
@@ -172,13 +172,13 @@ public class AthenaMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.robotML.AthenaML.Union <em>Union</em>}'.
+	 * Creates a new adapter for an object of class '{@link RobotMLExtension.Union <em>Union</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Union
+	 * @see RobotMLExtension.Union
 	 * @generated
 	 */
 	public Adapter createUnionAdapter() {
@@ -186,13 +186,13 @@ public class AthenaMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.robotML.AthenaML.Parameters <em>Parameters</em>}'.
+	 * Creates a new adapter for an object of class '{@link RobotMLExtension.Parameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Parameters
+	 * @see RobotMLExtension.Parameters
 	 * @generated
 	 */
 	public Adapter createParametersAdapter() {
@@ -200,13 +200,13 @@ public class AthenaMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.robotML.AthenaML.Define <em>Define</em>}'.
+	 * Creates a new adapter for an object of class '{@link RobotMLExtension.Define <em>Define</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Define
+	 * @see RobotMLExtension.Define
 	 * @generated
 	 */
 	public Adapter createDefineAdapter() {
@@ -225,4 +225,4 @@ public class AthenaMLAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //AthenaMLAdapterFactory
+} //RobotMLExtensionAdapterFactory

@@ -1,6 +1,6 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML;
+package RobotMLExtension;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -14,14 +14,14 @@ import org.eclipse.uml2.uml.DataType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.Array#getSize <em>Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.Array#getDimension <em>Dimension</em>}</li>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.Array#getType_template <em>Type template</em>}</li>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.Array#getBase_DataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.Array#getSize <em>Size</em>}</li>
+ *   <li>{@link RobotMLExtension.Array#getDimension <em>Dimension</em>}</li>
+ *   <li>{@link RobotMLExtension.Array#getTypeTemplate <em>Type Template</em>}</li>
+ *   <li>{@link RobotMLExtension.Array#getBaseDataType <em>Base Data Type</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getArray()
+ * @see RobotMLExtension.RobotMLExtensionPackage#getArray()
  * @model
  * @generated
  */
@@ -36,14 +36,14 @@ public interface Array extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Size</em>' attribute.
 	 * @see #setSize(int)
-	 * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getArray_Size()
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getArray_Size()
 	 * @model dataType="org.eclipse.uml2.types.Integer" required="true" ordered="false"
 	 * @generated
 	 */
 	int getSize();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.robotML.AthenaML.Array#getSize <em>Size</em>}' attribute.
+	 * Sets the value of the '{@link RobotMLExtension.Array#getSize <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Size</em>' attribute.
@@ -62,14 +62,14 @@ public interface Array extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dimension</em>' attribute.
 	 * @see #setDimension(int)
-	 * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getArray_Dimension()
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getArray_Dimension()
 	 * @model dataType="org.eclipse.uml2.types.Integer" required="true" ordered="false"
 	 * @generated
 	 */
 	int getDimension();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.robotML.AthenaML.Array#getDimension <em>Dimension</em>}' attribute.
+	 * Sets the value of the '{@link RobotMLExtension.Array#getDimension <em>Dimension</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Dimension</em>' attribute.
@@ -79,30 +79,30 @@ public interface Array extends EObject {
 	void setDimension(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Type template</b></em>' reference.
+	 * Returns the value of the '<em><b>Type Template</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Type template</em>' reference isn't clear,
+	 * If the meaning of the '<em>Type Template</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type template</em>' reference.
-	 * @see #setType_template(DataType)
-	 * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getArray_Type_template()
+	 * @return the value of the '<em>Type Template</em>' reference.
+	 * @see #setTypeTemplate(DataType)
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getArray_TypeTemplate()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	DataType getType_template();
+	DataType getTypeTemplate();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.robotML.AthenaML.Array#getType_template <em>Type template</em>}' reference.
+	 * Sets the value of the '{@link RobotMLExtension.Array#getTypeTemplate <em>Type Template</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type template</em>' reference.
-	 * @see #getType_template()
+	 * @param value the new value of the '<em>Type Template</em>' reference.
+	 * @see #getTypeTemplate()
 	 * @generated
 	 */
-	void setType_template(DataType value);
+	void setTypeTemplate(DataType value);
 
 	/**
 	 * Returns the value of the '<em><b>Base Data Type</b></em>' reference.
@@ -113,21 +113,21 @@ public interface Array extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Base Data Type</em>' reference.
-	 * @see #setBase_DataType(DataType)
-	 * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getArray_Base_DataType()
+	 * @see #setBaseDataType(DataType)
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getArray_BaseDataType()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	DataType getBase_DataType();
+	DataType getBaseDataType();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.robotML.AthenaML.Array#getBase_DataType <em>Base Data Type</em>}' reference.
+	 * Sets the value of the '{@link RobotMLExtension.Array#getBaseDataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Base Data Type</em>' reference.
-	 * @see #getBase_DataType()
+	 * @see #getBaseDataType()
 	 * @generated
 	 */
-	void setBase_DataType(DataType value);
+	void setBaseDataType(DataType value);
 
 } // Array

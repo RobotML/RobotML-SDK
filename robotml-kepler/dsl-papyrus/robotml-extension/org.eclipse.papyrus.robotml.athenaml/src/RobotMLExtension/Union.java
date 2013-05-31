@@ -1,6 +1,6 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML;
+package RobotMLExtension;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -16,12 +16,12 @@ import org.eclipse.uml2.uml.DataType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.Union#getTypes <em>Types</em>}</li>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.Union#getBase_DataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.Union#getTypes <em>Types</em>}</li>
+ *   <li>{@link RobotMLExtension.Union#getBaseDataType <em>Base Data Type</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getUnion()
+ * @see RobotMLExtension.RobotMLExtensionPackage#getUnion()
  * @model
  * @generated
  */
@@ -36,7 +36,7 @@ public interface Union extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Types</em>' reference list.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getUnion_Types()
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getUnion_Types()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
@@ -51,21 +51,21 @@ public interface Union extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Base Data Type</em>' reference.
-	 * @see #setBase_DataType(DataType)
-	 * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getUnion_Base_DataType()
+	 * @see #setBaseDataType(DataType)
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getUnion_BaseDataType()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	DataType getBase_DataType();
+	DataType getBaseDataType();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.robotML.AthenaML.Union#getBase_DataType <em>Base Data Type</em>}' reference.
+	 * Sets the value of the '{@link RobotMLExtension.Union#getBaseDataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Base Data Type</em>' reference.
-	 * @see #getBase_DataType()
+	 * @see #getBaseDataType()
 	 * @generated
 	 */
-	void setBase_DataType(DataType value);
+	void setBaseDataType(DataType value);
 
 } // Union

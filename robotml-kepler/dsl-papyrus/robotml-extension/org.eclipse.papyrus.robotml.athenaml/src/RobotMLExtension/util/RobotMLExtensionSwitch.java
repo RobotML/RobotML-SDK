@@ -1,13 +1,13 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML.util;
+package RobotMLExtension.util;
+
+import RobotMLExtension.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.eclipse.papyrus.robotML.AthenaML.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,17 +19,17 @@ import org.eclipse.papyrus.robotML.AthenaML.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage
+ * @see RobotMLExtension.RobotMLExtensionPackage
  * @generated
  */
-public class AthenaMLSwitch<T> extends Switch<T> {
+public class RobotMLExtensionSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static AthenaMLPackage modelPackage;
+	protected static RobotMLExtensionPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -37,9 +37,9 @@ public class AthenaMLSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AthenaMLSwitch() {
+	public RobotMLExtensionSwitch() {
 		if (modelPackage == null) {
-			modelPackage = AthenaMLPackage.eINSTANCE;
+			modelPackage = RobotMLExtensionPackage.eINSTANCE;
 		}
 	}
 
@@ -66,43 +66,43 @@ public class AthenaMLSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case AthenaMLPackage.ARRAY: {
+			case RobotMLExtensionPackage.ARRAY: {
 				Array array = (Array)theEObject;
 				T result = caseArray(array);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AthenaMLPackage.VECTOR: {
+			case RobotMLExtensionPackage.VECTOR: {
 				Vector vector = (Vector)theEObject;
 				T result = caseVector(vector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AthenaMLPackage.MAP: {
+			case RobotMLExtensionPackage.MAP: {
 				Map map = (Map)theEObject;
 				T result = caseMap(map);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AthenaMLPackage.ALIAS: {
+			case RobotMLExtensionPackage.ALIAS: {
 				Alias alias = (Alias)theEObject;
 				T result = caseAlias(alias);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AthenaMLPackage.UNION: {
+			case RobotMLExtensionPackage.UNION: {
 				Union union = (Union)theEObject;
 				T result = caseUnion(union);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AthenaMLPackage.PARAMETERS: {
+			case RobotMLExtensionPackage.PARAMETERS: {
 				Parameters parameters = (Parameters)theEObject;
 				T result = caseParameters(parameters);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AthenaMLPackage.DEFINE: {
+			case RobotMLExtensionPackage.DEFINE: {
 				Define define = (Define)theEObject;
 				T result = caseDefine(define);
 				if (result == null) result = defaultCase(theEObject);
@@ -233,4 +233,4 @@ public class AthenaMLSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //AthenaMLSwitch
+} //RobotMLExtensionSwitch

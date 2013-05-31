@@ -1,6 +1,6 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML;
+package RobotMLExtension;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -14,12 +14,12 @@ import org.eclipse.uml2.uml.DataType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.Alias#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.Alias#getBase_DataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.Alias#getType <em>Type</em>}</li>
+ *   <li>{@link RobotMLExtension.Alias#getBaseDataType <em>Base Data Type</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getAlias()
+ * @see RobotMLExtension.RobotMLExtensionPackage#getAlias()
  * @model
  * @generated
  */
@@ -34,14 +34,14 @@ public interface Alias extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(DataType)
-	 * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getAlias_Type()
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getAlias_Type()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	DataType getType();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.robotML.AthenaML.Alias#getType <em>Type</em>}' reference.
+	 * Sets the value of the '{@link RobotMLExtension.Alias#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' reference.
@@ -59,21 +59,21 @@ public interface Alias extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Base Data Type</em>' reference.
-	 * @see #setBase_DataType(DataType)
-	 * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getAlias_Base_DataType()
+	 * @see #setBaseDataType(DataType)
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getAlias_BaseDataType()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	DataType getBase_DataType();
+	DataType getBaseDataType();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.robotML.AthenaML.Alias#getBase_DataType <em>Base Data Type</em>}' reference.
+	 * Sets the value of the '{@link RobotMLExtension.Alias#getBaseDataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Base Data Type</em>' reference.
-	 * @see #getBase_DataType()
+	 * @see #getBaseDataType()
 	 * @generated
 	 */
-	void setBase_DataType(DataType value);
+	void setBaseDataType(DataType value);
 
 } // Alias

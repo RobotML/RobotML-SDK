@@ -1,6 +1,6 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML.util;
+package RobotMLExtension.util;
 
 import org.eclipse.emf.common.util.URI;
 
@@ -10,10 +10,10 @@ import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
  * <!-- begin-user-doc -->
  * The <b>Resource </b> associated with the package.
  * <!-- end-user-doc -->
- * @see org.eclipse.papyrus.robotML.AthenaML.util.AthenaMLResourceFactoryImpl
+ * @see RobotMLExtension.util.RobotMLExtensionResourceFactoryImpl
  * @generated
  */
-public class AthenaMLResourceImpl extends XMLResourceImpl {
+public class RobotMLExtensionResourceImpl extends XMLResourceImpl {
 	/**
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
@@ -21,8 +21,8 @@ public class AthenaMLResourceImpl extends XMLResourceImpl {
 	 * @param uri the URI of the new resource.
 	 * @generated
 	 */
-	public AthenaMLResourceImpl(URI uri) {
+	public RobotMLExtensionResourceImpl(URI uri) {
 		super(uri);
 	}
 
-} //AthenaMLResourceImpl
+} //RobotMLExtensionResourceImpl

@@ -1,6 +1,8 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML.util;
+package RobotMLExtension.util;
+
+import RobotMLExtension.RobotMLExtensionPackage;
 
 import java.util.Map;
 
@@ -10,15 +12,13 @@ import org.eclipse.emf.ecore.resource.Resource;
 
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
 
-import org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage;
-
 /**
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AthenaMLXMLProcessor extends XMLProcessor {
+public class RobotMLExtensionXMLProcessor extends XMLProcessor {
 
 	/**
 	 * Public constructor to instantiate the helper.
@@ -26,13 +26,13 @@ public class AthenaMLXMLProcessor extends XMLProcessor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AthenaMLXMLProcessor() {
+	public RobotMLExtensionXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
-		AthenaMLPackage.eINSTANCE.eClass();
+		RobotMLExtensionPackage.eINSTANCE.eClass();
 	}
 	
 	/**
-	 * Register for "*" and "xml" file extensions the AthenaMLResourceFactoryImpl factory.
+	 * Register for "*" and "xml" file extensions the RobotMLExtensionResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -41,10 +41,10 @@ public class AthenaMLXMLProcessor extends XMLProcessor {
 	protected Map<String, Resource.Factory> getRegistrations() {
 		if (registrations == null) {
 			super.getRegistrations();
-			registrations.put(XML_EXTENSION, new AthenaMLResourceFactoryImpl());
-			registrations.put(STAR_EXTENSION, new AthenaMLResourceFactoryImpl());
+			registrations.put(XML_EXTENSION, new RobotMLExtensionResourceFactoryImpl());
+			registrations.put(STAR_EXTENSION, new RobotMLExtensionResourceFactoryImpl());
 		}
 		return registrations;
 	}
 
-} //AthenaMLXMLProcessor
+} //RobotMLExtensionXMLProcessor

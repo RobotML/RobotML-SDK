@@ -1,6 +1,6 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML.util;
+package RobotMLExtension.util;
 
 import org.eclipse.emf.common.util.URI;
 
@@ -14,17 +14,17 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
- * @see org.eclipse.papyrus.robotML.AthenaML.util.AthenaMLResourceImpl
+ * @see RobotMLExtension.util.RobotMLExtensionResourceImpl
  * @generated
  */
-public class AthenaMLResourceFactoryImpl extends ResourceFactoryImpl {
+public class RobotMLExtensionResourceFactoryImpl extends ResourceFactoryImpl {
 	/**
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AthenaMLResourceFactoryImpl() {
+	public RobotMLExtensionResourceFactoryImpl() {
 		super();
 	}
 
@@ -36,7 +36,7 @@ public class AthenaMLResourceFactoryImpl extends ResourceFactoryImpl {
 	 */
 	@Override
 	public Resource createResource(URI uri) {
-		XMLResource result = new AthenaMLResourceImpl(uri);
+		XMLResource result = new RobotMLExtensionResourceImpl(uri);
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
 
@@ -49,4 +49,4 @@ public class AthenaMLResourceFactoryImpl extends ResourceFactoryImpl {
 		return result;
 	}
 
-} //AthenaMLResourceFactoryImpl
+} //RobotMLExtensionResourceFactoryImpl

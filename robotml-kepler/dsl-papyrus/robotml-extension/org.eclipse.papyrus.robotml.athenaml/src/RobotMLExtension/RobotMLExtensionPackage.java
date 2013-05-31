@@ -1,6 +1,6 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML;
+package RobotMLExtension;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -18,18 +18,18 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLFactory
+ * @see RobotMLExtension.RobotMLExtensionFactory
  * @model kind="package"
  * @generated
  */
-public interface AthenaMLPackage extends EPackage {
+public interface RobotMLExtensionPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "AthenaML";
+	String eNAME = "RobotMLExtension";
 
 	/**
 	 * The package namespace URI.
@@ -37,7 +37,7 @@ public interface AthenaMLPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://papyrus/AthenaML/1.0";
+	String eNS_URI = "http://papyrus/RobotML/Extension/1.0";
 
 	/**
 	 * The package namespace name.
@@ -45,7 +45,7 @@ public interface AthenaMLPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "AthenaML";
+	String eNS_PREFIX = "RobotMLExyension";
 
 	/**
 	 * The singleton instance of the package.
@@ -53,14 +53,14 @@ public interface AthenaMLPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	AthenaMLPackage eINSTANCE = org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl.init();
+	RobotMLExtensionPackage eINSTANCE = RobotMLExtension.impl.RobotMLExtensionPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.ArrayImpl <em>Array</em>}' class.
+	 * The meta object id for the '{@link RobotMLExtension.impl.ArrayImpl <em>Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.ArrayImpl
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getArray()
+	 * @see RobotMLExtension.impl.ArrayImpl
+	 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getArray()
 	 * @generated
 	 */
 	int ARRAY = 0;
@@ -84,7 +84,7 @@ public interface AthenaMLPackage extends EPackage {
 	int ARRAY__DIMENSION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Type template</b></em>' reference.
+	 * The feature id for the '<em><b>Type Template</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -111,11 +111,11 @@ public interface AthenaMLPackage extends EPackage {
 	int ARRAY_FEATURE_COUNT = 4;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.VectorImpl <em>Vector</em>}' class.
+	 * The meta object id for the '{@link RobotMLExtension.impl.VectorImpl <em>Vector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.VectorImpl
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getVector()
+	 * @see RobotMLExtension.impl.VectorImpl
+	 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getVector()
 	 * @generated
 	 */
 	int VECTOR = 1;
@@ -130,7 +130,7 @@ public interface AthenaMLPackage extends EPackage {
 	int VECTOR__SIZE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Type template</b></em>' reference.
+	 * The feature id for the '<em><b>Type Template</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -157,17 +157,17 @@ public interface AthenaMLPackage extends EPackage {
 	int VECTOR_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.MapImpl <em>Map</em>}' class.
+	 * The meta object id for the '{@link RobotMLExtension.impl.MapImpl <em>Map</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.MapImpl
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getMap()
+	 * @see RobotMLExtension.impl.MapImpl
+	 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getMap()
 	 * @generated
 	 */
 	int MAP = 2;
 
 	/**
-	 * The feature id for the '<em><b>Values type</b></em>' reference.
+	 * The feature id for the '<em><b>Values Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -185,7 +185,7 @@ public interface AthenaMLPackage extends EPackage {
 	int MAP__BASE_DATA_TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Keys type</b></em>' reference.
+	 * The feature id for the '<em><b>Keys Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -203,11 +203,11 @@ public interface AthenaMLPackage extends EPackage {
 	int MAP_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.AliasImpl <em>Alias</em>}' class.
+	 * The meta object id for the '{@link RobotMLExtension.impl.AliasImpl <em>Alias</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AliasImpl
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getAlias()
+	 * @see RobotMLExtension.impl.AliasImpl
+	 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getAlias()
 	 * @generated
 	 */
 	int ALIAS = 3;
@@ -240,11 +240,11 @@ public interface AthenaMLPackage extends EPackage {
 	int ALIAS_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.UnionImpl <em>Union</em>}' class.
+	 * The meta object id for the '{@link RobotMLExtension.impl.UnionImpl <em>Union</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.UnionImpl
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getUnion()
+	 * @see RobotMLExtension.impl.UnionImpl
+	 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getUnion()
 	 * @generated
 	 */
 	int UNION = 4;
@@ -277,11 +277,11 @@ public interface AthenaMLPackage extends EPackage {
 	int UNION_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.ParametersImpl <em>Parameters</em>}' class.
+	 * The meta object id for the '{@link RobotMLExtension.impl.ParametersImpl <em>Parameters</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.ParametersImpl
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getParameters()
+	 * @see RobotMLExtension.impl.ParametersImpl
+	 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getParameters()
 	 * @generated
 	 */
 	int PARAMETERS = 5;
@@ -305,11 +305,11 @@ public interface AthenaMLPackage extends EPackage {
 	int PARAMETERS_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.DefineImpl <em>Define</em>}' class.
+	 * The meta object id for the '{@link RobotMLExtension.impl.DefineImpl <em>Define</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.DefineImpl
-	 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getDefine()
+	 * @see RobotMLExtension.impl.DefineImpl
+	 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getDefine()
 	 * @generated
 	 */
 	int DEFINE = 6;
@@ -343,257 +343,257 @@ public interface AthenaMLPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.robotML.AthenaML.Array <em>Array</em>}'.
+	 * Returns the meta object for class '{@link RobotMLExtension.Array <em>Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Array</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Array
+	 * @see RobotMLExtension.Array
 	 * @generated
 	 */
 	EClass getArray();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.robotML.AthenaML.Array#getSize <em>Size</em>}'.
+	 * Returns the meta object for the attribute '{@link RobotMLExtension.Array#getSize <em>Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Array#getSize()
+	 * @see RobotMLExtension.Array#getSize()
 	 * @see #getArray()
 	 * @generated
 	 */
 	EAttribute getArray_Size();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.robotML.AthenaML.Array#getDimension <em>Dimension</em>}'.
+	 * Returns the meta object for the attribute '{@link RobotMLExtension.Array#getDimension <em>Dimension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Dimension</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Array#getDimension()
+	 * @see RobotMLExtension.Array#getDimension()
 	 * @see #getArray()
 	 * @generated
 	 */
 	EAttribute getArray_Dimension();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Array#getType_template <em>Type template</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Array#getTypeTemplate <em>Type Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type template</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Array#getType_template()
+	 * @return the meta object for the reference '<em>Type Template</em>'.
+	 * @see RobotMLExtension.Array#getTypeTemplate()
 	 * @see #getArray()
 	 * @generated
 	 */
-	EReference getArray_Type_template();
+	EReference getArray_TypeTemplate();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Array#getBase_DataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Array#getBaseDataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Array#getBase_DataType()
+	 * @see RobotMLExtension.Array#getBaseDataType()
 	 * @see #getArray()
 	 * @generated
 	 */
-	EReference getArray_Base_DataType();
+	EReference getArray_BaseDataType();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.robotML.AthenaML.Vector <em>Vector</em>}'.
+	 * Returns the meta object for class '{@link RobotMLExtension.Vector <em>Vector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Vector</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Vector
+	 * @see RobotMLExtension.Vector
 	 * @generated
 	 */
 	EClass getVector();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.robotML.AthenaML.Vector#getSize <em>Size</em>}'.
+	 * Returns the meta object for the attribute '{@link RobotMLExtension.Vector#getSize <em>Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Vector#getSize()
+	 * @see RobotMLExtension.Vector#getSize()
 	 * @see #getVector()
 	 * @generated
 	 */
 	EAttribute getVector_Size();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Vector#getType_template <em>Type template</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Vector#getTypeTemplate <em>Type Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type template</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Vector#getType_template()
+	 * @return the meta object for the reference '<em>Type Template</em>'.
+	 * @see RobotMLExtension.Vector#getTypeTemplate()
 	 * @see #getVector()
 	 * @generated
 	 */
-	EReference getVector_Type_template();
+	EReference getVector_TypeTemplate();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Vector#getBase_DataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Vector#getBaseDataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Vector#getBase_DataType()
+	 * @see RobotMLExtension.Vector#getBaseDataType()
 	 * @see #getVector()
 	 * @generated
 	 */
-	EReference getVector_Base_DataType();
+	EReference getVector_BaseDataType();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.robotML.AthenaML.Map <em>Map</em>}'.
+	 * Returns the meta object for class '{@link RobotMLExtension.Map <em>Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Map</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Map
+	 * @see RobotMLExtension.Map
 	 * @generated
 	 */
 	EClass getMap();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Map#getValues_type <em>Values type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Map#getValuesType <em>Values Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Values type</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Map#getValues_type()
+	 * @return the meta object for the reference '<em>Values Type</em>'.
+	 * @see RobotMLExtension.Map#getValuesType()
 	 * @see #getMap()
 	 * @generated
 	 */
-	EReference getMap_Values_type();
+	EReference getMap_ValuesType();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Map#getBase_DataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Map#getBaseDataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Map#getBase_DataType()
+	 * @see RobotMLExtension.Map#getBaseDataType()
 	 * @see #getMap()
 	 * @generated
 	 */
-	EReference getMap_Base_DataType();
+	EReference getMap_BaseDataType();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Map#getKeys_type <em>Keys type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Map#getKeysType <em>Keys Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Keys type</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Map#getKeys_type()
+	 * @return the meta object for the reference '<em>Keys Type</em>'.
+	 * @see RobotMLExtension.Map#getKeysType()
 	 * @see #getMap()
 	 * @generated
 	 */
-	EReference getMap_Keys_type();
+	EReference getMap_KeysType();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.robotML.AthenaML.Alias <em>Alias</em>}'.
+	 * Returns the meta object for class '{@link RobotMLExtension.Alias <em>Alias</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Alias</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Alias
+	 * @see RobotMLExtension.Alias
 	 * @generated
 	 */
 	EClass getAlias();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Alias#getType <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Alias#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Alias#getType()
+	 * @see RobotMLExtension.Alias#getType()
 	 * @see #getAlias()
 	 * @generated
 	 */
 	EReference getAlias_Type();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Alias#getBase_DataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Alias#getBaseDataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Alias#getBase_DataType()
+	 * @see RobotMLExtension.Alias#getBaseDataType()
 	 * @see #getAlias()
 	 * @generated
 	 */
-	EReference getAlias_Base_DataType();
+	EReference getAlias_BaseDataType();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.robotML.AthenaML.Union <em>Union</em>}'.
+	 * Returns the meta object for class '{@link RobotMLExtension.Union <em>Union</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Union</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Union
+	 * @see RobotMLExtension.Union
 	 * @generated
 	 */
 	EClass getUnion();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.robotML.AthenaML.Union#getTypes <em>Types</em>}'.
+	 * Returns the meta object for the reference list '{@link RobotMLExtension.Union#getTypes <em>Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Types</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Union#getTypes()
+	 * @see RobotMLExtension.Union#getTypes()
 	 * @see #getUnion()
 	 * @generated
 	 */
 	EReference getUnion_Types();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Union#getBase_DataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Union#getBaseDataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Union#getBase_DataType()
+	 * @see RobotMLExtension.Union#getBaseDataType()
 	 * @see #getUnion()
 	 * @generated
 	 */
-	EReference getUnion_Base_DataType();
+	EReference getUnion_BaseDataType();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.robotML.AthenaML.Parameters <em>Parameters</em>}'.
+	 * Returns the meta object for class '{@link RobotMLExtension.Parameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Parameters</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Parameters
+	 * @see RobotMLExtension.Parameters
 	 * @generated
 	 */
 	EClass getParameters();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Parameters#getBase_Class <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Parameters#getBaseClass <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Class</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Parameters#getBase_Class()
+	 * @see RobotMLExtension.Parameters#getBaseClass()
 	 * @see #getParameters()
 	 * @generated
 	 */
-	EReference getParameters_Base_Class();
+	EReference getParameters_BaseClass();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.robotML.AthenaML.Define <em>Define</em>}'.
+	 * Returns the meta object for class '{@link RobotMLExtension.Define <em>Define</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Define</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Define
+	 * @see RobotMLExtension.Define
 	 * @generated
 	 */
 	EClass getDefine();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Define#getBase_DataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Define#getBaseDataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Define#getBase_DataType()
+	 * @see RobotMLExtension.Define#getBaseDataType()
 	 * @see #getDefine()
 	 * @generated
 	 */
-	EReference getDefine_Base_DataType();
+	EReference getDefine_BaseDataType();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.robotML.AthenaML.Define#getType <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Define#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see org.eclipse.papyrus.robotML.AthenaML.Define#getType()
+	 * @see RobotMLExtension.Define#getType()
 	 * @see #getDefine()
 	 * @generated
 	 */
@@ -606,7 +606,7 @@ public interface AthenaMLPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	AthenaMLFactory getAthenaMLFactory();
+	RobotMLExtensionFactory getRobotMLExtensionFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -622,11 +622,11 @@ public interface AthenaMLPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.ArrayImpl <em>Array</em>}' class.
+		 * The meta object literal for the '{@link RobotMLExtension.impl.ArrayImpl <em>Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.ArrayImpl
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getArray()
+		 * @see RobotMLExtension.impl.ArrayImpl
+		 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getArray()
 		 * @generated
 		 */
 		EClass ARRAY = eINSTANCE.getArray();
@@ -648,12 +648,12 @@ public interface AthenaMLPackage extends EPackage {
 		EAttribute ARRAY__DIMENSION = eINSTANCE.getArray_Dimension();
 
 		/**
-		 * The meta object literal for the '<em><b>Type template</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Type Template</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARRAY__TYPE_TEMPLATE = eINSTANCE.getArray_Type_template();
+		EReference ARRAY__TYPE_TEMPLATE = eINSTANCE.getArray_TypeTemplate();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
@@ -661,14 +661,14 @@ public interface AthenaMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARRAY__BASE_DATA_TYPE = eINSTANCE.getArray_Base_DataType();
+		EReference ARRAY__BASE_DATA_TYPE = eINSTANCE.getArray_BaseDataType();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.VectorImpl <em>Vector</em>}' class.
+		 * The meta object literal for the '{@link RobotMLExtension.impl.VectorImpl <em>Vector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.VectorImpl
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getVector()
+		 * @see RobotMLExtension.impl.VectorImpl
+		 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getVector()
 		 * @generated
 		 */
 		EClass VECTOR = eINSTANCE.getVector();
@@ -682,12 +682,12 @@ public interface AthenaMLPackage extends EPackage {
 		EAttribute VECTOR__SIZE = eINSTANCE.getVector_Size();
 
 		/**
-		 * The meta object literal for the '<em><b>Type template</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Type Template</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VECTOR__TYPE_TEMPLATE = eINSTANCE.getVector_Type_template();
+		EReference VECTOR__TYPE_TEMPLATE = eINSTANCE.getVector_TypeTemplate();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
@@ -695,25 +695,25 @@ public interface AthenaMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VECTOR__BASE_DATA_TYPE = eINSTANCE.getVector_Base_DataType();
+		EReference VECTOR__BASE_DATA_TYPE = eINSTANCE.getVector_BaseDataType();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.MapImpl <em>Map</em>}' class.
+		 * The meta object literal for the '{@link RobotMLExtension.impl.MapImpl <em>Map</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.MapImpl
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getMap()
+		 * @see RobotMLExtension.impl.MapImpl
+		 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getMap()
 		 * @generated
 		 */
 		EClass MAP = eINSTANCE.getMap();
 
 		/**
-		 * The meta object literal for the '<em><b>Values type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Values Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAP__VALUES_TYPE = eINSTANCE.getMap_Values_type();
+		EReference MAP__VALUES_TYPE = eINSTANCE.getMap_ValuesType();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
@@ -721,22 +721,22 @@ public interface AthenaMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAP__BASE_DATA_TYPE = eINSTANCE.getMap_Base_DataType();
+		EReference MAP__BASE_DATA_TYPE = eINSTANCE.getMap_BaseDataType();
 
 		/**
-		 * The meta object literal for the '<em><b>Keys type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Keys Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAP__KEYS_TYPE = eINSTANCE.getMap_Keys_type();
+		EReference MAP__KEYS_TYPE = eINSTANCE.getMap_KeysType();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.AliasImpl <em>Alias</em>}' class.
+		 * The meta object literal for the '{@link RobotMLExtension.impl.AliasImpl <em>Alias</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AliasImpl
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getAlias()
+		 * @see RobotMLExtension.impl.AliasImpl
+		 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getAlias()
 		 * @generated
 		 */
 		EClass ALIAS = eINSTANCE.getAlias();
@@ -755,14 +755,14 @@ public interface AthenaMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ALIAS__BASE_DATA_TYPE = eINSTANCE.getAlias_Base_DataType();
+		EReference ALIAS__BASE_DATA_TYPE = eINSTANCE.getAlias_BaseDataType();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.UnionImpl <em>Union</em>}' class.
+		 * The meta object literal for the '{@link RobotMLExtension.impl.UnionImpl <em>Union</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.UnionImpl
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getUnion()
+		 * @see RobotMLExtension.impl.UnionImpl
+		 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getUnion()
 		 * @generated
 		 */
 		EClass UNION = eINSTANCE.getUnion();
@@ -781,14 +781,14 @@ public interface AthenaMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNION__BASE_DATA_TYPE = eINSTANCE.getUnion_Base_DataType();
+		EReference UNION__BASE_DATA_TYPE = eINSTANCE.getUnion_BaseDataType();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.ParametersImpl <em>Parameters</em>}' class.
+		 * The meta object literal for the '{@link RobotMLExtension.impl.ParametersImpl <em>Parameters</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.ParametersImpl
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getParameters()
+		 * @see RobotMLExtension.impl.ParametersImpl
+		 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getParameters()
 		 * @generated
 		 */
 		EClass PARAMETERS = eINSTANCE.getParameters();
@@ -799,14 +799,14 @@ public interface AthenaMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETERS__BASE_CLASS = eINSTANCE.getParameters_Base_Class();
+		EReference PARAMETERS__BASE_CLASS = eINSTANCE.getParameters_BaseClass();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.robotML.AthenaML.impl.DefineImpl <em>Define</em>}' class.
+		 * The meta object literal for the '{@link RobotMLExtension.impl.DefineImpl <em>Define</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.DefineImpl
-		 * @see org.eclipse.papyrus.robotML.AthenaML.impl.AthenaMLPackageImpl#getDefine()
+		 * @see RobotMLExtension.impl.DefineImpl
+		 * @see RobotMLExtension.impl.RobotMLExtensionPackageImpl#getDefine()
 		 * @generated
 		 */
 		EClass DEFINE = eINSTANCE.getDefine();
@@ -817,7 +817,7 @@ public interface AthenaMLPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEFINE__BASE_DATA_TYPE = eINSTANCE.getDefine_Base_DataType();
+		EReference DEFINE__BASE_DATA_TYPE = eINSTANCE.getDefine_BaseDataType();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
@@ -829,4 +829,4 @@ public interface AthenaMLPackage extends EPackage {
 
 	}
 
-} //AthenaMLPackage
+} //RobotMLExtensionPackage

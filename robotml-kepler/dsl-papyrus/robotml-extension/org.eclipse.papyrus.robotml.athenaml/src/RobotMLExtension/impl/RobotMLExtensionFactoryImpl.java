@@ -1,6 +1,8 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML.impl;
+package RobotMLExtension.impl;
+
+import RobotMLExtension.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -10,32 +12,30 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.eclipse.papyrus.robotML.AthenaML.*;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
  * @generated
  */
-public class AthenaMLFactoryImpl extends EFactoryImpl implements AthenaMLFactory {
+public class RobotMLExtensionFactoryImpl extends EFactoryImpl implements RobotMLExtensionFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static AthenaMLFactory init() {
+	public static RobotMLExtensionFactory init() {
 		try {
-			AthenaMLFactory theAthenaMLFactory = (AthenaMLFactory)EPackage.Registry.INSTANCE.getEFactory("http://papyrus/AthenaML/1.0"); 
-			if (theAthenaMLFactory != null) {
-				return theAthenaMLFactory;
+			RobotMLExtensionFactory theRobotMLExtensionFactory = (RobotMLExtensionFactory)EPackage.Registry.INSTANCE.getEFactory("http://papyrus/RobotML/Extension/1.0"); 
+			if (theRobotMLExtensionFactory != null) {
+				return theRobotMLExtensionFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new AthenaMLFactoryImpl();
+		return new RobotMLExtensionFactoryImpl();
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class AthenaMLFactoryImpl extends EFactoryImpl implements AthenaMLFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AthenaMLFactoryImpl() {
+	public RobotMLExtensionFactoryImpl() {
 		super();
 	}
 
@@ -56,13 +56,13 @@ public class AthenaMLFactoryImpl extends EFactoryImpl implements AthenaMLFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case AthenaMLPackage.ARRAY: return createArray();
-			case AthenaMLPackage.VECTOR: return createVector();
-			case AthenaMLPackage.MAP: return createMap();
-			case AthenaMLPackage.ALIAS: return createAlias();
-			case AthenaMLPackage.UNION: return createUnion();
-			case AthenaMLPackage.PARAMETERS: return createParameters();
-			case AthenaMLPackage.DEFINE: return createDefine();
+			case RobotMLExtensionPackage.ARRAY: return createArray();
+			case RobotMLExtensionPackage.VECTOR: return createVector();
+			case RobotMLExtensionPackage.MAP: return createMap();
+			case RobotMLExtensionPackage.ALIAS: return createAlias();
+			case RobotMLExtensionPackage.UNION: return createUnion();
+			case RobotMLExtensionPackage.PARAMETERS: return createParameters();
+			case RobotMLExtensionPackage.DEFINE: return createDefine();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -143,8 +143,8 @@ public class AthenaMLFactoryImpl extends EFactoryImpl implements AthenaMLFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AthenaMLPackage getAthenaMLPackage() {
-		return (AthenaMLPackage)getEPackage();
+	public RobotMLExtensionPackage getRobotMLExtensionPackage() {
+		return (RobotMLExtensionPackage)getEPackage();
 	}
 
 	/**
@@ -154,8 +154,8 @@ public class AthenaMLFactoryImpl extends EFactoryImpl implements AthenaMLFactory
 	 * @generated
 	 */
 	@Deprecated
-	public static AthenaMLPackage getPackage() {
-		return AthenaMLPackage.eINSTANCE;
+	public static RobotMLExtensionPackage getPackage() {
+		return RobotMLExtensionPackage.eINSTANCE;
 	}
 
-} //AthenaMLFactoryImpl
+} //RobotMLExtensionFactoryImpl

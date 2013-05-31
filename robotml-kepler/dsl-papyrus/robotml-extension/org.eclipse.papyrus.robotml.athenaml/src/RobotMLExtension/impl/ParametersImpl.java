@@ -1,6 +1,9 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML.impl;
+package RobotMLExtension.impl;
+
+import RobotMLExtension.Parameters;
+import RobotMLExtension.RobotMLExtensionPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -10,9 +13,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage;
-import org.eclipse.papyrus.robotML.AthenaML.Parameters;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Parameters</b></em>'.
@@ -20,7 +20,7 @@ import org.eclipse.papyrus.robotML.AthenaML.Parameters;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.impl.ParametersImpl#getBase_Class <em>Base Class</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.ParametersImpl#getBaseClass <em>Base Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,14 +28,14 @@ import org.eclipse.papyrus.robotML.AthenaML.Parameters;
  */
 public class ParametersImpl extends EObjectImpl implements Parameters {
 	/**
-	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
+	 * The cached value of the '{@link #getBaseClass() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBase_Class()
+	 * @see #getBaseClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected org.eclipse.uml2.uml.Class base_Class;
+	protected org.eclipse.uml2.uml.Class baseClass;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AthenaMLPackage.Literals.PARAMETERS;
+		return RobotMLExtensionPackage.Literals.PARAMETERS;
 	}
 
 	/**
@@ -61,16 +61,16 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.uml2.uml.Class getBase_Class() {
-		if (base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
-			if (base_Class != oldBase_Class) {
+	public org.eclipse.uml2.uml.Class getBaseClass() {
+		if (baseClass != null && baseClass.eIsProxy()) {
+			InternalEObject oldBaseClass = (InternalEObject)baseClass;
+			baseClass = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBaseClass);
+			if (baseClass != oldBaseClass) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AthenaMLPackage.PARAMETERS__BASE_CLASS, oldBase_Class, base_Class));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.PARAMETERS__BASE_CLASS, oldBaseClass, baseClass));
 			}
 		}
-		return base_Class;
+		return baseClass;
 	}
 
 	/**
@@ -78,8 +78,8 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
-		return base_Class;
+	public org.eclipse.uml2.uml.Class basicGetBaseClass() {
+		return baseClass;
 	}
 
 	/**
@@ -87,11 +87,11 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
-		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
-		base_Class = newBase_Class;
+	public void setBaseClass(org.eclipse.uml2.uml.Class newBaseClass) {
+		org.eclipse.uml2.uml.Class oldBaseClass = baseClass;
+		baseClass = newBaseClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AthenaMLPackage.PARAMETERS__BASE_CLASS, oldBase_Class, base_Class));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.PARAMETERS__BASE_CLASS, oldBaseClass, baseClass));
 	}
 
 	/**
@@ -102,9 +102,9 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AthenaMLPackage.PARAMETERS__BASE_CLASS:
-				if (resolve) return getBase_Class();
-				return basicGetBase_Class();
+			case RobotMLExtensionPackage.PARAMETERS__BASE_CLASS:
+				if (resolve) return getBaseClass();
+				return basicGetBaseClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,8 +117,8 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AthenaMLPackage.PARAMETERS__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
+			case RobotMLExtensionPackage.PARAMETERS__BASE_CLASS:
+				setBaseClass((org.eclipse.uml2.uml.Class)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -132,8 +132,8 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AthenaMLPackage.PARAMETERS__BASE_CLASS:
-				setBase_Class((org.eclipse.uml2.uml.Class)null);
+			case RobotMLExtensionPackage.PARAMETERS__BASE_CLASS:
+				setBaseClass((org.eclipse.uml2.uml.Class)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -147,8 +147,8 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AthenaMLPackage.PARAMETERS__BASE_CLASS:
-				return base_Class != null;
+			case RobotMLExtensionPackage.PARAMETERS__BASE_CLASS:
+				return baseClass != null;
 		}
 		return super.eIsSet(featureID);
 	}

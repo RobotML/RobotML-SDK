@@ -1,6 +1,9 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML.impl;
+package RobotMLExtension.impl;
+
+import RobotMLExtension.Array;
+import RobotMLExtension.RobotMLExtensionPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -9,9 +12,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.papyrus.robotML.AthenaML.Array;
-import org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage;
 
 import org.eclipse.uml2.uml.DataType;
 
@@ -22,10 +22,10 @@ import org.eclipse.uml2.uml.DataType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.impl.ArrayImpl#getSize <em>Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.impl.ArrayImpl#getDimension <em>Dimension</em>}</li>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.impl.ArrayImpl#getType_template <em>Type template</em>}</li>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.impl.ArrayImpl#getBase_DataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.ArrayImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.ArrayImpl#getDimension <em>Dimension</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.ArrayImpl#getTypeTemplate <em>Type Template</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.ArrayImpl#getBaseDataType <em>Base Data Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,24 +73,24 @@ public class ArrayImpl extends EObjectImpl implements Array {
 	protected int dimension = DIMENSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getType_template() <em>Type template</em>}' reference.
+	 * The cached value of the '{@link #getTypeTemplate() <em>Type Template</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType_template()
+	 * @see #getTypeTemplate()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType type_template;
+	protected DataType typeTemplate;
 
 	/**
-	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
+	 * The cached value of the '{@link #getBaseDataType() <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBase_DataType()
+	 * @see #getBaseDataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType base_DataType;
+	protected DataType baseDataType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,7 +108,7 @@ public class ArrayImpl extends EObjectImpl implements Array {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AthenaMLPackage.Literals.ARRAY;
+		return RobotMLExtensionPackage.Literals.ARRAY;
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class ArrayImpl extends EObjectImpl implements Array {
 		int oldSize = size;
 		size = newSize;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AthenaMLPackage.ARRAY__SIZE, oldSize, size));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.ARRAY__SIZE, oldSize, size));
 	}
 
 	/**
@@ -150,7 +150,7 @@ public class ArrayImpl extends EObjectImpl implements Array {
 		int oldDimension = dimension;
 		dimension = newDimension;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AthenaMLPackage.ARRAY__DIMENSION, oldDimension, dimension));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.ARRAY__DIMENSION, oldDimension, dimension));
 	}
 
 	/**
@@ -158,16 +158,16 @@ public class ArrayImpl extends EObjectImpl implements Array {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getType_template() {
-		if (type_template != null && type_template.eIsProxy()) {
-			InternalEObject oldType_template = (InternalEObject)type_template;
-			type_template = (DataType)eResolveProxy(oldType_template);
-			if (type_template != oldType_template) {
+	public DataType getTypeTemplate() {
+		if (typeTemplate != null && typeTemplate.eIsProxy()) {
+			InternalEObject oldTypeTemplate = (InternalEObject)typeTemplate;
+			typeTemplate = (DataType)eResolveProxy(oldTypeTemplate);
+			if (typeTemplate != oldTypeTemplate) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AthenaMLPackage.ARRAY__TYPE_TEMPLATE, oldType_template, type_template));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.ARRAY__TYPE_TEMPLATE, oldTypeTemplate, typeTemplate));
 			}
 		}
-		return type_template;
+		return typeTemplate;
 	}
 
 	/**
@@ -175,8 +175,8 @@ public class ArrayImpl extends EObjectImpl implements Array {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetType_template() {
-		return type_template;
+	public DataType basicGetTypeTemplate() {
+		return typeTemplate;
 	}
 
 	/**
@@ -184,11 +184,11 @@ public class ArrayImpl extends EObjectImpl implements Array {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType_template(DataType newType_template) {
-		DataType oldType_template = type_template;
-		type_template = newType_template;
+	public void setTypeTemplate(DataType newTypeTemplate) {
+		DataType oldTypeTemplate = typeTemplate;
+		typeTemplate = newTypeTemplate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AthenaMLPackage.ARRAY__TYPE_TEMPLATE, oldType_template, type_template));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.ARRAY__TYPE_TEMPLATE, oldTypeTemplate, typeTemplate));
 	}
 
 	/**
@@ -196,16 +196,16 @@ public class ArrayImpl extends EObjectImpl implements Array {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getBase_DataType() {
-		if (base_DataType != null && base_DataType.eIsProxy()) {
-			InternalEObject oldBase_DataType = (InternalEObject)base_DataType;
-			base_DataType = (DataType)eResolveProxy(oldBase_DataType);
-			if (base_DataType != oldBase_DataType) {
+	public DataType getBaseDataType() {
+		if (baseDataType != null && baseDataType.eIsProxy()) {
+			InternalEObject oldBaseDataType = (InternalEObject)baseDataType;
+			baseDataType = (DataType)eResolveProxy(oldBaseDataType);
+			if (baseDataType != oldBaseDataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AthenaMLPackage.ARRAY__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.ARRAY__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
 			}
 		}
-		return base_DataType;
+		return baseDataType;
 	}
 
 	/**
@@ -213,8 +213,8 @@ public class ArrayImpl extends EObjectImpl implements Array {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetBase_DataType() {
-		return base_DataType;
+	public DataType basicGetBaseDataType() {
+		return baseDataType;
 	}
 
 	/**
@@ -222,11 +222,11 @@ public class ArrayImpl extends EObjectImpl implements Array {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBase_DataType(DataType newBase_DataType) {
-		DataType oldBase_DataType = base_DataType;
-		base_DataType = newBase_DataType;
+	public void setBaseDataType(DataType newBaseDataType) {
+		DataType oldBaseDataType = baseDataType;
+		baseDataType = newBaseDataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AthenaMLPackage.ARRAY__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.ARRAY__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
 	}
 
 	/**
@@ -237,16 +237,16 @@ public class ArrayImpl extends EObjectImpl implements Array {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AthenaMLPackage.ARRAY__SIZE:
+			case RobotMLExtensionPackage.ARRAY__SIZE:
 				return getSize();
-			case AthenaMLPackage.ARRAY__DIMENSION:
+			case RobotMLExtensionPackage.ARRAY__DIMENSION:
 				return getDimension();
-			case AthenaMLPackage.ARRAY__TYPE_TEMPLATE:
-				if (resolve) return getType_template();
-				return basicGetType_template();
-			case AthenaMLPackage.ARRAY__BASE_DATA_TYPE:
-				if (resolve) return getBase_DataType();
-				return basicGetBase_DataType();
+			case RobotMLExtensionPackage.ARRAY__TYPE_TEMPLATE:
+				if (resolve) return getTypeTemplate();
+				return basicGetTypeTemplate();
+			case RobotMLExtensionPackage.ARRAY__BASE_DATA_TYPE:
+				if (resolve) return getBaseDataType();
+				return basicGetBaseDataType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -259,17 +259,17 @@ public class ArrayImpl extends EObjectImpl implements Array {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AthenaMLPackage.ARRAY__SIZE:
+			case RobotMLExtensionPackage.ARRAY__SIZE:
 				setSize((Integer)newValue);
 				return;
-			case AthenaMLPackage.ARRAY__DIMENSION:
+			case RobotMLExtensionPackage.ARRAY__DIMENSION:
 				setDimension((Integer)newValue);
 				return;
-			case AthenaMLPackage.ARRAY__TYPE_TEMPLATE:
-				setType_template((DataType)newValue);
+			case RobotMLExtensionPackage.ARRAY__TYPE_TEMPLATE:
+				setTypeTemplate((DataType)newValue);
 				return;
-			case AthenaMLPackage.ARRAY__BASE_DATA_TYPE:
-				setBase_DataType((DataType)newValue);
+			case RobotMLExtensionPackage.ARRAY__BASE_DATA_TYPE:
+				setBaseDataType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -283,17 +283,17 @@ public class ArrayImpl extends EObjectImpl implements Array {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AthenaMLPackage.ARRAY__SIZE:
+			case RobotMLExtensionPackage.ARRAY__SIZE:
 				setSize(SIZE_EDEFAULT);
 				return;
-			case AthenaMLPackage.ARRAY__DIMENSION:
+			case RobotMLExtensionPackage.ARRAY__DIMENSION:
 				setDimension(DIMENSION_EDEFAULT);
 				return;
-			case AthenaMLPackage.ARRAY__TYPE_TEMPLATE:
-				setType_template((DataType)null);
+			case RobotMLExtensionPackage.ARRAY__TYPE_TEMPLATE:
+				setTypeTemplate((DataType)null);
 				return;
-			case AthenaMLPackage.ARRAY__BASE_DATA_TYPE:
-				setBase_DataType((DataType)null);
+			case RobotMLExtensionPackage.ARRAY__BASE_DATA_TYPE:
+				setBaseDataType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,14 +307,14 @@ public class ArrayImpl extends EObjectImpl implements Array {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AthenaMLPackage.ARRAY__SIZE:
+			case RobotMLExtensionPackage.ARRAY__SIZE:
 				return size != SIZE_EDEFAULT;
-			case AthenaMLPackage.ARRAY__DIMENSION:
+			case RobotMLExtensionPackage.ARRAY__DIMENSION:
 				return dimension != DIMENSION_EDEFAULT;
-			case AthenaMLPackage.ARRAY__TYPE_TEMPLATE:
-				return type_template != null;
-			case AthenaMLPackage.ARRAY__BASE_DATA_TYPE:
-				return base_DataType != null;
+			case RobotMLExtensionPackage.ARRAY__TYPE_TEMPLATE:
+				return typeTemplate != null;
+			case RobotMLExtensionPackage.ARRAY__BASE_DATA_TYPE:
+				return baseDataType != null;
 		}
 		return super.eIsSet(featureID);
 	}

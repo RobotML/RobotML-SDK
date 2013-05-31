@@ -1,6 +1,9 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML.impl;
+package RobotMLExtension.impl;
+
+import RobotMLExtension.Define;
+import RobotMLExtension.RobotMLExtensionPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -9,9 +12,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage;
-import org.eclipse.papyrus.robotML.AthenaML.Define;
 
 import org.eclipse.uml2.uml.DataType;
 
@@ -22,8 +22,8 @@ import org.eclipse.uml2.uml.DataType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.impl.DefineImpl#getBase_DataType <em>Base Data Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.impl.DefineImpl#getType <em>Type</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.DefineImpl#getBaseDataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.DefineImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,14 +31,14 @@ import org.eclipse.uml2.uml.DataType;
  */
 public class DefineImpl extends EObjectImpl implements Define {
 	/**
-	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
+	 * The cached value of the '{@link #getBaseDataType() <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBase_DataType()
+	 * @see #getBaseDataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType base_DataType;
+	protected DataType baseDataType;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
@@ -66,7 +66,7 @@ public class DefineImpl extends EObjectImpl implements Define {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AthenaMLPackage.Literals.DEFINE;
+		return RobotMLExtensionPackage.Literals.DEFINE;
 	}
 
 	/**
@@ -74,16 +74,16 @@ public class DefineImpl extends EObjectImpl implements Define {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getBase_DataType() {
-		if (base_DataType != null && base_DataType.eIsProxy()) {
-			InternalEObject oldBase_DataType = (InternalEObject)base_DataType;
-			base_DataType = (DataType)eResolveProxy(oldBase_DataType);
-			if (base_DataType != oldBase_DataType) {
+	public DataType getBaseDataType() {
+		if (baseDataType != null && baseDataType.eIsProxy()) {
+			InternalEObject oldBaseDataType = (InternalEObject)baseDataType;
+			baseDataType = (DataType)eResolveProxy(oldBaseDataType);
+			if (baseDataType != oldBaseDataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AthenaMLPackage.DEFINE__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.DEFINE__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
 			}
 		}
-		return base_DataType;
+		return baseDataType;
 	}
 
 	/**
@@ -91,8 +91,8 @@ public class DefineImpl extends EObjectImpl implements Define {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetBase_DataType() {
-		return base_DataType;
+	public DataType basicGetBaseDataType() {
+		return baseDataType;
 	}
 
 	/**
@@ -100,11 +100,11 @@ public class DefineImpl extends EObjectImpl implements Define {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBase_DataType(DataType newBase_DataType) {
-		DataType oldBase_DataType = base_DataType;
-		base_DataType = newBase_DataType;
+	public void setBaseDataType(DataType newBaseDataType) {
+		DataType oldBaseDataType = baseDataType;
+		baseDataType = newBaseDataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AthenaMLPackage.DEFINE__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.DEFINE__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
 	}
 
 	/**
@@ -118,7 +118,7 @@ public class DefineImpl extends EObjectImpl implements Define {
 			type = (DataType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AthenaMLPackage.DEFINE__TYPE, oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.DEFINE__TYPE, oldType, type));
 			}
 		}
 		return type;
@@ -142,7 +142,7 @@ public class DefineImpl extends EObjectImpl implements Define {
 		DataType oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AthenaMLPackage.DEFINE__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.DEFINE__TYPE, oldType, type));
 	}
 
 	/**
@@ -153,10 +153,10 @@ public class DefineImpl extends EObjectImpl implements Define {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AthenaMLPackage.DEFINE__BASE_DATA_TYPE:
-				if (resolve) return getBase_DataType();
-				return basicGetBase_DataType();
-			case AthenaMLPackage.DEFINE__TYPE:
+			case RobotMLExtensionPackage.DEFINE__BASE_DATA_TYPE:
+				if (resolve) return getBaseDataType();
+				return basicGetBaseDataType();
+			case RobotMLExtensionPackage.DEFINE__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
 		}
@@ -171,10 +171,10 @@ public class DefineImpl extends EObjectImpl implements Define {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AthenaMLPackage.DEFINE__BASE_DATA_TYPE:
-				setBase_DataType((DataType)newValue);
+			case RobotMLExtensionPackage.DEFINE__BASE_DATA_TYPE:
+				setBaseDataType((DataType)newValue);
 				return;
-			case AthenaMLPackage.DEFINE__TYPE:
+			case RobotMLExtensionPackage.DEFINE__TYPE:
 				setType((DataType)newValue);
 				return;
 		}
@@ -189,10 +189,10 @@ public class DefineImpl extends EObjectImpl implements Define {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AthenaMLPackage.DEFINE__BASE_DATA_TYPE:
-				setBase_DataType((DataType)null);
+			case RobotMLExtensionPackage.DEFINE__BASE_DATA_TYPE:
+				setBaseDataType((DataType)null);
 				return;
-			case AthenaMLPackage.DEFINE__TYPE:
+			case RobotMLExtensionPackage.DEFINE__TYPE:
 				setType((DataType)null);
 				return;
 		}
@@ -207,9 +207,9 @@ public class DefineImpl extends EObjectImpl implements Define {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AthenaMLPackage.DEFINE__BASE_DATA_TYPE:
-				return base_DataType != null;
-			case AthenaMLPackage.DEFINE__TYPE:
+			case RobotMLExtensionPackage.DEFINE__BASE_DATA_TYPE:
+				return baseDataType != null;
+			case RobotMLExtensionPackage.DEFINE__TYPE:
 				return type != null;
 		}
 		return super.eIsSet(featureID);

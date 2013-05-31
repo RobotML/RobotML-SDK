@@ -1,6 +1,9 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML.impl;
+package RobotMLExtension.impl;
+
+import RobotMLExtension.Alias;
+import RobotMLExtension.RobotMLExtensionPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -9,9 +12,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.papyrus.robotML.AthenaML.Alias;
-import org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage;
 
 import org.eclipse.uml2.uml.DataType;
 
@@ -22,8 +22,8 @@ import org.eclipse.uml2.uml.DataType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.impl.AliasImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.impl.AliasImpl#getBase_DataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.AliasImpl#getType <em>Type</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.AliasImpl#getBaseDataType <em>Base Data Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,14 +41,14 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	protected DataType type;
 
 	/**
-	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
+	 * The cached value of the '{@link #getBaseDataType() <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBase_DataType()
+	 * @see #getBaseDataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType base_DataType;
+	protected DataType baseDataType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AthenaMLPackage.Literals.ALIAS;
+		return RobotMLExtensionPackage.Literals.ALIAS;
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class AliasImpl extends EObjectImpl implements Alias {
 			type = (DataType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AthenaMLPackage.ALIAS__TYPE, oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.ALIAS__TYPE, oldType, type));
 			}
 		}
 		return type;
@@ -104,7 +104,7 @@ public class AliasImpl extends EObjectImpl implements Alias {
 		DataType oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AthenaMLPackage.ALIAS__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.ALIAS__TYPE, oldType, type));
 	}
 
 	/**
@@ -112,16 +112,16 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getBase_DataType() {
-		if (base_DataType != null && base_DataType.eIsProxy()) {
-			InternalEObject oldBase_DataType = (InternalEObject)base_DataType;
-			base_DataType = (DataType)eResolveProxy(oldBase_DataType);
-			if (base_DataType != oldBase_DataType) {
+	public DataType getBaseDataType() {
+		if (baseDataType != null && baseDataType.eIsProxy()) {
+			InternalEObject oldBaseDataType = (InternalEObject)baseDataType;
+			baseDataType = (DataType)eResolveProxy(oldBaseDataType);
+			if (baseDataType != oldBaseDataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AthenaMLPackage.ALIAS__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
 			}
 		}
-		return base_DataType;
+		return baseDataType;
 	}
 
 	/**
@@ -129,8 +129,8 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetBase_DataType() {
-		return base_DataType;
+	public DataType basicGetBaseDataType() {
+		return baseDataType;
 	}
 
 	/**
@@ -138,11 +138,11 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBase_DataType(DataType newBase_DataType) {
-		DataType oldBase_DataType = base_DataType;
-		base_DataType = newBase_DataType;
+	public void setBaseDataType(DataType newBaseDataType) {
+		DataType oldBaseDataType = baseDataType;
+		baseDataType = newBaseDataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AthenaMLPackage.ALIAS__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
 	}
 
 	/**
@@ -153,12 +153,12 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AthenaMLPackage.ALIAS__TYPE:
+			case RobotMLExtensionPackage.ALIAS__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
-			case AthenaMLPackage.ALIAS__BASE_DATA_TYPE:
-				if (resolve) return getBase_DataType();
-				return basicGetBase_DataType();
+			case RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE:
+				if (resolve) return getBaseDataType();
+				return basicGetBaseDataType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,11 +171,11 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AthenaMLPackage.ALIAS__TYPE:
+			case RobotMLExtensionPackage.ALIAS__TYPE:
 				setType((DataType)newValue);
 				return;
-			case AthenaMLPackage.ALIAS__BASE_DATA_TYPE:
-				setBase_DataType((DataType)newValue);
+			case RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE:
+				setBaseDataType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,11 +189,11 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AthenaMLPackage.ALIAS__TYPE:
+			case RobotMLExtensionPackage.ALIAS__TYPE:
 				setType((DataType)null);
 				return;
-			case AthenaMLPackage.ALIAS__BASE_DATA_TYPE:
-				setBase_DataType((DataType)null);
+			case RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE:
+				setBaseDataType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -207,10 +207,10 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AthenaMLPackage.ALIAS__TYPE:
+			case RobotMLExtensionPackage.ALIAS__TYPE:
 				return type != null;
-			case AthenaMLPackage.ALIAS__BASE_DATA_TYPE:
-				return base_DataType != null;
+			case RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE:
+				return baseDataType != null;
 		}
 		return super.eIsSet(featureID);
 	}

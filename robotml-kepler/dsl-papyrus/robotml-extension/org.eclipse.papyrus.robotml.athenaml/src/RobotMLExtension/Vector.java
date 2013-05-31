@@ -1,6 +1,6 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML;
+package RobotMLExtension;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -14,13 +14,13 @@ import org.eclipse.uml2.uml.DataType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.Vector#getSize <em>Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.Vector#getType_template <em>Type template</em>}</li>
- *   <li>{@link org.eclipse.papyrus.robotML.AthenaML.Vector#getBase_DataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.Vector#getSize <em>Size</em>}</li>
+ *   <li>{@link RobotMLExtension.Vector#getTypeTemplate <em>Type Template</em>}</li>
+ *   <li>{@link RobotMLExtension.Vector#getBaseDataType <em>Base Data Type</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getVector()
+ * @see RobotMLExtension.RobotMLExtensionPackage#getVector()
  * @model
  * @generated
  */
@@ -35,14 +35,14 @@ public interface Vector extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Size</em>' attribute.
 	 * @see #setSize(int)
-	 * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getVector_Size()
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getVector_Size()
 	 * @model dataType="org.eclipse.uml2.types.Integer" required="true" ordered="false"
 	 * @generated
 	 */
 	int getSize();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.robotML.AthenaML.Vector#getSize <em>Size</em>}' attribute.
+	 * Sets the value of the '{@link RobotMLExtension.Vector#getSize <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Size</em>' attribute.
@@ -52,30 +52,30 @@ public interface Vector extends EObject {
 	void setSize(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Type template</b></em>' reference.
+	 * Returns the value of the '<em><b>Type Template</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Type template</em>' reference isn't clear,
+	 * If the meaning of the '<em>Type Template</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type template</em>' reference.
-	 * @see #setType_template(DataType)
-	 * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getVector_Type_template()
+	 * @return the value of the '<em>Type Template</em>' reference.
+	 * @see #setTypeTemplate(DataType)
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getVector_TypeTemplate()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	DataType getType_template();
+	DataType getTypeTemplate();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.robotML.AthenaML.Vector#getType_template <em>Type template</em>}' reference.
+	 * Sets the value of the '{@link RobotMLExtension.Vector#getTypeTemplate <em>Type Template</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type template</em>' reference.
-	 * @see #getType_template()
+	 * @param value the new value of the '<em>Type Template</em>' reference.
+	 * @see #getTypeTemplate()
 	 * @generated
 	 */
-	void setType_template(DataType value);
+	void setTypeTemplate(DataType value);
 
 	/**
 	 * Returns the value of the '<em><b>Base Data Type</b></em>' reference.
@@ -86,21 +86,21 @@ public interface Vector extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Base Data Type</em>' reference.
-	 * @see #setBase_DataType(DataType)
-	 * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#getVector_Base_DataType()
+	 * @see #setBaseDataType(DataType)
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getVector_BaseDataType()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	DataType getBase_DataType();
+	DataType getBaseDataType();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.robotML.AthenaML.Vector#getBase_DataType <em>Base Data Type</em>}' reference.
+	 * Sets the value of the '{@link RobotMLExtension.Vector#getBaseDataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Base Data Type</em>' reference.
-	 * @see #getBase_DataType()
+	 * @see #getBaseDataType()
 	 * @generated
 	 */
-	void setBase_DataType(DataType value);
+	void setBaseDataType(DataType value);
 
 } // Vector

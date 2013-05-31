@@ -1,6 +1,16 @@
 /**
  */
-package org.eclipse.papyrus.robotML.AthenaML.impl;
+package RobotMLExtension.impl;
+
+import RobotMLExtension.Alias;
+import RobotMLExtension.Array;
+import RobotMLExtension.Define;
+import RobotMLExtension.Map;
+import RobotMLExtension.Parameters;
+import RobotMLExtension.RobotMLExtensionFactory;
+import RobotMLExtension.RobotMLExtensionPackage;
+import RobotMLExtension.Union;
+import RobotMLExtension.Vector;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -8,16 +18,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.eclipse.papyrus.robotML.AthenaML.Alias;
-import org.eclipse.papyrus.robotML.AthenaML.Array;
-import org.eclipse.papyrus.robotML.AthenaML.AthenaMLFactory;
-import org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage;
-import org.eclipse.papyrus.robotML.AthenaML.Define;
-import org.eclipse.papyrus.robotML.AthenaML.Map;
-import org.eclipse.papyrus.robotML.AthenaML.Parameters;
-import org.eclipse.papyrus.robotML.AthenaML.Union;
-import org.eclipse.papyrus.robotML.AthenaML.Vector;
 
 import org.eclipse.uml2.types.TypesPackage;
 
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage {
+public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotMLExtensionPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -90,12 +90,12 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see org.eclipse.papyrus.robotML.AthenaML.AthenaMLPackage#eNS_URI
+	 * @see RobotMLExtension.RobotMLExtensionPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private AthenaMLPackageImpl() {
-		super(eNS_URI, AthenaMLFactory.eINSTANCE);
+	private RobotMLExtensionPackageImpl() {
+		super(eNS_URI, RobotMLExtensionFactory.eINSTANCE);
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link AthenaMLPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link RobotMLExtensionPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,11 +117,11 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static AthenaMLPackage init() {
-		if (isInited) return (AthenaMLPackage)EPackage.Registry.INSTANCE.getEPackage(AthenaMLPackage.eNS_URI);
+	public static RobotMLExtensionPackage init() {
+		if (isInited) return (RobotMLExtensionPackage)EPackage.Registry.INSTANCE.getEPackage(RobotMLExtensionPackage.eNS_URI);
 
 		// Obtain or create and register package
-		AthenaMLPackageImpl theAthenaMLPackage = (AthenaMLPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof AthenaMLPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new AthenaMLPackageImpl());
+		RobotMLExtensionPackageImpl theRobotMLExtensionPackage = (RobotMLExtensionPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RobotMLExtensionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RobotMLExtensionPackageImpl());
 
 		isInited = true;
 
@@ -129,18 +129,18 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 		UMLPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
-		theAthenaMLPackage.createPackageContents();
+		theRobotMLExtensionPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theAthenaMLPackage.initializePackageContents();
+		theRobotMLExtensionPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theAthenaMLPackage.freeze();
+		theRobotMLExtensionPackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(AthenaMLPackage.eNS_URI, theAthenaMLPackage);
-		return theAthenaMLPackage;
+		EPackage.Registry.INSTANCE.put(RobotMLExtensionPackage.eNS_URI, theRobotMLExtensionPackage);
+		return theRobotMLExtensionPackage;
 	}
 
 	/**
@@ -175,7 +175,7 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArray_Type_template() {
+	public EReference getArray_TypeTemplate() {
 		return (EReference)arrayEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -184,7 +184,7 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArray_Base_DataType() {
+	public EReference getArray_BaseDataType() {
 		return (EReference)arrayEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -211,7 +211,7 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVector_Type_template() {
+	public EReference getVector_TypeTemplate() {
 		return (EReference)vectorEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -220,7 +220,7 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVector_Base_DataType() {
+	public EReference getVector_BaseDataType() {
 		return (EReference)vectorEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -238,7 +238,7 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMap_Values_type() {
+	public EReference getMap_ValuesType() {
 		return (EReference)mapEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -247,7 +247,7 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMap_Base_DataType() {
+	public EReference getMap_BaseDataType() {
 		return (EReference)mapEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -256,7 +256,7 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMap_Keys_type() {
+	public EReference getMap_KeysType() {
 		return (EReference)mapEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -283,7 +283,7 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAlias_Base_DataType() {
+	public EReference getAlias_BaseDataType() {
 		return (EReference)aliasEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -310,7 +310,7 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUnion_Base_DataType() {
+	public EReference getUnion_BaseDataType() {
 		return (EReference)unionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -328,7 +328,7 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getParameters_Base_Class() {
+	public EReference getParameters_BaseClass() {
 		return (EReference)parametersEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -346,7 +346,7 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDefine_Base_DataType() {
+	public EReference getDefine_BaseDataType() {
 		return (EReference)defineEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -364,8 +364,8 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AthenaMLFactory getAthenaMLFactory() {
-		return (AthenaMLFactory)getEFactoryInstance();
+	public RobotMLExtensionFactory getRobotMLExtensionFactory() {
+		return (RobotMLExtensionFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -456,36 +456,36 @@ public class AthenaMLPackageImpl extends EPackageImpl implements AthenaMLPackage
 		initEClass(arrayEClass, Array.class, "Array", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArray_Size(), theTypesPackage.getInteger(), "size", null, 1, 1, Array.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getArray_Dimension(), theTypesPackage.getInteger(), "dimension", null, 1, 1, Array.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getArray_Type_template(), theUMLPackage.getDataType(), null, "type_template", null, 1, 1, Array.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getArray_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, Array.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getArray_TypeTemplate(), theUMLPackage.getDataType(), null, "typeTemplate", null, 1, 1, Array.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getArray_BaseDataType(), theUMLPackage.getDataType(), null, "baseDataType", null, 1, 1, Array.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(vectorEClass, Vector.class, "Vector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVector_Size(), theTypesPackage.getInteger(), "size", null, 1, 1, Vector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVector_Type_template(), theUMLPackage.getDataType(), null, "type_template", null, 1, 1, Vector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVector_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, Vector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getVector_TypeTemplate(), theUMLPackage.getDataType(), null, "typeTemplate", null, 1, 1, Vector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getVector_BaseDataType(), theUMLPackage.getDataType(), null, "baseDataType", null, 1, 1, Vector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(mapEClass, Map.class, "Map", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMap_Values_type(), theUMLPackage.getDataType(), null, "values_type", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMap_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMap_Keys_type(), theUMLPackage.getDataType(), null, "keys_type", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMap_ValuesType(), theUMLPackage.getDataType(), null, "valuesType", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMap_BaseDataType(), theUMLPackage.getDataType(), null, "baseDataType", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMap_KeysType(), theUMLPackage.getDataType(), null, "keysType", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(aliasEClass, Alias.class, "Alias", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAlias_Type(), theUMLPackage.getDataType(), null, "type", null, 1, 1, Alias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getAlias_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, Alias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAlias_BaseDataType(), theUMLPackage.getDataType(), null, "baseDataType", null, 1, 1, Alias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(unionEClass, Union.class, "Union", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnion_Types(), theUMLPackage.getDataType(), null, "types", null, 1, -1, Union.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getUnion_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, Union.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUnion_BaseDataType(), theUMLPackage.getDataType(), null, "baseDataType", null, 1, 1, Union.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(parametersEClass, Parameters.class, "Parameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getParameters_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, Parameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getParameters_BaseClass(), theUMLPackage.getClass_(), null, "baseClass", null, 1, 1, Parameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(defineEClass, Define.class, "Define", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDefine_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDefine_BaseDataType(), theUMLPackage.getDataType(), null, "baseDataType", null, 1, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getDefine_Type(), theUMLPackage.getDataType(), null, "type", null, 1, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
 	}
 
-} //AthenaMLPackageImpl
+} //RobotMLExtensionPackageImpl

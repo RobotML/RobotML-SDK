@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:j="clr-namespace:java.lang"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets" xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:std_datatypes:Header:frame_id"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:std_datatypes:Header:stamp"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:std_datatypes:Header:frame_id"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:std_datatypes:Header:seq"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:std_datatypes:Header:stamp"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:std_datatypes:Header:seq"></ppe:StringEditor>
+	</Composite>
+</Composite>

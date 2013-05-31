@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:j="clr-namespace:java.lang"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets"
+	xmlns="http://www.eclipse.org/xwt/presentation" xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<ppe:StringEditor input="{Binding}" property="UML:NamedElement:name"></ppe:StringEditor>
+	<ppe:StringLabel property="UML:NamedElement:qualifiedName"
+		input="{Binding}"></ppe:StringLabel>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}"
+			property="RobotML:SimulatedSystem:mesh"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}" property="RobotML:Software:period"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}" property="RobotML:Software:wcet"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}" property="RobotML:Software:priority"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}" property="RobotML:Software:deadline"></ppe:StringEditor>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="2"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:BooleanRadio input="{Binding}" property="RobotML:Software:isPeriodic"></ppe:BooleanRadio>
+	</Composite>
+</Composite>

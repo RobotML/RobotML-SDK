@@ -56,6 +56,8 @@
 	[for (port : Port | getInputPortsForElement(elt))]
 void [c.name/]::[port.name/]([port.type.name/] const& data)
 {
+	// [protected ('Process new data ' + c.name + '_' + port.name + '_' + port.type.name)]
+
 	lock(); //lock for thread safety
 
 	lastData[port.name/] = data;
@@ -77,8 +79,6 @@ void [c.name/]::[port.name/]([port.type.name/] const& data)
 	}
 	[/for]
 
-	//to complete
-
 		[for (conn: Connector | getExternalInputConnectors(c)) before('\t//external input connexions\n') after('\n')]
 			[if (conn.getSourcePortName().contains(port.name))]
 	[conn.getDestComponentForConnector().name/].[conn.getDestPortName()/](data);
@@ -89,6 +89,8 @@ void [c.name/]::[port.name/]([port.type.name/] const& data)
 		[/for]
 
 	unlock(); //do not forget to unlock !
+
+	// [/protected]
 }
 	[/for]
 [/let]
@@ -97,13 +99,15 @@ void [c.name/]::[port.name/]([port.type.name/] const& data)
 [for (op : Operation | c.ownedOperation) before('//operations\n')]
 bool [c.name/]::[op.name/]([for( param: Parameter | op.ownedParameter) separator(',')][if (param.direction.toString() = 'in')][param.type.name/] const& [param.name/][/if][/for])
 {
+	// [protected (': Method content' + c.name + '_' + op.name)]
+
 	[if (op.method->size() > 0)]
 		[for (be : Behavior | op.method) before ('\treturn ') separator(' && ') after(';\n') ]
 [be.name/][for( param: Parameter | op.ownedParameter) before('(') separator(',') after(')') ][param.name/][/for][/for]
 	[else]
-	//to complete
 	return false;
 	[/if]
+	// [/protected]
 }
 [/for]
 
@@ -112,8 +116,10 @@ bool [c.name/]::[op.name/]([for( param: Parameter | op.ownedParameter) separator
 	[if (be.oclIsTypeOf(OpaqueBehavior))]
 bool [c.name/]::[be.name/]([for( param: Parameter | be.specification.ownedParameter) separator(',')][if (param.direction.toString() = 'in')][param.type.name/] const& [param.name/][/if][/for])
 {
+	// [protected (': Method content' + c.name + '_' + be.name)]
 	/*[be.oclAsType(OpaqueBehavior)._body/]*/
 	return false;
+	// [/protected]
 }
 	[/if]
 [/for]

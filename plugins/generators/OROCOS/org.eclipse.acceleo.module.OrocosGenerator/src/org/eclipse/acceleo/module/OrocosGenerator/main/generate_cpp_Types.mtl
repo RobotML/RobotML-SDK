@@ -21,7 +21,7 @@ typedef char Char;
 typedef signed short int Int8;
 typedef unsigned short int UInt8;
 typedef signed long int Int16;
-typedef unsigned long int Int16;
+typedef unsigned long int UInt16;
 typedef signed Int32;
 typedef unsigned int UInt32;
 typedef signed long long Int64;

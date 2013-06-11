@@ -32,6 +32,8 @@
 [else]
 	[for (port : Port | getOutputPortsForElement(c.oclAsType(Element))) before('\t//ports initializations\n')]
 	[port.name/] = new effitools::TaskBuffer<[port.type.name/]>();
+	//to push data on output port [port.name/], just call this method where you want
+	//in this source file: [port.name/]->push(a_[port.type.name/]_object_);
 	[/for]
 [/if]
 

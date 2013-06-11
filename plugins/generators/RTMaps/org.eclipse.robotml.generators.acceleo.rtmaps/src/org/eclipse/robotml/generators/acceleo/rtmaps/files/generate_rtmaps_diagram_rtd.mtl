@@ -95,6 +95,13 @@ knowledge of the CeCILL-C license and that you accept its terms.
 				  <InputPropertyOverload LongName="stream_in.readerType" Type="1">0</InputPropertyOverload>
 			      <OutputPropertyOverload LongName="position.fifosize" Type="1">16</OutputPropertyOverload>
 				  [/comment]
+				  [for (p : Port | getOutputPortsForElement(prop.type.oclAsType(Element)))]
+					[let buffsize : Integer = getOutputPortBufferSize(p)]
+					[if (buffsize > 0)]
+				      <OutputPropertyOverload LongName="[p.name/].fifosize" Type="1">[buffsize/]</OutputPropertyOverload>
+					[/if]
+					[/let]
+				  [/for]
 			    </MacroComponent>					
 				[elseif  (isMacroComponent(prop.type.oclAsType(Class)))]
 			    <MacroComponent InstanceName="[prop.name/]" Model="macro_[prop.type.name/]" x="[i * hor_spacing + 50/]" y="[i * vert_spacing/]" z="0">
@@ -102,6 +109,13 @@ knowledge of the CeCILL-C license and that you accept its terms.
 				  <InputPropertyOverload LongName="stream_in.readerType" Type="1">0</InputPropertyOverload>
 			      <OutputPropertyOverload LongName="position.fifosize" Type="1">16</OutputPropertyOverload>
 				  [/comment]
+				  [for (p : Port | getOutputPortsForElement(prop.type.oclAsType(Element)))]
+					[let buffsize : Integer = getOutputPortBufferSize(p)]
+					[if (buffsize > 0)]
+				      <OutputPropertyOverload LongName="[p.name/].fifosize" Type="1">[buffsize/]</OutputPropertyOverload>
+					[/if]
+					[/let]
+				  [/for]
 			    </MacroComponent>
 				[/if]
 			[/for]
@@ -115,13 +129,21 @@ knowledge of the CeCILL-C license and that you accept its terms.
 			        <Property LongName="RGB2YUV_7.input.readerType" Type="1">0</Property>
 			        <Property LongName="RGB2YUV_7.input.subsampling" Type="1">1</Property>
 			      </Input>
-			      <Output LongName="RGB2YUV_7.output" Name="output">
-			        <Property LongName="RGB2YUV_7.output.fifosize" Type="1">16</Property>
-			        <Property LongName="RGB2YUV_7.output.periodic" Type="0">false</Property>
-			        <Property LongName="RGB2YUV_7.output.subsampling" Type="1">1</Property>
-			      </Output>
-			      <Property LongName="RGB2YUV_7.planar" Type="0">false</Property>
 				  [/comment]
+				  [for (p : Port | getOutputPortsForElement(prop.type.oclAsType(Element)))]
+					[let buffsize : Integer = getOutputPortBufferSize(p)]
+					[if (buffsize > 0)]
+				      <Output LongName="[prop.name/].[p.name/]" Name="[p.name/]">
+				        <Property LongName="[prop.name/].[p.name/].fifosize" Type="1">[buffsize/]</Property>
+				        <Property LongName="[prop.name/].[p.name/].periodic" Type="0">false</Property>
+				        <Property LongName="[prop.name/].[p.name/].subsampling" Type="1">1</Property>
+				      </Output>
+					[/if]
+					[/let]
+				  [/for]
+				[comment]
+			      <Property LongName="RGB2YUV_7.planar" Type="0">false</Property>
+				[/comment]
 		    	</Component>
 				[/if]
 			[/for]

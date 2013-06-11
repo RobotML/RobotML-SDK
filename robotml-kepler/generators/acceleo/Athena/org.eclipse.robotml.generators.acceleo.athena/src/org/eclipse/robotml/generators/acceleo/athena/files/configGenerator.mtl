@@ -1,0 +1,14 @@
+[comment encoding = 'UTF-8'/]
+[module configGenerator('http://www.eclipse.org/uml2/3.0.0/UML') ]
+
+[query public isAutomaticGeneration(arg : OclVoid) : Boolean =
+invoke('org.eclipse.robotml.generators.acceleo.athena.files.configGenerator', 'isAutomaticGeneration()', Sequence{arg})
+/]
+
+[query public createDataTypesFile(arg : OclVoid) : Boolean =
+invoke('org.eclipse.robotml.generators.acceleo.athena.files.configGenerator', 'createDataTypesFile()', Sequence{arg})
+/]
+
+[query public isModelNameSelected(mod : Model) : Boolean =
+invoke('org.eclipse.robotml.generators.acceleo.athena.files.configGenerator', 'isModelNameSelected(org.eclipse.uml2.uml.Model)', Sequence{mod})
+/]

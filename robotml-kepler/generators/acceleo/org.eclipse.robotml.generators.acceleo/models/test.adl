@@ -1,0 +1,2510 @@
+
+// Athena V5
+// Basic Type definitions
+//
+
+// 01/03/2011
+
+// v1
+language CPP
+language MATLAB
+//
+
+//
+
+//
+basic Pointer begin
+	include < MATLAB > "matrix.h"
+	language < CPP > "void*" = "NULL"
+	language < MATLAB > "mxINT32_CLASS" = "NULL"
+end
+//
+basic String begin
+	include < MATLAB > "matrix.h"
+	include < CPP > "string"
+	language < CPP > "std::string" = '""'
+	language < MATLAB > "java.lang.String" = '""' 
+end
+// 
+basic Logical begin
+	include < MATLAB > "matrix.h"
+	language < CPP > "bool" = "false"
+	language < MATLAB > "mxUINT8_CLASS" = "false"
+end
+//
+basic Int begin
+	include < MATLAB > "matrix.h"
+	language < CPP > "int" = "0"
+	language < MATLAB > "mxINT32_CLASS" = "0"
+end
+//
+basic Long begin
+	include < MATLAB > "matrix.h"
+	language < CPP > "long" = "0"
+	language < MATLAB > "mxINT32_CLASS" = "0"
+end
+//
+basic Real begin
+	include < MATLAB > "matrix.h"
+	language < CPP > "double" = "0"
+	language < MATLAB > "mxDOUBLE_CLASS" = "0"
+end
+//
+array < Real > Vec3 [ x = 3 ]
+array < Real > Vec5 [ y = 5 ]
+array < Real > VecX [ x, y ]
+//
+define gisement as Real
+define site as Real
+array < gisement > VecOne [ x ]
+//
+array < gisement > VecY [ x = 3 ]
+//
+struct test3 begin
+	Real hello
+	gisement g
+end
+//
+vector < Int > Ints
+vector < Long > Longs
+vector < Real > Reals
+// AIR(1), GROUND(2), SEA(3), SUB(4), SPACE(5)
+basic EntityType begin
+	language < CPP > "enum { ABSTRACT_ENTITY=0, AIR=0, GROUND=1, SUB=4, SPACE=5 }" = "ABSTRACT_ENTITY"
+	lexicalCast < CPP > "unsigned int"
+end
+// IFDL, LBWDL, HBWDL, TCAS
+basic NetworkID begin
+	language < CPP > "enum { INVALID_NETWORK=0, IFDL=20001, LBWDL=20002, HBWDL=20003, TCAS=20004 }" = "INVALID_NETWORK"
+	lexicalCast < CPP > "unsigned int"
+end
+// MAW(1)/ESM(2)/RDR(3)/SAR(4)/EO(5)
+basic SensorType begin
+	language < CPP > "enum { INVALID_SENSOR_TYPE=0, MAW = 1, ESM = 2, RDR = 3, SAR = 4, EOIR = 5 }" = "INVALID_SENSOR_TYPE"
+	lexicalCast < CPP > "unsigned int"
+end
+// Immediate Disable (0) / Image(1) / Sequence of Image (2) / Search&Track(3)
+basic SensorFunction begin
+	language < CPP > "enum { INVALID_SENSOR_FUNCTION=0,  IMAGE = 1, SEQUENCE_OF_IMAGE = 2, SEARCH_AND_TRACK = 3}" = "INVALID_SENSOR_FUNCTION"
+	lexicalCast < CPP > "unsigned int"
+end
+// Eqp types 
+
+// 
+basic EquipmentType begin
+	language < CPP > "enum { PLATFORM=0, EQP_COMMS=1 }" = "PLATFORM"
+	lexicalCast < CPP > "unsigned int"
+end
+// Statut d'un equipement
+struct EquipmentStatus begin
+	Long type
+	// type d'eqp
+	Long id
+	// numerical id eqp
+	Long available = "100"
+	// [0..100]
+	Long enabled = "0"
+	// 0/1
+end
+// Liste de statuts
+map < Long, EquipmentStatus > EquipmentStatusList
+// entrées externes
+struct ExternalInput begin
+	Long id
+	// Identifiant de l'équipement
+	Long duration
+	// durée de l'action
+	Long available_during
+	// niveau de disponibilite [0..100] ou 0/100 suivant les équipements // pendant la durée 
+	Long available_after
+	// niveau de disponibilite [0..100] ou 0/100 suivant les équipements // après
+end
+// Liste d'entrées externes
+vector < ExternalInput > vExternalInput
+map < EquipmentType, vExternalInput > ExternalInputListForOneTypeOfEquipment
+map < Long, ExternalInputListForOneTypeOfEquipment > ExternalInputList
+// Entite
+struct EntityState begin
+	Long time
+	// date
+	Long id
+	// identifiant > 0
+	Long side
+	// identifiant > 0
+	EntityType type
+	// AIR(1), GROUND(2), SEA(3), SUB(4), SPACE(5)
+	Long subtype
+	// identifiant > 0
+	Long subsubtype
+	// identifiant > 0
+	Vec3 position
+	// position lat, lon, alt
+	Vec3 speed
+	// vitesse NED
+	Vec3 attitudes
+	// angles d'Euler
+end
+// Liste d'entites
+map < Long, EntityState > EntityStates
+// Faisceau
+struct EmitterBeam begin
+	Real elevation
+	// site
+	Real azimut
+	// gisement
+	Real elevationAperture
+	// ouverture en site
+	Real azimutAperture
+	// ouverture en gisement
+	Longs targets
+	// pistes entretenues
+end
+// Liste de faisceaux
+vector < EmitterBeam > Beams
+// Etat Emetteur
+struct EmitterState begin
+	Long time
+	// date
+	Long entityID
+	// identifiant de l'entite porteuse
+	SensorType type
+	// MAW(1)/ESM(2)/RDR(3)/SAR(4)/EO(5)
+	Long techno
+	// "bande" de travail
+	Real dist1m2
+	// distance de detection pour 1 m2 dans cette bande
+	Beams beams
+	// faisceaux entretenus
+end
+// Liste d'emetteurs
+vector < EmitterState > EmitterStates
+// Etat Brouilleur
+struct JammerState begin
+	Long time
+	// date
+	Long entityID
+	// identifiant de l'entite porteuse
+	Long type
+	// Autoprot / (off/def)
+	Long techno
+	// "bande" de travail
+	Real elevation
+	// Elevation
+	Real azimut
+	// Azimut
+	Real apertureEl
+	// Aperture in elevation
+	Real apertureAz
+	// Aperture in azimut
+	Real powerOrDistance
+	// distance if autoprot, power if defensive/offensive ?
+end
+// Liste d'emetteurs
+vector < JammerState > JammerStates
+//
+struct Detonation begin
+	Long time
+	Long shooterID
+	Long weaponType
+	Longs targets
+	Vec3 position
+end
+
+map < Long, Detonation > Detonations
+//
+struct EnvironmentInteractions begin
+	EntityStates entities
+	EmitterStates emitters
+	JammerStates jammers
+	Detonations detonations
+end
+// Butées geométriques capteur
+struct AngularBounds begin
+	Long symetric
+	// symetry around X,Z plane
+	Real elevationMin
+	// radians (-PI/2 à PI/2)
+	Real elevationMax
+	//
+	Real azimutMin
+	// radians (-PI à PI)
+	Real azimutMax
+	//
+end
+// Butées geométriques capteur
+struct AngularDelta begin
+	Real deltaElevation
+	// radians (0 à PI)
+	Real deltaAzimut
+	// radians (0 à 2*PI)
+end
+// Liste des butées possibles du point de géométrique
+vector < AngularBounds > SensorAngularBounds
+vector < AngularDelta > SensorAngularDelta
+// Définition Brouilleur
+struct JammerDefinition begin
+	Long id
+	// identificateur Eqp
+	Long domainId
+	// domain identification in database
+	Long type
+	// Type de brouilleur (1) AutoPro (2) Offensif
+	Long techno
+	// Jammed techno
+	Real maxPowerAllocation
+	// divided equaly on each jammed track
+	AngularBounds bounds
+	// Angular limits of operation
+	Long maxTargetNumber
+	// Maximum number of jammed tracks
+	Real apertureEl
+	// Aperture of jamming in elevation
+	Real apertureAz
+	// Aperture of jamming in azimut
+end
+// Caractéristiques d'un émetteur brouillé
+struct EmitterJammed begin
+	Long entityID
+	Real powerAllocation
+end
+// Liste des emetteurs brouillés
+vector < EmitterJammed > EmitterJammList
+//
+struct JammerStatus begin
+	Long lastUpdateDate
+	// dernière mise à jour de ces infos
+	Long id
+	// id du senseur
+	Long type
+	// Type de brouilleur (1) AutoPro (2) Offensif
+	Long techno
+	// techno capteur ciblée
+	Long available
+	// disponible ?
+	Long endOfOrderId
+	// end Of Order
+	Long doingOrderId
+	// working to comply with orderId ?
+	Long doingOrderDuration
+	// duration for which we've been doing orderId.
+	Long errorFlag
+	// pas d'erreur (0), LOS (1)
+	Long nbrOfJammOps
+	// nombre d'opérations de brouillage en cours
+end
+// Liste des statuts
+map < Long, JammerStatus > JammersStatus
+// map< id senseur, statut >
+
+// Operation de brouillage
+struct JammOp begin
+	Long target_id
+	// informative only.
+	Real azimut
+	// local coordinate system (not aircraft)
+	Real elevation
+	// local coordinate system (not aircraft) 
+end
+
+vector < JammOp > JammOperationList
+// Ordre Senseur
+struct JammerOrder begin
+	Long orderId
+	// identifiant d'ordre
+	Long jammerId
+	// jammer id
+	Long func
+	// Immediate Disable (0) / Automatic (1) / Given list of emettors (2)
+	Long duration
+	// how long must we do this operation ( if <0, then infinite )
+	JammOperationList jammList
+	// liste des émetteurs à brouiller
+end
+// Liste of orders
+map < Long, JammerOrder > JammersOrders
+// map< order id, order >
+
+// map de types brouilleurs
+map < Long, JammerDefinition > JammerDefinitions
+// Initialisation de la localisation
+struct LocalisationInit begin
+	Vec3 pos
+	// initial position (deg, deg, m>0)
+	Real heading
+	// heading (deg)
+	Real mach
+	// mach
+	Real v = "0."
+	// v (m/s)
+end
+// Eléments utilisés pour le calcul des incertitudes de positionnement
+struct LocalisationConst begin
+	Real irs_deriv
+	// m/h
+	Real ralt_factor
+	// %
+	Real max_dxy_gps
+	// m
+	Real max_dz_gps
+	// m
+	Real max_dxy_ter
+	// m
+	Real max_dz_ter
+	// m
+end
+// Etat de la localisation
+struct LocalisationState begin
+//
+	Long isValid
+	// Etat
+	Real mach
+	// rad
+	Vec3 position
+	// rad, rad, m
+	Vec3 attitudes
+	// rad
+	Vec3 speed
+	// xN, yE, zD en m/s
+
+	// altitude renvoyee par le radio-altimetre
+	Real alt_ralt
+	// m >0
+end
+// Erreur de localisation
+struct LocalisationError begin
+// incertitudes (m)
+	Real incertitude_dxy
+	// m
+	Real incertitude_dz
+	// m
+	Real incertitude_ralt
+	// m
+end
+// Etat des équipements de localisation
+struct LocalisationEquipmentState begin
+// Availability of localisation equipments
+	Long gps_available
+	// 0/1
+	Long irs_available
+	// 0/1
+	Long ralt_available
+	// 0/1
+	Long ternum_available
+	// 0/1
+end
+// map de type localisation
+map < Long, LocalisationConst > LocDefinitions
+// Waypoint: definition d'un point de navigation
+struct Waypoint begin
+	Long id
+	// identifiant du point de nav
+	Real g = "2."
+	// facteur de charge a prendre en compte pour les virages
+	Real heading
+	// route a tenir au passage du point
+	Long mode = "1"
+	// fly_over (1), fly_over_with_route (2), fly_by (3)
+	Vec3 position
+	// position geographique du point de nav (deg, deg, m>0)
+	Real pmax = "10."
+	// pente max à appliquer en montée ou descente (degrés)
+	Long t = "0"
+	// temps en s (<=0 => pilotage en vitesse >0 => pilotage en temps)
+	Long dt = "20"
+	// temps en s (<=0 => pilotage en vitesse >0 => pilotage en temps)
+	Real v = "0."
+	// Vitesse en m/s
+	Real mach = "0.7"
+	// mach
+	Real vmin = "100."
+	Real vmax = "200."
+	Real dv = "30."
+end
+// Navigation: suite de waypoints
+vector < Waypoint > Navigation
+// Initialisation de la navigation
+struct FlightConfig begin
+// Masses de la plateforme (kg)
+	Real emptyWeight
+	Real payloadWeight
+	Real fuelWeight
+	// vitesse min et max autorisees (m/s)
+	Real min_speed
+	Real max_speed
+	// Fenetre autorisee autour des vitesses de consignes (m/s)
+	Real dv
+	// Fenetre autorisee autour des dates sur la navigation (ms)
+	Long dt
+	// Altitude min et max autorisees en ce point (m)
+	Real altMin
+	Real altMax
+end
+// Navigation system state
+struct NavigationUpdate begin
+// 
+	Long updated
+	//
+	Long initialIndex
+	Navigation nav
+end
+// Navigation system state
+struct NavigationState begin
+// Navigation
+	Long nav_updated
+	Long oldNavIndex
+	Long navIndex
+	Long wpId
+	Real distToNextWaypoint
+	Navigation nav
+end
+// Flight model state Vector
+struct SStateVector begin
+	Long isValid
+	Long Id
+	Long mode
+	Real Latitude
+	Real Longitude
+	Real Altitude
+	Real SpeedN
+	Real SpeedE
+	Real SpeedD
+	Real Heading
+	Real Pitch
+	Real Roll
+	Real Mach
+	Real CAS
+	Long wpID
+	Real wpDist
+end
+// Sensor "Band"
+struct SensorTechno begin
+	Long id
+	// identificateur numerique de la "bande"
+	Real range
+	// pour une SER de un metre carre si modele en SER (m), sinon distance de detection
+end
+
+vector < SensorTechno > SensorTechnos
+// Definition d'un senseur generique
+struct SensorDefinition begin
+	Long id
+	// Sensor ID
+	SensorType type
+	// MAW(1)/ESM(2)/RDR(3)/SAR(4)/EO(5)
+	Long worksWithEntities
+	// Filtrage sur des entites (1) ou des signaux (0)
+	Longs worksWithEntityTypes
+	// Filtrage sur les types d'entites 
+	SensorTechnos technos
+	// Distance de détection par techno considérées
+	Long usesLineOfSight
+	// Doit-on considérer une ligne de visée (0/1) ?
+	SensorAngularBounds fieldOfRegard
+	// Field of regard
+	SensorAngularDelta fieldOfView
+	// Field of view
+	Long intervisiType
+	// Optique(1) or EM(2)
+	Vec3 resolution
+	// elevation, azimut, dist
+	Long toBeAcquiredDuration
+	// Temps necessaire pour une acquisition
+	Long toBeLostDuration
+	// Temps necessaire pour perdre une piste
+	Long canBeJammed
+	// Peut-être brouillé ?
+	Long historyLenght
+	// temps sur lequel on stocke un historique des detections
+	Long isEmitter
+	// dois-je emettre une interaction "emitter system" ?
+end
+// Definition d'un senseur de type RADAR
+struct RadarDefinition begin
+	Long bandID
+	// identificateur de la bande d'émission du radar
+	Real range
+	// pour une SER de un metre carre si modele en SER (m), sinon distance de detection
+	Real fov_deltaElevation
+	// radians (0 à PI)
+	Real fov_deltaAzimut
+	// radians (0 à 2*PI)
+	Real for_elevationMin
+	// radians (-PI/2 à PI/2)
+	Real for_elevationMax
+	// radians (-PI/2 à PI/2)
+	Real for_azimutMin
+	// radians (-PI à PI)
+	Real for_azimutMax
+	// radians (-PI à PI)
+	Long toBeAcquiredDuration
+	// Temps necessaire pour une acquisition
+	Long toBeLostDuration
+	// Temps necessaire pour perdre une piste
+end
+// Definition d'un senseur de type ESM
+struct EsmDefinition begin
+	Long bandID
+	// identificateur de la bande d'émission du radar
+	Real range
+	// pour une SER de un metre carre si modele en SER (m), sinon distance de detection
+	Real fov_deltaElevation
+	// radians (0 à PI)
+	Real fov_deltaAzimut
+	// radians (0 à 2*PI)
+	Real for_elevationMin
+	// radians (-PI/2 à PI/2)
+	Real for_elevationMax
+	// radians (-PI/2 à PI/2)
+	Real for_azimutMin
+	// radians (-PI à PI)
+	Real for_azimutMax
+	// radians (-PI à PI)
+	Long toBeAcquiredDuration
+	// Temps necessaire pour une acquisition
+	Long toBeLostDuration
+	// Temps necessaire pour perdre une piste
+end
+// Info correspondant à une detection capteur
+struct SensorPlot begin
+	Long date
+	// date de prise d'image (s)
+	Long sourceId
+	// Id source
+	SensorType sourceType
+	// Type de la source
+	Long sourceTechno
+	// techno de la source
+	Real elevation
+	// Line of sight
+	Real azimut
+	// Line of sight
+	Real distance
+	// Distance
+	Vec3 position
+	// Position reelle
+end
+// Image prise par un senseur
+struct SensorImage begin
+	SensorPlot plot
+	// Carecteristiques de la "prise de vue"
+	EntityStates objects
+	// objets dans l'image
+end
+// Liste d'images
+vector < SensorImage > SensorImages
+// Liste de plots
+vector < SensorPlot > SensorPlotVector
+// Piste entretenue par un capteur
+struct SensorTrack begin
+	Long targetId
+	// target ID
+	Long lastUpdateDate
+	// last update date
+	SensorPlotVector plots
+	// Liste des plots pour cette piste
+	Long tracked
+	// currently tracked
+	Long detected
+	// currently detected
+	Long trackTime
+	// time tracked or lost, max is toBeAcquiredDuration or toBeLostDuration
+	Real deltaAzimut
+	// max delta between measured azimuts
+	Real deltaElevation
+	// max delta between measured elevations
+	Long doNotFollow
+	// ne pas suivre cette piste ! (utiliser avec maxNbrOfTracks)
+end
+// Liste des pistes
+map < Long, SensorTrack > SensorTracks
+// Id de la cible, piste
+
+// Statut senseurs
+struct SensorStatus begin
+	Long lastUpdateDate
+	// dernière mise à jour de ces infos
+	Long id
+	// id du senseur
+	SensorType type
+	// MAW(1)/ESM(2)/RDR(3)/SAR(4)/EO(5)
+	Long available
+	//
+	Long doingOrderId
+	// working to comply with orderId ?
+	Long doingOrderDuration
+	// duration for which we've been doing orderId.
+	Long endOfOrderId
+	// end Of Order
+	Long errorFlag
+	// pas d'erreur (0), LOS (1)
+end
+// Liste des statuts
+map < Long, SensorStatus > SensorsStatus
+// map< id senseur, statut >
+
+// Ordre Senseur
+struct SensorOrder begin
+	Long orderId
+	// identifiant d'ordre
+	Long sensorId
+	// sensor id
+	SensorFunction func
+	// Immediate Disable (0) / Image(1) / Sequence of Image (2) / Search&Track(3)
+	Long fieldOfRegardNbr
+	// utiliser le fov indexé dans la liste ( index >= 0 )
+	Long fieldOfViewNbr
+	// utiliser le fov indexé dans la liste ( index >= 0 )
+	Real lineOfSightElevation
+	// Line of sight (repère NED)
+	Real lineOfSightAzimut
+	// Line of sight (repère NED)
+	Long duration
+	// how long must we do this operation ( if <0, then infinite )
+end
+// Liste of orders
+map < Long, SensorOrder > SensorOrders
+// map< order id, order >
+
+//
+struct SGD begin
+	Long hasAB
+	Long hasBA
+	Long hasBA_RL
+	Long hasDist
+	Long hasIvisi
+	Real siteAB
+	Real giseAB
+	Real siteBA
+	Real giseBA
+	Real siteBA_RL
+	Real giseBA_RL
+	Real dist
+	// Distance
+	Long ivisi
+	// Intervisi
+	Long techno
+	// techno capteur
+	Real range
+	// detection range
+end
+// Memoire pour un cycle capteur
+map < Long, SGD > SensorMemory
+// map de types senseurs
+map < Long, SensorDefinition > SensorDefinitions
+//
+struct SAElementStatus begin
+	Long nid = "0"
+	// 
+	Long type = "0"
+	// V:1 C:2 L:3
+	Long doing = "-1"
+	// identification of current order
+	Vec3 pos
+	//
+	Long date = "0"
+	//
+	Long status = "0"
+	// inactif:0
+	Long targetId
+	//
+	Long munition = "0"
+	//
+	Long updated = "0"
+	//
+end
+//
+map < Long, SAElementStatus > SAElementStatusList
+//
+struct SAElementOrder begin
+	Long nid
+	// 
+	Long orderId
+	// order identifier
+	Long order
+	// 0: inactif  1: search&track  2: engage
+	Long targetId
+end
+//
+map < Long, SAElementOrder > SAElementOrderList
+//
+struct SASystemState begin
+	Long nid = "0"
+	// id of the system
+	Long state = "0"
+	// init=0 running= 1
+	Long ordersCount = "0"
+	// number of orders sent
+	Long nbrOfV = "0"
+	// number of veilles
+	Long nbrOfCdT = "0"
+	// number of cdts
+	Longs veilles
+	// list of veilles
+	Longs cdts
+	// list of cdts
+	Long nbrOfActiveV = "0"
+	// number of active veilles
+	Long nbrOfActiveCdT = "0"
+	// number of actives cdts
+end
+////////////////////////////////////////
+
+// Flight Data
+
+///////////////////////////////////////
+struct FlightData begin
+	Vec3 position
+	// aircraft position
+	Vec3 speed
+	// aircraft speed
+	Vec3 attitudes
+	// aircraft heading
+	Long date
+	// state date
+end
+////////////////////////////////////////
+
+// Navigation Data
+
+///////////////////////////////////////
+struct NavigationData begin
+//
+	Vec3 position
+	// aircraft position
+	Vec3 speed
+	// aircraft speed
+	Vec3 attitudes
+	// aircraft heading
+	Long date
+	// state date
+
+	//
+	Long wpId
+	Real distToNextWaypoint
+	Navigation nav
+end
+// Initialisation de la localisation
+struct NetworkDefinition begin
+	String name
+	// Name of this type of network
+	Long id
+	// Numerical id of the network
+	Long isBLOS
+	// Beyond line of sight communications ?
+	Real maxDist
+	// Maximum allowed distance
+	Real networkBandwidth
+	// bandwidth in byte/s 
+	Long maxSendConnectionPerAccess
+	// max number of connections per access point
+	Long maxRcvConnectionPerAccess
+	// max number of connections per access point
+	Real maxSendBandwidthPerConnection
+	// max bandwidth per send connection
+	Real maxRcvBandwidthPerAccess
+	// max bandwidth per connection
+	Long maxConnectionInNetwork
+	// max connection in a network
+	Long maxNumberOfAccess
+	// max number of access in a network
+end
+////////////////////////////////////////////////////////////////////////////
+
+// Message private header
+struct NetworkMessagePrivateHeader begin
+	Long timestamp
+	// time at which it arrived in the send function
+	Real sizeTransmitted
+	// size transmitted at the moment, <= public header data size
+end
+// Message public header
+struct NetworkMessageUserHeader begin
+	NetworkID networkId
+	// identification of the network on which this message must be sent
+	Long fromId
+	// Emitter Id
+	Long toId
+	// Receptor Id or <0 to broadcast
+	Long networkMsgId
+	// Unique id given when the message is transmitted
+	Long dataSize
+	// size of the data to be sent
+	Long category
+	// 0? 1:Nav 2:MMS 3:....
+end
+// Message User Data
+union NetworkMessageUserData begin
+	FlightData,
+	// TCAS, every cycle
+	NavigationData
+	// IFDL or LBWDL, when updated ? or cyclic 1s ?
+end
+// Message
+struct NetworkMessage begin
+	NetworkMessageUserHeader uheader
+	// public header
+	NetworkMessagePrivateHeader pheader
+	// private header
+	NetworkMessageUserData data
+	// user data
+end
+////////////////////////////////////////////////////////////////////////////
+
+// toId, status = (1/sending, 2/delivered, -1/failed)
+map < Long, Long > NetworkMessageDeliveryReport
+// msg UserId and its report
+map < Long, NetworkMessageDeliveryReport > NetworkMessageDeliveryReports
+////////////////////////////////////////////////////////////////////////////
+
+// Network list
+map < Long, Long > NetworkList
+// Message list
+vector < NetworkMessage > NetworkMessageList
+////////////////////////////////////////////////////////////////////////////
+
+// map de type networks
+map < Long, NetworkDefinition > NetworkDefinitions
+struct test begin
+	Long fromId
+	// Emitter Id
+	Long toId
+	// Receptor Id or <0 to broadcast
+end
+// test Matlab Struct
+
+//
+struct TestMatlabStruct2 begin
+	Long i
+	Long j
+	Real x
+end
+
+vector < TestMatlabStruct2 > TestMatlabStruct2List
+struct TestMatlabStruct begin
+	Long unLong
+	Real unReal
+	Vec3 unVec3
+	Longs unVecteurDeLongs
+	TestMatlabStruct2List uneListe
+end
+// test Java Struct
+
+//
+struct TestJavaStruct2 begin
+	Long i
+	Long j
+	Real x
+end
+
+vector < TestJavaStruct2 > TestJavaStruct2List
+struct TestJavaStruct < X, Y > begin
+	Long unLong
+	Real unReal
+	Vec3 unVec3
+	VecX < X, Y > unVecX
+	Longs unVecteurDeLongs
+	TestMatlabStruct2List uneListe
+end
+//
+
+//
+
+//
+validity Real < CPP > isReal validity Long < CPP > isLong
+//
+
+//
+
+// init
+function initBasicFlying < CPP > (in Long nid
+// Aircraft Id
+	in Long time
+	// time  in s
+	in Long timestep
+	// time step in s
+)
+//
+
+//
+
+//
+function stepBasicFlying < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in NavigationUpdate nav_update
+	// Navigation update
+	inout NavigationState ns
+	// Navigation state
+	out SStateVector ssv
+	// Flight model state
+	out LocalisationState ls
+	// Localisation state
+)
+// 
+
+// COMMUNICATIONS
+
+// Initialisation of networks
+function initNetworks < CPP > (inout NetworkDefinitions networkDefs
+// list of network type specification
+	in NetworkList networkList
+	// list of network types to instanciate
+	out Pointer networksPtr
+	// pointer to the instanciated network list
+)
+//
+
+//
+
+// Network integration
+function stepNetworks < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Pointer networksPtr
+	// pointer to the instanciated network list
+	in EnvironmentInteractions interactions
+	// interactions
+)
+//
+
+//
+
+// Basic communication management                                       
+function basicCommunicationManagementSND < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in EquipmentStatusList statusList
+	// Status des points d'acces aux reseaux de comms
+	in Pointer networksPtr
+	// pointer to the instanciated network list
+	inout Long initialized
+	// is this model initizalized ?
+	in NetworkMessageList send
+	// list of received msg
+	inout NetworkMessageDeliveryReports reports
+	// list of send reports
+)
+//
+
+//
+
+// Basic communication management                                       
+function basicCommunicationManagementRCV < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in EquipmentStatusList statusList
+	// Status des points d'acces aux reseaux de comms
+	in Pointer networksPtr
+	// pointer to the instanciated network list
+	inout Long initialized
+	// is this model initizalized ?
+	out NetworkMessageList rcvd
+	// list of received msg
+	inout NetworkMessageDeliveryReports reports
+	// list of send reports
+)
+//
+
+//
+
+// Basic communication management                                        
+function basicMessageRouting < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in EquipmentStatusList statusList
+	// Status des points d'acces aux reseaux de comms
+	in Long msgCategoryId
+	// Msg Category Id
+	out NetworkMessageList toBeSent
+	// Comms list of msg to be sent
+	in NetworkMessageList rcvd
+	// Comms list of received msg
+	in NetworkMessageList func_toBeSent
+	// Other function list of msg to be sent
+	out NetworkMessageList func_rcvd
+	// Other function list of received msg
+)
+//
+
+//
+
+// init
+function initLocalisation < CPP > (in Long nid
+// Aircraft Id
+	in Long loc_const_id
+	// Loc const definition id
+	inout LocDefinitions loc_def
+	// Definitions
+	out LocalisationConst lconst
+	// constant parameters of localisation
+	out LocalisationEquipmentState leqps
+	// state of localisation equipments
+	out LocalisationError lerror
+	// error of localisation
+)
+//
+
+//
+
+//
+function stepLocalisation < CPP > (in Long time
+// current time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in LocalisationConst lconst
+	// const parameters of localisation
+	inout LocalisationEquipmentState leqps
+	// state of localisation equipments
+	in LocalisationState lstate
+	// state of localisation
+	inout LocalisationError lerror
+	// error of localisation
+)
+//
+
+// MOBILITY
+
+// init
+function initFlightAndNavModels < CPP > (in Long nid
+// Aircraft Id
+	in Long timestep
+	// time step in s
+	in LocalisationInit linit
+	// initialisation parameters of localisation
+	out NavigationState ns
+	// Navigation state
+	out SStateVector ssv
+	// Flight model state
+	out LocalisationState ls
+	// Localisation state
+)
+//
+
+//
+
+//
+function stepFlightAndNavModels < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in NavigationUpdate nav_update
+	// Navigation update
+	inout NavigationState ns
+	// Navigation state
+	out SStateVector ssv
+	// Flight model state
+	out LocalisationState ls
+	// Localisation state
+)
+//
+
+//
+
+//
+function stepFlightModel < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	inout NavigationState ns
+	// Navigation state
+	out SStateVector ssv
+	// Flight model state
+	out LocalisationState ls
+	// Localisation state
+)
+//
+
+//
+
+//
+function stepNavModel < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in NavigationUpdate nav_update
+	// Navigation update
+	inout NavigationState ns
+	// Navigation state
+)
+////////////////////////////////////////////////////////
+
+// Monitor
+
+////////////////////////////////////////////////////////
+
+// 
+function mmsMonitorNavigation < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+)
+//
+
+//
+
+// 
+function mmsMonitorComms < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+)
+//
+
+//
+
+// 
+function mmsMonitorSensors < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+)
+//
+
+//
+
+// 
+function mmsMonitorAutoprot < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+)
+//
+
+//
+
+// 
+function mmsMonitorWeapons < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+)
+////////////////////////////////////////////////////////
+
+// Execute
+
+////////////////////////////////////////////////////////
+
+//
+
+//
+
+// 
+function mmsExecuteNavigation < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+)
+//
+
+//
+
+// 
+function mmsExecuteComms < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+)
+// 
+function mmsExecuteSensors < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+)
+//
+
+//
+
+// 
+function mmsExecuteAutoprot < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+)
+//
+
+//
+
+// 
+function mmsExecuteWeapons < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+)
+//
+
+//
+
+// publish messages
+function publishStateVectorOnNetwork < CPP > (in Long time
+// 
+	in Long timestep
+	// 
+	in Long nid
+	// Aircraft Id
+	in NavigationState ns
+	// Navigation state
+	in SStateVector ssv
+	// Flight model state
+	in Long nav_msgCategoryId
+	// Nav Msg Category Id
+	out NetworkMessageList toBeSent
+	// Comms list of msg to be sent
+	inout Long count
+	// Compteur de messages
+)
+//
+
+//
+
+// read received messages
+function readStateVectorOnNetwork < CPP > (in Long time
+// 
+	in Long timestep
+	// 
+	in Long nid
+	// Aircraft Id
+	in Long nav_msgCategoryId
+	// Nav Msg Category Id
+	in NetworkMessageList received
+	// Comms list of msg received
+)
+//
+
+// Utilities
+
+//
+function pushStatus < CPP > (in SensorDefinition def
+	in SensorStatus s
+	inout SensorsStatus list)
+	//
+
+// SENSORS
+
+// Sensor model initialisation
+function sensorInit < CPP > (in Long nid
+// Aircraft id
+	in Long sensorId
+	// Aircraft Sensor id
+	out SensorDefinition def
+	// Sensor definition
+	out SensorStatus s
+	// Sensor status
+	in String distSensorDomainFile
+	// Chemin des domaines Senseur par plateforme
+	in String distJammerDomainFile
+	// Chemin des domaines Brouilleur par techno
+)
+//
+
+//
+
+// Sensor model execution
+function sensorStep < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in SensorDefinition def
+	// Sensor definition
+	inout SensorStatus status
+	// Sensor status
+	in SensorOrders orders
+	// Ordre
+	in EnvironmentInteractions currentEI
+	// Environment Interactions
+	inout EnvironmentInteractions newEI
+	// Environment Interactions
+	inout SensorImages images
+	// Liste des images
+	inout SensorTracks tracks
+	// Liste des pistes
+)
+//
+
+//
+
+//
+function radarInit < CPP > (in Long nid
+// Aircraft id
+	in Long sensorId
+	// Aircraft Sensor id
+	in RadarDefinition rdef
+	// Radar definition
+	out SensorDefinition def
+	// Sensor definition
+	out SensorStatus s
+	// Sensor status
+	in String distSensorDomainFile
+	// Chemin des domaines Senseur par plateforme
+	in String distJammerDomainFile
+	// Chemin des domaines Brouilleur par techno
+)
+//
+
+//
+
+//
+function radarStep < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in SensorDefinition def
+	// Sensor definition
+	inout SensorStatus status
+	// Sensor status
+	in SensorOrders orders
+	// Ordre
+	in EnvironmentInteractions currentEI
+	// Environment Interactions
+	inout EnvironmentInteractions newEI
+	// Environment Interactions
+	inout SensorTracks tracks
+	// Liste des pistes
+)
+//
+
+//
+
+//
+function esmInit < CPP > (in Long nid
+// Aircraft id
+	in Long sensorId
+	// Aircraft Sensor id
+	in EsmDefinition rdef
+	// Radar definition
+	out SensorDefinition def
+	// Sensor definition
+	out SensorStatus s
+	// Sensor status
+	in String distSensorDomainFile
+	// Chemin des domaines Senseur par plateforme
+	in String distJammerDomainFile
+	// Chemin des domaines Brouilleur par techno
+)
+//
+
+//
+
+//
+function esmStep < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in SensorDefinition def
+	// Sensor definition
+	inout SensorStatus status
+	// Sensor status
+	in SensorOrders orders
+	// Ordre
+	in EnvironmentInteractions currentEI
+	// Environment Interactions
+	inout EnvironmentInteractions newEI
+	// Environment Interactions
+	inout SensorTracks tracks
+	// Liste des pistes
+)
+//
+
+//
+
+// Management of jammers
+function aircraftSensorsManagement < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in SensorsStatus statusList
+	// Liste des status
+	inout Long orderCount
+	// compteur pour id ordre
+	inout SensorOrders orders
+	// Ordre
+	in SensorImages images
+	// Liste des images
+	in SensorTracks tracks
+	// Liste des pistes
+)
+//
+
+// JAMMERS
+
+// Sensor model initialisation
+function jammerInit < CPP > (in Long nid
+// Aircraft id
+	in Long jammerId
+	// Aircraft Jammer id
+	in Long jammerDefId
+	// Aircraft Jammer Definition id
+	inout JammerDefinitions defs
+	// Jammer definitions
+	out JammerDefinition def
+	// Jammer definition
+	out JammerStatus s
+	// Jammer status
+	inout JammersStatus stl
+	// Liste des status
+)
+//
+
+//
+
+// Sensor model execution
+function jammerStep < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in JammerDefinition def
+	// Sensor definition
+	inout JammerStatus status
+	// Sensor status
+	inout JammersStatus statusList
+	// Liste des status
+	in JammersOrders orders
+	// Ordre
+	in EnvironmentInteractions currentEI
+	// Environment Interactions
+	inout EnvironmentInteractions newEI
+	// Environment Interactions
+)
+//
+
+//
+
+// Management of jammers
+function jammersManagement < CPP > (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in JammersStatus statusList
+	// Liste des status
+	inout Long orderCount
+	// compteur pour id ordre
+	inout JammersOrders orders
+	// Ordre
+)
+//
+
+//
+
+// TEST
+function testVec3 < CPP > (in Vec3 tabIn
+	inout Vec3 tabInOut)
+	//
+
+//
+
+// Increment the time with the timestep
+function advanceTime < CPP > (in Long timestep
+// time step in s
+	inout Long time
+	// current time in s
+	inout Long cycle
+	// cycle number
+)
+//
+
+//
+
+// Update Entity State
+function updateAircraftEntityState < CPP > (in Long time
+// current time in s
+	in Long nid
+	// Aircraft Id
+	in Long sideId
+	// Side Id
+	in EntityType type
+	// Platform type
+	in Long subType
+	// Platform subtype
+	in SStateVector ssv
+	// Flight model state
+	inout EnvironmentInteractions EI
+	// Environment Interactions
+)
+//
+
+//
+
+// Update Entity State for static objects
+function updateStaticEntityState < CPP > (in Long time
+// current time in s
+	in Long nid
+	// Aircraft Id
+	in Long sideId
+	// Side Id
+	in EntityType type
+	// Platform type
+	in Long subType
+	// Platform subtype
+	in Vec3 pos
+	// Flight model state
+	inout EnvironmentInteractions EI
+	// Environment Interactions
+)
+//
+
+//
+
+// Debug information about Interactions
+function showInteractions < CPP > (in Long time
+// current time in s
+	in EnvironmentInteractions eis
+	// Environment Interactions
+)
+//
+
+//
+
+// Debug information about Interactions
+function cleanInteractions < CPP > (in Long time
+// current time in s
+	in Long timestep
+	// time step in s
+	inout EnvironmentInteractions eis
+	// Environment Interactions
+)
+//
+
+//
+
+// Increment the time with the timestep
+function testStructParam < CPP > (in Long time
+	inout Long toto
+	// test variable
+)
+//
+
+//
+
+// Increment the time with the timestep
+function testStructParam2 < CPP > (in Long time
+	inout Long toto
+	// test variable
+)
+//
+
+//
+
+// Increment the time with the timestep
+function testStructParam3 < CPP > (in Long time
+	inout Long toto
+	// test variable
+)
+//
+
+//
+
+//
+function showEntity < CPP > (in Long time
+	in EntityState es)
+	//
+
+//
+
+//
+function applyExternalInputs < CPP > (in Long time
+// temps de simu en ms
+	in Long timestep
+	// pas de temps en ms
+	inout ExternalInputList extInputList
+	// liste des événements injectables
+	inout EquipmentStatusList commsSL
+	// liste des status des équipements de communication
+)
+//
+
+//
+
+//
+function initSAMComponent < CPP > (in Long nid
+// identifier of the object
+	in Real hA
+	// hauteur d'antenne en m.
+	inout Vec3 pos
+	// position of the object
+)
+//
+
+//
+
+//
+function manageSASystem < CPP > (in Long time
+// current time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// identifier of the object
+	inout SASystemState systemState
+	// state of the system
+	in SAElementStatusList statusList
+	// system elements' status
+	out SAElementOrderList orderList
+	// orders to system elements'
+	in SensorTracks tracks
+	// tracks from different systems
+)
+//
+
+//
+
+//
+function manageSA < CPP > (in Long time
+// current time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// identifier of the object
+	in Long subType
+	// 1=Veille 2=CdT
+	in Vec3 pos
+	// position of the system
+	inout SAElementStatusList statusList
+	// status
+	in SAElementOrderList sysOrdersList
+	// orders 
+	inout SensorOrders sensorOrdersList
+	inout SensorTracks tracks
+	// tracks 
+)
+//
+
+//
+
+//
+function testMatlabInterfacePre < MATLAB > (inout Real unReal
+// 
+	inout Vec3 unVec3
+	// 
+	inout TestMatlabStruct uneStruct
+	//
+)
+//
+
+//
+
+//
+function testMatlabInterfaceMain < MATLAB > (inout Real unReal
+// 
+	inout Vec3 unVec3
+	// 
+	inout TestMatlabStruct uneStruct
+	//
+)
+//
+
+//
+
+//
+function testMatlabInterfacePost < MATLAB > (inout Real unReal
+// 
+	inout Vec3 unVec3
+	// 
+	inout TestMatlabStruct uneStruct
+	//
+)
+//
+
+//
+
+// Basic communication management                                       
+
+//
+processing commsManagement (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in EquipmentStatusList statusList
+	// Status des points d'acces aux reseaux de comms
+	in Pointer networksPtr
+	// pointer to the instanciated network list
+	inout Long initialized
+	// is this model initizalized ?
+	inout NetworkMessageDeliveryReports reports
+	in Long nav_msgCategoryId
+	// Nav Msg Category Id
+	in NetworkMessageList nav_toBeSent
+	// Nav function list of msg to be sent
+	out NetworkMessageList nav_rcvd
+	// Nav function list of received msg
+	in Long mms_msgCategoryId
+	// MMS Msg Category Id
+	in NetworkMessageList mms_toBeSent
+	// MMS function list of msg to be sent
+	out NetworkMessageList mms_rcvd
+	// MMS function list of received msg
+) begin
+//
+	parameter <NetworkMessageList> toBeSent
+	// Comms list of msg to be sent
+	parameter <NetworkMessageList> rcvd
+	// Comms list of received msg
+
+	// Message reception
+	execute basicCommunicationManagementRCV (time, timestep, nid, statusList, networksPtr, initialized, rcvd, reports)
+	// Message routing received / sent
+
+	// from nav
+	execute basicMessageRouting (time, timestep, nid, statusList, nav_msgCategoryId, toBeSent, rcvd, nav_toBeSent, nav_rcvd)
+	// from mms
+	execute basicMessageRouting (time, timestep, nid, statusList, mms_msgCategoryId, toBeSent, rcvd, mms_toBeSent, mms_rcvd)
+	// Message emmission            
+	execute basicCommunicationManagementSND (time, timestep, nid, statusList, networksPtr, initialized, toBeSent, reports)
+	//
+end
+//
+
+// Update the position of an object
+
+//
+processing updatePosition (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in Long sideId
+	// Side Id
+	in EntityType type
+	// Platform type
+	in Long subType
+	// Platform subtype
+	in NavigationUpdate nav_update
+	// Navigation update
+	inout NavigationState nav_state
+	// Navigation state
+	inout SStateVector ssv
+	// Flight model state
+	out LocalisationState ls
+	// Localisation state
+	inout EnvironmentInteractions EI
+	// Environment Interactions
+) begin
+	execute stepFlightAndNavModels (time, timestep, nid, nav_update, nav_state, ssv, ls)
+	//execute stepNavModel(time, timestep, nid, nav_update, nav_state)
+
+	//execute stepFlightModel(time, timestep, nid, nav_state, ssv, ls)
+	execute updateAircraftEntityState (time, nid, sideId, type, subType, ssv, EI)
+end
+//
+
+//
+
+//
+processing pEsmStep (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in SensorDefinition def
+	// Sensor definition
+	inout SensorStatus status
+	// Sensor status
+	inout SensorsStatus statusList
+	// Sensor status
+	in SensorOrders orders
+	// Ordre
+	in EnvironmentInteractions currentEI
+	// Environment Interactions
+	inout EnvironmentInteractions newEI
+	// Environment Interactions
+	inout SensorTracks tracks
+	// Liste des pistes
+) begin
+	execute esmStep (time, timestep, nid, def, status, orders, currentEI, newEI, tracks)
+	execute pushStatus (def, status, statusList)
+end
+//
+
+//
+
+//
+processing pRadarStep (in Long time
+// time in s
+	in Long timestep
+	// time step in s
+	in Long nid
+	// Aircraft id
+	in SensorDefinition def
+	// Sensor definition
+	inout SensorStatus status
+	// Sensor status
+	inout SensorsStatus statusList
+	// Sensor status
+	in SensorOrders orders
+	// Ordre
+	in EnvironmentInteractions currentEI
+	// Environment Interactions
+	inout EnvironmentInteractions newEI
+	// Environment Interactions
+	inout SensorTracks tracks
+	// Liste des pistes
+) begin
+	execute radarStep (time, timestep, nid, def, status, orders, currentEI, newEI, tracks)
+	execute pushStatus (def, status, statusList)
+end
+//
+
+//
+
+//
+processing testMatlabInterface () begin
+	parameter <Real> unReal
+	parameter <Vec3> unVec3
+	parameter <TestMatlabStruct> uneStruct
+	execute testMatlabInterfacePre (unReal, unVec3, uneStruct)
+	execute testMatlabInterfaceMain (unReal, unVec3, uneStruct)
+	execute testMatlabInterfacePost (unReal, unVec3, uneStruct)
+end
+//
+
+
+//
+processing testBlocks (in Long time
+	in EntityStates entities) begin
+	// local parameters
+	parameter <Long> test1 = "0"
+	parameter <Long> test21
+	parameter <Long> test22
+	parameter <EntityState> es
+	parameter <Long> id
+	// local events
+	event e1 { test1 %% 2 }
+	event e2 { test21 %% 2 }
+	event e3 { test1 < 10 }
+	//
+	while e3 do begin
+		execute testStructParam (time, test1)
+	end
+	//  
+	if e1 then begin
+		execute testStructParam2 (time, test21)
+	end
+
+	else begin
+		execute testStructParam (time, test22)
+		execute testStructParam (time, test22)
+		if e2 then begin
+			execute testStructParam3 (time, test22)
+		end
+
+	end
+	//
+end
+//
+
+//
+
+// Generic Model description
+
+// model only role is to decide on init or run
+
+//
+prototype Model begin
+//
+	reference < Long > @time
+	reference < Long > @timestep 
+	reference < Long > @cycle
+	//
+	signal test2
+	//        
+	parameter Logical bfalse = "false" 
+	parameter Logical btrue = "true"
+	event initializing { time == 0 }
+	//
+	event div2 { cycle %% 2 }
+	event div4 { cycle %% 4 }
+	event div8 { cycle %% 4 }
+	stateset ModelState { INIT, RUNNING } = INIT begin
+		transition from INIT to RUNNING on initializing raise test2
+	end
+	//
+end
+//
+ 
+//
+
+//
+prototype Function is Model begin
+// 
+	reference < Long > @NID
+end
+//
+
+//
+
+//
+prototype Equipment is Model begin
+// 
+	reference < Long > @NID
+end
+//
+
+//
+
+//
+prototype SimulationObject is Model begin
+//
+	parameter Long sideId = <>
+	// Identification of the platform
+	parameter String SID = <>
+	parameter Long NID = <>
+	// Identification of the platform type
+	parameter EntityType TYPE = <>
+	parameter Long SUBTYPE = <>
+	parameter Long SUBSUBTYPE = <>
+end
+//
+
+// An Aircraft
+
+//
+prototype Localisation is Function begin
+// references
+	reference < LocalisationInit > @loc_init
+	reference < LocalisationState > @loc_state
+	reference < LocDefinitions > @locDefs
+	// Localisation initialisation and state
+	parameter Long loc_const_id = <>
+	parameter LocalisationConst loc_const
+	parameter LocalisationError loc_error
+	parameter LocalisationEquipmentState loc_eqp_state = <>
+	//
+	when (ModelState :: INIT) begin
+		interaction initLocalisation (NID, loc_const_id, locDefs, loc_const, loc_eqp_state, loc_error)
+	end
+	//
+	when (ModelState :: RUNNING) begin
+		interaction stepLocalisation (time, timestep, NID, loc_const, loc_eqp_state, loc_state, loc_error)
+	end
+
+end
+//
+
+// An Aircraft
+
+//
+prototype Flight is Function begin
+// references
+	reference < LocalisationInit > @loc_init
+	reference < LocalisationState > @loc_state
+	reference < Long > @sideId
+	reference < EntityType > @TYPE
+	reference < Long > @SUBTYPE
+	reference < EnvironmentInteractions > @interactions
+	reference < NavigationState > @nav_state
+	reference < NavigationUpdate > @mms.mms_nav_update
+	// Flight model state
+	parameter SStateVector pstate
+	//
+	when (ModelState :: INIT) begin
+		interaction initFlightAndNavModels (NID, timestep, loc_init, nav_state, pstate, loc_state)
+	end
+	//
+	when (ModelState :: RUNNING) begin
+		interaction updatePosition (time, timestep, NID, sideId, TYPE, SUBTYPE, mms_nav_update, nav_state, pstate, loc_state, interactions)
+	end
+
+end
+//
+
+// An Aircraft
+
+//
+prototype BasicFlying is Function begin
+//
+	when (ModelState :: INIT) begin
+		interaction initBasicFlying (NID, time, timestep)
+	end
+
+end
+//
+
+// An Aircraft
+
+//
+prototype Navigation is Function begin
+// Navigation initialisation and state
+	parameter NavigationState nav_state
+	// mailBox
+	parameter Long nav_msgCategoryId = "1"
+	parameter NetworkMessageList nav_received
+	parameter NetworkMessageList nav_toBeSent
+	parameter Long count = "0"
+	//
+	reference < SStateVector > flight.pstate as ssv
+	//
+	instance <Flight> flight
+	//
+	when (ModelState :: RUNNING) begin
+		interaction publishStateVectorOnNetwork (time, timestep, NID, nav_state, ssv, nav_msgCategoryId, nav_toBeSent, count)
+		interaction readStateVectorOnNetwork (time, timestep, NID, nav_msgCategoryId, nav_received)
+	end
+
+end
+//
+
+// A Sensor Management
+
+//
+prototype Communications is Function begin
+// references
+	reference < Pointer > @networksPtr
+	// communications fonction Navigation
+	reference < Long > @nav.nav_msgCategoryId
+	reference < NetworkMessageList > @nav.nav_toBeSent
+	reference < NetworkMessageList > @nav.nav_received
+	// communications fonction MMS
+	reference < Long > @mms.mms_msgCategoryId
+	reference < NetworkMessageList > @mms.mms_toBeSent
+	reference < NetworkMessageList > @mms.mms_received
+	// is this model initialized ?
+	parameter Long initialized = "0"
+	// list of send reports
+	parameter NetworkMessageDeliveryReports reports
+	// Equipment Status List for access to each network
+
+	// TODO: connect communication equipment status List !!
+	parameter EquipmentStatusList statusList = <>
+	// Communication Management
+
+	// message routing
+	when (ModelState :: RUNNING) begin
+		interaction commsManagement (time, timestep, NID, statusList, networksPtr, initialized, reports, nav_msgCategoryId, nav_toBeSent,
+			nav_received, mms_msgCategoryId, mms_toBeSent, mms_received)
+	end
+
+end
+//
+
+// RADAR A/A Equipment
+
+// ATTENTION: 
+
+//  - filtrage sur entités type 1 => AVIONS
+
+//  - SER demandée sur subtype de l'entité et bandID 
+
+//
+prototype Radar is Equipment begin
+// 
+	reference < SensorOrders > @ordersList
+	reference < EnvironmentInteractions > @interactions
+	reference < String > @distSensorDomainFilePath
+	reference < String > @distJammerDomainFilePath
+	reference < SensorTracks > @tracks
+	reference < SensorsStatus > @statusList
+	// statut du senseur
+	parameter SensorStatus status
+	//
+	parameter Long sensorId = <>
+	// sensor caracteristics definition
+	parameter RadarDefinition radarDef = <>
+	parameter SensorDefinition sensorDef
+	// Initiatlisation
+	when (ModelState :: INIT) begin
+		interaction radarInit (NID, sensorId, radarDef, sensorDef, status, distSensorDomainFilePath, distJammerDomainFilePath)
+	end
+	// Execution
+	when (ModelState :: RUNNING) begin
+		interaction pRadarStep (time, timestep, NID, sensorDef, status, statusList, ordersList, interactions, interactions, tracks)
+	end
+
+end
+//
+
+// ESM Equipment
+
+//
+prototype Esm is Equipment begin
+// 
+	reference < SensorOrders > @ordersList
+	reference < EnvironmentInteractions > @interactions
+	reference < String > @distSensorDomainFilePath
+	reference < String > @distJammerDomainFilePath
+	reference < SensorTracks > @tracks
+	reference < SensorsStatus > @statusList
+	// statut du senseur
+	parameter SensorStatus status
+	//
+	parameter Long sensorId = <>
+	// sensor caracteristics definition
+	parameter EsmDefinition esmDef = <>
+	parameter SensorDefinition sensorDef
+	// Initiatlisation
+	when (ModelState :: INIT) begin
+		interaction esmInit (NID, sensorId, esmDef, sensorDef, status, distSensorDomainFilePath, distJammerDomainFilePath)
+	end
+	// Execution
+	when (ModelState :: RUNNING) begin
+		interaction pEsmStep (time, timestep, NID, sensorDef, status, statusList, ordersList, interactions, interactions, tracks)
+	end
+
+end
+//
+
+// Sensor Management
+
+//
+prototype Sensors is Function begin
+// Piste et Images produites par les differents senseurs
+	parameter SensorTracks ! tracks
+	parameter SensorImages ! images
+	// Sensor orders
+	parameter Long orderCount = "0"
+	parameter SensorOrders ordersList
+	parameter SensorsStatus ! statusList
+	// Equipements Génériques
+	instance <Radar> radar
+	instance <Esm> esm
+	// Execution
+	when (ModelState :: RUNNING) begin
+		interaction aircraftSensorsManagement (time, timestep, NID, statusList, orderCount, ordersList, images, tracks)
+	end
+
+end
+//
+
+// Brouilleur générique
+
+//
+prototype Jammer is Equipment begin
+// 
+	reference < JammerDefinitions > @jammerDefs
+	reference < JammersStatus > @jammerStatusList
+	reference < JammersOrders > @jammerOrderList
+	reference < EnvironmentInteractions > @interactions
+	// statut du senseur
+	parameter JammerStatus status
+	//
+	parameter Long jammerId = <>
+	//
+	parameter Long jammerDefId = <>
+	// sensor caracteristics definition
+	parameter JammerDefinition jammerDef
+	// Initiatlisation
+	when (ModelState :: INIT) begin
+		interaction jammerInit (NID, jammerId, jammerDefId, jammerDefs, jammerDef, status, jammerStatusList)
+	end
+	// Execution
+	when (ModelState :: RUNNING) begin
+		interaction jammerStep (time, timestep, NID, jammerDef, status, jammerStatusList, jammerOrderList, interactions, interactions)
+	end
+
+end
+//
+
+// A Sensor Management
+
+//
+prototype Protection is Function begin
+// 
+
+// Etats des equipements
+	parameter JammersStatus jammerStatusList
+	// Sensor orders
+	parameter Long orderCount = "0"
+	parameter JammersOrders jammerOrderList = <>
+	// jammers
+	instance <Jammer[]> jammers
+	//
+	when (ModelState :: RUNNING) begin
+		interaction jammersManagement (time, timestep, NID, jammerStatusList, orderCount, jammerOrderList)
+	end
+
+end
+//
+
+// A Sensor Management
+
+//
+prototype WeapSys is Function begin
+end
+//
+
+//
+
+//
+prototype MMSMonitor is Function begin
+	reference < LocalisationState > @loc_state
+	reference < NavigationState > @nav.nav_state
+	when (ModelState :: RUNNING) begin
+		interaction mmsMonitorNavigation (time, timestep, NID)
+		interaction mmsMonitorComms (time, timestep, NID)
+		interaction mmsMonitorSensors (time, timestep, NID)
+		interaction mmsMonitorAutoprot (time, timestep, NID)
+		interaction mmsMonitorWeapons (time, timestep, NID)
+	end
+
+end
+//
+
+//
+
+//
+prototype MMSExecute is Function begin
+	when (ModelState :: RUNNING) begin
+		interaction mmsExecuteNavigation (time, timestep, NID)
+		interaction mmsExecuteComms (time, timestep, NID)
+		interaction mmsExecuteSensors (time, timestep, NID)
+		interaction mmsExecuteAutoprot (time, timestep, NID)
+		interaction mmsExecuteWeapons (time, timestep, NID)
+	end
+
+end
+//
+
+//
+
+//
+prototype MMSManage is Function begin
+end
+//
+
+//
+
+//
+prototype MMSUpdate is Function begin
+end
+//
+
+// A Sensor Management
+
+//
+prototype MMS is Function begin
+// references
+	reference < LocalisationState > @loc_state
+	reference < NavigationState > @nav.nav_state
+	// mailBox
+	parameter Long mms_msgCategoryId = "2"
+	parameter NetworkMessageList mms_received
+	parameter NetworkMessageList mms_toBeSent
+	// Formation flight
+	parameter NavigationUpdate mms_nav_update = <>
+	// MMS sub functions
+	instance <MMSMonitor> monitor
+	instance <MMSExecute> executor
+	instance <MMSManage> manager
+	instance <MMSUpdate> updater
+end
+//
+
+// An Aircraft
+
+//
+prototype Aircraft is SimulationObject begin
+// Localisation, initial and live
+	parameter LocalisationInit loc_init = <>
+	parameter LocalisationState loc_state
+	parameter VecX testVec = <>
+	parameter TestJavaStruct testJavaStruct = <>
+	instance <Localisation> loc
+	// Liste des entrées externes a injecter
+	parameter ExternalInputList extInputList = <>
+	reference < EquipmentStatusList > comms.statusList as commsSL
+	//Mission management system function
+	instance <MMS> mms
+	// BasicFlying
+	instance <BasicFlying> basicFlying
+	//Flight and navigation system function
+	instance <Navigation> nav
+	// Sensor system management function
+	instance <Sensors> sensors
+	// Autoprotection management function
+	instance <Protection> autoprot
+	// Communication system management function
+	instance <Communications> comms
+	// Weapon system function
+	instance <WeapSys> weapsys
+	//
+	when (ModelState :: RUNNING) begin
+		interaction applyExternalInputs (time, timestep, extInputList, commsSL)
+	end
+	//
+end
+//
+
+// MENACE SOL AIR (VEILLE ou CDT)
+
+// Equipée RADAR S/A 
+
+// ATTENTION: 
+
+//  - filtrage sur entités type 1 => AVIONS
+
+//  - SER demandée sur subtype de l'entité et bandID 
+
+//
+prototype SAMComponent is SimulationObject begin
+//
+	reference < SAElementStatusList > @statusList
+	reference < SAElementOrderList > @ordersList
+	reference < SensorTracks > @tracks
+	reference < EnvironmentInteractions > @interactions
+	reference < String > @distSensorDomainFilePath
+	reference < String > @distJammerDomainFilePath
+	// Localisation
+	parameter Vec3 position = <>
+	parameter Real hA = <>
+	// Sensor id, orders and status
+	parameter Long sensorId = "1"
+	parameter SensorOrders sorders
+	parameter SensorStatus sstatus
+	// Sensor caracteristics definition
+	parameter RadarDefinition radarDef = <>
+	parameter SensorDefinition sensorDef
+	// Initiatlisation
+	when (ModelState :: INIT) begin
+		interaction radarInit (NID, sensorId, radarDef, sensorDef, sstatus, distSensorDomainFilePath, distJammerDomainFilePath)
+		interaction initSAMComponent (NID, hA, position)
+	end
+	// Execution
+	when (ModelState :: RUNNING) begin
+		interaction radarStep (time, timestep, NID, sensorDef, sstatus, sorders, interactions, interactions, tracks)
+		interaction updateStaticEntityState (time, NID, sideId, TYPE, SUBTYPE, position, interactions)
+		interaction manageSA (time, timestep, NID, SUBTYPE, position, statusList, ordersList, sorders, tracks)
+	end
+
+end
+//
+
+// A SA Threat system
+
+//
+prototype SASystem is SimulationObject begin
+//
+	parameter SASystemState systemState
+	parameter SAElementStatusList ! statusList
+	parameter SAElementOrderList ordersList
+	//
+	parameter SensorTracks ! tracks
+	//
+	instance <SAMComponent[]> components
+	//
+	when (ModelState :: RUNNING) begin
+		interaction manageSASystem (time, timestep, NID, systemState, statusList, ordersList, tracks)
+	end
+
+end
+//
+prototype Root begin
+//
+	parameter Long cycle = "0"
+	parameter Long time = "0"
+	parameter Long timestep = <>
+	//
+
+	//
+	event initializing { time == 0 }
+	stateset ModelState { INIT, RUNNING } = INIT begin
+		transition from INIT to RUNNING on initializing
+	end
+	//
+
+	//
+	parameter Long interactionCleanningTimeStep = <>
+	parameter EnvironmentInteractions ! interactions
+	//
+
+	//
+	parameter String distSensorDomainFilePath = <>
+	parameter String distJammerDomainFilePath = <>
+	//
+
+	//
+	parameter NetworkDefinitions ! networkDefs = <>
+	parameter JammerDefinitions ! jammerDefs = <>
+	parameter LocDefinitions ! locDefs = <>
+	//   
+
+	//  
+	parameter NetworkList networkList = <>
+	parameter Pointer networksPtr
+	instance <Aircraft []> aircraft
+	instance <SASystem []> saSystems
+	// 
+
+	// 
+	when (ModelState :: INIT) begin
+		interaction initNetworks (networkDefs, networkList, networksPtr)
+	end
+	//
+
+	//
+	when (ModelState :: RUNNING) begin
+		interaction stepNetworks (time, timestep, networksPtr, interactions)
+	end
+	// 
+
+	//
+	begin
+		interaction showInteractions (time, interactions)
+		interaction cleanInteractions (time, interactionCleanningTimeStep, interactions)
+		interaction advanceTime (timestep, time, cycle)
+	end
+
+end
+/*
+ * 
+ * 
+ */
+wrapper BasicFlying begin
+	link-library { "-L../basicFlying/ -lBasicFlying" } 
+	implements-functions { initBasicFlying, stepBasicFlying, publishStateVectorOnNetwork, readStateVectorOnNetwork }
+	external-objects { DCOM, VMGR, TDEF, PMGR, BFmain, kcg_types, kcg_consts }
+	external-libraries { "-L../../athena/geolib/ -lgeolib", "/usr/lib/libboost_filesystem.so" }
+	test-apps { testFM2, testFM3 }
+end

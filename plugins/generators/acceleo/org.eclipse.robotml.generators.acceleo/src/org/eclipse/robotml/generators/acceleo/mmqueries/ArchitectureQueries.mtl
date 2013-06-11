@@ -71,6 +71,9 @@
 [query public getComponentFileName(classifier : Classifier, end : String) : String = 
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'getComponentFileName(org.eclipse.uml2.uml.Classifier,java.lang.String)', Sequence{classifier,end}) 
 /]
+[query public getOutputPortBufferSize(p : Port) : Integer =
+ invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'getOutputPortBufferSize(org.eclipse.uml2.uml.Port)', Sequence{p}) 
+/]
 [query public isDataFlowPort(elt : Port) : Boolean = 
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries', 'isDataFlowPort(org.eclipse.uml2.uml.Port)', Sequence{elt}) 
 /]

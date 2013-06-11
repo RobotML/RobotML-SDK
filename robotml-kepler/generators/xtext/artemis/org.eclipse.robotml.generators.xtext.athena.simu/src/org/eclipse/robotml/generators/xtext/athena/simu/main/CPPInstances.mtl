@@ -1,0 +1,95 @@
+[comment encoding = UTF-8 /]
+[module CPPInstances('http://www.xtext.org/AthenaDSL')/]
+
+[import org::eclipse::robotml::generators::xtext::athena::simu::main::jqueries /]
+
+[template public CPPInstances(project : Project)]
+	
+[file ('instances.cc', false, 'UTF-8')] 
+
+//----------------------------------------------------------------
+// Include files
+//----------------------------------------------------------------
+#include "Compatibility.h"
+#include "timeCheck.h"
+#include "TypeDefs.h"
+#include "xml.h"
+#include "AthenaComponent.h"
+#include <iostream>
+#include "tests.h"
+
+//------------------------------------------------------------ ----
+
+#include "Root.h"	
+[for (proto : prototypeDeclaration | project.prototypes)]
+[let fname : String = getPrototypeFileName(proto,'.h')]
+#include "[fname/]"
+[/let]
+[/for]
+
+//----------------------------------------------------------------
+
+
+using namespace std;
+
+namespace generated {
+
+using namespace generated;
+using namespace AthenaV3;
+
+//----------------------------------------------------------------
+// Implementation
+//----------------------------------------------------------------
+
+//
+// An instance creation
+//
+AthenaComponent* createInstance(const string& name, XmlNode* config)
+{
+
+	if (name == "Root") return new Root(config);
+	[for (proto : prototypeDeclaration | project.prototypes)]
+	if (name == "[proto.name/]") return new [proto.name/](config);
+	[/for]
+
+	//
+	cout << "# createInstance failed for: '" << name << "'" << endl;
+	return NULL;
+	
+}
+
+//
+// instance creation from config file
+//
+AthenaComponent* createInstances(XmlNode* config, AthenaComponent* parent = NULL)
+{
+	int _i = 0;
+	AthenaComponent* inst = NULL;
+	XmlNode* _node = config->get("instance");
+	if (_node!=NULL) {
+		do {
+			string proto = _node->GET("proto")->get();
+			string name  = _node->GET("name")->get();
+			if (parent != NULL) cout << "# createInstance: '" << name << ":" << proto<< "' in " << parent->get_name() << endl;
+			else cout << "# createInstance: '" << name << ":" << proto<< "'" << endl;
+			inst = createInstance(proto, _node);
+			inst->set_name(name);
+			if (parent != NULL) {
+				parent->add_child(inst);
+				inst->set_parent(parent);
+			}
+			createInstances(_node, inst);
+			_i+=1;
+			_node = config->get("instance", _i);
+		} while (_node!= NULL);
+	}
+	return inst;
+}
+
+
+} // NS generated
+
+[/file]
+
+	
+[/template]

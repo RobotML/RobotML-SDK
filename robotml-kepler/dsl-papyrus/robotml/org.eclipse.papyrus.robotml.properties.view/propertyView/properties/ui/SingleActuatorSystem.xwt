@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets"
+	xmlns:j="clr-namespace:java.lang" xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<ppe:StringEditor input="{Binding}" property="UML:NamedElement:name"></ppe:StringEditor>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<Group text="Local position">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor input="{Binding}"
+				view="ProteusLibraries:Single Point32" property="RobotML:RoboticSystem:localPosition"></ppe:ViewEditor>
+		</Group>
+		<Group text="Local orientation">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor input="{Binding}"
+				view="ProteusLibraries:Single Point32" property="RobotML:RoboticSystem:localOrientation"></ppe:ViewEditor>
+		</Group>
+	</Composite>
+	<ppe:StringLabel property="UML:NamedElement:qualifiedName"
+		input="{Binding}"></ppe:StringLabel>
+</Composite>

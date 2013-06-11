@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:x="http://www.eclipse.org/xwt" xmlns:j="clr-namespace:java.lang"
+	xmlns="http://www.eclipse.org/xwt/presentation" xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<ppe:StringEditor input="{Binding}" property="UML:NamedElement:name"></ppe:StringEditor>
+	<ppe:StringLabel property="UML:NamedElement:qualifiedName"
+		input="{Binding}"></ppe:StringLabel>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}"
+			property="RobotML:LidarSystem:range_max"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="RobotML:LidarSystem:angle_min"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}" property="RobotML:LidarSystem:noise"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="RobotML:LidarSystem:nbLayers"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="RobotML:LidarSystem:sigmaNoise"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="RobotML:LidarSystem:range_min"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="RobotML:LidarSystem:layerAngleMin"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="RobotML:LidarSystem:time_increment "></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="RobotML:LidarSystem:scan_time  "></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="RobotML:LidarSystem:layerAngleStep"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="RobotML:LidarSystem:angle_max"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="RobotML:SensorSystem:frequency"></ppe:StringEditor>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<Group text="Local position">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor input="{Binding}"
+				view="ProteusLibraries:Single Point32" property="RobotML:RoboticSystem:localPosition"></ppe:ViewEditor>
+		</Group>
+		<Group text="Local orientation">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor input="{Binding}"
+				view="ProteusLibraries:Single Point32" property="RobotML:RoboticSystem:localOrientation"></ppe:ViewEditor>
+		</Group>
+	</Composite>
+</Composite>

@@ -1,0 +1,167 @@
+[comment encoding = UTF-8 /]
+[module cppTypeDefs('http://www.xtext.org/AthenaDSL')/]
+
+[import org::eclipse::robotml::generators::xtext::athena::vle::main::DSLQueries/]
+
+[template public cppTypeDefs(project : Project)]
+
+[file ('generated/src/TypeDefs.h', false, 'UTF-8')] 
+
+#ifndef _TypeDefs_h_
+#define _TypeDefs_h_
+
+// 
+// Includes ----------------------------------------------------------------------
+// 
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include <boost/multi_array.hpp>
+	[for (type : DataType | project.types)]  
+		[if (isBasicType(type))]  
+			[let bt : basicType = type.oclAsType(basicType)]
+					[for (include : includeDecl | bt.includes)]
+						[if (isCPPInclude(include))] 
+#include <[include.includeName/]>							
+						[/if] 
+					[/for] 
+			[/let]
+		[/if]
+	[/for]
+
+
+//
+namespace generated 
+{
+
+//
+// Data type definitions ----------------------------------------------------------
+//
+
+	[for (type : DataType | project.types)]
+// -------------------------------------------------------- [type.name/]
+		[if (isBasicType(type))]
+[processBasicType(type.oclAsType(basicType))/]
+		[elseif (isArrayType(type))]
+[processArrayType(type.oclAsType(arrayType))/]
+		[elseif (isVectorType(type))]
+[processVectorType(type.oclAsType(vectorType))/]
+		[elseif (isMapType(type))]
+[processMapType(type.oclAsType(mapType))/]
+		[elseif (isStructType(type))]
+[processStructType(type.oclAsType(structType))/]
+		[elseif (isDefineType(type))]
+[processDefineType(type.oclAsType(defineType))/]
+		[elseif (isUnionType(type))]
+[processUnionType(type.oclAsType(unionType))/]
+		[else]
+///
+/// ERROR [type.name/] is unrecognized by the generator - [type.eClass()/]
+///
+		[/if]
+		
+	[/for]
+
+// 
+// ------------------------------------------------------------------------------------
+//
+
+} // eof namespace generated
+
+#endif
+
+
+[/file]
+	
+[/template]
+
+
+[template public processBasicType(type : basicType)]
+	[let cpp : languageDecl = getCPPLanguageDecl(type) ]
+// basic type [type.name/]	
+typedef [cpp.trans/] [type.name/];
+	[/let]
+void init_[type.name/]([type.name/]& data);
+[/template]
+
+
+[template public processArrayType(array : arrayType)]
+// [array.name/] is an array of [getArrayDatatypeName(array)/]
+	[if (isDynamicArray(array))]
+typedef boost::multi_array<[getArrayDatatypeName(array)/], [getArrayNumberOfDimension(array)/]>* [array.name/];
+[array.name/] [array.name/]_allocate([getDynamicAllocationFunctionArguments(array)/]);	
+	[else]
+typedef [getArrayDatatypeName(array)/] [array.name/][getArrayDimensions()/];	
+	[/if]
+void init_[array.name/]([array.name/]& data);
+[/template]
+
+
+[template public processVectorType(vector : vectorType)]
+// [vector.name/] is a vector of [getVectorDatatypeName(vector)/]
+typedef std::vector<[getVectorDatatypeName(vector)/]> [vector.name/] ;
+void init_[vector.name/]([vector.name/]& data);
+[/template]
+
+
+[template public processMapType(map : mapType)]
+// [map.name/] is a map with key type [getMapKeyTypeName(map)/] and value type [getMapValueTypeName(map)/]
+typedef std::map <[getMapKeyTypeName(map)/], [getMapValueTypeName(map)/]> [map.name/];
+void init_[map.name/]([map.name/]& data);
+[/template]
+
+
+[template public processStructType(struct : structType)]
+// [struct.name/] is a structure
+class [struct.name/] {
+public:
+	[for (param : structElement | struct.parameters)]  
+	[getStructParamDecl(param)/];
+	[/for]
+	[if (hasDynamicArrayElements(struct))]
+	[getDynamicAllocationFunctionForStruct(struct)/]
+	[/if]
+	[struct.name/]() { }
+	[struct.name/](const [struct.name/]& _[struct.name/]);
+	[struct.name/]& operator = (const [struct.name/]& _[struct.name/]);
+	void copy(const [struct.name/]& _[struct.name/]);
+} ;
+void init_[struct.name/]([struct.name/]& data);
+[/template]
+
+
+[template public processDefineType(define : defineType)]
+// [define.name/] is a [getDefineTypeName(define)/]
+typedef [getDefineTypeName(define)/] [define.name/];
+void init_[define.name/]([define.name/]& data);
+[/template]
+
+
+[template public processUnionType(union : unionType)]
+// [union.name/] is a union
+class [union.name/] {
+protected:
+	[for (type : DataType | union.elements)]
+	[type.name/] _[type.name/]_;	
+	[/for]
+	unsigned int type;
+public:
+	[union.name/]();
+	[for (type : DataType | union.elements)]
+	static const unsigned int __[type.name/];
+	void set_[type.name/](const [type.name/]& d);
+	const [type.name/]* get_[type.name/]();
+	bool is_[type.name/]() const { return (type == __[type.name/]); }
+	[/for]
+	[union.name/](const [union.name/]& _[union.name/]);
+	~[union.name/]();
+	[union.name/]& operator = (const [union.name/]& _[union.name/]);
+	int getDataType() { return type; }
+};
+void init_[union.name/]([union.name/]& data);
+[/template]
+
+
+
+

@@ -1,0 +1,286 @@
+[comment encoding = UTF-8 /]
+[module jqueries('http://www.xtext.org/AthenaDSL')]
+
+
+[query public getRootPrototype(project : Project) : athenaDSL::prototypeDeclaration = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getRootPrototype(org.xtext.athenaDSL.Project)', Sequence{project}) 
+/]
+
+[query public getPrototypeFileName(proto : athenaDSL::prototypeDeclaration, end : String) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getPrototypeFileName(org.xtext.athenaDSL.prototypeDeclaration,java.lang.String)', Sequence{proto,end}) 
+/]
+
+[query public isAnAncestorOf(proto : prototypeDeclaration, p : prototypeDeclaration) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isAnAncestorOf(org.xtext.athenaDSL.prototypeDeclaration,org.xtext.athenaDSL.prototypeDeclaration)', Sequence{proto, p}) 
+/]
+
+[query public isEvent(elt : athenaDSL::architectureElement) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isEvent(org.xtext.athenaDSL.architectureElement)', Sequence{elt}) 
+/]
+
+[query public isParameter(elt : athenaDSL::architectureElement) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isParameter(org.xtext.athenaDSL.architectureElement)', Sequence{elt}) 
+/]
+
+[query public isReference(elt : athenaDSL::architectureElement) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isReference(org.xtext.athenaDSL.architectureElement)', Sequence{elt}) 
+/]
+
+[query public isSignal(elt : athenaDSL::architectureElement) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isSignal(org.xtext.athenaDSL.architectureElement)', Sequence{elt}) 
+/]
+
+[query public isAnInteraction(elt : athenaDSL::architectureElement) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isAnInteraction(org.xtext.athenaDSL.architectureElement)', Sequence{elt}) 
+/]
+
+[query public isInstance(elt : athenaDSL::architectureElement) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isInstance(org.xtext.athenaDSL.architectureElement)', Sequence{elt}) 
+/]
+
+[query public getInstance(elt : athenaDSL::architectureElement) : instanceDeclaration = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isAnInteraction(org.xtext.athenaDSL.architectureElement)', Sequence{elt}) 
+/]
+
+[query public isStateSet(elt : athenaDSL::architectureElement) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isStateSet(org.xtext.athenaDSL.architectureElement)', Sequence{elt}) 
+/]
+
+[query public getXmlArrayDims(elt : athenaDSL::arrayType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getXmlArrayDims(org.xtext.athenaDSL.arrayType)', Sequence{elt}) 
+/]
+
+[query public getXmlStructDims(elt : athenaDSL::structType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getXmlStructDims(org.xtext.athenaDSL.structType)', Sequence{elt}) 
+/]
+
+[query public getStateSetStates(elt : athenaDSL::statesetDeclaration) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getStateSetStates(org.xtext.athenaDSL.statesetDeclaration)', Sequence{elt}) 
+/]
+
+[query public getFunctorDeclaration(elt : athenaDSL::FuncProc) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getFunctorDeclaration(org.xtext.athenaDSL.FuncProc)', Sequence{elt}) 
+/]
+
+[query public getNameFromQualifiedName(elt : athenaDSL::qualifiedName) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getNameFromQualifiedName(org.xtext.athenaDSL.qualifiedName)', Sequence{elt}) 
+/]
+
+[query public getReferenceName(ref : athenaDSL::referenceDeclaration) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getReferenceName(org.xtext.athenaDSL.referenceDeclaration)', Sequence{ref}) 
+/]
+
+
+[query public getBaseType(type : athenaDSL::DataType) : athenaDSL::DataType = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getBaseType(org.xtext.athenaDSL.DataType)', Sequence{type}) 
+/]
+
+[query public getTypeIndexInUnion(union : athenaDSL::unionType, type : athenaDSL::DataType) : String =	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getTypeIndexInUnion(org.xtext.athenaDSL.unionType,org.xtext.athenaDSL.DataType)', Sequence{union, type}) 
+/]
+
+[query public getStructParamDecl(type : athenaDSL::structElement) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getStructParamDecl(org.xtext.athenaDSL.structElement)', Sequence{type}) 
+/]
+
+[query public getCPPLanguageDecl(type : athenaDSL::basicType) : athenaDSL::languageDecl = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getCPPLanguageDecl(org.xtext.athenaDSL.basicType)', Sequence{type}) 
+/]
+
+[query public isBasicType(type : athenaDSL::DataType) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isBasicType(org.xtext.athenaDSL.DataType)', Sequence{type}) 
+/]
+
+[query public isStructType(type : athenaDSL::DataType) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isStructType(org.xtext.athenaDSL.DataType)', Sequence{type}) 
+/]
+
+[query public isDefineType(type : athenaDSL::DataType) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isDefineType(org.xtext.athenaDSL.DataType)', Sequence{type}) 
+/]
+
+[query public isUnionType(type : athenaDSL::DataType) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isUnionType(org.xtext.athenaDSL.DataType)', Sequence{type}) 
+/]
+
+[query public isMapType(type : athenaDSL::DataType) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isMapType(org.xtext.athenaDSL.DataType)', Sequence{type}) 
+/]
+
+[query public isVectorType(type : athenaDSL::DataType) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isVectorType(org.xtext.athenaDSL.DataType)', Sequence{type}) 
+/]
+
+
+[query public hasDynamicArrayElements(type : athenaDSL::structType) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'hasDynamicArrayElements(org.xtext.athenaDSL.structType)', Sequence{type}) 
+/]
+
+[query public getDynamicAllocationFunctionForStruct(type : athenaDSL::structType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getDynamicAllocationFunctionForStruct(org.xtext.athenaDSL.structType)', Sequence{type}) 
+/]
+
+[query public getVectorDatatypeName(type : athenaDSL::vectorType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getVectorDatatypeName(org.xtext.athenaDSL.vectorType)', Sequence{type}) 
+/]
+
+
+[query public getDefineTypeName(type : athenaDSL::defineType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getDefineTypeName(org.xtext.athenaDSL.defineType)', Sequence{type}) 
+/]
+
+[query public getMapKeyTypeName(type : athenaDSL::mapType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getMapKeyTypeName(org.xtext.athenaDSL.mapType)', Sequence{type}) 
+/]
+
+[query public getMapValueTypeName(type : athenaDSL::mapType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getMapValueTypeName(org.xtext.athenaDSL.mapType)', Sequence{type}) 
+/]
+
+[query public isArrayType(type : athenaDSL::DataType) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isArrayType(org.xtext.athenaDSL.DataType)', Sequence{type}) 
+/]
+
+[query public getArrayDimensions(type : athenaDSL::arrayType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getArrayDimensions(org.xtext.athenaDSL.arrayType)', Sequence{type}) 
+/]
+
+[query public getArrayDatatypeName(type : athenaDSL::arrayType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getArrayDatatypeName(org.xtext.athenaDSL.arrayType)', Sequence{type}) 
+/]
+
+[query public getDynamicAllocationFunctionArguments(type : athenaDSL::arrayType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getDynamicAllocationFunctionArguments(org.xtext.athenaDSL.arrayType)', Sequence{type}) 
+/]
+
+[query public getDynamicAllocationFunctionArgumentsCall(type : athenaDSL::arrayType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getDynamicAllocationFunctionArgumentsCall(org.xtext.athenaDSL.arrayType)', Sequence{type}) 
+/]
+
+[query public getArrayNumberOfDimension(type : athenaDSL::arrayType) : Integer = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getArrayNumberOfDimension(org.xtext.athenaDSL.arrayType)', Sequence{type}) 
+/]
+
+[query public isDynamicArray(type : athenaDSL::arrayType) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isDynamicArray(org.xtext.athenaDSL.arrayType)', Sequence{type}) 
+/]
+
+[query public isCPPInclude(include : includeDecl) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isCPPInclude(org.xtext.athenaDSL.includeDecl)', Sequence{include}) 
+/]
+
+
+[query public isCPPFunction(fdecl : functionDeclaration) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isCPPFunction(org.xtext.athenaDSL.functionDeclaration)', Sequence{fdecl}) 
+/]
+
+[query public getCPPFunctionSignature(fdecl : functionDeclaration) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getCPPFunctionSignature(org.xtext.athenaDSL.functionDeclaration)', Sequence{fdecl}) 
+/]
+
+
+[query public getCPPLexicalCast(type : athenaDSL::basicType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getCPPLexicalCast(org.xtext.athenaDSL.basicType)', Sequence{type}) 
+/]
+
+
+[query public isAOneDimensionArray(type : athenaDSL::arrayType) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isAOneDimensionArray(org.xtext.athenaDSL.arrayType)', Sequence{type}) 
+/]
+
+[query public getArraySizeOperator(type : athenaDSL::arrayType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getArraySizeOperator(org.xtext.athenaDSL.arrayType)', Sequence{type}) 
+/]
+
+[query  public getCondition(cond : eventCondition) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getCondition(org.xtext.athenaDSL.eventCondition)', Sequence{cond}) 
+/]
+
+[query  public getFunctionCallSignature(call : interactionCall) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getFunctionCallSignature(org.xtext.athenaDSL.interactionCall)', Sequence{call}) 
+/]
+
+[query  public getArgumentDeclaration(p : Project, proto : prototypeDeclaration, call : interactionCall) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getArgumentDeclaration(org.xtext.athenaDSL.Project,org.xtext.athenaDSL.prototypeDeclaration,org.xtext.athenaDSL.interactionCall)', Sequence{p,proto,call}) 
+/]
+
+[query  public getStringFromQualifiedName(qn : athenaDSL::qualifiedName) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getStringFromQualifiedName(org.xtext.athenaDSL.qualifiedName)', Sequence{qn}) 
+/]
+
+[query  public getDynamicAllocationForStruct(name : String, struct : athenaDSL::structType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getDynamicAllocationForStruct(java.lang.String,org.xtext.athenaDSL.structType)', Sequence{name, struct}) 
+/]
+
+[query  public getArrayAllocationCall(name : String, array : athenaDSL::arrayType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getArrayAllocationCall(java.lang.String,org.xtext.athenaDSL.arrayType)', Sequence{name, array}) 
+/]
+
+[query  public getParameterNbWriters(param : athenaDSL::parameterDeclaration) : Integer = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getParameterNbWriters(org.xtext.athenaDSL.parameterDeclaration)', Sequence{param}) 
+/]
+
+[query  public hasInitValue(type : athenaDSL::DataType) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'hasInitValue(org.xtext.athenaDSL.DataType)', Sequence{type}) 
+/]
+
+[query  public getInitValue(type : athenaDSL::basicType) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getInitValue(org.xtext.athenaDSL.basicType)', Sequence{type}) 
+/]
+
+[query public isFunctionCall(elt : athenaDSL::statement) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isFunctionCall(org.xtext.athenaDSL.statement)', Sequence{elt}) 
+/]
+
+[query public isWhileBlock(elt : athenaDSL::statement) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isWhileBlock(org.xtext.athenaDSL.statement)', Sequence{elt}) 
+/]
+
+[query public isIfBlock(elt : athenaDSL::statement) : Boolean = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'isIfBlock(org.xtext.athenaDSL.statement)', Sequence{elt}) 
+/]
+
+
+[query  public getProcessingFunctionCallSignature(call : functionCall) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getProcessingFunctionCallSignature(org.xtext.athenaDSL.functionCall)', Sequence{call}) 
+/]
+
+
+[query public getProcessingSignature(proc : ProcessingDeclaration) : String = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getProcessingSignature(org.xtext.athenaDSL.ProcessingDeclaration)', Sequence{proc}) 
+/]
+
+[query public getSortedDataTypes(project : athenaDSL::Project) : Sequence(athenaDSL::DataType) =
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getSortedDataTypes(org.xtext.athenaDSL.Project)', Sequence{project})
+/]
+
+[query public getPrototypes(project : athenaDSL::Project) : Sequence(athenaDSL::prototypeDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getPrototypes(org.xtext.athenaDSL.Project)', Sequence{project})
+/]
+
+[query public getParameters(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::parameterDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getParameters(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]
+
+[query public getReferences(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::referenceDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getReferences(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]
+
+[query public getEvents(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::eventDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getEvents(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]
+
+[query public getSignals(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::signalDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getSignals(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]
+
+[query public getStateSets(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::statesetDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getStateSets(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]
+
+[query public getInteractions(project : athenaDSL::Project, current_proto : athenaDSL::prototypeDeclaration) : Sequence(athenaDSL::interactionDeclaration) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getInteractions(org.xtext.athenaDSL.Project, org.xtext.athenaDSL.prototypeDeclaration)', Sequence{project, current_proto})
+/]
+
+[query public getDataTypes(project : athenaDSL::Project) : Sequence(athenaDSL::DataType) = 
+	invoke('org.eclipse.robotml.generators.xtext.athena.simu.main.JavaService', 'getDataTypes(org.xtext.athenaDSL.Project)', Sequence{project})
+/]

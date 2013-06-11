@@ -1,0 +1,199 @@
+
+// Athena V5
+// Basic Type definitions
+//
+
+// 01/03/2011
+
+import "types.adl"
+import "functions.adl"
+
+// Basic communication management                                       
+
+//
+processing commsManagement (in Integer time
+// time in s
+	in Integer timestep
+	// time step in s
+	in Integer nid
+	// Aircraft id
+	in EquipmentStatusList statusList
+	// Status des points d'acces aux reseaux de comms
+	in Pointer networksPtr
+	// pointer to the instanciated network list
+	inout Integer initialized
+	// is this model initizalized ?
+	inout NetworkMessageDeliveryReports reports
+	in Integer nav_msgCategoryId
+	// Nav Msg Category Id
+	in NetworkMessageList nav_toBeSent
+	// Nav function list of msg to be sent
+	out NetworkMessageList nav_rcvd
+	// Nav function list of received msg
+	in Integer mms_msgCategoryId
+	// MMS Msg Category Id
+	in NetworkMessageList mms_toBeSent
+	// MMS function list of msg to be sent
+	out NetworkMessageList mms_rcvd
+	// MMS function list of received msg
+) begin
+//
+	parameter <NetworkMessageList> toBeSent
+	// Comms list of msg to be sent
+	parameter <NetworkMessageList> rcvd
+	// Comms list of received msg
+
+	// Message reception
+	execute basicCommunicationManagementRCV (time, timestep, nid, statusList, networksPtr, initialized, rcvd, reports)
+	// Message routing received / sent
+
+	// from nav
+	execute basicMessageRouting (time, timestep, nid, statusList, nav_msgCategoryId, toBeSent, rcvd, nav_toBeSent, nav_rcvd)
+	// from mms
+	execute basicMessageRouting (time, timestep, nid, statusList, mms_msgCategoryId, toBeSent, rcvd, mms_toBeSent, mms_rcvd)
+	// Message emmission            
+	execute basicCommunicationManagementSND (time, timestep, nid, statusList, networksPtr, initialized, toBeSent, reports)
+	//
+end
+//
+
+// Update the position of an object
+
+//
+processing updatePosition (in Integer time
+// time in s
+	in Integer timestep
+	// time step in s
+	in Integer nid
+	// Aircraft id
+	in Integer sideId
+	// Side Id
+	in EntityType type
+	// Platform type
+	in Integer subType
+	// Platform subtype
+	in NavigationUpdate nav_update
+	// Navigation update
+	inout NavigationState nav_state
+	// Navigation state
+	inout SStateVector ssv
+	// Flight model state
+	out LocalisationState ls
+	// Localisation state
+	inout EnvironmentInteractions EI
+	// Environment Interactions
+) begin
+	execute stepFlightAndNavModels (time, timestep, nid, nav_update, nav_state, ssv, ls)
+	//execute stepNavModel(time, timestep, nid, nav_update, nav_state)
+
+	//execute stepFlightModel(time, timestep, nid, nav_state, ssv, ls)
+	execute updateAircraftEntityState (time, nid, sideId, type, subType, ssv, EI)
+end
+//
+
+//
+
+//
+processing pEsmStep (in Integer time
+// time in s
+	in Integer timestep
+	// time step in s
+	in Integer nid
+	// Aircraft id
+	in SensorDefinition def
+	// Sensor definition
+	inout SensorStatus status
+	// Sensor status
+	inout SensorsStatus statusList
+	// Sensor status
+	in SensorOrders orders
+	// Ordre
+	in EnvironmentInteractions currentEI
+	// Environment Interactions
+	inout EnvironmentInteractions newEI
+	// Environment Interactions
+	inout SensorTracks tracks
+	// Liste des pistes
+) begin
+	execute esmStep (time, timestep, nid, def, status, orders, currentEI, newEI, tracks)
+	execute pushStatus (def, status, statusList)
+end
+//
+
+//
+
+//
+processing pRadarStep (in Integer time
+// time in s
+	in Integer timestep
+	// time step in s
+	in Integer nid
+	// Aircraft id
+	in SensorDefinition def
+	// Sensor definition
+	inout SensorStatus status
+	// Sensor status
+	inout SensorsStatus statusList
+	// Sensor status
+	in SensorOrders orders
+	// Ordre
+	in EnvironmentInteractions currentEI
+	// Environment Interactions
+	inout EnvironmentInteractions newEI
+	// Environment Interactions
+	inout SensorTracks tracks
+	// Liste des pistes
+) begin
+	execute radarStep (time, timestep, nid, def, status, orders, currentEI, newEI, tracks)
+	execute pushStatus (def, status, statusList)
+end
+//
+
+//
+
+//
+processing testMatlabInterface () begin
+	parameter <Real> unReal
+	parameter <Vec3> unVec3
+	parameter <TestMatlabStruct> uneStruct
+	execute testMatlabInterfacePre (unReal, unVec3, uneStruct)
+	execute testMatlabInterfaceMain (unReal, unVec3, uneStruct)
+	execute testMatlabInterfacePost (unReal, unVec3, uneStruct)
+end
+//
+
+
+//
+processing testBlocks (in Integer time
+	in EntityStates entities) begin
+	// local parameters
+	parameter <Integer> test1 = "0"
+	parameter <Integer> test21
+	parameter <Integer> test22
+	parameter <EntityState> es
+	parameter <Integer> id
+	// local events
+	event e1 { test1 %% 2 }
+	event e2 { test21 %% 2 }
+	event e3 { test1 < 10 }
+	//
+	while e3 do begin
+		execute testStructParam (time, test1)
+	end
+	//  
+	if e1 then begin
+		execute testStructParam2 (time, test21)
+	end
+
+	else begin
+		execute testStructParam (time, test22)
+		execute testStructParam (time, test22)
+		if e2 then begin
+			execute testStructParam3 (time, test22)
+		end
+
+	end
+	//
+end
+//
+

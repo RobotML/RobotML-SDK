@@ -1,0 +1,190 @@
+// 20/10/2011
+
+// 
+language CPP
+
+//
+basic String begin
+	include < CPP > "string"
+	language < CPP > "std::string" = '""'
+end
+
+// 
+basic Boolean begin
+	language < CPP > "bool" = "false"
+end
+
+//
+basic Integer begin
+	language < CPP > "int32_t" = "0"
+end
+
+//
+basic Double begin
+	language < CPP > "double" = "0"
+end
+
+//
+
+//
+vector<Integer> Integers
+map<String,String> ismap
+array < Double > Vec3 [ x=3 ]
+array < Double > VecX [ x ]
+
+//
+struct TestStruct begin
+	Integer symetric
+	Boolean ok
+	Double azimuth
+	Vec3 pos
+	VecX history
+	Integers p
+end
+
+
+// 20/10/2011
+
+import "types_1.adl"
+
+// 
+function advanceTime < CPP > (
+	// time step in s
+	in Integer timestep
+	// current time in s
+	inout Integer time
+	// cycle number
+	inout Integer cycle
+)
+
+// 
+function initBasicFlying < CPP > (
+	// time  in s
+	in Integer time
+	// time step in s
+	in Integer timestep
+	// Aircraft Id
+	in Integer nid
+)
+
+//
+function stepBasicFlying < CPP > (
+	// time  in s
+	in Integer time
+	// time step in s
+	in Integer timestep
+	// Aircraft Id
+	in Integer nid
+)
+
+
+// 20/10/2011
+
+import "types_1.adl"
+import "functions_1.adl"
+
+//
+prototype Model begin
+
+	//
+	reference < Integer > @time
+	reference < Integer > @timestep 
+	reference < Integer > @cycle
+	
+	//signal test2        
+	event initializing { time == 0 }
+	
+	//
+	stateset ModelState { INIT, RUNNING } = INIT begin
+		transition from INIT to RUNNING on initializing //raise test2
+	end
+	
+end
+
+//
+prototype Bidon1 begin
+	
+	//
+	reference <Integer> @aircraft.NID
+
+	//
+	parameter <Integer> B1 = <>
+	
+end
+
+//
+prototype Bidon2 begin
+	
+	//
+	parameter <Integer> B2 = <>
+	reference <Integer> @bidon1.B1
+	
+end
+
+
+//
+prototype Aircraft is Model begin
+	
+	//
+	reference <Integer> @bidon1.B1
+	reference <Integer> bidon2.B2
+
+	//
+	parameter <Integer> NID = <>
+	
+	//
+	instance <Bidon2> bidon2
+
+	//
+	when (ModelState :: INIT) begin
+		interaction initBasicFlying (time, timestep, NID)
+	end
+	
+	//
+	when (ModelState :: RUNNING) begin
+		interaction stepBasicFlying (time, timestep, NID)
+	end
+	
+end
+
+
+prototype Root begin
+
+	//
+	reference <Integer> bidon1.B1
+	reference <Integer> aircraft.bidon2.B2
+
+	parameter <Integer> cycle = "0"
+	parameter <Integer> time = "0"
+	parameter <Integer> timestep = <>
+	
+	instance <Aircraft> aircraft
+	instance <Bidon1>   bidon1
+
+	event initializing { time == 0 }
+	stateset ModelState { INIT, RUNNING } = INIT begin
+		transition from INIT to RUNNING on initializing
+	end
+
+	begin
+		interaction advanceTime (timestep, time, cycle)
+	end
+
+end
+
+// 20/10/2011
+
+import "types_1.adl"
+import "functions_1.adl"
+
+/*
+ * 
+ * 
+ */
+wrapper BasicFlying begin
+	link-library { "hello" } 
+	implements-functions { advanceTime, initBasicFlying, stepBasicFlying }
+	external-objects {  }
+	external-libraries {   }
+	test-apps {  }
+end

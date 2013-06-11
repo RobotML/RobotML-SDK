@@ -435,6 +435,13 @@ public class ArchitectureQueries {
 			return null;
 		return sys.getLibraryComponentName();
 	}
+	
+	static public int getOutputPortBufferSize(Port p) {
+		org.eclipse.papyrus.RobotML.DataFlowPort dfp = org.eclipse.uml2.uml.util.UMLUtil.getStereotypeApplication(p, org.eclipse.papyrus.RobotML.DataFlowPort.class);
+		if (dfp == null)
+			return 0;
+		return dfp.getBufferSize();
+	}
 	/**
 	 * 
 	 */

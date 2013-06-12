@@ -36,7 +36,7 @@
 		[if (isInterface(type))]
 		#include "[(type.qualifiedName.substitute(' ', '_')).replaceAll('::', '/')/].h"
 		[else]
-		#include "Datatypes/[type.name/].h"
+		#include "../Datatypes/[type.name/].h"
 		[/if]
 [comment]#include "[(type.qualifiedName.substitute(' ', '_')).replaceAll('::', '/')/].h"[/comment]	
 	[/if]
@@ -50,14 +50,16 @@ using namespace std;
 using namespace RTT;
 
 [generate_Datatype_file(c, root_model)/]
-[comment]
-//in case of datatypes use, uncomment the using namespace command below
-[let model : Model = getRootModel(root_model)]
-//using namespace [model.name.substitute(' ', '_')/]_types;
+[let nspace : String = c.qualifiedName.substitute('::'+c.name,'')]
+[let nameSpace : Sequence(String) = nspace.tokenize('::')]
+[for(s : String | nameSpace)]
+namespace [s/]{
+[/for]
 [/let]
-[/comment]
 
-namespace [(c.qualifiedName.substitute('::'+c.name,'')).substitute(' ','_')/]{
+
+
+[/let]
 class [c.name/]
 	: public RTT::TaskContext 
 {   [comment ports and services declaration/]
@@ -248,7 +250,14 @@ class [c.name/]
 		// Your configuration cleanup code
 	}	
 };
+
+[let nspace : String = c.qualifiedName.substitute('::'+c.name,'')]
+[let nameSpace : Sequence(String) = nspace.tokenize('::')]
+[for(s : String | nameSpace)]
 }
+[/for]
+[/let]
+[/let]
 [/file]
 
 [/template]

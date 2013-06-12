@@ -8,6 +8,8 @@ import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.robotml.generators.acceleo.mmqueries.*;
+import org.eclipse.uml2.uml.InstanceSpecification;
+import org.eclipse.uml2.uml.Model;
 
 public class CycabTKQueries {
 	
@@ -50,5 +52,68 @@ public class CycabTKQueries {
 //			}
 //		}
 		return ports;
+	}
+	
+	/**
+	 * Convert point characters to underscore. 
+	 */
+	static public String pointToUnderscore(String str)
+	{
+		return str.replace('.', '_');
+	}
+	
+	
+	/**
+	 * Compute the cycabtk name of an instanceSpecification
+	 * @param model
+	 * @param inst
+	 * @return
+	 */
+	static public String computeCycabtkInstanceName(org.eclipse.uml2.uml.Model model, org.eclipse.uml2.uml.InstanceSpecification inst)
+	{
+		String[] str = inst.getName().split("\\.");
+		String suffix = str[str.length-1];
+				
+//		Boolean isValid = false;
+//		for( org.eclipse.uml2.uml.Classifier classifier : inst.getClassifiers() )
+//		{
+//			org.eclipse.uml2.uml.Class cl = GeneralQueries.findClassInModel(model, classifier.getName());	
+//			if( GeneralQueries.inheritsFrom(cl, "Robot")
+//				|| GeneralQueries.inheritsFrom(cl, "RoboticSystem")	)
+//			{
+//				isValid = true;
+//				break;
+//			}
+//		}
+//		if(isValid)
+//		{
+//			String result = suffix;
+//			InstanceSpecification parent = DeploymentQueries.getParentInstanceSpecification(model, inst);
+//			if(parent != null )
+//			{
+//				String prefix = computeCycabtkInstanceName(model, parent);
+//				if(prefix != null)
+//				{
+//					result = prefix + "." + suffix;
+//				}
+//			}
+//			return result;
+//		}
+//		return null;
+			
+		InstanceSpecification parent = DeploymentQueries.getParentInstanceSpecification(model, inst);
+		if(parent != null)
+		{	
+			for( org.eclipse.uml2.uml.Classifier classifier : parent.getClassifiers() )
+			{
+				org.eclipse.uml2.uml.Class cl = GeneralQueries.findClassInModel(model, classifier.getName());	
+				if( GeneralQueries.inheritsFrom(cl, "Robot")
+					|| GeneralQueries.inheritsFrom(cl, "RoboticSystem")	)
+				{
+					return computeCycabtkInstanceName(model, parent) + "." + suffix;
+				}
+			}
+		}
+		return suffix;
 	}
 }

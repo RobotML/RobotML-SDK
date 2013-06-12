@@ -20,7 +20,8 @@
 require "[libPath/]"
 [/let]
 
--- [protected('User-specific include files')]
+-- [protected(aClass.name + ' requires')]
+
 -- [/protected]
 
 

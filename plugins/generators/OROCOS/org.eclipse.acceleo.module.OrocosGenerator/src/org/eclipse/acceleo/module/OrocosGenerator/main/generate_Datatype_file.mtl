@@ -32,7 +32,14 @@
 
 #include "CppDataTypes.hpp"
 [comment get owner component and modify namespaces hierarchy/]
-namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_')/]{
+[let nspace : String = type.qualifiedName.substitute('::'+type.name,'')]
+[let nameSpace : Sequence(String) = nspace.tokenize('::')]
+[for(s : String | nameSpace)]
+namespace [s/]{
+[/for]
+[/let]
+[/let]
+
 	[if(isEnumeration(type))]
 	enum [type.name/]{
 	[for (enumeration : EnumerationLiteral |getEnumeration(type))]
@@ -168,7 +175,15 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
         )
     [/for]
 [/if]
-};
+
+[let nspace : String = type.qualifiedName.substitute('::'+type.name,'')]
+[let nameSpace : Sequence(String) = nspace.tokenize('::')]
+[for(s : String | nameSpace)]
+}
+[/for]
+[/let]
+[/let]
+
 #endif // _[type.name.toUpper()/]_H_
 [/file]
 [/if]

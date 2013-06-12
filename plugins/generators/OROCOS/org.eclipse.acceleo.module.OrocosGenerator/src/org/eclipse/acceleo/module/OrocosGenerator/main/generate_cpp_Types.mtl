@@ -10,7 +10,7 @@
 [file ('src/DataTypes/CppDataTypes.hpp', false, 'UTF-8')]
 #ifndef _CPP_DATATYPES_HPP_
 #define _CPP_DATATYPES_HPP_
-
+#include <vector.h>
 #include <string>
 
 [comment] Std Datatypes[/comment]

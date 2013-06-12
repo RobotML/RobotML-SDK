@@ -85,7 +85,7 @@ class [c.name/]
 			[port.visibility/]: InputPort<[ne.name.replace('_datatypes', '_msgs')/]::[port.type.name/]> [port.name/];
 			[/let]
 			[else]
-			[port.visibility/]: InputPort<[port.type.name/]> [port.name/];
+			[port.visibility/]: InputPort<[port.type.qualifiedName/]> [port.name/];
 			[/if]
 		[/for]
   		[for (port : Port | getOutputPortsForElement(elt))]

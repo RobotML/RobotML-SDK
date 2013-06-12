@@ -21,7 +21,7 @@ loadComponent("[c.name/]","OCL::LuaComponent")
 				//-----load lua scripts in Lua components
 [c.name/].exec_file("src/[c.name/].lua")
 				[else]
-loadComponent("[c.name/]","[c.namespace.name/]::[c.name/]")
+loadComponent("[c.name/]","[c.qualifiedName/]")
 				[/if]
 			[/if]
 		[/if]

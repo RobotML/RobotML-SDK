@@ -74,7 +74,7 @@
       </eAnnotations>
       <children xmi:type="notation:DecorationNode" xmi:id="_GqFhoXUwEeKtkpd6W4BP5g" type="5192"/>
       <element xmi:type="uml:Comment" href="AirOARP.uml#_GqCd9XUwEeKtkpd6W4BP5g"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GqFhonUwEeKtkpd6W4BP5g" x="210" y="225"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GqFhonUwEeKtkpd6W4BP5g" x="215" y="230"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_GqFho3UwEeKtkpd6W4BP5g" type="2109" fontName="Ubuntu" fontHeight="11" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GqFhpHUwEeKtkpd6W4BP5g" source="ShadowFigure">

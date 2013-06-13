@@ -64,11 +64,19 @@ public:
 		[/let]
 	[/for]
 
-	//effibox odometry events callbacks
+	//effibox vehicle events callbacks
 	[for (inst: InstanceSpecification | getInstanceSpecifications(model))]
 		[let p: Property = getInstance(model, inst)]
-			[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('OdometrySystem'))]
+			[if (p.isProperty() and (	p.type.oclAsType(Class).hasStereotype('OdometrySystem')
+										or p.type.oclAsType(Class).hasStereotype('Robot')	)
+			)]
 	void frame[p.name/]_genericodometry(const effibox::FramePtr & f);
+				[let ugvKind : String = getAttributeValue(p.type.oclAsType(Class), 'kind', 'Robot', 'car')]
+				[if(ugvKind.equalsIgnoreCase('UGVdifferential'))]
+	void frame[p.name/]_wifibotspecific(const effibox::FramePtr & f);
+				[/if]
+				[/let]
+	void frame[p.name/]_timercommand(const effibox::FramePtr & f);
 			[/if]
 		[/let]
 	[/for]

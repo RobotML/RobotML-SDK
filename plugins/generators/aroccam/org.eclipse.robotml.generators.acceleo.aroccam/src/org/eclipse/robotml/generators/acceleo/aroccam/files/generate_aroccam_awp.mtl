@@ -57,7 +57,26 @@
 			</event>
 		</interface>
 			[/if]
-			[if (p.isProperty() and p.type.oclAsType(Class).hasStereotype('OdometrySystem'))]
+			[if (p.isProperty() and (	p.type.oclAsType(Class).hasStereotype('OdometrySystem')
+										or p.type.oclAsType(Class).hasStereotype('Robot')	)
+			)]
+				[let ugvKind : String = getAttributeValue(p.type.oclAsType(Class), 'kind', 'Robot', 'car')]
+				[if(ugvKind.equalsIgnoreCase('UGVdifferential'))]
+		<interface model="model_simulated_ros_wifibot" type="vehicle">
+			<name>[p.name/]</name>
+			<driver id="driver_ros" configId="wifibot">
+				<parameter id="command_topic_name">wifibot_command</parameter>
+				<parameter id="timeout">1000</parameter>
+				<parameter id="topic_name">wifibot_odometry</parameter>
+			</driver>
+			<event bufferSize="20" priority="0" id="genericodometry" state="active">
+				<handler processingChoice="Acquisition + Visualization" state="0">frame[p.name/]_genericodometry</handler>
+			</event>
+			<event bufferSize="20" priority="0" id="wifibotspecific" state="active">
+				<handler processingChoice="Acquisition + Visualization" state="0">frame[p.name/]_wifibotspecific</handler>
+			</event>
+		</interface>
+				[else]
 		<interface model="model_simulated_ros_vipalab" type="vehicle">
 			<name>[p.name/]</name>
 			<driver id="driver_ros" configId="all">
@@ -67,6 +86,17 @@
 			</driver>
 			<event bufferSize="10" priority="0" id="genericodometry" state="active">
 				<handler processingChoice="Acquisition + Visualization" state="0">frame[p.name/]_genericodometry</handler>
+			</event>
+		</interface>
+				[/if]
+				[/let]
+		<interface model="generic_timer" type="timer">
+			<name>[p.name/]_TimerCommand</name>
+			<sensor id="timer" configId="all">
+				<parameter id="period">100</parameter>
+			</sensor>
+			<event bufferSize="20" priority="0" id="tick" state="active">
+				<handler processingChoice="Acquisition + Visualization" state="0">frame[p.name/]_timercommand</handler>
 			</event>
 		</interface>
 			[/if]

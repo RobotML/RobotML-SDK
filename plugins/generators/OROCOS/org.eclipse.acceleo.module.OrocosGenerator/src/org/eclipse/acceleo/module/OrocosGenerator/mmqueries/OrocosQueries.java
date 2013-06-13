@@ -13,6 +13,7 @@ package org.eclipse.acceleo.module.OrocosGenerator.mmqueries;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.RobotML.ServiceFlowKind;
@@ -107,6 +108,8 @@ public class OrocosQueries {
 		}
 		return found_input_ports;
 	}
+	
+
 	/**
 	 * Returns all the properties of the given element except ports 
 	 */

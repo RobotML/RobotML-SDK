@@ -52,7 +52,7 @@ link_libraries( ${OROCOS-RTT_RTT-SCRIPTING_LIBRARY} )
 
 [for (elt: NamedElement | getComponentModels(model))]	
 	[let c : Class = elt.oclAsType(Class)]
-		[if (not isActuator(c) and not isSensor(c) and not isActuator(c) and not isEnvironment(c) and not isRobot(c))]
+		[if (not isActuator(c) and not isSensor(c) and not isActuator(c) and not isEnvironment(c) and not isRobot(c) and not isMacroComponent(c))]
 			orocos_component([c.name/] src/[c.name/]/[c.name/].cpp)
 		[/if]
 	[/let]

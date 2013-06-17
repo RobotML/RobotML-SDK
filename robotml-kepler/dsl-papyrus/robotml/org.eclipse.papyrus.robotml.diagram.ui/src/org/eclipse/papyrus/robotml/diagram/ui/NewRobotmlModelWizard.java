@@ -1,15 +1,13 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
+ * Copyright (c) 2013 CEA LIST.
  *    
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the CeCILL-C Free Software License v1.0
+ * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
+ * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
- *
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.diagram.ui;
 
@@ -22,56 +20,56 @@ import org.eclipse.ui.IWorkbench;
 
 public class NewRobotmlModelWizard extends CreateModelWizard {
 
-                /**
-                * @see org.eclipse.papyrus.wizards.CreateModelWizard#init(org.eclipse.ui.IWorkbench, org.eclipse.jface.viewers.IStructuredSelection)
-                * 
-                 * @param workbench
-                * @param selection
-                */
+	/**
+	 * @see org.eclipse.papyrus.wizards.CreateModelWizard#init(org.eclipse.ui.IWorkbench, org.eclipse.jface.viewers.IStructuredSelection)
+	 * 
+	 * @param workbench
+	 * @param selection
+	 */
 
-                @Override
-                public void init(IWorkbench workbench, IStructuredSelection selection) {
-                               super.init(workbench, selection);
-                               setWindowTitle("New RobotML Model");
-                }
+	@Override
+	public void init(IWorkbench workbench, IStructuredSelection selection) {
+		super.init(workbench, selection);
+		setWindowTitle("New RobotML Model");
+	}
 
-                /**
-                * Instantiates a new new Proteus model wizard.
-                */
-                public NewRobotmlModelWizard() {
-                               super();
-                               
-                }
-                
-                
-                
-@Override
-public String getModelKindName() {
-                // TODO Auto-generated method stub
-                
-                return "RobotML Model";
-}
-                
-                @Override
-                protected String[] getDiagramCategoryIds() {
-                               return new String[]{ CreateRobotmlModelCommand.COMMAND_ID };
-                }
+	/**
+	 * Instantiates a new new Proteus model wizard.
+	 */
+	public NewRobotmlModelWizard() {
+		super();
 
-                /**
-                * {@inheritDoc}
-                */
-                @Override
-                protected SelectDiagramCategoryPage createSelectDiagramCategoryPage() {
-                               // here RobotML is the only available category
-                               return null;
-                }
+	}
 
-                /**
-                * {@inheritDoc}
-                */
-                @Override
-                protected void saveDiagramCategorySettings() {
-                               // here RobotML is the only available category
-                }
+
+
+	@Override
+	public String getModelKindName() {
+		// TODO Auto-generated method stub
+
+		return "RobotML Model";
+	}
+
+	@Override
+	protected String[] getDiagramCategoryIds() {
+		return new String[]{ CreateRobotmlModelCommand.COMMAND_ID };
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected SelectDiagramCategoryPage createSelectDiagramCategoryPage() {
+		// here RobotML is the only available category
+		return null;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void saveDiagramCategorySettings() {
+		// here RobotML is the only available category
+	}
 
 }

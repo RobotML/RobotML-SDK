@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl;
 
 import java.util.Collection;
@@ -32,18 +41,20 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.PathImpl#getHeader <em>Header</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.PathImpl#getPoses <em>Poses</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.PathImpl#getHeader <em>Header</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.PathImpl#getPoses <em>Poses</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class PathImpl extends EObjectImpl implements Path {
+
 	/**
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -54,6 +65,7 @@ public class PathImpl extends EObjectImpl implements Path {
 	 * The cached value of the '{@link #getPoses() <em>Poses</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPoses()
 	 * @generated
 	 * @ordered
@@ -63,6 +75,7 @@ public class PathImpl extends EObjectImpl implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PathImpl() {
@@ -72,6 +85,7 @@ public class PathImpl extends EObjectImpl implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -82,6 +96,7 @@ public class PathImpl extends EObjectImpl implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -91,14 +106,18 @@ public class PathImpl extends EObjectImpl implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
 		Header oldHeader = header;
 		header = newHeader;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.PATH__HEADER, oldHeader, newHeader);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if(msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -106,29 +125,31 @@ public class PathImpl extends EObjectImpl implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
-		if (newHeader != header) {
+		if(newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null)
+			if(header != null)
 				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.PATH__HEADER, null, msgs);
-			if (newHeader != null)
+			if(newHeader != null)
 				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.PATH__HEADER, null, msgs);
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if(msgs != null)
+				msgs.dispatch();
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.PATH__HEADER, newHeader, newHeader));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<PoseStamped> getPoses() {
-		if (poses == null) {
+		if(poses == null) {
 			poses = new EObjectContainmentEList<PoseStamped>(PoseStamped.class, this, Nav_datatypesPackage.PATH__POSES);
 		}
 		return poses;
@@ -137,15 +158,16 @@ public class PathImpl extends EObjectImpl implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Nav_datatypesPackage.PATH__HEADER:
-				return basicSetHeader(null, msgs);
-			case Nav_datatypesPackage.PATH__POSES:
-				return ((InternalEList<?>)getPoses()).basicRemove(otherEnd, msgs);
+		switch(featureID) {
+		case Nav_datatypesPackage.PATH__HEADER:
+			return basicSetHeader(null, msgs);
+		case Nav_datatypesPackage.PATH__POSES:
+			return ((InternalEList<?>)getPoses()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,15 +175,16 @@ public class PathImpl extends EObjectImpl implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Nav_datatypesPackage.PATH__HEADER:
-				return getHeader();
-			case Nav_datatypesPackage.PATH__POSES:
-				return getPoses();
+		switch(featureID) {
+		case Nav_datatypesPackage.PATH__HEADER:
+			return getHeader();
+		case Nav_datatypesPackage.PATH__POSES:
+			return getPoses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,19 +192,20 @@ public class PathImpl extends EObjectImpl implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Nav_datatypesPackage.PATH__HEADER:
-				setHeader((Header)newValue);
-				return;
-			case Nav_datatypesPackage.PATH__POSES:
-				getPoses().clear();
-				getPoses().addAll((Collection<? extends PoseStamped>)newValue);
-				return;
+		switch(featureID) {
+		case Nav_datatypesPackage.PATH__HEADER:
+			setHeader((Header)newValue);
+			return;
+		case Nav_datatypesPackage.PATH__POSES:
+			getPoses().clear();
+			getPoses().addAll((Collection<? extends PoseStamped>)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -189,17 +213,18 @@ public class PathImpl extends EObjectImpl implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Nav_datatypesPackage.PATH__HEADER:
-				setHeader((Header)null);
-				return;
-			case Nav_datatypesPackage.PATH__POSES:
-				getPoses().clear();
-				return;
+		switch(featureID) {
+		case Nav_datatypesPackage.PATH__HEADER:
+			setHeader((Header)null);
+			return;
+		case Nav_datatypesPackage.PATH__POSES:
+			getPoses().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -207,15 +232,16 @@ public class PathImpl extends EObjectImpl implements Path {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Nav_datatypesPackage.PATH__HEADER:
-				return header != null;
-			case Nav_datatypesPackage.PATH__POSES:
-				return poses != null && !poses.isEmpty();
+		switch(featureID) {
+		case Nav_datatypesPackage.PATH__HEADER:
+			return header != null;
+		case Nav_datatypesPackage.PATH__POSES:
+			return poses != null && !poses.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

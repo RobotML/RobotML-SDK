@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -22,18 +31,24 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Velocity_Angular_Left_RightImpl#getVelocity_angular_left <em>Velocity angular left</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Velocity_Angular_Left_RightImpl#getVelocity_angular_right <em>Velocity angular right</em>}</li>
+ * <li>
+ * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Velocity_Angular_Left_RightImpl#getVelocity_angular_left
+ * <em>Velocity angular left</em>}</li>
+ * <li>
+ * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Velocity_Angular_Left_RightImpl#getVelocity_angular_right
+ * <em>Velocity angular right</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velocity_Angular_Left_Right {
+
 	/**
 	 * The cached value of the '{@link #getVelocity_angular_left() <em>Velocity angular left</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVelocity_angular_left()
 	 * @generated
 	 * @ordered
@@ -44,6 +59,7 @@ public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velo
 	 * The cached value of the '{@link #getVelocity_angular_right() <em>Velocity angular right</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVelocity_angular_right()
 	 * @generated
 	 * @ordered
@@ -53,6 +69,7 @@ public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Velocity_Angular_Left_RightImpl() {
@@ -62,6 +79,7 @@ public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,6 +90,7 @@ public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Velocity_Angular getVelocity_angular_left() {
@@ -81,14 +100,18 @@ public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetVelocity_angular_left(Velocity_Angular newVelocity_angular_left, NotificationChain msgs) {
 		Velocity_Angular oldVelocity_angular_left = velocity_angular_left;
 		velocity_angular_left = newVelocity_angular_left;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT, oldVelocity_angular_left, newVelocity_angular_left);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if(msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -96,25 +119,27 @@ public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setVelocity_angular_left(Velocity_Angular newVelocity_angular_left) {
-		if (newVelocity_angular_left != velocity_angular_left) {
+		if(newVelocity_angular_left != velocity_angular_left) {
 			NotificationChain msgs = null;
-			if (velocity_angular_left != null)
+			if(velocity_angular_left != null)
 				msgs = ((InternalEObject)velocity_angular_left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT, null, msgs);
-			if (newVelocity_angular_left != null)
+			if(newVelocity_angular_left != null)
 				msgs = ((InternalEObject)newVelocity_angular_left).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT, null, msgs);
 			msgs = basicSetVelocity_angular_left(newVelocity_angular_left, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if(msgs != null)
+				msgs.dispatch();
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT, newVelocity_angular_left, newVelocity_angular_left));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Velocity_Angular getVelocity_angular_right() {
@@ -124,14 +149,18 @@ public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetVelocity_angular_right(Velocity_Angular newVelocity_angular_right, NotificationChain msgs) {
 		Velocity_Angular oldVelocity_angular_right = velocity_angular_right;
 		velocity_angular_right = newVelocity_angular_right;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT, oldVelocity_angular_right, newVelocity_angular_right);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if(msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -139,34 +168,36 @@ public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setVelocity_angular_right(Velocity_Angular newVelocity_angular_right) {
-		if (newVelocity_angular_right != velocity_angular_right) {
+		if(newVelocity_angular_right != velocity_angular_right) {
 			NotificationChain msgs = null;
-			if (velocity_angular_right != null)
+			if(velocity_angular_right != null)
 				msgs = ((InternalEObject)velocity_angular_right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT, null, msgs);
-			if (newVelocity_angular_right != null)
+			if(newVelocity_angular_right != null)
 				msgs = ((InternalEObject)newVelocity_angular_right).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT, null, msgs);
 			msgs = basicSetVelocity_angular_right(newVelocity_angular_right, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if(msgs != null)
+				msgs.dispatch();
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT, newVelocity_angular_right, newVelocity_angular_right));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT:
-				return basicSetVelocity_angular_left(null, msgs);
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT:
-				return basicSetVelocity_angular_right(null, msgs);
+		switch(featureID) {
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT:
+			return basicSetVelocity_angular_left(null, msgs);
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT:
+			return basicSetVelocity_angular_right(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -174,15 +205,16 @@ public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT:
-				return getVelocity_angular_left();
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT:
-				return getVelocity_angular_right();
+		switch(featureID) {
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT:
+			return getVelocity_angular_left();
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT:
+			return getVelocity_angular_right();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,17 +222,18 @@ public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT:
-				setVelocity_angular_left((Velocity_Angular)newValue);
-				return;
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT:
-				setVelocity_angular_right((Velocity_Angular)newValue);
-				return;
+		switch(featureID) {
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT:
+			setVelocity_angular_left((Velocity_Angular)newValue);
+			return;
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT:
+			setVelocity_angular_right((Velocity_Angular)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -208,17 +241,18 @@ public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT:
-				setVelocity_angular_left((Velocity_Angular)null);
-				return;
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT:
-				setVelocity_angular_right((Velocity_Angular)null);
-				return;
+		switch(featureID) {
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT:
+			setVelocity_angular_left((Velocity_Angular)null);
+			return;
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT:
+			setVelocity_angular_right((Velocity_Angular)null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -226,15 +260,16 @@ public class Velocity_Angular_Left_RightImpl extends EObjectImpl implements Velo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT:
-				return velocity_angular_left != null;
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT:
-				return velocity_angular_right != null;
+		switch(featureID) {
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_LEFT:
+			return velocity_angular_left != null;
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR_LEFT_RIGHT__VELOCITY_ANGULAR_RIGHT:
+			return velocity_angular_right != null;
 		}
 		return super.eIsSet(featureID);
 	}

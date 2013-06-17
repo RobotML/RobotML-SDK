@@ -1,15 +1,13 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
+ * Copyright (c) 2013 CEA LIST.
  *    
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the CeCILL-C Free Software License v1.0
+ * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
+ * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
- *
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.validation.constraints;
 
@@ -27,23 +25,24 @@ import org.eclipse.uml2.uml.Property;
 public class VerifyAlphanumericNamedElement extends AbstractModelConstraint {
 
 	public static Pattern ALPHANUMERIC = Pattern.compile("[A-Za-z][A-Za-z0-9_]*");
-	public boolean checkAlphaNumeric(String s)
-	{
-	if( s == null){ return false; }
-	else
-	{
-	Matcher m = ALPHANUMERIC.matcher(s);
-	return m.matches();
+
+	public boolean checkAlphaNumeric(String s) {
+		if(s == null) {
+			return false;
+		} else {
+			Matcher m = ALPHANUMERIC.matcher(s);
+			return m.matches();
+		}
 	}
-	}
+
 	@Override
 	public IStatus validate(IValidationContext ctx) {
 		// TODO Auto-generated method stub
-		NamedElement element = (NamedElement) ctx.getTarget();
+		NamedElement element = (NamedElement)ctx.getTarget();
 		//4. verify that a property has an alphanumeric name that can also contain underscore
-		if(((element instanceof Classifier) || (element instanceof Property) || (element instanceof DataType)) && !checkAlphaNumeric(element.getName())){
-			return ctx.createFailureStatus("Element should have an alphanumeric name beginning by a letter" + element.getQualifiedName() );
-			}
+		if(((element instanceof Classifier) || (element instanceof Property) || (element instanceof DataType)) && !checkAlphaNumeric(element.getName())) {
+			return ctx.createFailureStatus("Element should have an alphanumeric name beginning by a letter" + element.getQualifiedName());
+		}
 		return ctx.createSuccessStatus();
 	}
 

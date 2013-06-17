@@ -1243,7 +1243,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ONWpEGAzEeCUQf3vpAG6JA"/>
       </children>
       <element xmi:type="uml:Stereotype" href="RobotMLProfile.profile.uml#_OMwzIGAzEeCUQf3vpAG6JA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ONWpAWAzEeCUQf3vpAG6JA" x="455" y="350" width="190" height="71"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ONWpAWAzEeCUQf3vpAG6JA" x="445" y="335" width="190" height="71"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_yxhmkHwuEeKlDbCLaIz6tg" type="1026">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3tVj1nwvEeKlDbCLaIz6tg" source="PapyrusCSSForceValue">

@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -23,18 +32,24 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Op_Set_PointImpl#getVelocity <em>Velocity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Op_Set_PointImpl#getOrientation <em>Orientation</em>}</li>
+ * <li>
+ * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Op_Set_PointImpl#getVelocity
+ * <em>Velocity</em>}</li>
+ * <li>
+ * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Op_Set_PointImpl#getOrientation
+ * <em>Orientation</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
+
 	/**
 	 * The cached value of the '{@link #getVelocity() <em>Velocity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVelocity()
 	 * @generated
 	 * @ordered
@@ -45,6 +60,7 @@ public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
 	 * The cached value of the '{@link #getOrientation() <em>Orientation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOrientation()
 	 * @generated
 	 * @ordered
@@ -54,6 +70,7 @@ public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Op_Set_PointImpl() {
@@ -63,6 +80,7 @@ public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -73,6 +91,7 @@ public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Velocity_Linear getVelocity() {
@@ -82,14 +101,18 @@ public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetVelocity(Velocity_Linear newVelocity, NotificationChain msgs) {
 		Velocity_Linear oldVelocity = velocity;
 		velocity = newVelocity;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY, oldVelocity, newVelocity);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if(msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -97,25 +120,27 @@ public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setVelocity(Velocity_Linear newVelocity) {
-		if (newVelocity != velocity) {
+		if(newVelocity != velocity) {
 			NotificationChain msgs = null;
-			if (velocity != null)
+			if(velocity != null)
 				msgs = ((InternalEObject)velocity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY, null, msgs);
-			if (newVelocity != null)
+			if(newVelocity != null)
 				msgs = ((InternalEObject)newVelocity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY, null, msgs);
 			msgs = basicSetVelocity(newVelocity, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if(msgs != null)
+				msgs.dispatch();
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY, newVelocity, newVelocity));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Angular getOrientation() {
@@ -125,14 +150,18 @@ public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetOrientation(Angular newOrientation, NotificationChain msgs) {
 		Angular oldOrientation = orientation;
 		orientation = newOrientation;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION, oldOrientation, newOrientation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if(msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -140,34 +169,36 @@ public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setOrientation(Angular newOrientation) {
-		if (newOrientation != orientation) {
+		if(newOrientation != orientation) {
 			NotificationChain msgs = null;
-			if (orientation != null)
+			if(orientation != null)
 				msgs = ((InternalEObject)orientation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION, null, msgs);
-			if (newOrientation != null)
+			if(newOrientation != null)
 				msgs = ((InternalEObject)newOrientation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION, null, msgs);
 			msgs = basicSetOrientation(newOrientation, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if(msgs != null)
+				msgs.dispatch();
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION, newOrientation, newOrientation));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY:
-				return basicSetVelocity(null, msgs);
-			case Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION:
-				return basicSetOrientation(null, msgs);
+		switch(featureID) {
+		case Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY:
+			return basicSetVelocity(null, msgs);
+		case Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION:
+			return basicSetOrientation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -175,15 +206,16 @@ public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY:
-				return getVelocity();
-			case Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION:
-				return getOrientation();
+		switch(featureID) {
+		case Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY:
+			return getVelocity();
+		case Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION:
+			return getOrientation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -191,17 +223,18 @@ public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY:
-				setVelocity((Velocity_Linear)newValue);
-				return;
-			case Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION:
-				setOrientation((Angular)newValue);
-				return;
+		switch(featureID) {
+		case Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY:
+			setVelocity((Velocity_Linear)newValue);
+			return;
+		case Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION:
+			setOrientation((Angular)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -209,17 +242,18 @@ public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY:
-				setVelocity((Velocity_Linear)null);
-				return;
-			case Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION:
-				setOrientation((Angular)null);
-				return;
+		switch(featureID) {
+		case Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY:
+			setVelocity((Velocity_Linear)null);
+			return;
+		case Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION:
+			setOrientation((Angular)null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -227,15 +261,16 @@ public class Op_Set_PointImpl extends EObjectImpl implements Op_Set_Point {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY:
-				return velocity != null;
-			case Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION:
-				return orientation != null;
+		switch(featureID) {
+		case Oarp4_datatypesPackage.OP_SET_POINT__VELOCITY:
+			return velocity != null;
+		case Oarp4_datatypesPackage.OP_SET_POINT__ORIENTATION:
+			return orientation != null;
 		}
 		return super.eIsSet(featureID);
 	}

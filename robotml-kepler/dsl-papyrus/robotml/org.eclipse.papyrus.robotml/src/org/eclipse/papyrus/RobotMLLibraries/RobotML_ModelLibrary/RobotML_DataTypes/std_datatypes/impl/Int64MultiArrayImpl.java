@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl;
 
 import java.util.Collection;
@@ -28,18 +37,22 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int64MultiArrayImpl#getLayout <em>Layout</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int64MultiArrayImpl#getData <em>Data</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int64MultiArrayImpl#getLayout <em>Layout
+ * </em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int64MultiArrayImpl#getData <em>Data
+ * </em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray {
+
 	/**
 	 * The cached value of the '{@link #getLayout() <em>Layout</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLayout()
 	 * @generated
 	 * @ordered
@@ -50,6 +63,7 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	 * The cached value of the '{@link #getData() <em>Data</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getData()
 	 * @generated
 	 * @ordered
@@ -59,6 +73,7 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Int64MultiArrayImpl() {
@@ -68,6 +83,7 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -78,6 +94,7 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public MultiArrayLayout getLayout() {
@@ -87,14 +104,18 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetLayout(MultiArrayLayout newLayout, NotificationChain msgs) {
 		MultiArrayLayout oldLayout = layout;
 		layout = newLayout;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT, oldLayout, newLayout);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if(msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -102,29 +123,31 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setLayout(MultiArrayLayout newLayout) {
-		if (newLayout != layout) {
+		if(newLayout != layout) {
 			NotificationChain msgs = null;
-			if (layout != null)
+			if(layout != null)
 				msgs = ((InternalEObject)layout).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT, null, msgs);
-			if (newLayout != null)
+			if(newLayout != null)
 				msgs = ((InternalEObject)newLayout).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT, null, msgs);
 			msgs = basicSetLayout(newLayout, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if(msgs != null)
+				msgs.dispatch();
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT, newLayout, newLayout));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Double> getData() {
-		if (data == null) {
+		if(data == null) {
 			data = new EDataTypeUniqueEList<Double>(Double.class, this, Std_datatypesPackage.INT64_MULTI_ARRAY__DATA);
 		}
 		return data;
@@ -133,13 +156,14 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT:
-				return basicSetLayout(null, msgs);
+		switch(featureID) {
+		case Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT:
+			return basicSetLayout(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -147,15 +171,16 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT:
-				return getLayout();
-			case Std_datatypesPackage.INT64_MULTI_ARRAY__DATA:
-				return getData();
+		switch(featureID) {
+		case Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT:
+			return getLayout();
+		case Std_datatypesPackage.INT64_MULTI_ARRAY__DATA:
+			return getData();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,19 +188,20 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT:
-				setLayout((MultiArrayLayout)newValue);
-				return;
-			case Std_datatypesPackage.INT64_MULTI_ARRAY__DATA:
-				getData().clear();
-				getData().addAll((Collection<? extends Double>)newValue);
-				return;
+		switch(featureID) {
+		case Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT:
+			setLayout((MultiArrayLayout)newValue);
+			return;
+		case Std_datatypesPackage.INT64_MULTI_ARRAY__DATA:
+			getData().clear();
+			getData().addAll((Collection<? extends Double>)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,17 +209,18 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT:
-				setLayout((MultiArrayLayout)null);
-				return;
-			case Std_datatypesPackage.INT64_MULTI_ARRAY__DATA:
-				getData().clear();
-				return;
+		switch(featureID) {
+		case Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT:
+			setLayout((MultiArrayLayout)null);
+			return;
+		case Std_datatypesPackage.INT64_MULTI_ARRAY__DATA:
+			getData().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,15 +228,16 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT:
-				return layout != null;
-			case Std_datatypesPackage.INT64_MULTI_ARRAY__DATA:
-				return data != null && !data.isEmpty();
+		switch(featureID) {
+		case Std_datatypesPackage.INT64_MULTI_ARRAY__LAYOUT:
+			return layout != null;
+		case Std_datatypesPackage.INT64_MULTI_ARRAY__DATA:
+			return data != null && !data.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,11 +245,13 @@ public class Int64MultiArrayImpl extends EObjectImpl implements Int64MultiArray 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if(eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (data: ");

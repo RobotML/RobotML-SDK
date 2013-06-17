@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl;
 
 import java.util.Date;
@@ -25,20 +34,25 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.MapMetaDataImpl#getMap_load_time <em>Map load time</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.MapMetaDataImpl#getResolution <em>Resolution</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.MapMetaDataImpl#getWidth <em>Width</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.MapMetaDataImpl#getOrigin <em>Origin</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.MapMetaDataImpl#getMap_load_time <em>Map
+ * load time</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.MapMetaDataImpl#getResolution <em>
+ * Resolution</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.MapMetaDataImpl#getWidth <em>Width</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.nav_datatypes.impl.MapMetaDataImpl#getOrigin <em>Origin
+ * </em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
+
 	/**
 	 * The default value of the '{@link #getMap_load_time() <em>Map load time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMap_load_time()
 	 * @generated
 	 * @ordered
@@ -49,6 +63,7 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	 * The cached value of the '{@link #getMap_load_time() <em>Map load time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMap_load_time()
 	 * @generated
 	 * @ordered
@@ -59,6 +74,7 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	 * The default value of the '{@link #getResolution() <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getResolution()
 	 * @generated
 	 * @ordered
@@ -69,6 +85,7 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	 * The cached value of the '{@link #getResolution() <em>Resolution</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getResolution()
 	 * @generated
 	 * @ordered
@@ -79,6 +96,7 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -89,6 +107,7 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -99,6 +118,7 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	 * The cached value of the '{@link #getOrigin() <em>Origin</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOrigin()
 	 * @generated
 	 * @ordered
@@ -108,6 +128,7 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MapMetaDataImpl() {
@@ -117,6 +138,7 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -127,6 +149,7 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Date getMap_load_time() {
@@ -136,18 +159,20 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMap_load_time(Date newMap_load_time) {
 		Date oldMap_load_time = map_load_time;
 		map_load_time = newMap_load_time;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.MAP_META_DATA__MAP_LOAD_TIME, oldMap_load_time, map_load_time));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getResolution() {
@@ -157,18 +182,20 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setResolution(float newResolution) {
 		float oldResolution = resolution;
 		resolution = newResolution;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.MAP_META_DATA__RESOLUTION, oldResolution, resolution));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public long getWidth() {
@@ -178,18 +205,20 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWidth(long newWidth) {
 		long oldWidth = width;
 		width = newWidth;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.MAP_META_DATA__WIDTH, oldWidth, width));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Pose getOrigin() {
@@ -199,14 +228,18 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetOrigin(Pose newOrigin, NotificationChain msgs) {
 		Pose oldOrigin = origin;
 		origin = newOrigin;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.MAP_META_DATA__ORIGIN, oldOrigin, newOrigin);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if(msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -214,32 +247,34 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setOrigin(Pose newOrigin) {
-		if (newOrigin != origin) {
+		if(newOrigin != origin) {
 			NotificationChain msgs = null;
-			if (origin != null)
+			if(origin != null)
 				msgs = ((InternalEObject)origin).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.MAP_META_DATA__ORIGIN, null, msgs);
-			if (newOrigin != null)
+			if(newOrigin != null)
 				msgs = ((InternalEObject)newOrigin).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Nav_datatypesPackage.MAP_META_DATA__ORIGIN, null, msgs);
 			msgs = basicSetOrigin(newOrigin, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if(msgs != null)
+				msgs.dispatch();
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Nav_datatypesPackage.MAP_META_DATA__ORIGIN, newOrigin, newOrigin));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Nav_datatypesPackage.MAP_META_DATA__ORIGIN:
-				return basicSetOrigin(null, msgs);
+		switch(featureID) {
+		case Nav_datatypesPackage.MAP_META_DATA__ORIGIN:
+			return basicSetOrigin(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -247,19 +282,20 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Nav_datatypesPackage.MAP_META_DATA__MAP_LOAD_TIME:
-				return getMap_load_time();
-			case Nav_datatypesPackage.MAP_META_DATA__RESOLUTION:
-				return getResolution();
-			case Nav_datatypesPackage.MAP_META_DATA__WIDTH:
-				return getWidth();
-			case Nav_datatypesPackage.MAP_META_DATA__ORIGIN:
-				return getOrigin();
+		switch(featureID) {
+		case Nav_datatypesPackage.MAP_META_DATA__MAP_LOAD_TIME:
+			return getMap_load_time();
+		case Nav_datatypesPackage.MAP_META_DATA__RESOLUTION:
+			return getResolution();
+		case Nav_datatypesPackage.MAP_META_DATA__WIDTH:
+			return getWidth();
+		case Nav_datatypesPackage.MAP_META_DATA__ORIGIN:
+			return getOrigin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -267,23 +303,24 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Nav_datatypesPackage.MAP_META_DATA__MAP_LOAD_TIME:
-				setMap_load_time((Date)newValue);
-				return;
-			case Nav_datatypesPackage.MAP_META_DATA__RESOLUTION:
-				setResolution((Float)newValue);
-				return;
-			case Nav_datatypesPackage.MAP_META_DATA__WIDTH:
-				setWidth((Long)newValue);
-				return;
-			case Nav_datatypesPackage.MAP_META_DATA__ORIGIN:
-				setOrigin((Pose)newValue);
-				return;
+		switch(featureID) {
+		case Nav_datatypesPackage.MAP_META_DATA__MAP_LOAD_TIME:
+			setMap_load_time((Date)newValue);
+			return;
+		case Nav_datatypesPackage.MAP_META_DATA__RESOLUTION:
+			setResolution((Float)newValue);
+			return;
+		case Nav_datatypesPackage.MAP_META_DATA__WIDTH:
+			setWidth((Long)newValue);
+			return;
+		case Nav_datatypesPackage.MAP_META_DATA__ORIGIN:
+			setOrigin((Pose)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -291,23 +328,24 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Nav_datatypesPackage.MAP_META_DATA__MAP_LOAD_TIME:
-				setMap_load_time(MAP_LOAD_TIME_EDEFAULT);
-				return;
-			case Nav_datatypesPackage.MAP_META_DATA__RESOLUTION:
-				setResolution(RESOLUTION_EDEFAULT);
-				return;
-			case Nav_datatypesPackage.MAP_META_DATA__WIDTH:
-				setWidth(WIDTH_EDEFAULT);
-				return;
-			case Nav_datatypesPackage.MAP_META_DATA__ORIGIN:
-				setOrigin((Pose)null);
-				return;
+		switch(featureID) {
+		case Nav_datatypesPackage.MAP_META_DATA__MAP_LOAD_TIME:
+			setMap_load_time(MAP_LOAD_TIME_EDEFAULT);
+			return;
+		case Nav_datatypesPackage.MAP_META_DATA__RESOLUTION:
+			setResolution(RESOLUTION_EDEFAULT);
+			return;
+		case Nav_datatypesPackage.MAP_META_DATA__WIDTH:
+			setWidth(WIDTH_EDEFAULT);
+			return;
+		case Nav_datatypesPackage.MAP_META_DATA__ORIGIN:
+			setOrigin((Pose)null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -315,19 +353,20 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Nav_datatypesPackage.MAP_META_DATA__MAP_LOAD_TIME:
-				return MAP_LOAD_TIME_EDEFAULT == null ? map_load_time != null : !MAP_LOAD_TIME_EDEFAULT.equals(map_load_time);
-			case Nav_datatypesPackage.MAP_META_DATA__RESOLUTION:
-				return resolution != RESOLUTION_EDEFAULT;
-			case Nav_datatypesPackage.MAP_META_DATA__WIDTH:
-				return width != WIDTH_EDEFAULT;
-			case Nav_datatypesPackage.MAP_META_DATA__ORIGIN:
-				return origin != null;
+		switch(featureID) {
+		case Nav_datatypesPackage.MAP_META_DATA__MAP_LOAD_TIME:
+			return MAP_LOAD_TIME_EDEFAULT == null ? map_load_time != null : !MAP_LOAD_TIME_EDEFAULT.equals(map_load_time);
+		case Nav_datatypesPackage.MAP_META_DATA__RESOLUTION:
+			return resolution != RESOLUTION_EDEFAULT;
+		case Nav_datatypesPackage.MAP_META_DATA__WIDTH:
+			return width != WIDTH_EDEFAULT;
+		case Nav_datatypesPackage.MAP_META_DATA__ORIGIN:
+			return origin != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -335,11 +374,13 @@ public class MapMetaDataImpl extends EObjectImpl implements MapMetaData {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if(eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (map_load_time: ");

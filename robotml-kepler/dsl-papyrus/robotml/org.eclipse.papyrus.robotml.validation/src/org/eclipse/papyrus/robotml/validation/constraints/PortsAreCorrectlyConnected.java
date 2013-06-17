@@ -1,15 +1,13 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
+ * Copyright (c) 2013 CEA LIST.
  *    
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the CeCILL-C Free Software License v1.0
+ * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
+ * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
- *
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.validation.constraints;
 
@@ -35,7 +33,7 @@ import org.eclipse.uml2.uml.Stereotype;
  */
 public class PortsAreCorrectlyConnected extends AbstractModelConstraint {
 
-	
+
 
 	/*
 	 * (non-Javadoc)
@@ -46,52 +44,38 @@ public class PortsAreCorrectlyConnected extends AbstractModelConstraint {
 	 */
 	@Override
 	public IStatus validate(IValidationContext ctx) {
-		Connector elt = (Connector) ctx.getTarget();
+		Connector elt = (Connector)ctx.getTarget();
 		List<ConnectorEnd> cends = new ArrayList<ConnectorEnd>();
 		cends = elt.getEnds();
 		// 1. verify that only ports of the same kind are connected
-		if (cends != null) {// if1
+		if(cends != null) {// if1
 
-			if (cends.size() == 2) {// if2
-				if ((cends.get(0) instanceof ConnectorEnd)
-						&& (cends.get(1) instanceof ConnectorEnd)) {// if3
+			if(cends.size() == 2) {// if2
+				if((cends.get(0) instanceof ConnectorEnd) && (cends.get(1) instanceof ConnectorEnd)) {// if3
 					// verify that the connection is between two ports of two
 					// subsystems
 
-					ConnectableElement connectorEndRole0 = cends.get(0)
-							.getRole();
-					ConnectableElement connectorEndRole1 = cends.get(1)
-							.getRole();
+					ConnectableElement connectorEndRole0 = cends.get(0).getRole();
+					ConnectableElement connectorEndRole1 = cends.get(1).getRole();
 
 					// System.out.println(connectorEndRole0.getEnds());
-					if ((connectorEndRole0 instanceof Port)
-							&& (connectorEndRole1 instanceof Port)) {// if4
+					if((connectorEndRole0 instanceof Port) && (connectorEndRole1 instanceof Port)) {// if4
 						// verify that the connection is between two ports of
 						// two subsystems of the same containing system
 
-						if (!(connectorEndRole0.getAppliedStereotypes()
-								.isEmpty())
-								&& !(connectorEndRole1.getAppliedStereotypes()
-										.isEmpty())) {// if5
+						if(!(connectorEndRole0.getAppliedStereotypes().isEmpty()) && !(connectorEndRole1.getAppliedStereotypes().isEmpty())) {// if5
 							// verify if the applied stereotype on the ports is
 							// the same
 							List<Stereotype> steretypesPort0 = new ArrayList<Stereotype>();
-							steretypesPort0 = connectorEndRole0
-									.getAppliedStereotypes();
+							steretypesPort0 = connectorEndRole0.getAppliedStereotypes();
 							List<Stereotype> steretypesPort1 = new ArrayList<Stereotype>();
-							steretypesPort1 = connectorEndRole1
-									.getAppliedStereotypes();
+							steretypesPort1 = connectorEndRole1.getAppliedStereotypes();
 
-							if (steretypesPort0.get(0).getName()
-									.equals(steretypesPort1.get(0).getName())) {// if8
+							if(steretypesPort0.get(0).getName().equals(steretypesPort1.get(0).getName())) {// if8
 								// verify that connections are set between ports
 								// of the same type
-								if (!(connectorEndRole0.getType()
-										.equals(connectorEndRole1.getType()))) {
-									return ctx
-											.createFailureStatus("Connection must be set between ports that have the same type ("
-													+ elt.getQualifiedName()
-													+ ")");
+								if(!(connectorEndRole0.getType().equals(connectorEndRole1.getType()))) {
+									return ctx.createFailureStatus("Connection must be set between ports that have the same type (" + elt.getQualifiedName() + ")");
 								}
 								// here I have to check that the connection is
 								// between ports of sub systems and not between
@@ -99,10 +83,7 @@ public class PortsAreCorrectlyConnected extends AbstractModelConstraint {
 								// subsystem port's.
 								Boolean areSubsystems = true;
 
-								if ((elt.getOwner() == connectorEndRole0
-										.getOwner())
-										|| (elt.getOwner() == connectorEndRole1
-												.getOwner())) {
+								if((elt.getOwner() == connectorEndRole0.getOwner()) || (elt.getOwner() == connectorEndRole1.getOwner())) {
 									areSubsystems = false;
 								}
 								// System.err.println("\n\n\nConnector Owner: "
@@ -113,68 +94,31 @@ public class PortsAreCorrectlyConnected extends AbstractModelConstraint {
 								// verify if connections are set between in and
 								// out DataFlowPorts or provided and required
 								// ServicePorts
-								DataFlowPort flowport0 = UMLUtil
-										.getStereotypeApplication(
-												(Element) connectorEndRole0,
-												DataFlowPort.class);
-								DataFlowPort flowport1 = UMLUtil
-										.getStereotypeApplication(
-												connectorEndRole1,
-												DataFlowPort.class);
+								DataFlowPort flowport0 = UMLUtil.getStereotypeApplication((Element)connectorEndRole0, DataFlowPort.class);
+								DataFlowPort flowport1 = UMLUtil.getStereotypeApplication(connectorEndRole1, DataFlowPort.class);
 
-								if (flowport0 != null && flowport1 != null) {
-									if ((flowport0.getDirection().getValue() == flowport1
-											.getDirection().getValue())
-											&& areSubsystems) {
-										return ctx
-												.createFailureStatus("Connection must be set between Flow ports that have opposite direction ("
-														+ elt.getQualifiedName()
-														+ ")");
-									} else if ((flowport0.getDirection()
-											.getValue() != flowport1
-											.getDirection().getValue())
-											&& !areSubsystems) {
-										return ctx
-												.createFailureStatus("Connection must be set between Flow ports that have the same direction ("
-														+ elt.getQualifiedName()
-														+ ")");
+								if(flowport0 != null && flowport1 != null) {
+									if((flowport0.getDirection().getValue() == flowport1.getDirection().getValue()) && areSubsystems) {
+										return ctx.createFailureStatus("Connection must be set between Flow ports that have opposite direction (" + elt.getQualifiedName() + ")");
+									} else if((flowport0.getDirection().getValue() != flowport1.getDirection().getValue()) && !areSubsystems) {
+										return ctx.createFailureStatus("Connection must be set between Flow ports that have the same direction (" + elt.getQualifiedName() + ")");
 									}
 								}
 
-								ServicePort serviceport0 = UMLUtil
-										.getStereotypeApplication(
-												connectorEndRole0,
-												ServicePort.class);
+								ServicePort serviceport0 = UMLUtil.getStereotypeApplication(connectorEndRole0, ServicePort.class);
 
-								ServicePort serviceport1 = UMLUtil
-										.getStereotypeApplication(
-												connectorEndRole1,
-												ServicePort.class);
-								if (serviceport0 != null
-										&& serviceport1 != null) {
-									if ((serviceport0.getKind().getValue() == serviceport1
-											.getKind().getValue())
-											&& areSubsystems) {
-										return ctx
-												.createFailureStatus("Connection must be set between Service ports that have opposite direction ("
-														+ elt.getQualifiedName()
-														+ ")");
-									} else if ((serviceport0.getKind()
-											.getValue() != serviceport1
-											.getKind().getValue())
-											&& !areSubsystems) {
-										return ctx
-												.createFailureStatus("Connection must be set between Service ports that have the same direction ("
-														+ elt.getQualifiedName()
-														+ ")");
+								ServicePort serviceport1 = UMLUtil.getStereotypeApplication(connectorEndRole1, ServicePort.class);
+								if(serviceport0 != null && serviceport1 != null) {
+									if((serviceport0.getKind().getValue() == serviceport1.getKind().getValue()) && areSubsystems) {
+										return ctx.createFailureStatus("Connection must be set between Service ports that have opposite direction (" + elt.getQualifiedName() + ")");
+									} else if((serviceport0.getKind().getValue() != serviceport1.getKind().getValue()) && !areSubsystems) {
+										return ctx.createFailureStatus("Connection must be set between Service ports that have the same direction (" + elt.getQualifiedName() + ")");
 									}
 								}
 								return ctx.createSuccessStatus();
 							}// endif8
 							else {
-								return ctx
-										.createFailureStatus("Connection must be set between ports of same kind ("
-												+ elt.getQualifiedName() + ")");
+								return ctx.createFailureStatus("Connection must be set between ports of same kind (" + elt.getQualifiedName() + ")");
 							}
 
 						}// endif5

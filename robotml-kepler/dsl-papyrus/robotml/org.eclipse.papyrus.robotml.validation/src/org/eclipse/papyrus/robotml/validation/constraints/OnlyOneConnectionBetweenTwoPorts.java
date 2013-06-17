@@ -1,15 +1,13 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
+ * Copyright (c) 2013 CEA LIST.
  *    
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the CeCILL-C Free Software License v1.0
+ * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
+ * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
- *
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.validation.constraints;
 
@@ -46,16 +44,16 @@ public class OnlyOneConnectionBetweenTwoPorts extends AbstractModelConstraint {
 						port0Ends = connectorEndRole0.getEnds();
 						port1Ends = connectorEndRole1.getEnds();
 						for(ConnectorEnd end0 : port0Ends) {
-							
+
 							for(ConnectorEnd end1 : port1Ends) {
-								
+
 								if((end0.eContainer().equals(end1.eContainer())) && !(end0.eContainer().equals(elt))) {
 									//verify that partwithPort of the found connector ends are the same than those of the connector that will be created
-									if (end0.getPartWithPort().equals(partWithPort0) && end1.getPartWithPort().equals(partWithPort1) ){
+									if(end0.getPartWithPort().equals(partWithPort0) && end1.getPartWithPort().equals(partWithPort1)) {
 										return ctx.createFailureStatus("Connection must be set between ports that are not already connected. There is already a connector named : " + ((Connector)end0.eContainer()).getQualifiedName());
 									}
 
-									
+
 								}
 							}
 						}

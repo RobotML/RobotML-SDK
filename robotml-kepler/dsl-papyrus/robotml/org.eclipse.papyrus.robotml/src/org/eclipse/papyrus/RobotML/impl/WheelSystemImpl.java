@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotML.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,32 +27,34 @@ import org.eclipse.papyrus.RobotML.WheelSystem;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelRadius <em>Wheel Radius</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelWidth <em>Wheel Width</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getSuspensionRestLength <em>Suspension Rest Length</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelConnectionHeight <em>Wheel Connection Height</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getTypeOfWheel <em>Type Of Wheel</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelVelocityPIDkp <em>Wheel Velocity PI Dkp</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelVelocityPIDki <em>Wheel Velocity PI Dki</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelVelocityPIDkd <em>Wheel Velocity PI Dkd</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelSteeringPIDkp <em>Wheel Steering PI Dkp</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelSteeringPIDkd <em>Wheel Steering PI Dkd</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelFriction <em>Wheel Friction</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getSuspensionStiffness <em>Suspension Stiffness</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getSuspensionDamping <em>Suspension Damping</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getSuspensionCompression <em>Suspension Compression</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelVelocityPIDmaxSum <em>Wheel Velocity PI Dmax Sum</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelVelocityPIDmaxVal <em>Wheel Velocity PI Dmax Val</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelRadius <em>Wheel Radius</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelWidth <em>Wheel Width</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getSuspensionRestLength <em>Suspension Rest Length</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelConnectionHeight <em>Wheel Connection Height</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getTypeOfWheel <em>Type Of Wheel</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelVelocityPIDkp <em>Wheel Velocity PI Dkp</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelVelocityPIDki <em>Wheel Velocity PI Dki</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelVelocityPIDkd <em>Wheel Velocity PI Dkd</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelSteeringPIDkp <em>Wheel Steering PI Dkp</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelSteeringPIDkd <em>Wheel Steering PI Dkd</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelFriction <em>Wheel Friction</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getSuspensionStiffness <em>Suspension Stiffness</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getSuspensionDamping <em>Suspension Damping</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getSuspensionCompression <em>Suspension Compression</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelVelocityPIDmaxSum <em>Wheel Velocity PI Dmax Sum</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotML.impl.WheelSystemImpl#getWheelVelocityPIDmaxVal <em>Wheel Velocity PI Dmax Val</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
+
 	/**
 	 * The default value of the '{@link #getWheelRadius() <em>Wheel Radius</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelRadius()
 	 * @generated
 	 * @ordered
@@ -54,6 +65,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getWheelRadius() <em>Wheel Radius</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelRadius()
 	 * @generated
 	 * @ordered
@@ -64,6 +76,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getWheelWidth() <em>Wheel Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelWidth()
 	 * @generated
 	 * @ordered
@@ -74,6 +87,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getWheelWidth() <em>Wheel Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelWidth()
 	 * @generated
 	 * @ordered
@@ -84,6 +98,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getSuspensionRestLength() <em>Suspension Rest Length</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSuspensionRestLength()
 	 * @generated
 	 * @ordered
@@ -94,6 +109,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getSuspensionRestLength() <em>Suspension Rest Length</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSuspensionRestLength()
 	 * @generated
 	 * @ordered
@@ -104,6 +120,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getWheelConnectionHeight() <em>Wheel Connection Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelConnectionHeight()
 	 * @generated
 	 * @ordered
@@ -114,6 +131,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getWheelConnectionHeight() <em>Wheel Connection Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelConnectionHeight()
 	 * @generated
 	 * @ordered
@@ -124,6 +142,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getTypeOfWheel() <em>Type Of Wheel</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypeOfWheel()
 	 * @generated
 	 * @ordered
@@ -134,6 +153,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getTypeOfWheel() <em>Type Of Wheel</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypeOfWheel()
 	 * @generated
 	 * @ordered
@@ -144,6 +164,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getWheelVelocityPIDkp() <em>Wheel Velocity PI Dkp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelVelocityPIDkp()
 	 * @generated
 	 * @ordered
@@ -154,6 +175,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getWheelVelocityPIDkp() <em>Wheel Velocity PI Dkp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelVelocityPIDkp()
 	 * @generated
 	 * @ordered
@@ -164,6 +186,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getWheelVelocityPIDki() <em>Wheel Velocity PI Dki</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelVelocityPIDki()
 	 * @generated
 	 * @ordered
@@ -174,6 +197,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getWheelVelocityPIDki() <em>Wheel Velocity PI Dki</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelVelocityPIDki()
 	 * @generated
 	 * @ordered
@@ -184,6 +208,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getWheelVelocityPIDkd() <em>Wheel Velocity PI Dkd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelVelocityPIDkd()
 	 * @generated
 	 * @ordered
@@ -194,6 +219,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getWheelVelocityPIDkd() <em>Wheel Velocity PI Dkd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelVelocityPIDkd()
 	 * @generated
 	 * @ordered
@@ -204,6 +230,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getWheelSteeringPIDkp() <em>Wheel Steering PI Dkp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelSteeringPIDkp()
 	 * @generated
 	 * @ordered
@@ -214,6 +241,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getWheelSteeringPIDkp() <em>Wheel Steering PI Dkp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelSteeringPIDkp()
 	 * @generated
 	 * @ordered
@@ -224,6 +252,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getWheelSteeringPIDkd() <em>Wheel Steering PI Dkd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelSteeringPIDkd()
 	 * @generated
 	 * @ordered
@@ -234,6 +263,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getWheelSteeringPIDkd() <em>Wheel Steering PI Dkd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelSteeringPIDkd()
 	 * @generated
 	 * @ordered
@@ -244,6 +274,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getWheelFriction() <em>Wheel Friction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelFriction()
 	 * @generated
 	 * @ordered
@@ -254,6 +285,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getWheelFriction() <em>Wheel Friction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelFriction()
 	 * @generated
 	 * @ordered
@@ -264,6 +296,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getSuspensionStiffness() <em>Suspension Stiffness</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSuspensionStiffness()
 	 * @generated
 	 * @ordered
@@ -274,6 +307,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getSuspensionStiffness() <em>Suspension Stiffness</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSuspensionStiffness()
 	 * @generated
 	 * @ordered
@@ -284,6 +318,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getSuspensionDamping() <em>Suspension Damping</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSuspensionDamping()
 	 * @generated
 	 * @ordered
@@ -294,6 +329,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getSuspensionDamping() <em>Suspension Damping</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSuspensionDamping()
 	 * @generated
 	 * @ordered
@@ -304,6 +340,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getSuspensionCompression() <em>Suspension Compression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSuspensionCompression()
 	 * @generated
 	 * @ordered
@@ -314,6 +351,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getSuspensionCompression() <em>Suspension Compression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSuspensionCompression()
 	 * @generated
 	 * @ordered
@@ -324,6 +362,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getWheelVelocityPIDmaxSum() <em>Wheel Velocity PI Dmax Sum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelVelocityPIDmaxSum()
 	 * @generated
 	 * @ordered
@@ -334,6 +373,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getWheelVelocityPIDmaxSum() <em>Wheel Velocity PI Dmax Sum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelVelocityPIDmaxSum()
 	 * @generated
 	 * @ordered
@@ -344,6 +384,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The default value of the '{@link #getWheelVelocityPIDmaxVal() <em>Wheel Velocity PI Dmax Val</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelVelocityPIDmaxVal()
 	 * @generated
 	 * @ordered
@@ -354,6 +395,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	 * The cached value of the '{@link #getWheelVelocityPIDmaxVal() <em>Wheel Velocity PI Dmax Val</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWheelVelocityPIDmaxVal()
 	 * @generated
 	 * @ordered
@@ -363,6 +405,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected WheelSystemImpl() {
@@ -372,6 +415,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -382,6 +426,7 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getWheelRadius() {
@@ -391,18 +436,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWheelRadius(float newWheelRadius) {
 		float oldWheelRadius = wheelRadius;
 		wheelRadius = newWheelRadius;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__WHEEL_RADIUS, oldWheelRadius, wheelRadius));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getWheelWidth() {
@@ -412,18 +459,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWheelWidth(float newWheelWidth) {
 		float oldWheelWidth = wheelWidth;
 		wheelWidth = newWheelWidth;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__WHEEL_WIDTH, oldWheelWidth, wheelWidth));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getSuspensionRestLength() {
@@ -433,18 +482,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setSuspensionRestLength(float newSuspensionRestLength) {
 		float oldSuspensionRestLength = suspensionRestLength;
 		suspensionRestLength = newSuspensionRestLength;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_REST_LENGTH, oldSuspensionRestLength, suspensionRestLength));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getWheelConnectionHeight() {
@@ -454,18 +505,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWheelConnectionHeight(float newWheelConnectionHeight) {
 		float oldWheelConnectionHeight = wheelConnectionHeight;
 		wheelConnectionHeight = newWheelConnectionHeight;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__WHEEL_CONNECTION_HEIGHT, oldWheelConnectionHeight, wheelConnectionHeight));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getTypeOfWheel() {
@@ -475,18 +528,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTypeOfWheel(String newTypeOfWheel) {
 		String oldTypeOfWheel = typeOfWheel;
 		typeOfWheel = newTypeOfWheel;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__TYPE_OF_WHEEL, oldTypeOfWheel, typeOfWheel));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getWheelVelocityPIDkp() {
@@ -496,18 +551,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWheelVelocityPIDkp(float newWheelVelocityPIDkp) {
 		float oldWheelVelocityPIDkp = wheelVelocityPIDkp;
 		wheelVelocityPIDkp = newWheelVelocityPIDkp;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKP, oldWheelVelocityPIDkp, wheelVelocityPIDkp));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getWheelVelocityPIDki() {
@@ -517,18 +574,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWheelVelocityPIDki(float newWheelVelocityPIDki) {
 		float oldWheelVelocityPIDki = wheelVelocityPIDki;
 		wheelVelocityPIDki = newWheelVelocityPIDki;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKI, oldWheelVelocityPIDki, wheelVelocityPIDki));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getWheelVelocityPIDkd() {
@@ -538,18 +597,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWheelVelocityPIDkd(float newWheelVelocityPIDkd) {
 		float oldWheelVelocityPIDkd = wheelVelocityPIDkd;
 		wheelVelocityPIDkd = newWheelVelocityPIDkd;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKD, oldWheelVelocityPIDkd, wheelVelocityPIDkd));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getWheelSteeringPIDkp() {
@@ -559,18 +620,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWheelSteeringPIDkp(float newWheelSteeringPIDkp) {
 		float oldWheelSteeringPIDkp = wheelSteeringPIDkp;
 		wheelSteeringPIDkp = newWheelSteeringPIDkp;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKP, oldWheelSteeringPIDkp, wheelSteeringPIDkp));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getWheelSteeringPIDkd() {
@@ -580,18 +643,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWheelSteeringPIDkd(float newWheelSteeringPIDkd) {
 		float oldWheelSteeringPIDkd = wheelSteeringPIDkd;
 		wheelSteeringPIDkd = newWheelSteeringPIDkd;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKD, oldWheelSteeringPIDkd, wheelSteeringPIDkd));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getWheelFriction() {
@@ -601,18 +666,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWheelFriction(float newWheelFriction) {
 		float oldWheelFriction = wheelFriction;
 		wheelFriction = newWheelFriction;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__WHEEL_FRICTION, oldWheelFriction, wheelFriction));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getSuspensionStiffness() {
@@ -622,18 +689,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setSuspensionStiffness(float newSuspensionStiffness) {
 		float oldSuspensionStiffness = suspensionStiffness;
 		suspensionStiffness = newSuspensionStiffness;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_STIFFNESS, oldSuspensionStiffness, suspensionStiffness));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getSuspensionDamping() {
@@ -643,18 +712,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setSuspensionDamping(float newSuspensionDamping) {
 		float oldSuspensionDamping = suspensionDamping;
 		suspensionDamping = newSuspensionDamping;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_DAMPING, oldSuspensionDamping, suspensionDamping));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getSuspensionCompression() {
@@ -664,18 +735,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setSuspensionCompression(float newSuspensionCompression) {
 		float oldSuspensionCompression = suspensionCompression;
 		suspensionCompression = newSuspensionCompression;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_COMPRESSION, oldSuspensionCompression, suspensionCompression));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getWheelVelocityPIDmaxSum() {
@@ -685,18 +758,20 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWheelVelocityPIDmaxSum(float newWheelVelocityPIDmaxSum) {
 		float oldWheelVelocityPIDmaxSum = wheelVelocityPIDmaxSum;
 		wheelVelocityPIDmaxSum = newWheelVelocityPIDmaxSum;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_SUM, oldWheelVelocityPIDmaxSum, wheelVelocityPIDmaxSum));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public float getWheelVelocityPIDmaxVal() {
@@ -706,55 +781,57 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setWheelVelocityPIDmaxVal(float newWheelVelocityPIDmaxVal) {
 		float oldWheelVelocityPIDmaxVal = wheelVelocityPIDmaxVal;
 		wheelVelocityPIDmaxVal = newWheelVelocityPIDmaxVal;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_VAL, oldWheelVelocityPIDmaxVal, wheelVelocityPIDmaxVal));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_RADIUS:
-				return getWheelRadius();
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_WIDTH:
-				return getWheelWidth();
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_REST_LENGTH:
-				return getSuspensionRestLength();
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_CONNECTION_HEIGHT:
-				return getWheelConnectionHeight();
-			case RobotMLPackage.WHEEL_SYSTEM__TYPE_OF_WHEEL:
-				return getTypeOfWheel();
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKP:
-				return getWheelVelocityPIDkp();
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKI:
-				return getWheelVelocityPIDki();
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKD:
-				return getWheelVelocityPIDkd();
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKP:
-				return getWheelSteeringPIDkp();
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKD:
-				return getWheelSteeringPIDkd();
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_FRICTION:
-				return getWheelFriction();
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_STIFFNESS:
-				return getSuspensionStiffness();
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_DAMPING:
-				return getSuspensionDamping();
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_COMPRESSION:
-				return getSuspensionCompression();
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_SUM:
-				return getWheelVelocityPIDmaxSum();
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_VAL:
-				return getWheelVelocityPIDmaxVal();
+		switch(featureID) {
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_RADIUS:
+			return getWheelRadius();
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_WIDTH:
+			return getWheelWidth();
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_REST_LENGTH:
+			return getSuspensionRestLength();
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_CONNECTION_HEIGHT:
+			return getWheelConnectionHeight();
+		case RobotMLPackage.WHEEL_SYSTEM__TYPE_OF_WHEEL:
+			return getTypeOfWheel();
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKP:
+			return getWheelVelocityPIDkp();
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKI:
+			return getWheelVelocityPIDki();
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKD:
+			return getWheelVelocityPIDkd();
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKP:
+			return getWheelSteeringPIDkp();
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKD:
+			return getWheelSteeringPIDkd();
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_FRICTION:
+			return getWheelFriction();
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_STIFFNESS:
+			return getSuspensionStiffness();
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_DAMPING:
+			return getSuspensionDamping();
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_COMPRESSION:
+			return getSuspensionCompression();
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_SUM:
+			return getWheelVelocityPIDmaxSum();
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_VAL:
+			return getWheelVelocityPIDmaxVal();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -762,59 +839,60 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_RADIUS:
-				setWheelRadius((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_WIDTH:
-				setWheelWidth((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_REST_LENGTH:
-				setSuspensionRestLength((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_CONNECTION_HEIGHT:
-				setWheelConnectionHeight((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__TYPE_OF_WHEEL:
-				setTypeOfWheel((String)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKP:
-				setWheelVelocityPIDkp((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKI:
-				setWheelVelocityPIDki((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKD:
-				setWheelVelocityPIDkd((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKP:
-				setWheelSteeringPIDkp((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKD:
-				setWheelSteeringPIDkd((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_FRICTION:
-				setWheelFriction((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_STIFFNESS:
-				setSuspensionStiffness((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_DAMPING:
-				setSuspensionDamping((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_COMPRESSION:
-				setSuspensionCompression((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_SUM:
-				setWheelVelocityPIDmaxSum((Float)newValue);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_VAL:
-				setWheelVelocityPIDmaxVal((Float)newValue);
-				return;
+		switch(featureID) {
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_RADIUS:
+			setWheelRadius((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_WIDTH:
+			setWheelWidth((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_REST_LENGTH:
+			setSuspensionRestLength((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_CONNECTION_HEIGHT:
+			setWheelConnectionHeight((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__TYPE_OF_WHEEL:
+			setTypeOfWheel((String)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKP:
+			setWheelVelocityPIDkp((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKI:
+			setWheelVelocityPIDki((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKD:
+			setWheelVelocityPIDkd((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKP:
+			setWheelSteeringPIDkp((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKD:
+			setWheelSteeringPIDkd((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_FRICTION:
+			setWheelFriction((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_STIFFNESS:
+			setSuspensionStiffness((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_DAMPING:
+			setSuspensionDamping((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_COMPRESSION:
+			setSuspensionCompression((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_SUM:
+			setWheelVelocityPIDmaxSum((Float)newValue);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_VAL:
+			setWheelVelocityPIDmaxVal((Float)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -822,59 +900,60 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_RADIUS:
-				setWheelRadius(WHEEL_RADIUS_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_WIDTH:
-				setWheelWidth(WHEEL_WIDTH_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_REST_LENGTH:
-				setSuspensionRestLength(SUSPENSION_REST_LENGTH_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_CONNECTION_HEIGHT:
-				setWheelConnectionHeight(WHEEL_CONNECTION_HEIGHT_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__TYPE_OF_WHEEL:
-				setTypeOfWheel(TYPE_OF_WHEEL_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKP:
-				setWheelVelocityPIDkp(WHEEL_VELOCITY_PI_DKP_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKI:
-				setWheelVelocityPIDki(WHEEL_VELOCITY_PI_DKI_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKD:
-				setWheelVelocityPIDkd(WHEEL_VELOCITY_PI_DKD_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKP:
-				setWheelSteeringPIDkp(WHEEL_STEERING_PI_DKP_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKD:
-				setWheelSteeringPIDkd(WHEEL_STEERING_PI_DKD_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_FRICTION:
-				setWheelFriction(WHEEL_FRICTION_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_STIFFNESS:
-				setSuspensionStiffness(SUSPENSION_STIFFNESS_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_DAMPING:
-				setSuspensionDamping(SUSPENSION_DAMPING_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_COMPRESSION:
-				setSuspensionCompression(SUSPENSION_COMPRESSION_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_SUM:
-				setWheelVelocityPIDmaxSum(WHEEL_VELOCITY_PI_DMAX_SUM_EDEFAULT);
-				return;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_VAL:
-				setWheelVelocityPIDmaxVal(WHEEL_VELOCITY_PI_DMAX_VAL_EDEFAULT);
-				return;
+		switch(featureID) {
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_RADIUS:
+			setWheelRadius(WHEEL_RADIUS_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_WIDTH:
+			setWheelWidth(WHEEL_WIDTH_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_REST_LENGTH:
+			setSuspensionRestLength(SUSPENSION_REST_LENGTH_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_CONNECTION_HEIGHT:
+			setWheelConnectionHeight(WHEEL_CONNECTION_HEIGHT_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__TYPE_OF_WHEEL:
+			setTypeOfWheel(TYPE_OF_WHEEL_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKP:
+			setWheelVelocityPIDkp(WHEEL_VELOCITY_PI_DKP_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKI:
+			setWheelVelocityPIDki(WHEEL_VELOCITY_PI_DKI_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKD:
+			setWheelVelocityPIDkd(WHEEL_VELOCITY_PI_DKD_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKP:
+			setWheelSteeringPIDkp(WHEEL_STEERING_PI_DKP_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKD:
+			setWheelSteeringPIDkd(WHEEL_STEERING_PI_DKD_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_FRICTION:
+			setWheelFriction(WHEEL_FRICTION_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_STIFFNESS:
+			setSuspensionStiffness(SUSPENSION_STIFFNESS_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_DAMPING:
+			setSuspensionDamping(SUSPENSION_DAMPING_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_COMPRESSION:
+			setSuspensionCompression(SUSPENSION_COMPRESSION_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_SUM:
+			setWheelVelocityPIDmaxSum(WHEEL_VELOCITY_PI_DMAX_SUM_EDEFAULT);
+			return;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_VAL:
+			setWheelVelocityPIDmaxVal(WHEEL_VELOCITY_PI_DMAX_VAL_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -882,43 +961,44 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_RADIUS:
-				return wheelRadius != WHEEL_RADIUS_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_WIDTH:
-				return wheelWidth != WHEEL_WIDTH_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_REST_LENGTH:
-				return suspensionRestLength != SUSPENSION_REST_LENGTH_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_CONNECTION_HEIGHT:
-				return wheelConnectionHeight != WHEEL_CONNECTION_HEIGHT_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__TYPE_OF_WHEEL:
-				return TYPE_OF_WHEEL_EDEFAULT == null ? typeOfWheel != null : !TYPE_OF_WHEEL_EDEFAULT.equals(typeOfWheel);
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKP:
-				return wheelVelocityPIDkp != WHEEL_VELOCITY_PI_DKP_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKI:
-				return wheelVelocityPIDki != WHEEL_VELOCITY_PI_DKI_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKD:
-				return wheelVelocityPIDkd != WHEEL_VELOCITY_PI_DKD_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKP:
-				return wheelSteeringPIDkp != WHEEL_STEERING_PI_DKP_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKD:
-				return wheelSteeringPIDkd != WHEEL_STEERING_PI_DKD_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_FRICTION:
-				return wheelFriction != WHEEL_FRICTION_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_STIFFNESS:
-				return suspensionStiffness != SUSPENSION_STIFFNESS_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_DAMPING:
-				return suspensionDamping != SUSPENSION_DAMPING_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_COMPRESSION:
-				return suspensionCompression != SUSPENSION_COMPRESSION_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_SUM:
-				return wheelVelocityPIDmaxSum != WHEEL_VELOCITY_PI_DMAX_SUM_EDEFAULT;
-			case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_VAL:
-				return wheelVelocityPIDmaxVal != WHEEL_VELOCITY_PI_DMAX_VAL_EDEFAULT;
+		switch(featureID) {
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_RADIUS:
+			return wheelRadius != WHEEL_RADIUS_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_WIDTH:
+			return wheelWidth != WHEEL_WIDTH_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_REST_LENGTH:
+			return suspensionRestLength != SUSPENSION_REST_LENGTH_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_CONNECTION_HEIGHT:
+			return wheelConnectionHeight != WHEEL_CONNECTION_HEIGHT_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__TYPE_OF_WHEEL:
+			return TYPE_OF_WHEEL_EDEFAULT == null ? typeOfWheel != null : !TYPE_OF_WHEEL_EDEFAULT.equals(typeOfWheel);
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKP:
+			return wheelVelocityPIDkp != WHEEL_VELOCITY_PI_DKP_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKI:
+			return wheelVelocityPIDki != WHEEL_VELOCITY_PI_DKI_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DKD:
+			return wheelVelocityPIDkd != WHEEL_VELOCITY_PI_DKD_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKP:
+			return wheelSteeringPIDkp != WHEEL_STEERING_PI_DKP_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_STEERING_PI_DKD:
+			return wheelSteeringPIDkd != WHEEL_STEERING_PI_DKD_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_FRICTION:
+			return wheelFriction != WHEEL_FRICTION_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_STIFFNESS:
+			return suspensionStiffness != SUSPENSION_STIFFNESS_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_DAMPING:
+			return suspensionDamping != SUSPENSION_DAMPING_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__SUSPENSION_COMPRESSION:
+			return suspensionCompression != SUSPENSION_COMPRESSION_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_SUM:
+			return wheelVelocityPIDmaxSum != WHEEL_VELOCITY_PI_DMAX_SUM_EDEFAULT;
+		case RobotMLPackage.WHEEL_SYSTEM__WHEEL_VELOCITY_PI_DMAX_VAL:
+			return wheelVelocityPIDmaxVal != WHEEL_VELOCITY_PI_DMAX_VAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -926,11 +1006,13 @@ public class WheelSystemImpl extends ActuatorSystemImpl implements WheelSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if(eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (wheelRadius: ");

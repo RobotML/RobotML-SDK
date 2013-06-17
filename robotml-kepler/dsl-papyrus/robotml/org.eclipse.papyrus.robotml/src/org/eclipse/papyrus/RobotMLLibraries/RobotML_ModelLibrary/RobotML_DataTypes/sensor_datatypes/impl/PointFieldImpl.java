@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -19,20 +28,25 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointFieldImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointFieldImpl#getOffset <em>Offset</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointFieldImpl#getDatatype <em>Datatype</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointFieldImpl#getCount <em>Count</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointFieldImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointFieldImpl#getOffset <em>Offset
+ * </em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointFieldImpl#getDatatype <em>
+ * Datatype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointFieldImpl#getCount <em>Count
+ * </em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class PointFieldImpl extends EObjectImpl implements PointField {
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -43,6 +57,7 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -53,6 +68,7 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	 * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOffset()
 	 * @generated
 	 * @ordered
@@ -63,6 +79,7 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	 * The cached value of the '{@link #getOffset() <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOffset()
 	 * @generated
 	 * @ordered
@@ -73,6 +90,7 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	 * The default value of the '{@link #getDatatype() <em>Datatype</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDatatype()
 	 * @generated
 	 * @ordered
@@ -83,6 +101,7 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	 * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDatatype()
 	 * @generated
 	 * @ordered
@@ -93,6 +112,7 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	 * The default value of the '{@link #getCount() <em>Count</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCount()
 	 * @generated
 	 * @ordered
@@ -103,6 +123,7 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	 * The cached value of the '{@link #getCount() <em>Count</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCount()
 	 * @generated
 	 * @ordered
@@ -112,6 +133,7 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PointFieldImpl() {
@@ -121,6 +143,7 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -131,6 +154,7 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -140,18 +164,20 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_FIELD__NAME, oldName, name));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public long getOffset() {
@@ -161,18 +187,20 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setOffset(long newOffset) {
 		long oldOffset = offset;
 		offset = newOffset;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_FIELD__OFFSET, oldOffset, offset));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public char getDatatype() {
@@ -182,18 +210,20 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDatatype(char newDatatype) {
 		char oldDatatype = datatype;
 		datatype = newDatatype;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_FIELD__DATATYPE, oldDatatype, datatype));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public long getCount() {
@@ -203,31 +233,33 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCount(long newCount) {
 		long oldCount = count;
 		count = newCount;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_FIELD__COUNT, oldCount, count));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.POINT_FIELD__NAME:
-				return getName();
-			case Sensor_datatypesPackage.POINT_FIELD__OFFSET:
-				return getOffset();
-			case Sensor_datatypesPackage.POINT_FIELD__DATATYPE:
-				return getDatatype();
-			case Sensor_datatypesPackage.POINT_FIELD__COUNT:
-				return getCount();
+		switch(featureID) {
+		case Sensor_datatypesPackage.POINT_FIELD__NAME:
+			return getName();
+		case Sensor_datatypesPackage.POINT_FIELD__OFFSET:
+			return getOffset();
+		case Sensor_datatypesPackage.POINT_FIELD__DATATYPE:
+			return getDatatype();
+		case Sensor_datatypesPackage.POINT_FIELD__COUNT:
+			return getCount();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -235,23 +267,24 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.POINT_FIELD__NAME:
-				setName((String)newValue);
-				return;
-			case Sensor_datatypesPackage.POINT_FIELD__OFFSET:
-				setOffset((Long)newValue);
-				return;
-			case Sensor_datatypesPackage.POINT_FIELD__DATATYPE:
-				setDatatype((Character)newValue);
-				return;
-			case Sensor_datatypesPackage.POINT_FIELD__COUNT:
-				setCount((Long)newValue);
-				return;
+		switch(featureID) {
+		case Sensor_datatypesPackage.POINT_FIELD__NAME:
+			setName((String)newValue);
+			return;
+		case Sensor_datatypesPackage.POINT_FIELD__OFFSET:
+			setOffset((Long)newValue);
+			return;
+		case Sensor_datatypesPackage.POINT_FIELD__DATATYPE:
+			setDatatype((Character)newValue);
+			return;
+		case Sensor_datatypesPackage.POINT_FIELD__COUNT:
+			setCount((Long)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -259,23 +292,24 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.POINT_FIELD__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case Sensor_datatypesPackage.POINT_FIELD__OFFSET:
-				setOffset(OFFSET_EDEFAULT);
-				return;
-			case Sensor_datatypesPackage.POINT_FIELD__DATATYPE:
-				setDatatype(DATATYPE_EDEFAULT);
-				return;
-			case Sensor_datatypesPackage.POINT_FIELD__COUNT:
-				setCount(COUNT_EDEFAULT);
-				return;
+		switch(featureID) {
+		case Sensor_datatypesPackage.POINT_FIELD__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case Sensor_datatypesPackage.POINT_FIELD__OFFSET:
+			setOffset(OFFSET_EDEFAULT);
+			return;
+		case Sensor_datatypesPackage.POINT_FIELD__DATATYPE:
+			setDatatype(DATATYPE_EDEFAULT);
+			return;
+		case Sensor_datatypesPackage.POINT_FIELD__COUNT:
+			setCount(COUNT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -283,19 +317,20 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.POINT_FIELD__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case Sensor_datatypesPackage.POINT_FIELD__OFFSET:
-				return offset != OFFSET_EDEFAULT;
-			case Sensor_datatypesPackage.POINT_FIELD__DATATYPE:
-				return datatype != DATATYPE_EDEFAULT;
-			case Sensor_datatypesPackage.POINT_FIELD__COUNT:
-				return count != COUNT_EDEFAULT;
+		switch(featureID) {
+		case Sensor_datatypesPackage.POINT_FIELD__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case Sensor_datatypesPackage.POINT_FIELD__OFFSET:
+			return offset != OFFSET_EDEFAULT;
+		case Sensor_datatypesPackage.POINT_FIELD__DATATYPE:
+			return datatype != DATATYPE_EDEFAULT;
+		case Sensor_datatypesPackage.POINT_FIELD__COUNT:
+			return count != COUNT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -303,11 +338,13 @@ public class PointFieldImpl extends EObjectImpl implements PointField {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if(eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

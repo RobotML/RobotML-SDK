@@ -1,21 +1,21 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
+ * Copyright (c) 2013 CEA LIST.
  *    
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the CeCILL-C Free Software License v1.0
+ * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
+ * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
- *
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.diagram.common.utils;
 
 import org.eclipse.core.expressions.PropertyTester;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.facet.infra.browser.uicore.internal.model.ModelElementItem;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.papyrus.infra.core.resource.NotFoundException;
 import org.eclipse.papyrus.uml.tools.model.UmlModel;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
@@ -25,6 +25,7 @@ import org.eclipse.papyrus.editor.PapyrusMultiDiagramEditor;
 import org.eclipse.papyrus.robotml.diagram.common.Activator;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.util.UMLUtil;
@@ -41,7 +42,6 @@ public class RobotmlSelectionTester extends PropertyTester {
 	/** Tester ID for UML Model nature */
 	public final static String IS_ROBOTML_MODEL = "isRobotmlModel"; //$NON-NLS-N$
 
-	
 
 	//public static String ROBOTML_ID = "RobotML";
 
@@ -62,6 +62,7 @@ public class RobotmlSelectionTester extends PropertyTester {
 			currentValue = testRobotmlModelNature(receiver);
 			return (currentValue == expectedValue);
 		}
+		
 
 		return false;
 	}
@@ -70,45 +71,48 @@ public class RobotmlSelectionTester extends PropertyTester {
 	protected boolean testRobotmlModelNature(Object receiver) {
 		boolean isRobotmlModel = false;
 
-		
 
-				EObject root = getRoot(receiver);
-				if(root instanceof Package) {
-					Profile robotml = UMLUtil.getProfile(RobotMLPackage.eINSTANCE, root);
-					if(((Package)root).isProfileApplied(robotml)) {
-						isRobotmlModel = true;
-					}
-				}
-			
+
+		EObject root = getRoot(receiver);
+		if(root instanceof Package) {
+
+			Profile robotml = UMLUtil.getProfile(RobotMLPackage.eINSTANCE, root);
+
+			if(((Package)root).isProfileApplied(robotml)) {
+				isRobotmlModel = true;
+			}
+		}
+
 
 		return isRobotmlModel;
 	}
 	
-	/** Returns the root EObject of currently opened model */
-    private EObject getRoot(Object receiver) {
-          EObject root = null;
-
-          if(receiver instanceof ISelection) {
-                ISelection selection = (ISelection)receiver;
-                if(selection.isEmpty()) {
-                      return null;
-                }
-
-                try {
-                      ServiceUtilsForSelection serviceUtils = ServiceUtilsForSelection.getInstance();
-                      UmlModel openedModel = (UmlModel)serviceUtils.getModelSet(selection).getModel(UmlModel.MODEL_ID);
-                      if(openedModel != null) {
-                           root = openedModel.lookupRoot();
-                      }
-                } catch (ServiceException e) {
-                      //Ignored: The selection cannot be used to retrieve the ServicesRegistry
-                } catch (NotFoundException e) {
-                      Activator.log.error(e);
-                }
-          }
-
-          return root;
-    }
-
 	
+	/** Returns the root EObject of currently opened model */
+	private EObject getRoot(Object receiver) {
+		EObject root = null;
+
+		if(receiver instanceof ISelection) {
+			ISelection selection = (ISelection)receiver;
+			if(selection.isEmpty()) {
+				return null;
+			}
+
+			try {
+				ServiceUtilsForSelection serviceUtils = ServiceUtilsForSelection.getInstance();
+				UmlModel openedModel = (UmlModel)serviceUtils.getModelSet(selection).getModel(UmlModel.MODEL_ID);
+				if(openedModel != null) {
+					root = openedModel.lookupRoot();
+				}
+			} catch (ServiceException e) {
+				//Ignored: The selection cannot be used to retrieve the ServicesRegistry
+			} catch (NotFoundException e) {
+				Activator.log.error(e);
+			}
+		}
+
+		return root;
+	}
+
+
 }

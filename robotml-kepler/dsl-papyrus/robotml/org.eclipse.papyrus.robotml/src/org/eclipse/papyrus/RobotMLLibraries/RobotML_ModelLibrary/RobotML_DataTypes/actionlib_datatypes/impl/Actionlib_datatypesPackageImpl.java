@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -53,12 +62,15 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Actionlib_datatypesPackage {
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass goalIDEClass = null;
@@ -66,6 +78,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass goalStatusEClass = null;
@@ -73,20 +86,19 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass goalStatusArrayEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
+	 * package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
+	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.Actionlib_datatypesPackage#eNS_URI
 	 * @see #init()
@@ -99,6 +111,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -106,17 +119,18 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link Actionlib_datatypesPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * This method is used to initialize {@link Actionlib_datatypesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it
+	 * directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static Actionlib_datatypesPackage init() {
-		if (isInited) return (Actionlib_datatypesPackage)EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI);
+		if(isInited)
+			return (Actionlib_datatypesPackage)EPackage.Registry.INSTANCE.getEPackage(Actionlib_datatypesPackage.eNS_URI);
 
 		// Obtain or create and register package
 		Actionlib_datatypesPackageImpl theActionlib_datatypesPackage = (Actionlib_datatypesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Actionlib_datatypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Actionlib_datatypesPackageImpl());
@@ -161,7 +175,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 		// Mark meta-data to indicate it can't be changed
 		theActionlib_datatypesPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(Actionlib_datatypesPackage.eNS_URI, theActionlib_datatypesPackage);
 		return theActionlib_datatypesPackage;
@@ -170,6 +184,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getGoalID() {
@@ -179,6 +194,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalID_Stamp() {
@@ -188,6 +204,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalID_Id() {
@@ -197,6 +214,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getGoalStatus() {
@@ -206,6 +224,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalStatus_PENDING() {
@@ -215,6 +234,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalStatus_ACTIVE() {
@@ -224,6 +244,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalStatus_PREEMPTED() {
@@ -233,6 +254,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalStatus_SUCCEEDED() {
@@ -242,6 +264,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalStatus_ABORTED() {
@@ -251,6 +274,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalStatus_REJECTED() {
@@ -260,6 +284,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalStatus_PREEMPTING() {
@@ -269,6 +294,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalStatus_RECALLING() {
@@ -278,6 +304,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalStatus_RECALLED() {
@@ -287,6 +314,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalStatus_LOST() {
@@ -296,6 +324,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalStatus_Text() {
@@ -305,6 +334,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getGoalStatus_Status() {
@@ -314,6 +344,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getGoalStatusArray() {
@@ -323,6 +354,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getGoalStatusArray_Header() {
@@ -332,6 +364,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getGoalStatusArray_Status_list() {
@@ -341,6 +374,7 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Actionlib_datatypesFactory getActionlib_datatypesFactory() {
@@ -350,19 +384,22 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if(isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -392,19 +429,22 @@ public class Actionlib_datatypesPackageImpl extends EPackageImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if(isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package

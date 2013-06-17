@@ -1,15 +1,13 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
+ * Copyright (c) 2013 CEA LIST.
  *    
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the CeCILL-C Free Software License v1.0
+ * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
+ * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
- *
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.diagram.architecture.provider;
 
@@ -58,11 +56,11 @@ public class CustomArchitectureDiagramEditPolicyProvider extends ArchitectureDia
 	@Override
 	public void createEditPolicies(EditPart editPart) {
 		super.createEditPolicies(editPart);
-			
-			editPart.installEditPolicy(NavigationEditPolicy.NAVIGATION_POLICY, new NavigationEditPolicy());
-			if(!(editPart instanceof ConnectionEditPart)) {
-				editPart.installEditPolicy(EditPolicyRoles.POPUPBAR_ROLE, new HyperLinkPopupBarEditPolicy());
-			}
+
+		editPart.installEditPolicy(NavigationEditPolicy.NAVIGATION_POLICY, new NavigationEditPolicy());
+		if(!(editPart instanceof ConnectionEditPart)) {
+			editPart.installEditPolicy(EditPolicyRoles.POPUPBAR_ROLE, new HyperLinkPopupBarEditPolicy());
+		}
 
 		//if (editPart instanceof NamedElementEditPart)
 		editPart.installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new StereotypeNodeLabelDisplayEditPolicy());
@@ -84,31 +82,31 @@ public class CustomArchitectureDiagramEditPolicyProvider extends ArchitectureDia
 
 
 	}
-	
+
 	@Override
 	public boolean provides(IOperation operation) {
 		// TODO Auto-generated method stub
-		
 
-			CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
-			if(!(epOperation.getEditPart() instanceof GraphicalEditPart)) {
-				return false;
-			}
-			GraphicalEditPart gep = (GraphicalEditPart)epOperation.getEditPart();
-			String diagramType = gep.getNotationView().getDiagram().getType();
-			if(!ArchitectureDiagramEditPart.DIAGRAM_ID.equals(diagramType)) {
-				return false;
-			}
 
-			if(gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.PortNameEditPart) {
-				return true;
-			}
-			
-			if(gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.PropertyPartNameEditPartCN) {
-				return true;
-			}
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
+		if(!(epOperation.getEditPart() instanceof GraphicalEditPart)) {
+			return false;
+		}
+		GraphicalEditPart gep = (GraphicalEditPart)epOperation.getEditPart();
+		String diagramType = gep.getNotationView().getDiagram().getType();
+		if(!ArchitectureDiagramEditPart.DIAGRAM_ID.equals(diagramType)) {
+			return false;
+		}
+
+		if(gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.PortNameEditPart) {
+			return true;
+		}
+
+		if(gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.PropertyPartNameEditPartCN) {
+			return true;
+		}
 		return super.provides(operation);
-		
+
 	}
 
 }

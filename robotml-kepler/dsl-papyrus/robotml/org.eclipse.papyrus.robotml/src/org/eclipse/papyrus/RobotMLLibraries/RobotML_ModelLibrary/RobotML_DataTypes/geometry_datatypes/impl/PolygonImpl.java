@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl;
 
 import java.util.Collection;
@@ -27,17 +36,20 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.PolygonImpl#getPoint <em>Point</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl.PolygonImpl#getPoint <em>Point</em>}
+ * </li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class PolygonImpl extends EObjectImpl implements Polygon {
+
 	/**
 	 * The cached value of the '{@link #getPoint() <em>Point</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPoint()
 	 * @generated
 	 * @ordered
@@ -47,6 +59,7 @@ public class PolygonImpl extends EObjectImpl implements Polygon {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PolygonImpl() {
@@ -56,6 +69,7 @@ public class PolygonImpl extends EObjectImpl implements Polygon {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -66,10 +80,11 @@ public class PolygonImpl extends EObjectImpl implements Polygon {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Point32> getPoint() {
-		if (point == null) {
+		if(point == null) {
 			point = new EObjectContainmentEList<Point32>(Point32.class, this, Geometry_datatypesPackage.POLYGON__POINT);
 		}
 		return point;
@@ -78,13 +93,14 @@ public class PolygonImpl extends EObjectImpl implements Polygon {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Geometry_datatypesPackage.POLYGON__POINT:
-				return ((InternalEList<?>)getPoint()).basicRemove(otherEnd, msgs);
+		switch(featureID) {
+		case Geometry_datatypesPackage.POLYGON__POINT:
+			return ((InternalEList<?>)getPoint()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -92,13 +108,14 @@ public class PolygonImpl extends EObjectImpl implements Polygon {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Geometry_datatypesPackage.POLYGON__POINT:
-				return getPoint();
+		switch(featureID) {
+		case Geometry_datatypesPackage.POLYGON__POINT:
+			return getPoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,16 +123,17 @@ public class PolygonImpl extends EObjectImpl implements Polygon {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Geometry_datatypesPackage.POLYGON__POINT:
-				getPoint().clear();
-				getPoint().addAll((Collection<? extends Point32>)newValue);
-				return;
+		switch(featureID) {
+		case Geometry_datatypesPackage.POLYGON__POINT:
+			getPoint().clear();
+			getPoint().addAll((Collection<? extends Point32>)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -123,14 +141,15 @@ public class PolygonImpl extends EObjectImpl implements Polygon {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Geometry_datatypesPackage.POLYGON__POINT:
-				getPoint().clear();
-				return;
+		switch(featureID) {
+		case Geometry_datatypesPackage.POLYGON__POINT:
+			getPoint().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -138,13 +157,14 @@ public class PolygonImpl extends EObjectImpl implements Polygon {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Geometry_datatypesPackage.POLYGON__POINT:
-				return point != null && !point.isEmpty();
+		switch(featureID) {
+		case Geometry_datatypesPackage.POLYGON__POINT:
+			return point != null && !point.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

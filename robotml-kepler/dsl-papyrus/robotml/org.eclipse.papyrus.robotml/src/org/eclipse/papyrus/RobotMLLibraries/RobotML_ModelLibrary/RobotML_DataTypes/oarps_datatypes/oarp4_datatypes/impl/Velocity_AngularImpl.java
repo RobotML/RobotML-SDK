@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -19,17 +28,21 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Velocity_AngularImpl#getValue <em>Value</em>}</li>
+ * <li>
+ * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.oarps_datatypes.oarp4_datatypes.impl.Velocity_AngularImpl#getValue
+ * <em>Value</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class Velocity_AngularImpl extends EObjectImpl implements Velocity_Angular {
+
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -40,6 +53,7 @@ public class Velocity_AngularImpl extends EObjectImpl implements Velocity_Angula
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -49,6 +63,7 @@ public class Velocity_AngularImpl extends EObjectImpl implements Velocity_Angula
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Velocity_AngularImpl() {
@@ -58,6 +73,7 @@ public class Velocity_AngularImpl extends EObjectImpl implements Velocity_Angula
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,6 +84,7 @@ public class Velocity_AngularImpl extends EObjectImpl implements Velocity_Angula
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getValue() {
@@ -77,25 +94,27 @@ public class Velocity_AngularImpl extends EObjectImpl implements Velocity_Angula
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setValue(double newValue) {
 		double oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Oarp4_datatypesPackage.VELOCITY_ANGULAR__VALUE, oldValue, value));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR__VALUE:
-				return getValue();
+		switch(featureID) {
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -103,14 +122,15 @@ public class Velocity_AngularImpl extends EObjectImpl implements Velocity_Angula
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR__VALUE:
-				setValue((Double)newValue);
-				return;
+		switch(featureID) {
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR__VALUE:
+			setValue((Double)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -118,14 +138,15 @@ public class Velocity_AngularImpl extends EObjectImpl implements Velocity_Angula
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		switch(featureID) {
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -133,13 +154,14 @@ public class Velocity_AngularImpl extends EObjectImpl implements Velocity_Angula
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Oarp4_datatypesPackage.VELOCITY_ANGULAR__VALUE:
-				return value != VALUE_EDEFAULT;
+		switch(featureID) {
+		case Oarp4_datatypesPackage.VELOCITY_ANGULAR__VALUE:
+			return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -147,11 +169,13 @@ public class Velocity_AngularImpl extends EObjectImpl implements Velocity_Angula
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if(eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");

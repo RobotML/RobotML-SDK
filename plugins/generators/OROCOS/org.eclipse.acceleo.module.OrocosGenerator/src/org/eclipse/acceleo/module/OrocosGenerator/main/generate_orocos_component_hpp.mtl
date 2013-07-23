@@ -27,20 +27,22 @@
 #include <numeric>
 [for (elt : Element | getDataTypesInElement(c))]
 [let type: Type = elt] 
+[comment]
 [if(isRobotMLDataType(root_model, type.name))]
 [let ne : NamedElement = type.owner]
 #include <[ne.name.replace('_datatypes', '_msgs')/]/[type.name/].h>
 [/let]
 [else]
+[/comment]
 	[if(not isPrimitiveType(type))]
 		[if (isInterface(type))]
-		#include "[(type.qualifiedName.substitute(' ', '_')).replaceAll('::', '/')/].h"
+		#include "../[type.name+'/'+type.name/].hpp"
 		[else]
-		#include "../Datatypes/[type.name/].h"
+		#include "../Datatypes/[type.name/].hpp"
 		[/if]
 [comment]#include "[(type.qualifiedName.substitute(' ', '_')).replaceAll('::', '/')/].h"[/comment]	
 	[/if]
-[/if]
+[comment /if/]
 [/let]
 [/for]
 #include <stdlib.h>
@@ -83,6 +85,11 @@ class [c.name/]
  		[for (port : Port | getInputPortsForElement(elt))] 
 			[if (isRobotMLDataType(root_model, port.type.name))]
 			[let ne : NamedElement = port.type.owner]
+[comment]			
+[for(s : Connector | getConnectionsFromPort(port))]
+         [getSourceComponentForConnector(s)/]
+[/for]
+[/comment]
 			[port.visibility/]: InputPort<[ne.name.replace('_datatypes', '_msgs')/]::[port.type.name/]> [port.name/];
 			[/let]
 			[else]

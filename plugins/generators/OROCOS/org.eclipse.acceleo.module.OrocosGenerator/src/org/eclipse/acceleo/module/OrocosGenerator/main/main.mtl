@@ -62,10 +62,6 @@
 [/let]
 [/for]
 
-[for (interface : Interface | getRobotMLInterfaces(model))]	
-	[generateOrocosInterfaceHpp(interface,model)/]
-[/for]
-
 [comment]
 For generating xml file	
 [generateMappingFile(rootModel)/]

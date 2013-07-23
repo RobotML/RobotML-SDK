@@ -67,19 +67,22 @@ stream("[c.name/].[port.name/]",cp_[c.name/]_[port.name/])
 
 [for (elt: NamedElement | getComponentModels(model))] 
 [let c : Class = elt.oclAsType(Class)]
-[if (isActuator(c) = false and  isSensor(c) = false)]	
+	
 [for(p : Port | getOutputPortsForElement(c))]
 [for(s : Connector | getConnectionsFromPort(p))]
-[if(isActuator(c) or isSensor(c) or isActuator(getDestComponentForConnector(s).class) or isSensor(getDestComponentForConnector(s).class))]
- stream([c.name/], [getDestComponentForConnector(s).class.name/])
+
+[if (isActuator(c) or isSensor(c) or isActuator(getDestComponentForConnector(s).class) or isSensor(getDestComponentForConnector(s).class))]
+ stream([c.name/], [getDestComponentForConnector(s).type.name/])
 [else]
- connectPeers([c.name/], [getDestComponentForConnector(s).class.name/])
+ connectPeers([c.name/], [getDestComponentForConnector(s).type.name/])
 [/if]
+
 [/for]
 [/for]
 
-[/if]
 [/let]
 [/for]
+
+
 [/file]
 [/template]

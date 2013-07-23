@@ -27,7 +27,7 @@ class [aClass.name/]:
 		self.rotate([getAttributeValue(aClass, 'localOrientation', 'GPSSystem', 'x=0')/])
 
 		self.sensor.frequency([getAttributeValue(aClass, 'frequency', 'GPSSystem', '10.')/])
-		self.sensor.configure_mw('ros')
+		self.sensor.add_stream('ros')
 		myRobot.append(self.sensor)
 [/file]
 [/template]

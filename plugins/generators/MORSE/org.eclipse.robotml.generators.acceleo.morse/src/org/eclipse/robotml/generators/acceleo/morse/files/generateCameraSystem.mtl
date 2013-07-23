@@ -41,7 +41,7 @@ class [aClass.name/]:
 
 		self.sensor.frequency([getAttributeValue(aClass, 'frequency', 'CameraSystem', '25.')/])
 
-		self.sensor.configure_mw('ros')
+		self.sensor.add_stream('ros')
 		myRobot.append(self.sensor)
 [/file]
 [/template]

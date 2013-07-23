@@ -61,26 +61,26 @@ robot[aRobotClass.name/] = Robot('[aRobotClass.name/]')
 [template public generateGenericActuator(aClass : Class, model : Model)]
 #TBD: at the moment, we have no way in the meta-model to know what is the type of Actuator used
 #generic_actuator = Actuator('[aClass.name/]')
-#generic_actuator.configure_mw('ros')
+#generic_actuator.add_stream('ros')
 #robot.append(generic_actuator)
 [/template]
 
 [template public generateServoing(aClass : Class, model : Model)]
 motion = MotionVW()
-motion.configure_mw('ros')
+motion.add_stream('ros')
 robot.append(motion)
 [/template]
 
 [template public generateIMU(aClass : Class, model : Model)]
 imu = IMU()
 imu.frequency([getAttributeValue(aClass, 'frequency', 'IMU', '10.')/])
-imu.configure_mw('ros')
+imu.add_stream('ros')
 robot.append(imu)
 [/template]
 
 [template public generateOdometry(aClass : Class, model : Model)]
 odom = Pose()
 odom.frequency([getAttributeValue(aClass, 'frequency', 'Odometer', '10.')/])
-odom.configure_mw('ros')
+odom.add_stream('ros')
 robot.append(odom)
 [/template]

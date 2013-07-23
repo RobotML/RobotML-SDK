@@ -1,7 +1,13 @@
-class CameraMain_002:
-	def __init(self, myRobot):
-		self.sensor = Sensor('video_camera')
+from morse.builder import *
 
+class CameraMain_002:
+	def __init(self, myRobot)__:
+		self.sensor = VideoCamera()
+
+		self.sensor.translate(x=0, y=0, z=0)
+
+		self.sensor.rotate(x=0)
+ 
 		height = 0.0*2
 		width = 0.0*2
 		alpha_u = 0.0
@@ -16,5 +22,5 @@ class CameraMain_002:
 
 		self.sensor.frequency(0.0)
 
-		self.sensor.configure_mw('ros')
+		self.sensor.add_stream('ros')
 		myRobot.append(self.sensor)

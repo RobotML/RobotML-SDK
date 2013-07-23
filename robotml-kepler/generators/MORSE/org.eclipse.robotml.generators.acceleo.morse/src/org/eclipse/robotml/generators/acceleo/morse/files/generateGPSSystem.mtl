@@ -21,10 +21,10 @@ class [aClass.name/]:
 		self.sensor = GPS()
 
 		[comment Generate translation command for this sensor /]
-		self.translate([getAttributeValue(aClass, 'localPosition', 'GPSSystem', 'x=0, y=0, z=0')/])
+		self.sensor.translate([getAttributeValue(aClass, 'localPosition', 'GPSSystem', 'x=0, y=0, z=0')/])
 
 		[comment Generate rotation command for this sensor /]
-		self.rotate([getAttributeValue(aClass, 'localOrientation', 'GPSSystem', 'x=0')/])
+		self.sensor.rotate([getAttributeValue(aClass, 'localOrientation', 'GPSSystem', 'x=0')/])
 
 		self.sensor.frequency([getAttributeValue(aClass, 'frequency', 'GPSSystem', '10.')/])
 		self.sensor.add_stream('ros')

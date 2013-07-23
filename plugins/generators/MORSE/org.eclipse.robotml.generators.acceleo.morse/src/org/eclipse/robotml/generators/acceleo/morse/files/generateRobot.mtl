@@ -26,11 +26,12 @@ import [aClass.name/]
 [/let]
 [/for]
 
-#Generate & use each sensors and actuators of this robot
 robot[aRobotClass.name/] = Robot('[aRobotClass.name/]')
-	[for (elt: NamedElement | getElementsWithInheritedStereotype(aModel, 'RoboticSystem'))]
-		[let aClass : Class = elt.oclAsType(Class)]
-		[if (hasStereotype(aClass, 'LidarSystem'))]
+
+#Generate & use each sensors and actuators of this robot
+[for (elt: NamedElement | getElementsWithInheritedStereotype(aModel, 'RoboticSystem'))]
+[let aClass : Class = elt.oclAsType(Class)]
+[if (hasStereotype(aClass, 'LidarSystem'))]
 [generateLidarSystem(aClass, aModel)/]
 [aClass.name/].[aClass.name/]([aRobotClass.name/])
 		[elseif (hasStereotype(aClass, 'CameraSystem'))]

@@ -19,10 +19,10 @@ class [aClass.name/]:
 		self.sensor = VideoCamera()
 
 		[comment Generate translation command for this sensor /]
-		self.translate([getAttributeValue(aClass, 'localPosition', 'CameraSystem', 'x=0, y=0, z=0')/])
+		self.sensor.translate([getAttributeValue(aClass, 'localPosition', 'CameraSystem', 'x=0, y=0, z=0')/])
 
 		[comment Generate rotation command for this sensor /]
-		self.rotate([getAttributeValue(aClass, 'localOrientation', 'CameraSystem', 'x=0')/])
+		self.sensor.rotate([getAttributeValue(aClass, 'localOrientation', 'CameraSystem', 'x=0')/])
  
 		[comment Used formula here: http://www.openrobots.org/morse/doc/stable/user/sensors/video_camera.html#camera-calibration-matrix /]
 		height = [getAttributeValue(aClass, 'u0', 'CameraSystem', '0')/]*2

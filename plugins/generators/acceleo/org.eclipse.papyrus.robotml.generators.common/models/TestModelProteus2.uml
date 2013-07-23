@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ProteusProfile="http:///schemas/ProteusProfile/_p7aDoGBjEeC7R9ZpKTrH_A/34" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/ProteusProfile/_p7aDoGBjEeC7R9ZpKTrH_A/34 pathmap://Proteus_PROFILES/ProteusProfile.profile.uml#_p7aDoWBjEeC7R9ZpKTrH_A">
+  <uml:Model xmi:id="_Z6gbgHcPEeC2yf8q72mdYA" name="ProteusModel">
+    <packagedElement xmi:type="uml:Class" xmi:id="_cKmO0HcPEeC2yf8q72mdYA" name="LIDAR">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_laoPwHcPEeC2yf8q72mdYA" name="LIDARout" visibility="public" type="_ilbkQHcPEeC2yf8q72mdYA" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_noo_cXcPEeC2yf8q72mdYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_noo_cHcPEeC2yf8q72mdYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_noo_cncPEeC2yf8q72mdYA">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dwOv4HcPEeC2yf8q72mdYA" name="Motor">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_wC4A0HcPEeC2yf8q72mdYA" name="MotorCmdIn" visibility="public" type="_jeghUHcPEeC2yf8q72mdYA" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yIZi4XcPEeC2yf8q72mdYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yIZi4HcPEeC2yf8q72mdYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_yIZi4ncPEeC2yf8q72mdYA">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_fMLJcHcPEeC2yf8q72mdYA" name="Challenger">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_rroTwHcPEeC2yf8q72mdYA" name="in" visibility="public" type="_ilbkQHcPEeC2yf8q72mdYA" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tYjvoXcPEeC2yf8q72mdYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tYjvoHcPEeC2yf8q72mdYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_tYjvoncPEeC2yf8q72mdYA">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Port" xmi:id="__C0x8HcPEeC2yf8q72mdYA" name="MotorCmd" visibility="public" type="_jeghUHcPEeC2yf8q72mdYA" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A26lwHcQEeC2yf8q72mdYA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A2w0wHcQEeC2yf8q72mdYA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_A26lwXcQEeC2yf8q72mdYA">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_gLDMgHcPEeC2yf8q72mdYA" name="RoboCab"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ilbkQHcPEeC2yf8q72mdYA" name="Distance"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_jeghUHcPEeC2yf8q72mdYA" name="Command"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_t7IRMHcPEeC2yf8q72mdYA" name="RoboCab">
+      <ownedAttribute xmi:id="_FlaVMHcQEeC2yf8q72mdYA" name="lidar" type="_cKmO0HcPEeC2yf8q72mdYA" aggregation="composite"/>
+      <ownedAttribute xmi:id="_NUSscHcQEeC2yf8q72mdYA" name="challengerSystem" type="_fMLJcHcPEeC2yf8q72mdYA" aggregation="composite"/>
+      <ownedAttribute xmi:id="_TatREHcQEeC2yf8q72mdYA" name="motor" type="_dwOv4HcPEeC2yf8q72mdYA" aggregation="composite"/>
+      <ownedConnector xmi:id="_XDxCcHcQEeC2yf8q72mdYA" name="Connector0">
+        <end xmi:id="_XDxCcXcQEeC2yf8q72mdYA" role="_laoPwHcPEeC2yf8q72mdYA" partWithPort="_FlaVMHcQEeC2yf8q72mdYA"/>
+        <end xmi:id="_XDxCcncQEeC2yf8q72mdYA" role="_rroTwHcPEeC2yf8q72mdYA" partWithPort="_NUSscHcQEeC2yf8q72mdYA"/>
+      </ownedConnector>
+      <ownedConnector xmi:id="_X37DQHcQEeC2yf8q72mdYA" name="Connector1">
+        <end xmi:id="_X37DQXcQEeC2yf8q72mdYA" role="__C0x8HcPEeC2yf8q72mdYA" partWithPort="_NUSscHcQEeC2yf8q72mdYA"/>
+        <end xmi:id="_X37DQncQEeC2yf8q72mdYA" role="_wC4A0HcPEeC2yf8q72mdYA" partWithPort="_TatREHcQEeC2yf8q72mdYA"/>
+      </ownedConnector>
+    </packagedElement>
+    <profileApplication xmi:id="_aINgUHcPEeC2yf8q72mdYA">
+      <eAnnotations xmi:id="_aINgUXcPEeC2yf8q72mdYA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://Proteus_PROFILES/ProteusProfile.profile.uml#_p7aDoWBjEeC7R9ZpKTrH_A"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://Proteus_PROFILES/ProteusProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
+    </profileApplication>
+  </uml:Model>
+  <ProteusProfile:Sensor xmi:id="_cPOQIHcPEeC2yf8q72mdYA" base_Class="_cKmO0HcPEeC2yf8q72mdYA"/>
+  <ProteusProfile:Actuator xmi:id="_dwX50HcPEeC2yf8q72mdYA" base_Class="_dwOv4HcPEeC2yf8q72mdYA"/>
+  <ProteusProfile:System xmi:id="_fMUTYHcPEeC2yf8q72mdYA" base_Class="_fMLJcHcPEeC2yf8q72mdYA"/>
+  <ProteusProfile:System xmi:id="_gLM9gHcPEeC2yf8q72mdYA" base_Class="_gLDMgHcPEeC2yf8q72mdYA"/>
+  <ProteusProfile:DataFlowPort xmi:id="_layAwHcPEeC2yf8q72mdYA" base_Port="_laoPwHcPEeC2yf8q72mdYA" direction="out"/>
+  <ProteusProfile:DataFlowPort xmi:id="_rrxduncPEeC2yf8q72mdYA" base_Port="_rroTwHcPEeC2yf8q72mdYA"/>
+  <ProteusProfile:System xmi:id="_t7RbK3cPEeC2yf8q72mdYA" base_Class="_t7IRMHcPEeC2yf8q72mdYA"/>
+  <ProteusProfile:DataFlowPort xmi:id="_wC4A3XcPEeC2yf8q72mdYA" base_Port="_wC4A0HcPEeC2yf8q72mdYA"/>
+  <ProteusProfile:DataFlowPort xmi:id="__C-i8HcPEeC2yf8q72mdYA" base_Port="__C0x8HcPEeC2yf8q72mdYA" direction="out"/>
+</xmi:XMI>

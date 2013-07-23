@@ -1,0 +1,36 @@
+
+// 20/10/2011
+
+import "types_1.adl"
+
+// 
+function advanceTime < CPP > (
+	// time step in s
+	in Integer timestep
+	// current time in s
+	inout Integer time
+	// cycle number
+	inout Integer cycle
+)
+
+// 
+function initBasicFlying < CPP > (
+	// time  in s
+	in Integer time
+	// time step in s
+	in Integer timestep
+	// Aircraft Id
+	in Integer nid
+)
+
+//
+function stepBasicFlying < CPP > (
+	// time  in s
+	in Integer time
+	// time step in s
+	in Integer timestep
+	// Aircraft Id
+	in Integer nid
+)
+
+

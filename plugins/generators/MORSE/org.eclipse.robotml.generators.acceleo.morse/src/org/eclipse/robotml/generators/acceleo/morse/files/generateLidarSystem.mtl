@@ -16,6 +16,8 @@
 [comment TODO: look at CycabTK for parameters to extract from model /]
 
 [file (aClass.name+'.py', false, 'UTF-8')]
+from morse.builder import *
+
 class [aClass.name/]:
 	def __init(self, myRobot):
 		self.sensor = Sick()

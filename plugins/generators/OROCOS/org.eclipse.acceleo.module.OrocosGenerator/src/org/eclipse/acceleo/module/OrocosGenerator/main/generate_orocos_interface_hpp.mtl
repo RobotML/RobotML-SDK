@@ -111,6 +111,7 @@ namespace [s/]{
 			[else]
 		 		 [t.name/] [interface.name/]_[op.name/](		
 			[/if]
+
 			[comment in case of ros datatypes, uncomment]
 			[if(isRobotMLDataType(m, t.name))]
 				[let ne : NamedElement = t.owner]

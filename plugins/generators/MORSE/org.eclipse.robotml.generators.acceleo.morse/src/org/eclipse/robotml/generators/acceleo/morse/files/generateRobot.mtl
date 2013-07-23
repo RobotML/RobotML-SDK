@@ -18,7 +18,15 @@
 [template public generateRobot(aRobotClass : Class, aModel : Model)]
 [file (aRobotClass.name + '.py', false, 'UTF-8')]
 from morse.builder import *
-#Generate each sensors and actuators of this robot
+
+#Import sensors & actuators of this robot
+[for (elt: NamedElement | getElementsWithInheritedStereotype(aModel, 'RoboticSystem'))]
+[let aClass : Class = elt.oclAsType(Class)]
+import [aClass.name/]
+[/let]
+[/for]
+
+#Generate & use each sensors and actuators of this robot
 robot[aRobotClass.name/] = Robot('[aRobotClass.name/]')
 	[for (elt: NamedElement | getElementsWithInheritedStereotype(aModel, 'RoboticSystem'))]
 		[let aClass : Class = elt.oclAsType(Class)]

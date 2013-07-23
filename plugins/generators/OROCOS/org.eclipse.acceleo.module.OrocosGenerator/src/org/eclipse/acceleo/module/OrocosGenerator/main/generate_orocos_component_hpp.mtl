@@ -68,6 +68,7 @@ class [c.name/]
 [let elt : Element = c.oclAsType(Element)]
 			[for (sp : Port | getServicePort())]				
 				[let interface : Interface = sp.type]
+				[generateOrocosInterfaceHpp(interface, root_model)/]
 					[for (op : Operation | interface.getAllOperations())]
 						[if (isARequiredPort(sp))]
 		RTT::OperationCaller [interface.name/]_[op.name/];

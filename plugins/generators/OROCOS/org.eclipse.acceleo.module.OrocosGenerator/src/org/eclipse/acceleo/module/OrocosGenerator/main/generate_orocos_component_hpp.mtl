@@ -70,7 +70,7 @@ class [c.name/]
 				[let interface : Interface = sp.type]
 					[for (op : Operation | interface.getAllOperations())]
 						[if (isARequiredPort(sp))]
-		RTT::OperationCaller [op.name/];
+		RTT::OperationCaller [interface.name/]_[op.name/];
 						[/if]
        				[/for]
 				[/let]				
@@ -144,7 +144,7 @@ class [c.name/]
 			[let interface : Interface = sp.type]
 				[for (op : Operation | interface.getAllOperations())]
 					[if (isARequiredPort(sp))]
-			, [op.name/] ("[op.name/]")
+			, [interface.name/]_[op.name/] ("[interface.name/]_[op.name/]")
 					[/if]
        			[/for]
 			[/let]				
@@ -175,7 +175,7 @@ class [c.name/]
 
 [comment adding operations to the constructor /]	
 	[for (op : Operation | c.getAllOperations())]
-		this->addOperation("[op.name/]", &[c.name/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
+		this->addOperation("[interface.name/]_[op.name/]", &[c.name/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
 			.doc("Description : [op.type.name.toUpperFirst()/]");
 		[/for]
 
@@ -185,12 +185,12 @@ class [c.name/]
 					[for (op : Operation | interface.getAllOperations())]
 						[if (isAProvidedPort(sp))]
 		this->provides("[interface.name/]")
-			->addOperation("[op.name.substitute(' ', '_')/]",&[(c.qualifiedName.substitute('::'+c.name,'')).substitute(' ','_')/]::[c.name.substitute(' ', '_')/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
+			->addOperation("[interface.name/]_[op.name/]/]",&[c.name/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
 				.doc("");
 						[/if]
 						[if (isARequiredPort(sp))]
 		this->requires("[interface.name/]")
-			->addOperationCaller([op.name/]);
+			->addOperationCaller([interface.name/]_[op.name/]);
 						[/if]
        				[/for]
 				[/let]				

@@ -10,6 +10,9 @@ These functions are implemented in file DeploymentQueries.java.
 [query public getInstanceSpecificationsForPlatform(elt : Model, pfn: String) : Sequence(InstanceSpecification) = 
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getInstanceSpecificationsForPlatform(org.eclipse.uml2.uml.Model, java.lang.String)', Sequence{elt, pfn})
 /]
+[query public getInstanceSpecificationsForPlatform2(model : Model, pfmName : String) : Sequence(InstanceSpecification)
+	= invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getInstanceSpecificationsForPlatform2(org.eclipse.uml2.uml.Model, java.lang.String)', Sequence{model, pfmName}) 
+/]
 [query public getParentName(inst : InstanceSpecification) : String =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getParentName(org.eclipse.uml2.uml.InstanceSpecification)', Sequence{inst})
 /]
@@ -19,22 +22,22 @@ These functions are implemented in file DeploymentQueries.java.
 [query public isAllocatedTo(inst : InstanceSpecification, pfn: String) : Boolean =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'isAllocatedTo(org.eclipse.uml2.uml.InstanceSpecification,java.lang.String)', Sequence{inst, pfn})
 /]
-[query public isAllocatedTo(inst : InstanceSpecification, pfm : Platform) : Boolean
-	= invoke('org.eclipse.robotml.generators.acceleo.mmqueries.CopyOfDeploymentQueries', 'isAllocatedTo(org.eclipse.uml2.uml.InstanceSpecification, org.eclipse.papyrus.RobotML.Platform)', Sequence{inst, pfm}) 
-/]
 [query public getAllocationName(inst : InstanceSpecification) : String =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getAllocationName(org.eclipse.uml2.uml.InstanceSpecification)', Sequence{inst})
 /]
 [query public getDefinedComponentsForPlatform(elt : Model, pfn: String) : Sequence(Class) = 
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getDefinedComponentsForPlatform(org.eclipse.uml2.uml.Model, java.lang.String)', Sequence{elt, pfn})
 /]
-
-[query public getDeploymentPlansInModel(model : Model) : Sequence(OclAny)
-	= invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getDeploymentPlansInModel(org.eclipse.uml2.uml.Model)', Sequence{model}) /]
-
-[query public getDeploymentPlanInstanceSpecsForPlatform(deploymentPlan : Package, pfm : Platform) : Sequence(OclAny)
-	= invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getDeploymentPlanInstanceSpecsForPlatform(org.eclipse.uml2.uml.Package, org.eclipse.papyrus.RobotML.Platform)', Sequence{deploymentPlan, pfm}) /]
-
-[query public getModelInstanceSpecsForPlatform(model : Model, pfm : Platform) : Sequence(OclAny)
-	= invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getModelInstanceSpecsForPlatform(org.eclipse.uml2.uml.Model, org.eclipse.papyrus.RobotML.Platform)', Sequence{model, pfm}) /]
+[query public getDefinedComponentsForPlatform2(model : Model, pfmName : String) : Sequence(Class)
+	= invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getDefinedComponentsForPlatform2(org.eclipse.uml2.uml.Model, java.lang.String)', Sequence{model, pfmName}) 
+/]
+[query public getDeploymentPlansInModel(model : Model) : Sequence(DeploymentPlan)
+	= invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getDeploymentPlansInModel(org.eclipse.uml2.uml.Model)', Sequence{model}) 
+/]
+[query public getDeploymentPlanPackagesInModel(model : Model) : Sequence(Package)
+	= invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getDeploymentPlanPackagesInModel(org.eclipse.uml2.uml.Model)', Sequence{model}) 
+/]
+[query public getDeploymentPlanInstanceSpecsForPlatform(deploymentPlan : Package, pfmName : String) : Sequence(InstanceSpecification)
+	= invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getDeploymentPlanInstanceSpecsForPlatform(org.eclipse.uml2.uml.Package, java.lang.String)', Sequence{deploymentPlan, pfmName}) 
+/]
 

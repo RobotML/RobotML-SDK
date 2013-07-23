@@ -1,5 +1,6 @@
 package org.eclipse.robotml.generators.acceleo.mmqueries;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -67,11 +68,10 @@ public class DeploymentQueries {
 	}
 	
 	/**
-	 * Return the list of instance specifications for a given platform
+	 * Return the list of instance specifications allocated to given platform
 	 * @param model
 	 * @param 
 	 * @return A list of InstanceSpecification of all instance specifications
-	 * @deprecated prefer getModelInstanceSpecsForPlatform(Model model, Platform platform) which does not make use of Strings.
 	 */
 	static public List<InstanceSpecification> getInstanceSpecificationsForPlatform(org.eclipse.uml2.uml.Model model, java.lang.String pfn)
 	{
@@ -84,7 +84,23 @@ public class DeploymentQueries {
 		}
 		return found_elts;
 	}
+
+	/**
+	 * Return the list of instance specifications allocated to given platform. Should be equivalent to getInstanceSpecificationsForPlatform, but different implementation.
+	 * @param model
+	 * @param targetPlatformName Name of the requested target platform type.
+	 * @return A list of InstanceSpecification of all instance specifications.
+	 */
+	static public List<InstanceSpecification> getInstanceSpecificationsForPlatform2(org.eclipse.uml2.uml.Model model, String targetPlatformName) { //org.eclipse.papyrus.RobotML.Platform targetPlatform) {
+		//The list to return in the end.
+		List<InstanceSpecification> found_elts = new LinkedList<InstanceSpecification>();
+		for (org.eclipse.uml2.uml.Package dpPck : getDeploymentPlanPackagesInModel(model))  {
+			found_elts.addAll(getDeploymentPlanInstanceSpecsForPlatform(dpPck,targetPlatformName));
+		}
+		return found_elts;
+	}
 	
+
 	/**
 	 * Return the parent name of an instance
 	 * @param inst
@@ -133,37 +149,16 @@ public class DeploymentQueries {
 	 * @param instanceSpecification
 	 * @param platformName
 	 * @return true if the instance is allocated to the platform which name is given in parameter 
-	 * @deprecated Prefer the IsAllocatedTo(InstanceSpecification instSpec, Platform platform) prototype which does not use Strings.
 	 */
-	static public Boolean isAllocatedTo(InstanceSpecification instanceSpecification, String platformKind)
-	{
-		if(instanceSpecification.getClientDependencies().size() == 0)
-			return false;
-		
-		//il n'y a toujours qu'un element
-		Dependency d = instanceSpecification.getClientDependencies().get(0);
-
-		//TODO: attention d.getName() donne quelque chose du genre "allocate to aroccam1"
-		//ou aroccam1 est le nom donné par l'utilisateur de l'instance du composant platform (Aroccam1) aussi nommé par l'utilisateur...
-		//pour que ça fonctionne parfaitement, il faudrait retrouver la valeur du paramètre "Kind" associé au
-		//Stéréotype RoboticMiddleware du composant platform (Aroccam1) nommé par l'utilisateur
-		//pour l'instant ça fonctionne comme ça, à condition que l'utilisateur a nommé sont instance de plateforme avec un nom
-		//qui contient la meme chaine que dans le kind... 
-		if(d.getName().toLowerCase().contains(platformKind.toLowerCase()))
-			return true;
-		
-		return false;
-	}
-	
-	static public boolean isAllocatedTo(InstanceSpecification instSpec, Platform platform) {
-		if (instSpec == null || platform == null)
+	static public boolean isAllocatedTo(InstanceSpecification instSpec, String platformName ) {
+		if (instSpec == null || platformName == null)
 			return false;
 		for (Dependency dep : instSpec.getClientDependencies()) {
 			Allocate alloc = UMLUtil.getStereotypeApplication((Element)dep, Allocate.class);
 			if (alloc == null)
 					continue;
 			for (NamedElement nelt : dep.getSuppliers()) {
-				if (isPlatformInstanceSpecificationFromPlatform(nelt,platform)) {
+				if (isPlatformInstanceSpecificationFromPlatform(nelt,platformName)) {
 					return true;
 				}
 			}
@@ -172,29 +167,66 @@ public class DeploymentQueries {
 		return false;
 	}
 	
+	/**
+	 * Retrieves the deployment plans defined in a given model.
+	 * @param model
+	 * @return A list of DeploymentPlans defined in the model.
+	 */
 	static public List<DeploymentPlan> getDeploymentPlansInModel(org.eclipse.uml2.uml.Model model) 
 	{
 		List<DeploymentPlan> dep_plans = new LinkedList<DeploymentPlan>();
 		for (Element elt : model.getOwnedElements()) {
-			if (elt instanceof Package) {
+			if (elt instanceof org.eclipse.uml2.uml.Package) {
 				DeploymentPlan dp = UMLUtil.getStereotypeApplication(elt, DeploymentPlan.class);
 				if (dp != null)
 					dep_plans.add(dp);
+				else
+					dep_plans.addAll(getDeploymentPlansInPackage((org.eclipse.uml2.uml.Package)elt));
 			}
 		}
 		return dep_plans;
 	}
-		
-	static public List<InstanceSpecification> getModelInstanceSpecsForPlatform(org.eclipse.uml2.uml.Model model, org.eclipse.papyrus.RobotML.Platform targetPlatform) {
-		//The list to return in the end.
-		List<InstanceSpecification> found_elts = new LinkedList<InstanceSpecification>();
-		for (DeploymentPlan dp : getDeploymentPlansInModel(model))  {
-			found_elts.addAll(getDeploymentPlanInstanceSpecsForPlatform((org.eclipse.uml2.uml.Package)dp,targetPlatform));
-		}
-		return found_elts;
-	}
 	
-	static public List<InstanceSpecification> getDeploymentPlanInstanceSpecsForPlatform(org.eclipse.uml2.uml.Package deploymentPlan, org.eclipse.papyrus.RobotML.Platform targetPlatform)
+	/**
+	 * Retrieves the deployment plans defined in a given package.
+	 * @param pck
+	 * @return
+	 */
+	static protected List<DeploymentPlan> getDeploymentPlansInPackage(org.eclipse.uml2.uml.Package pck) {
+		List<DeploymentPlan> dep_plans = new LinkedList<DeploymentPlan>();
+		for (Element elt : pck.getOwnedElements()) {
+			if (elt instanceof org.eclipse.uml2.uml.Package) {
+				DeploymentPlan dp = UMLUtil.getStereotypeApplication(elt, DeploymentPlan.class);
+				if (dp != null)
+					dep_plans.add(dp);
+				else
+					dep_plans.addAll(getDeploymentPlansInPackage((org.eclipse.uml2.uml.Package)elt));
+			}
+		}
+		return dep_plans;
+	}
+
+	/**
+	 * Retrieves the Packages in which Deployment plans are defined in the model.
+	 * @param model
+	 * @return
+	 */
+	static public List<org.eclipse.uml2.uml.Package> getDeploymentPlanPackagesInModel(Model model) {
+		List<DeploymentPlan> dps = getDeploymentPlansInModel(model);
+		LinkedList<org.eclipse.uml2.uml.Package> pcks = new LinkedList<org.eclipse.uml2.uml.Package>();
+		for (DeploymentPlan dp : dps) {
+			pcks.add(dp.getBase_Package());
+		}
+		return pcks;
+	}
+
+	/**
+	 * Retrieves the InstanceSpecficiations allocated to a given Platform within a given DeploymentPlan.
+	 * @param deploymentPlan
+	 * @param targetPlatformName
+	 * @return
+	 */
+	static public List<InstanceSpecification> getDeploymentPlanInstanceSpecsForPlatform(org.eclipse.uml2.uml.Package deploymentPlan, String targetPlatformName)
 	{
 		//The list to return in the end.
 		List<InstanceSpecification> found_elts = new LinkedList<InstanceSpecification>();
@@ -228,7 +260,7 @@ public class DeploymentQueries {
 				
 				//Is it allocated to the platform provided as argument ?
 				for (NamedElement nelt : dep.getSuppliers()) {
-					if (isPlatformInstanceSpecificationFromPlatform(nelt,targetPlatform)) {
+					if (isPlatformInstanceSpecificationFromPlatform(nelt,targetPlatformName)) {
 						found_elts.add(client_instance_spec);
 					}
 				}
@@ -258,7 +290,6 @@ public class DeploymentQueries {
 	 * @param model
 	 * @param platformName
 	 * @return all classes that are instanciated for the platform "pfn"
-	 * @deprecated prefer  getModelDefinedComponentsForPlatform(Model model, Platform platform) which does not make use of Strings
 	 */
 	static public List<org.eclipse.uml2.uml.Class> getDefinedComponentsForPlatform(Model model, String platformName)
 	{
@@ -281,10 +312,16 @@ public class DeploymentQueries {
 		return found_classes;
 	}
 	
-	static public List<org.eclipse.uml2.uml.Class> getModelDefinedComponentsForPlatform(Model model, Platform platform)
+	/**
+	 * Function to know which class must be generated by the platform or not. Should be equivalent to getDefinedComponentsForPlatform but with a different implementation.
+	 * @param model
+	 * @param platformName
+	 * @return all classes that are instanciated for the platform "pfn"
+	 */
+	static public List<org.eclipse.uml2.uml.Class> getDefinedComponentsForPlatform2(Model model, String platformName) //Platform platform)
 	{
 		LinkedList<org.eclipse.uml2.uml.Class> found_classes = new LinkedList<org.eclipse.uml2.uml.Class>();
-		List<InstanceSpecification> inst_specs = getModelInstanceSpecsForPlatform(model,platform);
+		List<InstanceSpecification> inst_specs = getInstanceSpecificationsForPlatform2(model,platformName);
 		for (InstanceSpecification inst_spec : inst_specs) {
 			for(org.eclipse.uml2.uml.Classifier classifier : inst_spec.getClassifiers())
 			{
@@ -299,11 +336,20 @@ public class DeploymentQueries {
 		return found_classes_2;
 	}
 	
-	protected static boolean isPlatformInstanceSpecificationFromPlatform(NamedElement platformInstanceSpecification, Platform expectedPlatform)
+	/**
+	 * Checks whether or not a Platform instance specification has a given platform type.
+	 * @param platformInstanceSpecification
+	 * @param expectedPlatformName
+	 * @return
+	 */
+	protected static boolean isPlatformInstanceSpecificationFromPlatform(NamedElement platformInstanceSpecification, String expectedPlatformName) //Platform expectedPlatform)
 	{
 		if (platformInstanceSpecification instanceof InstanceSpecification) {
 			InstanceSpecification platformInstance = (InstanceSpecification) platformInstanceSpecification;
-			for (Classifier classifier : platformInstance.getClassifiers()) {														
+			for (Classifier classifier : platformInstance.getClassifiers()) {
+				if (classifier.getName().toLowerCase().compareTo(expectedPlatformName)==0)
+					return true;
+				/*
 				RoboticMiddleware mdw = UMLUtil.getStereotypeApplication(classifier, org.eclipse.papyrus.RobotML.RoboticMiddleware.class);
 				RoboticSimulator sim = UMLUtil.getStereotypeApplication(classifier, org.eclipse.papyrus.RobotML.RoboticSimulator.class);
 				if (mdw != null) {
@@ -323,7 +369,7 @@ public class DeploymentQueries {
 						//YEEEEEHAAAAAA !!!
 						return true;
 					}
-				}
+				}*/
 			}
 		}
 		return false;

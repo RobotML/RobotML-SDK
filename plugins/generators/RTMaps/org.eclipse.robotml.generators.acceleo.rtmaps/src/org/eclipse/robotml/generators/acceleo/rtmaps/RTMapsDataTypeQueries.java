@@ -34,7 +34,10 @@ knowledge of the CeCILL-C license and that you accept its terms.
 */
 package org.eclipse.robotml.generators.acceleo.rtmaps;
 
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.papyrus.RobotML.Platform;
 import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
+import org.eclipse.papyrus.RobotML.util.*;
 
 public class RTMapsDataTypeQueries {
 
@@ -270,4 +273,5 @@ public class RTMapsDataTypeQueries {
 		}
 		return null;
 	}
+	
 }

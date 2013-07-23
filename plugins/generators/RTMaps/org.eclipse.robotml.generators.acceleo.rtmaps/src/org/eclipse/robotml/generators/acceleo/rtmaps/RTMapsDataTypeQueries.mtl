@@ -33,7 +33,7 @@ same conditions as regards security.
 The fact that you are presently reading this means that you have had
 knowledge of the CeCILL-C license and that you accept its terms.
 [/comment]
-[module RTMapsDataTypeQueries('http://www.eclipse.org/uml2/3.0.0/UML')/]
+[module RTMapsDataTypeQueries('http://www.eclipse.org/uml2/3.0.0/UML', 'http://Papyrus/RobotML/1')/]
 
 [query public getMAPSIOEltAccessFunction(type_name : String, ioelt_name : String, return_var_name : String) : String
 	= invoke('org.eclipse.robotml.generators.acceleo.rtmaps.RTMapsDataTypeQueries', 'getMAPSIOEltAccessFunction(java.lang.String, java.lang.String, java.lang.String)', Sequence{type_name,ioelt_name,return_var_name}) /]

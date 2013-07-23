@@ -5,6 +5,8 @@
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
+[import org::eclipse::robotml::generators::acceleo::mmqueries::DeploymentQueries /]
+
 [import org::eclipse::acceleo::module::OrocosGenerator::mmqueries::OrocosQueries /]
 [import org::eclipse::acceleo::module::OrocosGenerator::main::generate_orocos_component_hpp /]
 [import org::eclipse::acceleo::module::OrocosGenerator::main::generate_orocos_component_cpp /]
@@ -38,8 +40,11 @@
 		- CPP & HPP
 		- LUA 
 [/comment]
-[for (elt: NamedElement | getComponentModels(model))]	
+ [for (elt: NamedElement | getComponentModels(model))]	
 	[let c : Class = elt.oclAsType(Class)]
+[comment]
+[for (c: Class | getDefinedComponentsForPlatform(model, 'OROCOS'))]
+[/comment]
 		[if (not isActuator(c)) and (not isSensor(c) and (not isEnvironment(c)) and (not isRobot(c)))]
 			[if (hasStateMachine(c))]
 				[generateOrocosComponentLua(c, model)/]				
@@ -50,7 +55,11 @@
 			[/if]
 		[/if]
 		[/if]
-	[/let]
+[comment]	
+
+[/for]
+[/comment]
+[/let]
 [/for]
 
 [for (interface : Interface | getRobotMLInterfaces(model))]	

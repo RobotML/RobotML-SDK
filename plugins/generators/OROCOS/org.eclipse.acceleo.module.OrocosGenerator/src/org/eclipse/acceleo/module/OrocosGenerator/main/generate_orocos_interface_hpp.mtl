@@ -11,10 +11,14 @@
 [setLibraries(i)/]
 
 //in case of datatypes use, uncomment the using namespace command below
-[let model : Model = getRootModel(root_model)]
-//using namespace [model.name.substitute(' ', '_')/]_types;
+[let nspace : String = i.qualifiedName.substitute('::'+i.name,'')]
+[let nameSpace : Sequence(String) = nspace.tokenize('::')]
+[for(s : String | nameSpace)]
+namespace [s/]{
+[/for]
 [/let]
-namespace [i.namespace.name.substitute(' ', '_')/]	 {
+[/let]
+
 
 	class [i.name/] 
 		: public RTT::TaskContext 
@@ -63,7 +67,13 @@ namespace [i.namespace.name.substitute(' ', '_')/]	 {
 		virtual ~[i.name/]() {}
 	};
 }
-
+[let nspace : String = i.qualifiedName.substitute('::'+i.name,'')]
+[let nameSpace : Sequence(String) = nspace.tokenize('::')]
+[for(s : String | nameSpace)]
+}
+[/for]
+[/let]
+[/let]
 [/file]
 
 [/template]

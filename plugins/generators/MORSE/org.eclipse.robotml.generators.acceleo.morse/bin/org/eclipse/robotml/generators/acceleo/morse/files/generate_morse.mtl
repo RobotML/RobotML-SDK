@@ -18,8 +18,10 @@
 [template public generateMorse(model : Model)]
 [file ('morse' + model.name + '.py', false, 'UTF-8')]
 from morse.builder import *
-# Generate each robots
+
+[comment Generate each robots files /]
 [generateRobots(model)/]
+
 # Select the environment
 env = Environment("[model.name/].blend")
 [/file]

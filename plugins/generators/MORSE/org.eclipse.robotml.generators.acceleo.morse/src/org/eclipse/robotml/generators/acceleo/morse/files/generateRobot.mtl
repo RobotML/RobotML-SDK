@@ -26,7 +26,12 @@ import [aClass.name/]
 [/let]
 [/for]
 
+[comment Is the component a native MORSE component ? /]
+[if (getAttributeValue(aRobotClass, 'native', 'Robot', 'none') = 'false')]
+robot[aRobotClass.name/] = Robot('[getAttributeValue(aRobotClass, 'libraryPath', 'Robot', 'missing path')/]')
+[else]
 robot[aRobotClass.name/] = Robot('[aRobotClass.name/]')
+[/if]
 
 #Generate & use each sensors and actuators of this robot
 [for (elt: NamedElement | getElementsWithInheritedStereotype(aModel, 'RoboticSystem'))]

@@ -17,7 +17,7 @@
 from morse.builder import *
 
 class [aClass.name/]:
-	def __init(self, myRobot):
+	def __init(self, myRobot)__:
 		self.sensor = VideoCamera()
 
 		[comment Generate translation command for this sensor /]

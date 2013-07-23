@@ -4,7 +4,6 @@
 [template public OrocosQueries(something : OclAny)]
 
 [/template]
-
 [query public getRobotMLComponentModels(model : Model) : Sequence(NamedElement) =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.GeneralQueries', 'getRobotMLComponentModels(org.eclipse.uml2.uml.Model)', Sequence{model})
 /]
@@ -58,7 +57,8 @@
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isExistingType(org.eclipse.uml2.uml.Type)', Sequence{t})
 /]
 [query public addType(t : Type) : OclAny = 
-	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries','addType(org.eclipse.uml2.uml.Type)',Sequence{t})/]
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries','addType(org.eclipse.uml2.uml.Type)',Sequence{t})
+/]
 
 [query public isConnectedToActuator(st : String ) : Boolean =
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'isConnectedToActuator(java.lang.String)', Sequence{st})

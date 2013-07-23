@@ -16,6 +16,9 @@ These functions are implemented in file DeploymentQueries.java.
 [query public getParentName(inst : InstanceSpecification) : String =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getParentName(org.eclipse.uml2.uml.InstanceSpecification)', Sequence{inst})
 /]
+[query public getParentInstanceSpecification(elt : Model, inst : InstanceSpecification) : InstanceSpecification =
+	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getParentInstanceSpecification(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.InstanceSpecification)', Sequence{elt, inst})
+/]
 [query public getInstance(elt : Model, inst : InstanceSpecification) : Property =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries', 'getInstance(org.eclipse.uml2.uml.Model,org.eclipse.uml2.uml.InstanceSpecification)', Sequence{elt, inst})
 /]

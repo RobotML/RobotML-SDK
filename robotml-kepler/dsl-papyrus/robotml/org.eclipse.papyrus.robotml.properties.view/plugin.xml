@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><?eclipse version="3.4"?>
+<plugin>
+<extension point="org.eclipse.papyrus.views.properties.context"><context contextModel="/propertyView/properties/properties.ctx"/></extension>
+<extension
+      point="org.eclipse.papyrus.uml.properties.datatype">
+   <datatype
+         dataType="Point32"
+         observable="org.eclipse.papyrus.uml.properties.datatype.StringDataTypeObservableValue">
+   </datatype>
+   <datatype
+         dataType="LaserScan"
+         observable="org.eclipse.papyrus.uml.properties.datatype.StringDataTypeObservableValue">
+   </datatype>
+</extension>
+<extension
+      point="org.eclipse.papyrus.views.properties.environment">
+   <environment
+         environmentModel="propertyView/Environment.xmi">
+   </environment>
+</extension>
+</plugin>

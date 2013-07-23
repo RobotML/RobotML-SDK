@@ -47,12 +47,13 @@ import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.Vertex;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
-import org.eclipse.papyrus.robotML.AthenaML.Map;
-import org.eclipse.papyrus.robotML.AthenaML.Vector;
-import org.eclipse.papyrus.robotML.AthenaML.Array;
-import org.eclipse.papyrus.robotML.AthenaML.Define;
-import org.eclipse.papyrus.robotML.AthenaML.Union;
 import org.xtext.athenaDSL.ProcessingDeclaration;
+
+import RobotMLExtension.Map;
+import RobotMLExtension.Vector;
+import RobotMLExtension.Array;
+import RobotMLExtension.Define;
+import RobotMLExtension.Union;
 
 public class SpecificQueries {
 
@@ -811,9 +812,9 @@ public class SpecificQueries {
 	static public Boolean isContainerType(NamedElement ne)
 	{
 		Boolean result = false;
-		org.eclipse.papyrus.robotML.AthenaML.Map map = UMLUtil.getStereotypeApplication(ne, org.eclipse.papyrus.robotML.AthenaML.Map.class);
-		org.eclipse.papyrus.robotML.AthenaML.Vector vector = UMLUtil.getStereotypeApplication(ne, org.eclipse.papyrus.robotML.AthenaML.Vector.class);
-		org.eclipse.papyrus.robotML.AthenaML.Array array = UMLUtil.getStereotypeApplication(ne, org.eclipse.papyrus.robotML.AthenaML.Array.class);
+		RobotMLExtension.Map map = UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Map.class);
+		RobotMLExtension.Vector vector = UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Vector.class);
+		RobotMLExtension.Array array = UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Array.class);
 		
 		result |= (map != null);
 		result |= (vector != null);
@@ -1464,21 +1465,21 @@ public class SpecificQueries {
 		
 		if(SpecificQueries.isContainerType((NamedElement)ne))
 		{
-			if(UMLUtil.getStereotypeApplication(ne, Vector.class) != null)
+			if(UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Vector.class) != null)
 			{
-				Vector tmp = UMLUtil.getStereotypeApplication(ne, Vector.class);
-				result.add(tmp.getType_template().getName());
+				RobotMLExtension.Vector tmp = UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Vector.class);
+				result.add(tmp.getTypeTemplate().getName());
 			}
-			else if(UMLUtil.getStereotypeApplication(ne, Array.class) != null)
+			else if(UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Array.class) != null)
 			{
-				Array tmp = UMLUtil.getStereotypeApplication(ne, Array.class);
-				result.add(tmp.getType_template().getName());
+				RobotMLExtension.Array tmp = UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Array.class);
+				result.add(tmp.getTypeTemplate().getName());
 			}
-			else if(UMLUtil.getStereotypeApplication(ne, Map.class) != null)
+			else if(UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Map.class) != null)
 			{
-				Map tmp = UMLUtil.getStereotypeApplication(ne, Map.class);
-				result.add(tmp.getKeys_type().getName());
-				result.add(tmp.getValues_type().getName());
+				RobotMLExtension.Map tmp = UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Map.class);
+				result.add(tmp.getKeysType().getName());
+				result.add(tmp.getValuesType().getName());
 			}
 			
 		}

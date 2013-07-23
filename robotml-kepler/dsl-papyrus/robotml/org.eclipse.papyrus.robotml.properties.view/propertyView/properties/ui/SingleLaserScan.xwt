@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:j="clr-namespace:java.lang"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets" xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}"
+			property="Datatypes:RobotML_DataTypes:sensor_datatypes:LaserScan:range_min"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="Datatypes:RobotML_DataTypes:sensor_datatypes:LaserScan:range"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="Datatypes:RobotML_DataTypes:sensor_datatypes:LaserScan:angle_increment"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="Datatypes:RobotML_DataTypes:sensor_datatypes:LaserScan:time_increment"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="Datatypes:RobotML_DataTypes:sensor_datatypes:LaserScan:angle_min"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="Datatypes:RobotML_DataTypes:sensor_datatypes:LaserScan:range_max"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="Datatypes:RobotML_DataTypes:sensor_datatypes:LaserScan:scan_time"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="Datatypes:RobotML_DataTypes:sensor_datatypes:LaserScan:intensities"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="Datatypes:RobotML_DataTypes:sensor_datatypes:LaserScan:angle_max"></ppe:StringEditor>
+	</Composite>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<Group text="Header">
+			<Group.layout>
+				<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+			</Group.layout>
+			<ppe:ViewEditor view="ProteusLibraries:Single Header"
+				property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:LaserScan:header"
+				input="{Binding}"></ppe:ViewEditor>
+		</Group>
+	</Composite>
+</Composite>

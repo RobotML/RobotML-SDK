@@ -27,20 +27,22 @@
 #include <numeric>
 [for (elt : Element | getDataTypesInElement(c))]
 [let type: Type = elt] 
+[comment]
 [if(isRobotMLDataType(root_model, type.name))]
 [let ne : NamedElement = type.owner]
 #include <[ne.name.replace('_datatypes', '_msgs')/]/[type.name/].h>
 [/let]
 [else]
+[/comment]
 	[if(not isPrimitiveType(type))]
 		[if (isInterface(type))]
-		#include "[(type.qualifiedName.substitute(' ', '_')).replaceAll('::', '/')/].h"
+		#include "../[type.name+'/'+type.name/].hpp"
 		[else]
-		#include "Datatypes/[type.name/].h"
+		#include "../Datatypes/[type.name/].hpp"
 		[/if]
 [comment]#include "[(type.qualifiedName.substitute(' ', '_')).replaceAll('::', '/')/].h"[/comment]	
 	[/if]
-[/if]
+[comment /if/]
 [/let]
 [/for]
 #include <stdlib.h>
@@ -50,14 +52,16 @@ using namespace std;
 using namespace RTT;
 
 [generate_Datatype_file(c, root_model)/]
-[comment]
-//in case of datatypes use, uncomment the using namespace command below
-[let model : Model = getRootModel(root_model)]
-//using namespace [model.name.substitute(' ', '_')/]_types;
+[let nspace : String = c.qualifiedName.substitute('::'+c.name,'')]
+[let nameSpace : Sequence(String) = nspace.tokenize('::')]
+[for(s : String | nameSpace)]
+namespace [s/]{
+[/for]
 [/let]
-[/comment]
 
-namespace [(c.qualifiedName.substitute('::'+c.name,'')).substitute(' ','_')/]{
+
+
+[/let]
 class [c.name/]
 	: public RTT::TaskContext 
 {   [comment ports and services declaration/]
@@ -66,9 +70,10 @@ class [c.name/]
 [let elt : Element = c.oclAsType(Element)]
 			[for (sp : Port | getServicePort())]				
 				[let interface : Interface = sp.type]
+				[generateOrocosInterfaceHpp(interface, root_model)/]
 					[for (op : Operation | interface.getAllOperations())]
 						[if (isARequiredPort(sp))]
-		RTT::OperationCaller [op.name/];
+		RTT::OperationCaller [interface.name/]_[op.name/];
 						[/if]
        				[/for]
 				[/let]				
@@ -80,10 +85,15 @@ class [c.name/]
  		[for (port : Port | getInputPortsForElement(elt))] 
 			[if (isRobotMLDataType(root_model, port.type.name))]
 			[let ne : NamedElement = port.type.owner]
+[comment]			
+[for(s : Connector | getConnectionsFromPort(port))]
+         [getSourceComponentForConnector(s)/]
+[/for]
+[/comment]
 			[port.visibility/]: InputPort<[ne.name.replace('_datatypes', '_msgs')/]::[port.type.name/]> [port.name/];
 			[/let]
 			[else]
-			[port.visibility/]: InputPort<[port.type.name/]> [port.name/];
+			[port.visibility/]: InputPort<[port.type.qualifiedName/]> [port.name/];
 			[/if]
 		[/for]
   		[for (port : Port | getOutputPortsForElement(elt))]
@@ -142,7 +152,7 @@ class [c.name/]
 			[let interface : Interface = sp.type]
 				[for (op : Operation | interface.getAllOperations())]
 					[if (isARequiredPort(sp))]
-			, [op.name/] ("[op.name/]")
+			, [interface.name/]_[op.name/] ("[interface.name/]_[op.name/]")
 					[/if]
        			[/for]
 			[/let]				
@@ -173,7 +183,7 @@ class [c.name/]
 
 [comment adding operations to the constructor /]	
 	[for (op : Operation | c.getAllOperations())]
-		this->addOperation("[op.name/]", &[c.name/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
+		this->addOperation("[interface.name/]_[op.name/]", &[c.name/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
 			.doc("Description : [op.type.name.toUpperFirst()/]");
 		[/for]
 
@@ -183,12 +193,12 @@ class [c.name/]
 					[for (op : Operation | interface.getAllOperations())]
 						[if (isAProvidedPort(sp))]
 		this->provides("[interface.name/]")
-			->addOperation("[op.name.substitute(' ', '_')/]",&[(c.qualifiedName.substitute('::'+c.name,'')).substitute(' ','_')/]::[c.name.substitute(' ', '_')/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
+			->addOperation("[interface.name/]_[op.name/]/]",&[c.name/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
 				.doc("");
 						[/if]
 						[if (isARequiredPort(sp))]
 		this->requires("[interface.name/]")
-			->addOperationCaller([op.name/]);
+			->addOperationCaller([interface.name/]_[op.name/]);
 						[/if]
        				[/for]
 				[/let]				
@@ -248,7 +258,14 @@ class [c.name/]
 		// Your configuration cleanup code
 	}	
 };
+
+[let nspace : String = c.qualifiedName.substitute('::'+c.name,'')]
+[let nameSpace : Sequence(String) = nspace.tokenize('::')]
+[for(s : String | nameSpace)]
 }
+[/for]
+[/let]
+[/let]
 [/file]
 
 [/template]

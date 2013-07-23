@@ -14,8 +14,7 @@
 [file ( 'src/DataTypes/'+type.name.substitute(' ', '_')+'.hpp', false, 'UTF-8')]
 #ifndef _[type.name.toUpper()/]_H_
 #define _[type.name.toUpper()/]_H_
-[addType(type)/]
-
+[comment]
 [for (elt : Element | getDataTypesInElement(type))]
 [let type: Type = elt] 
 [if(isRobotMLDataType(m, type.name))]
@@ -23,16 +22,22 @@
 #include <[ne.name.replace('_datatypes', '_msgs')/]/[type.name/].hpp>
 [/let]
 [else]
-	[if(not isPrimitiveType(type))]
-#include "[((type.qualifiedName).replaceAll(' ', '_')).replaceAll('::', '/')/].h"	
-	[/if]
-[/if]
+
 [/let]
 [/for]
 
-#include "CppDataTypes.hpp"
-[comment get owner component and modify namespaces hierarchy/]
-namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_')/]{
+
+[/comment]
+
+#include "../DataTypes/CppDataTypes.hpp"
+[let nspace : String = type.qualifiedName.substitute('::'+type.name,'')]
+[let nameSpace : Sequence(String) = nspace.tokenize('::')]
+[for(s : String | nameSpace)]
+namespace [s/]{
+[/for]
+[/let]
+[/let]
+
 	[if(isEnumeration(type))]
 	enum [type.name/]{
 	[for (enumeration : EnumerationLiteral |getEnumeration(type))]
@@ -63,7 +68,7 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 		
 	[/let]	
 	[/for]	
-  };
+  
  	[for (op : Operation |getOperations(type))]
 		[let t :Type = op.type]
 
@@ -86,10 +91,12 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 			[elseif(t.name.equalsIgnoreCase('invalid') or t.name.size() = 0)]
 				 static void [op.name/](
 			[else]
+			[/if]
 			[/comment]
-		[/if]
 
-		[if(op.isAbstract and not op.isStatic)]
+			
+
+		[elseif(op.isAbstract and not op.isStatic)]
 			[if(isPrimitiveType(t))]
 				[if(t.name.equalsIgnoreCase('boolean'))]
 				[op.visibility/]: virtual bool [op.name/](
@@ -98,6 +105,31 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 				[/if]
 			[else]
 		 		 virtual [t.name/] [op.name/](		
+			[/if]
+
+			[comment in case of ros datatypes, uncomment]
+			[if(isRobotMLDataType(m, t.name))]
+				[let ne : NamedElement = t.owner]
+				[op.visibility/]: virtual [ne.name.replace('_datatypes', '_msgs')/]::[t.name/] [op.name/]( 
+				[/let]
+			[elseif(t.name.equalsIgnoreCase('invalid') or t.name.size() = 0)]
+				 virtual void [op.name/](
+			[else]
+		 		 virtual [t.name/] [op.name/](
+			[/if]
+			[/let]		
+			[/comment]
+
+			
+		[else]
+			[if(isPrimitiveType(t))]
+				[if(t.name.equalsIgnoreCase('boolean'))]
+				[op.visibility/]: bool [op.name/](
+				[else]
+				[op.visibility/]: [t.name/] [op.name/](
+				[/if]
+			[else]
+		 		 [t.name/] [op.name/](		
 			[/if]
 			[comment in case of ros datatypes, uncomment]
 			[if(isRobotMLDataType(m, t.name))]
@@ -109,8 +141,9 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 			[else]
 		 		 virtual [t.name/] [op.name/](		
 			[/comment]
-		[/if]
-		[/let]
+			[/if]
+			[/let]
+			
 		
 		[if(getOperationInputParameters(op) <> null)]
 		[for (input: Element | getOperationInputParameters(op))]
@@ -165,10 +198,19 @@ namespace [(type.qualifiedName.substitute('::'+type.name,'')).substitute(' ','_'
 			[/let]
 		[/for]
 		[/if]
-        )
+        );
     [/for]
-[/if]
 };
+[/if]
+
+[let nspace : String = type.qualifiedName.substitute('::'+type.name,'')]
+[let nameSpace : Sequence(String) = nspace.tokenize('::')]
+[for(s : String | nameSpace)]
+}
+[/for]
+[/let]
+[/let]
+
 #endif // _[type.name.toUpper()/]_H_
 [/file]
 [/if]

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Composite xmlns:j="clr-namespace:java.lang"
+	xmlns:ppel="clr-namespace:org.eclipse.papyrus.views.properties.widgets.layout"
+	xmlns:ppe="clr-namespace:org.eclipse.papyrus.views.properties.widgets" xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt">
+	<Composite.layout>
+		<ppel:PropertiesLayout></ppel:PropertiesLayout>
+	</Composite.layout>
+	<Composite>
+		<Composite.layout>
+			<ppel:PropertiesLayout numColumns="1"></ppel:PropertiesLayout>
+		</Composite.layout>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:NavSatStatus:STATUS_GBAS_FIX"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:NavSatStatus:SERVICE_GPS"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:NavSatStatus:status"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:NavSatStatus:service"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:NavSatStatus:STATUS_SBAS_FIX"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:NavSatStatus:SERVICE_GALILEO"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:NavSatStatus:STATUS_NO_FIX"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:NavSatStatus:STATUS_FIX"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:NavSatStatus:SERVICE_COMPASS"></ppe:StringEditor>
+		<ppe:StringEditor input="{Binding}"
+			property="ProteusLibraries:RobotML_ModelLibrary:RobotML_DataTypes:sensor_datatypes:NavSatStatus:SERVICE_GLONASS"></ppe:StringEditor>
+	</Composite>
+</Composite>

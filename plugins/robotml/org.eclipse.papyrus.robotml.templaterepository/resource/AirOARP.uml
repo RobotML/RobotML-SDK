@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/geometry_datatypes.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/geometry_datatypes.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
   <uml:Model xmi:id="_GqCd8HUwEeKtkpd6W4BP5g" name="Talc">
     <ownedComment xmi:type="uml:Comment" xmi:id="_GqCd8XUwEeKtkpd6W4BP5g">
       <body> RmaxSoftwareArchiteccture a implementer sous Orocos</body>
@@ -273,8 +273,12 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_GqDFDXUwEeKtkpd6W4BP5g" name="m_ts" visibility="private" type="_tF-4MHYcEeKPK8ZhPTxHOw"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_GqDFDnUwEeKtkpd6W4BP5g" name="m_width" visibility="private" type="_BBTMkHYcEeKPK8ZhPTxHOw"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_GqDFD3UwEeKtkpd6W4BP5g" name="m_height" visibility="private" type="_BBTMkHYcEeKPK8ZhPTxHOw"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_GqDFEHUwEeKtkpd6W4BP5g" name="m_color" visibility="private">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_GqDFEHUwEeKtkpd6W4BP5g" name="m_color" visibility="private" type="_pZxqgHdAEeKZYq0TRURVaw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-3OiINJnEeKpIOHUboD44g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-3RlcNJnEeKpIOHUboD44g" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_-3Wd8NJnEeKpIOHUboD44g">
+            <value xsi:nil="true"/>
+          </defaultValue>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_GqDFEXUwEeKtkpd6W4BP5g" name="m_pnm_image" visibility="private" type="_GqDFGHUwEeKtkpd6W4BP5g"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_GqDFEnUwEeKtkpd6W4BP5g" name="m_pixels" visibility="private" type="_GqDFGHUwEeKtkpd6W4BP5g"/>
@@ -287,8 +291,7 @@
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="_GqDFFHUwEeKtkpd6W4BP5g" name="Thumb">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_GqDFFXUwEeKtkpd6W4BP5g" name="m_data">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_6NJfkAKnEeCQReIOIWJ0nA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_GqDFFXUwEeKtkpd6W4BP5g" name="m_data" type="_zt6kANJqEeKpIOHUboD44g">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GqDFFnUwEeKtkpd6W4BP5g" value="230314"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GqDFF3UwEeKtkpd6W4BP5g" value="230314"/>
         </ownedAttribute>
@@ -306,7 +309,7 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_GqDFZXUwEeKtkpd6W4BP5g" name="setGainAutoMax"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_GqDFZnUwEeKtkpd6W4BP5g" name="getGainAutoMax"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_GqDFZ3UwEeKtkpd6W4BP5g" name="setShutter"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_GqDFaHUwEeKtkpd6W4BP5g" name="getShuter"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_GqDFaHUwEeKtkpd6W4BP5g" name="getShutter"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_GqDFaXUwEeKtkpd6W4BP5g" name="setShutterAuto"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_GqDFanUwEeKtkpd6W4BP5g" name="getShutterAuto"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_GqDFa3UwEeKtkpd6W4BP5g" name="setShutterAutoMin"/>
@@ -333,6 +336,7 @@
           <ownedAttribute xmi:type="uml:Port" xmi:id="_GqCeG3UwEeKtkpd6W4BP5g" name="CameraControlPro" type="_GqDFXXUwEeKtkpd6W4BP5g" aggregation="composite"/>
         </packagedElement>
       </packagedElement>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pZxqgHdAEeKZYq0TRURVaw" name="bool"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_tzG_wHYjEeKPK8ZhPTxHOw" name="Avionique">
       <packagedElement xmi:type="uml:DataType" xmi:id="_GqDFfHUwEeKtkpd6W4BP5g" name="Way">
@@ -583,7 +587,7 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_AYcbIHdAEeKZYq0TRURVaw" name="std::string"/>
-    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pZxqgHdAEeKZYq0TRURVaw" name="bool"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_zt6kANJqEeKpIOHUboD44g" name="unsigned char"/>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_GqDFgnUwEeKtkpd6W4BP5g">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GqDFg3UwEeKtkpd6W4BP5g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
@@ -592,17 +596,17 @@
     </profileApplication>
   </uml:Model>
   <RobotML:RoboticMiddleware xmi:id="_GqE6MHUwEeKtkpd6W4BP5g" base_Class="_GqCeAXUwEeKtkpd6W4BP5g"/>
-  <RobotML:CameraSystem xmi:id="_GqE6MXUwEeKtkpd6W4BP5g" base_Class="_GqCeAnUwEeKtkpd6W4BP5g" width="128" height="128" alpha_u="140.0" alpha_v="140.0" u0="64.0" v0="64.0">
+  <RobotML:CameraSystem xmi:id="_GqE6MXUwEeKtkpd6W4BP5g" base_Class="_GqCeAnUwEeKtkpd6W4BP5g" native="true" frequency="1.0" width="128" height="128" alpha_u="140.0" alpha_v="140.0" u0="64.0" v0="64.0">
     <translate xmi:type="RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes:Point32" xmi:id="_hGmi4MhfEeKRBcG405q6rA"/>
   </RobotML:CameraSystem>
   <RobotML:RoboticSimulator xmi:id="_GqE6MnUwEeKtkpd6W4BP5g" base_Class="_GqCeBXUwEeKtkpd6W4BP5g"/>
-  <RobotML:SensorSystem xmi:id="_GqE6M3UwEeKtkpd6W4BP5g" base_Class="_GqCeBnUwEeKtkpd6W4BP5g"/>
-  <RobotML:GPSSystem xmi:id="_GqE6NHUwEeKtkpd6W4BP5g" base_Class="_GqCeCHUwEeKtkpd6W4BP5g"/>
+  <RobotML:SensorSystem xmi:id="_GqE6M3UwEeKtkpd6W4BP5g" base_Class="_GqCeBnUwEeKtkpd6W4BP5g" native="true"/>
+  <RobotML:GPSSystem xmi:id="_GqE6NHUwEeKtkpd6W4BP5g" base_Class="_GqCeCHUwEeKtkpd6W4BP5g" native="true"/>
   <RobotML:RoboticMiddleware xmi:id="_GqE6NXUwEeKtkpd6W4BP5g" base_Class="_GqCeCnUwEeKtkpd6W4BP5g"/>
-  <RobotML:ActuatorSystem xmi:id="_GqE6NnUwEeKtkpd6W4BP5g" base_Class="_GqCeC3UwEeKtkpd6W4BP5g"/>
-  <RobotML:Environment xmi:id="_GqE6N3UwEeKtkpd6W4BP5g" base_Class="_GqCeDXUwEeKtkpd6W4BP5g"/>
+  <RobotML:ActuatorSystem xmi:id="_GqE6NnUwEeKtkpd6W4BP5g" base_Class="_GqCeC3UwEeKtkpd6W4BP5g" native="true" libraryComponentName="Destination"/>
+  <RobotML:Environment xmi:id="_GqE6N3UwEeKtkpd6W4BP5g" base_Class="_GqCeDXUwEeKtkpd6W4BP5g" native="true" libraryComponentName="land-1/trees"/>
   <RobotML:LidarSystem xmi:id="_GqE6OHUwEeKtkpd6W4BP5g"/>
-  <RobotML:Robot xmi:id="_GqE6OXUwEeKtkpd6W4BP5g" base_Class="_GqCeDnUwEeKtkpd6W4BP5g" kind="UAV"/>
+  <RobotML:Robot xmi:id="_GqE6OXUwEeKtkpd6W4BP5g" base_Class="_GqCeDnUwEeKtkpd6W4BP5g" native="true" libraryComponentName="RMax" kind="UAV"/>
   <RobotML:RoboticSystem xmi:id="_GqE6OnUwEeKtkpd6W4BP5g" base_Class="_GqCeD3UwEeKtkpd6W4BP5g" native="true"/>
   <RobotML:RoboticSystem xmi:id="_GqE6O3UwEeKtkpd6W4BP5g" base_Class="_GqCeFnUwEeKtkpd6W4BP5g" native="true"/>
   <RobotML:RoboticSystem xmi:id="_GqFhQHUwEeKtkpd6W4BP5g" base_Class="_GqCeHHUwEeKtkpd6W4BP5g"/>

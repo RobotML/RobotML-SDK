@@ -1,0 +1,2588 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:constraints="http://www.eclipse.org/papyrus/constraints/0.9" xmlns:contexts="http://www.eclipse.org/papyrus/properties/contexts/0.9">
+  <contexts:Context name="RobotML">
+    <dependencies href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#/"/>
+    <tabs label="RobotML" id="robotml" priority="100">
+      <sections name="Single Software" sectionFile="ui/SingleSoftware.xwt">
+        <widget href="ui/SingleSoftware.xwt#/"/>
+      </sections>
+      <sections name="Multiple Software" sectionFile="ui/MultipleSoftware.xwt">
+        <widget href="ui/MultipleSoftware.xwt#/"/>
+      </sections>
+      <sections name="Single System" sectionFile="ui/SingleSystem.xwt">
+        <widget href="ui/SingleSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple System" sectionFile="ui/MultipleSystem.xwt">
+        <widget href="ui/MultipleSystem.xwt#/"/>
+      </sections>
+      <sections name="Single ObjectTrackingSensorSystem" sectionFile="ui/SingleObjectTrackingSensorSystem.xwt">
+        <widget href="ui/SingleObjectTrackingSensorSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple ObjectTrackingSensorSystem" sectionFile="ui/MultipleObjectTrackingSensorSystem.xwt">
+        <widget href="ui/MultipleObjectTrackingSensorSystem.xwt#/"/>
+      </sections>
+      <sections name="Single SensorSystem" sectionFile="ui/SingleSensorSystem.xwt">
+        <widget href="ui/SingleSensorSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple SensorSystem" sectionFile="ui/MultipleSensorSystem.xwt">
+        <widget href="ui/MultipleSensorSystem.xwt#/"/>
+      </sections>
+      <sections name="Single RoboticSystem" sectionFile="ui/SingleRoboticSystem.xwt">
+        <widget href="ui/SingleRoboticSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple RoboticSystem" sectionFile="ui/MultipleRoboticSystem.xwt">
+        <widget href="ui/MultipleRoboticSystem.xwt#/"/>
+      </sections>
+      <sections name="Single Collection" sectionFile="ui/SingleCollection.xwt">
+        <widget href="ui/SingleCollection.xwt#/"/>
+      </sections>
+      <sections name="Multiple Collection" sectionFile="ui/MultipleCollection.xwt">
+        <widget href="ui/MultipleCollection.xwt#/"/>
+      </sections>
+      <sections name="Single AlgorithmLibrary" sectionFile="ui/SingleAlgorithmLibrary.xwt">
+        <widget href="ui/SingleAlgorithmLibrary.xwt#/"/>
+      </sections>
+      <sections name="Multiple AlgorithmLibrary" sectionFile="ui/MultipleAlgorithmLibrary.xwt">
+        <widget href="ui/MultipleAlgorithmLibrary.xwt#/"/>
+      </sections>
+      <sections name="Single SensorDriver" sectionFile="ui/SingleSensorDriver.xwt">
+        <widget href="ui/SingleSensorDriver.xwt#/"/>
+      </sections>
+      <sections name="Multiple SensorDriver" sectionFile="ui/MultipleSensorDriver.xwt">
+        <widget href="ui/MultipleSensorDriver.xwt#/"/>
+      </sections>
+      <sections name="Single LocalizationSensorSystem" sectionFile="ui/SingleLocalizationSensorSystem.xwt">
+        <widget href="ui/SingleLocalizationSensorSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple LocalizationSensorSystem" sectionFile="ui/MultipleLocalizationSensorSystem.xwt">
+        <widget href="ui/MultipleLocalizationSensorSystem.xwt#/"/>
+      </sections>
+      <sections name="Single LidarSystem" sectionFile="ui/SingleLidarSystem.xwt">
+        <widget href="ui/SingleLidarSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple LidarSystem" sectionFile="ui/MultipleLidarSystem.xwt">
+        <widget href="ui/MultipleLidarSystem.xwt#/"/>
+      </sections>
+      <sections name="Single ObjectDetectionSensorSystem" sectionFile="ui/SingleObjectDetectionSensorSystem.xwt">
+        <widget href="ui/SingleObjectDetectionSensorSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple ObjectDetectionSensorSystem" sectionFile="ui/MultipleObjectDetectionSensorSystem.xwt">
+        <widget href="ui/MultipleObjectDetectionSensorSystem.xwt#/"/>
+      </sections>
+      <sections name="Single Ground" sectionFile="ui/SingleGround.xwt">
+        <widget href="ui/SingleGround.xwt#/"/>
+      </sections>
+      <sections name="Multiple Ground" sectionFile="ui/MultipleGround.xwt">
+        <widget href="ui/MultipleGround.xwt#/"/>
+      </sections>
+      <sections name="Single Surface" sectionFile="ui/SingleSurface.xwt">
+        <widget href="ui/SingleSurface.xwt#/"/>
+      </sections>
+      <sections name="Multiple Surface" sectionFile="ui/MultipleSurface.xwt">
+        <widget href="ui/MultipleSurface.xwt#/"/>
+      </sections>
+      <sections name="Single PhysicalObject" sectionFile="ui/SinglePhysicalObject.xwt">
+        <widget href="ui/SinglePhysicalObject.xwt#/"/>
+      </sections>
+      <sections name="Multiple PhysicalObject" sectionFile="ui/MultiplePhysicalObject.xwt">
+        <widget href="ui/MultiplePhysicalObject.xwt#/"/>
+      </sections>
+      <sections name="Single Environment" sectionFile="ui/SingleEnvironment.xwt">
+        <widget href="ui/SingleEnvironment.xwt#/"/>
+      </sections>
+      <sections name="Multiple Environment" sectionFile="ui/MultipleEnvironment.xwt">
+        <widget href="ui/MultipleEnvironment.xwt#/"/>
+      </sections>
+      <sections name="Single Building" sectionFile="ui/SingleBuilding.xwt">
+        <widget href="ui/SingleBuilding.xwt#/"/>
+      </sections>
+      <sections name="Multiple Building" sectionFile="ui/MultipleBuilding.xwt">
+        <widget href="ui/MultipleBuilding.xwt#/"/>
+      </sections>
+      <sections name="Single WaterSurface" sectionFile="ui/SingleWaterSurface.xwt">
+        <widget href="ui/SingleWaterSurface.xwt#/"/>
+      </sections>
+      <sections name="Multiple WaterSurface" sectionFile="ui/MultipleWaterSurface.xwt">
+        <widget href="ui/MultipleWaterSurface.xwt#/"/>
+      </sections>
+      <sections name="Single Floor" sectionFile="ui/SingleFloor.xwt">
+        <widget href="ui/SingleFloor.xwt#/"/>
+      </sections>
+      <sections name="Multiple Floor" sectionFile="ui/MultipleFloor.xwt">
+        <widget href="ui/MultipleFloor.xwt#/"/>
+      </sections>
+      <sections name="Single EngineSystem" sectionFile="ui/SingleEngineSystem.xwt">
+        <widget href="ui/SingleEngineSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple EngineSystem" sectionFile="ui/MultipleEngineSystem.xwt">
+        <widget href="ui/MultipleEngineSystem.xwt#/"/>
+      </sections>
+      <sections name="Single ActuatorSystem" sectionFile="ui/SingleActuatorSystem.xwt">
+        <widget href="ui/SingleActuatorSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple ActuatorSystem" sectionFile="ui/MultipleActuatorSystem.xwt">
+        <widget href="ui/MultipleActuatorSystem.xwt#/"/>
+      </sections>
+      <sections name="Single Port" sectionFile="ui/SinglePort.xwt">
+        <widget href="ui/SinglePort.xwt#/"/>
+      </sections>
+      <sections name="Multiple Port" sectionFile="ui/MultiplePort.xwt">
+        <widget href="ui/MultiplePort.xwt#/"/>
+      </sections>
+      <sections name="Single ServicePort" sectionFile="ui/SingleServicePort.xwt">
+        <widget href="ui/SingleServicePort.xwt#/"/>
+      </sections>
+      <sections name="Multiple ServicePort" sectionFile="ui/MultipleServicePort.xwt">
+        <widget href="ui/MultipleServicePort.xwt#/"/>
+      </sections>
+      <sections name="Single Pedestrian" sectionFile="ui/SinglePedestrian.xwt">
+        <widget href="ui/SinglePedestrian.xwt#/"/>
+      </sections>
+      <sections name="Multiple Pedestrian" sectionFile="ui/MultiplePedestrian.xwt">
+        <widget href="ui/MultiplePedestrian.xwt#/"/>
+      </sections>
+      <sections name="Single Human" sectionFile="ui/SingleHuman.xwt">
+        <widget href="ui/SingleHuman.xwt#/"/>
+      </sections>
+      <sections name="Multiple Human" sectionFile="ui/MultipleHuman.xwt">
+        <widget href="ui/MultipleHuman.xwt#/"/>
+      </sections>
+      <sections name="Single Agent" sectionFile="ui/SingleAgent.xwt">
+        <widget href="ui/SingleAgent.xwt#/"/>
+      </sections>
+      <sections name="Multiple Agent" sectionFile="ui/MultipleAgent.xwt">
+        <widget href="ui/MultipleAgent.xwt#/"/>
+      </sections>
+      <sections name="Single Planet" sectionFile="ui/SinglePlanet.xwt">
+        <widget href="ui/SinglePlanet.xwt#/"/>
+      </sections>
+      <sections name="Multiple Planet" sectionFile="ui/MultiplePlanet.xwt">
+        <widget href="ui/MultiplePlanet.xwt#/"/>
+      </sections>
+      <sections name="Single BlenderMorse" sectionFile="ui/SingleBlenderMorse.xwt">
+        <widget href="ui/SingleBlenderMorse.xwt#/"/>
+      </sections>
+      <sections name="Multiple BlenderMorse" sectionFile="ui/MultipleBlenderMorse.xwt">
+        <widget href="ui/MultipleBlenderMorse.xwt#/"/>
+      </sections>
+      <sections name="Single RoboticSimulator" sectionFile="ui/SingleRoboticSimulator.xwt">
+        <widget href="ui/SingleRoboticSimulator.xwt#/"/>
+      </sections>
+      <sections name="Multiple RoboticSimulator" sectionFile="ui/MultipleRoboticSimulator.xwt">
+        <widget href="ui/MultipleRoboticSimulator.xwt#/"/>
+      </sections>
+      <sections name="Single Platform" sectionFile="ui/SinglePlatform.xwt">
+        <widget href="ui/SinglePlatform.xwt#/"/>
+      </sections>
+      <sections name="Multiple Platform" sectionFile="ui/MultiplePlatform.xwt">
+        <widget href="ui/MultiplePlatform.xwt#/"/>
+      </sections>
+      <sections name="Single Transition" sectionFile="ui/SingleTransition.xwt">
+        <widget href="ui/SingleTransition.xwt#/"/>
+      </sections>
+      <sections name="Multiple Transition" sectionFile="ui/MultipleTransition.xwt">
+        <widget href="ui/MultipleTransition.xwt#/"/>
+      </sections>
+      <sections name="Single Algorithm" sectionFile="ui/SingleAlgorithm.xwt">
+        <widget href="ui/SingleAlgorithm.xwt#/"/>
+      </sections>
+      <sections name="Multiple Algorithm" sectionFile="ui/MultipleAlgorithm.xwt">
+        <widget href="ui/MultipleAlgorithm.xwt#/"/>
+      </sections>
+      <sections name="Single Stairs" sectionFile="ui/SingleStairs.xwt">
+        <widget href="ui/SingleStairs.xwt#/"/>
+      </sections>
+      <sections name="Multiple Stairs" sectionFile="ui/MultipleStairs.xwt">
+        <widget href="ui/MultipleStairs.xwt#/"/>
+      </sections>
+      <sections name="Single ComposedData" sectionFile="ui/SingleComposedData.xwt">
+        <widget href="ui/SingleComposedData.xwt#/"/>
+      </sections>
+      <sections name="Multiple ComposedData" sectionFile="ui/MultipleComposedData.xwt">
+        <widget href="ui/MultipleComposedData.xwt#/"/>
+      </sections>
+      <sections name="Single Hardware" sectionFile="ui/SingleHardware.xwt">
+        <widget href="ui/SingleHardware.xwt#/"/>
+      </sections>
+      <sections name="Multiple Hardware" sectionFile="ui/MultipleHardware.xwt">
+        <widget href="ui/MultipleHardware.xwt#/"/>
+      </sections>
+      <sections name="Single LandSurface" sectionFile="ui/SingleLandSurface.xwt">
+        <widget href="ui/SingleLandSurface.xwt#/"/>
+      </sections>
+      <sections name="Multiple LandSurface" sectionFile="ui/MultipleLandSurface.xwt">
+        <widget href="ui/MultipleLandSurface.xwt#/"/>
+      </sections>
+      <sections name="Single PrimitiveData" sectionFile="ui/SinglePrimitiveData.xwt">
+        <widget href="ui/SinglePrimitiveData.xwt#/"/>
+      </sections>
+      <sections name="Multiple PrimitiveData" sectionFile="ui/MultiplePrimitiveData.xwt">
+        <widget href="ui/MultiplePrimitiveData.xwt#/"/>
+      </sections>
+      <sections name="Single GPSSystem" sectionFile="ui/SingleGPSSystem.xwt">
+        <widget href="ui/SingleGPSSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple GPSSystem" sectionFile="ui/MultipleGPSSystem.xwt">
+        <widget href="ui/MultipleGPSSystem.xwt#/"/>
+      </sections>
+      <sections name="Single SimulatedSystem" sectionFile="ui/SingleSimulatedSystem.xwt">
+        <widget href="ui/SingleSimulatedSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple SimulatedSystem" sectionFile="ui/MultipleSimulatedSystem.xwt">
+        <widget href="ui/MultipleSimulatedSystem.xwt#/"/>
+      </sections>
+      <sections name="Single State" sectionFile="ui/SingleState.xwt">
+        <widget href="ui/SingleState.xwt#/"/>
+      </sections>
+      <sections name="Multiple State" sectionFile="ui/MultipleState.xwt">
+        <widget href="ui/MultipleState.xwt#/"/>
+      </sections>
+      <sections name="Single DataFlowPort" sectionFile="ui/SingleDataFlowPort.xwt">
+        <widget href="ui/SingleDataFlowPort.xwt#/"/>
+      </sections>
+      <sections name="Multiple DataFlowPort" sectionFile="ui/MultipleDataFlowPort.xwt">
+        <widget href="ui/MultipleDataFlowPort.xwt#/"/>
+      </sections>
+      <sections name="Single Robot" sectionFile="ui/SingleRobot.xwt">
+        <widget href="ui/SingleRobot.xwt#/"/>
+      </sections>
+      <sections name="Multiple Robot" sectionFile="ui/MultipleRobot.xwt">
+        <widget href="ui/MultipleRobot.xwt#/"/>
+      </sections>
+      <sections name="Single WheelSystem" sectionFile="ui/SingleWheelSystem.xwt">
+        <widget href="ui/SingleWheelSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple WheelSystem" sectionFile="ui/MultipleWheelSystem.xwt">
+        <widget href="ui/MultipleWheelSystem.xwt#/"/>
+      </sections>
+      <sections name="Single CameraSystem" sectionFile="ui/SingleCameraSystem.xwt">
+        <widget href="ui/SingleCameraSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple CameraSystem" sectionFile="ui/MultipleCameraSystem.xwt">
+        <widget href="ui/MultipleCameraSystem.xwt#/"/>
+      </sections>
+      <sections name="Single ImageSensorSystem" sectionFile="ui/SingleImageSensorSystem.xwt">
+        <widget href="ui/SingleImageSensorSystem.xwt#/"/>
+      </sections>
+      <sections name="Multiple ImageSensorSystem" sectionFile="ui/MultipleImageSensorSystem.xwt">
+        <widget href="ui/MultipleImageSensorSystem.xwt#/"/>
+      </sections>
+      <sections name="Single PhysicalData" sectionFile="ui/SinglePhysicalData.xwt">
+        <widget href="ui/SinglePhysicalData.xwt#/"/>
+      </sections>
+      <sections name="Multiple PhysicalData" sectionFile="ui/MultiplePhysicalData.xwt">
+        <widget href="ui/MultiplePhysicalData.xwt#/"/>
+      </sections>
+      <sections name="Single RoboticMiddleware" sectionFile="ui/SingleRoboticMiddleware.xwt">
+        <widget href="ui/SingleRoboticMiddleware.xwt#/"/>
+      </sections>
+      <sections name="Multiple RoboticMiddleware" sectionFile="ui/MultipleRoboticMiddleware.xwt">
+        <widget href="ui/MultipleRoboticMiddleware.xwt#/"/>
+      </sections>
+      <sections name="Single CycabTK" sectionFile="ui/SingleCycabTK.xwt">
+        <widget href="ui/SingleCycabTK.xwt#/"/>
+      </sections>
+      <sections name="Multiple CycabTK" sectionFile="ui/MultipleCycabTK.xwt">
+        <widget href="ui/MultipleCycabTK.xwt#/"/>
+      </sections>
+    </tabs>
+    <views name="Single Software" sections="/0/@tabs.0/@sections.0" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.35">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleSoftware">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Software"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Software" sections="/0/@tabs.0/@sections.1" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.35">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleSoftware">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Software"/>
+      </constraints>
+    </views>
+    <views name="Single System" sections="/0/@tabs.0/@sections.2" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.27">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::System"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple System" sections="/0/@tabs.0/@sections.3" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.27">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::System"/>
+      </constraints>
+    </views>
+    <views name="Single ObjectTrackingSensorSystem" sections="/0/@tabs.0/@sections.4" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.24">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleObjectTrackingSensorSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::ObjectTrackingSensorSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple ObjectTrackingSensorSystem" sections="/0/@tabs.0/@sections.5" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.24">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleObjectTrackingSensorSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::ObjectTrackingSensorSystem"/>
+      </constraints>
+    </views>
+    <views name="Single SensorSystem" sections="/0/@tabs.0/@sections.6" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.21">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleSensorSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::SensorSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple SensorSystem" sections="/0/@tabs.0/@sections.7" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.21">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleSensorSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::SensorSystem"/>
+      </constraints>
+    </views>
+    <views name="Single RoboticSystem" sections="/0/@tabs.0/@sections.8" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleRoboticSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::RoboticSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple RoboticSystem" sections="/0/@tabs.0/@sections.9" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleRoboticSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::RoboticSystem"/>
+      </constraints>
+    </views>
+    <views name="Single Collection" sections="/0/@tabs.0/@sections.10" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.17">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleCollection">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Collection"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Collection" sections="/0/@tabs.0/@sections.11" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.17">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleCollection">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Collection"/>
+      </constraints>
+    </views>
+    <views name="Single AlgorithmLibrary" sections="/0/@tabs.0/@sections.12" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.5">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleAlgorithmLibrary">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::AlgorithmLibrary"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple AlgorithmLibrary" sections="/0/@tabs.0/@sections.13" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.5">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleAlgorithmLibrary">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::AlgorithmLibrary"/>
+      </constraints>
+    </views>
+    <views name="Single SensorDriver" sections="/0/@tabs.0/@sections.14" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.42">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleSensorDriver">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::SensorDriver"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple SensorDriver" sections="/0/@tabs.0/@sections.15" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.42">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleSensorDriver">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::SensorDriver"/>
+      </constraints>
+    </views>
+    <views name="Single LocalizationSensorSystem" sections="/0/@tabs.0/@sections.16" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.15">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleLocalizationSensorSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::LocalizationSensorSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple LocalizationSensorSystem" sections="/0/@tabs.0/@sections.17" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.15">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleLocalizationSensorSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::LocalizationSensorSystem"/>
+      </constraints>
+    </views>
+    <views name="Single LidarSystem" sections="/0/@tabs.0/@sections.18" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.28">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleLidarSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::LidarSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple LidarSystem" sections="/0/@tabs.0/@sections.19" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.28">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleLidarSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::LidarSystem"/>
+      </constraints>
+    </views>
+    <views name="Single ObjectDetectionSensorSystem" sections="/0/@tabs.0/@sections.20" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.41">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleObjectDetectionSensorSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::ObjectDetectionSensorSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple ObjectDetectionSensorSystem" sections="/0/@tabs.0/@sections.21" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.41">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleObjectDetectionSensorSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::ObjectDetectionSensorSystem"/>
+      </constraints>
+    </views>
+    <views name="Single Ground" sections="/0/@tabs.0/@sections.22" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.40">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleGround">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Ground"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Ground" sections="/0/@tabs.0/@sections.23" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.40">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleGround">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Ground"/>
+      </constraints>
+    </views>
+    <views name="Single Surface" sections="/0/@tabs.0/@sections.24" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleSurface">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Surface"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Surface" sections="/0/@tabs.0/@sections.25" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleSurface">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Surface"/>
+      </constraints>
+    </views>
+    <views name="Single PhysicalObject" sections="/0/@tabs.0/@sections.26" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.4">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePhysicalObject">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::PhysicalObject"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple PhysicalObject" sections="/0/@tabs.0/@sections.27" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.4">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePhysicalObject">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::PhysicalObject"/>
+      </constraints>
+    </views>
+    <views name="Single Environment" sections="/0/@tabs.0/@sections.28" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.14">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleEnvironment">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Environment"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Environment" sections="/0/@tabs.0/@sections.29" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.14">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleEnvironment">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Environment"/>
+      </constraints>
+    </views>
+    <views name="Single Building" sections="/0/@tabs.0/@sections.30" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.8">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleBuilding">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Building"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Building" sections="/0/@tabs.0/@sections.31" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.8">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleBuilding">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Building"/>
+      </constraints>
+    </views>
+    <views name="Single WaterSurface" sections="/0/@tabs.0/@sections.32" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.6">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleWaterSurface">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::WaterSurface"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple WaterSurface" sections="/0/@tabs.0/@sections.33" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.6">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleWaterSurface">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::WaterSurface"/>
+      </constraints>
+    </views>
+    <views name="Single Floor" sections="/0/@tabs.0/@sections.34" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.30">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleFloor">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Floor"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Floor" sections="/0/@tabs.0/@sections.35" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.30">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleFloor">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Floor"/>
+      </constraints>
+    </views>
+    <views name="Single EngineSystem" sections="/0/@tabs.0/@sections.36" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.11">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleEngineSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::EngineSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple EngineSystem" sections="/0/@tabs.0/@sections.37" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.11">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleEngineSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::EngineSystem"/>
+      </constraints>
+    </views>
+    <views name="Single ActuatorSystem" sections="/0/@tabs.0/@sections.38" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.25">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleActuatorSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::ActuatorSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple ActuatorSystem" sections="/0/@tabs.0/@sections.39" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.25">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleActuatorSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::ActuatorSystem"/>
+      </constraints>
+    </views>
+    <views name="Single Port" sections="/0/@tabs.0/@sections.40" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.44">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePort">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Port"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Port" sections="/0/@tabs.0/@sections.41" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.44">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePort">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Port"/>
+      </constraints>
+    </views>
+    <views name="Single ServicePort" sections="/0/@tabs.0/@sections.42" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.19">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleServicePort">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::ServicePort"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple ServicePort" sections="/0/@tabs.0/@sections.43" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.19">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleServicePort">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::ServicePort"/>
+      </constraints>
+    </views>
+    <views name="Single Pedestrian" sections="/0/@tabs.0/@sections.44" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.20">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePedestrian">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Pedestrian"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Pedestrian" sections="/0/@tabs.0/@sections.45" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.20">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePedestrian">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Pedestrian"/>
+      </constraints>
+    </views>
+    <views name="Single Human" sections="/0/@tabs.0/@sections.46" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.13">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleHuman">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Human"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Human" sections="/0/@tabs.0/@sections.47" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.13">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleHuman">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Human"/>
+      </constraints>
+    </views>
+    <views name="Single Agent" sections="/0/@tabs.0/@sections.48" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.3">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleAgent">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Agent"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Agent" sections="/0/@tabs.0/@sections.49" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.3">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleAgent">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Agent"/>
+      </constraints>
+    </views>
+    <views name="Single Planet" sections="/0/@tabs.0/@sections.50" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.36">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePlanet">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Planet"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Planet" sections="/0/@tabs.0/@sections.51" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.36">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePlanet">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Planet"/>
+      </constraints>
+    </views>
+    <views name="Single BlenderMorse" sections="/0/@tabs.0/@sections.52" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.18">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleBlenderMorse">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::BlenderMorse"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple BlenderMorse" sections="/0/@tabs.0/@sections.53" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.18">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleBlenderMorse">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::BlenderMorse"/>
+      </constraints>
+    </views>
+    <views name="Single RoboticSimulator" sections="/0/@tabs.0/@sections.54" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.9">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleRoboticSimulator">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::RoboticSimulator"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple RoboticSimulator" sections="/0/@tabs.0/@sections.55" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.9">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleRoboticSimulator">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::RoboticSimulator"/>
+      </constraints>
+    </views>
+    <views name="Single Platform" sections="/0/@tabs.0/@sections.56" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.23">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePlatform">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Platform"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Platform" sections="/0/@tabs.0/@sections.57" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.23">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePlatform">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Platform"/>
+      </constraints>
+    </views>
+    <views name="Single Transition" sections="/0/@tabs.0/@sections.58" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.45">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleTransition">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Transition"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Transition" sections="/0/@tabs.0/@sections.59" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.45">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleTransition">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Transition"/>
+      </constraints>
+    </views>
+    <views name="Single Algorithm" sections="/0/@tabs.0/@sections.60" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.37">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleAlgorithm">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Algorithm"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Algorithm" sections="/0/@tabs.0/@sections.61" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.37">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleAlgorithm">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Algorithm"/>
+      </constraints>
+    </views>
+    <views name="Single Stairs" sections="/0/@tabs.0/@sections.62" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.32">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleStairs">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Stairs"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Stairs" sections="/0/@tabs.0/@sections.63" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.32">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleStairs">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Stairs"/>
+      </constraints>
+    </views>
+    <views name="Single ComposedData" sections="/0/@tabs.0/@sections.64" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.34">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleComposedData">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::ComposedData"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple ComposedData" sections="/0/@tabs.0/@sections.65" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.34">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleComposedData">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::ComposedData"/>
+      </constraints>
+    </views>
+    <views name="Single Hardware" sections="/0/@tabs.0/@sections.66" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.31">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleHardware">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Hardware"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Hardware" sections="/0/@tabs.0/@sections.67" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.31">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleHardware">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Hardware"/>
+      </constraints>
+    </views>
+    <views name="Single LandSurface" sections="/0/@tabs.0/@sections.68" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.7">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleLandSurface">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::LandSurface"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple LandSurface" sections="/0/@tabs.0/@sections.69" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.7">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleLandSurface">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::LandSurface"/>
+      </constraints>
+    </views>
+    <views name="Single PrimitiveData" sections="/0/@tabs.0/@sections.70" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.46">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePrimitiveData">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::PrimitiveData"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple PrimitiveData" sections="/0/@tabs.0/@sections.71" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.46">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePrimitiveData">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::PrimitiveData"/>
+      </constraints>
+    </views>
+    <views name="Single GPSSystem" sections="/0/@tabs.0/@sections.72" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleGPSSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::GPSSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple GPSSystem" sections="/0/@tabs.0/@sections.73" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleGPSSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::GPSSystem"/>
+      </constraints>
+    </views>
+    <views name="Single SimulatedSystem" sections="/0/@tabs.0/@sections.74" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.10">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleSimulatedSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::SimulatedSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple SimulatedSystem" sections="/0/@tabs.0/@sections.75" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.10">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleSimulatedSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::SimulatedSystem"/>
+      </constraints>
+    </views>
+    <views name="Single State" sections="/0/@tabs.0/@sections.76" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.43">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleState">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::State"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple State" sections="/0/@tabs.0/@sections.77" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.43">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleState">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::State"/>
+      </constraints>
+    </views>
+    <views name="Single DataFlowPort" sections="/0/@tabs.0/@sections.78" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.26">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleDataFlowPort">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::DataFlowPort"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple DataFlowPort" sections="/0/@tabs.0/@sections.79" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.26">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleDataFlowPort">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::DataFlowPort"/>
+      </constraints>
+    </views>
+    <views name="Single Robot" sections="/0/@tabs.0/@sections.80" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.33">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleRobot">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Robot"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Robot" sections="/0/@tabs.0/@sections.81" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.33">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleRobot">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::Robot"/>
+      </constraints>
+    </views>
+    <views name="Single WheelSystem" sections="/0/@tabs.0/@sections.82" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.29">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleWheelSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::WheelSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple WheelSystem" sections="/0/@tabs.0/@sections.83" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.29">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleWheelSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::WheelSystem"/>
+      </constraints>
+    </views>
+    <views name="Single CameraSystem" sections="/0/@tabs.0/@sections.84" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.39">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleCameraSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::CameraSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple CameraSystem" sections="/0/@tabs.0/@sections.85" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.39">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleCameraSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::CameraSystem"/>
+      </constraints>
+    </views>
+    <views name="Single ImageSensorSystem" sections="/0/@tabs.0/@sections.86" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.22">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleImageSensorSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::ImageSensorSystem"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple ImageSensorSystem" sections="/0/@tabs.0/@sections.87" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.22">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleImageSensorSystem">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::ImageSensorSystem"/>
+      </constraints>
+    </views>
+    <views name="Single PhysicalData" sections="/0/@tabs.0/@sections.88" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.38">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePhysicalData">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::PhysicalData"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple PhysicalData" sections="/0/@tabs.0/@sections.89" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.38">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePhysicalData">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::PhysicalData"/>
+      </constraints>
+    </views>
+    <views name="Single RoboticMiddleware" sections="/0/@tabs.0/@sections.90" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.16">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleRoboticMiddleware">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::RoboticMiddleware"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple RoboticMiddleware" sections="/0/@tabs.0/@sections.91" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.16">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleRoboticMiddleware">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::RoboticMiddleware"/>
+      </constraints>
+    </views>
+    <views name="Single CycabTK" sections="/0/@tabs.0/@sections.92" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.12">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleCycabTK">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::CycabTK"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple CycabTK" sections="/0/@tabs.0/@sections.93" automaticContext="true" datacontexts="/0/@dataContexts.0/@elements.12">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleCycabTK">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="RobotML::CycabTK"/>
+      </constraints>
+    </views>
+    <dataContexts name="RobotML" label="RobotML">
+      <elements name="RoboticSystem" supertypes="/0/@dataContexts.0/@elements.27">
+        <properties name="localPosition"/>
+        <properties name="localOrientation"/>
+      </elements>
+      <elements name="Surface" supertypes="/0/@dataContexts.0/@elements.4"/>
+      <elements name="GPSSystem" supertypes="/0/@dataContexts.0/@elements.15">
+        <properties name="originPosition"/>
+      </elements>
+      <elements name="Agent" supertypes="/0/@dataContexts.0/@elements.4">
+        <properties name="movesOver" type="Reference"/>
+      </elements>
+      <elements name="PhysicalObject" supertypes="/0/@dataContexts.0/@elements.27">
+        <properties name="hasSurface" type="Reference"/>
+        <properties name="evelovesIn" type="Reference"/>
+      </elements>
+      <elements name="AlgorithmLibrary">
+        <properties name="path"/>
+        <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.45"/>
+      </elements>
+      <elements name="WaterSurface" supertypes="/0/@dataContexts.0/@elements.1"/>
+      <elements name="LandSurface" supertypes="/0/@dataContexts.0/@elements.40"/>
+      <elements name="Building" supertypes="/0/@dataContexts.0/@elements.4"/>
+      <elements name="RoboticSimulator" supertypes="/0/@dataContexts.0/@elements.23"/>
+      <elements name="SimulatedSystem">
+        <properties name="mesh"/>
+        <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.35"/>
+        <supertypes href="#/0/@dataContexts.0/@elements.35"/>
+      </elements>
+      <elements name="EngineSystem" supertypes="/0/@dataContexts.0/@elements.25">
+        <properties name="maxAllowedVelocity"/>
+        <properties name="vehicleTraction"/>
+        <properties name="maxBreakingForce"/>
+        <properties name="maxAllowedSteering"/>
+        <properties name="maxEngineForce"/>
+        <properties name="gear_ration"/>
+      </elements>
+      <elements name="CycabTK" supertypes="/0/@dataContexts.0/@elements.9">
+        <properties name="timeFactor"/>
+        <properties name="useRealTime" type="Boolean"/>
+        <properties name="timeStep"/>
+      </elements>
+      <elements name="Human" supertypes="/0/@dataContexts.0/@elements.3"/>
+      <elements name="Environment" supertypes="/0/@dataContexts.0/@elements.27"/>
+      <elements name="LocalizationSensorSystem" supertypes="/0/@dataContexts.0/@elements.21"/>
+      <elements name="RoboticMiddleware" supertypes="/0/@dataContexts.0/@elements.23">
+        <properties name="kind" type="Enumeration"/>
+      </elements>
+      <elements name="Collection">
+        <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.73"/>
+      </elements>
+      <elements name="BlenderMorse" supertypes="/0/@dataContexts.0/@elements.9"/>
+      <elements name="ServicePort" supertypes="/0/@dataContexts.0/@elements.44">
+        <properties name="kind" type="Enumeration"/>
+      </elements>
+      <elements name="Pedestrian" supertypes="/0/@dataContexts.0/@elements.13"/>
+      <elements name="SensorSystem" supertypes="/0/@dataContexts.0/@elements.0">
+        <properties name="frequency"/>
+      </elements>
+      <elements name="ImageSensorSystem" supertypes="/0/@dataContexts.0/@elements.21"/>
+      <elements name="Platform">
+        <supertypes href="#/0/@dataContexts.0/@elements.27"/>
+        <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.172"/>
+      </elements>
+      <elements name="ObjectTrackingSensorSystem" supertypes="/0/@dataContexts.0/@elements.21"/>
+      <elements name="ActuatorSystem" supertypes="/0/@dataContexts.0/@elements.0"/>
+      <elements name="DataFlowPort" supertypes="/0/@dataContexts.0/@elements.44">
+        <properties name="direction" type="Enumeration"/>
+        <properties name="bufferSize" type="Integer"/>
+      </elements>
+      <elements name="System">
+        <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.45"/>
+      </elements>
+      <elements name="LidarSystem" supertypes="/0/@dataContexts.0/@elements.41 /0/@dataContexts.0/@elements.24">
+        <properties name="range_max"/>
+        <properties name="angle_min"/>
+        <properties name="noise"/>
+        <properties name="nbLayers"/>
+        <properties name="sigmaNoise"/>
+        <properties name="range_min"/>
+        <properties name="layerAngleMin"/>
+        <properties name="time_increment "/>
+        <properties name="scan_time  "/>
+        <properties name="layerAngleStep"/>
+        <properties name="angle_max"/>
+      </elements>
+      <elements name="WheelSystem" supertypes="/0/@dataContexts.0/@elements.25">
+        <properties name="wheelVelocityPIDkd"/>
+        <properties name="typeOfWheel"/>
+        <properties name="wheelVelocityPIDmaxVal"/>
+        <properties name="wheelRadius"/>
+        <properties name="wheelSteeringPIDkp"/>
+        <properties name="suspensionStiffness"/>
+        <properties name="wheelWidth"/>
+        <properties name="suspensionDamping"/>
+        <properties name="wheelSteeringPIDkd"/>
+        <properties name="wheelVelocityPIDkp"/>
+        <properties name="suspensionCompression"/>
+        <properties name="wheelConnectionHeight"/>
+        <properties name="wheelFriction"/>
+        <properties name="wheelVelocityPIDki"/>
+        <properties name="wheelVelocityPIDmaxSum"/>
+        <properties name="suspensionRestLength"/>
+      </elements>
+      <elements name="Floor" supertypes="/0/@dataContexts.0/@elements.40"/>
+      <elements name="Hardware" supertypes="/0/@dataContexts.0/@elements.27"/>
+      <elements name="Stairs" supertypes="/0/@dataContexts.0/@elements.40"/>
+      <elements name="Robot" supertypes="/0/@dataContexts.0/@elements.27">
+        <properties name="width"/>
+        <properties name="ugvKind" type="Enumeration"/>
+        <properties name="mass"/>
+        <properties name="kind" type="Enumeration"/>
+      </elements>
+      <elements name="ComposedData">
+        <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.73"/>
+      </elements>
+      <elements name="Software" supertypes="/0/@dataContexts.0/@elements.27">
+        <properties name="period"/>
+        <properties name="isPeriodic" type="Boolean"/>
+        <properties name="wcet"/>
+        <properties name="priority"/>
+        <properties name="deadline"/>
+      </elements>
+      <elements name="Planet" supertypes="/0/@dataContexts.0/@elements.4"/>
+      <elements name="Algorithm">
+        <properties name="path"/>
+        <properties name="extFunctionName"/>
+        <properties name="isExternal" type="Boolean"/>
+        <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.42"/>
+      </elements>
+      <elements name="PhysicalData">
+        <properties name="unit" type="Enumeration"/>
+        <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.73"/>
+      </elements>
+      <elements name="CameraSystem" supertypes="/0/@dataContexts.0/@elements.22">
+        <properties name="width"/>
+        <properties name="alpha_v"/>
+        <properties name="u0"/>
+        <properties name="color_format"/>
+        <properties name="height"/>
+        <properties name="frequency"/>
+        <properties name="alpha_u"/>
+        <properties name="v0"/>
+      </elements>
+      <elements name="Ground" supertypes="/0/@dataContexts.0/@elements.1"/>
+      <elements name="ObjectDetectionSensorSystem" supertypes="/0/@dataContexts.0/@elements.21"/>
+      <elements name="SensorDriver" supertypes="/0/@dataContexts.0/@elements.35"/>
+      <elements name="State">
+        <properties name="operation" type="Reference"/>
+        <properties name="arguments" type="Reference"/>
+        <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.59"/>
+      </elements>
+      <elements name="Port">
+        <properties name="synchronizationPolicy" type="Enumeration"/>
+        <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.58"/>
+      </elements>
+      <elements name="Transition">
+        <properties name="effect" type="Reference"/>
+        <properties name="guard" type="Reference"/>
+        <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.55"/>
+      </elements>
+      <elements name="PrimitiveData">
+        <supertypes href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#//@dataContexts.0/@elements.94"/>
+      </elements>
+      <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@modelElementFactories.2"/>
+    </dataContexts>
+  </contexts:Context>
+  <contexts:Context name="ProteusLibraries">
+    <dependencies href="ppe:/context/org.eclipse.papyrus.uml.properties/Model/UML/UML.ctx#/"/>
+    <tabs label="ProteusLibraries" id="proteuslibraries" priority="100">
+      <sections name="Single GoalStatusArray" sectionFile="ui/SingleGoalStatusArray.xwt">
+        <widget href="ui/SingleGoalStatusArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple GoalStatusArray" sectionFile="ui/MultipleGoalStatusArray.xwt">
+        <widget href="ui/MultipleGoalStatusArray.xwt#/"/>
+      </sections>
+      <sections name="Single GoalStatus" sectionFile="ui/SingleGoalStatus.xwt">
+        <widget href="ui/SingleGoalStatus.xwt#/"/>
+      </sections>
+      <sections name="Multiple GoalStatus" sectionFile="ui/MultipleGoalStatus.xwt">
+        <widget href="ui/MultipleGoalStatus.xwt#/"/>
+      </sections>
+      <sections name="Single UInt32MultiArray" sectionFile="ui/SingleUInt32MultiArray.xwt">
+        <widget href="ui/SingleUInt32MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple UInt32MultiArray" sectionFile="ui/MultipleUInt32MultiArray.xwt">
+        <widget href="ui/MultipleUInt32MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Single MultiArrayLayout" sectionFile="ui/SingleMultiArrayLayout.xwt">
+        <widget href="ui/SingleMultiArrayLayout.xwt#/"/>
+      </sections>
+      <sections name="Multiple MultiArrayLayout" sectionFile="ui/MultipleMultiArrayLayout.xwt">
+        <widget href="ui/MultipleMultiArrayLayout.xwt#/"/>
+      </sections>
+      <sections name="Single MultiArrayDimension" sectionFile="ui/SingleMultiArrayDimension.xwt">
+        <widget href="ui/SingleMultiArrayDimension.xwt#/"/>
+      </sections>
+      <sections name="Multiple MultiArrayDimension" sectionFile="ui/MultipleMultiArrayDimension.xwt">
+        <widget href="ui/MultipleMultiArrayDimension.xwt#/"/>
+      </sections>
+      <sections name="Single Float32MultiArray" sectionFile="ui/SingleFloat32MultiArray.xwt">
+        <widget href="ui/SingleFloat32MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple Float32MultiArray" sectionFile="ui/MultipleFloat32MultiArray.xwt">
+        <widget href="ui/MultipleFloat32MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Single Int8MultiArray" sectionFile="ui/SingleInt8MultiArray.xwt">
+        <widget href="ui/SingleInt8MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple Int8MultiArray" sectionFile="ui/MultipleInt8MultiArray.xwt">
+        <widget href="ui/MultipleInt8MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Single UInt64MultiArray" sectionFile="ui/SingleUInt64MultiArray.xwt">
+        <widget href="ui/SingleUInt64MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple UInt64MultiArray" sectionFile="ui/MultipleUInt64MultiArray.xwt">
+        <widget href="ui/MultipleUInt64MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Single Int64MultiArray" sectionFile="ui/SingleInt64MultiArray.xwt">
+        <widget href="ui/SingleInt64MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple Int64MultiArray" sectionFile="ui/MultipleInt64MultiArray.xwt">
+        <widget href="ui/MultipleInt64MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Single ByteMultiArray" sectionFile="ui/SingleByteMultiArray.xwt">
+        <widget href="ui/SingleByteMultiArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple ByteMultiArray" sectionFile="ui/MultipleByteMultiArray.xwt">
+        <widget href="ui/MultipleByteMultiArray.xwt#/"/>
+      </sections>
+      <sections name="Single Float64MultiArray" sectionFile="ui/SingleFloat64MultiArray.xwt">
+        <widget href="ui/SingleFloat64MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple Float64MultiArray" sectionFile="ui/MultipleFloat64MultiArray.xwt">
+        <widget href="ui/MultipleFloat64MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Single Int16MultiArray" sectionFile="ui/SingleInt16MultiArray.xwt">
+        <widget href="ui/SingleInt16MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple Int16MultiArray" sectionFile="ui/MultipleInt16MultiArray.xwt">
+        <widget href="ui/MultipleInt16MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Single Int32MultiArray" sectionFile="ui/SingleInt32MultiArray.xwt">
+        <widget href="ui/SingleInt32MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple Int32MultiArray" sectionFile="ui/MultipleInt32MultiArray.xwt">
+        <widget href="ui/MultipleInt32MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Single ColorRGBA" sectionFile="ui/SingleColorRGBA.xwt">
+        <widget href="ui/SingleColorRGBA.xwt#/"/>
+      </sections>
+      <sections name="Multiple ColorRGBA" sectionFile="ui/MultipleColorRGBA.xwt">
+        <widget href="ui/MultipleColorRGBA.xwt#/"/>
+      </sections>
+      <sections name="Single UIint16MultiArray" sectionFile="ui/SingleUIint16MultiArray.xwt">
+        <widget href="ui/SingleUIint16MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple UIint16MultiArray" sectionFile="ui/MultipleUIint16MultiArray.xwt">
+        <widget href="ui/MultipleUIint16MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Single UInt8MultiArray" sectionFile="ui/SingleUInt8MultiArray.xwt">
+        <widget href="ui/SingleUInt8MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple UInt8MultiArray" sectionFile="ui/MultipleUInt8MultiArray.xwt">
+        <widget href="ui/MultipleUInt8MultiArray.xwt#/"/>
+      </sections>
+      <sections name="Single Header" sectionFile="ui/SingleHeader.xwt">
+        <widget href="ui/SingleHeader.xwt#/"/>
+      </sections>
+      <sections name="Multiple Header" sectionFile="ui/MultipleHeader.xwt">
+        <widget href="ui/MultipleHeader.xwt#/"/>
+      </sections>
+      <sections name="Single GoalID" sectionFile="ui/SingleGoalID.xwt">
+        <widget href="ui/SingleGoalID.xwt#/"/>
+      </sections>
+      <sections name="Multiple GoalID" sectionFile="ui/MultipleGoalID.xwt">
+        <widget href="ui/MultipleGoalID.xwt#/"/>
+      </sections>
+      <sections name="Single ChannelFloat32" sectionFile="ui/SingleChannelFloat32.xwt">
+        <widget href="ui/SingleChannelFloat32.xwt#/"/>
+      </sections>
+      <sections name="Multiple ChannelFloat32" sectionFile="ui/MultipleChannelFloat32.xwt">
+        <widget href="ui/MultipleChannelFloat32.xwt#/"/>
+      </sections>
+      <sections name="Single NavSatStatus" sectionFile="ui/SingleNavSatStatus.xwt">
+        <widget href="ui/SingleNavSatStatus.xwt#/"/>
+      </sections>
+      <sections name="Multiple NavSatStatus" sectionFile="ui/MultipleNavSatStatus.xwt">
+        <widget href="ui/MultipleNavSatStatus.xwt#/"/>
+      </sections>
+      <sections name="Single NavSatFix" sectionFile="ui/SingleNavSatFix.xwt">
+        <widget href="ui/SingleNavSatFix.xwt#/"/>
+      </sections>
+      <sections name="Multiple NavSatFix" sectionFile="ui/MultipleNavSatFix.xwt">
+        <widget href="ui/MultipleNavSatFix.xwt#/"/>
+      </sections>
+      <sections name="Single PointCloud" sectionFile="ui/SinglePointCloud.xwt">
+        <widget href="ui/SinglePointCloud.xwt#/"/>
+      </sections>
+      <sections name="Multiple PointCloud" sectionFile="ui/MultiplePointCloud.xwt">
+        <widget href="ui/MultiplePointCloud.xwt#/"/>
+      </sections>
+      <sections name="Single JointState" sectionFile="ui/SingleJointState.xwt">
+        <widget href="ui/SingleJointState.xwt#/"/>
+      </sections>
+      <sections name="Multiple JointState" sectionFile="ui/MultipleJointState.xwt">
+        <widget href="ui/MultipleJointState.xwt#/"/>
+      </sections>
+      <sections name="Single PointField" sectionFile="ui/SinglePointField.xwt">
+        <widget href="ui/SinglePointField.xwt#/"/>
+      </sections>
+      <sections name="Multiple PointField" sectionFile="ui/MultiplePointField.xwt">
+        <widget href="ui/MultiplePointField.xwt#/"/>
+      </sections>
+      <sections name="Single Image" sectionFile="ui/SingleImage.xwt">
+        <widget href="ui/SingleImage.xwt#/"/>
+      </sections>
+      <sections name="Multiple Image" sectionFile="ui/MultipleImage.xwt">
+        <widget href="ui/MultipleImage.xwt#/"/>
+      </sections>
+      <sections name="Single LaserScan" sectionFile="ui/SingleLaserScan.xwt">
+        <widget href="ui/SingleLaserScan.xwt#/"/>
+      </sections>
+      <sections name="Multiple LaserScan" sectionFile="ui/MultipleLaserScan.xwt">
+        <widget href="ui/MultipleLaserScan.xwt#/"/>
+      </sections>
+      <sections name="Single RegionOfInterest" sectionFile="ui/SingleRegionOfInterest.xwt">
+        <widget href="ui/SingleRegionOfInterest.xwt#/"/>
+      </sections>
+      <sections name="Multiple RegionOfInterest" sectionFile="ui/MultipleRegionOfInterest.xwt">
+        <widget href="ui/MultipleRegionOfInterest.xwt#/"/>
+      </sections>
+      <sections name="Single CompressedImage" sectionFile="ui/SingleCompressedImage.xwt">
+        <widget href="ui/SingleCompressedImage.xwt#/"/>
+      </sections>
+      <sections name="Multiple CompressedImage" sectionFile="ui/MultipleCompressedImage.xwt">
+        <widget href="ui/MultipleCompressedImage.xwt#/"/>
+      </sections>
+      <sections name="Single Imu" sectionFile="ui/SingleImu.xwt">
+        <widget href="ui/SingleImu.xwt#/"/>
+      </sections>
+      <sections name="Multiple Imu" sectionFile="ui/MultipleImu.xwt">
+        <widget href="ui/MultipleImu.xwt#/"/>
+      </sections>
+      <sections name="Single Vector3" sectionFile="ui/SingleVector3.xwt">
+        <widget href="ui/SingleVector3.xwt#/"/>
+      </sections>
+      <sections name="Multiple Vector3" sectionFile="ui/MultipleVector3.xwt">
+        <widget href="ui/MultipleVector3.xwt#/"/>
+      </sections>
+      <sections name="Single Quaternion" sectionFile="ui/SingleQuaternion.xwt">
+        <widget href="ui/SingleQuaternion.xwt#/"/>
+      </sections>
+      <sections name="Multiple Quaternion" sectionFile="ui/MultipleQuaternion.xwt">
+        <widget href="ui/MultipleQuaternion.xwt#/"/>
+      </sections>
+      <sections name="Single CameraInfo" sectionFile="ui/SingleCameraInfo.xwt">
+        <widget href="ui/SingleCameraInfo.xwt#/"/>
+      </sections>
+      <sections name="Multiple CameraInfo" sectionFile="ui/MultipleCameraInfo.xwt">
+        <widget href="ui/MultipleCameraInfo.xwt#/"/>
+      </sections>
+      <sections name="Single JoyFeedback" sectionFile="ui/SingleJoyFeedback.xwt">
+        <widget href="ui/SingleJoyFeedback.xwt#/"/>
+      </sections>
+      <sections name="Multiple JoyFeedback" sectionFile="ui/MultipleJoyFeedback.xwt">
+        <widget href="ui/MultipleJoyFeedback.xwt#/"/>
+      </sections>
+      <sections name="Single JoyFeedbackArray" sectionFile="ui/SingleJoyFeedbackArray.xwt">
+        <widget href="ui/SingleJoyFeedbackArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple JoyFeedbackArray" sectionFile="ui/MultipleJoyFeedbackArray.xwt">
+        <widget href="ui/MultipleJoyFeedbackArray.xwt#/"/>
+      </sections>
+      <sections name="Single Joy" sectionFile="ui/SingleJoy.xwt">
+        <widget href="ui/SingleJoy.xwt#/"/>
+      </sections>
+      <sections name="Multiple Joy" sectionFile="ui/MultipleJoy.xwt">
+        <widget href="ui/MultipleJoy.xwt#/"/>
+      </sections>
+      <sections name="Single PointCloud2" sectionFile="ui/SinglePointCloud2.xwt">
+        <widget href="ui/SinglePointCloud2.xwt#/"/>
+      </sections>
+      <sections name="Multiple PointCloud2" sectionFile="ui/MultiplePointCloud2.xwt">
+        <widget href="ui/MultiplePointCloud2.xwt#/"/>
+      </sections>
+      <sections name="Single Range" sectionFile="ui/SingleRange.xwt">
+        <widget href="ui/SingleRange.xwt#/"/>
+      </sections>
+      <sections name="Multiple Range" sectionFile="ui/MultipleRange.xwt">
+        <widget href="ui/MultipleRange.xwt#/"/>
+      </sections>
+      <sections name="Single Odometry" sectionFile="ui/SingleOdometry.xwt">
+        <widget href="ui/SingleOdometry.xwt#/"/>
+      </sections>
+      <sections name="Multiple Odometry" sectionFile="ui/MultipleOdometry.xwt">
+        <widget href="ui/MultipleOdometry.xwt#/"/>
+      </sections>
+      <sections name="Single TwistWithCovariance" sectionFile="ui/SingleTwistWithCovariance.xwt">
+        <widget href="ui/SingleTwistWithCovariance.xwt#/"/>
+      </sections>
+      <sections name="Multiple TwistWithCovariance" sectionFile="ui/MultipleTwistWithCovariance.xwt">
+        <widget href="ui/MultipleTwistWithCovariance.xwt#/"/>
+      </sections>
+      <sections name="Single Twist" sectionFile="ui/SingleTwist.xwt">
+        <widget href="ui/SingleTwist.xwt#/"/>
+      </sections>
+      <sections name="Multiple Twist" sectionFile="ui/MultipleTwist.xwt">
+        <widget href="ui/MultipleTwist.xwt#/"/>
+      </sections>
+      <sections name="Single PoseWithCovariance" sectionFile="ui/SinglePoseWithCovariance.xwt">
+        <widget href="ui/SinglePoseWithCovariance.xwt#/"/>
+      </sections>
+      <sections name="Multiple PoseWithCovariance" sectionFile="ui/MultiplePoseWithCovariance.xwt">
+        <widget href="ui/MultiplePoseWithCovariance.xwt#/"/>
+      </sections>
+      <sections name="Single Pose" sectionFile="ui/SinglePose.xwt">
+        <widget href="ui/SinglePose.xwt#/"/>
+      </sections>
+      <sections name="Multiple Pose" sectionFile="ui/MultiplePose.xwt">
+        <widget href="ui/MultiplePose.xwt#/"/>
+      </sections>
+      <sections name="Single Point" sectionFile="ui/SinglePoint.xwt">
+        <widget href="ui/SinglePoint.xwt#/"/>
+      </sections>
+      <sections name="Multiple Point" sectionFile="ui/MultiplePoint.xwt">
+        <widget href="ui/MultiplePoint.xwt#/"/>
+      </sections>
+      <sections name="Single Path" sectionFile="ui/SinglePath.xwt">
+        <widget href="ui/SinglePath.xwt#/"/>
+      </sections>
+      <sections name="Multiple Path" sectionFile="ui/MultiplePath.xwt">
+        <widget href="ui/MultiplePath.xwt#/"/>
+      </sections>
+      <sections name="Single PoseStamped" sectionFile="ui/SinglePoseStamped.xwt">
+        <widget href="ui/SinglePoseStamped.xwt#/"/>
+      </sections>
+      <sections name="Multiple PoseStamped" sectionFile="ui/MultiplePoseStamped.xwt">
+        <widget href="ui/MultiplePoseStamped.xwt#/"/>
+      </sections>
+      <sections name="Single GridCells" sectionFile="ui/SingleGridCells.xwt">
+        <widget href="ui/SingleGridCells.xwt#/"/>
+      </sections>
+      <sections name="Multiple GridCells" sectionFile="ui/MultipleGridCells.xwt">
+        <widget href="ui/MultipleGridCells.xwt#/"/>
+      </sections>
+      <sections name="Single OccupancyGrid" sectionFile="ui/SingleOccupancyGrid.xwt">
+        <widget href="ui/SingleOccupancyGrid.xwt#/"/>
+      </sections>
+      <sections name="Multiple OccupancyGrid" sectionFile="ui/MultipleOccupancyGrid.xwt">
+        <widget href="ui/MultipleOccupancyGrid.xwt#/"/>
+      </sections>
+      <sections name="Single MapMetaData" sectionFile="ui/SingleMapMetaData.xwt">
+        <widget href="ui/SingleMapMetaData.xwt#/"/>
+      </sections>
+      <sections name="Multiple MapMetaData" sectionFile="ui/MultipleMapMetaData.xwt">
+        <widget href="ui/MultipleMapMetaData.xwt#/"/>
+      </sections>
+      <sections name="Single KeyValue" sectionFile="ui/SingleKeyValue.xwt">
+        <widget href="ui/SingleKeyValue.xwt#/"/>
+      </sections>
+      <sections name="Multiple KeyValue" sectionFile="ui/MultipleKeyValue.xwt">
+        <widget href="ui/MultipleKeyValue.xwt#/"/>
+      </sections>
+      <sections name="Single DiagnosticStatus" sectionFile="ui/SingleDiagnosticStatus.xwt">
+        <widget href="ui/SingleDiagnosticStatus.xwt#/"/>
+      </sections>
+      <sections name="Multiple DiagnosticStatus" sectionFile="ui/MultipleDiagnosticStatus.xwt">
+        <widget href="ui/MultipleDiagnosticStatus.xwt#/"/>
+      </sections>
+      <sections name="Single DiagnosticArray" sectionFile="ui/SingleDiagnosticArray.xwt">
+        <widget href="ui/SingleDiagnosticArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple DiagnosticArray" sectionFile="ui/MultipleDiagnosticArray.xwt">
+        <widget href="ui/MultipleDiagnosticArray.xwt#/"/>
+      </sections>
+      <sections name="Single PointStamped" sectionFile="ui/SinglePointStamped.xwt">
+        <widget href="ui/SinglePointStamped.xwt#/"/>
+      </sections>
+      <sections name="Multiple PointStamped" sectionFile="ui/MultiplePointStamped.xwt">
+        <widget href="ui/MultiplePointStamped.xwt#/"/>
+      </sections>
+      <sections name="Single WrenchStamped" sectionFile="ui/SingleWrenchStamped.xwt">
+        <widget href="ui/SingleWrenchStamped.xwt#/"/>
+      </sections>
+      <sections name="Multiple WrenchStamped" sectionFile="ui/MultipleWrenchStamped.xwt">
+        <widget href="ui/MultipleWrenchStamped.xwt#/"/>
+      </sections>
+      <sections name="Single Wrench" sectionFile="ui/SingleWrench.xwt">
+        <widget href="ui/SingleWrench.xwt#/"/>
+      </sections>
+      <sections name="Multiple Wrench" sectionFile="ui/MultipleWrench.xwt">
+        <widget href="ui/MultipleWrench.xwt#/"/>
+      </sections>
+      <sections name="Single TwistStamped" sectionFile="ui/SingleTwistStamped.xwt">
+        <widget href="ui/SingleTwistStamped.xwt#/"/>
+      </sections>
+      <sections name="Multiple TwistStamped" sectionFile="ui/MultipleTwistStamped.xwt">
+        <widget href="ui/MultipleTwistStamped.xwt#/"/>
+      </sections>
+      <sections name="Single PolygonStamped" sectionFile="ui/SinglePolygonStamped.xwt">
+        <widget href="ui/SinglePolygonStamped.xwt#/"/>
+      </sections>
+      <sections name="Multiple PolygonStamped" sectionFile="ui/MultiplePolygonStamped.xwt">
+        <widget href="ui/MultiplePolygonStamped.xwt#/"/>
+      </sections>
+      <sections name="Single Polygon" sectionFile="ui/SinglePolygon.xwt">
+        <widget href="ui/SinglePolygon.xwt#/"/>
+      </sections>
+      <sections name="Multiple Polygon" sectionFile="ui/MultiplePolygon.xwt">
+        <widget href="ui/MultiplePolygon.xwt#/"/>
+      </sections>
+      <sections name="Single QuaternionStamped" sectionFile="ui/SingleQuaternionStamped.xwt">
+        <widget href="ui/SingleQuaternionStamped.xwt#/"/>
+      </sections>
+      <sections name="Multiple QuaternionStamped" sectionFile="ui/MultipleQuaternionStamped.xwt">
+        <widget href="ui/MultipleQuaternionStamped.xwt#/"/>
+      </sections>
+      <sections name="Single PoseWithCovarianceStamped" sectionFile="ui/SinglePoseWithCovarianceStamped.xwt">
+        <widget href="ui/SinglePoseWithCovarianceStamped.xwt#/"/>
+      </sections>
+      <sections name="Multiple PoseWithCovarianceStamped" sectionFile="ui/MultiplePoseWithCovarianceStamped.xwt">
+        <widget href="ui/MultiplePoseWithCovarianceStamped.xwt#/"/>
+      </sections>
+      <sections name="Single PoseArray" sectionFile="ui/SinglePoseArray.xwt">
+        <widget href="ui/SinglePoseArray.xwt#/"/>
+      </sections>
+      <sections name="Multiple PoseArray" sectionFile="ui/MultiplePoseArray.xwt">
+        <widget href="ui/MultiplePoseArray.xwt#/"/>
+      </sections>
+      <sections name="Single Vecto3Stamped" sectionFile="ui/SingleVecto3Stamped.xwt">
+        <widget href="ui/SingleVecto3Stamped.xwt#/"/>
+      </sections>
+      <sections name="Multiple Vecto3Stamped" sectionFile="ui/MultipleVecto3Stamped.xwt">
+        <widget href="ui/MultipleVecto3Stamped.xwt#/"/>
+      </sections>
+      <sections name="Single Transform" sectionFile="ui/SingleTransform.xwt">
+        <widget href="ui/SingleTransform.xwt#/"/>
+      </sections>
+      <sections name="Multiple Transform" sectionFile="ui/MultipleTransform.xwt">
+        <widget href="ui/MultipleTransform.xwt#/"/>
+      </sections>
+      <sections name="Single Pose2D" sectionFile="ui/SinglePose2D.xwt">
+        <widget href="ui/SinglePose2D.xwt#/"/>
+      </sections>
+      <sections name="Multiple Pose2D" sectionFile="ui/MultiplePose2D.xwt">
+        <widget href="ui/MultiplePose2D.xwt#/"/>
+      </sections>
+      <sections name="Single Point32" sectionFile="ui/SinglePoint32.xwt">
+        <widget href="ui/SinglePoint32.xwt#/"/>
+      </sections>
+      <sections name="Multiple Point32" sectionFile="ui/MultiplePoint32.xwt">
+        <widget href="ui/MultiplePoint32.xwt#/"/>
+      </sections>
+    </tabs>
+    <views name="Single GoalStatusArray" sections="/1/@tabs.0/@sections.0" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.1/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleGoalStatusArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::actionlib_datatypes::GoalStatusArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple GoalStatusArray" sections="/1/@tabs.0/@sections.1" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.1/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleGoalStatusArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::actionlib_datatypes::GoalStatusArray"/>
+      </constraints>
+    </views>
+    <views name="Single GoalStatus" sections="/1/@tabs.0/@sections.2" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.1/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleGoalStatus">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::actionlib_datatypes::GoalStatus"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple GoalStatus" sections="/1/@tabs.0/@sections.3" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.1/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleGoalStatus">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::actionlib_datatypes::GoalStatus"/>
+      </constraints>
+    </views>
+    <views name="Single UInt32MultiArray" sections="/1/@tabs.0/@sections.4" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleUInt32MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::UInt32MultiArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple UInt32MultiArray" sections="/1/@tabs.0/@sections.5" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleUInt32MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::UInt32MultiArray"/>
+      </constraints>
+    </views>
+    <views name="Single MultiArrayLayout" sections="/1/@tabs.0/@sections.6" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.9">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleMultiArrayLayout">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::MultiArrayLayout"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple MultiArrayLayout" sections="/1/@tabs.0/@sections.7" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.9">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleMultiArrayLayout">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::MultiArrayLayout"/>
+      </constraints>
+    </views>
+    <views name="Single MultiArrayDimension" sections="/1/@tabs.0/@sections.8" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.6">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleMultiArrayDimension">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::MultiArrayDimension"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple MultiArrayDimension" sections="/1/@tabs.0/@sections.9" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.6">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleMultiArrayDimension">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::MultiArrayDimension"/>
+      </constraints>
+    </views>
+    <views name="Single Float32MultiArray" sections="/1/@tabs.0/@sections.10" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.8">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleFloat32MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Float32MultiArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Float32MultiArray" sections="/1/@tabs.0/@sections.11" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.8">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleFloat32MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Float32MultiArray"/>
+      </constraints>
+    </views>
+    <views name="Single Int8MultiArray" sections="/1/@tabs.0/@sections.12" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleInt8MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Int8MultiArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Int8MultiArray" sections="/1/@tabs.0/@sections.13" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleInt8MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Int8MultiArray"/>
+      </constraints>
+    </views>
+    <views name="Single UInt64MultiArray" sections="/1/@tabs.0/@sections.14" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.12">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleUInt64MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::UInt64MultiArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple UInt64MultiArray" sections="/1/@tabs.0/@sections.15" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.12">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleUInt64MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::UInt64MultiArray"/>
+      </constraints>
+    </views>
+    <views name="Single Int64MultiArray" sections="/1/@tabs.0/@sections.16" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleInt64MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Int64MultiArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Int64MultiArray" sections="/1/@tabs.0/@sections.17" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleInt64MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Int64MultiArray"/>
+      </constraints>
+    </views>
+    <views name="Single ByteMultiArray" sections="/1/@tabs.0/@sections.18" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.13">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleByteMultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::ByteMultiArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple ByteMultiArray" sections="/1/@tabs.0/@sections.19" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.13">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleByteMultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::ByteMultiArray"/>
+      </constraints>
+    </views>
+    <views name="Single Float64MultiArray" sections="/1/@tabs.0/@sections.20" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.14">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleFloat64MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Float64MultiArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Float64MultiArray" sections="/1/@tabs.0/@sections.21" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.14">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleFloat64MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Float64MultiArray"/>
+      </constraints>
+    </views>
+    <views name="Single Int16MultiArray" sections="/1/@tabs.0/@sections.22" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.3">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleInt16MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Int16MultiArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Int16MultiArray" sections="/1/@tabs.0/@sections.23" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.3">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleInt16MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Int16MultiArray"/>
+      </constraints>
+    </views>
+    <views name="Single Int32MultiArray" sections="/1/@tabs.0/@sections.24" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.4">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleInt32MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Int32MultiArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Int32MultiArray" sections="/1/@tabs.0/@sections.25" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.4">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleInt32MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Int32MultiArray"/>
+      </constraints>
+    </views>
+    <views name="Single ColorRGBA" sections="/1/@tabs.0/@sections.26" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.7">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleColorRGBA">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::ColorRGBA"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple ColorRGBA" sections="/1/@tabs.0/@sections.27" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.7">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleColorRGBA">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::ColorRGBA"/>
+      </constraints>
+    </views>
+    <views name="Single UIint16MultiArray" sections="/1/@tabs.0/@sections.28" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.10">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleUIint16MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::UIint16MultiArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple UIint16MultiArray" sections="/1/@tabs.0/@sections.29" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.10">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleUIint16MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::UIint16MultiArray"/>
+      </constraints>
+    </views>
+    <views name="Single UInt8MultiArray" sections="/1/@tabs.0/@sections.30" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.11">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleUInt8MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::UInt8MultiArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple UInt8MultiArray" sections="/1/@tabs.0/@sections.31" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.11">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleUInt8MultiArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::UInt8MultiArray"/>
+      </constraints>
+    </views>
+    <views name="Single Header" sections="/1/@tabs.0/@sections.32" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.5">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleHeader">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Header"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Header" sections="/1/@tabs.0/@sections.33" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.0/@elements.5">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleHeader">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::std_datatypes::Header"/>
+      </constraints>
+    </views>
+    <views name="Single GoalID" sections="/1/@tabs.0/@sections.34" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.1/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleGoalID">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::actionlib_datatypes::GoalID"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple GoalID" sections="/1/@tabs.0/@sections.35" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.1/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleGoalID">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::actionlib_datatypes::GoalID"/>
+      </constraints>
+    </views>
+    <views name="Single ChannelFloat32" sections="/1/@tabs.0/@sections.36" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.9">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleChannelFloat32">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::ChannelFloat32"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple ChannelFloat32" sections="/1/@tabs.0/@sections.37" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.9">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleChannelFloat32">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::ChannelFloat32"/>
+      </constraints>
+    </views>
+    <views name="Single NavSatStatus" sections="/1/@tabs.0/@sections.38" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.11">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleNavSatStatus">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::NavSatStatus"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple NavSatStatus" sections="/1/@tabs.0/@sections.39" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.11">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleNavSatStatus">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::NavSatStatus"/>
+      </constraints>
+    </views>
+    <views name="Single NavSatFix" sections="/1/@tabs.0/@sections.40" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.16">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleNavSatFix">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::NavSatFix"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple NavSatFix" sections="/1/@tabs.0/@sections.41" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.16">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleNavSatFix">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::NavSatFix"/>
+      </constraints>
+    </views>
+    <views name="Single PointCloud" sections="/1/@tabs.0/@sections.42" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.3">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePointCloud">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::PointCloud"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple PointCloud" sections="/1/@tabs.0/@sections.43" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.3">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePointCloud">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::PointCloud"/>
+      </constraints>
+    </views>
+    <views name="Single JointState" sections="/1/@tabs.0/@sections.44" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.4">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleJointState">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::JointState"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple JointState" sections="/1/@tabs.0/@sections.45" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.4">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleJointState">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::JointState"/>
+      </constraints>
+    </views>
+    <views name="Single PointField" sections="/1/@tabs.0/@sections.46" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.6">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePointField">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::PointField"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple PointField" sections="/1/@tabs.0/@sections.47" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.6">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePointField">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::PointField"/>
+      </constraints>
+    </views>
+    <views name="Single Image" sections="/1/@tabs.0/@sections.48" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.5">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleImage">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::Image"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Image" sections="/1/@tabs.0/@sections.49" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.5">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleImage">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::Image"/>
+      </constraints>
+    </views>
+    <views name="Single LaserScan" sections="/1/@tabs.0/@sections.50" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.7">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleLaserScan">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::LaserScan"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple LaserScan" sections="/1/@tabs.0/@sections.51" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.7">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleLaserScan">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::LaserScan"/>
+      </constraints>
+    </views>
+    <views name="Single RegionOfInterest" sections="/1/@tabs.0/@sections.52" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.8">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleRegionOfInterest">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::RegionOfInterest"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple RegionOfInterest" sections="/1/@tabs.0/@sections.53" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.8">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleRegionOfInterest">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::RegionOfInterest"/>
+      </constraints>
+    </views>
+    <views name="Single CompressedImage" sections="/1/@tabs.0/@sections.54" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.10">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleCompressedImage">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::CompressedImage"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple CompressedImage" sections="/1/@tabs.0/@sections.55" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.10">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleCompressedImage">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::CompressedImage"/>
+      </constraints>
+    </views>
+    <views name="Single Imu" sections="/1/@tabs.0/@sections.56" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.12">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleImu">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::Imu"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Imu" sections="/1/@tabs.0/@sections.57" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.12">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleImu">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::Imu"/>
+      </constraints>
+    </views>
+    <views name="Single Vector3" sections="/1/@tabs.0/@sections.58" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.17">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleVector3">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Vector3"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Vector3" sections="/1/@tabs.0/@sections.59" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.17">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleVector3">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Vector3"/>
+      </constraints>
+    </views>
+    <views name="Single Quaternion" sections="/1/@tabs.0/@sections.60" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleQuaternion">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Quaternion"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Quaternion" sections="/1/@tabs.0/@sections.61" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleQuaternion">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Quaternion"/>
+      </constraints>
+    </views>
+    <views name="Single CameraInfo" sections="/1/@tabs.0/@sections.62" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleCameraInfo">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::CameraInfo"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple CameraInfo" sections="/1/@tabs.0/@sections.63" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleCameraInfo">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::CameraInfo"/>
+      </constraints>
+    </views>
+    <views name="Single JoyFeedback" sections="/1/@tabs.0/@sections.64" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.15">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleJoyFeedback">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::JoyFeedback"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple JoyFeedback" sections="/1/@tabs.0/@sections.65" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.15">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleJoyFeedback">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::JoyFeedback"/>
+      </constraints>
+    </views>
+    <views name="Single JoyFeedbackArray" sections="/1/@tabs.0/@sections.66" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleJoyFeedbackArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::JoyFeedbackArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple JoyFeedbackArray" sections="/1/@tabs.0/@sections.67" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleJoyFeedbackArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::JoyFeedbackArray"/>
+      </constraints>
+    </views>
+    <views name="Single Joy" sections="/1/@tabs.0/@sections.68" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.14">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleJoy">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::Joy"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Joy" sections="/1/@tabs.0/@sections.69" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.14">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleJoy">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::Joy"/>
+      </constraints>
+    </views>
+    <views name="Single PointCloud2" sections="/1/@tabs.0/@sections.70" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePointCloud2">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::PointCloud2"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple PointCloud2" sections="/1/@tabs.0/@sections.71" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePointCloud2">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::PointCloud2"/>
+      </constraints>
+    </views>
+    <views name="Single Range" sections="/1/@tabs.0/@sections.72" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.13">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleRange">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::Range"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Range" sections="/1/@tabs.0/@sections.73" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.5/@elements.13">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleRange">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::sensor_datatypes::Range"/>
+      </constraints>
+    </views>
+    <views name="Single Odometry" sections="/1/@tabs.0/@sections.74" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.6/@elements.3">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleOdometry">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::nav_datatypes::Odometry"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Odometry" sections="/1/@tabs.0/@sections.75" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.6/@elements.3">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleOdometry">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::nav_datatypes::Odometry"/>
+      </constraints>
+    </views>
+    <views name="Single TwistWithCovariance" sections="/1/@tabs.0/@sections.76" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleTwistWithCovariance">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::TwistWithCovariance"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple TwistWithCovariance" sections="/1/@tabs.0/@sections.77" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleTwistWithCovariance">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::TwistWithCovariance"/>
+      </constraints>
+    </views>
+    <views name="Single Twist" sections="/1/@tabs.0/@sections.78" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.9">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleTwist">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Twist"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Twist" sections="/1/@tabs.0/@sections.79" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.9">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleTwist">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Twist"/>
+      </constraints>
+    </views>
+    <views name="Single PoseWithCovariance" sections="/1/@tabs.0/@sections.80" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.14">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePoseWithCovariance">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::PoseWithCovariance"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple PoseWithCovariance" sections="/1/@tabs.0/@sections.81" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.14">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePoseWithCovariance">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::PoseWithCovariance"/>
+      </constraints>
+    </views>
+    <views name="Single Pose" sections="/1/@tabs.0/@sections.82" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.8">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePose">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Pose"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Pose" sections="/1/@tabs.0/@sections.83" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.8">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePose">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Pose"/>
+      </constraints>
+    </views>
+    <views name="Single Point" sections="/1/@tabs.0/@sections.84" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.15">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePoint">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Point"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Point" sections="/1/@tabs.0/@sections.85" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.15">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePoint">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Point"/>
+      </constraints>
+    </views>
+    <views name="Single Path" sections="/1/@tabs.0/@sections.86" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.6/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePath">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::nav_datatypes::Path"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Path" sections="/1/@tabs.0/@sections.87" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.6/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePath">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::nav_datatypes::Path"/>
+      </constraints>
+    </views>
+    <views name="Single PoseStamped" sections="/1/@tabs.0/@sections.88" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.3">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePoseStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::PoseStamped"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple PoseStamped" sections="/1/@tabs.0/@sections.89" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.3">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePoseStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::PoseStamped"/>
+      </constraints>
+    </views>
+    <views name="Single GridCells" sections="/1/@tabs.0/@sections.90" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.6/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleGridCells">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::nav_datatypes::GridCells"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple GridCells" sections="/1/@tabs.0/@sections.91" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.6/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleGridCells">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::nav_datatypes::GridCells"/>
+      </constraints>
+    </views>
+    <views name="Single OccupancyGrid" sections="/1/@tabs.0/@sections.92" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.6/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleOccupancyGrid">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::nav_datatypes::OccupancyGrid"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple OccupancyGrid" sections="/1/@tabs.0/@sections.93" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.6/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleOccupancyGrid">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::nav_datatypes::OccupancyGrid"/>
+      </constraints>
+    </views>
+    <views name="Single MapMetaData" sections="/1/@tabs.0/@sections.94" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.6/@elements.4">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleMapMetaData">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::nav_datatypes::MapMetaData"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple MapMetaData" sections="/1/@tabs.0/@sections.95" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.6/@elements.4">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleMapMetaData">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::nav_datatypes::MapMetaData"/>
+      </constraints>
+    </views>
+    <views name="Single KeyValue" sections="/1/@tabs.0/@sections.96" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.4/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleKeyValue">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::diagnostic_datatypes::KeyValue"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple KeyValue" sections="/1/@tabs.0/@sections.97" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.4/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleKeyValue">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::diagnostic_datatypes::KeyValue"/>
+      </constraints>
+    </views>
+    <views name="Single DiagnosticStatus" sections="/1/@tabs.0/@sections.98" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.4/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleDiagnosticStatus">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::diagnostic_datatypes::DiagnosticStatus"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple DiagnosticStatus" sections="/1/@tabs.0/@sections.99" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.4/@elements.2">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleDiagnosticStatus">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::diagnostic_datatypes::DiagnosticStatus"/>
+      </constraints>
+    </views>
+    <views name="Single DiagnosticArray" sections="/1/@tabs.0/@sections.100" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.4/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleDiagnosticArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::diagnostic_datatypes::DiagnosticArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple DiagnosticArray" sections="/1/@tabs.0/@sections.101" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.4/@elements.1">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleDiagnosticArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::diagnostic_datatypes::DiagnosticArray"/>
+      </constraints>
+    </views>
+    <views name="Single PointStamped" sections="/1/@tabs.0/@sections.102" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.18">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePointStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::PointStamped"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple PointStamped" sections="/1/@tabs.0/@sections.103" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.18">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePointStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::PointStamped"/>
+      </constraints>
+    </views>
+    <views name="Single WrenchStamped" sections="/1/@tabs.0/@sections.104" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.10">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleWrenchStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::WrenchStamped"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple WrenchStamped" sections="/1/@tabs.0/@sections.105" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.10">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleWrenchStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::WrenchStamped"/>
+      </constraints>
+    </views>
+    <views name="Single Wrench" sections="/1/@tabs.0/@sections.106" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.19">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleWrench">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Wrench"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Wrench" sections="/1/@tabs.0/@sections.107" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.19">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleWrench">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Wrench"/>
+      </constraints>
+    </views>
+    <views name="Single TwistStamped" sections="/1/@tabs.0/@sections.108" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.7">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleTwistStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::TwistStamped"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple TwistStamped" sections="/1/@tabs.0/@sections.109" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.7">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleTwistStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::TwistStamped"/>
+      </constraints>
+    </views>
+    <views name="Single PolygonStamped" sections="/1/@tabs.0/@sections.110" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.16">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePolygonStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::PolygonStamped"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple PolygonStamped" sections="/1/@tabs.0/@sections.111" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.16">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePolygonStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::PolygonStamped"/>
+      </constraints>
+    </views>
+    <views name="Single Polygon" sections="/1/@tabs.0/@sections.112" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.6">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePolygon">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Polygon"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Polygon" sections="/1/@tabs.0/@sections.113" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.6">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePolygon">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Polygon"/>
+      </constraints>
+    </views>
+    <views name="Single QuaternionStamped" sections="/1/@tabs.0/@sections.114" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.12">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleQuaternionStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::QuaternionStamped"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple QuaternionStamped" sections="/1/@tabs.0/@sections.115" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.12">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleQuaternionStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::QuaternionStamped"/>
+      </constraints>
+    </views>
+    <views name="Single PoseWithCovarianceStamped" sections="/1/@tabs.0/@sections.116" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.11">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePoseWithCovarianceStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::PoseWithCovarianceStamped"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple PoseWithCovarianceStamped" sections="/1/@tabs.0/@sections.117" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.11">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePoseWithCovarianceStamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::PoseWithCovarianceStamped"/>
+      </constraints>
+    </views>
+    <views name="Single PoseArray" sections="/1/@tabs.0/@sections.118" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.4">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePoseArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::PoseArray"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple PoseArray" sections="/1/@tabs.0/@sections.119" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.4">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePoseArray">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::PoseArray"/>
+      </constraints>
+    </views>
+    <views name="Single Vecto3Stamped" sections="/1/@tabs.0/@sections.120" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleVecto3Stamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Vecto3Stamped"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Vecto3Stamped" sections="/1/@tabs.0/@sections.121" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleVecto3Stamped">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Vecto3Stamped"/>
+      </constraints>
+    </views>
+    <views name="Single Transform" sections="/1/@tabs.0/@sections.122" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.5">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSingleTransform">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Transform"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Transform" sections="/1/@tabs.0/@sections.123" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.5">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultipleTransform">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Transform"/>
+      </constraints>
+    </views>
+    <views name="Single Pose2D" sections="/1/@tabs.0/@sections.124" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.13">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePose2D">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Pose2D"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Pose2D" sections="/1/@tabs.0/@sections.125" automaticContext="true" datacontexts="/1/@dataContexts.0/@elements.0/@elements.0/@elements.3/@elements.13">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePose2D">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Pose2D"/>
+      </constraints>
+    </views>
+    <views name="Single Point32" sections="/1/@tabs.0/@sections.126" automaticContext="true" datacontexts="/1/@dataContexts.1/@elements.0/@elements.0/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isSinglePoint32">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Point32"/>
+      </constraints>
+    </views>
+    <views elementMultiplicity="-1" name="Multiple Point32" sections="/1/@tabs.0/@sections.127" automaticContext="true" datacontexts="/1/@dataContexts.1/@elements.0/@elements.0/@elements.0">
+      <constraints xsi:type="constraints:SimpleConstraint" name="isMultiplePoint32">
+        <constraintType href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@constraintTypes.1"/>
+        <properties xsi:type="constraints:ValueProperty" name="stereotypeName" value="ProteusLibraries::RobotML_ModelLibrary::RobotML_DataTypes::geometry_datatypes::Point32"/>
+      </constraints>
+    </views>
+    <dataContexts name="ProteusLibraries" label="ProteusLibraries">
+      <elements xsi:type="contexts:DataContextPackage" name="RobotML_ModelLibrary">
+        <elements xsi:type="contexts:DataContextPackage" name="RobotML_DataTypes">
+          <elements xsi:type="contexts:DataContextPackage" name="std_datatypes">
+            <elements name="UInt32MultiArray">
+              <properties name="data"/>
+              <properties name="layout"/>
+            </elements>
+            <elements name="Int8MultiArray">
+              <properties name="layout"/>
+              <properties name="data"/>
+            </elements>
+            <elements name="Int64MultiArray">
+              <properties name="layout"/>
+              <properties name="data"/>
+            </elements>
+            <elements name="Int16MultiArray">
+              <properties name="data"/>
+              <properties name="layout"/>
+            </elements>
+            <elements name="Int32MultiArray">
+              <properties name="data"/>
+              <properties name="layout"/>
+            </elements>
+            <elements name="Header">
+              <properties name="frame_id"/>
+              <properties name="stamp"/>
+              <properties name="frame_id"/>
+              <properties name="seq"/>
+              <properties name="stamp"/>
+              <properties name="seq"/>
+            </elements>
+            <elements name="MultiArrayDimension">
+              <properties name="label"/>
+              <properties name="stride"/>
+              <properties name="size"/>
+            </elements>
+            <elements name="ColorRGBA">
+              <properties name="g"/>
+              <properties name="b"/>
+              <properties name="a"/>
+              <properties name="r"/>
+            </elements>
+            <elements name="Float32MultiArray">
+              <properties name="layout"/>
+              <properties name="data"/>
+            </elements>
+            <elements name="MultiArrayLayout">
+              <properties name="dim"/>
+              <properties name="data_offset"/>
+            </elements>
+            <elements name="UIint16MultiArray">
+              <properties name="data"/>
+              <properties name="layout"/>
+            </elements>
+            <elements name="UInt8MultiArray">
+              <properties name="data"/>
+              <properties name="layout"/>
+            </elements>
+            <elements name="UInt64MultiArray">
+              <properties name="layout"/>
+              <properties name="data"/>
+            </elements>
+            <elements name="ByteMultiArray">
+              <properties name="data"/>
+              <properties name="layout"/>
+            </elements>
+            <elements name="Float64MultiArray">
+              <properties name="data"/>
+              <properties name="layout"/>
+            </elements>
+          </elements>
+          <elements xsi:type="contexts:DataContextPackage" name="actionlib_datatypes">
+            <elements name="GoalStatus">
+              <properties name="PREEMPTED"/>
+              <properties name="ABORTED"/>
+              <properties name="REJECTED"/>
+              <properties name="LOST"/>
+              <properties name="PREEMPTING"/>
+              <properties name="ACTIVE"/>
+              <properties name="RECALLING"/>
+              <properties name="text"/>
+              <properties name="PENDING"/>
+              <properties name="SUCCEEDED"/>
+              <properties name="status"/>
+              <properties name="RECALLED"/>
+            </elements>
+            <elements name="GoalID">
+              <properties name="stamp"/>
+              <properties name="id"/>
+            </elements>
+            <elements name="GoalStatusArray">
+              <properties name="status_list"/>
+              <properties name="header"/>
+            </elements>
+          </elements>
+          <elements xsi:type="contexts:DataContextPackage" name="stereo_datatypes"/>
+          <elements xsi:type="contexts:DataContextPackage" name="geometry_datatypes">
+            <elements name="Vecto3Stamped">
+              <properties name="header"/>
+              <properties name="vector"/>
+            </elements>
+            <elements name="TwistWithCovariance">
+              <properties name="covariance"/>
+              <properties name="twist"/>
+            </elements>
+            <elements name="Quaternion">
+              <properties name="w"/>
+              <properties name="z"/>
+              <properties name="y"/>
+              <properties name="x"/>
+            </elements>
+            <elements name="PoseStamped">
+              <properties name="pose"/>
+              <properties name="header"/>
+              <properties name="header"/>
+              <properties name="pose"/>
+            </elements>
+            <elements name="PoseArray">
+              <properties name="poses"/>
+              <properties name="header"/>
+            </elements>
+            <elements name="Transform">
+              <properties name="rotation"/>
+              <properties name="translation"/>
+            </elements>
+            <elements name="Polygon">
+              <properties name="point"/>
+            </elements>
+            <elements name="TwistStamped">
+              <properties name="header"/>
+              <properties name="twist"/>
+            </elements>
+            <elements name="Pose">
+              <properties name="position"/>
+              <properties name="orientation"/>
+            </elements>
+            <elements name="Twist">
+              <properties name="angular"/>
+              <properties name="linear"/>
+            </elements>
+            <elements name="WrenchStamped">
+              <properties name="header"/>
+              <properties name="wrench"/>
+            </elements>
+            <elements name="PoseWithCovarianceStamped"/>
+            <elements name="QuaternionStamped">
+              <properties name="header"/>
+              <properties name="quaternion"/>
+            </elements>
+            <elements name="Pose2D">
+              <properties name="theta"/>
+              <properties name="y"/>
+              <properties name="x"/>
+            </elements>
+            <elements name="PoseWithCovariance">
+              <properties name="pose"/>
+              <properties name="covariance"/>
+            </elements>
+            <elements name="Point">
+              <properties name="y"/>
+              <properties name="x"/>
+              <properties name="z"/>
+            </elements>
+            <elements name="PolygonStamped">
+              <properties name="header"/>
+              <properties name="polygon"/>
+            </elements>
+            <elements name="Vector3">
+              <properties name="x"/>
+              <properties name="z"/>
+              <properties name="y"/>
+            </elements>
+            <elements name="PointStamped">
+              <properties name="point"/>
+              <properties name="header"/>
+            </elements>
+            <elements name="Wrench">
+              <properties name="force"/>
+              <properties name="torque"/>
+            </elements>
+          </elements>
+          <elements xsi:type="contexts:DataContextPackage" name="diagnostic_datatypes">
+            <elements name="KeyValue">
+              <properties name="value"/>
+              <properties name="key"/>
+            </elements>
+            <elements name="DiagnosticArray">
+              <properties name="status"/>
+              <properties name="header"/>
+              <properties name="values"/>
+            </elements>
+            <elements name="DiagnosticStatus">
+              <properties name="WARN"/>
+              <properties name="level"/>
+              <properties name="values"/>
+              <properties name="ERROR"/>
+              <properties name="hardware_id"/>
+              <properties name="OK"/>
+              <properties name="name"/>
+              <properties name="message"/>
+            </elements>
+          </elements>
+          <elements xsi:type="contexts:DataContextPackage" name="sensor_datatypes">
+            <elements name="JoyFeedbackArray">
+              <properties name="array"/>
+            </elements>
+            <elements name="CameraInfo">
+              <properties name="K"/>
+              <properties name="height"/>
+              <properties name="distorsion_model"/>
+              <properties name="beginning_y"/>
+              <properties name="header"/>
+              <properties name="D"/>
+              <properties name="width"/>
+              <properties name="beginning_x"/>
+              <properties name="R"/>
+              <properties name="P"/>
+              <properties name="roi"/>
+            </elements>
+            <elements name="PointCloud2">
+              <properties name="width"/>
+              <properties name="row_step"/>
+              <properties name="point_step"/>
+              <properties name="is_dense"/>
+              <properties name="data"/>
+              <properties name="height"/>
+              <properties name="header"/>
+              <properties name="fields"/>
+              <properties name="is_bigendian"/>
+            </elements>
+            <elements name="PointCloud">
+              <properties name="channels"/>
+              <properties name="points"/>
+              <properties name="header"/>
+            </elements>
+            <elements name="JointState">
+              <properties name="position"/>
+              <properties name="effort"/>
+              <properties name="velocity"/>
+              <properties name="name"/>
+            </elements>
+            <elements name="Image">
+              <properties name="is_bigendian"/>
+              <properties name="header"/>
+              <properties name="step"/>
+              <properties name="encoding"/>
+              <properties name="height"/>
+              <properties name="data"/>
+              <properties name="width"/>
+            </elements>
+            <elements name="PointField">
+              <properties name="offset"/>
+              <properties name="count"/>
+              <properties name="datatype"/>
+              <properties name="name"/>
+            </elements>
+            <elements name="LaserScan">
+              <properties name="range_min"/>
+              <properties name="range"/>
+              <properties name="angle_increment"/>
+              <properties name="header"/>
+              <properties name="time_increment"/>
+              <properties name="angle_min"/>
+              <properties name="range_max"/>
+              <properties name="scan_time"/>
+              <properties name="intensities"/>
+              <properties name="angle_max"/>
+            </elements>
+            <elements name="RegionOfInterest">
+              <properties name="do_rectify"/>
+              <properties name="height"/>
+              <properties name="x_offset"/>
+              <properties name="y_offset"/>
+            </elements>
+            <elements name="ChannelFloat32">
+              <properties name="values"/>
+              <properties name="name"/>
+            </elements>
+            <elements name="CompressedImage">
+              <properties name="data"/>
+              <properties name="format"/>
+              <properties name="header"/>
+            </elements>
+            <elements name="NavSatStatus">
+              <properties name="STATUS_GBAS_FIX"/>
+              <properties name="SERVICE_GPS"/>
+              <properties name="status"/>
+              <properties name="service"/>
+              <properties name="STATUS_SBAS_FIX"/>
+              <properties name="SERVICE_GALILEO"/>
+              <properties name="STATUS_NO_FIX"/>
+              <properties name="STATUS_FIX"/>
+              <properties name="SERVICE_COMPASS"/>
+              <properties name="SERVICE_GLONASS"/>
+            </elements>
+            <elements name="Imu">
+              <properties name="orientation"/>
+              <properties name="orientation_covariance"/>
+              <properties name="angular_velocity_covariance"/>
+              <properties name="header"/>
+              <properties name="linear_acceleration_covariance"/>
+              <properties name="angular_velocity"/>
+              <properties name="linear_acceleration"/>
+            </elements>
+            <elements name="Range">
+              <properties name="INFRARED"/>
+              <properties name="max_range"/>
+              <properties name="header"/>
+              <properties name="radiation_type"/>
+              <properties name="field_of_view"/>
+              <properties name="min_range"/>
+              <properties name="ULTRASOUND"/>
+              <properties name="range"/>
+            </elements>
+            <elements name="Joy">
+              <properties name="axes"/>
+              <properties name="header"/>
+              <properties name="buttons"/>
+            </elements>
+            <elements name="JoyFeedback">
+              <properties name="intensity"/>
+              <properties name="TYPE_BUZZER"/>
+              <properties name="type"/>
+              <properties name="TYPE_RUMBLE"/>
+              <properties name="TYPE_LED"/>
+              <properties name="id"/>
+            </elements>
+            <elements name="NavSatFix">
+              <properties name="STATUS_FIX"/>
+              <properties name="COVARIANCE_TYPE_UNKNOWN"/>
+              <properties name="longitude"/>
+              <properties name=" COVARIANCE_TYPE_DIAGONAL_KNOWN"/>
+              <properties name="STATUS_NO_FIX"/>
+              <properties name="service"/>
+              <properties name="SERVICE_GPS"/>
+              <properties name="SERVICE_COMPASS"/>
+              <properties name="COVARIANCE_TYPE_KNOWN"/>
+              <properties name="STATUS_GBAS_FIX"/>
+              <properties name="position_covariance_type"/>
+              <properties name="altitude"/>
+              <properties name="SERVICE_GALILEO"/>
+              <properties name="header"/>
+              <properties name="status"/>
+              <properties name="latitude"/>
+              <properties name="SERVICE_GLONASS"/>
+              <properties name="COVARIANCE_TYPE_APPROXIMATED"/>
+              <properties name="STATUS_SBAS_FIX"/>
+              <properties name="status"/>
+              <properties name="position_covariance"/>
+            </elements>
+          </elements>
+          <elements xsi:type="contexts:DataContextPackage" name="nav_datatypes">
+            <elements name="OccupancyGrid">
+              <properties name="header"/>
+              <properties name="info"/>
+              <properties name="data"/>
+            </elements>
+            <elements name="GridCells">
+              <properties name="cells"/>
+              <properties name="cell_height"/>
+              <properties name="header"/>
+              <properties name="cell_width"/>
+            </elements>
+            <elements name="Path">
+              <properties name="header"/>
+              <properties name="poses"/>
+            </elements>
+            <elements name="Odometry">
+              <properties name="header"/>
+              <properties name="pose"/>
+              <properties name="twist"/>
+              <properties name="child_frame_id"/>
+            </elements>
+            <elements name="MapMetaData">
+              <properties name="resolution"/>
+              <properties name="width"/>
+              <properties name="map_load_time"/>
+              <properties name="origin"/>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+      <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.uml.properties/Model/Environment.xmi#//@modelElementFactories.1"/>
+    </dataContexts>
+    <dataContexts name="Datatypes" label="Datatypes">
+      <elements xsi:type="contexts:DataContextPackage" name="RobotML_DataTypes">
+        <elements xsi:type="contexts:DataContextPackage" name="geometry_datatypes">
+          <elements name="Point32">
+            <properties name="y"/>
+            <properties name="x"/>
+            <properties name="z"/>
+          </elements>
+        </elements>
+        <elements xsi:type="contexts:DataContextPackage" name="sensor_datatypes">
+          <elements name="LaserScan">
+            <properties name="range_min"/>
+            <properties name="range"/>
+            <properties name="angle_increment"/>
+            <properties name="header"/>
+            <properties name="time_increment"/>
+            <properties name="angle_min"/>
+            <properties name="range_max"/>
+            <properties name="scan_time"/>
+            <properties name="intensities"/>
+            <properties name="angle_max"/>
+          </elements>
+        </elements>
+      </elements>
+      <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.robotml.properties.view/propertyView/Environment.xmi#//@modelElementFactories.0"/>
+    </dataContexts>
+  </contexts:Context>
+</xmi:XMI>

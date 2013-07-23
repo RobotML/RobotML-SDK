@@ -121,6 +121,30 @@ public class DeploymentQueries {
 	
 	
 	/**
+	 * Return the parent instance of an instance
+	 * @param model
+	 * @param inst
+	 * @return Parent instance of an instance
+	 */
+	static public InstanceSpecification getParentInstanceSpecification(org.eclipse.uml2.uml.Model model, InstanceSpecification inst)
+	{
+		java.lang.String parentName = getParentName(inst);
+		if(parentName != null)
+		{
+			for(InstanceSpecification instanceSpecification : getInstanceSpecificationsInModel(model)) {
+				//System.out.println(instanceSpecification.getName() + " / " +  parentName + " / " + inst.getName());
+				if(instanceSpecification.getName().equals(parentName))
+				{
+					//System.out.println("  OK");
+					return instanceSpecification;
+				}
+			}
+		}
+		
+		return null;
+	}
+	
+	/**
 	 * Get real instance from InstanceSpecification object
 	 * @param model
 	 * @param instanceSpecification

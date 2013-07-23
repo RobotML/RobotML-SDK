@@ -25,7 +25,7 @@ self:SetLocalRotation([removeBrackets(rotation)/])
 	[/let]
 	[/let]
 
---[protected ('User defined code')]
+--[protected (aClass.name + ' common')]
 
 --[/protected]
 

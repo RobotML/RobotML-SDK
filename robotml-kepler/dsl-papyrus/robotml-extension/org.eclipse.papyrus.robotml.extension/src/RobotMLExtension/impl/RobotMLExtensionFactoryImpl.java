@@ -27,7 +27,7 @@ public class RobotMLExtensionFactoryImpl extends EFactoryImpl implements RobotML
 	 */
 	public static RobotMLExtensionFactory init() {
 		try {
-			RobotMLExtensionFactory theRobotMLExtensionFactory = (RobotMLExtensionFactory)EPackage.Registry.INSTANCE.getEFactory("http://papyrus/RobotML/Extension/1.0"); 
+			RobotMLExtensionFactory theRobotMLExtensionFactory = (RobotMLExtensionFactory)EPackage.Registry.INSTANCE.getEFactory(RobotMLExtensionPackage.eNS_URI);
 			if (theRobotMLExtensionFactory != null) {
 				return theRobotMLExtensionFactory;
 			}

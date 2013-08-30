@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
@@ -29,13 +29,13 @@ import org.eclipse.uml2.uml.DataType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link RobotMLExtension.impl.UnionImpl#getTypes <em>Types</em>}</li>
- *   <li>{@link RobotMLExtension.impl.UnionImpl#getBaseDataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.UnionImpl#getBase_DataType <em>Base Data Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class UnionImpl extends EObjectImpl implements Union {
+public class UnionImpl extends MinimalEObjectImpl.Container implements Union {
 	/**
 	 * The cached value of the '{@link #getTypes() <em>Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -47,14 +47,14 @@ public class UnionImpl extends EObjectImpl implements Union {
 	protected EList<DataType> types;
 
 	/**
-	 * The cached value of the '{@link #getBaseDataType() <em>Base Data Type</em>}' reference.
+	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBaseDataType()
+	 * @see #getBase_DataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType baseDataType;
+	protected DataType base_DataType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,16 +92,16 @@ public class UnionImpl extends EObjectImpl implements Union {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getBaseDataType() {
-		if (baseDataType != null && baseDataType.eIsProxy()) {
-			InternalEObject oldBaseDataType = (InternalEObject)baseDataType;
-			baseDataType = (DataType)eResolveProxy(oldBaseDataType);
-			if (baseDataType != oldBaseDataType) {
+	public DataType getBase_DataType() {
+		if (base_DataType != null && base_DataType.eIsProxy()) {
+			InternalEObject oldBase_DataType = (InternalEObject)base_DataType;
+			base_DataType = (DataType)eResolveProxy(oldBase_DataType);
+			if (base_DataType != oldBase_DataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.UNION__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.UNION__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
 			}
 		}
-		return baseDataType;
+		return base_DataType;
 	}
 
 	/**
@@ -109,8 +109,8 @@ public class UnionImpl extends EObjectImpl implements Union {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetBaseDataType() {
-		return baseDataType;
+	public DataType basicGetBase_DataType() {
+		return base_DataType;
 	}
 
 	/**
@@ -118,11 +118,11 @@ public class UnionImpl extends EObjectImpl implements Union {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBaseDataType(DataType newBaseDataType) {
-		DataType oldBaseDataType = baseDataType;
-		baseDataType = newBaseDataType;
+	public void setBase_DataType(DataType newBase_DataType) {
+		DataType oldBase_DataType = base_DataType;
+		base_DataType = newBase_DataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.UNION__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.UNION__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
 	}
 
 	/**
@@ -136,8 +136,8 @@ public class UnionImpl extends EObjectImpl implements Union {
 			case RobotMLExtensionPackage.UNION__TYPES:
 				return getTypes();
 			case RobotMLExtensionPackage.UNION__BASE_DATA_TYPE:
-				if (resolve) return getBaseDataType();
-				return basicGetBaseDataType();
+				if (resolve) return getBase_DataType();
+				return basicGetBase_DataType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -156,7 +156,7 @@ public class UnionImpl extends EObjectImpl implements Union {
 				getTypes().addAll((Collection<? extends DataType>)newValue);
 				return;
 			case RobotMLExtensionPackage.UNION__BASE_DATA_TYPE:
-				setBaseDataType((DataType)newValue);
+				setBase_DataType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -174,7 +174,7 @@ public class UnionImpl extends EObjectImpl implements Union {
 				getTypes().clear();
 				return;
 			case RobotMLExtensionPackage.UNION__BASE_DATA_TYPE:
-				setBaseDataType((DataType)null);
+				setBase_DataType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -191,7 +191,7 @@ public class UnionImpl extends EObjectImpl implements Union {
 			case RobotMLExtensionPackage.UNION__TYPES:
 				return types != null && !types.isEmpty();
 			case RobotMLExtensionPackage.UNION__BASE_DATA_TYPE:
-				return baseDataType != null;
+				return base_DataType != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -33,4 +33,18 @@
       </package>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated RobotMLExtension -->
+      <package
+            uri="http://papyrus/RobotML/Extension/1.0"
+            class="RobotMLExtension.RobotMLExtensionPackage"
+            genModel="model/RobotMLExtension.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated RobotMLExtension -->
+      <parser
+            type="robotmlextension"
+            class="RobotMLExtension.util.RobotMLExtensionResourceFactoryImpl"/>
+   </extension>
 </plugin>

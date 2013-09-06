@@ -20,7 +20,6 @@ import org.eclipse.uml2.uml.Transition;
 import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.FSMQueries;
 import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
-import org.eclipse.robotml.generators.acceleo.athena.files.AthenaServices;
 import org.eclipse.robotml.generators.acceleo.athena.files.configGenerator;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehavioralFeature;
@@ -46,12 +45,6 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.Vertex;
 import org.eclipse.uml2.uml.util.UMLUtil;
-
-import org.xtext.athenaDSL.ProcessingDeclaration;
-
-import RobotMLExtension.Map;
-import RobotMLExtension.Vector;
-import RobotMLExtension.Array;
 import RobotMLExtension.Define;
 import RobotMLExtension.Union;
 
@@ -1468,18 +1461,18 @@ public class SpecificQueries {
 			if(UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Vector.class) != null)
 			{
 				RobotMLExtension.Vector tmp = UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Vector.class);
-				result.add(tmp.getTypeTemplate().getName());
+				result.add(tmp.getType_template().getName());
 			}
 			else if(UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Array.class) != null)
 			{
 				RobotMLExtension.Array tmp = UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Array.class);
-				result.add(tmp.getTypeTemplate().getName());
+				result.add(tmp.getType_template().getName());
 			}
 			else if(UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Map.class) != null)
 			{
 				RobotMLExtension.Map tmp = UMLUtil.getStereotypeApplication(ne, RobotMLExtension.Map.class);
-				result.add(tmp.getKeysType().getName());
-				result.add(tmp.getValuesType().getName());
+				result.add(tmp.getKeys_type().getName());
+				result.add(tmp.getValues_type().getName());
 			}
 			
 		}

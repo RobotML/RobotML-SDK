@@ -18,7 +18,7 @@
         <acceleoCompiler 
             sourceFolder="${target.folder}"
             outputFolder="${target.folder}"
-            dependencies="${target.folder}/../../org.eclipse.robotml.generators.acceleo;${target.folder}/../../org.xtext.AthenaDSL;${target.folder}/../../org.eclipse.robotml.generators.acceleo.alf;"
+            dependencies="${target.folder}/../../org.eclipse.robotml.generators.acceleo;${target.folder}/../../org.eclipse.papyrus.robotml.extension;${target.folder}/../../org.xtext.AthenaDSL;${target.folder}/../../org.eclipse.robotml.generators.acceleo.alf;"
             binaryResource="false"
             packagesToRegister="">
         </acceleoCompiler>

@@ -1,11 +1,10 @@
 [comment encoding = UTF-8 /]
 [module generatePrototypes('http://www.eclipse.org/uml2/3.0.0/UML', 'http://Papyrus/RobotML/1', 'http://www.eclipse.org/papyrus/alf/Alf')/]
 
-[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /] 
-[import org::eclipse::robotml::generators::acceleo::mmqueries::FSMQueries /]
-[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /] 
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::FSMQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries /]
-[import org::eclipse::robotml::generators::acceleo::alf::main::AlfServices/]
 
 [template public generatePrototypes(model : Model)]
 		

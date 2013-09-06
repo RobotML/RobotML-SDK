@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.uml2.uml.DataType;
 
@@ -23,14 +23,14 @@ import org.eclipse.uml2.uml.DataType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link RobotMLExtension.impl.VectorImpl#getSize <em>Size</em>}</li>
- *   <li>{@link RobotMLExtension.impl.VectorImpl#getTypeTemplate <em>Type Template</em>}</li>
- *   <li>{@link RobotMLExtension.impl.VectorImpl#getBaseDataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.VectorImpl#getType_template <em>Type template</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.VectorImpl#getBase_DataType <em>Base Data Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class VectorImpl extends EObjectImpl implements Vector {
+public class VectorImpl extends MinimalEObjectImpl.Container implements Vector {
 	/**
 	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -52,24 +52,24 @@ public class VectorImpl extends EObjectImpl implements Vector {
 	protected int size = SIZE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTypeTemplate() <em>Type Template</em>}' reference.
+	 * The cached value of the '{@link #getType_template() <em>Type template</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTypeTemplate()
+	 * @see #getType_template()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType typeTemplate;
+	protected DataType type_template;
 
 	/**
-	 * The cached value of the '{@link #getBaseDataType() <em>Base Data Type</em>}' reference.
+	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBaseDataType()
+	 * @see #getBase_DataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType baseDataType;
+	protected DataType base_DataType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,16 +116,16 @@ public class VectorImpl extends EObjectImpl implements Vector {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getTypeTemplate() {
-		if (typeTemplate != null && typeTemplate.eIsProxy()) {
-			InternalEObject oldTypeTemplate = (InternalEObject)typeTemplate;
-			typeTemplate = (DataType)eResolveProxy(oldTypeTemplate);
-			if (typeTemplate != oldTypeTemplate) {
+	public DataType getType_template() {
+		if (type_template != null && type_template.eIsProxy()) {
+			InternalEObject oldType_template = (InternalEObject)type_template;
+			type_template = (DataType)eResolveProxy(oldType_template);
+			if (type_template != oldType_template) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.VECTOR__TYPE_TEMPLATE, oldTypeTemplate, typeTemplate));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.VECTOR__TYPE_TEMPLATE, oldType_template, type_template));
 			}
 		}
-		return typeTemplate;
+		return type_template;
 	}
 
 	/**
@@ -133,8 +133,8 @@ public class VectorImpl extends EObjectImpl implements Vector {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetTypeTemplate() {
-		return typeTemplate;
+	public DataType basicGetType_template() {
+		return type_template;
 	}
 
 	/**
@@ -142,11 +142,11 @@ public class VectorImpl extends EObjectImpl implements Vector {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTypeTemplate(DataType newTypeTemplate) {
-		DataType oldTypeTemplate = typeTemplate;
-		typeTemplate = newTypeTemplate;
+	public void setType_template(DataType newType_template) {
+		DataType oldType_template = type_template;
+		type_template = newType_template;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.VECTOR__TYPE_TEMPLATE, oldTypeTemplate, typeTemplate));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.VECTOR__TYPE_TEMPLATE, oldType_template, type_template));
 	}
 
 	/**
@@ -154,16 +154,16 @@ public class VectorImpl extends EObjectImpl implements Vector {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getBaseDataType() {
-		if (baseDataType != null && baseDataType.eIsProxy()) {
-			InternalEObject oldBaseDataType = (InternalEObject)baseDataType;
-			baseDataType = (DataType)eResolveProxy(oldBaseDataType);
-			if (baseDataType != oldBaseDataType) {
+	public DataType getBase_DataType() {
+		if (base_DataType != null && base_DataType.eIsProxy()) {
+			InternalEObject oldBase_DataType = (InternalEObject)base_DataType;
+			base_DataType = (DataType)eResolveProxy(oldBase_DataType);
+			if (base_DataType != oldBase_DataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.VECTOR__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.VECTOR__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
 			}
 		}
-		return baseDataType;
+		return base_DataType;
 	}
 
 	/**
@@ -171,8 +171,8 @@ public class VectorImpl extends EObjectImpl implements Vector {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetBaseDataType() {
-		return baseDataType;
+	public DataType basicGetBase_DataType() {
+		return base_DataType;
 	}
 
 	/**
@@ -180,11 +180,11 @@ public class VectorImpl extends EObjectImpl implements Vector {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBaseDataType(DataType newBaseDataType) {
-		DataType oldBaseDataType = baseDataType;
-		baseDataType = newBaseDataType;
+	public void setBase_DataType(DataType newBase_DataType) {
+		DataType oldBase_DataType = base_DataType;
+		base_DataType = newBase_DataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.VECTOR__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.VECTOR__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
 	}
 
 	/**
@@ -198,11 +198,11 @@ public class VectorImpl extends EObjectImpl implements Vector {
 			case RobotMLExtensionPackage.VECTOR__SIZE:
 				return getSize();
 			case RobotMLExtensionPackage.VECTOR__TYPE_TEMPLATE:
-				if (resolve) return getTypeTemplate();
-				return basicGetTypeTemplate();
+				if (resolve) return getType_template();
+				return basicGetType_template();
 			case RobotMLExtensionPackage.VECTOR__BASE_DATA_TYPE:
-				if (resolve) return getBaseDataType();
-				return basicGetBaseDataType();
+				if (resolve) return getBase_DataType();
+				return basicGetBase_DataType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -219,10 +219,10 @@ public class VectorImpl extends EObjectImpl implements Vector {
 				setSize((Integer)newValue);
 				return;
 			case RobotMLExtensionPackage.VECTOR__TYPE_TEMPLATE:
-				setTypeTemplate((DataType)newValue);
+				setType_template((DataType)newValue);
 				return;
 			case RobotMLExtensionPackage.VECTOR__BASE_DATA_TYPE:
-				setBaseDataType((DataType)newValue);
+				setBase_DataType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -240,10 +240,10 @@ public class VectorImpl extends EObjectImpl implements Vector {
 				setSize(SIZE_EDEFAULT);
 				return;
 			case RobotMLExtensionPackage.VECTOR__TYPE_TEMPLATE:
-				setTypeTemplate((DataType)null);
+				setType_template((DataType)null);
 				return;
 			case RobotMLExtensionPackage.VECTOR__BASE_DATA_TYPE:
-				setBaseDataType((DataType)null);
+				setBase_DataType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -260,9 +260,9 @@ public class VectorImpl extends EObjectImpl implements Vector {
 			case RobotMLExtensionPackage.VECTOR__SIZE:
 				return size != SIZE_EDEFAULT;
 			case RobotMLExtensionPackage.VECTOR__TYPE_TEMPLATE:
-				return typeTemplate != null;
+				return type_template != null;
 			case RobotMLExtensionPackage.VECTOR__BASE_DATA_TYPE:
-				return baseDataType != null;
+				return base_DataType != null;
 		}
 		return super.eIsSet(featureID);
 	}

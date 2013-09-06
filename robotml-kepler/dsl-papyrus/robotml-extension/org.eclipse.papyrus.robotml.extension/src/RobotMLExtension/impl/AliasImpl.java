@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.uml2.uml.DataType;
 
@@ -23,13 +23,13 @@ import org.eclipse.uml2.uml.DataType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link RobotMLExtension.impl.AliasImpl#getType <em>Type</em>}</li>
- *   <li>{@link RobotMLExtension.impl.AliasImpl#getBaseDataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.AliasImpl#getBase_DataType <em>Base Data Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AliasImpl extends EObjectImpl implements Alias {
+public class AliasImpl extends MinimalEObjectImpl.Container implements Alias {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -41,14 +41,14 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	protected DataType type;
 
 	/**
-	 * The cached value of the '{@link #getBaseDataType() <em>Base Data Type</em>}' reference.
+	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBaseDataType()
+	 * @see #getBase_DataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType baseDataType;
+	protected DataType base_DataType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,16 +112,16 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getBaseDataType() {
-		if (baseDataType != null && baseDataType.eIsProxy()) {
-			InternalEObject oldBaseDataType = (InternalEObject)baseDataType;
-			baseDataType = (DataType)eResolveProxy(oldBaseDataType);
-			if (baseDataType != oldBaseDataType) {
+	public DataType getBase_DataType() {
+		if (base_DataType != null && base_DataType.eIsProxy()) {
+			InternalEObject oldBase_DataType = (InternalEObject)base_DataType;
+			base_DataType = (DataType)eResolveProxy(oldBase_DataType);
+			if (base_DataType != oldBase_DataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
 			}
 		}
-		return baseDataType;
+		return base_DataType;
 	}
 
 	/**
@@ -129,8 +129,8 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetBaseDataType() {
-		return baseDataType;
+	public DataType basicGetBase_DataType() {
+		return base_DataType;
 	}
 
 	/**
@@ -138,11 +138,11 @@ public class AliasImpl extends EObjectImpl implements Alias {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBaseDataType(DataType newBaseDataType) {
-		DataType oldBaseDataType = baseDataType;
-		baseDataType = newBaseDataType;
+	public void setBase_DataType(DataType newBase_DataType) {
+		DataType oldBase_DataType = base_DataType;
+		base_DataType = newBase_DataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
 	}
 
 	/**
@@ -157,8 +157,8 @@ public class AliasImpl extends EObjectImpl implements Alias {
 				if (resolve) return getType();
 				return basicGetType();
 			case RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE:
-				if (resolve) return getBaseDataType();
-				return basicGetBaseDataType();
+				if (resolve) return getBase_DataType();
+				return basicGetBase_DataType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -175,7 +175,7 @@ public class AliasImpl extends EObjectImpl implements Alias {
 				setType((DataType)newValue);
 				return;
 			case RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE:
-				setBaseDataType((DataType)newValue);
+				setBase_DataType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -193,7 +193,7 @@ public class AliasImpl extends EObjectImpl implements Alias {
 				setType((DataType)null);
 				return;
 			case RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE:
-				setBaseDataType((DataType)null);
+				setBase_DataType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -210,7 +210,7 @@ public class AliasImpl extends EObjectImpl implements Alias {
 			case RobotMLExtensionPackage.ALIAS__TYPE:
 				return type != null;
 			case RobotMLExtensionPackage.ALIAS__BASE_DATA_TYPE:
-				return baseDataType != null;
+				return base_DataType != null;
 		}
 		return super.eIsSet(featureID);
 	}

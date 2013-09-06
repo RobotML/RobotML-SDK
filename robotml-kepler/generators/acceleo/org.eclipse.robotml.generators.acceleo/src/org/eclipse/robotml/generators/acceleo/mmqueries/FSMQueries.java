@@ -81,8 +81,7 @@ public class FSMQueries {
 			{
 				if(state.getBehavior() != null)
 				{
-					String operation = state.getBehavior().getName();
-					result = operation;
+					result = state.getBehavior().getName();
 				}
 			}
 		}

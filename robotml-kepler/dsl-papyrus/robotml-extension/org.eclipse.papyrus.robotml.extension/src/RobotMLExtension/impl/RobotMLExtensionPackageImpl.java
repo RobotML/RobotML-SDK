@@ -175,7 +175,7 @@ public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotML
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArray_TypeTemplate() {
+	public EReference getArray_Type_template() {
 		return (EReference)arrayEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -184,7 +184,7 @@ public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotML
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArray_BaseDataType() {
+	public EReference getArray_Base_DataType() {
 		return (EReference)arrayEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -211,7 +211,7 @@ public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotML
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVector_TypeTemplate() {
+	public EReference getVector_Type_template() {
 		return (EReference)vectorEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -220,7 +220,7 @@ public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotML
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVector_BaseDataType() {
+	public EReference getVector_Base_DataType() {
 		return (EReference)vectorEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -238,7 +238,7 @@ public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotML
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMap_ValuesType() {
+	public EReference getMap_Values_type() {
 		return (EReference)mapEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -247,7 +247,7 @@ public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotML
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMap_BaseDataType() {
+	public EReference getMap_Base_DataType() {
 		return (EReference)mapEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -256,7 +256,7 @@ public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotML
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMap_KeysType() {
+	public EReference getMap_Keys_type() {
 		return (EReference)mapEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -283,7 +283,7 @@ public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotML
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAlias_BaseDataType() {
+	public EReference getAlias_Base_DataType() {
 		return (EReference)aliasEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -310,7 +310,7 @@ public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotML
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUnion_BaseDataType() {
+	public EReference getUnion_Base_DataType() {
 		return (EReference)unionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -328,7 +328,7 @@ public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotML
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getParameters_BaseClass() {
+	public EReference getParameters_Base_Class() {
 		return (EReference)parametersEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -346,7 +346,7 @@ public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotML
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDefine_BaseDataType() {
+	public EReference getDefine_Base_DataType() {
 		return (EReference)defineEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -452,36 +452,36 @@ public class RobotMLExtensionPackageImpl extends EPackageImpl implements RobotML
 
 		// Add supertypes to classes
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(arrayEClass, Array.class, "Array", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArray_Size(), theTypesPackage.getInteger(), "size", null, 1, 1, Array.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getArray_Dimension(), theTypesPackage.getInteger(), "dimension", null, 1, 1, Array.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getArray_TypeTemplate(), theUMLPackage.getDataType(), null, "typeTemplate", null, 1, 1, Array.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getArray_BaseDataType(), theUMLPackage.getDataType(), null, "baseDataType", null, 1, 1, Array.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getArray_Type_template(), theUMLPackage.getDataType(), null, "type_template", null, 1, 1, Array.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getArray_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, Array.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(vectorEClass, Vector.class, "Vector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVector_Size(), theTypesPackage.getInteger(), "size", null, 1, 1, Vector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVector_TypeTemplate(), theUMLPackage.getDataType(), null, "typeTemplate", null, 1, 1, Vector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVector_BaseDataType(), theUMLPackage.getDataType(), null, "baseDataType", null, 1, 1, Vector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getVector_Type_template(), theUMLPackage.getDataType(), null, "type_template", null, 1, 1, Vector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getVector_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, Vector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(mapEClass, Map.class, "Map", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMap_ValuesType(), theUMLPackage.getDataType(), null, "valuesType", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMap_BaseDataType(), theUMLPackage.getDataType(), null, "baseDataType", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMap_KeysType(), theUMLPackage.getDataType(), null, "keysType", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMap_Values_type(), theUMLPackage.getDataType(), null, "values_type", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMap_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMap_Keys_type(), theUMLPackage.getDataType(), null, "keys_type", null, 1, 1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(aliasEClass, Alias.class, "Alias", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAlias_Type(), theUMLPackage.getDataType(), null, "type", null, 1, 1, Alias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getAlias_BaseDataType(), theUMLPackage.getDataType(), null, "baseDataType", null, 1, 1, Alias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAlias_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, Alias.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(unionEClass, Union.class, "Union", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnion_Types(), theUMLPackage.getDataType(), null, "types", null, 1, -1, Union.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getUnion_BaseDataType(), theUMLPackage.getDataType(), null, "baseDataType", null, 1, 1, Union.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUnion_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, Union.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(parametersEClass, Parameters.class, "Parameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getParameters_BaseClass(), theUMLPackage.getClass_(), null, "baseClass", null, 1, 1, Parameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getParameters_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, Parameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(defineEClass, Define.class, "Define", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDefine_BaseDataType(), theUMLPackage.getDataType(), null, "baseDataType", null, 1, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDefine_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getDefine_Type(), theUMLPackage.getDataType(), null, "type", null, 1, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource

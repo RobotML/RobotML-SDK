@@ -16,8 +16,8 @@ import org.eclipse.uml2.uml.DataType;
  * <ul>
  *   <li>{@link RobotMLExtension.Array#getSize <em>Size</em>}</li>
  *   <li>{@link RobotMLExtension.Array#getDimension <em>Dimension</em>}</li>
- *   <li>{@link RobotMLExtension.Array#getTypeTemplate <em>Type Template</em>}</li>
- *   <li>{@link RobotMLExtension.Array#getBaseDataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.Array#getType_template <em>Type template</em>}</li>
+ *   <li>{@link RobotMLExtension.Array#getBase_DataType <em>Base Data Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,30 +79,30 @@ public interface Array extends EObject {
 	void setDimension(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Type Template</b></em>' reference.
+	 * Returns the value of the '<em><b>Type template</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Type Template</em>' reference isn't clear,
+	 * If the meaning of the '<em>Type template</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type Template</em>' reference.
-	 * @see #setTypeTemplate(DataType)
-	 * @see RobotMLExtension.RobotMLExtensionPackage#getArray_TypeTemplate()
+	 * @return the value of the '<em>Type template</em>' reference.
+	 * @see #setType_template(DataType)
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getArray_Type_template()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	DataType getTypeTemplate();
+	DataType getType_template();
 
 	/**
-	 * Sets the value of the '{@link RobotMLExtension.Array#getTypeTemplate <em>Type Template</em>}' reference.
+	 * Sets the value of the '{@link RobotMLExtension.Array#getType_template <em>Type template</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type Template</em>' reference.
-	 * @see #getTypeTemplate()
+	 * @param value the new value of the '<em>Type template</em>' reference.
+	 * @see #getType_template()
 	 * @generated
 	 */
-	void setTypeTemplate(DataType value);
+	void setType_template(DataType value);
 
 	/**
 	 * Returns the value of the '<em><b>Base Data Type</b></em>' reference.
@@ -113,21 +113,21 @@ public interface Array extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Base Data Type</em>' reference.
-	 * @see #setBaseDataType(DataType)
-	 * @see RobotMLExtension.RobotMLExtensionPackage#getArray_BaseDataType()
+	 * @see #setBase_DataType(DataType)
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getArray_Base_DataType()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	DataType getBaseDataType();
+	DataType getBase_DataType();
 
 	/**
-	 * Sets the value of the '{@link RobotMLExtension.Array#getBaseDataType <em>Base Data Type</em>}' reference.
+	 * Sets the value of the '{@link RobotMLExtension.Array#getBase_DataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Base Data Type</em>' reference.
-	 * @see #getBaseDataType()
+	 * @see #getBase_DataType()
 	 * @generated
 	 */
-	void setBaseDataType(DataType value);
+	void setBase_DataType(DataType value);
 
 } // Array

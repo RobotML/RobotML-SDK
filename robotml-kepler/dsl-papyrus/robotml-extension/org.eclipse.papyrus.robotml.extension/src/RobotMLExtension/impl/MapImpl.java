@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.uml2.uml.DataType;
 
@@ -22,44 +22,44 @@ import org.eclipse.uml2.uml.DataType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link RobotMLExtension.impl.MapImpl#getValuesType <em>Values Type</em>}</li>
- *   <li>{@link RobotMLExtension.impl.MapImpl#getBaseDataType <em>Base Data Type</em>}</li>
- *   <li>{@link RobotMLExtension.impl.MapImpl#getKeysType <em>Keys Type</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.MapImpl#getValues_type <em>Values type</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.MapImpl#getBase_DataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.MapImpl#getKeys_type <em>Keys type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MapImpl extends EObjectImpl implements Map {
+public class MapImpl extends MinimalEObjectImpl.Container implements Map {
 	/**
-	 * The cached value of the '{@link #getValuesType() <em>Values Type</em>}' reference.
+	 * The cached value of the '{@link #getValues_type() <em>Values type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValuesType()
+	 * @see #getValues_type()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType valuesType;
+	protected DataType values_type;
 
 	/**
-	 * The cached value of the '{@link #getBaseDataType() <em>Base Data Type</em>}' reference.
+	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBaseDataType()
+	 * @see #getBase_DataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType baseDataType;
+	protected DataType base_DataType;
 
 	/**
-	 * The cached value of the '{@link #getKeysType() <em>Keys Type</em>}' reference.
+	 * The cached value of the '{@link #getKeys_type() <em>Keys type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getKeysType()
+	 * @see #getKeys_type()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType keysType;
+	protected DataType keys_type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,16 +85,16 @@ public class MapImpl extends EObjectImpl implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getValuesType() {
-		if (valuesType != null && valuesType.eIsProxy()) {
-			InternalEObject oldValuesType = (InternalEObject)valuesType;
-			valuesType = (DataType)eResolveProxy(oldValuesType);
-			if (valuesType != oldValuesType) {
+	public DataType getValues_type() {
+		if (values_type != null && values_type.eIsProxy()) {
+			InternalEObject oldValues_type = (InternalEObject)values_type;
+			values_type = (DataType)eResolveProxy(oldValues_type);
+			if (values_type != oldValues_type) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.MAP__VALUES_TYPE, oldValuesType, valuesType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.MAP__VALUES_TYPE, oldValues_type, values_type));
 			}
 		}
-		return valuesType;
+		return values_type;
 	}
 
 	/**
@@ -102,8 +102,8 @@ public class MapImpl extends EObjectImpl implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetValuesType() {
-		return valuesType;
+	public DataType basicGetValues_type() {
+		return values_type;
 	}
 
 	/**
@@ -111,11 +111,11 @@ public class MapImpl extends EObjectImpl implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValuesType(DataType newValuesType) {
-		DataType oldValuesType = valuesType;
-		valuesType = newValuesType;
+	public void setValues_type(DataType newValues_type) {
+		DataType oldValues_type = values_type;
+		values_type = newValues_type;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.MAP__VALUES_TYPE, oldValuesType, valuesType));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.MAP__VALUES_TYPE, oldValues_type, values_type));
 	}
 
 	/**
@@ -123,16 +123,16 @@ public class MapImpl extends EObjectImpl implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getBaseDataType() {
-		if (baseDataType != null && baseDataType.eIsProxy()) {
-			InternalEObject oldBaseDataType = (InternalEObject)baseDataType;
-			baseDataType = (DataType)eResolveProxy(oldBaseDataType);
-			if (baseDataType != oldBaseDataType) {
+	public DataType getBase_DataType() {
+		if (base_DataType != null && base_DataType.eIsProxy()) {
+			InternalEObject oldBase_DataType = (InternalEObject)base_DataType;
+			base_DataType = (DataType)eResolveProxy(oldBase_DataType);
+			if (base_DataType != oldBase_DataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.MAP__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.MAP__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
 			}
 		}
-		return baseDataType;
+		return base_DataType;
 	}
 
 	/**
@@ -140,8 +140,8 @@ public class MapImpl extends EObjectImpl implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetBaseDataType() {
-		return baseDataType;
+	public DataType basicGetBase_DataType() {
+		return base_DataType;
 	}
 
 	/**
@@ -149,11 +149,11 @@ public class MapImpl extends EObjectImpl implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBaseDataType(DataType newBaseDataType) {
-		DataType oldBaseDataType = baseDataType;
-		baseDataType = newBaseDataType;
+	public void setBase_DataType(DataType newBase_DataType) {
+		DataType oldBase_DataType = base_DataType;
+		base_DataType = newBase_DataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.MAP__BASE_DATA_TYPE, oldBaseDataType, baseDataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.MAP__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
 	}
 
 	/**
@@ -161,16 +161,16 @@ public class MapImpl extends EObjectImpl implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getKeysType() {
-		if (keysType != null && keysType.eIsProxy()) {
-			InternalEObject oldKeysType = (InternalEObject)keysType;
-			keysType = (DataType)eResolveProxy(oldKeysType);
-			if (keysType != oldKeysType) {
+	public DataType getKeys_type() {
+		if (keys_type != null && keys_type.eIsProxy()) {
+			InternalEObject oldKeys_type = (InternalEObject)keys_type;
+			keys_type = (DataType)eResolveProxy(oldKeys_type);
+			if (keys_type != oldKeys_type) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.MAP__KEYS_TYPE, oldKeysType, keysType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.MAP__KEYS_TYPE, oldKeys_type, keys_type));
 			}
 		}
-		return keysType;
+		return keys_type;
 	}
 
 	/**
@@ -178,8 +178,8 @@ public class MapImpl extends EObjectImpl implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetKeysType() {
-		return keysType;
+	public DataType basicGetKeys_type() {
+		return keys_type;
 	}
 
 	/**
@@ -187,11 +187,11 @@ public class MapImpl extends EObjectImpl implements Map {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setKeysType(DataType newKeysType) {
-		DataType oldKeysType = keysType;
-		keysType = newKeysType;
+	public void setKeys_type(DataType newKeys_type) {
+		DataType oldKeys_type = keys_type;
+		keys_type = newKeys_type;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.MAP__KEYS_TYPE, oldKeysType, keysType));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.MAP__KEYS_TYPE, oldKeys_type, keys_type));
 	}
 
 	/**
@@ -203,14 +203,14 @@ public class MapImpl extends EObjectImpl implements Map {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RobotMLExtensionPackage.MAP__VALUES_TYPE:
-				if (resolve) return getValuesType();
-				return basicGetValuesType();
+				if (resolve) return getValues_type();
+				return basicGetValues_type();
 			case RobotMLExtensionPackage.MAP__BASE_DATA_TYPE:
-				if (resolve) return getBaseDataType();
-				return basicGetBaseDataType();
+				if (resolve) return getBase_DataType();
+				return basicGetBase_DataType();
 			case RobotMLExtensionPackage.MAP__KEYS_TYPE:
-				if (resolve) return getKeysType();
-				return basicGetKeysType();
+				if (resolve) return getKeys_type();
+				return basicGetKeys_type();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -224,13 +224,13 @@ public class MapImpl extends EObjectImpl implements Map {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RobotMLExtensionPackage.MAP__VALUES_TYPE:
-				setValuesType((DataType)newValue);
+				setValues_type((DataType)newValue);
 				return;
 			case RobotMLExtensionPackage.MAP__BASE_DATA_TYPE:
-				setBaseDataType((DataType)newValue);
+				setBase_DataType((DataType)newValue);
 				return;
 			case RobotMLExtensionPackage.MAP__KEYS_TYPE:
-				setKeysType((DataType)newValue);
+				setKeys_type((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -245,13 +245,13 @@ public class MapImpl extends EObjectImpl implements Map {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RobotMLExtensionPackage.MAP__VALUES_TYPE:
-				setValuesType((DataType)null);
+				setValues_type((DataType)null);
 				return;
 			case RobotMLExtensionPackage.MAP__BASE_DATA_TYPE:
-				setBaseDataType((DataType)null);
+				setBase_DataType((DataType)null);
 				return;
 			case RobotMLExtensionPackage.MAP__KEYS_TYPE:
-				setKeysType((DataType)null);
+				setKeys_type((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -266,11 +266,11 @@ public class MapImpl extends EObjectImpl implements Map {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RobotMLExtensionPackage.MAP__VALUES_TYPE:
-				return valuesType != null;
+				return values_type != null;
 			case RobotMLExtensionPackage.MAP__BASE_DATA_TYPE:
-				return baseDataType != null;
+				return base_DataType != null;
 			case RobotMLExtensionPackage.MAP__KEYS_TYPE:
-				return keysType != null;
+				return keys_type != null;
 		}
 		return super.eIsSet(featureID);
 	}

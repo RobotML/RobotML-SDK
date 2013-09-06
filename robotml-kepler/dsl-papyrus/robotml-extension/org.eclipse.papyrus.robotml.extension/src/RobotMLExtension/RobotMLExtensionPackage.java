@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -84,7 +85,7 @@ public interface RobotMLExtensionPackage extends EPackage {
 	int ARRAY__DIMENSION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Type Template</b></em>' reference.
+	 * The feature id for the '<em><b>Type template</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -111,6 +112,15 @@ public interface RobotMLExtensionPackage extends EPackage {
 	int ARRAY_FEATURE_COUNT = 4;
 
 	/**
+	 * The number of operations of the '<em>Array</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link RobotMLExtension.impl.VectorImpl <em>Vector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,7 +140,7 @@ public interface RobotMLExtensionPackage extends EPackage {
 	int VECTOR__SIZE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Type Template</b></em>' reference.
+	 * The feature id for the '<em><b>Type template</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -157,6 +167,15 @@ public interface RobotMLExtensionPackage extends EPackage {
 	int VECTOR_FEATURE_COUNT = 3;
 
 	/**
+	 * The number of operations of the '<em>Vector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VECTOR_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link RobotMLExtension.impl.MapImpl <em>Map</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -167,7 +186,7 @@ public interface RobotMLExtensionPackage extends EPackage {
 	int MAP = 2;
 
 	/**
-	 * The feature id for the '<em><b>Values Type</b></em>' reference.
+	 * The feature id for the '<em><b>Values type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -185,7 +204,7 @@ public interface RobotMLExtensionPackage extends EPackage {
 	int MAP__BASE_DATA_TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Keys Type</b></em>' reference.
+	 * The feature id for the '<em><b>Keys type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -201,6 +220,15 @@ public interface RobotMLExtensionPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link RobotMLExtension.impl.AliasImpl <em>Alias</em>}' class.
@@ -240,6 +268,15 @@ public interface RobotMLExtensionPackage extends EPackage {
 	int ALIAS_FEATURE_COUNT = 2;
 
 	/**
+	 * The number of operations of the '<em>Alias</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALIAS_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link RobotMLExtension.impl.UnionImpl <em>Union</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -277,6 +314,15 @@ public interface RobotMLExtensionPackage extends EPackage {
 	int UNION_FEATURE_COUNT = 2;
 
 	/**
+	 * The number of operations of the '<em>Union</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link RobotMLExtension.impl.ParametersImpl <em>Parameters</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,6 +349,15 @@ public interface RobotMLExtensionPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETERS_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Parameters</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERS_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link RobotMLExtension.impl.DefineImpl <em>Define</em>}' class.
@@ -341,6 +396,15 @@ public interface RobotMLExtensionPackage extends EPackage {
 	 */
 	int DEFINE_FEATURE_COUNT = 2;
 
+	/**
+	 * The number of operations of the '<em>Define</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEFINE_OPERATION_COUNT = 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link RobotMLExtension.Array <em>Array</em>}'.
@@ -375,26 +439,26 @@ public interface RobotMLExtensionPackage extends EPackage {
 	EAttribute getArray_Dimension();
 
 	/**
-	 * Returns the meta object for the reference '{@link RobotMLExtension.Array#getTypeTemplate <em>Type Template</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Array#getType_template <em>Type template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type Template</em>'.
-	 * @see RobotMLExtension.Array#getTypeTemplate()
+	 * @return the meta object for the reference '<em>Type template</em>'.
+	 * @see RobotMLExtension.Array#getType_template()
 	 * @see #getArray()
 	 * @generated
 	 */
-	EReference getArray_TypeTemplate();
+	EReference getArray_Type_template();
 
 	/**
-	 * Returns the meta object for the reference '{@link RobotMLExtension.Array#getBaseDataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Array#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see RobotMLExtension.Array#getBaseDataType()
+	 * @see RobotMLExtension.Array#getBase_DataType()
 	 * @see #getArray()
 	 * @generated
 	 */
-	EReference getArray_BaseDataType();
+	EReference getArray_Base_DataType();
 
 	/**
 	 * Returns the meta object for class '{@link RobotMLExtension.Vector <em>Vector</em>}'.
@@ -418,26 +482,26 @@ public interface RobotMLExtensionPackage extends EPackage {
 	EAttribute getVector_Size();
 
 	/**
-	 * Returns the meta object for the reference '{@link RobotMLExtension.Vector#getTypeTemplate <em>Type Template</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Vector#getType_template <em>Type template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type Template</em>'.
-	 * @see RobotMLExtension.Vector#getTypeTemplate()
+	 * @return the meta object for the reference '<em>Type template</em>'.
+	 * @see RobotMLExtension.Vector#getType_template()
 	 * @see #getVector()
 	 * @generated
 	 */
-	EReference getVector_TypeTemplate();
+	EReference getVector_Type_template();
 
 	/**
-	 * Returns the meta object for the reference '{@link RobotMLExtension.Vector#getBaseDataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Vector#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see RobotMLExtension.Vector#getBaseDataType()
+	 * @see RobotMLExtension.Vector#getBase_DataType()
 	 * @see #getVector()
 	 * @generated
 	 */
-	EReference getVector_BaseDataType();
+	EReference getVector_Base_DataType();
 
 	/**
 	 * Returns the meta object for class '{@link RobotMLExtension.Map <em>Map</em>}'.
@@ -450,37 +514,37 @@ public interface RobotMLExtensionPackage extends EPackage {
 	EClass getMap();
 
 	/**
-	 * Returns the meta object for the reference '{@link RobotMLExtension.Map#getValuesType <em>Values Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Map#getValues_type <em>Values type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Values Type</em>'.
-	 * @see RobotMLExtension.Map#getValuesType()
+	 * @return the meta object for the reference '<em>Values type</em>'.
+	 * @see RobotMLExtension.Map#getValues_type()
 	 * @see #getMap()
 	 * @generated
 	 */
-	EReference getMap_ValuesType();
+	EReference getMap_Values_type();
 
 	/**
-	 * Returns the meta object for the reference '{@link RobotMLExtension.Map#getBaseDataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Map#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see RobotMLExtension.Map#getBaseDataType()
+	 * @see RobotMLExtension.Map#getBase_DataType()
 	 * @see #getMap()
 	 * @generated
 	 */
-	EReference getMap_BaseDataType();
+	EReference getMap_Base_DataType();
 
 	/**
-	 * Returns the meta object for the reference '{@link RobotMLExtension.Map#getKeysType <em>Keys Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Map#getKeys_type <em>Keys type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Keys Type</em>'.
-	 * @see RobotMLExtension.Map#getKeysType()
+	 * @return the meta object for the reference '<em>Keys type</em>'.
+	 * @see RobotMLExtension.Map#getKeys_type()
 	 * @see #getMap()
 	 * @generated
 	 */
-	EReference getMap_KeysType();
+	EReference getMap_Keys_type();
 
 	/**
 	 * Returns the meta object for class '{@link RobotMLExtension.Alias <em>Alias</em>}'.
@@ -504,15 +568,15 @@ public interface RobotMLExtensionPackage extends EPackage {
 	EReference getAlias_Type();
 
 	/**
-	 * Returns the meta object for the reference '{@link RobotMLExtension.Alias#getBaseDataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Alias#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see RobotMLExtension.Alias#getBaseDataType()
+	 * @see RobotMLExtension.Alias#getBase_DataType()
 	 * @see #getAlias()
 	 * @generated
 	 */
-	EReference getAlias_BaseDataType();
+	EReference getAlias_Base_DataType();
 
 	/**
 	 * Returns the meta object for class '{@link RobotMLExtension.Union <em>Union</em>}'.
@@ -536,15 +600,15 @@ public interface RobotMLExtensionPackage extends EPackage {
 	EReference getUnion_Types();
 
 	/**
-	 * Returns the meta object for the reference '{@link RobotMLExtension.Union#getBaseDataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Union#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see RobotMLExtension.Union#getBaseDataType()
+	 * @see RobotMLExtension.Union#getBase_DataType()
 	 * @see #getUnion()
 	 * @generated
 	 */
-	EReference getUnion_BaseDataType();
+	EReference getUnion_Base_DataType();
 
 	/**
 	 * Returns the meta object for class '{@link RobotMLExtension.Parameters <em>Parameters</em>}'.
@@ -557,15 +621,15 @@ public interface RobotMLExtensionPackage extends EPackage {
 	EClass getParameters();
 
 	/**
-	 * Returns the meta object for the reference '{@link RobotMLExtension.Parameters#getBaseClass <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Parameters#getBase_Class <em>Base Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Class</em>'.
-	 * @see RobotMLExtension.Parameters#getBaseClass()
+	 * @see RobotMLExtension.Parameters#getBase_Class()
 	 * @see #getParameters()
 	 * @generated
 	 */
-	EReference getParameters_BaseClass();
+	EReference getParameters_Base_Class();
 
 	/**
 	 * Returns the meta object for class '{@link RobotMLExtension.Define <em>Define</em>}'.
@@ -578,15 +642,15 @@ public interface RobotMLExtensionPackage extends EPackage {
 	EClass getDefine();
 
 	/**
-	 * Returns the meta object for the reference '{@link RobotMLExtension.Define#getBaseDataType <em>Base Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link RobotMLExtension.Define#getBase_DataType <em>Base Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see RobotMLExtension.Define#getBaseDataType()
+	 * @see RobotMLExtension.Define#getBase_DataType()
 	 * @see #getDefine()
 	 * @generated
 	 */
-	EReference getDefine_BaseDataType();
+	EReference getDefine_Base_DataType();
 
 	/**
 	 * Returns the meta object for the reference '{@link RobotMLExtension.Define#getType <em>Type</em>}'.
@@ -614,6 +678,7 @@ public interface RobotMLExtensionPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -648,12 +713,12 @@ public interface RobotMLExtensionPackage extends EPackage {
 		EAttribute ARRAY__DIMENSION = eINSTANCE.getArray_Dimension();
 
 		/**
-		 * The meta object literal for the '<em><b>Type Template</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Type template</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARRAY__TYPE_TEMPLATE = eINSTANCE.getArray_TypeTemplate();
+		EReference ARRAY__TYPE_TEMPLATE = eINSTANCE.getArray_Type_template();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
@@ -661,7 +726,7 @@ public interface RobotMLExtensionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARRAY__BASE_DATA_TYPE = eINSTANCE.getArray_BaseDataType();
+		EReference ARRAY__BASE_DATA_TYPE = eINSTANCE.getArray_Base_DataType();
 
 		/**
 		 * The meta object literal for the '{@link RobotMLExtension.impl.VectorImpl <em>Vector</em>}' class.
@@ -682,12 +747,12 @@ public interface RobotMLExtensionPackage extends EPackage {
 		EAttribute VECTOR__SIZE = eINSTANCE.getVector_Size();
 
 		/**
-		 * The meta object literal for the '<em><b>Type Template</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Type template</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VECTOR__TYPE_TEMPLATE = eINSTANCE.getVector_TypeTemplate();
+		EReference VECTOR__TYPE_TEMPLATE = eINSTANCE.getVector_Type_template();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
@@ -695,7 +760,7 @@ public interface RobotMLExtensionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VECTOR__BASE_DATA_TYPE = eINSTANCE.getVector_BaseDataType();
+		EReference VECTOR__BASE_DATA_TYPE = eINSTANCE.getVector_Base_DataType();
 
 		/**
 		 * The meta object literal for the '{@link RobotMLExtension.impl.MapImpl <em>Map</em>}' class.
@@ -708,12 +773,12 @@ public interface RobotMLExtensionPackage extends EPackage {
 		EClass MAP = eINSTANCE.getMap();
 
 		/**
-		 * The meta object literal for the '<em><b>Values Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Values type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAP__VALUES_TYPE = eINSTANCE.getMap_ValuesType();
+		EReference MAP__VALUES_TYPE = eINSTANCE.getMap_Values_type();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
@@ -721,15 +786,15 @@ public interface RobotMLExtensionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAP__BASE_DATA_TYPE = eINSTANCE.getMap_BaseDataType();
+		EReference MAP__BASE_DATA_TYPE = eINSTANCE.getMap_Base_DataType();
 
 		/**
-		 * The meta object literal for the '<em><b>Keys Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Keys type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAP__KEYS_TYPE = eINSTANCE.getMap_KeysType();
+		EReference MAP__KEYS_TYPE = eINSTANCE.getMap_Keys_type();
 
 		/**
 		 * The meta object literal for the '{@link RobotMLExtension.impl.AliasImpl <em>Alias</em>}' class.
@@ -755,7 +820,7 @@ public interface RobotMLExtensionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ALIAS__BASE_DATA_TYPE = eINSTANCE.getAlias_BaseDataType();
+		EReference ALIAS__BASE_DATA_TYPE = eINSTANCE.getAlias_Base_DataType();
 
 		/**
 		 * The meta object literal for the '{@link RobotMLExtension.impl.UnionImpl <em>Union</em>}' class.
@@ -781,7 +846,7 @@ public interface RobotMLExtensionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNION__BASE_DATA_TYPE = eINSTANCE.getUnion_BaseDataType();
+		EReference UNION__BASE_DATA_TYPE = eINSTANCE.getUnion_Base_DataType();
 
 		/**
 		 * The meta object literal for the '{@link RobotMLExtension.impl.ParametersImpl <em>Parameters</em>}' class.
@@ -799,7 +864,7 @@ public interface RobotMLExtensionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PARAMETERS__BASE_CLASS = eINSTANCE.getParameters_BaseClass();
+		EReference PARAMETERS__BASE_CLASS = eINSTANCE.getParameters_Base_Class();
 
 		/**
 		 * The meta object literal for the '{@link RobotMLExtension.impl.DefineImpl <em>Define</em>}' class.
@@ -817,7 +882,7 @@ public interface RobotMLExtensionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEFINE__BASE_DATA_TYPE = eINSTANCE.getDefine_BaseDataType();
+		EReference DEFINE__BASE_DATA_TYPE = eINSTANCE.getDefine_Base_DataType();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.

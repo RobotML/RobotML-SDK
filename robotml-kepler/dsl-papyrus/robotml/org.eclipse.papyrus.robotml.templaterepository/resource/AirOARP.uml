@@ -600,7 +600,7 @@
   <RobotML:ActuatorSystem xmi:id="_GqE6NnUwEeKtkpd6W4BP5g" base_Class="_GqCeC3UwEeKtkpd6W4BP5g" native="true" libraryComponentName="Destination"/>
   <RobotML:Environment xmi:id="_GqE6N3UwEeKtkpd6W4BP5g" base_Class="_GqCeDXUwEeKtkpd6W4BP5g"/>
   <RobotML:LidarSystem xmi:id="_GqE6OHUwEeKtkpd6W4BP5g"/>
-  <RobotML:Robot xmi:id="_GqE6OXUwEeKtkpd6W4BP5g" base_Class="_GqCeDnUwEeKtkpd6W4BP5g" kind="UAV"/>
+  <RobotML:Robot xmi:id="_GqE6OXUwEeKtkpd6W4BP5g" base_Class="_GqCeDnUwEeKtkpd6W4BP5g" native="true" libraryComponentName="RMax" kind="UAV"/>
   <RobotML:RoboticSystem xmi:id="_GqE6OnUwEeKtkpd6W4BP5g" base_Class="_GqCeD3UwEeKtkpd6W4BP5g" native="true"/>
   <RobotML:RoboticSystem xmi:id="_GqE6O3UwEeKtkpd6W4BP5g" base_Class="_GqCeFnUwEeKtkpd6W4BP5g" native="true"/>
   <RobotML:RoboticSystem xmi:id="_GqFhQHUwEeKtkpd6W4BP5g" base_Class="_GqCeHHUwEeKtkpd6W4BP5g"/>

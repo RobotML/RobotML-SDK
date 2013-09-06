@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Acceleo Morse Module IDE Plug-in
+Bundle-Name: RobotML Morse Generator Module IDE Plug-in (Incubation)
 Bundle-SymbolicName: org.eclipse.robotml.generators.acceleo.morse.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.robotml.generators.acceleo.morse.ui.Activator

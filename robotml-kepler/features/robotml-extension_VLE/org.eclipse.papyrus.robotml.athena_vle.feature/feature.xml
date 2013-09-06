@@ -21,13 +21,6 @@ generation.
    </license>
 
    <plugin
-         id="org.eclipse.robotml.generators.acceleo.alf"
-         download-size="0"
-         install-size="0"
-         version="1.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.robotml.generators.acceleo.athena"
          download-size="0"
          install-size="0"
@@ -83,17 +76,17 @@ generation.
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.robotml.generators.acceleo"
+         id="org.eclipse.papyrus.robotml.extension"
          download-size="0"
          install-size="0"
          version="1.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.papyrus.robotml.extension"
+         id="org.eclipse.papyrus.robotml.generators.common"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>

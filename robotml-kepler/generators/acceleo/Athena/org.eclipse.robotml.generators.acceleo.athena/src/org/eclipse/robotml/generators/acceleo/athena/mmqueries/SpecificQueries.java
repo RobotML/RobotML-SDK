@@ -17,9 +17,12 @@ import javax.swing.JOptionPane;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.uml2.uml.Transition;
-import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
-import org.eclipse.robotml.generators.acceleo.mmqueries.FSMQueries;
-import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
+import org.eclipse.papyrus.robotml.generators.common.mmqueries.ArchitectureQueries;
+import org.eclipse.papyrus.robotml.generators.common.mmqueries.FSMQueries;
+import org.eclipse.papyrus.robotml.generators.common.mmqueries.GeneralQueries;
+//import org.eclipse.papyrus.acceleo.mmqueries.ArchitectureQueries;
+//import org.eclipse.papyrus.acceleo.mmqueries.FSMQueries;
+//import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
 import org.eclipse.robotml.generators.acceleo.athena.files.configGenerator;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehavioralFeature;
@@ -45,6 +48,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.Vertex;
 import org.eclipse.uml2.uml.util.UMLUtil;
+
 import RobotMLExtension.Define;
 import RobotMLExtension.Union;
 

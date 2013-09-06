@@ -19,10 +19,10 @@
 [module generate_morse('http://www.eclipse.org/uml2/3.0.0/UML')]
 
 [import org::eclipse::papyrus::robotml::generators::common::mmqueries::GeneralQueries /]
-[import org::eclipse::robotml::generators::acceleo::morse::files::generateCameraSystem /]
-[import org::eclipse::robotml::generators::acceleo::morse::files::generateGPSSystem /]
-[import org::eclipse::robotml::generators::acceleo::morse::files::generateLidarSystem /]
-[import org::eclipse::robotml::generators::acceleo::morse::files::generateRobot /]
+[import org::eclipse::papyrus::robotml::generators::acceleo::morse::files::generateCameraSystem /]
+[import org::eclipse::papyrus::robotml::generators::acceleo::morse::files::generateGPSSystem /]
+[import org::eclipse::papyrus::robotml::generators::acceleo::morse::files::generateLidarSystem /]
+[import org::eclipse::papyrus::robotml::generators::acceleo::morse::files::generateRobot /]
 
 [template public generateRobots(aModel : Model)]
 	[for (elt: NamedElement | getElementsWithStereotype(aModel, 'Robot'))]

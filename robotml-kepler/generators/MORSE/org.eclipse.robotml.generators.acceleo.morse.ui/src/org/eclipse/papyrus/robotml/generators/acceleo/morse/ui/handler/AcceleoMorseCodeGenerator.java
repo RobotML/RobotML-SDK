@@ -11,7 +11,7 @@
  *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.robotml.generators.acceleo.morse.ui.handler;
+package org.eclipse.papyrus.robotml.generators.acceleo.morse.ui.handler;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +22,7 @@ import org.eclipse.papyrus.infra.widgets.toolbox.notification.Type;
 import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.CombinedPopupAndViewBuilder;
 import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.NotificationBuilder;
 import org.eclipse.papyrus.infra.widgets.util.FileUtil;
-import org.eclipse.robotml.generators.acceleo.morse.main.Generate;
+import org.eclipse.papyrus.robotml.generators.acceleo.morse.main.Generate;
 
 /**
  * The Class AcceleoMorseCodeGenerator.

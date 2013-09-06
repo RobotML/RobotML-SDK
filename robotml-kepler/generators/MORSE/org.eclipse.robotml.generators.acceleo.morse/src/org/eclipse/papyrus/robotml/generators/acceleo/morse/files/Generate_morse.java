@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.robotml.generators.acceleo.morse.files;
+package org.eclipse.papyrus.robotml.generators.acceleo.morse.files;
 
 import java.io.File;
 import java.io.IOException;

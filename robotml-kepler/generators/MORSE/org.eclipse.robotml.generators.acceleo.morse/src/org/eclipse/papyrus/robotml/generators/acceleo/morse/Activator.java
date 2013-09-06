@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.robotml.generators.acceleo.morse;
+package org.eclipse.papyrus.robotml.generators.acceleo.morse;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;

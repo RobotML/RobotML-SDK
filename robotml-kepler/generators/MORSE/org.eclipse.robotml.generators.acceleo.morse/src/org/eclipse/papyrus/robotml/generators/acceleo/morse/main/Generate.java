@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.robotml.generators.acceleo.morse.main;
+package org.eclipse.papyrus.robotml.generators.acceleo.morse.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class Generate extends AbstractAcceleoGenerator {
 	 *
 	 * @generated
 	 */
-	public static final String MODULE_FILE_NAME = "/org/eclipse/robotml/generators/acceleo/morse/main/generate";
+	public static final String MODULE_FILE_NAME = "/org/eclipse/papyrus/robotml/generators/acceleo/morse/main/generate";
 
 	/**
 	 * The name of the templates that are to be generated.

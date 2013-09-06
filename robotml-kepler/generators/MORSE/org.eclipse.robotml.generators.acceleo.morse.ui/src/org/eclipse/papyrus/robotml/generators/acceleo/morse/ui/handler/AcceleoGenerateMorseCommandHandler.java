@@ -11,7 +11,7 @@
  *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.robotml.generators.acceleo.morse.ui.handler;
+package org.eclipse.papyrus.robotml.generators.acceleo.morse.ui.handler;
 
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;

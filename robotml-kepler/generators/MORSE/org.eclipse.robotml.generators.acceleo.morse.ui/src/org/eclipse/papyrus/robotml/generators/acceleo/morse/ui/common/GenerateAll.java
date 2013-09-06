@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.robotml.generators.acceleo.morse.ui.common;
+package org.eclipse.papyrus.robotml.generators.acceleo.morse.ui.common;
 
 import java.io.IOException;
 import java.net.URL;
@@ -87,7 +87,7 @@ public class GenerateAll {
 		//};
 		//gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		monitor.subTask("Loading...");
-		org.eclipse.robotml.generators.acceleo.morse.main.Generate gen0 = new org.eclipse.robotml.generators.acceleo.morse.main.Generate(modelURI, targetFolder.getLocation().toFile(), arguments);
+		org.eclipse.papyrus.robotml.generators.acceleo.morse.main.Generate gen0 = new org.eclipse.papyrus.robotml.generators.acceleo.morse.main.Generate(modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
 		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.eclipse.robotml.generators.acceleo.morse", "org.eclipse.robotml.generators.acceleo.morse.main.Generate", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);

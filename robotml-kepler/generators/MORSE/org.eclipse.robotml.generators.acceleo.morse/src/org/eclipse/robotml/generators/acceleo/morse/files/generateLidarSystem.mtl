@@ -4,7 +4,7 @@
  */]
 [module generateLidarSystem('http://Papyrus/RobotML/1', 'http://www.eclipse.org/uml2/4.0.0/UML')]
 
-[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::GeneralQueries /]
 
 [**
  * The documentation of the template generateLidar.

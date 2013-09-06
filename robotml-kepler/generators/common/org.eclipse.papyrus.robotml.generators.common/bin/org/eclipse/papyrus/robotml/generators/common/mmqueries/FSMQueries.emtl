@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="FSMQueries" nsURI="org::eclipse::papyrus::robotml::generators::common::mmqueries::FSMQueries" startHeaderPosition="622" endHeaderPosition="962">
+  <mtl:Module name="FSMQueries" nsURI="org::eclipse::papyrus::robotml::generators::common::mmqueries::FSMQueries" startHeaderPosition="605" endHeaderPosition="940">
     <input>
       <takesTypesFrom href="http://Papyrus/RobotML/1#/"/>
     </input>
@@ -277,18 +277,18 @@
   </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/getStateMachines">
-      <details key="start" value="744"/>
-      <details key="end" value="964"/>
+      <details key="start" value="724"/>
+      <details key="end" value="942"/>
       <details key="line" value="21"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/getStateMachines/elt">
-      <details key="start" value="775"/>
-      <details key="end" value="788"/>
+      <details key="start" value="755"/>
+      <details key="end" value="768"/>
       <details key="line" value="21"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/getStateMachines/%">
-      <details key="start" value="819"/>
-      <details key="end" value="960"/>
+      <details key="start" value="798"/>
+      <details key="end" value="939"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/getStateMachines/%/self">
@@ -297,38 +297,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/getStateMachines/%/%">
-      <details key="start" value="826"/>
-      <details key="end" value="894"/>
+      <details key="start" value="805"/>
+      <details key="end" value="873"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/getStateMachines/%/%.1">
-      <details key="start" value="896"/>
-      <details key="end" value="944"/>
+      <details key="start" value="875"/>
+      <details key="end" value="923"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/getStateMachines/%/%.2">
-      <details key="start" value="946"/>
-      <details key="end" value="959"/>
+      <details key="start" value="925"/>
+      <details key="end" value="938"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.7" references="/0/getStateMachines/%/%.2/%/elt">
-      <details key="start" value="955"/>
-      <details key="end" value="958"/>
+      <details key="start" value="934"/>
+      <details key="end" value="937"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.8" references="/0/getStates">
-      <details key="start" value="966"/>
-      <details key="end" value="1174"/>
+      <details key="start" value="943"/>
+      <details key="end" value="1149"/>
       <details key="line" value="24"/>
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/getStates/sm">
-      <details key="start" value="990"/>
-      <details key="end" value="1007"/>
+      <details key="start" value="967"/>
+      <details key="end" value="984"/>
       <details key="line" value="24"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/getStates/%">
-      <details key="start" value="1032"/>
-      <details key="end" value="1170"/>
+      <details key="start" value="1008"/>
+      <details key="end" value="1146"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.11" references="/0/getStates/%/self">
@@ -337,38 +337,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.12" references="/0/getStates/%/%">
-      <details key="start" value="1039"/>
-      <details key="end" value="1107"/>
+      <details key="start" value="1015"/>
+      <details key="end" value="1083"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.13" references="/0/getStates/%/%.1">
-      <details key="start" value="1109"/>
-      <details key="end" value="1155"/>
+      <details key="start" value="1085"/>
+      <details key="end" value="1131"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.14" references="/0/getStates/%/%.2">
-      <details key="start" value="1157"/>
-      <details key="end" value="1169"/>
+      <details key="start" value="1133"/>
+      <details key="end" value="1145"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.15" references="/0/getStates/%/%.2/%/sm">
-      <details key="start" value="1166"/>
-      <details key="end" value="1168"/>
+      <details key="start" value="1142"/>
+      <details key="end" value="1144"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.16" references="/0/getTransitions">
-      <details key="start" value="1176"/>
-      <details key="end" value="1398"/>
+      <details key="start" value="1150"/>
+      <details key="end" value="1370"/>
       <details key="line" value="27"/>
     </eAnnotations>
     <eAnnotations source="positions.17" references="/0/getTransitions/sm">
-      <details key="start" value="1205"/>
-      <details key="end" value="1222"/>
+      <details key="start" value="1179"/>
+      <details key="end" value="1196"/>
       <details key="line" value="27"/>
     </eAnnotations>
     <eAnnotations source="positions.18" references="/0/getTransitions/%">
-      <details key="start" value="1251"/>
-      <details key="end" value="1394"/>
+      <details key="start" value="1224"/>
+      <details key="end" value="1367"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.19" references="/0/getTransitions/%/self">
@@ -377,38 +377,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.20" references="/0/getTransitions/%/%">
-      <details key="start" value="1258"/>
-      <details key="end" value="1326"/>
+      <details key="start" value="1231"/>
+      <details key="end" value="1299"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.21" references="/0/getTransitions/%/%.1">
-      <details key="start" value="1328"/>
-      <details key="end" value="1379"/>
+      <details key="start" value="1301"/>
+      <details key="end" value="1352"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.22" references="/0/getTransitions/%/%.2">
-      <details key="start" value="1381"/>
-      <details key="end" value="1393"/>
+      <details key="start" value="1354"/>
+      <details key="end" value="1366"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.23" references="/0/getTransitions/%/%.2/%/sm">
-      <details key="start" value="1390"/>
-      <details key="end" value="1392"/>
+      <details key="start" value="1363"/>
+      <details key="end" value="1365"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.24" references="/0/generateOperationStateString">
-      <details key="start" value="1400"/>
-      <details key="end" value="1632"/>
+      <details key="start" value="1371"/>
+      <details key="end" value="1601"/>
       <details key="line" value="30"/>
     </eAnnotations>
     <eAnnotations source="positions.25" references="/0/generateOperationStateString/vertex">
-      <details key="start" value="1443"/>
-      <details key="end" value="1458"/>
+      <details key="start" value="1414"/>
+      <details key="end" value="1429"/>
       <details key="line" value="30"/>
     </eAnnotations>
     <eAnnotations source="positions.26" references="/0/generateOperationStateString/%">
-      <details key="start" value="1473"/>
-      <details key="end" value="1628"/>
+      <details key="start" value="1443"/>
+      <details key="end" value="1598"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.27" references="/0/generateOperationStateString/%/self">
@@ -417,23 +417,23 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.28" references="/0/generateOperationStateString/%/%">
-      <details key="start" value="1480"/>
-      <details key="end" value="1548"/>
+      <details key="start" value="1450"/>
+      <details key="end" value="1518"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.29" references="/0/generateOperationStateString/%/%.1">
-      <details key="start" value="1550"/>
-      <details key="end" value="1609"/>
+      <details key="start" value="1520"/>
+      <details key="end" value="1579"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.30" references="/0/generateOperationStateString/%/%.2">
-      <details key="start" value="1611"/>
-      <details key="end" value="1627"/>
+      <details key="start" value="1581"/>
+      <details key="end" value="1597"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.31" references="/0/generateOperationStateString/%/%.2/%/vertex">
-      <details key="start" value="1620"/>
-      <details key="end" value="1626"/>
+      <details key="start" value="1590"/>
+      <details key="end" value="1596"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

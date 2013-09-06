@@ -30,15 +30,15 @@ public class FSMQueries {
 	 * @return a list of states
      * @todo a valider par Nicolas 
 	 */
-	public List<org.eclipse.uml2.uml.Vertex> getStates(StateMachine sm)
-	{
-		LinkedList<org.eclipse.uml2.uml.Vertex> res = new LinkedList<org.eclipse.uml2.uml.Vertex>();
-		for (org.eclipse.uml2.uml.Region region : sm.getRegions())	
-			for(org.eclipse.uml2.uml.Vertex vertex : region.getSubvertices())
-				res.add((org.eclipse.uml2.uml.Vertex)vertex);
-		
-		return res;
-	}
+//	public List<org.eclipse.uml2.uml.Vertex> getStates(StateMachine sm)
+//	{
+//		LinkedList<org.eclipse.uml2.uml.Vertex> res = new LinkedList<org.eclipse.uml2.uml.Vertex>();
+//		for (org.eclipse.uml2.uml.Region region : sm.getRegions())	
+//			for(org.eclipse.uml2.uml.Vertex vertex : region.getSubvertices())
+//				res.add((org.eclipse.uml2.uml.Vertex)vertex);
+//		
+//		return res;
+//	}
 	
 	/**
 	 * Find all transitions in a state machine.
@@ -85,21 +85,21 @@ public class FSMQueries {
 	 * @param vertex
 	 * @return
 	 */
-	public String generateOperationStateString(org.eclipse.uml2.uml.Vertex vertex)
-	{
-		String result = "";
-		if(vertex instanceof State)
-		{
-			org.eclipse.papyrus.RobotML.State state = UMLUtil.getStereotypeApplication(vertex, org.eclipse.papyrus.RobotML.State.class);
-			if(state != null)
-			{
-				if(state.getOperation() != null)
-				{
-					String operation = state.getOperation().getBase_Operation().getName();
-					result = operation;
-				}
-			}
-		}
-		return result;
-	}
+//	public String generateOperationStateString(org.eclipse.uml2.uml.Vertex vertex)
+//	{
+//		String result = "";
+//		if(vertex instanceof State)
+//		{
+//			org.eclipse.papyrus.RobotML.State state = UMLUtil.getStereotypeApplication(vertex, org.eclipse.papyrus.RobotML.State.class);
+//			if(state != null)
+//			{
+//				if(state.getOperation() != null)
+//				{
+//					String operation = state.getOperation().getBase_Operation().getName();
+//					result = operation;
+//				}
+//			}
+//		}
+//		return result;
+//	}
 }

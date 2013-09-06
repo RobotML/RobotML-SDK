@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="ArchitectureQueries" nsURI="org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries" startHeaderPosition="618" endHeaderPosition="940">
+  <mtl:Module name="ArchitectureQueries" nsURI="org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries" startHeaderPosition="602" endHeaderPosition="919">
     <input>
       <takesTypesFrom href="http://www.eclipse.org/uml2/4.0.0/UML#/"/>
     </input>
@@ -1991,18 +1991,18 @@
   </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/getSourcePortName">
-      <details key="start" value="722"/>
-      <details key="end" value="942"/>
+      <details key="start" value="703"/>
+      <details key="end" value="921"/>
       <details key="line" value="20"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/getSourcePortName/conn">
-      <details key="start" value="754"/>
-      <details key="end" value="770"/>
+      <details key="start" value="735"/>
+      <details key="end" value="751"/>
       <details key="line" value="20"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/getSourcePortName/%">
-      <details key="start" value="785"/>
-      <details key="end" value="938"/>
+      <details key="start" value="765"/>
+      <details key="end" value="918"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/getSourcePortName/%/self">
@@ -2011,38 +2011,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/getSourcePortName/%/%">
-      <details key="start" value="792"/>
-      <details key="end" value="869"/>
+      <details key="start" value="772"/>
+      <details key="end" value="849"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/getSourcePortName/%/%.1">
-      <details key="start" value="870"/>
-      <details key="end" value="921"/>
+      <details key="start" value="850"/>
+      <details key="end" value="901"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/getSourcePortName/%/%.2">
-      <details key="start" value="923"/>
-      <details key="end" value="937"/>
+      <details key="start" value="903"/>
+      <details key="end" value="917"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.7" references="/0/getSourcePortName/%/%.2/%/conn">
-      <details key="start" value="932"/>
-      <details key="end" value="936"/>
+      <details key="start" value="912"/>
+      <details key="end" value="916"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.8" references="/0/getSourceComponentForConnector">
-      <details key="start" value="944"/>
-      <details key="end" value="1192"/>
+      <details key="start" value="922"/>
+      <details key="end" value="1168"/>
       <details key="line" value="23"/>
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/getSourceComponentForConnector/conn">
-      <details key="start" value="989"/>
-      <details key="end" value="1005"/>
+      <details key="start" value="967"/>
+      <details key="end" value="983"/>
       <details key="line" value="23"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/getSourceComponentForConnector/%">
-      <details key="start" value="1022"/>
-      <details key="end" value="1188"/>
+      <details key="start" value="999"/>
+      <details key="end" value="1165"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.11" references="/0/getSourceComponentForConnector/%/self">
@@ -2051,38 +2051,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.12" references="/0/getSourceComponentForConnector/%/%">
-      <details key="start" value="1029"/>
-      <details key="end" value="1106"/>
+      <details key="start" value="1006"/>
+      <details key="end" value="1083"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.13" references="/0/getSourceComponentForConnector/%/%.1">
-      <details key="start" value="1107"/>
-      <details key="end" value="1171"/>
+      <details key="start" value="1084"/>
+      <details key="end" value="1148"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.14" references="/0/getSourceComponentForConnector/%/%.2">
-      <details key="start" value="1173"/>
-      <details key="end" value="1187"/>
+      <details key="start" value="1150"/>
+      <details key="end" value="1164"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.15" references="/0/getSourceComponentForConnector/%/%.2/%/conn">
-      <details key="start" value="1182"/>
-      <details key="end" value="1186"/>
+      <details key="start" value="1159"/>
+      <details key="end" value="1163"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.16" references="/0/getSourceComponentTypeNameForConnector">
-      <details key="start" value="1194"/>
-      <details key="end" value="1456"/>
+      <details key="start" value="1169"/>
+      <details key="end" value="1429"/>
       <details key="line" value="26"/>
     </eAnnotations>
     <eAnnotations source="positions.17" references="/0/getSourceComponentTypeNameForConnector/conn">
-      <details key="start" value="1247"/>
-      <details key="end" value="1263"/>
+      <details key="start" value="1222"/>
+      <details key="end" value="1238"/>
       <details key="line" value="26"/>
     </eAnnotations>
     <eAnnotations source="positions.18" references="/0/getSourceComponentTypeNameForConnector/%">
-      <details key="start" value="1278"/>
-      <details key="end" value="1452"/>
+      <details key="start" value="1252"/>
+      <details key="end" value="1426"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.19" references="/0/getSourceComponentTypeNameForConnector/%/self">
@@ -2091,38 +2091,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.20" references="/0/getSourceComponentTypeNameForConnector/%/%">
-      <details key="start" value="1285"/>
-      <details key="end" value="1362"/>
+      <details key="start" value="1259"/>
+      <details key="end" value="1336"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.21" references="/0/getSourceComponentTypeNameForConnector/%/%.1">
-      <details key="start" value="1363"/>
-      <details key="end" value="1435"/>
+      <details key="start" value="1337"/>
+      <details key="end" value="1409"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.22" references="/0/getSourceComponentTypeNameForConnector/%/%.2">
-      <details key="start" value="1437"/>
-      <details key="end" value="1451"/>
+      <details key="start" value="1411"/>
+      <details key="end" value="1425"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.23" references="/0/getSourceComponentTypeNameForConnector/%/%.2/%/conn">
-      <details key="start" value="1446"/>
-      <details key="end" value="1450"/>
+      <details key="start" value="1420"/>
+      <details key="end" value="1424"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.24" references="/0/getSourceComponentInstanceNameForConnector">
-      <details key="start" value="1458"/>
-      <details key="end" value="1728"/>
+      <details key="start" value="1430"/>
+      <details key="end" value="1698"/>
       <details key="line" value="29"/>
     </eAnnotations>
     <eAnnotations source="positions.25" references="/0/getSourceComponentInstanceNameForConnector/conn">
-      <details key="start" value="1515"/>
-      <details key="end" value="1531"/>
+      <details key="start" value="1487"/>
+      <details key="end" value="1503"/>
       <details key="line" value="29"/>
     </eAnnotations>
     <eAnnotations source="positions.26" references="/0/getSourceComponentInstanceNameForConnector/%">
-      <details key="start" value="1546"/>
-      <details key="end" value="1724"/>
+      <details key="start" value="1517"/>
+      <details key="end" value="1695"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.27" references="/0/getSourceComponentInstanceNameForConnector/%/self">
@@ -2131,38 +2131,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.28" references="/0/getSourceComponentInstanceNameForConnector/%/%">
-      <details key="start" value="1553"/>
-      <details key="end" value="1630"/>
+      <details key="start" value="1524"/>
+      <details key="end" value="1601"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.29" references="/0/getSourceComponentInstanceNameForConnector/%/%.1">
-      <details key="start" value="1631"/>
-      <details key="end" value="1707"/>
+      <details key="start" value="1602"/>
+      <details key="end" value="1678"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.30" references="/0/getSourceComponentInstanceNameForConnector/%/%.2">
-      <details key="start" value="1709"/>
-      <details key="end" value="1723"/>
+      <details key="start" value="1680"/>
+      <details key="end" value="1694"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.31" references="/0/getSourceComponentInstanceNameForConnector/%/%.2/%/conn">
-      <details key="start" value="1718"/>
-      <details key="end" value="1722"/>
+      <details key="start" value="1689"/>
+      <details key="end" value="1693"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.32" references="/0/getDestPortName">
-      <details key="start" value="1730"/>
-      <details key="end" value="1946"/>
+      <details key="start" value="1699"/>
+      <details key="end" value="1913"/>
       <details key="line" value="32"/>
     </eAnnotations>
     <eAnnotations source="positions.33" references="/0/getDestPortName/conn">
-      <details key="start" value="1760"/>
-      <details key="end" value="1776"/>
+      <details key="start" value="1729"/>
+      <details key="end" value="1745"/>
       <details key="line" value="32"/>
     </eAnnotations>
     <eAnnotations source="positions.34" references="/0/getDestPortName/%">
-      <details key="start" value="1791"/>
-      <details key="end" value="1942"/>
+      <details key="start" value="1759"/>
+      <details key="end" value="1910"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.35" references="/0/getDestPortName/%/self">
@@ -2171,38 +2171,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.36" references="/0/getDestPortName/%/%">
-      <details key="start" value="1798"/>
-      <details key="end" value="1875"/>
+      <details key="start" value="1766"/>
+      <details key="end" value="1843"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.37" references="/0/getDestPortName/%/%.1">
-      <details key="start" value="1876"/>
-      <details key="end" value="1925"/>
+      <details key="start" value="1844"/>
+      <details key="end" value="1893"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.38" references="/0/getDestPortName/%/%.2">
-      <details key="start" value="1927"/>
-      <details key="end" value="1941"/>
+      <details key="start" value="1895"/>
+      <details key="end" value="1909"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.39" references="/0/getDestPortName/%/%.2/%/conn">
-      <details key="start" value="1936"/>
-      <details key="end" value="1940"/>
+      <details key="start" value="1904"/>
+      <details key="end" value="1908"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.40" references="/0/getDestComponentForConnector">
-      <details key="start" value="1948"/>
-      <details key="end" value="2192"/>
+      <details key="start" value="1914"/>
+      <details key="end" value="2156"/>
       <details key="line" value="35"/>
     </eAnnotations>
     <eAnnotations source="positions.41" references="/0/getDestComponentForConnector/conn">
-      <details key="start" value="1991"/>
-      <details key="end" value="2007"/>
+      <details key="start" value="1957"/>
+      <details key="end" value="1973"/>
       <details key="line" value="35"/>
     </eAnnotations>
     <eAnnotations source="positions.42" references="/0/getDestComponentForConnector/%">
-      <details key="start" value="2024"/>
-      <details key="end" value="2188"/>
+      <details key="start" value="1989"/>
+      <details key="end" value="2153"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.43" references="/0/getDestComponentForConnector/%/self">
@@ -2211,38 +2211,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.44" references="/0/getDestComponentForConnector/%/%">
-      <details key="start" value="2031"/>
-      <details key="end" value="2108"/>
+      <details key="start" value="1996"/>
+      <details key="end" value="2073"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.45" references="/0/getDestComponentForConnector/%/%.1">
-      <details key="start" value="2109"/>
-      <details key="end" value="2171"/>
+      <details key="start" value="2074"/>
+      <details key="end" value="2136"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.46" references="/0/getDestComponentForConnector/%/%.2">
-      <details key="start" value="2173"/>
-      <details key="end" value="2187"/>
+      <details key="start" value="2138"/>
+      <details key="end" value="2152"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.47" references="/0/getDestComponentForConnector/%/%.2/%/conn">
-      <details key="start" value="2182"/>
-      <details key="end" value="2186"/>
+      <details key="start" value="2147"/>
+      <details key="end" value="2151"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.48" references="/0/getDestComponentTypeNameForConnector">
-      <details key="start" value="2194"/>
-      <details key="end" value="2452"/>
+      <details key="start" value="2157"/>
+      <details key="end" value="2413"/>
       <details key="line" value="38"/>
     </eAnnotations>
     <eAnnotations source="positions.49" references="/0/getDestComponentTypeNameForConnector/conn">
-      <details key="start" value="2245"/>
-      <details key="end" value="2261"/>
+      <details key="start" value="2208"/>
+      <details key="end" value="2224"/>
       <details key="line" value="38"/>
     </eAnnotations>
     <eAnnotations source="positions.50" references="/0/getDestComponentTypeNameForConnector/%">
-      <details key="start" value="2276"/>
-      <details key="end" value="2448"/>
+      <details key="start" value="2238"/>
+      <details key="end" value="2410"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.51" references="/0/getDestComponentTypeNameForConnector/%/self">
@@ -2251,38 +2251,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.52" references="/0/getDestComponentTypeNameForConnector/%/%">
-      <details key="start" value="2283"/>
-      <details key="end" value="2360"/>
+      <details key="start" value="2245"/>
+      <details key="end" value="2322"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.53" references="/0/getDestComponentTypeNameForConnector/%/%.1">
-      <details key="start" value="2361"/>
-      <details key="end" value="2431"/>
+      <details key="start" value="2323"/>
+      <details key="end" value="2393"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.54" references="/0/getDestComponentTypeNameForConnector/%/%.2">
-      <details key="start" value="2433"/>
-      <details key="end" value="2447"/>
+      <details key="start" value="2395"/>
+      <details key="end" value="2409"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.55" references="/0/getDestComponentTypeNameForConnector/%/%.2/%/conn">
-      <details key="start" value="2442"/>
-      <details key="end" value="2446"/>
+      <details key="start" value="2404"/>
+      <details key="end" value="2408"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.56" references="/0/getDestComponentInstanceNameForConnector">
-      <details key="start" value="2454"/>
-      <details key="end" value="2720"/>
+      <details key="start" value="2414"/>
+      <details key="end" value="2678"/>
       <details key="line" value="41"/>
     </eAnnotations>
     <eAnnotations source="positions.57" references="/0/getDestComponentInstanceNameForConnector/conn">
-      <details key="start" value="2509"/>
-      <details key="end" value="2525"/>
+      <details key="start" value="2469"/>
+      <details key="end" value="2485"/>
       <details key="line" value="41"/>
     </eAnnotations>
     <eAnnotations source="positions.58" references="/0/getDestComponentInstanceNameForConnector/%">
-      <details key="start" value="2540"/>
-      <details key="end" value="2716"/>
+      <details key="start" value="2499"/>
+      <details key="end" value="2675"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.59" references="/0/getDestComponentInstanceNameForConnector/%/self">
@@ -2291,38 +2291,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.60" references="/0/getDestComponentInstanceNameForConnector/%/%">
-      <details key="start" value="2547"/>
-      <details key="end" value="2624"/>
+      <details key="start" value="2506"/>
+      <details key="end" value="2583"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.61" references="/0/getDestComponentInstanceNameForConnector/%/%.1">
-      <details key="start" value="2625"/>
-      <details key="end" value="2699"/>
+      <details key="start" value="2584"/>
+      <details key="end" value="2658"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.62" references="/0/getDestComponentInstanceNameForConnector/%/%.2">
-      <details key="start" value="2701"/>
-      <details key="end" value="2715"/>
+      <details key="start" value="2660"/>
+      <details key="end" value="2674"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.63" references="/0/getDestComponentInstanceNameForConnector/%/%.2/%/conn">
-      <details key="start" value="2710"/>
-      <details key="end" value="2714"/>
+      <details key="start" value="2669"/>
+      <details key="end" value="2673"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.64" references="/0/getInternalConnectors">
-      <details key="start" value="2722"/>
-      <details key="end" value="2949"/>
+      <details key="start" value="2679"/>
+      <details key="end" value="2904"/>
       <details key="line" value="44"/>
     </eAnnotations>
     <eAnnotations source="positions.65" references="/0/getInternalConnectors/c">
-      <details key="start" value="2758"/>
-      <details key="end" value="2767"/>
+      <details key="start" value="2715"/>
+      <details key="end" value="2724"/>
       <details key="line" value="44"/>
     </eAnnotations>
     <eAnnotations source="positions.66" references="/0/getInternalConnectors/%">
-      <details key="start" value="2795"/>
-      <details key="end" value="2945"/>
+      <details key="start" value="2751"/>
+      <details key="end" value="2901"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.67" references="/0/getInternalConnectors/%/self">
@@ -2331,38 +2331,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.68" references="/0/getInternalConnectors/%/%">
-      <details key="start" value="2802"/>
-      <details key="end" value="2879"/>
+      <details key="start" value="2758"/>
+      <details key="end" value="2835"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.69" references="/0/getInternalConnectors/%/%.1">
-      <details key="start" value="2880"/>
-      <details key="end" value="2931"/>
+      <details key="start" value="2836"/>
+      <details key="end" value="2887"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.70" references="/0/getInternalConnectors/%/%.2">
-      <details key="start" value="2933"/>
-      <details key="end" value="2944"/>
+      <details key="start" value="2889"/>
+      <details key="end" value="2900"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.71" references="/0/getInternalConnectors/%/%.2/%/c">
-      <details key="start" value="2942"/>
-      <details key="end" value="2943"/>
+      <details key="start" value="2898"/>
+      <details key="end" value="2899"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.72" references="/0/getExternalInputConnectors">
-      <details key="start" value="2951"/>
-      <details key="end" value="3188"/>
+      <details key="start" value="2905"/>
+      <details key="end" value="3140"/>
       <details key="line" value="47"/>
     </eAnnotations>
     <eAnnotations source="positions.73" references="/0/getExternalInputConnectors/c">
-      <details key="start" value="2992"/>
-      <details key="end" value="3001"/>
+      <details key="start" value="2946"/>
+      <details key="end" value="2955"/>
       <details key="line" value="47"/>
     </eAnnotations>
     <eAnnotations source="positions.74" references="/0/getExternalInputConnectors/%">
-      <details key="start" value="3029"/>
-      <details key="end" value="3184"/>
+      <details key="start" value="2982"/>
+      <details key="end" value="3137"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.75" references="/0/getExternalInputConnectors/%/self">
@@ -2371,38 +2371,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.76" references="/0/getExternalInputConnectors/%/%">
-      <details key="start" value="3036"/>
-      <details key="end" value="3113"/>
+      <details key="start" value="2989"/>
+      <details key="end" value="3066"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.77" references="/0/getExternalInputConnectors/%/%.1">
-      <details key="start" value="3114"/>
-      <details key="end" value="3170"/>
+      <details key="start" value="3067"/>
+      <details key="end" value="3123"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.78" references="/0/getExternalInputConnectors/%/%.2">
-      <details key="start" value="3172"/>
-      <details key="end" value="3183"/>
+      <details key="start" value="3125"/>
+      <details key="end" value="3136"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.79" references="/0/getExternalInputConnectors/%/%.2/%/c">
-      <details key="start" value="3181"/>
-      <details key="end" value="3182"/>
+      <details key="start" value="3134"/>
+      <details key="end" value="3135"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.80" references="/0/getExternalOutputConnectors">
-      <details key="start" value="3190"/>
-      <details key="end" value="3429"/>
+      <details key="start" value="3141"/>
+      <details key="end" value="3378"/>
       <details key="line" value="50"/>
     </eAnnotations>
     <eAnnotations source="positions.81" references="/0/getExternalOutputConnectors/c">
-      <details key="start" value="3232"/>
-      <details key="end" value="3241"/>
+      <details key="start" value="3183"/>
+      <details key="end" value="3192"/>
       <details key="line" value="50"/>
     </eAnnotations>
     <eAnnotations source="positions.82" references="/0/getExternalOutputConnectors/%">
-      <details key="start" value="3269"/>
-      <details key="end" value="3425"/>
+      <details key="start" value="3219"/>
+      <details key="end" value="3375"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.83" references="/0/getExternalOutputConnectors/%/self">
@@ -2411,38 +2411,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.84" references="/0/getExternalOutputConnectors/%/%">
-      <details key="start" value="3276"/>
-      <details key="end" value="3353"/>
+      <details key="start" value="3226"/>
+      <details key="end" value="3303"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.85" references="/0/getExternalOutputConnectors/%/%.1">
-      <details key="start" value="3354"/>
-      <details key="end" value="3411"/>
+      <details key="start" value="3304"/>
+      <details key="end" value="3361"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.86" references="/0/getExternalOutputConnectors/%/%.2">
-      <details key="start" value="3413"/>
-      <details key="end" value="3424"/>
+      <details key="start" value="3363"/>
+      <details key="end" value="3374"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.87" references="/0/getExternalOutputConnectors/%/%.2/%/c">
-      <details key="start" value="3422"/>
-      <details key="end" value="3423"/>
+      <details key="start" value="3372"/>
+      <details key="end" value="3373"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.88" references="/0/getAllSubComponentsInClass">
-      <details key="start" value="3431"/>
-      <details key="end" value="3676"/>
+      <details key="start" value="3379"/>
+      <details key="end" value="3622"/>
       <details key="line" value="53"/>
     </eAnnotations>
     <eAnnotations source="positions.89" references="/0/getAllSubComponentsInClass/class">
-      <details key="start" value="3472"/>
-      <details key="end" value="3485"/>
+      <details key="start" value="3420"/>
+      <details key="end" value="3433"/>
       <details key="line" value="53"/>
     </eAnnotations>
     <eAnnotations source="positions.90" references="/0/getAllSubComponentsInClass/%">
-      <details key="start" value="3512"/>
-      <details key="end" value="3672"/>
+      <details key="start" value="3459"/>
+      <details key="end" value="3619"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.91" references="/0/getAllSubComponentsInClass/%/self">
@@ -2451,38 +2451,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.92" references="/0/getAllSubComponentsInClass/%/%">
-      <details key="start" value="3519"/>
-      <details key="end" value="3596"/>
+      <details key="start" value="3466"/>
+      <details key="end" value="3543"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.93" references="/0/getAllSubComponentsInClass/%/%.1">
-      <details key="start" value="3598"/>
-      <details key="end" value="3654"/>
+      <details key="start" value="3545"/>
+      <details key="end" value="3601"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.94" references="/0/getAllSubComponentsInClass/%/%.2">
-      <details key="start" value="3656"/>
-      <details key="end" value="3671"/>
+      <details key="start" value="3603"/>
+      <details key="end" value="3618"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.95" references="/0/getAllSubComponentsInClass/%/%.2/%/class">
-      <details key="start" value="3665"/>
-      <details key="end" value="3670"/>
+      <details key="start" value="3612"/>
+      <details key="end" value="3617"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.96" references="/0/getLevel1SubComponentsForComponent">
-      <details key="start" value="3678"/>
-      <details key="end" value="3939"/>
+      <details key="start" value="3623"/>
+      <details key="end" value="3882"/>
       <details key="line" value="56"/>
     </eAnnotations>
     <eAnnotations source="positions.97" references="/0/getLevel1SubComponentsForComponent/class">
-      <details key="start" value="3727"/>
-      <details key="end" value="3740"/>
+      <details key="start" value="3672"/>
+      <details key="end" value="3685"/>
       <details key="line" value="56"/>
     </eAnnotations>
     <eAnnotations source="positions.98" references="/0/getLevel1SubComponentsForComponent/%">
-      <details key="start" value="3767"/>
-      <details key="end" value="3935"/>
+      <details key="start" value="3711"/>
+      <details key="end" value="3879"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.99" references="/0/getLevel1SubComponentsForComponent/%/self">
@@ -2491,43 +2491,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.100" references="/0/getLevel1SubComponentsForComponent/%/%">
-      <details key="start" value="3774"/>
-      <details key="end" value="3851"/>
+      <details key="start" value="3718"/>
+      <details key="end" value="3795"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.101" references="/0/getLevel1SubComponentsForComponent/%/%.1">
-      <details key="start" value="3853"/>
-      <details key="end" value="3917"/>
+      <details key="start" value="3797"/>
+      <details key="end" value="3861"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.102" references="/0/getLevel1SubComponentsForComponent/%/%.2">
-      <details key="start" value="3919"/>
-      <details key="end" value="3934"/>
+      <details key="start" value="3863"/>
+      <details key="end" value="3878"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.103" references="/0/getLevel1SubComponentsForComponent/%/%.2/%/class">
-      <details key="start" value="3928"/>
-      <details key="end" value="3933"/>
+      <details key="start" value="3872"/>
+      <details key="end" value="3877"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.104" references="/0/getLevel1SubComponentsForComponentWithStereotype">
-      <details key="start" value="3941"/>
-      <details key="end" value="4281"/>
+      <details key="start" value="3883"/>
+      <details key="end" value="4221"/>
       <details key="line" value="59"/>
     </eAnnotations>
     <eAnnotations source="positions.105" references="/0/getLevel1SubComponentsForComponentWithStereotype/class">
-      <details key="start" value="4004"/>
-      <details key="end" value="4017"/>
+      <details key="start" value="3946"/>
+      <details key="end" value="3959"/>
       <details key="line" value="59"/>
     </eAnnotations>
     <eAnnotations source="positions.106" references="/0/getLevel1SubComponentsForComponentWithStereotype/stereotype">
-      <details key="start" value="4019"/>
-      <details key="end" value="4038"/>
+      <details key="start" value="3961"/>
+      <details key="end" value="3980"/>
       <details key="line" value="59"/>
     </eAnnotations>
     <eAnnotations source="positions.107" references="/0/getLevel1SubComponentsForComponentWithStereotype/%">
-      <details key="start" value="4065"/>
-      <details key="end" value="4277"/>
+      <details key="start" value="4006"/>
+      <details key="end" value="4218"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.108" references="/0/getLevel1SubComponentsForComponentWithStereotype/%/self">
@@ -2536,43 +2536,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.109" references="/0/getLevel1SubComponentsForComponentWithStereotype/%/%">
-      <details key="start" value="4072"/>
-      <details key="end" value="4149"/>
+      <details key="start" value="4013"/>
+      <details key="end" value="4090"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.110" references="/0/getLevel1SubComponentsForComponentWithStereotype/%/%.1">
-      <details key="start" value="4151"/>
-      <details key="end" value="4247"/>
+      <details key="start" value="4092"/>
+      <details key="end" value="4188"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.111" references="/0/getLevel1SubComponentsForComponentWithStereotype/%/%.2">
-      <details key="start" value="4249"/>
-      <details key="end" value="4276"/>
+      <details key="start" value="4190"/>
+      <details key="end" value="4217"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.112" references="/0/getLevel1SubComponentsForComponentWithStereotype/%/%.2/%/class">
-      <details key="start" value="4258"/>
-      <details key="end" value="4263"/>
+      <details key="start" value="4199"/>
+      <details key="end" value="4204"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.113" references="/0/getLevel1SubComponentsForComponentWithStereotype/%/%.2/%.1/stereotype">
-      <details key="start" value="4265"/>
-      <details key="end" value="4275"/>
+      <details key="start" value="4206"/>
+      <details key="end" value="4216"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.114" references="/0/getOutputPortsForElement">
-      <details key="start" value="4283"/>
-      <details key="end" value="4520"/>
+      <details key="start" value="4222"/>
+      <details key="end" value="4457"/>
       <details key="line" value="62"/>
     </eAnnotations>
     <eAnnotations source="positions.115" references="/0/getOutputPortsForElement/elt">
-      <details key="start" value="4322"/>
-      <details key="end" value="4335"/>
+      <details key="start" value="4261"/>
+      <details key="end" value="4274"/>
       <details key="line" value="62"/>
     </eAnnotations>
     <eAnnotations source="positions.116" references="/0/getOutputPortsForElement/%">
-      <details key="start" value="4358"/>
-      <details key="end" value="4516"/>
+      <details key="start" value="4296"/>
+      <details key="end" value="4454"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.117" references="/0/getOutputPortsForElement/%/self">
@@ -2581,38 +2581,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.118" references="/0/getOutputPortsForElement/%/%">
-      <details key="start" value="4365"/>
-      <details key="end" value="4442"/>
+      <details key="start" value="4303"/>
+      <details key="end" value="4380"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.119" references="/0/getOutputPortsForElement/%/%.1">
-      <details key="start" value="4444"/>
-      <details key="end" value="4500"/>
+      <details key="start" value="4382"/>
+      <details key="end" value="4438"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.120" references="/0/getOutputPortsForElement/%/%.2">
-      <details key="start" value="4502"/>
-      <details key="end" value="4515"/>
+      <details key="start" value="4440"/>
+      <details key="end" value="4453"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.121" references="/0/getOutputPortsForElement/%/%.2/%/elt">
-      <details key="start" value="4511"/>
-      <details key="end" value="4514"/>
+      <details key="start" value="4449"/>
+      <details key="end" value="4452"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.122" references="/0/getInputPortsForElement">
-      <details key="start" value="4522"/>
-      <details key="end" value="4757"/>
+      <details key="start" value="4458"/>
+      <details key="end" value="4691"/>
       <details key="line" value="65"/>
     </eAnnotations>
     <eAnnotations source="positions.123" references="/0/getInputPortsForElement/elt">
-      <details key="start" value="4560"/>
-      <details key="end" value="4573"/>
+      <details key="start" value="4496"/>
+      <details key="end" value="4509"/>
       <details key="line" value="65"/>
     </eAnnotations>
     <eAnnotations source="positions.124" references="/0/getInputPortsForElement/%">
-      <details key="start" value="4596"/>
-      <details key="end" value="4753"/>
+      <details key="start" value="4531"/>
+      <details key="end" value="4688"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.125" references="/0/getInputPortsForElement/%/self">
@@ -2621,38 +2621,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.126" references="/0/getInputPortsForElement/%/%">
-      <details key="start" value="4603"/>
-      <details key="end" value="4680"/>
+      <details key="start" value="4538"/>
+      <details key="end" value="4615"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.127" references="/0/getInputPortsForElement/%/%.1">
-      <details key="start" value="4682"/>
-      <details key="end" value="4737"/>
+      <details key="start" value="4617"/>
+      <details key="end" value="4672"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.128" references="/0/getInputPortsForElement/%/%.2">
-      <details key="start" value="4739"/>
-      <details key="end" value="4752"/>
+      <details key="start" value="4674"/>
+      <details key="end" value="4687"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.129" references="/0/getInputPortsForElement/%/%.2/%/elt">
-      <details key="start" value="4748"/>
-      <details key="end" value="4751"/>
+      <details key="start" value="4683"/>
+      <details key="end" value="4686"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.130" references="/0/getOnPort">
-      <details key="start" value="4759"/>
-      <details key="end" value="4971"/>
+      <details key="start" value="4692"/>
+      <details key="end" value="4902"/>
       <details key="line" value="68"/>
     </eAnnotations>
     <eAnnotations source="positions.131" references="/0/getOnPort/param">
-      <details key="start" value="4783"/>
-      <details key="end" value="4800"/>
+      <details key="start" value="4716"/>
+      <details key="end" value="4733"/>
       <details key="line" value="68"/>
     </eAnnotations>
     <eAnnotations source="positions.132" references="/0/getOnPort/%">
-      <details key="start" value="4827"/>
-      <details key="end" value="4967"/>
+      <details key="start" value="4759"/>
+      <details key="end" value="4899"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.133" references="/0/getOnPort/%/self">
@@ -2661,38 +2661,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.134" references="/0/getOnPort/%/%">
-      <details key="start" value="4834"/>
-      <details key="end" value="4904"/>
+      <details key="start" value="4766"/>
+      <details key="end" value="4836"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.135" references="/0/getOnPort/%/%.1">
-      <details key="start" value="4906"/>
-      <details key="end" value="4949"/>
+      <details key="start" value="4838"/>
+      <details key="end" value="4881"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.136" references="/0/getOnPort/%/%.2">
-      <details key="start" value="4951"/>
-      <details key="end" value="4966"/>
+      <details key="start" value="4883"/>
+      <details key="end" value="4898"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.137" references="/0/getOnPort/%/%.2/%/param">
-      <details key="start" value="4960"/>
-      <details key="end" value="4965"/>
+      <details key="start" value="4892"/>
+      <details key="end" value="4897"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.138" references="/0/getComponentModels">
-      <details key="start" value="4973"/>
-      <details key="end" value="5206"/>
+      <details key="start" value="4903"/>
+      <details key="end" value="5134"/>
       <details key="line" value="71"/>
     </eAnnotations>
     <eAnnotations source="positions.139" references="/0/getComponentModels/model">
-      <details key="start" value="5006"/>
-      <details key="end" value="5019"/>
+      <details key="start" value="4936"/>
+      <details key="end" value="4949"/>
       <details key="line" value="71"/>
     </eAnnotations>
     <eAnnotations source="positions.140" references="/0/getComponentModels/%">
-      <details key="start" value="5050"/>
-      <details key="end" value="5202"/>
+      <details key="start" value="4979"/>
+      <details key="end" value="5131"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.141" references="/0/getComponentModels/%/self">
@@ -2701,38 +2701,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.142" references="/0/getComponentModels/%/%">
-      <details key="start" value="5057"/>
-      <details key="end" value="5134"/>
+      <details key="start" value="4986"/>
+      <details key="end" value="5063"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.143" references="/0/getComponentModels/%/%.1">
-      <details key="start" value="5136"/>
-      <details key="end" value="5184"/>
+      <details key="start" value="5065"/>
+      <details key="end" value="5113"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.144" references="/0/getComponentModels/%/%.2">
-      <details key="start" value="5186"/>
-      <details key="end" value="5201"/>
+      <details key="start" value="5115"/>
+      <details key="end" value="5130"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.145" references="/0/getComponentModels/%/%.2/%/model">
-      <details key="start" value="5195"/>
-      <details key="end" value="5200"/>
+      <details key="start" value="5124"/>
+      <details key="end" value="5129"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.146" references="/0/isMacroComponent">
-      <details key="start" value="5208"/>
-      <details key="end" value="5424"/>
+      <details key="start" value="5135"/>
+      <details key="end" value="5349"/>
       <details key="line" value="74"/>
     </eAnnotations>
     <eAnnotations source="positions.147" references="/0/isMacroComponent/class">
-      <details key="start" value="5239"/>
-      <details key="end" value="5252"/>
+      <details key="start" value="5166"/>
+      <details key="end" value="5179"/>
       <details key="line" value="74"/>
     </eAnnotations>
     <eAnnotations source="positions.148" references="/0/isMacroComponent/%">
-      <details key="start" value="5269"/>
-      <details key="end" value="5419"/>
+      <details key="start" value="5195"/>
+      <details key="end" value="5345"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.149" references="/0/isMacroComponent/%/self">
@@ -2741,38 +2741,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.150" references="/0/isMacroComponent/%/%">
-      <details key="start" value="5276"/>
-      <details key="end" value="5353"/>
+      <details key="start" value="5202"/>
+      <details key="end" value="5279"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.151" references="/0/isMacroComponent/%/%.1">
-      <details key="start" value="5355"/>
-      <details key="end" value="5401"/>
+      <details key="start" value="5281"/>
+      <details key="end" value="5327"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.152" references="/0/isMacroComponent/%/%.2">
-      <details key="start" value="5403"/>
-      <details key="end" value="5418"/>
+      <details key="start" value="5329"/>
+      <details key="end" value="5344"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.153" references="/0/isMacroComponent/%/%.2/%/class">
-      <details key="start" value="5412"/>
-      <details key="end" value="5417"/>
+      <details key="start" value="5338"/>
+      <details key="end" value="5343"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.154" references="/0/hasNativeImplementation">
-      <details key="start" value="5426"/>
-      <details key="end" value="5655"/>
+      <details key="start" value="5350"/>
+      <details key="end" value="5577"/>
       <details key="line" value="77"/>
     </eAnnotations>
     <eAnnotations source="positions.155" references="/0/hasNativeImplementation/class">
-      <details key="start" value="5464"/>
-      <details key="end" value="5477"/>
+      <details key="start" value="5388"/>
+      <details key="end" value="5401"/>
       <details key="line" value="77"/>
     </eAnnotations>
     <eAnnotations source="positions.156" references="/0/hasNativeImplementation/%">
-      <details key="start" value="5493"/>
-      <details key="end" value="5650"/>
+      <details key="start" value="5416"/>
+      <details key="end" value="5573"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.157" references="/0/hasNativeImplementation/%/self">
@@ -2781,38 +2781,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.158" references="/0/hasNativeImplementation/%/%">
-      <details key="start" value="5500"/>
-      <details key="end" value="5577"/>
+      <details key="start" value="5423"/>
+      <details key="end" value="5500"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.159" references="/0/hasNativeImplementation/%/%.1">
-      <details key="start" value="5579"/>
-      <details key="end" value="5632"/>
+      <details key="start" value="5502"/>
+      <details key="end" value="5555"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.160" references="/0/hasNativeImplementation/%/%.2">
-      <details key="start" value="5634"/>
-      <details key="end" value="5649"/>
+      <details key="start" value="5557"/>
+      <details key="end" value="5572"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.161" references="/0/hasNativeImplementation/%/%.2/%/class">
-      <details key="start" value="5643"/>
-      <details key="end" value="5648"/>
+      <details key="start" value="5566"/>
+      <details key="end" value="5571"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.162" references="/0/getNativeLibraryPathForComponent">
-      <details key="start" value="5657"/>
-      <details key="end" value="5903"/>
+      <details key="start" value="5578"/>
+      <details key="end" value="5822"/>
       <details key="line" value="80"/>
     </eAnnotations>
     <eAnnotations source="positions.163" references="/0/getNativeLibraryPathForComponent/class">
-      <details key="start" value="5704"/>
-      <details key="end" value="5717"/>
+      <details key="start" value="5625"/>
+      <details key="end" value="5638"/>
       <details key="line" value="80"/>
     </eAnnotations>
     <eAnnotations source="positions.164" references="/0/getNativeLibraryPathForComponent/%">
-      <details key="start" value="5732"/>
-      <details key="end" value="5898"/>
+      <details key="start" value="5652"/>
+      <details key="end" value="5818"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.165" references="/0/getNativeLibraryPathForComponent/%/self">
@@ -2821,38 +2821,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.166" references="/0/getNativeLibraryPathForComponent/%/%">
-      <details key="start" value="5739"/>
-      <details key="end" value="5816"/>
+      <details key="start" value="5659"/>
+      <details key="end" value="5736"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.167" references="/0/getNativeLibraryPathForComponent/%/%.1">
-      <details key="start" value="5818"/>
-      <details key="end" value="5880"/>
+      <details key="start" value="5738"/>
+      <details key="end" value="5800"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.168" references="/0/getNativeLibraryPathForComponent/%/%.2">
-      <details key="start" value="5882"/>
-      <details key="end" value="5897"/>
+      <details key="start" value="5802"/>
+      <details key="end" value="5817"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.169" references="/0/getNativeLibraryPathForComponent/%/%.2/%/class">
-      <details key="start" value="5891"/>
-      <details key="end" value="5896"/>
+      <details key="start" value="5811"/>
+      <details key="end" value="5816"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.170" references="/0/getNativeComponentNameForComponent">
-      <details key="start" value="5905"/>
-      <details key="end" value="6155"/>
+      <details key="start" value="5823"/>
+      <details key="end" value="6071"/>
       <details key="line" value="83"/>
     </eAnnotations>
     <eAnnotations source="positions.171" references="/0/getNativeComponentNameForComponent/class">
-      <details key="start" value="5954"/>
-      <details key="end" value="5967"/>
+      <details key="start" value="5872"/>
+      <details key="end" value="5885"/>
       <details key="line" value="83"/>
     </eAnnotations>
     <eAnnotations source="positions.172" references="/0/getNativeComponentNameForComponent/%">
-      <details key="start" value="5982"/>
-      <details key="end" value="6150"/>
+      <details key="start" value="5899"/>
+      <details key="end" value="6067"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.173" references="/0/getNativeComponentNameForComponent/%/self">
@@ -2861,43 +2861,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.174" references="/0/getNativeComponentNameForComponent/%/%">
-      <details key="start" value="5989"/>
-      <details key="end" value="6066"/>
+      <details key="start" value="5906"/>
+      <details key="end" value="5983"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.175" references="/0/getNativeComponentNameForComponent/%/%.1">
-      <details key="start" value="6068"/>
-      <details key="end" value="6132"/>
+      <details key="start" value="5985"/>
+      <details key="end" value="6049"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.176" references="/0/getNativeComponentNameForComponent/%/%.2">
-      <details key="start" value="6134"/>
-      <details key="end" value="6149"/>
+      <details key="start" value="6051"/>
+      <details key="end" value="6066"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.177" references="/0/getNativeComponentNameForComponent/%/%.2/%/class">
-      <details key="start" value="6143"/>
-      <details key="end" value="6148"/>
+      <details key="start" value="6060"/>
+      <details key="end" value="6065"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.178" references="/0/getComponentFileName">
-      <details key="start" value="6157"/>
-      <details key="end" value="6435"/>
+      <details key="start" value="6072"/>
+      <details key="end" value="6348"/>
       <details key="line" value="86"/>
     </eAnnotations>
     <eAnnotations source="positions.179" references="/0/getComponentFileName/classifier">
-      <details key="start" value="6192"/>
-      <details key="end" value="6215"/>
+      <details key="start" value="6107"/>
+      <details key="end" value="6130"/>
       <details key="line" value="86"/>
     </eAnnotations>
     <eAnnotations source="positions.180" references="/0/getComponentFileName/end">
-      <details key="start" value="6217"/>
-      <details key="end" value="6229"/>
+      <details key="start" value="6132"/>
+      <details key="end" value="6144"/>
       <details key="line" value="86"/>
     </eAnnotations>
     <eAnnotations source="positions.181" references="/0/getComponentFileName/%">
-      <details key="start" value="6245"/>
-      <details key="end" value="6430"/>
+      <details key="start" value="6159"/>
+      <details key="end" value="6344"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.182" references="/0/getComponentFileName/%/self">
@@ -2906,43 +2906,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.183" references="/0/getComponentFileName/%/%">
-      <details key="start" value="6252"/>
-      <details key="end" value="6329"/>
+      <details key="start" value="6166"/>
+      <details key="end" value="6243"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.184" references="/0/getComponentFileName/%/%.1">
-      <details key="start" value="6331"/>
-      <details key="end" value="6403"/>
+      <details key="start" value="6245"/>
+      <details key="end" value="6317"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.185" references="/0/getComponentFileName/%/%.2">
-      <details key="start" value="6405"/>
-      <details key="end" value="6429"/>
+      <details key="start" value="6319"/>
+      <details key="end" value="6343"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.186" references="/0/getComponentFileName/%/%.2/%/classifier">
-      <details key="start" value="6414"/>
-      <details key="end" value="6424"/>
+      <details key="start" value="6328"/>
+      <details key="end" value="6338"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.187" references="/0/getComponentFileName/%/%.2/%.1/end">
-      <details key="start" value="6425"/>
-      <details key="end" value="6428"/>
+      <details key="start" value="6339"/>
+      <details key="end" value="6342"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.188" references="/0/getOutputPortBufferSize">
-      <details key="start" value="6437"/>
-      <details key="end" value="6656"/>
+      <details key="start" value="6349"/>
+      <details key="end" value="6566"/>
       <details key="line" value="89"/>
     </eAnnotations>
     <eAnnotations source="positions.189" references="/0/getOutputPortBufferSize/p">
-      <details key="start" value="6475"/>
-      <details key="end" value="6483"/>
+      <details key="start" value="6387"/>
+      <details key="end" value="6395"/>
       <details key="line" value="89"/>
     </eAnnotations>
     <eAnnotations source="positions.190" references="/0/getOutputPortBufferSize/%">
-      <details key="start" value="6499"/>
-      <details key="end" value="6651"/>
+      <details key="start" value="6410"/>
+      <details key="end" value="6562"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.191" references="/0/getOutputPortBufferSize/%/self">
@@ -2951,38 +2951,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.192" references="/0/getOutputPortBufferSize/%/%">
-      <details key="start" value="6506"/>
-      <details key="end" value="6583"/>
+      <details key="start" value="6417"/>
+      <details key="end" value="6494"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.193" references="/0/getOutputPortBufferSize/%/%.1">
-      <details key="start" value="6585"/>
-      <details key="end" value="6637"/>
+      <details key="start" value="6496"/>
+      <details key="end" value="6548"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.194" references="/0/getOutputPortBufferSize/%/%.2">
-      <details key="start" value="6639"/>
-      <details key="end" value="6650"/>
+      <details key="start" value="6550"/>
+      <details key="end" value="6561"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.195" references="/0/getOutputPortBufferSize/%/%.2/%/p">
-      <details key="start" value="6648"/>
-      <details key="end" value="6649"/>
+      <details key="start" value="6559"/>
+      <details key="end" value="6560"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.196" references="/0/isDataFlowPort">
-      <details key="start" value="6658"/>
-      <details key="end" value="6864"/>
+      <details key="start" value="6567"/>
+      <details key="end" value="6771"/>
       <details key="line" value="92"/>
     </eAnnotations>
     <eAnnotations source="positions.197" references="/0/isDataFlowPort/elt">
-      <details key="start" value="6687"/>
-      <details key="end" value="6697"/>
+      <details key="start" value="6596"/>
+      <details key="end" value="6606"/>
       <details key="line" value="92"/>
     </eAnnotations>
     <eAnnotations source="positions.198" references="/0/isDataFlowPort/%">
-      <details key="start" value="6714"/>
-      <details key="end" value="6859"/>
+      <details key="start" value="6622"/>
+      <details key="end" value="6767"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.199" references="/0/isDataFlowPort/%/self">
@@ -2991,38 +2991,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.200" references="/0/isDataFlowPort/%/%">
-      <details key="start" value="6721"/>
-      <details key="end" value="6798"/>
+      <details key="start" value="6629"/>
+      <details key="end" value="6706"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.201" references="/0/isDataFlowPort/%/%.1">
-      <details key="start" value="6800"/>
-      <details key="end" value="6843"/>
+      <details key="start" value="6708"/>
+      <details key="end" value="6751"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.202" references="/0/isDataFlowPort/%/%.2">
-      <details key="start" value="6845"/>
-      <details key="end" value="6858"/>
+      <details key="start" value="6753"/>
+      <details key="end" value="6766"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.203" references="/0/isDataFlowPort/%/%.2/%/elt">
-      <details key="start" value="6854"/>
-      <details key="end" value="6857"/>
+      <details key="start" value="6762"/>
+      <details key="end" value="6765"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.204" references="/0/isServicePort">
-      <details key="start" value="6866"/>
-      <details key="end" value="7070"/>
+      <details key="start" value="6772"/>
+      <details key="end" value="6974"/>
       <details key="line" value="95"/>
     </eAnnotations>
     <eAnnotations source="positions.205" references="/0/isServicePort/elt">
-      <details key="start" value="6894"/>
-      <details key="end" value="6904"/>
+      <details key="start" value="6800"/>
+      <details key="end" value="6810"/>
       <details key="line" value="95"/>
     </eAnnotations>
     <eAnnotations source="positions.206" references="/0/isServicePort/%">
-      <details key="start" value="6921"/>
-      <details key="end" value="7065"/>
+      <details key="start" value="6826"/>
+      <details key="end" value="6970"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.207" references="/0/isServicePort/%/self">
@@ -3031,38 +3031,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.208" references="/0/isServicePort/%/%">
-      <details key="start" value="6928"/>
-      <details key="end" value="7005"/>
+      <details key="start" value="6833"/>
+      <details key="end" value="6910"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.209" references="/0/isServicePort/%/%.1">
-      <details key="start" value="7007"/>
-      <details key="end" value="7049"/>
+      <details key="start" value="6912"/>
+      <details key="end" value="6954"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.210" references="/0/isServicePort/%/%.2">
-      <details key="start" value="7051"/>
-      <details key="end" value="7064"/>
+      <details key="start" value="6956"/>
+      <details key="end" value="6969"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.211" references="/0/isServicePort/%/%.2/%/elt">
-      <details key="start" value="7060"/>
-      <details key="end" value="7063"/>
+      <details key="start" value="6965"/>
+      <details key="end" value="6968"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.212" references="/0/definesConnections">
-      <details key="start" value="7072"/>
-      <details key="end" value="7286"/>
+      <details key="start" value="6975"/>
+      <details key="end" value="7187"/>
       <details key="line" value="98"/>
     </eAnnotations>
     <eAnnotations source="positions.213" references="/0/definesConnections/cl">
-      <details key="start" value="7105"/>
-      <details key="end" value="7115"/>
+      <details key="start" value="7008"/>
+      <details key="end" value="7018"/>
       <details key="line" value="98"/>
     </eAnnotations>
     <eAnnotations source="positions.214" references="/0/definesConnections/%">
-      <details key="start" value="7132"/>
-      <details key="end" value="7281"/>
+      <details key="start" value="7034"/>
+      <details key="end" value="7183"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.215" references="/0/definesConnections/%/self">
@@ -3071,38 +3071,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.216" references="/0/definesConnections/%/%">
-      <details key="start" value="7139"/>
-      <details key="end" value="7216"/>
+      <details key="start" value="7041"/>
+      <details key="end" value="7118"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.217" references="/0/definesConnections/%/%.1">
-      <details key="start" value="7218"/>
-      <details key="end" value="7266"/>
+      <details key="start" value="7120"/>
+      <details key="end" value="7168"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.218" references="/0/definesConnections/%/%.2">
-      <details key="start" value="7268"/>
-      <details key="end" value="7280"/>
+      <details key="start" value="7170"/>
+      <details key="end" value="7182"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.219" references="/0/definesConnections/%/%.2/%/cl">
-      <details key="start" value="7277"/>
-      <details key="end" value="7279"/>
+      <details key="start" value="7179"/>
+      <details key="end" value="7181"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.220" references="/0/isConnectionValid">
-      <details key="start" value="7288"/>
-      <details key="end" value="7512"/>
+      <details key="start" value="7188"/>
+      <details key="end" value="7410"/>
       <details key="line" value="101"/>
     </eAnnotations>
     <eAnnotations source="positions.221" references="/0/isConnectionValid/conn">
-      <details key="start" value="7320"/>
-      <details key="end" value="7336"/>
+      <details key="start" value="7220"/>
+      <details key="end" value="7236"/>
       <details key="line" value="101"/>
     </eAnnotations>
     <eAnnotations source="positions.222" references="/0/isConnectionValid/%">
-      <details key="start" value="7353"/>
-      <details key="end" value="7507"/>
+      <details key="start" value="7252"/>
+      <details key="end" value="7406"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.223" references="/0/isConnectionValid/%/self">
@@ -3111,38 +3111,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.224" references="/0/isConnectionValid/%/%">
-      <details key="start" value="7360"/>
-      <details key="end" value="7437"/>
+      <details key="start" value="7259"/>
+      <details key="end" value="7336"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.225" references="/0/isConnectionValid/%/%.1">
-      <details key="start" value="7439"/>
-      <details key="end" value="7490"/>
+      <details key="start" value="7338"/>
+      <details key="end" value="7389"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.226" references="/0/isConnectionValid/%/%.2">
-      <details key="start" value="7492"/>
-      <details key="end" value="7506"/>
+      <details key="start" value="7391"/>
+      <details key="end" value="7405"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.227" references="/0/isConnectionValid/%/%.2/%/conn">
-      <details key="start" value="7501"/>
-      <details key="end" value="7505"/>
+      <details key="start" value="7400"/>
+      <details key="end" value="7404"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.228" references="/0/getConnectionDefinition">
-      <details key="start" value="7514"/>
-      <details key="end" value="7749"/>
+      <details key="start" value="7411"/>
+      <details key="end" value="7644"/>
       <details key="line" value="104"/>
     </eAnnotations>
     <eAnnotations source="positions.229" references="/0/getConnectionDefinition/conn">
-      <details key="start" value="7552"/>
-      <details key="end" value="7568"/>
+      <details key="start" value="7449"/>
+      <details key="end" value="7465"/>
       <details key="line" value="104"/>
     </eAnnotations>
     <eAnnotations source="positions.230" references="/0/getConnectionDefinition/%">
-      <details key="start" value="7584"/>
-      <details key="end" value="7744"/>
+      <details key="start" value="7480"/>
+      <details key="end" value="7640"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.231" references="/0/getConnectionDefinition/%/self">
@@ -3151,38 +3151,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.232" references="/0/getConnectionDefinition/%/%">
-      <details key="start" value="7591"/>
-      <details key="end" value="7668"/>
+      <details key="start" value="7487"/>
+      <details key="end" value="7564"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.233" references="/0/getConnectionDefinition/%/%.1">
-      <details key="start" value="7670"/>
-      <details key="end" value="7727"/>
+      <details key="start" value="7566"/>
+      <details key="end" value="7623"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.234" references="/0/getConnectionDefinition/%/%.2">
-      <details key="start" value="7729"/>
-      <details key="end" value="7743"/>
+      <details key="start" value="7625"/>
+      <details key="end" value="7639"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.235" references="/0/getConnectionDefinition/%/%.2/%/conn">
-      <details key="start" value="7738"/>
-      <details key="end" value="7742"/>
+      <details key="start" value="7634"/>
+      <details key="end" value="7638"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.236" references="/0/getConnectedPort">
-      <details key="start" value="7751"/>
-      <details key="end" value="7959"/>
+      <details key="start" value="7645"/>
+      <details key="end" value="7851"/>
       <details key="line" value="107"/>
     </eAnnotations>
     <eAnnotations source="positions.237" references="/0/getConnectedPort/port">
-      <details key="start" value="7782"/>
-      <details key="end" value="7793"/>
+      <details key="start" value="7676"/>
+      <details key="end" value="7687"/>
       <details key="line" value="107"/>
     </eAnnotations>
     <eAnnotations source="positions.238" references="/0/getConnectedPort/%">
-      <details key="start" value="7807"/>
-      <details key="end" value="7955"/>
+      <details key="start" value="7700"/>
+      <details key="end" value="7848"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.239" references="/0/getConnectedPort/%/self">
@@ -3191,38 +3191,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.240" references="/0/getConnectedPort/%/%">
-      <details key="start" value="7814"/>
-      <details key="end" value="7891"/>
+      <details key="start" value="7707"/>
+      <details key="end" value="7784"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.241" references="/0/getConnectedPort/%/%.1">
-      <details key="start" value="7893"/>
-      <details key="end" value="7938"/>
+      <details key="start" value="7786"/>
+      <details key="end" value="7831"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.242" references="/0/getConnectedPort/%/%.2">
-      <details key="start" value="7940"/>
-      <details key="end" value="7954"/>
+      <details key="start" value="7833"/>
+      <details key="end" value="7847"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.243" references="/0/getConnectedPort/%/%.2/%/port">
-      <details key="start" value="7949"/>
-      <details key="end" value="7953"/>
+      <details key="start" value="7842"/>
+      <details key="end" value="7846"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.244" references="/0/getConnectionsFromPort">
-      <details key="start" value="7961"/>
-      <details key="end" value="8194"/>
+      <details key="start" value="7852"/>
+      <details key="end" value="8083"/>
       <details key="line" value="110"/>
     </eAnnotations>
     <eAnnotations source="positions.245" references="/0/getConnectionsFromPort/port">
-      <details key="start" value="7998"/>
-      <details key="end" value="8009"/>
+      <details key="start" value="7889"/>
+      <details key="end" value="7900"/>
       <details key="line" value="110"/>
     </eAnnotations>
     <eAnnotations source="positions.246" references="/0/getConnectionsFromPort/%">
-      <details key="start" value="8037"/>
-      <details key="end" value="8190"/>
+      <details key="start" value="7927"/>
+      <details key="end" value="8080"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.247" references="/0/getConnectionsFromPort/%/self">
@@ -3231,38 +3231,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.248" references="/0/getConnectionsFromPort/%/%">
-      <details key="start" value="8044"/>
-      <details key="end" value="8121"/>
+      <details key="start" value="7934"/>
+      <details key="end" value="8011"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.249" references="/0/getConnectionsFromPort/%/%.1">
-      <details key="start" value="8122"/>
-      <details key="end" value="8173"/>
+      <details key="start" value="8012"/>
+      <details key="end" value="8063"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.250" references="/0/getConnectionsFromPort/%/%.2">
-      <details key="start" value="8175"/>
-      <details key="end" value="8189"/>
+      <details key="start" value="8065"/>
+      <details key="end" value="8079"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.251" references="/0/getConnectionsFromPort/%/%.2/%/port">
-      <details key="start" value="8184"/>
-      <details key="end" value="8188"/>
+      <details key="start" value="8074"/>
+      <details key="end" value="8078"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.252" references="/0/isAnInputPort">
-      <details key="start" value="8196"/>
-      <details key="end" value="8402"/>
+      <details key="start" value="8084"/>
+      <details key="end" value="8288"/>
       <details key="line" value="113"/>
     </eAnnotations>
     <eAnnotations source="positions.253" references="/0/isAnInputPort/port">
-      <details key="start" value="8224"/>
-      <details key="end" value="8235"/>
+      <details key="start" value="8112"/>
+      <details key="end" value="8123"/>
       <details key="line" value="113"/>
     </eAnnotations>
     <eAnnotations source="positions.254" references="/0/isAnInputPort/%">
-      <details key="start" value="8252"/>
-      <details key="end" value="8397"/>
+      <details key="start" value="8139"/>
+      <details key="end" value="8284"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.255" references="/0/isAnInputPort/%/self">
@@ -3271,38 +3271,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.256" references="/0/isAnInputPort/%/%">
-      <details key="start" value="8259"/>
-      <details key="end" value="8336"/>
+      <details key="start" value="8146"/>
+      <details key="end" value="8223"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.257" references="/0/isAnInputPort/%/%.1">
-      <details key="start" value="8338"/>
-      <details key="end" value="8380"/>
+      <details key="start" value="8225"/>
+      <details key="end" value="8267"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.258" references="/0/isAnInputPort/%/%.2">
-      <details key="start" value="8382"/>
-      <details key="end" value="8396"/>
+      <details key="start" value="8269"/>
+      <details key="end" value="8283"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.259" references="/0/isAnInputPort/%/%.2/%/port">
-      <details key="start" value="8391"/>
-      <details key="end" value="8395"/>
+      <details key="start" value="8278"/>
+      <details key="end" value="8282"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.260" references="/0/isAnOutputPort">
-      <details key="start" value="8404"/>
-      <details key="end" value="8612"/>
+      <details key="start" value="8289"/>
+      <details key="end" value="8495"/>
       <details key="line" value="116"/>
     </eAnnotations>
     <eAnnotations source="positions.261" references="/0/isAnOutputPort/port">
-      <details key="start" value="8433"/>
-      <details key="end" value="8444"/>
+      <details key="start" value="8318"/>
+      <details key="end" value="8329"/>
       <details key="line" value="116"/>
     </eAnnotations>
     <eAnnotations source="positions.262" references="/0/isAnOutputPort/%">
-      <details key="start" value="8461"/>
-      <details key="end" value="8607"/>
+      <details key="start" value="8345"/>
+      <details key="end" value="8491"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.263" references="/0/isAnOutputPort/%/self">
@@ -3311,38 +3311,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.264" references="/0/isAnOutputPort/%/%">
-      <details key="start" value="8468"/>
-      <details key="end" value="8545"/>
+      <details key="start" value="8352"/>
+      <details key="end" value="8429"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.265" references="/0/isAnOutputPort/%/%.1">
-      <details key="start" value="8547"/>
-      <details key="end" value="8590"/>
+      <details key="start" value="8431"/>
+      <details key="end" value="8474"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.266" references="/0/isAnOutputPort/%/%.2">
-      <details key="start" value="8592"/>
-      <details key="end" value="8606"/>
+      <details key="start" value="8476"/>
+      <details key="end" value="8490"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.267" references="/0/isAnOutputPort/%/%.2/%/port">
-      <details key="start" value="8601"/>
-      <details key="end" value="8605"/>
+      <details key="start" value="8485"/>
+      <details key="end" value="8489"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.268" references="/0/isAProvidedPort">
-      <details key="start" value="8614"/>
-      <details key="end" value="8824"/>
+      <details key="start" value="8496"/>
+      <details key="end" value="8704"/>
       <details key="line" value="119"/>
     </eAnnotations>
     <eAnnotations source="positions.269" references="/0/isAProvidedPort/port">
-      <details key="start" value="8644"/>
-      <details key="end" value="8655"/>
+      <details key="start" value="8526"/>
+      <details key="end" value="8537"/>
       <details key="line" value="119"/>
     </eAnnotations>
     <eAnnotations source="positions.270" references="/0/isAProvidedPort/%">
-      <details key="start" value="8672"/>
-      <details key="end" value="8819"/>
+      <details key="start" value="8553"/>
+      <details key="end" value="8700"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.271" references="/0/isAProvidedPort/%/self">
@@ -3351,38 +3351,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.272" references="/0/isAProvidedPort/%/%">
-      <details key="start" value="8679"/>
-      <details key="end" value="8756"/>
+      <details key="start" value="8560"/>
+      <details key="end" value="8637"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.273" references="/0/isAProvidedPort/%/%.1">
-      <details key="start" value="8758"/>
-      <details key="end" value="8802"/>
+      <details key="start" value="8639"/>
+      <details key="end" value="8683"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.274" references="/0/isAProvidedPort/%/%.2">
-      <details key="start" value="8804"/>
-      <details key="end" value="8818"/>
+      <details key="start" value="8685"/>
+      <details key="end" value="8699"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.275" references="/0/isAProvidedPort/%/%.2/%/port">
-      <details key="start" value="8813"/>
-      <details key="end" value="8817"/>
+      <details key="start" value="8694"/>
+      <details key="end" value="8698"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.276" references="/0/isARequiredPort">
-      <details key="start" value="8826"/>
-      <details key="end" value="9036"/>
+      <details key="start" value="8705"/>
+      <details key="end" value="8913"/>
       <details key="line" value="122"/>
     </eAnnotations>
     <eAnnotations source="positions.277" references="/0/isARequiredPort/port">
-      <details key="start" value="8856"/>
-      <details key="end" value="8867"/>
+      <details key="start" value="8735"/>
+      <details key="end" value="8746"/>
       <details key="line" value="122"/>
     </eAnnotations>
     <eAnnotations source="positions.278" references="/0/isARequiredPort/%">
-      <details key="start" value="8884"/>
-      <details key="end" value="9031"/>
+      <details key="start" value="8762"/>
+      <details key="end" value="8909"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.279" references="/0/isARequiredPort/%/self">
@@ -3391,38 +3391,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.280" references="/0/isARequiredPort/%/%">
-      <details key="start" value="8891"/>
-      <details key="end" value="8968"/>
+      <details key="start" value="8769"/>
+      <details key="end" value="8846"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.281" references="/0/isARequiredPort/%/%.1">
-      <details key="start" value="8970"/>
-      <details key="end" value="9014"/>
+      <details key="start" value="8848"/>
+      <details key="end" value="8892"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.282" references="/0/isARequiredPort/%/%.2">
-      <details key="start" value="9016"/>
-      <details key="end" value="9030"/>
+      <details key="start" value="8894"/>
+      <details key="end" value="8908"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.283" references="/0/isARequiredPort/%/%.2/%/port">
-      <details key="start" value="9025"/>
-      <details key="end" value="9029"/>
+      <details key="start" value="8903"/>
+      <details key="end" value="8907"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.284" references="/0/getConnectionOtherSide">
-      <details key="start" value="9038"/>
-      <details key="end" value="9261"/>
+      <details key="start" value="8914"/>
+      <details key="end" value="9135"/>
       <details key="line" value="125"/>
     </eAnnotations>
     <eAnnotations source="positions.285" references="/0/getConnectionOtherSide/port">
-      <details key="start" value="9075"/>
-      <details key="end" value="9086"/>
+      <details key="start" value="8951"/>
+      <details key="end" value="8962"/>
       <details key="line" value="125"/>
     </eAnnotations>
     <eAnnotations source="positions.286" references="/0/getConnectionOtherSide/%">
-      <details key="start" value="9102"/>
-      <details key="end" value="9256"/>
+      <details key="start" value="8977"/>
+      <details key="end" value="9131"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.287" references="/0/getConnectionOtherSide/%/self">
@@ -3431,38 +3431,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.288" references="/0/getConnectionOtherSide/%/%">
-      <details key="start" value="9109"/>
-      <details key="end" value="9186"/>
+      <details key="start" value="8984"/>
+      <details key="end" value="9061"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.289" references="/0/getConnectionOtherSide/%/%.1">
-      <details key="start" value="9188"/>
-      <details key="end" value="9239"/>
+      <details key="start" value="9063"/>
+      <details key="end" value="9114"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.290" references="/0/getConnectionOtherSide/%/%.2">
-      <details key="start" value="9241"/>
-      <details key="end" value="9255"/>
+      <details key="start" value="9116"/>
+      <details key="end" value="9130"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.291" references="/0/getConnectionOtherSide/%/%.2/%/port">
-      <details key="start" value="9250"/>
-      <details key="end" value="9254"/>
+      <details key="start" value="9125"/>
+      <details key="end" value="9129"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.292" references="/0/isPortConnected">
-      <details key="start" value="9263"/>
-      <details key="end" value="9473"/>
+      <details key="start" value="9136"/>
+      <details key="end" value="9344"/>
       <details key="line" value="128"/>
     </eAnnotations>
     <eAnnotations source="positions.293" references="/0/isPortConnected/port">
-      <details key="start" value="9293"/>
-      <details key="end" value="9304"/>
+      <details key="start" value="9166"/>
+      <details key="end" value="9177"/>
       <details key="line" value="128"/>
     </eAnnotations>
     <eAnnotations source="positions.294" references="/0/isPortConnected/%">
-      <details key="start" value="9321"/>
-      <details key="end" value="9468"/>
+      <details key="start" value="9193"/>
+      <details key="end" value="9340"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.295" references="/0/isPortConnected/%/self">
@@ -3471,38 +3471,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.296" references="/0/isPortConnected/%/%">
-      <details key="start" value="9328"/>
-      <details key="end" value="9405"/>
+      <details key="start" value="9200"/>
+      <details key="end" value="9277"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.297" references="/0/isPortConnected/%/%.1">
-      <details key="start" value="9407"/>
-      <details key="end" value="9451"/>
+      <details key="start" value="9279"/>
+      <details key="end" value="9323"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.298" references="/0/isPortConnected/%/%.2">
-      <details key="start" value="9453"/>
-      <details key="end" value="9467"/>
+      <details key="start" value="9325"/>
+      <details key="end" value="9339"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.299" references="/0/isPortConnected/%/%.2/%/port">
-      <details key="start" value="9462"/>
-      <details key="end" value="9466"/>
+      <details key="start" value="9334"/>
+      <details key="end" value="9338"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.300" references="/0/isRootModel">
-      <details key="start" value="9475"/>
-      <details key="end" value="9677"/>
+      <details key="start" value="9345"/>
+      <details key="end" value="9545"/>
       <details key="line" value="131"/>
     </eAnnotations>
     <eAnnotations source="positions.301" references="/0/isRootModel/elt">
-      <details key="start" value="9501"/>
-      <details key="end" value="9512"/>
+      <details key="start" value="9371"/>
+      <details key="end" value="9382"/>
       <details key="line" value="131"/>
     </eAnnotations>
     <eAnnotations source="positions.302" references="/0/isRootModel/%">
-      <details key="start" value="9529"/>
-      <details key="end" value="9672"/>
+      <details key="start" value="9398"/>
+      <details key="end" value="9541"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.303" references="/0/isRootModel/%/self">
@@ -3511,38 +3511,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.304" references="/0/isRootModel/%/%">
-      <details key="start" value="9536"/>
-      <details key="end" value="9613"/>
+      <details key="start" value="9405"/>
+      <details key="end" value="9482"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.305" references="/0/isRootModel/%/%.1">
-      <details key="start" value="9615"/>
-      <details key="end" value="9656"/>
+      <details key="start" value="9484"/>
+      <details key="end" value="9525"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.306" references="/0/isRootModel/%/%.2">
-      <details key="start" value="9658"/>
-      <details key="end" value="9671"/>
+      <details key="start" value="9527"/>
+      <details key="end" value="9540"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.307" references="/0/isRootModel/%/%.2/%/elt">
-      <details key="start" value="9667"/>
-      <details key="end" value="9670"/>
+      <details key="start" value="9536"/>
+      <details key="end" value="9539"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.308" references="/0/getRootClassForModel">
-      <details key="start" value="9679"/>
-      <details key="end" value="9898"/>
+      <details key="start" value="9546"/>
+      <details key="end" value="9763"/>
       <details key="line" value="134"/>
     </eAnnotations>
     <eAnnotations source="positions.309" references="/0/getRootClassForModel/model">
-      <details key="start" value="9714"/>
-      <details key="end" value="9727"/>
+      <details key="start" value="9581"/>
+      <details key="end" value="9594"/>
       <details key="line" value="134"/>
     </eAnnotations>
     <eAnnotations source="positions.310" references="/0/getRootClassForModel/%">
-      <details key="start" value="9741"/>
-      <details key="end" value="9894"/>
+      <details key="start" value="9607"/>
+      <details key="end" value="9760"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.311" references="/0/getRootClassForModel/%/self">
@@ -3551,43 +3551,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.312" references="/0/getRootClassForModel/%/%">
-      <details key="start" value="9748"/>
-      <details key="end" value="9825"/>
+      <details key="start" value="9614"/>
+      <details key="end" value="9691"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.313" references="/0/getRootClassForModel/%/%.1">
-      <details key="start" value="9826"/>
-      <details key="end" value="9876"/>
+      <details key="start" value="9692"/>
+      <details key="end" value="9742"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.314" references="/0/getRootClassForModel/%/%.2">
-      <details key="start" value="9878"/>
-      <details key="end" value="9893"/>
+      <details key="start" value="9744"/>
+      <details key="end" value="9759"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.315" references="/0/getRootClassForModel/%/%.2/%/model">
-      <details key="start" value="9887"/>
-      <details key="end" value="9892"/>
+      <details key="start" value="9753"/>
+      <details key="end" value="9758"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.316" references="/0/isAnAncestorOf">
-      <details key="start" value="9902"/>
-      <details key="end" value="10190"/>
+      <details key="start" value="9765"/>
+      <details key="end" value="10051"/>
       <details key="line" value="138"/>
     </eAnnotations>
     <eAnnotations source="positions.317" references="/0/isAnAncestorOf/current_class">
-      <details key="start" value="9931"/>
-      <details key="end" value="9952"/>
+      <details key="start" value="9794"/>
+      <details key="end" value="9815"/>
       <details key="line" value="138"/>
     </eAnnotations>
     <eAnnotations source="positions.318" references="/0/isAnAncestorOf/other_class">
-      <details key="start" value="9954"/>
-      <details key="end" value="9973"/>
+      <details key="start" value="9817"/>
+      <details key="end" value="9836"/>
       <details key="line" value="138"/>
     </eAnnotations>
     <eAnnotations source="positions.319" references="/0/isAnAncestorOf/%">
-      <details key="start" value="9989"/>
-      <details key="end" value="10186"/>
+      <details key="start" value="9851"/>
+      <details key="end" value="10048"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.320" references="/0/isAnAncestorOf/%/self">
@@ -3596,43 +3596,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.321" references="/0/isAnAncestorOf/%/%">
-      <details key="start" value="9996"/>
-      <details key="end" value="10073"/>
+      <details key="start" value="9858"/>
+      <details key="end" value="9935"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.322" references="/0/isAnAncestorOf/%/%.1">
-      <details key="start" value="10075"/>
-      <details key="end" value="10147"/>
+      <details key="start" value="9937"/>
+      <details key="end" value="10009"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.323" references="/0/isAnAncestorOf/%/%.2">
-      <details key="start" value="10149"/>
-      <details key="end" value="10185"/>
+      <details key="start" value="10011"/>
+      <details key="end" value="10047"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.324" references="/0/isAnAncestorOf/%/%.2/%/current_class">
-      <details key="start" value="10158"/>
-      <details key="end" value="10171"/>
+      <details key="start" value="10020"/>
+      <details key="end" value="10033"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.325" references="/0/isAnAncestorOf/%/%.2/%.1/other_class">
-      <details key="start" value="10173"/>
-      <details key="end" value="10184"/>
+      <details key="start" value="10035"/>
+      <details key="end" value="10046"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.326" references="/0/isAnInputOutputPort">
-      <details key="start" value="10194"/>
-      <details key="end" value="10410"/>
+      <details key="start" value="10053"/>
+      <details key="end" value="10267"/>
       <details key="line" value="142"/>
     </eAnnotations>
     <eAnnotations source="positions.327" references="/0/isAnInputOutputPort/port">
-      <details key="start" value="10228"/>
-      <details key="end" value="10239"/>
+      <details key="start" value="10087"/>
+      <details key="end" value="10098"/>
       <details key="line" value="142"/>
     </eAnnotations>
     <eAnnotations source="positions.328" references="/0/isAnInputOutputPort/%">
-      <details key="start" value="10255"/>
-      <details key="end" value="10406"/>
+      <details key="start" value="10113"/>
+      <details key="end" value="10264"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.329" references="/0/isAnInputOutputPort/%/self">
@@ -3641,23 +3641,23 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.330" references="/0/isAnInputOutputPort/%/%">
-      <details key="start" value="10262"/>
-      <details key="end" value="10339"/>
+      <details key="start" value="10120"/>
+      <details key="end" value="10197"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.331" references="/0/isAnInputOutputPort/%/%.1">
-      <details key="start" value="10341"/>
-      <details key="end" value="10389"/>
+      <details key="start" value="10199"/>
+      <details key="end" value="10247"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.332" references="/0/isAnInputOutputPort/%/%.2">
-      <details key="start" value="10391"/>
-      <details key="end" value="10405"/>
+      <details key="start" value="10249"/>
+      <details key="end" value="10263"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.333" references="/0/isAnInputOutputPort/%/%.2/%/port">
-      <details key="start" value="10400"/>
-      <details key="end" value="10404"/>
+      <details key="start" value="10258"/>
+      <details key="end" value="10262"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

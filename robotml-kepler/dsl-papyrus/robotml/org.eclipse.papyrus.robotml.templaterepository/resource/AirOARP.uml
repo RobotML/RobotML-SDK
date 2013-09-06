@@ -597,7 +597,7 @@
   <RobotML:RoboticSimulator xmi:id="_GqE6MnUwEeKtkpd6W4BP5g" base_Class="_GqCeBXUwEeKtkpd6W4BP5g"/>
   <RobotML:GPSSystem xmi:id="_GqE6NHUwEeKtkpd6W4BP5g" base_Class="_GqCeCHUwEeKtkpd6W4BP5g"/>
   <RobotML:RoboticMiddleware xmi:id="_GqE6NXUwEeKtkpd6W4BP5g" base_Class="_GqCeCnUwEeKtkpd6W4BP5g"/>
-  <RobotML:ActuatorSystem xmi:id="_GqE6NnUwEeKtkpd6W4BP5g" base_Class="_GqCeC3UwEeKtkpd6W4BP5g"/>
+  <RobotML:ActuatorSystem xmi:id="_GqE6NnUwEeKtkpd6W4BP5g" base_Class="_GqCeC3UwEeKtkpd6W4BP5g" native="true" libraryComponentName="Destination"/>
   <RobotML:Environment xmi:id="_GqE6N3UwEeKtkpd6W4BP5g" base_Class="_GqCeDXUwEeKtkpd6W4BP5g"/>
   <RobotML:LidarSystem xmi:id="_GqE6OHUwEeKtkpd6W4BP5g"/>
   <RobotML:Robot xmi:id="_GqE6OXUwEeKtkpd6W4BP5g" base_Class="_GqCeDnUwEeKtkpd6W4BP5g" kind="UAV"/>

@@ -7,7 +7,7 @@
             objectClass="org.eclipse.core.resources.IFile"
             nameFilter="*.uml"
             id="org.eclipse.robotml.generators.acceleo.athena.ui.popupMenus.contribution.IFile">
-         <menu id="org.eclipse.acceleo.module.menu" label="Proteus UML Model" path="additionsAcceleo">
+         <menu id="org.eclipse.acceleo.module.menu" label="RobotML Generators" path="additionsAcceleo">
                <groupMarker name="acceleo"/> 
          </menu>
          <action
@@ -17,10 +17,6 @@
                icon="icons/default.gif"
                label="Generate to Athena ADL"
                menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
-      </objectContribution>
-      <objectContribution
-            id="org.eclipse.robotml.generators.acceleo.athena.ui.contribution1"
-            objectClass="org.eclipse.core.resources.IFile">
       </objectContribution>
    </extension>
   

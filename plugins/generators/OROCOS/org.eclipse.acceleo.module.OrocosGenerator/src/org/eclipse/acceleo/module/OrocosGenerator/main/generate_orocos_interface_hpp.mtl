@@ -7,21 +7,13 @@
 [template public generateOrocosInterfaceHpp(i : Interface, root_model : Model)]
 
 [file ( 'src/'+i.name+'/'+i.name+'.hpp', false, 'UTF-8')]
+#ifndef __[i.name.toUpperCase()/]_hpp__
+#define __[i.name.toUpperCase()/]_hpp__
 #include <string>
 #include <numeric>
 [setLibraries(i)/]
 
-[let nspace : String = i.qualifiedName.substitute('::'+i.name,'')]
-[let nameSpace : Sequence(String) = nspace.tokenize('::')]
-[for(s : String | nameSpace)]
-namespace [s/]{
-[/for]
-[/let]
-[/let]
-
-
 	class [i.name/] 
-		: public RTT::TaskContext 
 	{
 		[comment attribut & property declaration/]
 	[for (property : Property |getProperties(i))]
@@ -104,9 +96,9 @@ namespace [s/]{
 		[else]
 			[if(isPrimitiveType(t))]
 				[if(t.name.equalsIgnoreCase('boolean'))]
-				[op.visibility/]: bool [interface.name/]_[op.name/](
+				[op.visibility/]: virtual bool [interface.name/]_[op.name/](
 				[else]
-				[op.visibility/]: [t.name/] [interface.name/]_[op.name/](
+				[op.visibility/]: virtual [t.name/] [interface.name/]_[op.name/](
 				[/if]
 			[else]
 		 		 [t.name/] [interface.name/]_[op.name/](		
@@ -171,28 +163,39 @@ namespace [s/]{
 				[/let]
 			[else]
 		 		 [paramType.name/] &[p.name/],		
-
 			[/comment]
- 
 			[/let]
 			[/let]
 		[/for]
 		[/if]
-        );
+        ) = 0;
     [/for]
-
-		[comment constructor/]
-		[i.name/] (const std::string& name) = 0;
-		virtual ~[i.name/]() {}
 	};
-}
-[let nspace : String = i.qualifiedName.substitute('::'+i.name,'')]
-[let nameSpace : Sequence(String) = nspace.tokenize('::')]
-[for(s : String | nameSpace)]
-}
-[/for]
-[/let]
-[/let]
+
+#endif
 [/file]
 
+[file ( 'src/'+i.name+'/Task'+i.name+'.hpp', false, 'UTF-8')]
+#ifndef __TASK_[i.name.toUpperCase()/]_hpp__
+#define __TASK_[i.name.toUpperCase()/]_hpp__
+#include <string>
+#include <numeric>
+#include <rtt/TaskContext.hpp>
+#include <rtt/Operation.hpp>
+#include"[i.name/].hpp"
+[let Iname: String = i.name]
+class Task[Iname/] 
+		:  public RTT::TaskContext, public [Iname/]{
+public:
+Task[Iname/](std::string& name): 
+TaskContext(name){
+[for (op : Operation | i.getAllOperations())]
+		this->provides("[Iname/]"->addOperation("[Iname/]_[op.name/]", &[Iname/]::[Iname/]_[op.name/], this, RTT::ClientThread)[getOperationSignatureName(op)/]
+			.doc("Description : [op.type.name.toUpperFirst()/]");
+[/for]
+}
+[/let]
+};
+#endif
+[/file]
 [/template]

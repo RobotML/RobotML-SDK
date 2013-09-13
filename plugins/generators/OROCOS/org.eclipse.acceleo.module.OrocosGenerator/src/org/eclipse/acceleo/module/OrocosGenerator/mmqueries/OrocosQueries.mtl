@@ -123,6 +123,9 @@
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationSignatureType(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
 /]
 
+[query public getOperationReturnType(op : Operation) : String = 
+	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationReturnType(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
+/]
 [query public getOperationSignatureName(op : Operation) : String = 
 	invoke('org.eclipse.acceleo.module.OrocosGenerator.mmqueries.OrocosQueries', 'getOperationSignatureName(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
 /]

@@ -7,8 +7,6 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
- * Contributors:
- *  Ansgar Radermacher  ansgar.radermacher@cea.fr  
  *
  *****************************************************************************/
 

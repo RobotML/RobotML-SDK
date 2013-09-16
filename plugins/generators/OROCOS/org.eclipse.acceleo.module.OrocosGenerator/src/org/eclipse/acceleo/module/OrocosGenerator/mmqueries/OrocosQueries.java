@@ -363,6 +363,25 @@ public class OrocosQueries {
 	}
 
 	/**
+	 * le type de retour de la méthode
+	 * @param op
+	 * @return
+	 */
+	public String getOperationReturnType (Operation op) {
+		String res = "";
+		int size = op.getOwnedParameters().size();
+
+		int cpt = 0;
+		for (Parameter param : op.getOwnedParameters()) {
+			if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.RETURN)) {
+				res = getNameType(param.getType());
+			}
+		}
+		return res;
+	}
+	
+	
+	/**
 	 * La liste des arguments de l'operation
 	 * @param op
 	 * @return

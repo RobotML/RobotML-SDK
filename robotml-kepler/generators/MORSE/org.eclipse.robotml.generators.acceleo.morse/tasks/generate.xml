@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="generate" name="org.eclipse.robotml.generators.acceleo.morse">
+<project default="generate" name="org.eclipse.papyrus.robotml.generators.acceleo.morse">
     <property name="ECLIPSE_HOME" value="../../../../../../../Downloads/eclipse 2"/>
     <property name="ECLIPSE_WORKSPACE" value="../../../../../../workspace-kepler"/>
 
     <!-- The classpath with only the dependencies used by the project -->
-    <path id="org.eclipse.robotml.generators.acceleo.morse.libraryclasspath">
-        <pathelement location="${ECLIPSE_WORKSPACE}/org.eclipse.robotml.generators.acceleo.morse/bin"/>
+    <path id="org.eclipse.papyrus.robotml.generators.acceleo.morse.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/org.eclipse.papyrus.robotml.generators.acceleo.morse/bin"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.9.0.v20130326-1255.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.9.0.v20130529-1710.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.6.200.v20130402-1505.jar"/>
@@ -35,26 +35,26 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.mapping.ecore2xml_2.7.0.v20130610-0406.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.validation_1.7.0.201306111341.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.8.100.v20130521-2026.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.papyrus.robotml_0.10.0.v201306261119.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.papyrus.robotml_0.10.1.v201309060522.jar"/>
     </path>
 
-    <path id="org.eclipse.robotml.generators.acceleo.morse.classpath">
-        <path refid="org.eclipse.robotml.generators.acceleo.morse.libraryclasspath"/>
+    <path id="org.eclipse.papyrus.robotml.generators.acceleo.morse.classpath">
+        <path refid="org.eclipse.papyrus.robotml.generators.acceleo.morse.libraryclasspath"/>
     </path>
 
     <!-- The classpath with only the jars available in the plugin folder of Eclipse -->
-    <path id="org.eclipse.robotml.generators.acceleo.morse.libraryclasspath.alljars">
-        <pathelement location="../org.eclipse.robotml.generators.acceleo.morse/bin"/>
+    <path id="org.eclipse.papyrus.robotml.generators.acceleo.morse.libraryclasspath.alljars">
+        <pathelement location="../org.eclipse.papyrus.robotml.generators.acceleo.morse/bin"/>
         <fileset dir="${ECLIPSE_HOME}/plugins/" includes="*.jar"/>
     </path>
 
-    <path id="org.eclipse.robotml.generators.acceleo.morse.classpath.alljars">
-        <path refid="org.eclipse.robotml.generators.acceleo.morse.libraryclasspath.alljars"/>
+    <path id="org.eclipse.papyrus.robotml.generators.acceleo.morse.classpath.alljars">
+        <path refid="org.eclipse.papyrus.robotml.generators.acceleo.morse.libraryclasspath.alljars"/>
     </path>
 
     <!-- The default task with the jars used by this project -->
     <target name="generate">
-        <java classname="org.eclipse.robotml.generators.acceleo.morse.main.Generate" classpathref="org.eclipse.robotml.generators.acceleo.morse.classpath">
+        <java classname="org.eclipse.papyrus.robotml.generators.acceleo.morse.main.Generate" classpathref="org.eclipse.papyrus.robotml.generators.acceleo.morse.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -65,7 +65,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="generate.alljars">
-        <java classname="org.eclipse.robotml.generators.acceleo.morse.main.Generate" classpathref="org.eclipse.robotml.generators.acceleo.morse.classpath">
+        <java classname="org.eclipse.papyrus.robotml.generators.acceleo.morse.main.Generate" classpathref="org.eclipse.papyrus.robotml.generators.acceleo.morse.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>

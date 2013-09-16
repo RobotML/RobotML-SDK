@@ -36,7 +36,7 @@
 [/comment]
 	[if(not isPrimitiveType(type))]
 		[if (isInterface(type))]
-		#include "../[type.name+'/'+type.name/].hpp"
+		#include "../[type.name+'/Task'+type.name/].hpp"
 		[else]
 		#include "../Datatypes/[type.name/].hpp"
 		[/if]
@@ -58,12 +58,16 @@ using namespace RTT;
 namespace [s/]{
 [/for]
 [/let]
-
-
-
 [/let]
-class [c.name/]
-	: public RTT::TaskContext 
+class [c.name/]:
+[for (sp : Port | getServicePort())]				
+		[let interface : Interface = sp.type]
+				[if (isAProvidedPort(sp))]
+	public Task[interface.name/],
+				[/if]
+		[/let]
+[/for]
+	public RTT::TaskContext 
 {   [comment ports and services declaration/]
 	// ports, operations and attributes
 
@@ -73,10 +77,72 @@ class [c.name/]
 				[generateOrocosInterfaceHpp(interface, root_model)/]
 					[for (op : Operation | interface.getAllOperations())]
 						[if (isARequiredPort(sp))]
-		RTT::OperationCaller [interface.name/]_[op.name/];
-						[/if]
-       				[/for]
-				[/let]				
+[let t :Type = op.type]
+	[if (t = null)]
+		RTT::OperationCaller <void(
+		[if(getOperationInputParameters(op) <> null)]	
+			[for (input: Element | getOperationInputParameters(op))]
+			[let p : Parameter = input]
+			[let paramType : Type = p.type]
+			[if(isPrimitiveType(paramType))]
+				[if(paramType.name.equalsIgnoreCase('boolean') or paramType.name.equalsIgnoreCase('Bool'))]
+				bool [p.name/],
+				[else]
+				[paramType.name/] [p.name/],
+				[/if]
+			[else]
+				[paramType.name/] [p.name/],
+			[/if]
+			[comment in case of ros datatypes, uncomment]
+			[if(isRobotMLDataType(m, paramType.name))]
+				[let ne : NamedElement = paramType.owner]
+				[ne.name.replace('_datatypes', '_msgs')/]::[paramType.name/] [p.name/], 
+				[/let]
+			[else]
+				[paramType.name/] [p.name/],
+			[/comment] 
+			[/let]
+			[/let]
+			[/for]
+		[else]
+			void
+		[/if]
+		)>[interface.name/]_[op.name/];
+	[else]
+		RTT::OperationCaller <[t.name/](
+		[if(getOperationInputParameters(op) <> null)]
+		[for (input: Element | getOperationInputParameters(op))]
+			[let p : Parameter = input]
+			[let paramType : Type = p.type]
+			[if(isPrimitiveType(paramType))]
+				[if(paramType.name.equalsIgnoreCase('boolean') or paramType.name.equalsIgnoreCase('Bool'))]
+				bool [p.name/],
+				[else]
+				[paramType.name/] [p.name/],
+				[/if]
+			[else]
+				[paramType.name/] [p.name/],
+			[/if]
+			[comment in case of ros datatypes, uncomment]
+			[if(isRobotMLDataType(m, paramType.name))]
+				[let ne : NamedElement = paramType.owner]
+				[ne.name.replace('_datatypes', '_msgs')/]::[paramType.name/] [p.name/], 
+				[/let]
+			[else]
+				[paramType.name/] [p.name/],
+			[/comment] 
+		    [/let]
+			[/let]
+		    [/for]
+		[else]
+			void
+		[/if]
+		)>[interface.name/]_[op.name/];
+	[/if]
+[/let]				
+[/if]
+[/for]
+[/let]				
 			[/for]
 		[/let]
 
@@ -107,38 +173,6 @@ class [c.name/]
 		[/for]
 	[/let]
 
-[comment]// Operations 
-	[let elt : Element = c.oclAsType(Element)]
-			[for (sp : Port | getServicePort())]				
-				[let interface : Interface = sp.type]
-					[for (op : Operation | interface.getAllOperations())]
-						[if (isAProvidedPort(sp))]
-	[op.visibility/]: [getNameType(op.type)/] [op.name/] ([getOperationSignature(op)/]) 
-	{
-		// Add the body of the operation
-		return NULL;//replace null with the returned value
-	}
-						[/if]
-						[if (isARequiredPort(sp))]
-	protected: OperationCaller <[getNameType(op.type)/]([getOperationSignatureType(op) /])> [op.name/];
-						[/if]
-       				[/for]
-				[/let]				
-			[/for]
-		[/let]
-
-	[/comment]
-[comment]
-	// attributes & properties declaration
-	[let elt : Element = c.oclAsType(Element)]
-		[for (property : Property | getProperties(c, elt))]
-		[if(getNameType(property.type)) = '']
-		[property.visibility/]: [getNameType(property.type)/] [property.name/];
-		[/if]
- 		[/for]
- 	[/let]
-[/comment]
-	
 	
 	[comment constructor/]// Constructor
 	[c.visibility/]: [c.name/] (const std::string& name)
@@ -183,7 +217,7 @@ class [c.name/]
 
 [comment adding operations to the constructor /]	
 	[for (op : Operation | c.getAllOperations())]
-		this->addOperation("[interface.name/]_[op.name/]", &[c.name/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
+		this->addOperation("[interface.name/]_[op.name/]", &[c.name/]::[op.name/], this, RTT::ClientThread)[getOperationSignatureName(op)/]
 			.doc("Description : [op.type.name.toUpperFirst()/]");
 		[/for]
 
@@ -191,13 +225,8 @@ class [c.name/]
 			[for (sp : Port | getServicePort())]				
 				[let interface : Interface = sp.type]
 					[for (op : Operation | interface.getAllOperations())]
-						[if (isAProvidedPort(sp))]
-		this->provides("[interface.name/]")
-			->addOperation("[interface.name/]_[op.name/]/]",&[c.name/]::[op.name/], this, ClientThread)[getOperationSignatureName(op)/]
-				.doc("");
-						[/if]
 						[if (isARequiredPort(sp))]
-		this->requires("[interface.name/]")
+		this->requires("Task[interface.name/]")
 			->addOperationCaller([interface.name/]_[op.name/]);
 						[/if]
        				[/for]

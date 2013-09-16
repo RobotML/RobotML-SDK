@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="DeploymentQueries" nsURI="org::eclipse::papyrus::robotml::generators::common::mmqueries::DeploymentQueries" startHeaderPosition="675" endHeaderPosition="1118">
+  <mtl:Module name="DeploymentQueries" nsURI="org::eclipse::papyrus::robotml::generators::common::mmqueries::DeploymentQueries" startHeaderPosition="658" endHeaderPosition="1094">
     <input>
       <takesTypesFrom href="http://www.eclipse.org/uml2/4.0.0/UML#/"/>
     </input>
@@ -8,7 +8,7 @@
       <takesTypesFrom href="http://Papyrus/RobotML/1#/"/>
     </input>
     <ownedModuleElement xsi:type="mtl:Comment">
-      <body startPosition="783" endPosition="851" value=" &#xD;&#xA;These functions are implemented in file DeploymentQueries.java.&#xD;&#xA;"/>
+      <body startPosition="764" endPosition="830" value=" &#xA;These functions are implemented in file DeploymentQueries.java.&#xA;"/>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="getInstanceSpecifications" visibility="Public" type="/3/Sequence(InstanceSpecification)">
       <parameter name="elt">
@@ -717,23 +717,23 @@
   </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/%">
-      <details key="start" value="774"/>
-      <details key="end" value="861"/>
+      <details key="start" value="755"/>
+      <details key="end" value="840"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/getInstanceSpecifications">
-      <details key="start" value="863"/>
-      <details key="end" value="1120"/>
+      <details key="start" value="841"/>
+      <details key="end" value="1096"/>
       <details key="line" value="23"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/getInstanceSpecifications/elt">
-      <details key="start" value="903"/>
-      <details key="end" value="914"/>
+      <details key="start" value="881"/>
+      <details key="end" value="892"/>
       <details key="line" value="23"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/getInstanceSpecifications/%">
-      <details key="start" value="954"/>
-      <details key="end" value="1116"/>
+      <details key="start" value="931"/>
+      <details key="end" value="1093"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/getInstanceSpecifications/%/self">
@@ -742,43 +742,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/getInstanceSpecifications/%/%">
-      <details key="start" value="961"/>
-      <details key="end" value="1036"/>
+      <details key="start" value="938"/>
+      <details key="end" value="1013"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/getInstanceSpecifications/%/%.1">
-      <details key="start" value="1038"/>
-      <details key="end" value="1100"/>
+      <details key="start" value="1015"/>
+      <details key="end" value="1077"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.7" references="/0/getInstanceSpecifications/%/%.2">
-      <details key="start" value="1102"/>
-      <details key="end" value="1115"/>
+      <details key="start" value="1079"/>
+      <details key="end" value="1092"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.8" references="/0/getInstanceSpecifications/%/%.2/%/elt">
-      <details key="start" value="1111"/>
-      <details key="end" value="1114"/>
+      <details key="start" value="1088"/>
+      <details key="end" value="1091"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/getInstanceSpecificationsForPlatform">
-      <details key="start" value="1122"/>
-      <details key="end" value="1431"/>
+      <details key="start" value="1097"/>
+      <details key="end" value="1404"/>
       <details key="line" value="26"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/getInstanceSpecificationsForPlatform/elt">
-      <details key="start" value="1173"/>
-      <details key="end" value="1184"/>
+      <details key="start" value="1148"/>
+      <details key="end" value="1159"/>
       <details key="line" value="26"/>
     </eAnnotations>
     <eAnnotations source="positions.11" references="/0/getInstanceSpecificationsForPlatform/pfn">
-      <details key="start" value="1186"/>
-      <details key="end" value="1197"/>
+      <details key="start" value="1161"/>
+      <details key="end" value="1172"/>
       <details key="line" value="26"/>
     </eAnnotations>
     <eAnnotations source="positions.12" references="/0/getInstanceSpecificationsForPlatform/%">
-      <details key="start" value="1238"/>
-      <details key="end" value="1427"/>
+      <details key="start" value="1212"/>
+      <details key="end" value="1401"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.13" references="/0/getInstanceSpecificationsForPlatform/%/self">
@@ -787,48 +787,48 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.14" references="/0/getInstanceSpecificationsForPlatform/%/%">
-      <details key="start" value="1245"/>
-      <details key="end" value="1320"/>
+      <details key="start" value="1219"/>
+      <details key="end" value="1294"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.15" references="/0/getInstanceSpecificationsForPlatform/%/%.1">
-      <details key="start" value="1322"/>
-      <details key="end" value="1406"/>
+      <details key="start" value="1296"/>
+      <details key="end" value="1380"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.16" references="/0/getInstanceSpecificationsForPlatform/%/%.2">
-      <details key="start" value="1408"/>
-      <details key="end" value="1426"/>
+      <details key="start" value="1382"/>
+      <details key="end" value="1400"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.17" references="/0/getInstanceSpecificationsForPlatform/%/%.2/%/elt">
-      <details key="start" value="1417"/>
-      <details key="end" value="1420"/>
+      <details key="start" value="1391"/>
+      <details key="end" value="1394"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.18" references="/0/getInstanceSpecificationsForPlatform/%/%.2/%.1/pfn">
-      <details key="start" value="1422"/>
-      <details key="end" value="1425"/>
+      <details key="start" value="1396"/>
+      <details key="end" value="1399"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.19" references="/0/getInstanceSpecificationsForPlatform2">
-      <details key="start" value="1433"/>
-      <details key="end" value="1757"/>
+      <details key="start" value="1405"/>
+      <details key="end" value="1727"/>
       <details key="line" value="29"/>
     </eAnnotations>
     <eAnnotations source="positions.20" references="/0/getInstanceSpecificationsForPlatform2/model">
-      <details key="start" value="1485"/>
-      <details key="end" value="1498"/>
+      <details key="start" value="1457"/>
+      <details key="end" value="1470"/>
       <details key="line" value="29"/>
     </eAnnotations>
     <eAnnotations source="positions.21" references="/0/getInstanceSpecificationsForPlatform2/pfmName">
-      <details key="start" value="1500"/>
-      <details key="end" value="1516"/>
+      <details key="start" value="1472"/>
+      <details key="end" value="1488"/>
       <details key="line" value="29"/>
     </eAnnotations>
     <eAnnotations source="positions.22" references="/0/getInstanceSpecificationsForPlatform2/%">
-      <details key="start" value="1556"/>
-      <details key="end" value="1752"/>
+      <details key="start" value="1527"/>
+      <details key="end" value="1723"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.23" references="/0/getInstanceSpecificationsForPlatform2/%/self">
@@ -837,43 +837,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.24" references="/0/getInstanceSpecificationsForPlatform2/%/%">
-      <details key="start" value="1563"/>
-      <details key="end" value="1638"/>
+      <details key="start" value="1534"/>
+      <details key="end" value="1609"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.25" references="/0/getInstanceSpecificationsForPlatform2/%/%.1">
-      <details key="start" value="1640"/>
-      <details key="end" value="1725"/>
+      <details key="start" value="1611"/>
+      <details key="end" value="1696"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.26" references="/0/getInstanceSpecificationsForPlatform2/%/%.2">
-      <details key="start" value="1727"/>
-      <details key="end" value="1751"/>
+      <details key="start" value="1698"/>
+      <details key="end" value="1722"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.27" references="/0/getInstanceSpecificationsForPlatform2/%/%.2/%/model">
-      <details key="start" value="1736"/>
-      <details key="end" value="1741"/>
+      <details key="start" value="1707"/>
+      <details key="end" value="1712"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.28" references="/0/getInstanceSpecificationsForPlatform2/%/%.2/%.1/pfmName">
-      <details key="start" value="1743"/>
-      <details key="end" value="1750"/>
+      <details key="start" value="1714"/>
+      <details key="end" value="1721"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.29" references="/0/getParentName">
-      <details key="start" value="1759"/>
-      <details key="end" value="1994"/>
+      <details key="start" value="1728"/>
+      <details key="end" value="1961"/>
       <details key="line" value="32"/>
     </eAnnotations>
     <eAnnotations source="positions.30" references="/0/getParentName/inst">
-      <details key="start" value="1787"/>
-      <details key="end" value="1815"/>
+      <details key="start" value="1756"/>
+      <details key="end" value="1784"/>
       <details key="line" value="32"/>
     </eAnnotations>
     <eAnnotations source="positions.31" references="/0/getParentName/%">
-      <details key="start" value="1830"/>
-      <details key="end" value="1990"/>
+      <details key="start" value="1798"/>
+      <details key="end" value="1958"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.32" references="/0/getParentName/%/self">
@@ -882,43 +882,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.33" references="/0/getParentName/%/%">
-      <details key="start" value="1837"/>
-      <details key="end" value="1912"/>
+      <details key="start" value="1805"/>
+      <details key="end" value="1880"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.34" references="/0/getParentName/%/%.1">
-      <details key="start" value="1914"/>
-      <details key="end" value="1973"/>
+      <details key="start" value="1882"/>
+      <details key="end" value="1941"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.35" references="/0/getParentName/%/%.2">
-      <details key="start" value="1975"/>
-      <details key="end" value="1989"/>
+      <details key="start" value="1943"/>
+      <details key="end" value="1957"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.36" references="/0/getParentName/%/%.2/%/inst">
-      <details key="start" value="1984"/>
-      <details key="end" value="1988"/>
+      <details key="start" value="1952"/>
+      <details key="end" value="1956"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.37" references="/0/getInstance">
-      <details key="start" value="1996"/>
-      <details key="end" value="2274"/>
+      <details key="start" value="1962"/>
+      <details key="end" value="2238"/>
       <details key="line" value="35"/>
     </eAnnotations>
     <eAnnotations source="positions.38" references="/0/getInstance/elt">
-      <details key="start" value="2022"/>
-      <details key="end" value="2033"/>
+      <details key="start" value="1988"/>
+      <details key="end" value="1999"/>
       <details key="line" value="35"/>
     </eAnnotations>
     <eAnnotations source="positions.39" references="/0/getInstance/inst">
-      <details key="start" value="2035"/>
-      <details key="end" value="2063"/>
+      <details key="start" value="2001"/>
+      <details key="end" value="2029"/>
       <details key="line" value="35"/>
     </eAnnotations>
     <eAnnotations source="positions.40" references="/0/getInstance/%">
-      <details key="start" value="2080"/>
-      <details key="end" value="2270"/>
+      <details key="start" value="2045"/>
+      <details key="end" value="2235"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.41" references="/0/getInstance/%/self">
@@ -927,48 +927,48 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.42" references="/0/getInstance/%/%">
-      <details key="start" value="2087"/>
-      <details key="end" value="2162"/>
+      <details key="start" value="2052"/>
+      <details key="end" value="2127"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.43" references="/0/getInstance/%/%.1">
-      <details key="start" value="2164"/>
-      <details key="end" value="2248"/>
+      <details key="start" value="2129"/>
+      <details key="end" value="2213"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.44" references="/0/getInstance/%/%.2">
-      <details key="start" value="2250"/>
-      <details key="end" value="2269"/>
+      <details key="start" value="2215"/>
+      <details key="end" value="2234"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.45" references="/0/getInstance/%/%.2/%/elt">
-      <details key="start" value="2259"/>
-      <details key="end" value="2262"/>
+      <details key="start" value="2224"/>
+      <details key="end" value="2227"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.46" references="/0/getInstance/%/%.2/%.1/inst">
-      <details key="start" value="2264"/>
-      <details key="end" value="2268"/>
+      <details key="start" value="2229"/>
+      <details key="end" value="2233"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.47" references="/0/isAllocatedTo">
-      <details key="start" value="2276"/>
-      <details key="end" value="2547"/>
+      <details key="start" value="2239"/>
+      <details key="end" value="2508"/>
       <details key="line" value="38"/>
     </eAnnotations>
     <eAnnotations source="positions.48" references="/0/isAllocatedTo/inst">
-      <details key="start" value="2304"/>
-      <details key="end" value="2332"/>
+      <details key="start" value="2267"/>
+      <details key="end" value="2295"/>
       <details key="line" value="38"/>
     </eAnnotations>
     <eAnnotations source="positions.49" references="/0/isAllocatedTo/pfn">
-      <details key="start" value="2334"/>
-      <details key="end" value="2345"/>
+      <details key="start" value="2297"/>
+      <details key="end" value="2308"/>
       <details key="line" value="38"/>
     </eAnnotations>
     <eAnnotations source="positions.50" references="/0/isAllocatedTo/%">
-      <details key="start" value="2361"/>
-      <details key="end" value="2543"/>
+      <details key="start" value="2323"/>
+      <details key="end" value="2505"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.51" references="/0/isAllocatedTo/%/self">
@@ -977,43 +977,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.52" references="/0/isAllocatedTo/%/%">
-      <details key="start" value="2368"/>
-      <details key="end" value="2443"/>
+      <details key="start" value="2330"/>
+      <details key="end" value="2405"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.53" references="/0/isAllocatedTo/%/%.1">
-      <details key="start" value="2445"/>
-      <details key="end" value="2521"/>
+      <details key="start" value="2407"/>
+      <details key="end" value="2483"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.54" references="/0/isAllocatedTo/%/%.2">
-      <details key="start" value="2523"/>
-      <details key="end" value="2542"/>
+      <details key="start" value="2485"/>
+      <details key="end" value="2504"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.55" references="/0/isAllocatedTo/%/%.2/%/inst">
-      <details key="start" value="2532"/>
-      <details key="end" value="2536"/>
+      <details key="start" value="2494"/>
+      <details key="end" value="2498"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.56" references="/0/isAllocatedTo/%/%.2/%.1/pfn">
-      <details key="start" value="2538"/>
-      <details key="end" value="2541"/>
+      <details key="start" value="2500"/>
+      <details key="end" value="2503"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.57" references="/0/getAllocationName">
-      <details key="start" value="2549"/>
-      <details key="end" value="2792"/>
+      <details key="start" value="2509"/>
+      <details key="end" value="2750"/>
       <details key="line" value="41"/>
     </eAnnotations>
     <eAnnotations source="positions.58" references="/0/getAllocationName/inst">
-      <details key="start" value="2581"/>
-      <details key="end" value="2609"/>
+      <details key="start" value="2541"/>
+      <details key="end" value="2569"/>
       <details key="line" value="41"/>
     </eAnnotations>
     <eAnnotations source="positions.59" references="/0/getAllocationName/%">
-      <details key="start" value="2624"/>
-      <details key="end" value="2788"/>
+      <details key="start" value="2583"/>
+      <details key="end" value="2747"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.60" references="/0/getAllocationName/%/self">
@@ -1022,43 +1022,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.61" references="/0/getAllocationName/%/%">
-      <details key="start" value="2631"/>
-      <details key="end" value="2706"/>
+      <details key="start" value="2590"/>
+      <details key="end" value="2665"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.62" references="/0/getAllocationName/%/%.1">
-      <details key="start" value="2708"/>
-      <details key="end" value="2771"/>
+      <details key="start" value="2667"/>
+      <details key="end" value="2730"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.63" references="/0/getAllocationName/%/%.2">
-      <details key="start" value="2773"/>
-      <details key="end" value="2787"/>
+      <details key="start" value="2732"/>
+      <details key="end" value="2746"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.64" references="/0/getAllocationName/%/%.2/%/inst">
-      <details key="start" value="2782"/>
-      <details key="end" value="2786"/>
+      <details key="start" value="2741"/>
+      <details key="end" value="2745"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.65" references="/0/getDefinedComponentsForPlatform">
-      <details key="start" value="2794"/>
-      <details key="end" value="3077"/>
+      <details key="start" value="2751"/>
+      <details key="end" value="3032"/>
       <details key="line" value="44"/>
     </eAnnotations>
     <eAnnotations source="positions.66" references="/0/getDefinedComponentsForPlatform/elt">
-      <details key="start" value="2840"/>
-      <details key="end" value="2851"/>
+      <details key="start" value="2797"/>
+      <details key="end" value="2808"/>
       <details key="line" value="44"/>
     </eAnnotations>
     <eAnnotations source="positions.67" references="/0/getDefinedComponentsForPlatform/pfn">
-      <details key="start" value="2853"/>
-      <details key="end" value="2864"/>
+      <details key="start" value="2810"/>
+      <details key="end" value="2821"/>
       <details key="line" value="44"/>
     </eAnnotations>
     <eAnnotations source="positions.68" references="/0/getDefinedComponentsForPlatform/%">
-      <details key="start" value="2889"/>
-      <details key="end" value="3073"/>
+      <details key="start" value="2845"/>
+      <details key="end" value="3029"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.69" references="/0/getDefinedComponentsForPlatform/%/self">
@@ -1067,48 +1067,48 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.70" references="/0/getDefinedComponentsForPlatform/%/%">
-      <details key="start" value="2896"/>
-      <details key="end" value="2971"/>
+      <details key="start" value="2852"/>
+      <details key="end" value="2927"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.71" references="/0/getDefinedComponentsForPlatform/%/%.1">
-      <details key="start" value="2973"/>
-      <details key="end" value="3052"/>
+      <details key="start" value="2929"/>
+      <details key="end" value="3008"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.72" references="/0/getDefinedComponentsForPlatform/%/%.2">
-      <details key="start" value="3054"/>
-      <details key="end" value="3072"/>
+      <details key="start" value="3010"/>
+      <details key="end" value="3028"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.73" references="/0/getDefinedComponentsForPlatform/%/%.2/%/elt">
-      <details key="start" value="3063"/>
-      <details key="end" value="3066"/>
+      <details key="start" value="3019"/>
+      <details key="end" value="3022"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.74" references="/0/getDefinedComponentsForPlatform/%/%.2/%.1/pfn">
-      <details key="start" value="3068"/>
-      <details key="end" value="3071"/>
+      <details key="start" value="3024"/>
+      <details key="end" value="3027"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.75" references="/0/getDefinedComponentsForPlatform2">
-      <details key="start" value="3079"/>
-      <details key="end" value="3377"/>
+      <details key="start" value="3033"/>
+      <details key="end" value="3329"/>
       <details key="line" value="47"/>
     </eAnnotations>
     <eAnnotations source="positions.76" references="/0/getDefinedComponentsForPlatform2/model">
-      <details key="start" value="3126"/>
-      <details key="end" value="3139"/>
+      <details key="start" value="3080"/>
+      <details key="end" value="3093"/>
       <details key="line" value="47"/>
     </eAnnotations>
     <eAnnotations source="positions.77" references="/0/getDefinedComponentsForPlatform2/pfmName">
-      <details key="start" value="3141"/>
-      <details key="end" value="3157"/>
+      <details key="start" value="3095"/>
+      <details key="end" value="3111"/>
       <details key="line" value="47"/>
     </eAnnotations>
     <eAnnotations source="positions.78" references="/0/getDefinedComponentsForPlatform2/%">
-      <details key="start" value="3181"/>
-      <details key="end" value="3372"/>
+      <details key="start" value="3134"/>
+      <details key="end" value="3325"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.79" references="/0/getDefinedComponentsForPlatform2/%/self">
@@ -1117,43 +1117,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.80" references="/0/getDefinedComponentsForPlatform2/%/%">
-      <details key="start" value="3188"/>
-      <details key="end" value="3263"/>
+      <details key="start" value="3141"/>
+      <details key="end" value="3216"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.81" references="/0/getDefinedComponentsForPlatform2/%/%.1">
-      <details key="start" value="3265"/>
-      <details key="end" value="3345"/>
+      <details key="start" value="3218"/>
+      <details key="end" value="3298"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.82" references="/0/getDefinedComponentsForPlatform2/%/%.2">
-      <details key="start" value="3347"/>
-      <details key="end" value="3371"/>
+      <details key="start" value="3300"/>
+      <details key="end" value="3324"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.83" references="/0/getDefinedComponentsForPlatform2/%/%.2/%/model">
-      <details key="start" value="3356"/>
-      <details key="end" value="3361"/>
+      <details key="start" value="3309"/>
+      <details key="end" value="3314"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.84" references="/0/getDefinedComponentsForPlatform2/%/%.2/%.1/pfmName">
-      <details key="start" value="3363"/>
-      <details key="end" value="3370"/>
+      <details key="start" value="3316"/>
+      <details key="end" value="3323"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.85" references="/0/getDeploymentPlansInModel">
-      <details key="start" value="3379"/>
-      <details key="end" value="3627"/>
+      <details key="start" value="3330"/>
+      <details key="end" value="3576"/>
       <details key="line" value="50"/>
     </eAnnotations>
     <eAnnotations source="positions.86" references="/0/getDeploymentPlansInModel/model">
-      <details key="start" value="3419"/>
-      <details key="end" value="3432"/>
+      <details key="start" value="3370"/>
+      <details key="end" value="3383"/>
       <details key="line" value="50"/>
     </eAnnotations>
     <eAnnotations source="positions.87" references="/0/getDeploymentPlansInModel/%">
-      <details key="start" value="3465"/>
-      <details key="end" value="3622"/>
+      <details key="start" value="3415"/>
+      <details key="end" value="3572"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.88" references="/0/getDeploymentPlansInModel/%/self">
@@ -1162,38 +1162,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.89" references="/0/getDeploymentPlansInModel/%/%">
-      <details key="start" value="3472"/>
-      <details key="end" value="3547"/>
+      <details key="start" value="3422"/>
+      <details key="end" value="3497"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.90" references="/0/getDeploymentPlansInModel/%/%.1">
-      <details key="start" value="3549"/>
-      <details key="end" value="3604"/>
+      <details key="start" value="3499"/>
+      <details key="end" value="3554"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.91" references="/0/getDeploymentPlansInModel/%/%.2">
-      <details key="start" value="3606"/>
-      <details key="end" value="3621"/>
+      <details key="start" value="3556"/>
+      <details key="end" value="3571"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.92" references="/0/getDeploymentPlansInModel/%/%.2/%/model">
-      <details key="start" value="3615"/>
-      <details key="end" value="3620"/>
+      <details key="start" value="3565"/>
+      <details key="end" value="3570"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.93" references="/0/getDeploymentPlanPackagesInModel">
-      <details key="start" value="3629"/>
-      <details key="end" value="3884"/>
+      <details key="start" value="3577"/>
+      <details key="end" value="3830"/>
       <details key="line" value="53"/>
     </eAnnotations>
     <eAnnotations source="positions.94" references="/0/getDeploymentPlanPackagesInModel/model">
-      <details key="start" value="3676"/>
-      <details key="end" value="3689"/>
+      <details key="start" value="3624"/>
+      <details key="end" value="3637"/>
       <details key="line" value="53"/>
     </eAnnotations>
     <eAnnotations source="positions.95" references="/0/getDeploymentPlanPackagesInModel/%">
-      <details key="start" value="3715"/>
-      <details key="end" value="3879"/>
+      <details key="start" value="3662"/>
+      <details key="end" value="3826"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.96" references="/0/getDeploymentPlanPackagesInModel/%/self">
@@ -1202,43 +1202,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.97" references="/0/getDeploymentPlanPackagesInModel/%/%">
-      <details key="start" value="3722"/>
-      <details key="end" value="3797"/>
+      <details key="start" value="3669"/>
+      <details key="end" value="3744"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.98" references="/0/getDeploymentPlanPackagesInModel/%/%.1">
-      <details key="start" value="3799"/>
-      <details key="end" value="3861"/>
+      <details key="start" value="3746"/>
+      <details key="end" value="3808"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.99" references="/0/getDeploymentPlanPackagesInModel/%/%.2">
-      <details key="start" value="3863"/>
-      <details key="end" value="3878"/>
+      <details key="start" value="3810"/>
+      <details key="end" value="3825"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.100" references="/0/getDeploymentPlanPackagesInModel/%/%.2/%/model">
-      <details key="start" value="3872"/>
-      <details key="end" value="3877"/>
+      <details key="start" value="3819"/>
+      <details key="end" value="3824"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.101" references="/0/getDeploymentPlanInstanceSpecsForPlatform">
-      <details key="start" value="3886"/>
-      <details key="end" value="4240"/>
+      <details key="start" value="3831"/>
+      <details key="end" value="4183"/>
       <details key="line" value="56"/>
     </eAnnotations>
     <eAnnotations source="positions.102" references="/0/getDeploymentPlanInstanceSpecsForPlatform/deploymentPlan">
-      <details key="start" value="3942"/>
-      <details key="end" value="3966"/>
+      <details key="start" value="3887"/>
+      <details key="end" value="3911"/>
       <details key="line" value="56"/>
     </eAnnotations>
     <eAnnotations source="positions.103" references="/0/getDeploymentPlanInstanceSpecsForPlatform/pfmName">
-      <details key="start" value="3968"/>
-      <details key="end" value="3984"/>
+      <details key="start" value="3913"/>
+      <details key="end" value="3929"/>
       <details key="line" value="56"/>
     </eAnnotations>
     <eAnnotations source="positions.104" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%">
-      <details key="start" value="4024"/>
-      <details key="end" value="4235"/>
+      <details key="start" value="3968"/>
+      <details key="end" value="4179"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.105" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/self">
@@ -1247,28 +1247,28 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.106" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%">
-      <details key="start" value="4031"/>
-      <details key="end" value="4106"/>
+      <details key="start" value="3975"/>
+      <details key="end" value="4050"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.107" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%.1">
-      <details key="start" value="4108"/>
-      <details key="end" value="4199"/>
+      <details key="start" value="4052"/>
+      <details key="end" value="4143"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.108" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%.2">
-      <details key="start" value="4201"/>
-      <details key="end" value="4234"/>
+      <details key="start" value="4145"/>
+      <details key="end" value="4178"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.109" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%.2/%/deploymentPlan">
-      <details key="start" value="4210"/>
-      <details key="end" value="4224"/>
+      <details key="start" value="4154"/>
+      <details key="end" value="4168"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.110" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%.2/%.1/pfmName">
-      <details key="start" value="4226"/>
-      <details key="end" value="4233"/>
+      <details key="start" value="4170"/>
+      <details key="end" value="4177"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

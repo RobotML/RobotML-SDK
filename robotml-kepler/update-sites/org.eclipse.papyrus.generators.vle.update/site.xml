@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.papyrus.robotml.generators.vle.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrus.robotml.generators.vle.feature" version="1.0.0.qualifier">
+      <category name="Dynamic_validation"/>
+   </feature>
+   <category-def name="Dynamic_validation" label="Dynamic validation">
+      <description>
+         this feature groups everything that allows a dynamic validation of those models developed using robotML extension.
+      </description>
+   </category-def>
+</site>

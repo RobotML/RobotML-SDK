@@ -13,7 +13,7 @@ cmake_minimum_required(VERSION 2.6.3)
 # macro, except for orocos_typekit, where the target is fully
 # controlled by generated code of 'typegen'.
 
-#project(RobotMLModel)
+#project(Talc)
 
 #
 # Do setup in case of ros package, If ROS_ROOT is set, it is
@@ -40,7 +40,8 @@ find_package(Orocos-RTT REQUIRED ${RTT_HINTS})
 include(${OROCOS-RTT_USE_FILE_PATH}/UseOROCOS-RTT.cmake)
 link_libraries( ${OROCOS-RTT_RTT-SCRIPTING_LIBRARY} )
 
-			orocos_component(SearchLandingSite src/SearchLandingSite/SearchLandingSite.cpp)
+			orocos_component(RMaxControlSystem src/RMaxControlSystem/RMaxControlSystem.cpp)
+			orocos_component(Camera src/Camera/Camera.cpp)
 #
 # You may add multiple orocos_component statements.
 

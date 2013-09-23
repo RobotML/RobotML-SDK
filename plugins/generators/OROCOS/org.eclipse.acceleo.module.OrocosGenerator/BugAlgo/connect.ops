@@ -5,15 +5,19 @@ import ("rtt_geometry_msgs")
 import ("rtt_std_msgs")
 
 //-----load components-----
-loadComponent("SearchLandingSite","OCL::LuaComponent")
+loadComponent("BugAlgorithm","OCL::LuaComponent")
 //-----load lua scripts in Lua components
-SearchLandingSite.exec_file("src/SearchLandingSite.lua")
+BugAlgorithm.exec_file("src/BugAlgorithm.lua")
+loadComponent("laserAdapter","RobotMLModel::BugController::laserAdapter")
+loadComponent("GPSAdapter","RobotMLModel::BugController::GPSAdapter")
 
 //-----set components activities-----
 var double period = 1.0; //in seconds, period of the activity (0.0 if non periodic)
 var int priority = LowestPriority; //LowestPriority = 1, HighestPriority = 99
 var int scheduler = ORO_SCHED_OTHER; // ORO_SCHED_OTHER = 0, ORO_SCHED_RT = 1
-setActivity("SearchLandingSite", period, priority, scheduler)
+setActivity("BugAlgorithm", period, priority, scheduler)
+setActivity("laserAdapter", period, priority, scheduler)
+setActivity("GPSAdapter", period, priority, scheduler)
 
 
 
@@ -22,6 +26,23 @@ setActivity("SearchLandingSite", period, priority, scheduler)
 
 	
 
+ stream(Sick, laserAdapter)
+
+
+	
+
+	
+
+ stream(GPS, GPSAdapter)
+
+
+	
+
+	
+
+ connectPeers(BugAlgorithm, motion_controller)
+
+
 	
 
 	
@@ -30,20 +51,7 @@ setActivity("SearchLandingSite", period, priority, scheduler)
 
 	
 
- connectPeers(SearchLandingSite, ActuatorSystem1)
-
-
 	
-
-	
-
- stream(Gyroscope, SearchLandingSite)
-
-
-	
-
- stream(CameraSystem, SearchLandingSite)
-
 
 
 

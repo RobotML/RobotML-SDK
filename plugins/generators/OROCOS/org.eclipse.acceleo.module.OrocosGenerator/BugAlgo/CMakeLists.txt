@@ -40,7 +40,10 @@ find_package(Orocos-RTT REQUIRED ${RTT_HINTS})
 include(${OROCOS-RTT_USE_FILE_PATH}/UseOROCOS-RTT.cmake)
 link_libraries( ${OROCOS-RTT_RTT-SCRIPTING_LIBRARY} )
 
-			orocos_component(SearchLandingSite src/SearchLandingSite/SearchLandingSite.cpp)
+			orocos_component(BugAlgorithm src/BugAlgorithm/BugAlgorithm.cpp)
+			orocos_component(laserAdapter src/laserAdapter/laserAdapter.cpp)
+			orocos_component(rangerAdapter src/rangerAdapter/rangerAdapter.cpp)
+			orocos_component(GPSAdapter src/GPSAdapter/GPSAdapter.cpp)
 #
 # You may add multiple orocos_component statements.
 

@@ -12,9 +12,9 @@ local StateMachine1
 Camera = rtt.InputPort("/sensor_msgs/Image")			
 inport_gyro = rtt.InputPort("/std_msgs/String")			
 Target = rtt.OutputPort("/geometry_msgs/Point")		
-rtt.getTC():addPort(Camera, "Camera", "A ::Image Port in Component SearchLandingSite");	
-rtt.getTC():addPort(Target, "Target", "A ::Point Port in Component SearchLandingSite");	
-rtt.getTC():addPort(inport_gyro, "inport_gyro", "A ::String Port in Component SearchLandingSite");	
+rtt.getTC():addPort(Camera, "Camera", "A sensor_msgs::Image Port in Component SearchLandingSite");	
+rtt.getTC():addPort(Target, "Target", "A geometry_msgs::Point Port in Component SearchLandingSite");	
+rtt.getTC():addPort(inport_gyro, "inport_gyro", "A std_msgs::String Port in Component SearchLandingSite");	
 
 ----- Property -----
 f = rtt.Property("bool");
@@ -26,7 +26,7 @@ rtt.getTC():addProperty(wp, "wp", " A int Port in Component RobotMLModel ")
 size = rtt.Property("int");
 rtt.getTC():addProperty(size, "size", " A int Port in Component RobotMLModel ")
 route = rtt.Property("/geometry_msgs/Point");
-rtt.getTC():addProperty(route, "route", " A ::Point Port in Component RobotMLModel ")
+rtt.getTC():addProperty(route, "route", " A geometry_msgs::Point Port in Component RobotMLModel ")
 x = rtt.Property("double");
 rtt.getTC():addProperty(x, "x", " A double Port in Component RobotMLModel ")
 y = rtt.Property("double");

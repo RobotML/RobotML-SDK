@@ -40,8 +40,7 @@ find_package(Orocos-RTT REQUIRED ${RTT_HINTS})
 include(${OROCOS-RTT_USE_FILE_PATH}/UseOROCOS-RTT.cmake)
 link_libraries( ${OROCOS-RTT_RTT-SCRIPTING_LIBRARY} )
 
-# Creates a component library libHello-<target>.so
-# and installs in the directory lib/orocos/hello-7-deployment/
+			orocos_component(SearchLandingSite src/SearchLandingSite/SearchLandingSite.cpp)
 #
 # You may add multiple orocos_component statements.
 

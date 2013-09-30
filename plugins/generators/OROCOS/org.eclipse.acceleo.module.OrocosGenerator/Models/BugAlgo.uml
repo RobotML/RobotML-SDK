@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
+  <uml:Model xmi:id="_PTDlMDgGEeKNiqIU4cOKpw" name="RobotMLModel">
+    <packageImport xmi:id="_PTDlMTgGEeKNiqIU4cOKpw">
+      <importedPackage href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_dt_y4AHtEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_PTDlMjgGEeKNiqIU4cOKpw" name="Specific Datatypes">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_cOSswEHvEeKB0pXkpjiLhA" name="Image"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_d8SfoEHvEeKB0pXkpjiLhA" name="Storable"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_OKwEEEHwEeKB0pXkpjiLhA" name="Loadable"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_PTDlMzgGEeKNiqIU4cOKpw" name="Interfaces">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_pWa8EBYTEeOk6vowryKJAg" name="TaskLocalisation">
+        <ownedOperation xmi:id="_401x4BYTEeOk6vowryKJAg" name="getPosition"/>
+        <ownedOperation xmi:id="_7flg4BYTEeOk6vowryKJAg" name="getOrientation"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_rJL6MBYTEeOk6vowryKJAg" name="TaskDistanceSensor">
+        <ownedOperation xmi:id="_t2YgQBYTEeOk6vowryKJAg" name="getSafeDistance"/>
+        <ownedOperation xmi:id="_vJgVABYTEeOk6vowryKJAg" name="obstacleInFrontOfTheRobot"/>
+        <ownedOperation xmi:id="_yTgL0BYTEeOk6vowryKJAg" name="obstacleOnTheLeft"/>
+        <ownedOperation xmi:id="_zxhB8BYTEeOk6vowryKJAg" name="obstacleOnTheRight"/>
+        <ownedOperation xmi:id="_1sYMIBYTEeOk6vowryKJAg" name="getRightDistance"/>
+        <ownedOperation xmi:id="_21TjEBYTEeOk6vowryKJAg" name="getLeftDistance"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_PTDlNDgGEeKNiqIU4cOKpw" name="Sensors ">
+      <packagedElement xmi:type="uml:Class" xmi:id="___LwgDgbEeKNiqIU4cOKpw" name="Sick">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_tXL4QBYSEeOk6vowryKJAg" name="laser_port" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_t3qvIBYSEeOk6vowryKJAg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_t3r9QBYSEeOk6vowryKJAg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_t3tLYBYSEeOk6vowryKJAg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_A5zjUBYTEeOk6vowryKJAg" name="Range">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_Dis4MBYTEeOk6vowryKJAg" name="range_port" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_OHg8QAKoEeCQReIOIWJ0nA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_D3DXkBYTEeOk6vowryKJAg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_D3ElsBYTEeOk6vowryKJAg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_D3Ga4BYTEeOk6vowryKJAg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_IKZdQBieEeO4GaDDjHC9Sg" name="GPS">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_JUpC0BieEeO4GaDDjHC9Sg" name="gps_port" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_1_-5oAH5EeC_ZLzLQhW-TQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Js2HcBieEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Js2ugBieEeO4GaDDjHC9Sg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_Js4jsBieEeO4GaDDjHC9Sg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_PTDlNTgGEeKNiqIU4cOKpw" name="Actuators">
+      <packagedElement xmi:type="uml:Class" xmi:id="_K9OwEBYTEeOk6vowryKJAg" name="motion_controller">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_M7fzkBYTEeOk6vowryKJAg" name="outport" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_C5BXoAK1EeCsG_V0R865wA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NVdLsBYTEeOk6vowryKJAg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NVeZ0BYTEeOk6vowryKJAg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_NVfn8BYTEeOk6vowryKJAg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_PTDlNjgGEeKNiqIU4cOKpw" name="Robotic SubSystems">
+      <packagedElement xmi:type="uml:Class" xmi:id="_KihMYDgcEeKNiqIU4cOKpw" name="BugAlgorithm">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_m9fV0BYTEeOk6vowryKJAg" name="distanceSensing" visibility="public" type="_rJL6MBYTEeOk6vowryKJAg" aggregation="composite">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nNGfIBYTEeOk6vowryKJAg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nNHtQBYTEeOk6vowryKJAg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_nNI7YBYTEeOk6vowryKJAg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_BeXMcBYUEeOk6vowryKJAg" name="localisation" visibility="public" type="_pWa8EBYTEeOk6vowryKJAg" aggregation="composite">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B1WwIBYUEeOk6vowryKJAg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B1ZMYBYUEeOk6vowryKJAg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_B1c2wBYUEeOk6vowryKJAg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_HB6UkBYUEeOk6vowryKJAg" name="outport" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_C5BXoAK1EeCsG_V0R865wA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HSvl4BYUEeOk6vowryKJAg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HSxbEBYUEeOk6vowryKJAg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_HS0eYBYUEeOk6vowryKJAg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_c0iTYBYUEeOk6vowryKJAg" name="laserAdapter">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_fKv80BYUEeOk6vowryKJAg" name="laser_out" visibility="public" type="_rJL6MBYTEeOk6vowryKJAg" aggregation="composite">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fbz3oBYUEeOk6vowryKJAg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fb1s0BYUEeOk6vowryKJAg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_fb4wIBYUEeOk6vowryKJAg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_gFjO0BieEeO4GaDDjHC9Sg" name="laser_in" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_zdwdIAKsEeCQReIOIWJ0nA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gVP3sBieEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gVP3sRieEeO4GaDDjHC9Sg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_gVRF0BieEeO4GaDDjHC9Sg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_kz4IgBYUEeOk6vowryKJAg" name="rangerAdapter">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_ml6t4BYUEeOk6vowryKJAg" name="range_out" visibility="public" type="_rJL6MBYTEeOk6vowryKJAg" aggregation="composite">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mwmT4BYUEeOk6vowryKJAg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mwoJEBYUEeOk6vowryKJAg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_mwqlUBYUEeOk6vowryKJAg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_rV4c8BYUEeOk6vowryKJAg" name="GPSAdapter">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_tUVGoBYUEeOk6vowryKJAg" name="loc_out" visibility="public" type="_pWa8EBYTEeOk6vowryKJAg" aggregation="composite">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ti9_kBYUEeOk6vowryKJAg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ti_NsBYUEeOk6vowryKJAg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_ti_0wBYUEeOk6vowryKJAg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_kAVpYBieEeO4GaDDjHC9Sg" name="gps_in" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_1_-5oAH5EeC_ZLzLQhW-TQ"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kTU20BieEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kTU20RieEeO4GaDDjHC9Sg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_kTWE8BieEeO4GaDDjHC9Sg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_C3GNEBidEeO4GaDDjHC9Sg" name="Actuator">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_HYvMQBidEeO4GaDDjHC9Sg" name="inport" visibility="public" aggregation="composite">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_C5BXoAK1EeCsG_V0R865wA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Hy5_wBidEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Hy6m0BidEeO4GaDDjHC9Sg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_Hy7N4BidEeO4GaDDjHC9Sg">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yckLwBYUEeOk6vowryKJAg" name="roomba">
+      <ownedAttribute xmi:id="_2zxckBYUEeOk6vowryKJAg" name="Bug1" type="_KihMYDgcEeKNiqIU4cOKpw"/>
+      <ownedAttribute xmi:id="_YvbLQBidEeO4GaDDjHC9Sg" name="adapter1" type="_c0iTYBYUEeOk6vowryKJAg"/>
+      <ownedAttribute xmi:id="_meF6sBidEeO4GaDDjHC9Sg" name="adapter2" type="_rV4c8BYUEeOk6vowryKJAg"/>
+      <ownedAttribute xmi:id="_CcMkUBieEeO4GaDDjHC9Sg" name="sensor" type="___LwgDgbEeKNiqIU4cOKpw"/>
+      <ownedAttribute xmi:id="_QVIDABieEeO4GaDDjHC9Sg" name="localisation" type="_IKZdQBieEeO4GaDDjHC9Sg"/>
+      <ownedAttribute xmi:id="_0huYEBieEeO4GaDDjHC9Sg" name="differntialWheels" type="_K9OwEBYTEeOk6vowryKJAg"/>
+      <ownedConnector xmi:id="_qZh1gBidEeO4GaDDjHC9Sg" name="Connector1">
+        <end xmi:id="_qZickBidEeO4GaDDjHC9Sg" partWithPort="_YvbLQBidEeO4GaDDjHC9Sg" role="_fKv80BYUEeOk6vowryKJAg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qZickRidEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qZickhidEeO4GaDDjHC9Sg" value="1"/>
+        </end>
+        <end xmi:id="_qZjDoBidEeO4GaDDjHC9Sg" partWithPort="_2zxckBYUEeOk6vowryKJAg" role="_m9fV0BYTEeOk6vowryKJAg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qZjDoRidEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qZjDohidEeO4GaDDjHC9Sg" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedConnector xmi:id="_3QW-ABidEeO4GaDDjHC9Sg" name="Connector2">
+        <end xmi:id="_3QXlEBidEeO4GaDDjHC9Sg" partWithPort="_meF6sBidEeO4GaDDjHC9Sg" role="_tUVGoBYUEeOk6vowryKJAg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3QXlERidEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3QXlEhidEeO4GaDDjHC9Sg" value="1"/>
+        </end>
+        <end xmi:id="_3QYMIBidEeO4GaDDjHC9Sg" partWithPort="_2zxckBYUEeOk6vowryKJAg" role="_BeXMcBYUEeOk6vowryKJAg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3QYMIRidEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3QYMIhidEeO4GaDDjHC9Sg" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedConnector xmi:id="_uDDEcBieEeO4GaDDjHC9Sg" name="Connector3">
+        <end xmi:id="_uDDrgBieEeO4GaDDjHC9Sg" partWithPort="_CcMkUBieEeO4GaDDjHC9Sg" role="_tXL4QBYSEeOk6vowryKJAg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uDDrgRieEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uDDrghieEeO4GaDDjHC9Sg" value="1"/>
+        </end>
+        <end xmi:id="_uDDrgxieEeO4GaDDjHC9Sg" partWithPort="_YvbLQBidEeO4GaDDjHC9Sg" role="_gFjO0BieEeO4GaDDjHC9Sg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uDDrhBieEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uDDrhRieEeO4GaDDjHC9Sg" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedConnector xmi:id="_xmRTkBieEeO4GaDDjHC9Sg" name="Connector4">
+        <end xmi:id="_xmR6oBieEeO4GaDDjHC9Sg" partWithPort="_QVIDABieEeO4GaDDjHC9Sg" role="_JUpC0BieEeO4GaDDjHC9Sg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xmR6oRieEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xmR6ohieEeO4GaDDjHC9Sg" value="1"/>
+        </end>
+        <end xmi:id="_xmR6oxieEeO4GaDDjHC9Sg" partWithPort="_meF6sBidEeO4GaDDjHC9Sg" role="_kAVpYBieEeO4GaDDjHC9Sg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xmR6pBieEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xmR6pRieEeO4GaDDjHC9Sg" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedConnector xmi:id="_GBfakBifEeO4GaDDjHC9Sg" name="Connector5">
+        <end xmi:id="_GBgBoBifEeO4GaDDjHC9Sg" partWithPort="_2zxckBYUEeOk6vowryKJAg" role="_HB6UkBYUEeOk6vowryKJAg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GBgBoRifEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GBgBohifEeO4GaDDjHC9Sg" value="1"/>
+        </end>
+        <end xmi:id="_GBgosBifEeO4GaDDjHC9Sg" partWithPort="_0huYEBieEeO4GaDDjHC9Sg" role="_M7fzkBYTEeOk6vowryKJAg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GBgosRifEeO4GaDDjHC9Sg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GBgoshifEeO4GaDDjHC9Sg" value="1"/>
+        </end>
+      </ownedConnector>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4TS18BiCEeO4GaDDjHC9Sg" name="BugAlgorithm" isAbstract="true">
+      <ownedOperation xmi:id="_7nSWQBiCEeO4GaDDjHC9Sg" name="wallFollowing">
+        <ownedParameter xmi:id="_wmWGcBiEEeO4GaDDjHC9Sg" name="direction">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_HPZo4BiDEeO4GaDDjHC9Sg" name="halt"/>
+      <ownedOperation xmi:id="_I4cDQBiDEeO4GaDDjHC9Sg" name="motionToGoal"/>
+      <ownedOperation xmi:id="_Kz1Y8BiDEeO4GaDDjHC9Sg" name="completeCycleAroundObstacle">
+        <ownedParameter xmi:id="_fAsZMBiWEeO4GaDDjHC9Sg">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_1_-5oAH5EeC_ZLzLQhW-TQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_nOtuEBiXEeO4GaDDjHC9Sg" name="">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_1_-5oAH5EeC_ZLzLQhW-TQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_MyuiABiYEeO4GaDDjHC9Sg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_kRH2MBiEEeO4GaDDjHC9Sg" name="researchComplete">
+        <ownedParameter xmi:id="_xsqToBiXEeO4GaDDjHC9Sg" name="robotPos">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_1_-5oAH5EeC_ZLzLQhW-TQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_3k88sBiXEeO4GaDDjHC9Sg" name="hitPoint">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_1_-5oAH5EeC_ZLzLQhW-TQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_6vhbQBiXEeO4GaDDjHC9Sg" name="goalPos">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_1_-5oAH5EeC_ZLzLQhW-TQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_RX2TABiYEeO4GaDDjHC9Sg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_UDJGgBiWEeO4GaDDjHC9Sg" name="righHand"/>
+      <ownedOperation xmi:id="_WM0IwBiWEeO4GaDDjHC9Sg" name="leftHand"/>
+      <ownedOperation xmi:id="_9m-JgBiXEeO4GaDDjHC9Sg" name="leavePointFound">
+        <ownedParameter xmi:id="_IZdbsBiYEeO4GaDDjHC9Sg" name="found" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_TlZvsBiYEeO4GaDDjHC9Sg" name="goalReached">
+        <ownedParameter xmi:id="_dcjbABiYEeO4GaDDjHC9Sg" name="robotPos">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_1_-5oAH5EeC_ZLzLQhW-TQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_gjogsBiYEeO4GaDDjHC9Sg" name="goalPos">
+          <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_1_-5oAH5EeC_ZLzLQhW-TQ"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_lVVVIBiYEeO4GaDDjHC9Sg" name="error">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_quXmAAH6EeC_ZLzLQhW-TQ"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_0Xkd4BibEeO4GaDDjHC9Sg" name="StateMachine1">
+      <region xmi:id="_0lN4UBibEeO4GaDDjHC9Sg" name="Region1">
+        <transition xmi:id="_LZ8NUBicEeO4GaDDjHC9Sg" name="Transition1" source="_5c-4gBibEeO4GaDDjHC9Sg" target="_-MHhIBibEeO4GaDDjHC9Sg"/>
+        <transition xmi:id="_MTqDkBicEeO4GaDDjHC9Sg" name="Transition2" source="_-MHhIBibEeO4GaDDjHC9Sg" target="_Hp9UkBicEeO4GaDDjHC9Sg"/>
+        <transition xmi:id="_NILQwBicEeO4GaDDjHC9Sg" name="Transition3" source="_Hp9UkBicEeO4GaDDjHC9Sg" target="_5c-4gBibEeO4GaDDjHC9Sg"/>
+        <transition xmi:id="_T3b-EBicEeO4GaDDjHC9Sg" name="Transition4" source="_1jgskBibEeO4GaDDjHC9Sg" target="_5c-4gBibEeO4GaDDjHC9Sg"/>
+        <transition xmi:id="_pFzZQBicEeO4GaDDjHC9Sg" name="Transition5" source="_5c-4gBibEeO4GaDDjHC9Sg" target="_e_QnEBicEeO4GaDDjHC9Sg"/>
+        <transition xmi:id="_s27hgBicEeO4GaDDjHC9Sg" name="Transition6" source="_Hp9UkBicEeO4GaDDjHC9Sg" target="_dTZiMBicEeO4GaDDjHC9Sg"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_1jgskBibEeO4GaDDjHC9Sg" name="EntryState"/>
+        <subvertex xmi:type="uml:State" xmi:id="_5c-4gBibEeO4GaDDjHC9Sg" name="motionToGoal"/>
+        <subvertex xmi:type="uml:State" xmi:id="_-MHhIBibEeO4GaDDjHC9Sg" name="identifyLeavePoint"/>
+        <subvertex xmi:type="uml:State" xmi:id="_Hp9UkBicEeO4GaDDjHC9Sg" name="goToLeavePoint"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_dTZiMBicEeO4GaDDjHC9Sg" name="Failure"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_e_QnEBicEeO4GaDDjHC9Sg" name="Success"/>
+      </region>
+    </packagedElement>
+    <profileApplication xmi:id="_PTDlNzgGEeKNiqIU4cOKpw">
+      <eAnnotations xmi:id="_PTDlODgGEeKNiqIU4cOKpw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://Robotml_PROFILES/RobotMLProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
+    </profileApplication>
+  </uml:Model>
+  <RobotML:SensorSystem xmi:id="_ACaqsDgcEeKNiqIU4cOKpw" base_Class="___LwgDgbEeKNiqIU4cOKpw"/>
+  <RobotML:RoboticSystem xmi:id="_KimE4DgcEeKNiqIU4cOKpw" base_Class="_KihMYDgcEeKNiqIU4cOKpw"/>
+  <RobotML:DataFlowPort xmi:id="_tXdlEBYSEeOk6vowryKJAg" base_Port="_tXL4QBYSEeOk6vowryKJAg" direction="out"/>
+  <RobotML:SensorSystem xmi:id="_A58GMBYTEeOk6vowryKJAg" base_Class="_A5zjUBYTEeOk6vowryKJAg"/>
+  <RobotML:DataFlowPort xmi:id="_Di2CIBYTEeOk6vowryKJAg" base_Port="_Dis4MBYTEeOk6vowryKJAg" direction="out"/>
+  <RobotML:ActuatorSystem xmi:id="_K9VdwBYTEeOk6vowryKJAg" base_Class="_K9OwEBYTEeOk6vowryKJAg"/>
+  <RobotML:DataFlowPort xmi:id="_M7pkkBYTEeOk6vowryKJAg" base_Port="_M7fzkBYTEeOk6vowryKJAg"/>
+  <RobotML:ServicePort xmi:id="_m9mqkBYTEeOk6vowryKJAg" base_Port="_m9fV0BYTEeOk6vowryKJAg" kind="required"/>
+  <RobotML:ServicePort xmi:id="_BefvUBYUEeOk6vowryKJAg" base_Port="_BeXMcBYUEeOk6vowryKJAg" kind="required"/>
+  <RobotML:DataFlowPort xmi:id="_HCEFkBYUEeOk6vowryKJAg" base_Port="_HB6UkBYUEeOk6vowryKJAg" direction="out"/>
+  <RobotML:RoboticSystem xmi:id="_c0poIBYUEeOk6vowryKJAg" base_Class="_c0iTYBYUEeOk6vowryKJAg"/>
+  <RobotML:ServicePort xmi:id="_fK4fsBYUEeOk6vowryKJAg" base_Port="_fKv80BYUEeOk6vowryKJAg"/>
+  <RobotML:RoboticSystem xmi:id="_k0DusBYUEeOk6vowryKJAg" base_Class="_kz4IgBYUEeOk6vowryKJAg"/>
+  <RobotML:ServicePort xmi:id="_mmD30BYUEeOk6vowryKJAg" base_Port="_ml6t4BYUEeOk6vowryKJAg"/>
+  <RobotML:RoboticSystem xmi:id="_rWA_0BYUEeOk6vowryKJAg" base_Class="_rV4c8BYUEeOk6vowryKJAg"/>
+  <RobotML:ServicePort xmi:id="_tUdCcBYUEeOk6vowryKJAg" base_Port="_tUVGoBYUEeOk6vowryKJAg"/>
+  <RobotML:Robot xmi:id="_yctVsBYUEeOk6vowryKJAg" base_Class="_yckLwBYUEeOk6vowryKJAg"/>
+  <RobotML:Algorithm xmi:id="_7nyskBiCEeO4GaDDjHC9Sg" base_Operation="_7nSWQBiCEeO4GaDDjHC9Sg"/>
+  <RobotML:Algorithm xmi:id="_HPkA8BiDEeO4GaDDjHC9Sg" base_Operation="_HPZo4BiDEeO4GaDDjHC9Sg"/>
+  <RobotML:Algorithm xmi:id="_I4npcBiDEeO4GaDDjHC9Sg" base_Operation="_I4cDQBiDEeO4GaDDjHC9Sg"/>
+  <RobotML:Algorithm xmi:id="_Kz_J8BiDEeO4GaDDjHC9Sg" base_Operation="_Kz1Y8BiDEeO4GaDDjHC9Sg"/>
+  <RobotML:Algorithm xmi:id="_kRUDcBiEEeO4GaDDjHC9Sg" base_Operation="_kRH2MBiEEeO4GaDDjHC9Sg"/>
+  <RobotML:Algorithm xmi:id="_UDUssBiWEeO4GaDDjHC9Sg" base_Operation="_UDJGgBiWEeO4GaDDjHC9Sg"/>
+  <RobotML:Algorithm xmi:id="_WM_u8BiWEeO4GaDDjHC9Sg" base_Operation="_WM0IwBiWEeO4GaDDjHC9Sg"/>
+  <RobotML:Algorithm xmi:id="_9nH6gBiXEeO4GaDDjHC9Sg" base_Operation="_9m-JgBiXEeO4GaDDjHC9Sg"/>
+  <RobotML:Algorithm xmi:id="_TlmkABiYEeO4GaDDjHC9Sg" base_Operation="_TlZvsBiYEeO4GaDDjHC9Sg"/>
+  <RobotML:State xmi:id="_5dOJEBibEeO4GaDDjHC9Sg" base_State="_5c-4gBibEeO4GaDDjHC9Sg"/>
+  <RobotML:State xmi:id="_-MQrEBibEeO4GaDDjHC9Sg" base_State="_-MHhIBibEeO4GaDDjHC9Sg"/>
+  <RobotML:State xmi:id="_HqHFkBicEeO4GaDDjHC9Sg" base_State="_Hp9UkBicEeO4GaDDjHC9Sg"/>
+  <RobotML:Transition xmi:id="_LaME8BicEeO4GaDDjHC9Sg" base_Transition="_LZ8NUBicEeO4GaDDjHC9Sg"/>
+  <RobotML:Transition xmi:id="_MT57MBicEeO4GaDDjHC9Sg" base_Transition="_MTqDkBicEeO4GaDDjHC9Sg" guard="_9nH6gBiXEeO4GaDDjHC9Sg"/>
+  <RobotML:Transition xmi:id="_NIZ6QBicEeO4GaDDjHC9Sg" base_Transition="_NILQwBicEeO4GaDDjHC9Sg"/>
+  <RobotML:Transition xmi:id="_T3tq4BicEeO4GaDDjHC9Sg" base_Transition="_T3b-EBicEeO4GaDDjHC9Sg"/>
+  <RobotML:Transition xmi:id="_pGBbsBicEeO4GaDDjHC9Sg" base_Transition="_pFzZQBicEeO4GaDDjHC9Sg"/>
+  <RobotML:Transition xmi:id="_s3KyEBicEeO4GaDDjHC9Sg" base_Transition="_s27hgBicEeO4GaDDjHC9Sg"/>
+  <RobotML:ActuatorSystem xmi:id="_C3TBYBidEeO4GaDDjHC9Sg" base_Class="_C3GNEBidEeO4GaDDjHC9Sg"/>
+  <RobotML:DataFlowPort xmi:id="_HZA5EBidEeO4GaDDjHC9Sg" base_Port="_HYvMQBidEeO4GaDDjHC9Sg"/>
+  <RobotML:SensorSystem xmi:id="_IKuNYBieEeO4GaDDjHC9Sg" base_Class="_IKZdQBieEeO4GaDDjHC9Sg"/>
+  <RobotML:DataFlowPort xmi:id="_JU13IBieEeO4GaDDjHC9Sg" base_Port="_JUpC0BieEeO4GaDDjHC9Sg" direction="out"/>
+  <RobotML:DataFlowPort xmi:id="_gFx4UBieEeO4GaDDjHC9Sg" base_Port="_gFjO0BieEeO4GaDDjHC9Sg"/>
+  <RobotML:DataFlowPort xmi:id="_kAjEwBieEeO4GaDDjHC9Sg" base_Port="_kAVpYBieEeO4GaDDjHC9Sg"/>
+</xmi:XMI>

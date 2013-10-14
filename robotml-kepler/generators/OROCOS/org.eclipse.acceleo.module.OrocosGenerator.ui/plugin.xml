@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.*"
+            id="org.eclipse.acceleo.module.OrocosGenerator.ui.popupMenus.contribution.IFile">
+         <menu id="org.eclipse.acceleo.module.menu" label="Acceleo Model to Text" path="additionsAcceleo">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               class="org.eclipse.acceleo.module.OrocosGenerator.ui.popupMenus.AcceleoGenerateOrocosGeneratorAction"
+               enablesFor="+"
+               id="org.eclipse.acceleo.module.OrocosGenerator.ui.popupMenus.acceleoGenerateOrocosGeneratorAction"
+               icon="icons/default.gif"
+               label="Generate OrocosGenerator"
+               menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.papyrus.robotML.modelexplorer.popupmenu.generate">
+         <command
+               commandId="org.eclipse.robotML.generateOrocosCommand"
+               icon="icons/default.gif"
+               id="org.eclipse.robotML.generateOrocos"
+               label="Generate to Orocos"
+               style="push"
+               tooltip="Generate code to Orocos component based framework">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            description="Generate to Orocos component based Framework"
+            id="org.eclipse.robotML.generateOrocosCommand"
+            name="Generate to Orocos">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.eclipse.acceleo.module.OrocosGenerator.ui.handler.AcceleoGenerateOrocosCommandHandler"
+            commandId="org.eclipse.robotML.generateOrocosCommand">
+      </handler>
+   </extension>
+</plugin>

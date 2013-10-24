@@ -6,6 +6,7 @@ Bundle-Version: 0.10.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.robotml.deployment.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
+ org.eclipse.emf;bundle-version="2.6.0",
  org.eclipse.emf.ecore,
  org.eclipse.gmf.runtime.common.core,
  org.eclipse.uml2.uml,

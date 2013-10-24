@@ -798,7 +798,7 @@
   <RobotML:ServicePort xmi:id="_e8u10DvuEeOv9Pb7uiE8Hg" base_Port="_e7PBADvuEeOv9Pb7uiE8Hg"/>
   <RobotML:DataFlowPort xmi:id="_KkffcDvwEeOv9Pb7uiE8Hg" base_Port="_KiyPQDvwEeOv9Pb7uiE8Hg" direction="out"/>
   <RobotML:ServicePort xmi:id="_QMWf0DvwEeOv9Pb7uiE8Hg" base_Port="_QK_08DvwEeOv9Pb7uiE8Hg"/>
-  <RobotML:Robot xmi:id="_oYKRoDvyEeOv9Pb7uiE8Hg" base_Class="_GqCegHUwEeKtkpd6W4BP5g"/>
+  <RobotML:Robot xmi:id="_oYKRoDvyEeOv9Pb7uiE8Hg" base_Class="_GqCegHUwEeKtkpd6W4BP5g" native="true" libraryComponentName="rmax"/>
   <RobotML:DeploymentPlan xmi:id="_mtaKkDvzEeOv9Pb7uiE8Hg" base_Package="_msT-YDvzEeOv9Pb7uiE8Hg" mainInstance="_mtzzMDvzEeOv9Pb7uiE8Hg"/>
   <RobotML:Allocate xmi:id="_4RQb0DvzEeOv9Pb7uiE8Hg" base_Abstraction="_4QdxoDvzEeOv9Pb7uiE8Hg"/>
   <RobotML:Allocate xmi:id="_4zV1MDvzEeOv9Pb7uiE8Hg" base_Abstraction="_4ygHsDvzEeOv9Pb7uiE8Hg"/>

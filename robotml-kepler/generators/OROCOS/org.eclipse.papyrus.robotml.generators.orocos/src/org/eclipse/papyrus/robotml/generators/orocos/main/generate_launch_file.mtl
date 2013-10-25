@@ -2,7 +2,7 @@
 [module generate_launch_file('http://www.eclipse.org/uml2/3.0.0/UML') /]
 
 [import org::eclipse::papyrus::robotml::generators::orocos::mmqueries::OrocosQueries /]
-[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /]
 
 
 [template public generate_launch_file(model : Model)]

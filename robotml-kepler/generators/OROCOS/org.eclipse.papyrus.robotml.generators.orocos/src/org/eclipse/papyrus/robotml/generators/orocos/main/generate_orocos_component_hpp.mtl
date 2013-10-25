@@ -1,14 +1,15 @@
 [comment encoding = UTF-8 /]
 [module generate_orocos_component_hpp('http://www.eclipse.org/uml2/3.0.0/UML')]
-[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
-[import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::DataTypeQueries /]
 [import org::eclipse::papyrus::robotml::generators::orocos::mmqueries::OrocosQueries/]
 [import org::eclipse::papyrus::robotml::generators::orocos::main::generate_orocos_interface_hpp /]
 [import org::eclipse::papyrus::robotml::generators::orocos::main::generate_FSM/]
 [import org::eclipse::papyrus::robotml::generators::orocos::main::generate_Datatype_file /]
-[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::GeneralQueries /]
 
 [template public generateOrocosComponentHpp(c : Class, root_model : Model)]
+[comment]
 [for (b : Behavior | c.ownedBehavior )]
 	[if (b.isFSM())]
 	[let sm : StateMachine = b.oclAsType(StateMachine)]
@@ -16,7 +17,7 @@
 	[/let]
 	[/if]
 [/for]
-
+[/comment]
 [comment we do not generate orocos components for actuators and sensors /]
 [file ( 'src/'+c.name+'/'+c.name+'.hpp', false, 'UTF-8')]
 [comment] [setLibraries(c)/] [/comment]
@@ -218,7 +219,7 @@ class [c.name/]:
 [comment adding operations to the constructor /]	
 	[for (op : Operation | c.getAllOperations())]
 		this->addOperation("[interface.name/]_[op.name/]", &[c.name/]::[op.name/], this, RTT::ClientThread)[getOperationSignatureName(op)/]
-			.doc("Description : [op.type.name.toUpperFirst()/]");
+			.doc("Description : [op.type.name.toUpper()/]");
 		[/for]
 
         [let elt : Element = c.oclAsType(Element)]
@@ -245,11 +246,15 @@ class [c.name/]:
 			[for (sp : Port | getServicePort())]				
 			[let interface : Interface = sp.type]
 				[if (isARequiredPort(sp))]
+
+[comment]
 					[let p : Port = getOppositePort(sp)]
 		if (!(requires("[interface.name/]")->connectTo(getPeer("[p.class.name/]")->provides("[interface.name/]")))){
 			log(Info) << "connection problem to service" << endlog();
 		}
 					[/let]
+[/comment]
+
 				[/if]
 			[/let]				
 		[/for]

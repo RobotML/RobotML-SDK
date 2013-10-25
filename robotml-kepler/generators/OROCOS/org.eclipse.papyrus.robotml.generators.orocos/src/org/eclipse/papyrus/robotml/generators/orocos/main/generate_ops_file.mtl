@@ -1,7 +1,7 @@
 [comment encoding = UTF-8 /]
 [module generate_ops_file('http://www.eclipse.org/uml2/3.0.0/UML','http://Papyrus/RobotML/1')]
 [import org::eclipse::papyrus::robotml::generators::orocos::mmqueries::OrocosQueries /]
-[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /]
 
 [template public generateOpsFile(model : Model)]
 [file ('/connect.ops', false, 'UTF-8')]
@@ -16,6 +16,8 @@ import ("rtt_std_msgs")
 	[let c : Class = elt.oclAsType(Class)]
 		[if (not isActuator(c) and not isSensor(c))]
 		[if (elt.getAllPorts() -> isEmpty() = false)]
+
+[comment]
 		[if (hasStateMachine(c))]
 loadComponent("[c.name/]","OCL::LuaComponent")
 //-----load lua scripts in Lua components
@@ -23,6 +25,8 @@ loadComponent("[c.name/]","OCL::LuaComponent")
 		[else]
 loadComponent("[c.name/]","[c.qualifiedName/]")
 		[/if]
+[/comment]
+
 		[/if]
 		[/if]
 	[/let]

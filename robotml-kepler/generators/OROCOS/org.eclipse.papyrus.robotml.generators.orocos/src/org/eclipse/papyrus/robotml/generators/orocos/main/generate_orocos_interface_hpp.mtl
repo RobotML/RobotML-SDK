@@ -1,8 +1,8 @@
 [comment encoding = UTF-8 /]
 [module generate_orocos_interface_hpp('http://www.eclipse.org/uml2/3.0.0/UML','http://Papyrus/RobotML/1')]
 [import org::eclipse::papyrus::robotml::generators::orocos::mmqueries::OrocosQueries /]
-[import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
-[import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::DataTypeQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::GeneralQueries /]
 
 [template public generateOrocosInterfaceHpp(i : Interface, root_model : Model)]
 
@@ -191,7 +191,7 @@ Task[Iname/](std::string& name):
 TaskContext(name){
 [for (op : Operation | i.getAllOperations())]
 		this->provides("[Iname/]"->addOperation("[Iname/]_[op.name/]", &[Iname/]::[Iname/]_[op.name/], this, RTT::ClientThread)[getOperationSignatureName(op)/]
-			.doc("Description : [op.type.name.toUpperFirst()/]");
+			.doc("Description : [op.type.name.toUpper()/]");
 [/for]
 }
 [/let]

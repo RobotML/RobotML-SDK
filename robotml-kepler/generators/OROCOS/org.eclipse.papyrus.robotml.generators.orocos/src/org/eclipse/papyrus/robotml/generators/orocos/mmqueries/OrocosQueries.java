@@ -1,29 +1,33 @@
-/*******************************************************************************
- * Copyright (c) 2008, 2010 Obeo.
+/*****************************************************************************
+ * Copyright (c) 2013 LIP6.
+ *
+ * This software is a computer program whose purpose is to transform RobotML models
+ * into OROCOS-RTT or RTT-LUA components via source code generation techniques.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
- *     Obeo - initial API and implementation
- *******************************************************************************/
+ *  Selma Kchir (LIP6) - Initial API and implementation
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.robotml.generators.orocos.mmqueries;
 
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.papyrus.RobotML.ServiceFlowKind;
-import org.eclipse.papyrus.RobotML.ServicePort;
 import org.eclipse.papyrus.RobotML.State;
-import org.eclipse.robotml.generators.acceleo.mmqueries.ArchitectureQueries;
-import org.eclipse.robotml.generators.acceleo.mmqueries.DataTypeQueries;
-import org.eclipse.robotml.generators.acceleo.mmqueries.GeneralQueries;
+import org.eclipse.papyrus.robotml.generators.common.mmqueries.ArchitectureQueries;
+import org.eclipse.papyrus.robotml.generators.common.mmqueries.DataTypeQueries;
+import org.eclipse.papyrus.robotml.generators.common.mmqueries.GeneralQueries;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Connector;
+import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
@@ -41,9 +45,6 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
-import org.eclipse.uml2.uml.util.UMLUtil;
-//import org.eclipse.uml2.uml.State;
-//import org.eclipse.uml2.uml.Transition;
 
 public class OrocosQueries {
 	
@@ -369,9 +370,6 @@ public class OrocosQueries {
 	 */
 	public String getOperationReturnType (Operation op) {
 		String res = "";
-		int size = op.getOwnedParameters().size();
-
-		int cpt = 0;
 		for (Parameter param : op.getOwnedParameters()) {
 			if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.RETURN)) {
 				res = getNameType(param.getType());
@@ -395,6 +393,38 @@ public class OrocosQueries {
 		}
 		return res;
 	}
+	/**
+	 * Get opposite port of the current port, for ex; if A and B are linked together, and the current port is A,
+	 * then the result it B
+	 * @param p1 the port to get opposite port (A)
+	 * @return opposite port of the current port (B)
+	 */
+	public org.eclipse.uml2.uml.Port getOppositePort(org.eclipse.uml2.uml.Port p1)
+	{
+		if (p1.getEnds().size()>0) {
+			Connector conn = (Connector)p1.getEnds().get(0).getOwner();
+			ConnectorEnd e1 = conn.getEnds().get(0);
+			ConnectorEnd e2 = conn.getEnds().get(1);
+			Port p2 = null;
+			java.lang.System.out.println("p1="+p1.getName());
+			Property c2 = null;
+			if (e1.getRole() == p1)
+			{
+				p2 = (Port)e2.getRole();
+				c2 = (Property)e2.getPartWithPort();
+				java.lang.System.out.println("1 - p2="+p2.getName()+", c2="+c2.getName());
+			}
+			else if (e2.getRole() == p1) {
+				p2 = (Port)e1.getRole();
+				c2 = (Property)e1.getPartWithPort();
+				java.lang.System.out.println("2 - p2="+p2.getName()+", c2="+c2.getName());
+			}
+			return p2;
+		}
+		else {
+			return null;
+		}
+	}	
 
 	/**
 	 * Get root model for the current model

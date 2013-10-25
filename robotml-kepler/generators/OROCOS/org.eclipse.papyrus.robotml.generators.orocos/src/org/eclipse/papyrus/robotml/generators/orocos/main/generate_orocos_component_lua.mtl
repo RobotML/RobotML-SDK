@@ -1,13 +1,15 @@
 [comment encoding = UTF-8 /]
 [module generate_orocos_component_lua('http://www.eclipse.org/uml2/3.0.0/UML','http://Papyrus/RobotML/1')]
 [import org::eclipse::papyrus::robotml::generators::orocos::mmqueries::OrocosQueries/]
-[import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
-[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::DataTypeQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /]
 [import org::eclipse::papyrus::robotml::generators::orocos::main::generate_Datatype_file /]
 [import org::eclipse::papyrus::robotml::generators::orocos::main::generate_FSM /]
 
 [template public generateOrocosComponentLua(c : Class, root_model : Model)]
 [generate_Datatype_file(c, root_model)/]
+
+[comment]
 [for (b : Behavior | c.ownedBehavior )]
 	[if (b.isFSM())]
 	[let sm : StateMachine = b.oclAsType(StateMachine)]
@@ -15,7 +17,7 @@
 	[/let]
 	[/if]
 [/for]
-
+[/comment]
 
 [file ( 'src/'+c.name+'.lua', false, 'UTF-8')]
 [comment Library declaration/]----- Library -----

@@ -9,7 +9,7 @@
 
 <package>
   <author> LIP6 </author>
-  <license>LIP6</license>
+  <license>EPL</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/</url>
   <depend package="rtt"/>

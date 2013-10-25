@@ -1,13 +1,18 @@
-/*******************************************************************************
- * Copyright (c) 2008, 2012 Obeo.
+/*****************************************************************************
+ * Copyright (c) 2013 LIP6.
+ *
+ * This software is a computer program whose purpose is to transform RobotML models
+ * into OROCOS-RTT or RTT-LUA components via source code generation techniques.
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
- *     Obeo - initial API and implementation
- *******************************************************************************/
+ *  Selma Kchir (LIP6) - Initial API and implementation
+ *
+ *****************************************************************************/
 package org.eclipse.papyrus.robotml.generators.orocos.main;
 
 import java.io.File;
@@ -343,7 +348,7 @@ public class Main extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated
+     * @generated NOT
      */
    // public void registerPackages(ResourceSet resourceSet) {
     //    super.registerPackages(resourceSet);
@@ -355,14 +360,28 @@ public class Main extends AbstractAcceleoGenerator {
      //   }
     @Override
         public void registerPackages(ResourceSet resourceSet) {
-        super.registerPackages(resourceSet);
+        /*super.registerPackages(resourceSet);
         if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
         }
         if (!isInWorkspace(org.eclipse.papyrus.RobotML.RobotMLPackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.papyrus.RobotML.RobotMLPackage.eINSTANCE.getNsURI(), org.eclipse.papyrus.RobotML.RobotMLPackage.eINSTANCE);
-        }
-        
+        }*/
+    	super.registerPackages(resourceSet);
+
+		//
+		EPackage.Registry packageRegistry = resourceSet.getPackageRegistry();
+		Resource.Factory.Registry factoryRegistry = resourceSet.getResourceFactoryRegistry();
+		//Map<URI, URI> uriMap = resourceSet.getURIConverter().getURIMap();
+
+		//
+		if(!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
+			resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
+			factoryRegistry.getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
+		}
+		 if (!isInWorkspace(org.eclipse.papyrus.RobotML.RobotMLPackage.class)) {
+	            resourceSet.getPackageRegistry().put(org.eclipse.papyrus.RobotML.RobotMLPackage.eINSTANCE.getNsURI(), org.eclipse.papyrus.RobotML.RobotMLPackage.eINSTANCE);
+		 }
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"
          * tag in the Javadoc of this method to "@generated NOT". Without this new tag, any compilation

@@ -1,10 +1,11 @@
 [comment encoding = UTF-8 /]
+
 [module main('http://www.eclipse.org/uml2/3.0.0/UML','http://Papyrus/RobotML/1')/]
 
 
-[import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
-[import org::eclipse::robotml::generators::acceleo::mmqueries::DataTypeQueries /]
-[import org::eclipse::robotml::generators::acceleo::mmqueries::DeploymentQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::DataTypeQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::DeploymentQueries /]
 
 [import org::eclipse::papyrus::robotml::generators::orocos::mmqueries::OrocosQueries /]
 [import org::eclipse::papyrus::robotml::generators::orocos::main::generate_orocos_component_hpp /]
@@ -45,13 +46,18 @@
 [for (c: Class | getDefinedComponentsForPlatform(model, 'OROCOS'))]
 [/comment]
 		[if (not isActuator(c)) and (not isSensor(c) and (not isEnvironment(c)) and (not isRobot(c)))]
+		
+[comment]
 			[if (hasStateMachine(c))]
-				[generateOrocosComponentLua(c, model)/]				
+				[generateOrocosComponentLua(c, model)/] 
+						
 			[else]
+		[/comment]
+	
 			[if(isMacroComponent(c) = false)] 
 					[generateOrocosComponentHpp(c, model)/]
 					[generateOrocosComponentCpp(c, model)/]				
-			[/if]
+	[comment]		[/if] [/comment]
 		[/if]
 		[/if]
 [comment]	

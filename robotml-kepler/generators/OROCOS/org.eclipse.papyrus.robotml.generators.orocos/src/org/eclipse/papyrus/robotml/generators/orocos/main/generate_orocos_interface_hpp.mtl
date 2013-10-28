@@ -128,7 +128,7 @@
 				[paramType.name/] [p.name/],
 				[/if]
 			[else]
-				[paramType.name/] [p.name/],
+				[paramType.qualifiedName/] [p.name/],
 			[/if]
 			[comment in case of ros datatypes, uncomment]
 			[if(isRobotMLDataType(m, paramType.name))]

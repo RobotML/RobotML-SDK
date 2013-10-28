@@ -39,7 +39,7 @@
 		[if (isInterface(type))]
 		#include "../[type.name+'/Task'+type.name/].hpp"
 		[else]
-		#include "../Datatypes/[type.name/].hpp"
+		#include "../DataTypes/[type.name/].hpp"
 		[/if]
 [comment]#include "[(type.qualifiedName.substitute(' ', '_')).replaceAll('::', '/')/].h"[/comment]	
 	[/if]

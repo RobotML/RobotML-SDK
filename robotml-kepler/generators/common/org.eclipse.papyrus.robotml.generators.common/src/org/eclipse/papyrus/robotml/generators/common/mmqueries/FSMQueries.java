@@ -30,15 +30,15 @@ public class FSMQueries {
 	 * @return a list of states
      * @todo a valider par Nicolas 
 	 */
-//	public List<org.eclipse.uml2.uml.Vertex> getStates(StateMachine sm)
-//	{
-//		LinkedList<org.eclipse.uml2.uml.Vertex> res = new LinkedList<org.eclipse.uml2.uml.Vertex>();
-//		for (org.eclipse.uml2.uml.Region region : sm.getRegions())	
-//			for(org.eclipse.uml2.uml.Vertex vertex : region.getSubvertices())
-//				res.add((org.eclipse.uml2.uml.Vertex)vertex);
-//		
-//		return res;
-//	}
+	public List<org.eclipse.uml2.uml.Vertex> getStates(StateMachine sm)
+	{
+		LinkedList<org.eclipse.uml2.uml.Vertex> res = new LinkedList<org.eclipse.uml2.uml.Vertex>();
+		for (org.eclipse.uml2.uml.Region region : sm.getRegions())	
+			for(org.eclipse.uml2.uml.Vertex vertex : region.getSubvertices())
+				res.add((org.eclipse.uml2.uml.Vertex)vertex);
+		
+		return res;
+	}
 	
 	/**
 	 * Find all transitions in a state machine.

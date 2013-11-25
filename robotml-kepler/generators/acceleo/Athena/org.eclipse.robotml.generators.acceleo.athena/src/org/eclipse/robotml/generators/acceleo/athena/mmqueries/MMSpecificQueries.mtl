@@ -29,6 +29,10 @@
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getCommentFromElement(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
 /]
 
+[query public isInheritedPort(currentClass : Class, port : Port) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isInheritedPort(org.eclipse.uml2.uml.Class, org.eclipse.uml2.uml.Port)', Sequence{currentClass, port})
+/]
+
 [query public hasComment(elt : NamedElement) : Boolean =
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'hasComment(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
 /]
@@ -175,4 +179,20 @@
 
 [query public isAthenaProcessingBody(ne : NamedElement) : Boolean =
 	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isAthenaProcessingBody(org.eclipse.uml2.uml.NamedElement)', Sequence{ne})
+/]
+
+[query public getChildrenClass(model : Model, class : Class) : Sequence(Class) =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getChildrenClass(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Class)', Sequence{model, class})
+/]
+
+[query public isAthenaFunction(op : Operation) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isAthenaFunction(org.eclipse.uml2.uml.Operation)', Sequence{op})
+/]
+
+[query public getBehaviorBody(behavior : OpaqueBehavior) : String =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'getBehaviorBody(org.eclipse.uml2.uml.OpaqueBehavior)', Sequence{behavior})
+/]
+
+[query public isTransitionBehavior(behavior : OpaqueBehavior, model : Model) : Boolean =
+	invoke('org.eclipse.robotml.generators.acceleo.athena.mmqueries.SpecificQueries', 'isTransitionBehavior(org.eclipse.uml2.uml.OpaqueBehavior, org.eclipse.uml2.uml.Model)', Sequence{behavior, model})
 /]

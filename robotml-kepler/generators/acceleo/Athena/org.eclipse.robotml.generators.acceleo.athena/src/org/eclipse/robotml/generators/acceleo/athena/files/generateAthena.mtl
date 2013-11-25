@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module generateAthena('http://www.eclipse.org/uml2/3.0.0/UML', 'http://Papyrus/RobotML/1')/]
+[module generateAthena('http://www.eclipse.org/uml2/3.0.0/UML')/]
 
 [import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries/]
 
@@ -9,7 +9,7 @@
 [import org::eclipse::robotml::generators::acceleo::athena::files::generatePrototypes/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::configGenerator/]
 
-[import org::eclipse::robotml::generators::acceleo::athena::files::generateBehaviorDeclaration/]
+[comment][import org::eclipse::robotml::generators::acceleo::athena::files::generateBehaviorDeclaration/][/comment]
 
 [import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries /]
 
@@ -38,13 +38,12 @@
 //classes size : [classes->size()/]
 [for(classe : Class | classes)]
 [if(isExternalLibrairy(classe))]
-wrapper [classe.name/] begin
-		
+wrapper [classe.name/] begin	
 	link-library { "[generateWrapperString(classe)/]" }
 [let ops : Sequence(Operation) = classe.eAllContents(Operation)]
 	implements-functions {
 [for(op : Operation | ops)]
-							[op.name/][if(ops->indexOf(op) < ops->size())],[/if]
+		[op.name/][if(ops->indexOf(op) < ops->size())],[/if]
 [/for]
 	}
 [/let]
@@ -66,26 +65,17 @@ end
 [template private generateFunctionFile(model : Model)]
 [let behaviors : Sequence(Behavior) = getUniqueBehaviorFromModel(model)]
 [file ('FunctionDecl.adl', false, 'UTF-8')]
-[generateBehaviors(behaviors)/]
+[comment][generateFunctionBehavior(behaviors)/][/comment]
+[generateFunctions(model)/]
 [/file]
 [/let]
-
-
-[comment][file('FunctionDecl.adl', false, 'UTF-8')]
-[generateFunctions(model)/]
-[/file][/comment]
 [/template]
 
 [template private generateProcessingFile(model : Model)]
-[let behaviors : Sequence(Behavior) = getOpaqueBehaviorFromModel(model)]
-[file ('ProcessingDecl.adl', false, 'UTF-8')]
-[generateBehaviors(behaviors)/]
-[/file]
-[/let]
 
-[comment][file('ProcessingDecl.adl', false, 'UTF-8')]
+[file('ProcessingDecl.adl', false, 'UTF-8')]
 [generateProcessings(model)/]
-[/file][/comment]
+[/file]
 [/template]
 
 [template private generatePrototypeFile(model : Model)]

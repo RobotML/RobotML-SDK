@@ -347,9 +347,6 @@ public class GenerateAthena extends AbstractAcceleoGenerator {
         if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
         }
-        if (!isInWorkspace(org.eclipse.papyrus.RobotML.RobotMLPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.eclipse.papyrus.RobotML.RobotMLPackage.eINSTANCE.getNsURI(), org.eclipse.papyrus.RobotML.RobotMLPackage.eINSTANCE);
-        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"

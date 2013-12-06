@@ -1,4 +1,16 @@
 [comment encoding = UTF-8 /]
+[comment]
+ Copyright (c) 2013 DASSAULT AVIATION.
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+   Nicolas BRODNAN (Dassault Aviation) nicolas.brodnan@gmail.com - Athena prototype generation
+[/comment]
+
 [module generatePrototypes('http://www.eclipse.org/uml2/3.0.0/UML')/]
 
 [import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /] 
@@ -6,6 +18,9 @@
 [import org::eclipse::papyrus::robotml::generators::common::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries /]
 
+[comment]
+Search all prototypes in the RobotML model
+[/comment]
 [template public generatePrototypes(model : Model)]
 		
 //
@@ -21,6 +36,9 @@
 	[/for]
 [/template]
 
+[comment]
+Generate Athena generic prototypes
+[/comment]
 [template private generateGenericPrototype(model : Model)]
 	[let stereotypes : Sequence(String) = getStereotypeComponentUsedInModel(model)]
 		[for(stereo : String | stereotypes)]
@@ -30,6 +48,9 @@ end
 	[/let]
 [/template]
 
+[comment]
+Generate Athena prototype struct
+[/comment]
 [template public generatePrototype(class : Class, model : Model)]
 [comment]If the class are an external librairy, it will be ignored[/comment]
 [if(isExternalLibrairy(class) =(false))]
@@ -41,39 +62,37 @@ prototype [class.name/] begin
 prototype [class.name/] is [superClass.name/] begin
 [/let]
 [/if]
-		[comment][let superClass : Class = getSuperClass(class)]
-prototype [claModelss.name/] [if(superClass not null)] is [superClass.name/][/if] begin[/comment]
-			[let ports : Sequence(Port) = class.eAllContents(Port)]	
-				[if(ports->isEmpty() =(false))]
+[let ports : Sequence(Port) = class.eAllContents(Port)]	
+[if(ports->isEmpty() =(false))]
 	[generateReferenceFromInputPort(ports, class, model)/]
 	[generateParameterFromOutputPort(ports)/]
-				[/if]
-			[/let]		
-			[let properties : Sequence(Property) = class.eAllContents(Property)]
-				[if(properties->isEmpty() =(false))]
+[/if]
+[/let]		
+[let properties : Sequence(Property) = class.eAllContents(Property)]
+[if(properties->isEmpty() =(false))]
 	[generateParameterFromProperties(properties)/]
 	[generateInstancesFromProperties(properties)/]
-				[/if]
-			[/let]
-			[let fsms : Sequence(StateMachine) = class.eAllContents(StateMachine)]
-				[if(hasValidFSMDeclaration(class))]
+[/if]
+[/let]
+[let fsms : Sequence(StateMachine) = class.eAllContents(StateMachine)]
+[if(hasValidFSMDeclaration(class))]
 	[generateFSM(fsms, model)/]
-				[/if]
+[/if]
 	[generateInteractions(fsms)/]
-			[/let]
+[/let]
 end
-		[comment][/let][/comment]
-	[/if]	
+[/if]	
 [/template]
 
-[comment]Generate the prototype's reference (input port)[/comment]
+[comment]
+Generate the prototype's reference (input port)
+[/comment]
 [template private generateReferenceFromInputPort(ports : Sequence(Port), class : Class, model : Model)]
 [for(port : Port | ports)]
-[comment][if(isDataFlowPort(port) and ((isAnOutputPort(port) = false) or (isAnInputOutputPort(port) = false)))][/comment]
 [if(isDataFlowPort(port) and (isAnInputPort(port) or isAnInputOutputPort(port)) and not isInheritedPort(class, port) )]
-		[if(hasComment(port))]
+[if(hasComment(port))]
 [getCommentFromElement(port)/]
-		[/if]
+[/if]
 [if(hasObjectInstanceConnection(model, class, port))]
 reference <[port.type.name/]> @[getObjectInstanceConnectionName(model, class, port)/].[port.name/]
 [elseif(hasParentInstanceConnection(model, class, port))]
@@ -87,6 +106,9 @@ reference <[port.type.name/]> @[port.name.toLower()/]
 [/for]
 [/template] 
 
+[comment]
+Generate prototype parameters from input port
+[/comment]
 [template private generateParameterFromInputPort(port : Port)]
 //generate parameter from input port (not connected)
 [if(getInstanceMultiplicity(port) = '[]')]
@@ -96,11 +118,12 @@ parameter [port.type.name/] [port.name.toLower()/][if(hasDefaultValue(port))] = 
 [/if]
 [/template]
 
-[comment]Generate the prototype's parameters (output port) [/comment]
+[comment]
+Generate the prototype's parameters (output port)
+[/comment]
 [template private generateParameterFromOutputPort(ports : Sequence(Port))]
 //Generate parameter from Output port
 [for(port : Port | ports)]
-[comment][if(isDataFlowPort(port) and (isAnOutputPort(port) or isAnInputOutputPort(port)))][/comment]
 [if(isDataFlowPort(port) and isAnOutputPort(port))]
 [if(hasComment(port))]
 [getCommentFromElement(port)/]
@@ -114,7 +137,9 @@ parameter [port.type.name/] [port.name.toLower()/][if(hasDefaultValue(port))] = 
 [/for]
 [/template]
 
-[comment]Generate the prototype's parameters (property)[/comment]
+[comment]
+Generate the prototype's parameters (property)
+[/comment]
 [template private generateParameterFromProperties(properties :Sequence(Property))]
 //Generate parameter from properties
 [for(prop : Property | properties)]
@@ -131,22 +156,26 @@ parameter [prop.type.name/] [prop.name.toLower()/][if(prop.hasDefaultValue())] =
 [/for]
 [/template]
 
-[comment]Generate the prototype's instance (property)[/comment]
+[comment]
+Generate the prototype's instance (property)
+[/comment]
 [template private generateInstancesFromProperties(properties : Sequence(Property))]
 [for(prop : Property | properties)]
 [if(isDataType(prop.type) = false)]
-	[if(hasComment(prop))]
+[if(hasComment(prop))]
 [getCommentFromElement(prop)/] 
-	[/if]
+[/if]
 instance [prop.type.name/][getInstanceMultiplicity(prop)/] [prop.name.toLower()/]
 [/if]
 [/for]
 [/template]
 
-[comment]Generate the prototype's statemachine declaration[/comment]
+[comment]
+Generate the prototype's statemachine declaration
+[/comment]
 [template private generateFSM(fsms : Sequence(StateMachine), model : Model)]
-	[for (sm : StateMachine | fsms)]
-	//[sm.name/]
+[for (sm : StateMachine | fsms)]
+//[sm.name/]
 [generateFSMGuard(sm, model)/]
 [generateFSMEffect(sm)/]
 [let states : Sequence(Vertex) = getFSMStates(sm)]
@@ -165,10 +194,12 @@ stateset [sm.name/] { [for(state : Vertex | states)][state.name/][if(states->ind
 [/for]
 [/let]
 end
-	[/for]
+[/for]
 [/template]
 
-[comment]Generate prototype's interactions[/comment]
+[comment]
+Generate prototype's interactions
+[/comment]
 [template private generateInteractions(fsms : Sequence(StateMachine))]
 [for(sm : StateMachine | fsms)]
 [let states : Sequence(Vertex) = getFSMStates(sm)]
@@ -185,6 +216,9 @@ end
 [/for]
 [/template]
 
+[comment]
+Generate Athena event
+[/comment]
 [template private generateFSMGuard(fsm : StateMachine, model : Model)]
 [let transitions : Sequence(RobotML::Transition) = getTransitions(fsm)]
 [for(transition : RobotML::Transition | transitions)]
@@ -197,6 +231,9 @@ event [guard.specification.name/] { [generateGuardBody(guard)/] }
 [/let]
 [/template]
 
+[comment]
+Generate Athena event body
+[/comment]
 [template private generateGuardBody(guard : Behavior)]
 [if(guard.oclIsKindOf(OpaqueBehavior) =(true))]
 [comment]TODO : Detect has body specification or using file[/comment]
@@ -214,6 +251,9 @@ event [guard.specification.name/] { [generateGuardBody(guard)/] }
 [/if]
 [/template]
 
+[comment]
+Generate Athena signal
+[/comment]
 [template private generateFSMEffect(fsm : StateMachine)]
 [let transitions : Sequence(RobotML::Transition) = getTransitions(fsm)]
 [for(transition : RobotML::Transition | transitions)]

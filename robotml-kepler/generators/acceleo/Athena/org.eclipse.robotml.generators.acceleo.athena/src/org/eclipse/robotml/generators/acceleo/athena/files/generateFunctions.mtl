@@ -1,13 +1,26 @@
 [comment encoding = UTF-8 /]
+[comment]
+ Copyright (c) 2013 DASSAULT AVIAITON.
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+ Contributors:
+	Nicolas BRODNAN (Dassault Aviation) nicolas.brodnan@gmail.com - Athena function generation  
+[/comment]
+
+
 [module generateFunctions('http://www.eclipse.org/uml2/3.0.0/UML')/]
 
-[comment][import org::eclipse::papyrus::robotml::generators::common::mmqueries::GeneralQueries /]
-[import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /][/comment]
 [import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries /]
 
 [template public generateFunctions(model : Model)]
 
-[comment]We search the funtions in the model (including imported package)[/comment]
+[comment]
+We search the functions in the RobotML model (including imported package)
+[/comment]
 [let operations : Sequence(NamedElement) = getOperationsFromModel(model)]
 [for(elt : NamedElement | operations)]
 //function : [elt.name/]
@@ -23,7 +36,9 @@
 [/let]
 [/template]
 
-[comment]generate the function body[/comment]
+[comment]
+generate the function body
+[/comment]
 [template private generateFunctionBody(op : Operation)]
 function [op.name/] < CPP > (
 [let params : OrderedSet(Parameter) = op.ownedParameter]

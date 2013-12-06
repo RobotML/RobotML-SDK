@@ -3,7 +3,7 @@
 
 [import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries/]
 
-[template public generateFunctionBehavior(behaviors : Sequence(Behavior))]
+[comment][template public generateFunctionBehavior(behaviors : Sequence(Behavior))]
 [for(behavior : Behavior | behaviors)]
 [if(behavior.oclIsKindOf(FunctionBehavior))]
 [if(hasComment(behavior))]
@@ -12,9 +12,9 @@
 function [behavior.name/] <CPP> ()
 [/if]
 [/for]
-[/template]
+[/template][/comment]
 
-[template public generateProcessingBehavior(behaviors : Sequence(Behavior))]
+[comment][template public generateProcessingBehavior(behaviors : Sequence(Behavior))]
 [for(behavior : Behavior | behaviors)]
 [if(behavior.oclIsKindOf(OpaqueBehavior))]
 [if(hasComment(behavior))]
@@ -36,9 +36,9 @@ processing [behavior.name/] [if(behavior.ownedParameter->isEmpty() =(true))]( ) 
 [/let]
 [/if]
 [/for]
-[/template]
+[/template][/comment]
 
-[template public generateBehaviors(behaviors : Sequence(Behavior))]
+[comment][template public generateBehaviors(behaviors : Sequence(Behavior))]
 [for(behavior : Behavior | behaviors)]
 [if(behavior.oclIsKindOf(OpaqueBehavior))]
 [generateProcessing(behavior.oclAsType(OpaqueBehavior))/]
@@ -48,17 +48,17 @@ processing [behavior.name/] [if(behavior.ownedParameter->isEmpty() =(true))]( ) 
 //unknown behavior : [behavior.name/]
 [/if]
 [/for]
-[/template]
+[/template][/comment]
 
-[template private generateFunction(behavior : Behavior)]
+[comment][template private generateFunction(behavior : Behavior)]
 //[behavior.name/]
 [if(hasComment(behavior))]
 [getCommentFromElement(behavior)/]
 [/if]
 function [behavior.name/] <CPP> ( )
-[/template]
+[/template][/comment]
 
-[template private generateProcessing(behavior : OpaqueBehavior)]
+[comment][template private generateProcessing(behavior : OpaqueBehavior)]
 //[behavior.name/]
 [if(hasComment(behavior))]
 [getCommentFromElement(behavior)/]
@@ -76,12 +76,12 @@ function [behavior.name/] <CPP> ( )
 [/let]
 processing [behavior.name/] () begin
 end
-[/template]
+[/template][/comment]
 
-[template private generateProcessingWithFile(behavior : OpaqueBehavior)]
+[comment][template private generateProcessingWithFile(behavior : OpaqueBehavior)]
 [comment]Open file (path in body), use xtext to check source bloc[/comment]
-[/template]
+[/template][/comment]
 
-[template private generateProcessingWithOutFile(behavior : OpaqueBehavior)]
+[comment][template private generateProcessingWithOutFile(behavior : OpaqueBehavior)]
 [comment]Get language, and check body resource[/comment]
-[/template]
+[/template][/comment]

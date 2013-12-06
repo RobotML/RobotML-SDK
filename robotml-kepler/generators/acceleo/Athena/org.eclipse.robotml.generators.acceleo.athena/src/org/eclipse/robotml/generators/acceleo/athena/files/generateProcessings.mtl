@@ -1,9 +1,23 @@
 [comment encoding = UTF-8 /]
+[comment]
+ Copyright (c) 2013 DASSAULT AVIATION.
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+  Nicolas BRODNAN (Dassault Aviation) nicolas.brodnan@gmail.com - Athena processing generation
+[/comment]
+
 [module generateProcessings('http://www.eclipse.org/uml2/3.0.0/UML')/]
 
 [import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries/]
 
-[comment]Search all processing in the model (including imported package)[/comment]
+[comment]
+Search all processing in the RobotML model (including imported package)
+[/comment]
 [template public generateProcessings(model : Model)]
 [let elements : Sequence(NamedElement) = getBehaviorFromModel(model)]
 [for(element : NamedElement | elements)]
@@ -16,7 +30,9 @@
 [/let]
 [/template]
 
-[comment]Generate the processing header[/comment]
+[comment]
+Generate the processing header
+[/comment]
 [template private generateProcessingDecl(model : Model, processing : OpaqueBehavior)]
 [if(not processing.oclIsKindOf(FunctionBehavior) and not isTransitionBehavior(processing, model))]
 //[processing.name/]
@@ -37,6 +53,9 @@ end
 [/if]
 [/template]
 
+[comment]
+Generate processing body
+[/comment]
 [template private generateProcessingBody(model : Model, proc : OpaqueBehavior)]
 [comment]If language is specified as Athena, so print the behavior body in the string generation[/comment]
 [getBehaviorBody(proc)/]

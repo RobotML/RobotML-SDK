@@ -1,18 +1,28 @@
 [comment encoding = UTF-8 /]
+[comment]
+ Copyright (c) 2013 DASSAULT AVIATION.
+  
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+   Nicolas BRODNAN (Dassault Aviation) nicolas.brodnan@gmail.com - Generate Athena source files
+[/comment]
 [module generateAthena('http://www.eclipse.org/uml2/3.0.0/UML')/]
 
 [import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries/]
-
 [import org::eclipse::robotml::generators::acceleo::athena::files::generateTypes/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::generateFunctions/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::generateProcessings/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::generatePrototypes/]
 [import org::eclipse::robotml::generators::acceleo::athena::files::configGenerator/]
-
-[comment][import org::eclipse::robotml::generators::acceleo::athena::files::generateBehaviorDeclaration/][/comment]
-
 [import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries /]
 
+[comment]
+Main point of the generation. Export RobotML model to athena source files.
+[/comment]
 [template public generateAthena(model : Model)]
 [comment @main /] 
 	
@@ -32,7 +42,9 @@
 [/if]
 [/template]
 
-[comment]Generate wrapper for externals librairies[/comment]
+[comment]
+Generate wrapper for externals librairies
+[/comment]
 [template private generateWrapper(model : Model)]
 [let classes : Sequence(Class) = getModelClasses(model)]
 //classes size : [classes->size()/]
@@ -56,28 +68,38 @@ end
 [/let]
 [/template]
 
+[comment]
+Generate the athena datatypes file
+[/comment]
 [template private generateDataTypeFile(model : Model)]
 [file('DatatypeDecl.adl', false, 'UTF-8')]
 [generateTypes(model)/]
 [/file]
 [/template]
 
+[comment]
+Generate the athena function file
+[/comment]
 [template private generateFunctionFile(model : Model)]
 [let behaviors : Sequence(Behavior) = getUniqueBehaviorFromModel(model)]
 [file ('FunctionDecl.adl', false, 'UTF-8')]
-[comment][generateFunctionBehavior(behaviors)/][/comment]
 [generateFunctions(model)/]
 [/file]
 [/let]
 [/template]
 
+[comment]
+Generate the athena processing file
+[/comment]
 [template private generateProcessingFile(model : Model)]
-
 [file('ProcessingDecl.adl', false, 'UTF-8')]
 [generateProcessings(model)/]
 [/file]
 [/template]
 
+[comment]
+Generate the athena prototype file
+[/comment]
 [template private generatePrototypeFile(model : Model)]
 [file(model.name + '.adl', false, 'UTF-8')]
 language CPP
@@ -95,6 +117,9 @@ import "ProcessingDecl.adl"
 [/file]
 [/template]
 
+
+[comment]
+Generate the specific aathena global file for simulator's input[/comment]
 [template private generateOutputSimulatorFile(model : Model)]
 [file('.' + model.name + '.output.adl', false, 'UTF-8')]
 language CPP

@@ -1,3 +1,17 @@
+/*****************************************************************************
+ * Copyright (c) 2013 Dassault Aviation.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Stephane Millet (Dassault Aviation) stephane.millet@dassault-aviation.com - Initial implementation
+ *  Nicolas Brodnan (Dassault Aviation) nicolas.brodnan@gmail.com - completion due to athena update to V5
+ *  Bruno Patin (Dassault Aviation) bruno.patin@dassault-aviation.com - insertion of comments
+ *****************************************************************************/
+
 package org.xtext.validation;
 
 import java.util.Iterator;
@@ -32,7 +46,7 @@ import org.xtext.athenaDSL.wrapperDeclaration;
 public class AthenaDSLJavaValidator extends AbstractAthenaDSLJavaValidator {
 
 	/**
-	 * Recuperer la racine du projet
+	 * get the project root
 	 * 
 	 * @param eobj
 	 * @return
@@ -45,7 +59,7 @@ public class AthenaDSLJavaValidator extends AbstractAthenaDSLJavaValidator {
 	}
 
 	/**
-	 * Recuperer une declaration de fonction e partir de son nom
+	 * Get function declaration from its name
 	 * 
 	 * @param project
 	 * @param name
@@ -61,7 +75,7 @@ public class AthenaDSLJavaValidator extends AbstractAthenaDSLJavaValidator {
 	}
 
 	/**
-	 * Recuperer une declaration de traitement e partir de son nom
+	 * Get a processing declaration from its name
 	 * 
 	 * @param project
 	 * @param name
@@ -77,8 +91,8 @@ public class AthenaDSLJavaValidator extends AbstractAthenaDSLJavaValidator {
 	}
 
 	/**
-	 * Acceder e la liste des arguments declares pour un appel de fonction. Ce
-	 * peut etre une fonction externe ou un traitement.
+	 * Access function declared argument list. It could be either an external
+	 * Function or a processing
 	 * 
 	 * @param p
 	 * @param name
@@ -123,8 +137,7 @@ public class AthenaDSLJavaValidator extends AbstractAthenaDSLJavaValidator {
 	}
 
 	/**
-	 * Trouver une variable dans un prototype soit un parametre soit une
-	 * reference
+	 * Get a prototype variable (parameter as well as reference)
 	 * 
 	 * @param argName
 	 * @param proto
@@ -227,7 +240,7 @@ public class AthenaDSLJavaValidator extends AbstractAthenaDSLJavaValidator {
 	}
 
 	/**
-	 * Trouver le type d'un argument dans un appel de fonction par son nom
+	 * Get argument type in a function from its name
 	 * 
 	 * @param p
 	 * @param arg
@@ -254,7 +267,7 @@ public class AthenaDSLJavaValidator extends AbstractAthenaDSLJavaValidator {
 	}
 
 	/**
-	 * Verifier un appel de fonction ou traitement
+	 * Validate function call or processing
 	 * 
 	 * @param p
 	 * @param call_args

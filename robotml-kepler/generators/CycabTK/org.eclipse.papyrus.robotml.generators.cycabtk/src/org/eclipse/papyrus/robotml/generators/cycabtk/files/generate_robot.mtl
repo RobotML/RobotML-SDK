@@ -1,0 +1,83 @@
+[comment encoding = UTF-8 /]
+[comment]
+/*****************************************************************************
+ * Copyright (c) 2013 INRIA / CNRS
+ *
+ * This software is a computer program whose purpose is to transform RobotML models
+ * into CycabTK scripts via source code generation techniques.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Amaury Negre (CNRS) - Initial API and implementation
+ *
+ *****************************************************************************/
+[/comment]
+
+[module generate_robot('http://www.eclipse.org/uml2/3.0.0/UML')]
+
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::GeneralQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /]
+[import org::eclipse::papyrus::robotml::generators::cycabtk::CycabTKQueries /]
+
+[import generate_system/]
+
+[template public generateRobot(aClass : Class, model : Model)]
+[comment encoding = UTF-8 /]
+
+[file ('scripts/' + model.name + '/' + aClass.name + '.lua', false, 'UTF-8')]
+
+--require "[aClass.name/]"
+
+[generateSystemCommonRequires(aClass, model)/]
+
+[let libPath:String=getAttributeValue(aClass, 'libraryPath', 'Robot')]
+require "[libPath/]"
+[/let]
+
+-- [protected(aClass.name + ' requires')]
+
+-- [/protected]
+
+
+--Definition of class [aClass.name/]
+[if getAttributeValue(aClass, 'libraryComponentName', 'Robot') = null]
+class '[aClass.name/]':__init(name))
+function [aClass.name/]
+[else]
+[let componentName:String = getAttributeValue(aClass, 'libraryComponentName', 'Robot')]
+class '[aClass.name/]' ([componentName/])
+function [aClass.name/]:__init(name)
+	[componentName/].__init(self, name)
+[/let]
+[/if]
+
+	
+	[generateSystemCommon(aClass, model)/]
+	
+	---- add ROS connectors
+	[for(port : Port | getPortsWithType(aClass, 'VipalabOdometryMessage'))]
+		[if isAnOutputPort(port)]
+	require "LuaVipalabOdometryRosInterface"
+	self.[port.name/] = cycabtk.VipalabOdometryRosInterface( name.."['.' +port.name/]")
+	self:AddPostProcessing( name.."['.' +port.name/]" )
+		[/if]
+	[/for]
+	[for(port : Port | getPortsWithType(aClass, 'VipalabCommandMessage'))]
+		[if isAnOutputPort(port)]
+	require "LuaInputVipalabControllerRosInterface"
+	self.[port.name/] = cycabtk.InputVipalabControllerRosInterface( name.."['.' +port.name/]")
+	self:AddPreProcessing( name.."['.' +port.name/]" )
+		[/if]
+	[/for]
+
+	---- start the Simulated Actors ----
+	self:Start()
+end
+
+[/file]
+	
+[/template]

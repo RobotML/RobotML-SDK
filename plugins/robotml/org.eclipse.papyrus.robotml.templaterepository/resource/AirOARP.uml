@@ -58,7 +58,6 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_ab_ckHdAEeKZYq0TRURVaw">
       <importedPackage xmi:type="uml:Model" href="pathmap://Papyrus_Alf_LIBRARIES/alflibrary.uml#_0bBI4Hy5EeCKy5kSqd4eVw"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_GqCeAXUwEeKtkpd6W4BP5g" name="Orocos"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_GqCeAnUwEeKtkpd6W4BP5g" name="CameraMain_002">
       <ownedAttribute xmi:type="uml:Port" xmi:id="_GqCeA3UwEeKtkpd6W4BP5g" name="Image" aggregation="composite">
         <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_mJDa8AKuEeCQReIOIWJ0nA"/>
@@ -67,7 +66,6 @@
         <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_5d_eEAKoEeCQReIOIWJ0nA"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_GqCeBXUwEeKtkpd6W4BP5g" name="Morse"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_GqCeBnUwEeKtkpd6W4BP5g" name="Gyroscope_001">
       <ownedAttribute xmi:type="uml:Port" xmi:id="_GqCeB3UwEeKtkpd6W4BP5g" name="Angles" aggregation="composite">
         <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_qaS2oAH-EeC_ZLzLQhW-TQ"/>
@@ -84,7 +82,9 @@
         <type xmi:type="uml:DataType" href="pathmap://Robotml_LIBRARIES/RobotMLPlatformLibraries.uml#_1_-5oAH5EeC_ZLzLQhW-TQ"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_GqCeDXUwEeKtkpd6W4BP5g" name="env"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GqCeDXUwEeKtkpd6W4BP5g" name="env">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_DI51UCnhEeOCj8YrvfXcUg" name="rmaxHardwareArchitecture" type="_GqCeWHUwEeKtkpd6W4BP5g"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_GqCeDnUwEeKtkpd6W4BP5g" name="RMax"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_GqCeHHUwEeKtkpd6W4BP5g" name="RMaxControlSystem">
       <ownedAttribute xmi:type="uml:Port" xmi:id="_GqCeHXUwEeKtkpd6W4BP5g" name="state" type="_GqCeonUwEeKtkpd6W4BP5g" aggregation="composite"/>
@@ -259,6 +259,16 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_GqCeoHUwEeKtkpd6W4BP5g" name="PlatformModel">
       <packagedElement xmi:type="uml:Package" xmi:id="_GqCeoXUwEeKtkpd6W4BP5g" name="ControlSystemPlatform"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_GqCeAXUwEeKtkpd6W4BP5g" name="Orocos"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_GqCeBXUwEeKtkpd6W4BP5g" name="Morse"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_TZF_8CnZEeO9rYNGKVaQZw" name="AirOARPVirtualPlatform">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_YL1WMCnZEeO9rYNGKVaQZw" name="morse" type="_GqCeBXUwEeKtkpd6W4BP5g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_YzRJoCnZEeO9rYNGKVaQZw" name="orocos" type="_GqCeAXUwEeKtkpd6W4BP5g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_20YIoCngEeOCj8YrvfXcUg" name="AirOARPVirtualPlatformPlatform">
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_21hYICngEeOCj8YrvfXcUg" name="morse" classifier="_GqCeBXUwEeKtkpd6W4BP5g"/>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_22Zh4CngEeOCj8YrvfXcUg" name="orocos" classifier="_GqCeAXUwEeKtkpd6W4BP5g"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_gUzrwHYcEeKPK8ZhPTxHOw" name="C++types">
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_GqDFGHUwEeKtkpd6W4BP5g" name="unsigned char *"/>
@@ -588,6 +598,46 @@
     </packagedElement>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_AYcbIHdAEeKZYq0TRURVaw" name="std::string"/>
     <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_zt6kANJqEeKpIOHUboD44g" name="unsigned char"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_5xzjECngEeOCj8YrvfXcUg" name="deployment">
+      <packagedElement xmi:type="uml:Package" xmi:id="_IVkugCnhEeOCj8YrvfXcUg" name="envDepPlan2">
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_IWyPcCnhEeOCj8YrvfXcUg" name="mainInstance" classifier="_GqCeDXUwEeKtkpd6W4BP5g">
+          <slot xmi:type="uml:Slot" xmi:id="_IkrhgCnhEeOCj8YrvfXcUg" definingFeature="_DI51UCnhEeOCj8YrvfXcUg">
+            <value xmi:type="uml:InstanceValue" xmi:id="_IlRXYCnhEeOCj8YrvfXcUg" instance="_IX3NgCnhEeOCj8YrvfXcUg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_IX3NgCnhEeOCj8YrvfXcUg" name="mainInstance.rmaxHardwareArchitecture" classifier="_GqCeWHUwEeKtkpd6W4BP5g">
+          <slot xmi:type="uml:Slot" xmi:id="_IZRiwCnhEeOCj8YrvfXcUg" definingFeature="_GqCeXnUwEeKtkpd6W4BP5g">
+            <value xmi:type="uml:InstanceValue" xmi:id="_IZwq8CnhEeOCj8YrvfXcUg" instance="_IYjKACnhEeOCj8YrvfXcUg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_IbPRoCnhEeOCj8YrvfXcUg" definingFeature="_GqCeX3UwEeKtkpd6W4BP5g">
+            <value xmi:type="uml:InstanceValue" xmi:id="_Ib0gcCnhEeOCj8YrvfXcUg" instance="_IaV5wCnhEeOCj8YrvfXcUg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_IdTuMCnhEeOCj8YrvfXcUg" definingFeature="_GqCeYHUwEeKtkpd6W4BP5g">
+            <value xmi:type="uml:InstanceValue" xmi:id="_Id4V8CnhEeOCj8YrvfXcUg" instance="_Ica9YCnhEeOCj8YrvfXcUg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_IfZY4CnhEeOCj8YrvfXcUg" definingFeature="_GqCeYXUwEeKtkpd6W4BP5g">
+            <value xmi:type="uml:InstanceValue" xmi:id="_If_OwCnhEeOCj8YrvfXcUg" instance="_IedkwCnhEeOCj8YrvfXcUg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_IhecgCnhEeOCj8YrvfXcUg" definingFeature="_GqCeYnUwEeKtkpd6W4BP5g">
+            <value xmi:type="uml:InstanceValue" xmi:id="_IiGHkCnhEeOCj8YrvfXcUg" instance="_Igj2gCnhEeOCj8YrvfXcUg"/>
+          </slot>
+          <slot xmi:type="uml:Slot" xmi:id="_Ijhq8CnhEeOCj8YrvfXcUg" definingFeature="_GqCeY3UwEeKtkpd6W4BP5g">
+            <value xmi:type="uml:InstanceValue" xmi:id="_IkFroCnhEeOCj8YrvfXcUg" instance="_IiqIQCnhEeOCj8YrvfXcUg"/>
+          </slot>
+        </packagedElement>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_IYjKACnhEeOCj8YrvfXcUg" clientDependency="_T8wNACnhEeOCj8YrvfXcUg" name="mainInstance.rmaxHardwareArchitecture.m_uav" classifier="_GqCeDnUwEeKtkpd6W4BP5g"/>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_IaV5wCnhEeOCj8YrvfXcUg" name="mainInstance.rmaxHardwareArchitecture.Property2" classifier="_GqCeD3UwEeKtkpd6W4BP5g"/>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Ica9YCnhEeOCj8YrvfXcUg" clientDependency="_QKKFICnhEeOCj8YrvfXcUg" name="mainInstance.rmaxHardwareArchitecture.m_cam" classifier="_GqCeAnUwEeKtkpd6W4BP5g"/>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_IedkwCnhEeOCj8YrvfXcUg" clientDependency="_PzkxICnhEeOCj8YrvfXcUg" name="mainInstance.rmaxHardwareArchitecture.m_gyro" classifier="_GqCeBnUwEeKtkpd6W4BP5g"/>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Igj2gCnhEeOCj8YrvfXcUg" clientDependency="_PcYZICnhEeOCj8YrvfXcUg" name="mainInstance.rmaxHardwareArchitecture.m_gps" classifier="_GqCeCHUwEeKtkpd6W4BP5g"/>
+        <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_IiqIQCnhEeOCj8YrvfXcUg" clientDependency="_OIZowCnhEeOCj8YrvfXcUg" name="mainInstance.rmaxHardwareArchitecture.m_motion" classifier="_GqCeC3UwEeKtkpd6W4BP5g"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_OIZowCnhEeOCj8YrvfXcUg" name="allocate to orocos" client="_IiqIQCnhEeOCj8YrvfXcUg" supplier="_22Zh4CngEeOCj8YrvfXcUg"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_PcYZICnhEeOCj8YrvfXcUg" name="allocate to morse" client="_Igj2gCnhEeOCj8YrvfXcUg" supplier="_21hYICngEeOCj8YrvfXcUg"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_PzkxICnhEeOCj8YrvfXcUg" name="allocate to morse" client="_IedkwCnhEeOCj8YrvfXcUg" supplier="_21hYICngEeOCj8YrvfXcUg"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_QKKFICnhEeOCj8YrvfXcUg" name="allocate to morse" client="_Ica9YCnhEeOCj8YrvfXcUg" supplier="_21hYICngEeOCj8YrvfXcUg"/>
+        <packagedElement xmi:type="uml:Abstraction" xmi:id="_T8wNACnhEeOCj8YrvfXcUg" name="allocate to morse" client="_IYjKACnhEeOCj8YrvfXcUg" supplier="_21hYICngEeOCj8YrvfXcUg"/>
+      </packagedElement>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_GqDFgnUwEeKtkpd6W4BP5g">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GqDFg3UwEeKtkpd6W4BP5g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
@@ -595,18 +645,17 @@
       <appliedProfile xmi:type="uml:Profile" href="pathmap://Robotml_PROFILES/RobotMLProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
     </profileApplication>
   </uml:Model>
-  <RobotML:RoboticMiddleware xmi:id="_GqE6MHUwEeKtkpd6W4BP5g" base_Class="_GqCeAXUwEeKtkpd6W4BP5g"/>
-  <RobotML:CameraSystem xmi:id="_GqE6MXUwEeKtkpd6W4BP5g" base_Class="_GqCeAnUwEeKtkpd6W4BP5g" frequency="1.0" width="128" height="128" alpha_u="140.0" alpha_v="140.0" u0="64.0" v0="64.0">
+  <RobotML:RoboticMiddleware xmi:id="_GqE6MHUwEeKtkpd6W4BP5g" base_Class="_GqCeAXUwEeKtkpd6W4BP5g" kind="OROCOS"/>
+  <RobotML:CameraSystem xmi:id="_GqE6MXUwEeKtkpd6W4BP5g" base_Class="_GqCeAnUwEeKtkpd6W4BP5g" native="true" frequency="1.0" width="128" height="128" alpha_u="140.0" alpha_v="140.0" u0="64.0" v0="64.0">
     <translate xmi:type="RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes:Point32" xmi:id="_hGmi4MhfEeKRBcG405q6rA"/>
   </RobotML:CameraSystem>
-  <RobotML:RoboticSimulator xmi:id="_GqE6MnUwEeKtkpd6W4BP5g" base_Class="_GqCeBXUwEeKtkpd6W4BP5g"/>
-  <RobotML:SensorSystem xmi:id="_GqE6M3UwEeKtkpd6W4BP5g" base_Class="_GqCeBnUwEeKtkpd6W4BP5g"/>
-  <RobotML:GPSSystem xmi:id="_GqE6NHUwEeKtkpd6W4BP5g" base_Class="_GqCeCHUwEeKtkpd6W4BP5g"/>
+  <RobotML:SensorSystem xmi:id="_GqE6M3UwEeKtkpd6W4BP5g" base_Class="_GqCeBnUwEeKtkpd6W4BP5g" native="true"/>
+  <RobotML:GPSSystem xmi:id="_GqE6NHUwEeKtkpd6W4BP5g" base_Class="_GqCeCHUwEeKtkpd6W4BP5g" native="true"/>
   <RobotML:RoboticMiddleware xmi:id="_GqE6NXUwEeKtkpd6W4BP5g" base_Class="_GqCeCnUwEeKtkpd6W4BP5g"/>
-  <RobotML:ActuatorSystem xmi:id="_GqE6NnUwEeKtkpd6W4BP5g" base_Class="_GqCeC3UwEeKtkpd6W4BP5g"/>
-  <RobotML:Environment xmi:id="_GqE6N3UwEeKtkpd6W4BP5g" base_Class="_GqCeDXUwEeKtkpd6W4BP5g"/>
+  <RobotML:ActuatorSystem xmi:id="_GqE6NnUwEeKtkpd6W4BP5g" base_Class="_GqCeC3UwEeKtkpd6W4BP5g" native="true" libraryComponentName="Destination"/>
+  <RobotML:Environment xmi:id="_GqE6N3UwEeKtkpd6W4BP5g" base_Class="_GqCeDXUwEeKtkpd6W4BP5g" native="true" libraryComponentName="land-1/trees"/>
   <RobotML:LidarSystem xmi:id="_GqE6OHUwEeKtkpd6W4BP5g"/>
-  <RobotML:Robot xmi:id="_GqE6OXUwEeKtkpd6W4BP5g" base_Class="_GqCeDnUwEeKtkpd6W4BP5g" kind="UAV"/>
+  <RobotML:Robot xmi:id="_GqE6OXUwEeKtkpd6W4BP5g" base_Class="_GqCeDnUwEeKtkpd6W4BP5g" native="true" libraryComponentName="RMax" kind="UAV"/>
   <RobotML:RoboticSystem xmi:id="_GqE6OnUwEeKtkpd6W4BP5g" base_Class="_GqCeD3UwEeKtkpd6W4BP5g" native="true"/>
   <RobotML:RoboticSystem xmi:id="_GqE6O3UwEeKtkpd6W4BP5g" base_Class="_GqCeFnUwEeKtkpd6W4BP5g" native="true"/>
   <RobotML:RoboticSystem xmi:id="_GqFhQHUwEeKtkpd6W4BP5g" base_Class="_GqCeHHUwEeKtkpd6W4BP5g"/>
@@ -642,4 +691,12 @@
   <RobotML:Software xmi:id="_tIooUHaEEeK3HpwXUW73BQ" base_Class="_GqCeHHUwEeKtkpd6W4BP5g"/>
   <RobotML:Software xmi:id="_Tto_MHaFEeK3HpwXUW73BQ" base_Class="_GqCeFnUwEeKtkpd6W4BP5g"/>
   <RobotML:Software xmi:id="_bEppAHaFEeK3HpwXUW73BQ" base_Class="_GqCeD3UwEeKtkpd6W4BP5g"/>
+  <RobotML:BlenderMorse xmi:id="_NjAWUCnZEeO9rYNGKVaQZw" base_Class="_GqCeBXUwEeKtkpd6W4BP5g"/>
+  <RobotML:Platform xmi:id="_TaOBUCnZEeO9rYNGKVaQZw" base_Class="_TZF_8CnZEeO9rYNGKVaQZw"/>
+  <RobotML:DeploymentPlan xmi:id="_IWhJsCnhEeOCj8YrvfXcUg" base_Package="_IVkugCnhEeOCj8YrvfXcUg" mainInstance="_IWyPcCnhEeOCj8YrvfXcUg"/>
+  <RobotML:Allocate xmi:id="_OJsCMCnhEeOCj8YrvfXcUg" base_Abstraction="_OIZowCnhEeOCj8YrvfXcUg"/>
+  <RobotML:Allocate xmi:id="_PdMRcCnhEeOCj8YrvfXcUg" base_Abstraction="_PcYZICnhEeOCj8YrvfXcUg"/>
+  <RobotML:Allocate xmi:id="_P0YCYCnhEeOCj8YrvfXcUg" base_Abstraction="_PzkxICnhEeOCj8YrvfXcUg"/>
+  <RobotML:Allocate xmi:id="_QK_LkCnhEeOCj8YrvfXcUg" base_Abstraction="_QKKFICnhEeOCj8YrvfXcUg"/>
+  <RobotML:Allocate xmi:id="_T9iQICnhEeOCj8YrvfXcUg" base_Abstraction="_T8wNACnhEeOCj8YrvfXcUg"/>
 </xmi:XMI>

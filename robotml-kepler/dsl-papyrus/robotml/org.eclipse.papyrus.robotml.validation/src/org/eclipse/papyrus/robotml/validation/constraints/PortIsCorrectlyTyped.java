@@ -1,15 +1,13 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
+ * Copyright (c) 2013 CEA LIST.
  *    
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the CeCILL-C Free Software License v1.0
+ * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
+ * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
- *
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.validation.constraints;
 
@@ -26,7 +24,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 public class PortIsCorrectlyTyped extends AbstractModelConstraint {
 
-	
+
 
 	@Override
 	public IStatus validate(IValidationContext ctx) {
@@ -35,10 +33,10 @@ public class PortIsCorrectlyTyped extends AbstractModelConstraint {
 		if(elt.getType() == null) {
 			return ctx.createFailureStatus("Port should have a type (" + elt.getQualifiedName() + ")");
 		} else {//2. verify if the port is correctly typed
-			ServicePort serviceport = UMLUtil.getStereotypeApplication(elt, ServicePort.class);			
+			ServicePort serviceport = UMLUtil.getStereotypeApplication(elt, ServicePort.class);
 			if(serviceport != null) {
 				if(!(elt.getType() instanceof Interface)) {
-					
+
 					return ctx.createFailureStatus("Port should be typed by an Interface (" + elt.getQualifiedName() + ")");
 				}
 			} else {

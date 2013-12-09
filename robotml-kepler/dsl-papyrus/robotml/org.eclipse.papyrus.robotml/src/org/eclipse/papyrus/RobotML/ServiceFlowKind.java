@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotML;
 
 import java.util.Arrays;
@@ -13,6 +22,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Service Flow Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getServiceFlowKind()
  * @model
  * @generated
@@ -22,6 +32,7 @@ public enum ServiceFlowKind implements Enumerator {
 	 * The '<em><b>Provided</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PROVIDED_VALUE
 	 * @generated
 	 * @ordered
@@ -32,6 +43,7 @@ public enum ServiceFlowKind implements Enumerator {
 	 * The '<em><b>Required</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #REQUIRED_VALUE
 	 * @generated
 	 * @ordered
@@ -42,10 +54,10 @@ public enum ServiceFlowKind implements Enumerator {
 	 * The '<em><b>Provided</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Provided</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Provided</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PROVIDED
 	 * @model name="provided"
 	 * @generated
@@ -57,10 +69,10 @@ public enum ServiceFlowKind implements Enumerator {
 	 * The '<em><b>Required</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Required</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Required</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #REQUIRED
 	 * @model name="required"
 	 * @generated
@@ -72,18 +84,16 @@ public enum ServiceFlowKind implements Enumerator {
 	 * An array of all the '<em><b>Service Flow Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	private static final ServiceFlowKind[] VALUES_ARRAY =
-		new ServiceFlowKind[] {
-			PROVIDED,
-			REQUIRED,
-		};
+	private static final ServiceFlowKind[] VALUES_ARRAY = new ServiceFlowKind[]{ PROVIDED, REQUIRED, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Service Flow Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<ServiceFlowKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -92,12 +102,13 @@ public enum ServiceFlowKind implements Enumerator {
 	 * Returns the '<em><b>Service Flow Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ServiceFlowKind get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			ServiceFlowKind result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if(result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -108,12 +119,13 @@ public enum ServiceFlowKind implements Enumerator {
 	 * Returns the '<em><b>Service Flow Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ServiceFlowKind getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			ServiceFlowKind result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if(result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -124,12 +136,15 @@ public enum ServiceFlowKind implements Enumerator {
 	 * Returns the '<em><b>Service Flow Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ServiceFlowKind get(int value) {
-		switch (value) {
-			case PROVIDED_VALUE: return PROVIDED;
-			case REQUIRED_VALUE: return REQUIRED;
+		switch(value) {
+		case PROVIDED_VALUE:
+			return PROVIDED;
+		case REQUIRED_VALUE:
+			return REQUIRED;
 		}
 		return null;
 	}
@@ -137,6 +152,7 @@ public enum ServiceFlowKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -144,6 +160,7 @@ public enum ServiceFlowKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -151,6 +168,7 @@ public enum ServiceFlowKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -159,6 +177,7 @@ public enum ServiceFlowKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private ServiceFlowKind(int value, String name, String literal) {
@@ -170,39 +189,43 @@ public enum ServiceFlowKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
+
 } //ServiceFlowKind

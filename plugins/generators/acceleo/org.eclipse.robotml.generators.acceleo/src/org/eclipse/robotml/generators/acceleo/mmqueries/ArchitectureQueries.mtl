@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module ArchitectureQueries('http://www.eclipse.org/uml2/3.0.0/UML')]
+[module ArchitectureQueries('http://www.eclipse.org/uml2/3.0.0/UML', 'http://Papyrus/RobotML/1')]
  
 
 [query public getSourcePortName(conn : Connector) : String =

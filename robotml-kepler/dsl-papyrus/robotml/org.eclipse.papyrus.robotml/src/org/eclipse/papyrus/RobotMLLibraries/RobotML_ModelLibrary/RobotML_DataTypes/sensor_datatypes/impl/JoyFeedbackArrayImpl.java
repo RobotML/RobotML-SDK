@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl;
 
 import java.util.Collection;
@@ -27,17 +36,20 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackArrayImpl#getArray <em>Array</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.JoyFeedbackArrayImpl#getArray <em>
+ * Array</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class JoyFeedbackArrayImpl extends EObjectImpl implements JoyFeedbackArray {
+
 	/**
 	 * The cached value of the '{@link #getArray() <em>Array</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getArray()
 	 * @generated
 	 * @ordered
@@ -47,6 +59,7 @@ public class JoyFeedbackArrayImpl extends EObjectImpl implements JoyFeedbackArra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected JoyFeedbackArrayImpl() {
@@ -56,6 +69,7 @@ public class JoyFeedbackArrayImpl extends EObjectImpl implements JoyFeedbackArra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -66,10 +80,11 @@ public class JoyFeedbackArrayImpl extends EObjectImpl implements JoyFeedbackArra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<JoyFeedback> getArray() {
-		if (array == null) {
+		if(array == null) {
 			array = new EObjectContainmentEList<JoyFeedback>(JoyFeedback.class, this, Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY__ARRAY);
 		}
 		return array;
@@ -78,13 +93,14 @@ public class JoyFeedbackArrayImpl extends EObjectImpl implements JoyFeedbackArra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY__ARRAY:
-				return ((InternalEList<?>)getArray()).basicRemove(otherEnd, msgs);
+		switch(featureID) {
+		case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY__ARRAY:
+			return ((InternalEList<?>)getArray()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -92,13 +108,14 @@ public class JoyFeedbackArrayImpl extends EObjectImpl implements JoyFeedbackArra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY__ARRAY:
-				return getArray();
+		switch(featureID) {
+		case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY__ARRAY:
+			return getArray();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,16 +123,17 @@ public class JoyFeedbackArrayImpl extends EObjectImpl implements JoyFeedbackArra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY__ARRAY:
-				getArray().clear();
-				getArray().addAll((Collection<? extends JoyFeedback>)newValue);
-				return;
+		switch(featureID) {
+		case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY__ARRAY:
+			getArray().clear();
+			getArray().addAll((Collection<? extends JoyFeedback>)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -123,14 +141,15 @@ public class JoyFeedbackArrayImpl extends EObjectImpl implements JoyFeedbackArra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY__ARRAY:
-				getArray().clear();
-				return;
+		switch(featureID) {
+		case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY__ARRAY:
+			getArray().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -138,13 +157,14 @@ public class JoyFeedbackArrayImpl extends EObjectImpl implements JoyFeedbackArra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY__ARRAY:
-				return array != null && !array.isEmpty();
+		switch(featureID) {
+		case Sensor_datatypesPackage.JOY_FEEDBACK_ARRAY__ARRAY:
+			return array != null && !array.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

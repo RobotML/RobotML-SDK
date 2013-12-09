@@ -15,7 +15,7 @@ import org.eclipse.uml2.uml.DataType;
  * The following features are supported:
  * <ul>
  *   <li>{@link RobotMLExtension.Alias#getType <em>Type</em>}</li>
- *   <li>{@link RobotMLExtension.Alias#getBaseDataType <em>Base Data Type</em>}</li>
+ *   <li>{@link RobotMLExtension.Alias#getBase_DataType <em>Base Data Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,21 +59,21 @@ public interface Alias extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Base Data Type</em>' reference.
-	 * @see #setBaseDataType(DataType)
-	 * @see RobotMLExtension.RobotMLExtensionPackage#getAlias_BaseDataType()
+	 * @see #setBase_DataType(DataType)
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getAlias_Base_DataType()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	DataType getBaseDataType();
+	DataType getBase_DataType();
 
 	/**
-	 * Sets the value of the '{@link RobotMLExtension.Alias#getBaseDataType <em>Base Data Type</em>}' reference.
+	 * Sets the value of the '{@link RobotMLExtension.Alias#getBase_DataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Base Data Type</em>' reference.
-	 * @see #getBaseDataType()
+	 * @see #getBase_DataType()
 	 * @generated
 	 */
-	void setBaseDataType(DataType value);
+	void setBase_DataType(DataType value);
 
 } // Alias

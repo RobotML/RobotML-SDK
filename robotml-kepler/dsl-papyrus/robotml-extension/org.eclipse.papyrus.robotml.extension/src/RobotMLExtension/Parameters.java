@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link RobotMLExtension.Parameters#getBaseClass <em>Base Class</em>}</li>
+ *   <li>{@link RobotMLExtension.Parameters#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,21 +30,21 @@ public interface Parameters extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Base Class</em>' reference.
-	 * @see #setBaseClass(org.eclipse.uml2.uml.Class)
-	 * @see RobotMLExtension.RobotMLExtensionPackage#getParameters_BaseClass()
+	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
+	 * @see RobotMLExtension.RobotMLExtensionPackage#getParameters_Base_Class()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	org.eclipse.uml2.uml.Class getBaseClass();
+	org.eclipse.uml2.uml.Class getBase_Class();
 
 	/**
-	 * Sets the value of the '{@link RobotMLExtension.Parameters#getBaseClass <em>Base Class</em>}' reference.
+	 * Sets the value of the '{@link RobotMLExtension.Parameters#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Base Class</em>' reference.
-	 * @see #getBaseClass()
+	 * @see #getBase_Class()
 	 * @generated
 	 */
-	void setBaseClass(org.eclipse.uml2.uml.Class value);
+	void setBase_Class(org.eclipse.uml2.uml.Class value);
 
 } // Parameters

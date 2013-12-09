@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,22 +20,22 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link RobotMLExtension.impl.ParametersImpl#getBaseClass <em>Base Class</em>}</li>
+ *   <li>{@link RobotMLExtension.impl.ParametersImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ParametersImpl extends EObjectImpl implements Parameters {
+public class ParametersImpl extends MinimalEObjectImpl.Container implements Parameters {
 	/**
-	 * The cached value of the '{@link #getBaseClass() <em>Base Class</em>}' reference.
+	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBaseClass()
+	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
 	 */
-	protected org.eclipse.uml2.uml.Class baseClass;
+	protected org.eclipse.uml2.uml.Class base_Class;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,16 +61,16 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.uml2.uml.Class getBaseClass() {
-		if (baseClass != null && baseClass.eIsProxy()) {
-			InternalEObject oldBaseClass = (InternalEObject)baseClass;
-			baseClass = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBaseClass);
-			if (baseClass != oldBaseClass) {
+	public org.eclipse.uml2.uml.Class getBase_Class() {
+		if (base_Class != null && base_Class.eIsProxy()) {
+			InternalEObject oldBase_Class = (InternalEObject)base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
+			if (base_Class != oldBase_Class) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.PARAMETERS__BASE_CLASS, oldBaseClass, baseClass));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RobotMLExtensionPackage.PARAMETERS__BASE_CLASS, oldBase_Class, base_Class));
 			}
 		}
-		return baseClass;
+		return base_Class;
 	}
 
 	/**
@@ -78,8 +78,8 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.eclipse.uml2.uml.Class basicGetBaseClass() {
-		return baseClass;
+	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
+		return base_Class;
 	}
 
 	/**
@@ -87,11 +87,11 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBaseClass(org.eclipse.uml2.uml.Class newBaseClass) {
-		org.eclipse.uml2.uml.Class oldBaseClass = baseClass;
-		baseClass = newBaseClass;
+	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
+		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
+		base_Class = newBase_Class;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.PARAMETERS__BASE_CLASS, oldBaseClass, baseClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotMLExtensionPackage.PARAMETERS__BASE_CLASS, oldBase_Class, base_Class));
 	}
 
 	/**
@@ -103,8 +103,8 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RobotMLExtensionPackage.PARAMETERS__BASE_CLASS:
-				if (resolve) return getBaseClass();
-				return basicGetBaseClass();
+				if (resolve) return getBase_Class();
+				return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,7 +118,7 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RobotMLExtensionPackage.PARAMETERS__BASE_CLASS:
-				setBaseClass((org.eclipse.uml2.uml.Class)newValue);
+				setBase_Class((org.eclipse.uml2.uml.Class)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +133,7 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RobotMLExtensionPackage.PARAMETERS__BASE_CLASS:
-				setBaseClass((org.eclipse.uml2.uml.Class)null);
+				setBase_Class((org.eclipse.uml2.uml.Class)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -148,7 +148,7 @@ public class ParametersImpl extends EObjectImpl implements Parameters {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RobotMLExtensionPackage.PARAMETERS__BASE_CLASS:
-				return baseClass != null;
+				return base_Class != null;
 		}
 		return super.eIsSet(featureID);
 	}

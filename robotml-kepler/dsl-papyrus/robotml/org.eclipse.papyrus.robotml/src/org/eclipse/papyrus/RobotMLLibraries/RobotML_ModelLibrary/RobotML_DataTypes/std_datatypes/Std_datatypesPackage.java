@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -13,21 +22,24 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Std_datatypesFactory
  * @model kind="package"
  * @generated
  */
 public interface Std_datatypesPackage extends EPackage {
+
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "std_datatypes";
@@ -36,6 +48,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/std_datatypes.ecore";
@@ -44,6 +57,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes";
@@ -52,14 +66,17 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	Std_datatypesPackage eINSTANCE = org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.HeaderImpl <em>Header</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.HeaderImpl
+	 * <em>Header</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.HeaderImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getHeader()
 	 * @generated
@@ -70,6 +87,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Seq</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -79,6 +97,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Stamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -88,6 +107,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Frame id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -97,15 +117,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Header</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int HEADER_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayDimensionImpl <em>Multi Array Dimension</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayDimensionImpl
+	 * <em>Multi Array Dimension</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayDimensionImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getMultiArrayDimension()
 	 * @generated
@@ -116,6 +140,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -125,6 +150,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -134,6 +160,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Stride</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -143,15 +170,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Multi Array Dimension</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int MULTI_ARRAY_DIMENSION_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayLayoutImpl <em>Multi Array Layout</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayLayoutImpl
+	 * <em>Multi Array Layout</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayLayoutImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getMultiArrayLayout()
 	 * @generated
@@ -162,6 +193,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Dim</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -171,6 +203,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data offset</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -180,15 +213,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Multi Array Layout</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int MULTI_ARRAY_LAYOUT_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ByteMultiArrayImpl <em>Byte Multi Array</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ByteMultiArrayImpl
+	 * <em>Byte Multi Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ByteMultiArrayImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getByteMultiArray()
 	 * @generated
@@ -199,6 +236,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -208,6 +246,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -217,15 +256,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Byte Multi Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int BYTE_MULTI_ARRAY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl <em>Color RGBA</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl <em>Color RGBA</em>}'
+	 * class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getColorRGBA()
 	 * @generated
@@ -236,6 +279,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>R</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -245,6 +289,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>G</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -254,6 +299,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>B</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -263,6 +309,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>A</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -272,15 +319,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Color RGBA</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int COLOR_RGBA_FEATURE_COUNT = 4;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Float32MultiArrayImpl <em>Float32 Multi Array</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Float32MultiArrayImpl
+	 * <em>Float32 Multi Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Float32MultiArrayImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getFloat32MultiArray()
 	 * @generated
@@ -291,6 +342,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -300,6 +352,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -309,15 +362,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Float32 Multi Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FLOAT32_MULTI_ARRAY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int32MultiArrayImpl <em>Int32 Multi Array</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int32MultiArrayImpl
+	 * <em>Int32 Multi Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int32MultiArrayImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt32MultiArray()
 	 * @generated
@@ -328,6 +385,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -337,6 +395,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -346,15 +405,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Int32 Multi Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int INT32_MULTI_ARRAY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int8MultiArrayImpl <em>Int8 Multi Array</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int8MultiArrayImpl
+	 * <em>Int8 Multi Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int8MultiArrayImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt8MultiArray()
 	 * @generated
@@ -365,6 +428,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -374,6 +438,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -383,15 +448,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Int8 Multi Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int INT8_MULTI_ARRAY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int16MultiArrayImpl <em>Int16 Multi Array</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int16MultiArrayImpl
+	 * <em>Int16 Multi Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int16MultiArrayImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt16MultiArray()
 	 * @generated
@@ -402,6 +471,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -411,6 +481,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -420,15 +491,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Int16 Multi Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int INT16_MULTI_ARRAY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int64MultiArrayImpl <em>Int64 Multi Array</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int64MultiArrayImpl
+	 * <em>Int64 Multi Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int64MultiArrayImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt64MultiArray()
 	 * @generated
@@ -439,6 +514,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -448,6 +524,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -457,15 +534,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Int64 Multi Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int INT64_MULTI_ARRAY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Float64MultiArrayImpl <em>Float64 Multi Array</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Float64MultiArrayImpl
+	 * <em>Float64 Multi Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Float64MultiArrayImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getFloat64MultiArray()
 	 * @generated
@@ -476,6 +557,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -485,6 +567,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -494,15 +577,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>Float64 Multi Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int FLOAT64_MULTI_ARRAY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt64MultiArrayImpl <em>UInt64 Multi Array</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt64MultiArrayImpl
+	 * <em>UInt64 Multi Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt64MultiArrayImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt64MultiArray()
 	 * @generated
@@ -513,6 +600,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -522,6 +610,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -531,15 +620,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>UInt64 Multi Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int UINT64_MULTI_ARRAY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UIint16MultiArrayImpl <em>UIint16 Multi Array</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UIint16MultiArrayImpl
+	 * <em>UIint16 Multi Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UIint16MultiArrayImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUIint16MultiArray()
 	 * @generated
@@ -550,6 +643,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -559,6 +653,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -568,15 +663,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>UIint16 Multi Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int UIINT16_MULTI_ARRAY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt32MultiArrayImpl <em>UInt32 Multi Array</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt32MultiArrayImpl
+	 * <em>UInt32 Multi Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt32MultiArrayImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt32MultiArray()
 	 * @generated
@@ -587,6 +686,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -596,6 +696,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -605,15 +706,19 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>UInt32 Multi Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
 	int UINT32_MULTI_ARRAY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt8MultiArrayImpl <em>UInt8 Multi Array</em>}' class.
+	 * The meta object id for the '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt8MultiArrayImpl
+	 * <em>UInt8 Multi Array</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt8MultiArrayImpl
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt8MultiArray()
 	 * @generated
@@ -624,6 +729,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -633,6 +739,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The feature id for the '<em><b>Data</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -642,6 +749,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The number of structural features of the '<em>UInt8 Multi Array</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -651,6 +759,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>UInt32</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt32()
 	 * @generated
 	 */
@@ -660,6 +769,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>Time</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.util.Date
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getTime()
 	 * @generated
@@ -670,6 +780,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>String</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getString()
 	 * @generated
@@ -680,6 +791,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>Byte</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getByte()
 	 * @generated
 	 */
@@ -689,6 +801,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>Float64</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getFloat64()
 	 * @generated
 	 */
@@ -698,6 +811,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>Int8</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt8()
 	 * @generated
 	 */
@@ -707,6 +821,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>Bool</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getBool()
 	 * @generated
 	 */
@@ -716,6 +831,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>UInt8</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt8()
 	 * @generated
 	 */
@@ -725,6 +841,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>UInt16</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt16()
 	 * @generated
 	 */
@@ -734,6 +851,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>Int32</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt32()
 	 * @generated
 	 */
@@ -743,6 +861,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>Int16</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt16()
 	 * @generated
 	 */
@@ -752,6 +871,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>Char</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getChar()
 	 * @generated
 	 */
@@ -761,6 +881,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>Duration</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getDuration()
 	 * @generated
 	 */
@@ -770,6 +891,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>Int64</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt64()
 	 * @generated
 	 */
@@ -779,6 +901,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>UInt64</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt64()
 	 * @generated
 	 */
@@ -788,6 +911,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * The meta object id for the '<em>Float32</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getFloat32()
 	 * @generated
 	 */
@@ -795,9 +919,11 @@ public interface Std_datatypesPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header <em>Header</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header
+	 * <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Header</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header
 	 * @generated
@@ -805,9 +931,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getHeader();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header#getSeq <em>Seq</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header#getSeq <em>Seq</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Seq</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header#getSeq()
 	 * @see #getHeader()
@@ -816,9 +944,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getHeader_Seq();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header#getStamp <em>Stamp</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header#getStamp <em>Stamp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Stamp</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header#getStamp()
 	 * @see #getHeader()
@@ -827,9 +957,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getHeader_Stamp();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header#getFrame_id <em>Frame id</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header#getFrame_id <em>Frame id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Frame id</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Header#getFrame_id()
 	 * @see #getHeader()
@@ -838,9 +970,12 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getHeader_Frame_id();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension <em>Multi Array Dimension</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension
+	 * <em>Multi Array Dimension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Multi Array Dimension</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension
 	 * @generated
@@ -848,9 +983,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getMultiArrayDimension();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension#getLabel <em>Label</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension#getLabel <em>Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Label</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension#getLabel()
 	 * @see #getMultiArrayDimension()
@@ -859,9 +996,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getMultiArrayDimension_Label();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension#getSize <em>Size</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension#getSize <em>Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Size</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension#getSize()
 	 * @see #getMultiArrayDimension()
@@ -870,9 +1009,12 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getMultiArrayDimension_Size();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension#getStride <em>Stride</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension#getStride <em>Stride</em>}
+	 * '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Stride</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayDimension#getStride()
 	 * @see #getMultiArrayDimension()
@@ -881,9 +1023,12 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getMultiArrayDimension_Stride();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout <em>Multi Array Layout</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout <em>Multi Array Layout</em>}
+	 * '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Multi Array Layout</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout
 	 * @generated
@@ -891,9 +1036,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getMultiArrayLayout();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout#getDim <em>Dim</em>}'.
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout#getDim <em>Dim</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Dim</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout#getDim()
 	 * @see #getMultiArrayLayout()
@@ -902,9 +1049,12 @@ public interface Std_datatypesPackage extends EPackage {
 	EReference getMultiArrayLayout_Dim();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout#getData_offset <em>Data offset</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout#getData_offset
+	 * <em>Data offset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Data offset</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.MultiArrayLayout#getData_offset()
 	 * @see #getMultiArrayLayout()
@@ -913,9 +1063,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getMultiArrayLayout_Data_offset();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ByteMultiArray <em>Byte Multi Array</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ByteMultiArray <em>Byte Multi Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Byte Multi Array</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ByteMultiArray
 	 * @generated
@@ -923,9 +1075,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getByteMultiArray();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ByteMultiArray#getLayout <em>Layout</em>}'.
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ByteMultiArray#getLayout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ByteMultiArray#getLayout()
 	 * @see #getByteMultiArray()
@@ -934,9 +1088,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EReference getByteMultiArray_Layout();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ByteMultiArray#getData <em>Data</em>}'.
+	 * Returns the meta object for the attribute list '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ByteMultiArray#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ByteMultiArray#getData()
 	 * @see #getByteMultiArray()
@@ -945,9 +1101,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getByteMultiArray_Data();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA <em>Color RGBA</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA
+	 * <em>Color RGBA</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Color RGBA</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA
 	 * @generated
@@ -955,9 +1113,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getColorRGBA();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getR <em>R</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getR <em>R</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>R</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getR()
 	 * @see #getColorRGBA()
@@ -966,9 +1126,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getColorRGBA_R();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getG <em>G</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getG <em>G</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>G</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getG()
 	 * @see #getColorRGBA()
@@ -977,9 +1139,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getColorRGBA_G();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getB <em>B</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getB <em>B</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>B</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getB()
 	 * @see #getColorRGBA()
@@ -988,9 +1152,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getColorRGBA_B();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getA <em>A</em>}'.
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getA <em>A</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>A</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.ColorRGBA#getA()
 	 * @see #getColorRGBA()
@@ -999,9 +1165,12 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getColorRGBA_A();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32MultiArray <em>Float32 Multi Array</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32MultiArray
+	 * <em>Float32 Multi Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Float32 Multi Array</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32MultiArray
 	 * @generated
@@ -1009,9 +1178,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getFloat32MultiArray();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32MultiArray#getLayout <em>Layout</em>}'.
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32MultiArray#getLayout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32MultiArray#getLayout()
 	 * @see #getFloat32MultiArray()
@@ -1020,9 +1191,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EReference getFloat32MultiArray_Layout();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32MultiArray#getData <em>Data</em>}'.
+	 * Returns the meta object for the attribute list '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32MultiArray#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float32MultiArray#getData()
 	 * @see #getFloat32MultiArray()
@@ -1031,9 +1204,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getFloat32MultiArray_Data();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int32MultiArray <em>Int32 Multi Array</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int32MultiArray <em>Int32 Multi Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Int32 Multi Array</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int32MultiArray
 	 * @generated
@@ -1041,9 +1216,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getInt32MultiArray();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int32MultiArray#getLayout <em>Layout</em>}'.
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int32MultiArray#getLayout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int32MultiArray#getLayout()
 	 * @see #getInt32MultiArray()
@@ -1052,9 +1229,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EReference getInt32MultiArray_Layout();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int32MultiArray#getData <em>Data</em>}'.
+	 * Returns the meta object for the attribute list '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int32MultiArray#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int32MultiArray#getData()
 	 * @see #getInt32MultiArray()
@@ -1063,9 +1242,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getInt32MultiArray_Data();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int8MultiArray <em>Int8 Multi Array</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int8MultiArray <em>Int8 Multi Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Int8 Multi Array</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int8MultiArray
 	 * @generated
@@ -1073,9 +1254,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getInt8MultiArray();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int8MultiArray#getLayout <em>Layout</em>}'.
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int8MultiArray#getLayout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int8MultiArray#getLayout()
 	 * @see #getInt8MultiArray()
@@ -1084,9 +1267,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EReference getInt8MultiArray_Layout();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int8MultiArray#getData <em>Data</em>}'.
+	 * Returns the meta object for the attribute list '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int8MultiArray#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int8MultiArray#getData()
 	 * @see #getInt8MultiArray()
@@ -1095,9 +1280,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getInt8MultiArray_Data();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int16MultiArray <em>Int16 Multi Array</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int16MultiArray <em>Int16 Multi Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Int16 Multi Array</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int16MultiArray
 	 * @generated
@@ -1105,9 +1292,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getInt16MultiArray();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int16MultiArray#getLayout <em>Layout</em>}'.
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int16MultiArray#getLayout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int16MultiArray#getLayout()
 	 * @see #getInt16MultiArray()
@@ -1116,9 +1305,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EReference getInt16MultiArray_Layout();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int16MultiArray#getData <em>Data</em>}'.
+	 * Returns the meta object for the attribute list '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int16MultiArray#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int16MultiArray#getData()
 	 * @see #getInt16MultiArray()
@@ -1127,9 +1318,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getInt16MultiArray_Data();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int64MultiArray <em>Int64 Multi Array</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int64MultiArray <em>Int64 Multi Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Int64 Multi Array</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int64MultiArray
 	 * @generated
@@ -1137,9 +1330,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getInt64MultiArray();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int64MultiArray#getLayout <em>Layout</em>}'.
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int64MultiArray#getLayout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int64MultiArray#getLayout()
 	 * @see #getInt64MultiArray()
@@ -1148,9 +1343,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EReference getInt64MultiArray_Layout();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int64MultiArray#getData <em>Data</em>}'.
+	 * Returns the meta object for the attribute list '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int64MultiArray#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Int64MultiArray#getData()
 	 * @see #getInt64MultiArray()
@@ -1159,9 +1356,12 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getInt64MultiArray_Data();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float64MultiArray <em>Float64 Multi Array</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float64MultiArray
+	 * <em>Float64 Multi Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Float64 Multi Array</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float64MultiArray
 	 * @generated
@@ -1169,9 +1369,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getFloat64MultiArray();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float64MultiArray#getLayout <em>Layout</em>}'.
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float64MultiArray#getLayout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float64MultiArray#getLayout()
 	 * @see #getFloat64MultiArray()
@@ -1180,9 +1382,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EReference getFloat64MultiArray_Layout();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float64MultiArray#getData <em>Data</em>}'.
+	 * Returns the meta object for the attribute list '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float64MultiArray#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.Float64MultiArray#getData()
 	 * @see #getFloat64MultiArray()
@@ -1191,9 +1395,12 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getFloat64MultiArray_Data();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt64MultiArray <em>UInt64 Multi Array</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt64MultiArray <em>UInt64 Multi Array</em>}
+	 * '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>UInt64 Multi Array</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt64MultiArray
 	 * @generated
@@ -1201,9 +1408,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getUInt64MultiArray();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt64MultiArray#getLayout <em>Layout</em>}'.
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt64MultiArray#getLayout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt64MultiArray#getLayout()
 	 * @see #getUInt64MultiArray()
@@ -1212,9 +1421,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EReference getUInt64MultiArray_Layout();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt64MultiArray#getData <em>Data</em>}'.
+	 * Returns the meta object for the attribute list '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt64MultiArray#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt64MultiArray#getData()
 	 * @see #getUInt64MultiArray()
@@ -1223,9 +1434,12 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getUInt64MultiArray_Data();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UIint16MultiArray <em>UIint16 Multi Array</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UIint16MultiArray
+	 * <em>UIint16 Multi Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>UIint16 Multi Array</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UIint16MultiArray
 	 * @generated
@@ -1233,9 +1447,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getUIint16MultiArray();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UIint16MultiArray#getLayout <em>Layout</em>}'.
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UIint16MultiArray#getLayout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UIint16MultiArray#getLayout()
 	 * @see #getUIint16MultiArray()
@@ -1244,9 +1460,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EReference getUIint16MultiArray_Layout();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UIint16MultiArray#getData <em>Data</em>}'.
+	 * Returns the meta object for the attribute list '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UIint16MultiArray#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UIint16MultiArray#getData()
 	 * @see #getUIint16MultiArray()
@@ -1255,9 +1473,12 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getUIint16MultiArray_Data();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32MultiArray <em>UInt32 Multi Array</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32MultiArray <em>UInt32 Multi Array</em>}
+	 * '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>UInt32 Multi Array</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32MultiArray
 	 * @generated
@@ -1265,9 +1486,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getUInt32MultiArray();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32MultiArray#getLayout <em>Layout</em>}'.
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32MultiArray#getLayout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32MultiArray#getLayout()
 	 * @see #getUInt32MultiArray()
@@ -1276,9 +1499,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EReference getUInt32MultiArray_Layout();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32MultiArray#getData <em>Data</em>}'.
+	 * Returns the meta object for the attribute list '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32MultiArray#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt32MultiArray#getData()
 	 * @see #getUInt32MultiArray()
@@ -1287,9 +1512,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EAttribute getUInt32MultiArray_Data();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt8MultiArray <em>UInt8 Multi Array</em>}'.
+	 * Returns the meta object for class '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt8MultiArray <em>UInt8 Multi Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>UInt8 Multi Array</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt8MultiArray
 	 * @generated
@@ -1297,9 +1524,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EClass getUInt8MultiArray();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt8MultiArray#getLayout <em>Layout</em>}'.
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt8MultiArray#getLayout <em>Layout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Layout</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt8MultiArray#getLayout()
 	 * @see #getUInt8MultiArray()
@@ -1308,9 +1537,11 @@ public interface Std_datatypesPackage extends EPackage {
 	EReference getUInt8MultiArray_Layout();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt8MultiArray#getData <em>Data</em>}'.
+	 * Returns the meta object for the attribute list '
+	 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt8MultiArray#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Data</em>'.
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.UInt8MultiArray#getData()
 	 * @see #getUInt8MultiArray()
@@ -1322,6 +1553,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>UInt32</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>UInt32</em>'.
 	 * @model instanceClass="long"
 	 * @generated
@@ -1332,6 +1564,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.util.Date <em>Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Time</em>'.
 	 * @see java.util.Date
 	 * @model instanceClass="java.util.Date"
@@ -1343,6 +1576,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>String</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -1354,6 +1588,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Byte</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Byte</em>'.
 	 * @model instanceClass="byte"
 	 * @generated
@@ -1364,6 +1599,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Float64</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Float64</em>'.
 	 * @model instanceClass="double"
 	 * @generated
@@ -1374,6 +1610,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Int8</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Int8</em>'.
 	 * @model instanceClass="char"
 	 * @generated
@@ -1384,6 +1621,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Bool</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Bool</em>'.
 	 * @model instanceClass="boolean"
 	 * @generated
@@ -1394,6 +1632,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>UInt8</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>UInt8</em>'.
 	 * @model instanceClass="char"
 	 * @generated
@@ -1404,6 +1643,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>UInt16</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>UInt16</em>'.
 	 * @model instanceClass="int"
 	 * @generated
@@ -1414,6 +1654,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Int32</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Int32</em>'.
 	 * @model instanceClass="int"
 	 * @generated
@@ -1424,6 +1665,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Int16</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Int16</em>'.
 	 * @model instanceClass="int"
 	 * @generated
@@ -1434,6 +1676,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Char</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Char</em>'.
 	 * @model instanceClass="char"
 	 * @generated
@@ -1444,6 +1687,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Duration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Duration</em>'.
 	 * @model instanceClass="double"
 	 * @generated
@@ -1454,6 +1698,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Int64</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Int64</em>'.
 	 * @model instanceClass="double"
 	 * @generated
@@ -1464,6 +1709,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>UInt64</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>UInt64</em>'.
 	 * @model instanceClass="long"
 	 * @generated
@@ -1474,6 +1720,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the meta object for data type '<em>Float32</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Float32</em>'.
 	 * @model instanceClass="float"
 	 * @generated
@@ -1484,6 +1731,7 @@ public interface Std_datatypesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -1493,19 +1741,23 @@ public interface Std_datatypesPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
+
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.HeaderImpl <em>Header</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.HeaderImpl <em>Header</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.HeaderImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getHeader()
 		 * @generated
@@ -1516,6 +1768,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Seq</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute HEADER__SEQ = eINSTANCE.getHeader_Seq();
@@ -1524,6 +1777,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stamp</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute HEADER__STAMP = eINSTANCE.getHeader_Stamp();
@@ -1532,14 +1786,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Frame id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute HEADER__FRAME_ID = eINSTANCE.getHeader_Frame_id();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayDimensionImpl <em>Multi Array Dimension</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayDimensionImpl
+		 * <em>Multi Array Dimension</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayDimensionImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getMultiArrayDimension()
 		 * @generated
@@ -1550,6 +1808,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MULTI_ARRAY_DIMENSION__LABEL = eINSTANCE.getMultiArrayDimension_Label();
@@ -1558,6 +1817,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MULTI_ARRAY_DIMENSION__SIZE = eINSTANCE.getMultiArrayDimension_Size();
@@ -1566,14 +1826,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stride</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MULTI_ARRAY_DIMENSION__STRIDE = eINSTANCE.getMultiArrayDimension_Stride();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayLayoutImpl <em>Multi Array Layout</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayLayoutImpl
+		 * <em>Multi Array Layout</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.MultiArrayLayoutImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getMultiArrayLayout()
 		 * @generated
@@ -1584,6 +1848,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Dim</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MULTI_ARRAY_LAYOUT__DIM = eINSTANCE.getMultiArrayLayout_Dim();
@@ -1592,14 +1857,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data offset</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MULTI_ARRAY_LAYOUT__DATA_OFFSET = eINSTANCE.getMultiArrayLayout_Data_offset();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ByteMultiArrayImpl <em>Byte Multi Array</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ByteMultiArrayImpl
+		 * <em>Byte Multi Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ByteMultiArrayImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getByteMultiArray()
 		 * @generated
@@ -1610,6 +1879,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference BYTE_MULTI_ARRAY__LAYOUT = eINSTANCE.getByteMultiArray_Layout();
@@ -1618,14 +1888,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BYTE_MULTI_ARRAY__DATA = eINSTANCE.getByteMultiArray_Data();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl <em>Color RGBA</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl <em>Color RGBA</em>}'
+		 * class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.ColorRGBAImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getColorRGBA()
 		 * @generated
@@ -1636,6 +1910,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>R</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute COLOR_RGBA__R = eINSTANCE.getColorRGBA_R();
@@ -1644,6 +1919,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>G</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute COLOR_RGBA__G = eINSTANCE.getColorRGBA_G();
@@ -1652,6 +1928,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>B</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute COLOR_RGBA__B = eINSTANCE.getColorRGBA_B();
@@ -1660,14 +1937,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>A</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute COLOR_RGBA__A = eINSTANCE.getColorRGBA_A();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Float32MultiArrayImpl <em>Float32 Multi Array</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Float32MultiArrayImpl
+		 * <em>Float32 Multi Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Float32MultiArrayImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getFloat32MultiArray()
 		 * @generated
@@ -1678,6 +1959,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FLOAT32_MULTI_ARRAY__LAYOUT = eINSTANCE.getFloat32MultiArray_Layout();
@@ -1686,14 +1968,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FLOAT32_MULTI_ARRAY__DATA = eINSTANCE.getFloat32MultiArray_Data();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int32MultiArrayImpl <em>Int32 Multi Array</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int32MultiArrayImpl
+		 * <em>Int32 Multi Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int32MultiArrayImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt32MultiArray()
 		 * @generated
@@ -1704,6 +1990,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INT32_MULTI_ARRAY__LAYOUT = eINSTANCE.getInt32MultiArray_Layout();
@@ -1712,14 +1999,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INT32_MULTI_ARRAY__DATA = eINSTANCE.getInt32MultiArray_Data();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int8MultiArrayImpl <em>Int8 Multi Array</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int8MultiArrayImpl
+		 * <em>Int8 Multi Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int8MultiArrayImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt8MultiArray()
 		 * @generated
@@ -1730,6 +2021,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INT8_MULTI_ARRAY__LAYOUT = eINSTANCE.getInt8MultiArray_Layout();
@@ -1738,14 +2030,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INT8_MULTI_ARRAY__DATA = eINSTANCE.getInt8MultiArray_Data();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int16MultiArrayImpl <em>Int16 Multi Array</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int16MultiArrayImpl
+		 * <em>Int16 Multi Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int16MultiArrayImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt16MultiArray()
 		 * @generated
@@ -1756,6 +2052,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INT16_MULTI_ARRAY__LAYOUT = eINSTANCE.getInt16MultiArray_Layout();
@@ -1764,14 +2061,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INT16_MULTI_ARRAY__DATA = eINSTANCE.getInt16MultiArray_Data();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int64MultiArrayImpl <em>Int64 Multi Array</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int64MultiArrayImpl
+		 * <em>Int64 Multi Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Int64MultiArrayImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt64MultiArray()
 		 * @generated
@@ -1782,6 +2083,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INT64_MULTI_ARRAY__LAYOUT = eINSTANCE.getInt64MultiArray_Layout();
@@ -1790,14 +2092,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INT64_MULTI_ARRAY__DATA = eINSTANCE.getInt64MultiArray_Data();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Float64MultiArrayImpl <em>Float64 Multi Array</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Float64MultiArrayImpl
+		 * <em>Float64 Multi Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Float64MultiArrayImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getFloat64MultiArray()
 		 * @generated
@@ -1808,6 +2114,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FLOAT64_MULTI_ARRAY__LAYOUT = eINSTANCE.getFloat64MultiArray_Layout();
@@ -1816,14 +2123,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FLOAT64_MULTI_ARRAY__DATA = eINSTANCE.getFloat64MultiArray_Data();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt64MultiArrayImpl <em>UInt64 Multi Array</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt64MultiArrayImpl
+		 * <em>UInt64 Multi Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt64MultiArrayImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt64MultiArray()
 		 * @generated
@@ -1834,6 +2145,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference UINT64_MULTI_ARRAY__LAYOUT = eINSTANCE.getUInt64MultiArray_Layout();
@@ -1842,14 +2154,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute UINT64_MULTI_ARRAY__DATA = eINSTANCE.getUInt64MultiArray_Data();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UIint16MultiArrayImpl <em>UIint16 Multi Array</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UIint16MultiArrayImpl
+		 * <em>UIint16 Multi Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UIint16MultiArrayImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUIint16MultiArray()
 		 * @generated
@@ -1860,6 +2176,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference UIINT16_MULTI_ARRAY__LAYOUT = eINSTANCE.getUIint16MultiArray_Layout();
@@ -1868,14 +2185,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute UIINT16_MULTI_ARRAY__DATA = eINSTANCE.getUIint16MultiArray_Data();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt32MultiArrayImpl <em>UInt32 Multi Array</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt32MultiArrayImpl
+		 * <em>UInt32 Multi Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt32MultiArrayImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt32MultiArray()
 		 * @generated
@@ -1886,6 +2207,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference UINT32_MULTI_ARRAY__LAYOUT = eINSTANCE.getUInt32MultiArray_Layout();
@@ -1894,14 +2216,18 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute UINT32_MULTI_ARRAY__DATA = eINSTANCE.getUInt32MultiArray_Data();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt8MultiArrayImpl <em>UInt8 Multi Array</em>}' class.
+		 * The meta object literal for the '
+		 * {@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt8MultiArrayImpl
+		 * <em>UInt8 Multi Array</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.UInt8MultiArrayImpl
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt8MultiArray()
 		 * @generated
@@ -1912,6 +2238,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference UINT8_MULTI_ARRAY__LAYOUT = eINSTANCE.getUInt8MultiArray_Layout();
@@ -1920,6 +2247,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Data</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute UINT8_MULTI_ARRAY__DATA = eINSTANCE.getUInt8MultiArray_Data();
@@ -1928,6 +2256,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>UInt32</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt32()
 		 * @generated
 		 */
@@ -1937,6 +2266,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Time</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.util.Date
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getTime()
 		 * @generated
@@ -1947,6 +2277,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>String</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getString()
 		 * @generated
@@ -1957,6 +2288,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Byte</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getByte()
 		 * @generated
 		 */
@@ -1966,6 +2298,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Float64</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getFloat64()
 		 * @generated
 		 */
@@ -1975,6 +2308,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Int8</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt8()
 		 * @generated
 		 */
@@ -1984,6 +2318,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Bool</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getBool()
 		 * @generated
 		 */
@@ -1993,6 +2328,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>UInt8</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt8()
 		 * @generated
 		 */
@@ -2002,6 +2338,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>UInt16</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt16()
 		 * @generated
 		 */
@@ -2011,6 +2348,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Int32</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt32()
 		 * @generated
 		 */
@@ -2020,6 +2358,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Int16</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt16()
 		 * @generated
 		 */
@@ -2029,6 +2368,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Char</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getChar()
 		 * @generated
 		 */
@@ -2038,6 +2378,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Duration</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getDuration()
 		 * @generated
 		 */
@@ -2047,6 +2388,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Int64</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getInt64()
 		 * @generated
 		 */
@@ -2056,6 +2398,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>UInt64</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getUInt64()
 		 * @generated
 		 */
@@ -2065,6 +2408,7 @@ public interface Std_datatypesPackage extends EPackage {
 		 * The meta object literal for the '<em>Float32</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.std_datatypes.impl.Std_datatypesPackageImpl#getFloat32()
 		 * @generated
 		 */

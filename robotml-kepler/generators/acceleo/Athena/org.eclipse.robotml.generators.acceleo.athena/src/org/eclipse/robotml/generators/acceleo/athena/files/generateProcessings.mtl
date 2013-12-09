@@ -1,50 +1,62 @@
 [comment encoding = UTF-8 /]
-[module generateProcessings('http://www.eclipse.org/uml2/3.0.0/UML', 'http://www.eclipse.org/papyrus/alf/Alf')/]
+[comment]
+ Copyright (c) 2013 DASSAULT AVIATION.
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+  Nicolas BRODNAN (Dassault Aviation) nicolas.brodnan@gmail.com - Athena processing generation
+[/comment]
+
+[module generateProcessings('http://www.eclipse.org/uml2/3.0.0/UML')/]
 
 [import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries/]
-[import org::eclipse::robotml::generators::acceleo::alf::main::AlfServices/]
 
-[comment]Search all processing in the model (including imported package)[/comment]
+[comment]
+Search all processing in the RobotML model (including imported package)
+[/comment]
 [template public generateProcessings(model : Model)]
-//Now generate athena processing !!! 
 [let elements : Sequence(NamedElement) = getBehaviorFromModel(model)]
 [for(element : NamedElement | elements)]
-[let behavior : Behavior = element.oclAsType(Behavior)]
-	[generateProcessingDecl(model, behavior)/]
+[if(element.oclIsKindOf(OpaqueBehavior))]
+[let behavior : OpaqueBehavior = element.oclAsType(OpaqueBehavior)]
+[generateProcessingDecl(model, behavior)/]
 [/let]
+[/if]
 [/for]
 [/let]
-
-
-
-[comment] Processing is an operation with behaviral method [/comment]
-[comment][let processings : Sequence(NamedElement) = getProcessingFromModel(model)]
-[for(processing : NamedElement | processings)]
-	[generateProcessingDecl(model, processing)/]
-[/for]
-[/let][/comment]
 [/template]
 
-[comment]Generate the processing header[/comment]
-[template private generateProcessingDecl(model : Model, processing : Behavior)]
-
+[comment]
+Generate the processing header
+[/comment]
+[template private generateProcessingDecl(model : Model, processing : OpaqueBehavior)]
+[if(not processing.oclIsKindOf(FunctionBehavior) and not isTransitionBehavior(processing, model))]
 //[processing.name/]
 [if(hasComment(processing))]
 [getCommentFromElement(processing)/]
 [/if]
-processing [processing.name/] [if(processing.ownedParameter->isEmpty() =(true))]( ) begin[else](
-[for(param : Parameter | processing.ownedParameter)]
-						[param.direction/] [param.type.name/] [param.name/][if(processing.ownedParameter->indexOf(param) = processing.ownedParameter->size())] ) begin[/if]		
+[let feature : BehavioralFeature = processing.specification]
+[if(feature.oclIsKindOf(Operation))]
+processing [feature.name/] [if(feature.ownedParameter->isEmpty() =(true))]( ) begin[else](
+[for(param : Parameter | feature.ownedParameter)]
+						[param.direction/] [param.type.name/] [param.name.toLower()/][if((feature.ownedParameter->indexOf(param).toString().equalsIgnoreCase(feature.ownedParameter->size().toString())))] ) begin[/if]		
 [/for]
 [/if]
-	[generateProcessingBody(model, processing)/]
+[generateProcessingBody(model, processing)/]
 end
+[/if]
+[/let]
+[/if]
 [/template]
 
-[template private generateProcessingBody(model : Model, proc : Behavior)]
-[if(proc.oclAsType(OpaqueBehavior) = (true))]
-[comment]Opaque behavior, then we check the language parameter to redirect the generation service (ALf/Athena). After we check all body resources.[/comment]
-[else]
-[comment]Simple behavior, we check the operation specification has exist.[/comment]
-[/if]
+[comment]
+Generate processing body
+[/comment]
+[template private generateProcessingBody(model : Model, proc : OpaqueBehavior)]
+[comment]If language is specified as Athena, so print the behavior body in the string generation[/comment]
+[getBehaviorBody(proc)/]
 [/template]

@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Acceleo Rtmaps Module Runtime Plug-in
-Bundle-SymbolicName: org.eclipse.robotml.generators.acceleo.rtmaps;singleton:=true
-Bundle-Version: 1.1.0.qualifier
-Bundle-Activator: org.eclipse.robotml.generators.acceleo.rtmaps.Activator
+Bundle-Name: RTMaps generator for RobotML (Incubation)
+Bundle-SymbolicName: org.eclipse.papyrus.robotml.generators.intempora.rtmaps;singleton:=true
+Bundle-Version: 0.9.2
+Bundle-Activator: org.eclipse.papyrus.robotml.generators.intempora.rtmaps.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.7.0",
  org.eclipse.emf.ecore;bundle-version="2.7.0",
@@ -17,12 +17,12 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.7.0",
  org.eclipse.acceleo.engine;bundle-version="3.1.0",
  org.eclipse.uml2.uml;bundle-version="3.2.100",
  org.eclipse.core.resources;bundle-version="3.7.100",
- org.eclipse.robotml.generators.acceleo;bundle-version="1.0.0",
+ org.eclipse.papyrus.robotml.generators.common;bundle-version="0.9.2",
  org.eclipse.papyrus.robotml;bundle-version="0.9.1"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: org.eclipse.robotml.generators.acceleo.rtmaps;
+Export-Package: org.eclipse.papyrus.robotml.generators.intempora.rtmaps;
   uses:="org.eclipse.emf.ecore.resource,
    org.eclipse.emf.ecore,
    org.eclipse.emf.common.util,

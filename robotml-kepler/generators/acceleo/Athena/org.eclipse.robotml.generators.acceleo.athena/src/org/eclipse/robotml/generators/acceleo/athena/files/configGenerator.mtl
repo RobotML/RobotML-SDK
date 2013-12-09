@@ -1,4 +1,17 @@
 [comment encoding = 'UTF-8'/]
+[comment]
+Copyright (c) 2013 DASSAULT AVIATION.
+  
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+  Nicolas BRODNAN (Dassault Aviation) nicolas.brodnan@gmail.com - Configuration generation
+[/comment]
+
+
 [module configGenerator('http://www.eclipse.org/uml2/3.0.0/UML') ]
 
 [query public isAutomaticGeneration(arg : OclVoid) : Boolean =

@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.actionlib_datatypes.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -16,23 +25,25 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Actionlib_datatypesFactory {
+
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static Actionlib_datatypesFactory init() {
 		try {
-			Actionlib_datatypesFactory theActionlib_datatypesFactory = (Actionlib_datatypesFactory)EPackage.Registry.INSTANCE.getEFactory("http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/actionlib_datatypes.ecore"); 
-			if (theActionlib_datatypesFactory != null) {
+			Actionlib_datatypesFactory theActionlib_datatypesFactory = (Actionlib_datatypesFactory)EPackage.Registry.INSTANCE.getEFactory("http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/actionlib_datatypes.ecore");
+			if(theActionlib_datatypesFactory != null) {
 				return theActionlib_datatypesFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new Actionlib_datatypesFactoryImpl();
@@ -42,6 +53,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Actionlib_datatypesFactoryImpl() {
@@ -51,22 +63,27 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case Actionlib_datatypesPackage.GOAL_ID: return createGoalID();
-			case Actionlib_datatypesPackage.GOAL_STATUS: return createGoalStatus();
-			case Actionlib_datatypesPackage.GOAL_STATUS_ARRAY: return createGoalStatusArray();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch(eClass.getClassifierID()) {
+		case Actionlib_datatypesPackage.GOAL_ID:
+			return createGoalID();
+		case Actionlib_datatypesPackage.GOAL_STATUS:
+			return createGoalStatus();
+		case Actionlib_datatypesPackage.GOAL_STATUS_ARRAY:
+			return createGoalStatusArray();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GoalID createGoalID() {
@@ -77,6 +94,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GoalStatus createGoalStatus() {
@@ -87,6 +105,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GoalStatusArray createGoalStatusArray() {
@@ -97,6 +116,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Actionlib_datatypesPackage getActionlib_datatypesPackage() {
@@ -106,6 +126,7 @@ public class Actionlib_datatypesFactoryImpl extends EFactoryImpl implements Acti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */

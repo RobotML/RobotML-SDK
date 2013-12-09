@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <di:SashWindowsMngr xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.eclipse.org/papyrus/0.7.0/sashdi">
   <pageList>
     <availablePage>
@@ -55,6 +55,15 @@
     <availablePage>
       <emfPageIdentifier href="AirOARP.notation#_GqMO8HUwEeKtkpd6W4BP5g"/>
     </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="AirOARP.notation#__HB08CnYEeO9rYNGKVaQZw"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="AirOARP.notation#_RlhwkCnZEeO9rYNGKVaQZw"/>
+    </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="AirOARP.notation#_-Mt1ADvwEeOv9Pb7uiE8Hg"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
@@ -100,6 +109,15 @@
         </children>
         <children>
           <emfPageIdentifier href="AirOARP.notation#_GqJLsXUwEeKtkpd6W4BP5g"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="AirOARP.notation#__HB08CnYEeO9rYNGKVaQZw"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="AirOARP.notation#_RlhwkCnZEeO9rYNGKVaQZw"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="AirOARP.notation#_-Mt1ADvwEeOv9Pb7uiE8Hg"/>
         </children>
       </children>
     </windows>

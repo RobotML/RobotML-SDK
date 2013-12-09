@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotML;
 
 import java.util.Arrays;
@@ -13,6 +22,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Synchronization Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.RobotML.RobotMLPackage#getSynchronizationKind()
  * @model
  * @generated
@@ -22,6 +32,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * The '<em><b>SYNCH</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SYNCH_VALUE
 	 * @generated
 	 * @ordered
@@ -32,6 +43,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * The '<em><b>ASYNCH</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #ASYNCH_VALUE
 	 * @generated
 	 * @ordered
@@ -42,6 +54,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * The '<em><b>Undefined</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UNDEFINED_VALUE
 	 * @generated
 	 * @ordered
@@ -52,10 +65,10 @@ public enum SynchronizationKind implements Enumerator {
 	 * The '<em><b>SYNCH</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SYNCH</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>SYNCH</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #SYNCH
 	 * @model
 	 * @generated
@@ -67,10 +80,10 @@ public enum SynchronizationKind implements Enumerator {
 	 * The '<em><b>ASYNCH</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>ASYNCH</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>ASYNCH</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #ASYNCH
 	 * @model
 	 * @generated
@@ -82,10 +95,10 @@ public enum SynchronizationKind implements Enumerator {
 	 * The '<em><b>Undefined</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Undefined</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of '<em><b>Undefined</b></em>' literal object isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #UNDEFINED
 	 * @model name="undefined"
 	 * @generated
@@ -97,19 +110,16 @@ public enum SynchronizationKind implements Enumerator {
 	 * An array of all the '<em><b>Synchronization Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	private static final SynchronizationKind[] VALUES_ARRAY =
-		new SynchronizationKind[] {
-			SYNCH,
-			ASYNCH,
-			UNDEFINED,
-		};
+	private static final SynchronizationKind[] VALUES_ARRAY = new SynchronizationKind[]{ SYNCH, ASYNCH, UNDEFINED, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Synchronization Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<SynchronizationKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -118,12 +128,13 @@ public enum SynchronizationKind implements Enumerator {
 	 * Returns the '<em><b>Synchronization Kind</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static SynchronizationKind get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			SynchronizationKind result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if(result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -134,12 +145,13 @@ public enum SynchronizationKind implements Enumerator {
 	 * Returns the '<em><b>Synchronization Kind</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static SynchronizationKind getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for(int i = 0; i < VALUES_ARRAY.length; ++i) {
 			SynchronizationKind result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if(result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -150,13 +162,17 @@ public enum SynchronizationKind implements Enumerator {
 	 * Returns the '<em><b>Synchronization Kind</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static SynchronizationKind get(int value) {
-		switch (value) {
-			case SYNCH_VALUE: return SYNCH;
-			case ASYNCH_VALUE: return ASYNCH;
-			case UNDEFINED_VALUE: return UNDEFINED;
+		switch(value) {
+		case SYNCH_VALUE:
+			return SYNCH;
+		case ASYNCH_VALUE:
+			return ASYNCH;
+		case UNDEFINED_VALUE:
+			return UNDEFINED;
 		}
 		return null;
 	}
@@ -164,6 +180,7 @@ public enum SynchronizationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -171,6 +188,7 @@ public enum SynchronizationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -178,6 +196,7 @@ public enum SynchronizationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -186,6 +205,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private SynchronizationKind(int value, String name, String literal) {
@@ -197,39 +217,43 @@ public enum SynchronizationKind implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
+
 } //SynchronizationKind

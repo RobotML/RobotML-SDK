@@ -542,6 +542,7 @@ struct Speed_Tics_Left_Right
 
 struct Odometer_Tics_Left_Right
 {
+	Header header;
 	Odometer_Tics odometer_tics_left;
 	Odometer_Tics odometer_tics_right;
 };

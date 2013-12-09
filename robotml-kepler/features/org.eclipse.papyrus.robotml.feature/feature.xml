@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.papyrus.robotml.feature"
-      label="RobotML Modelling Tools"
+      id="org.eclipse.papyrus.extra.robotml.feature"
+      label="Papyrus extra: RobotML Modeling Tools (Incubation)"
       version="0.10.0.qualifier"
-      provider-name="CEA List">
+      provider-name="Eclipse Modeling Project">
 
    <description>
       RobotML Modelling Tools

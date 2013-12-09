@@ -16,8 +16,10 @@
 [comment TODO: look at CycabTK for parameters to extract from model /]
 
 [file (aClass.name+'.py', false, 'UTF-8')]
+from morse.builder import *
+
 class [aClass.name/]:
-	def __init(self, myRobot):
+	def __init(self, myRobot)__:
 		self.sensor = Sick()
 
 		[comment Generate translation command for this sensor /]
@@ -28,7 +30,7 @@ class [aClass.name/]:
 
 		self.sensor.properties(scan_window = 180, resolution = 1, laser_range = [getAttributeValue(aClass, 'range_max', 'LidarSystem', '25')/])
 		self.sensor.frequency([getAttributeValue(aClass, 'frequency', 'LidarSystem', '20.')/])
-		self.sensor.configure_mw('ros')
+		self.sensor.add_stream('ros')
 		myRobot.append(lidar)
 [/file]
 

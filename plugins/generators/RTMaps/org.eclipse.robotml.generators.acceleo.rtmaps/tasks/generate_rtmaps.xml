@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="generate_rtmaps" name="org.eclipse.robotml.generators.acceleo.rtmaps">
+<project default="generate_rtmaps" name="org.eclipse.papyrus.robotml.generators.intempora.rtmaps">
     <property name="ECLIPSE_HOME" value="../../../../../../../../../eclipse_4.2"/>
     <property name="ECLIPSE_WORKSPACE" value="../../../../../../../../../Users/Nicolas/workspace_4.2_robotml"/>
 
     <!-- The classpath with only the dependencies used by the project -->
-    <path id="org.eclipse.robotml.generators.acceleo.rtmaps.libraryclasspath">
-        <pathelement location="${ECLIPSE_WORKSPACE}/org.eclipse.robotml.generators.acceleo.rtmaps/bin"/>
+    <path id="org.eclipse.papyrus.robotml.generators.intempora.rtmaps.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/org.eclipse.papyrus.robotml.generators.intempora.rtmaps/bin"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.8.0.v20120912-155025.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.8.2.v20130124-134944.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.6.100.v20120522-1841.jar"/>
@@ -35,26 +35,26 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.mapping.ecore2xml_2.7.0.v20130125-0826.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.validation_1.4.0.v20100428-2315.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.8.1.v20121114-124432.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.papyrus.robotml_0.9.2.201304081731.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.papyrus.robotml_0.9.2.201304091416.jar"/>
     </path>
 
-    <path id="org.eclipse.robotml.generators.acceleo.rtmaps.classpath">
-        <path refid="org.eclipse.robotml.generators.acceleo.rtmaps.libraryclasspath"/>
+    <path id="org.eclipse.papyrus.robotml.generators.intempora.rtmaps.classpath">
+        <path refid="org.eclipse.papyrus.robotml.generators.intempora.rtmaps.libraryclasspath"/>
     </path>
 
     <!-- The classpath with only the jars available in the plugin folder of Eclipse -->
-    <path id="org.eclipse.robotml.generators.acceleo.rtmaps.libraryclasspath.alljars">
-        <pathelement location="../org.eclipse.robotml.generators.acceleo.rtmaps/bin"/>
+    <path id="org.eclipse.papyrus.robotml.generators.intempora.rtmaps.libraryclasspath.alljars">
+        <pathelement location="../org.eclipse.papyrus.robotml.generators.intempora.rtmaps/bin"/>
         <fileset dir="${ECLIPSE_HOME}/plugins/" includes="*.jar"/>
     </path>
 
-    <path id="org.eclipse.robotml.generators.acceleo.rtmaps.classpath.alljars">
-        <path refid="org.eclipse.robotml.generators.acceleo.rtmaps.libraryclasspath.alljars"/>
+    <path id="org.eclipse.papyrus.robotml.generators.intempora.rtmaps.classpath.alljars">
+        <path refid="org.eclipse.papyrus.robotml.generators.intempora.rtmaps.libraryclasspath.alljars"/>
     </path>
 
     <!-- The default task with the jars used by this project -->
     <target name="generate_rtmaps">
-        <java classname="org.eclipse.robotml.generators.acceleo.rtmaps.Generate_rtmaps" classpathref="org.eclipse.robotml.generators.acceleo.rtmaps.classpath">
+        <java classname="org.eclipse.papyrus.robotml.generators.intempora.rtmaps.Generate_rtmaps" classpathref="org.eclipse.papyrus.robotml.generators.intempora.rtmaps.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -65,7 +65,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="generate_rtmaps.alljars">
-        <java classname="org.eclipse.robotml.generators.acceleo.rtmaps.Generate_rtmaps" classpathref="org.eclipse.robotml.generators.acceleo.rtmaps.classpath">
+        <java classname="org.eclipse.papyrus.robotml.generators.intempora.rtmaps.Generate_rtmaps" classpathref="org.eclipse.papyrus.robotml.generators.intempora.rtmaps.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>

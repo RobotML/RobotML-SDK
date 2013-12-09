@@ -1,15 +1,13 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
+ * Copyright (c) 2013 CEA LIST.
  *    
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the CeCILL-C Free Software License v1.0
+ * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
+ * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
- *
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.diagram.componentdef;
 
@@ -34,8 +32,7 @@ public class Activator extends AbstractUIPlugin {
 	public static LogHelper log;
 
 	/** The plug-in Preference store */
-	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(
-			PLUGIN_ID);
+	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(PLUGIN_ID);
 
 	/** Default constructor */
 	public Activator() {
@@ -56,8 +53,7 @@ public class Activator extends AbstractUIPlugin {
 		log = new LogHelper(plugin);
 
 		// register the preference store
-		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT,
-				getPreferenceStore());
+		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
 
 		// Preferences initialization
 		ComponentdefDiagramPreferenceInitializer diagramPreferenceInitializer = new ComponentdefDiagramPreferenceInitializer();
@@ -91,7 +87,7 @@ public class Activator extends AbstractUIPlugin {
 	 * 
 	 * @generated
 	 * @param path
-	 *            the path
+	 *        the path
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getBundledImageDescriptor(String path) {
@@ -106,8 +102,7 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	@Override
 	public IPreferenceStore getPreferenceStore() {
-		IPreferenceStore store = org.eclipse.papyrus.infra.gmfdiag.preferences.Activator
-				.getDefault().getPreferenceStore();
+		IPreferenceStore store = org.eclipse.papyrus.infra.gmfdiag.preferences.Activator.getDefault().getPreferenceStore();
 		return store;
 	}
 }

@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl;
 
 import java.util.Collection;
@@ -33,19 +42,24 @@ import org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTyp
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloudImpl#getHeader <em>Header</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloudImpl#getPoints <em>Points</em>}</li>
- *   <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloudImpl#getChannels <em>Channels</em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloudImpl#getHeader <em>Header
+ * </em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloudImpl#getPoints <em>Points
+ * </em>}</li>
+ * <li>{@link org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.sensor_datatypes.impl.PointCloudImpl#getChannels <em>
+ * Channels</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class PointCloudImpl extends EObjectImpl implements PointCloud {
+
 	/**
 	 * The cached value of the '{@link #getHeader() <em>Header</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getHeader()
 	 * @generated
 	 * @ordered
@@ -56,6 +70,7 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	 * The cached value of the '{@link #getPoints() <em>Points</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPoints()
 	 * @generated
 	 * @ordered
@@ -66,6 +81,7 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	 * The cached value of the '{@link #getChannels() <em>Channels</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getChannels()
 	 * @generated
 	 * @ordered
@@ -75,6 +91,7 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PointCloudImpl() {
@@ -84,6 +101,7 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -94,6 +112,7 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Header getHeader() {
@@ -103,14 +122,18 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetHeader(Header newHeader, NotificationChain msgs) {
 		Header oldHeader = header;
 		header = newHeader;
-		if (eNotificationRequired()) {
+		if(eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_CLOUD__HEADER, oldHeader, newHeader);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if(msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -118,29 +141,31 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setHeader(Header newHeader) {
-		if (newHeader != header) {
+		if(newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null)
+			if(header != null)
 				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.POINT_CLOUD__HEADER, null, msgs);
-			if (newHeader != null)
+			if(newHeader != null)
 				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Sensor_datatypesPackage.POINT_CLOUD__HEADER, null, msgs);
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if(msgs != null)
+				msgs.dispatch();
+		} else if(eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Sensor_datatypesPackage.POINT_CLOUD__HEADER, newHeader, newHeader));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Point32> getPoints() {
-		if (points == null) {
+		if(points == null) {
 			points = new EObjectContainmentEList<Point32>(Point32.class, this, Sensor_datatypesPackage.POINT_CLOUD__POINTS);
 		}
 		return points;
@@ -149,10 +174,11 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ChannelFloat32> getChannels() {
-		if (channels == null) {
+		if(channels == null) {
 			channels = new EObjectContainmentEList<ChannelFloat32>(ChannelFloat32.class, this, Sensor_datatypesPackage.POINT_CLOUD__CHANNELS);
 		}
 		return channels;
@@ -161,17 +187,18 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.POINT_CLOUD__HEADER:
-				return basicSetHeader(null, msgs);
-			case Sensor_datatypesPackage.POINT_CLOUD__POINTS:
-				return ((InternalEList<?>)getPoints()).basicRemove(otherEnd, msgs);
-			case Sensor_datatypesPackage.POINT_CLOUD__CHANNELS:
-				return ((InternalEList<?>)getChannels()).basicRemove(otherEnd, msgs);
+		switch(featureID) {
+		case Sensor_datatypesPackage.POINT_CLOUD__HEADER:
+			return basicSetHeader(null, msgs);
+		case Sensor_datatypesPackage.POINT_CLOUD__POINTS:
+			return ((InternalEList<?>)getPoints()).basicRemove(otherEnd, msgs);
+		case Sensor_datatypesPackage.POINT_CLOUD__CHANNELS:
+			return ((InternalEList<?>)getChannels()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -179,17 +206,18 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.POINT_CLOUD__HEADER:
-				return getHeader();
-			case Sensor_datatypesPackage.POINT_CLOUD__POINTS:
-				return getPoints();
-			case Sensor_datatypesPackage.POINT_CLOUD__CHANNELS:
-				return getChannels();
+		switch(featureID) {
+		case Sensor_datatypesPackage.POINT_CLOUD__HEADER:
+			return getHeader();
+		case Sensor_datatypesPackage.POINT_CLOUD__POINTS:
+			return getPoints();
+		case Sensor_datatypesPackage.POINT_CLOUD__CHANNELS:
+			return getChannels();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -197,23 +225,24 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.POINT_CLOUD__HEADER:
-				setHeader((Header)newValue);
-				return;
-			case Sensor_datatypesPackage.POINT_CLOUD__POINTS:
-				getPoints().clear();
-				getPoints().addAll((Collection<? extends Point32>)newValue);
-				return;
-			case Sensor_datatypesPackage.POINT_CLOUD__CHANNELS:
-				getChannels().clear();
-				getChannels().addAll((Collection<? extends ChannelFloat32>)newValue);
-				return;
+		switch(featureID) {
+		case Sensor_datatypesPackage.POINT_CLOUD__HEADER:
+			setHeader((Header)newValue);
+			return;
+		case Sensor_datatypesPackage.POINT_CLOUD__POINTS:
+			getPoints().clear();
+			getPoints().addAll((Collection<? extends Point32>)newValue);
+			return;
+		case Sensor_datatypesPackage.POINT_CLOUD__CHANNELS:
+			getChannels().clear();
+			getChannels().addAll((Collection<? extends ChannelFloat32>)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -221,20 +250,21 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.POINT_CLOUD__HEADER:
-				setHeader((Header)null);
-				return;
-			case Sensor_datatypesPackage.POINT_CLOUD__POINTS:
-				getPoints().clear();
-				return;
-			case Sensor_datatypesPackage.POINT_CLOUD__CHANNELS:
-				getChannels().clear();
-				return;
+		switch(featureID) {
+		case Sensor_datatypesPackage.POINT_CLOUD__HEADER:
+			setHeader((Header)null);
+			return;
+		case Sensor_datatypesPackage.POINT_CLOUD__POINTS:
+			getPoints().clear();
+			return;
+		case Sensor_datatypesPackage.POINT_CLOUD__CHANNELS:
+			getChannels().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -242,17 +272,18 @@ public class PointCloudImpl extends EObjectImpl implements PointCloud {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case Sensor_datatypesPackage.POINT_CLOUD__HEADER:
-				return header != null;
-			case Sensor_datatypesPackage.POINT_CLOUD__POINTS:
-				return points != null && !points.isEmpty();
-			case Sensor_datatypesPackage.POINT_CLOUD__CHANNELS:
-				return channels != null && !channels.isEmpty();
+		switch(featureID) {
+		case Sensor_datatypesPackage.POINT_CLOUD__HEADER:
+			return header != null;
+		case Sensor_datatypesPackage.POINT_CLOUD__POINTS:
+			return points != null && !points.isEmpty();
+		case Sensor_datatypesPackage.POINT_CLOUD__CHANNELS:
+			return channels != null && !channels.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,5 +1,14 @@
-/**
- */
+/*****************************************************************************
+ * Copyright (c) 2013 CEA LIST.
+ *    
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -71,12 +80,15 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geometry_datatypesPackage {
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass pointEClass = null;
@@ -84,6 +96,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass point32EClass = null;
@@ -91,6 +104,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass pointStampedEClass = null;
@@ -98,6 +112,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass polygonEClass = null;
@@ -105,6 +120,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass polygonStampedEClass = null;
@@ -112,6 +128,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass vector3EClass = null;
@@ -119,6 +136,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass vector3StampedEClass = null;
@@ -126,6 +144,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass quaternionEClass = null;
@@ -133,6 +152,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass poseEClass = null;
@@ -140,6 +160,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass poseStampedEClass = null;
@@ -147,6 +168,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass twistWithCovarianceEClass = null;
@@ -154,6 +176,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass twistEClass = null;
@@ -161,6 +184,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass twistStampedEClass = null;
@@ -168,6 +192,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass poseWithCovarianceEClass = null;
@@ -175,6 +200,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass pose2DEClass = null;
@@ -182,6 +208,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass poseWithCovarianceStampedEClass = null;
@@ -189,6 +216,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass poseArrayEClass = null;
@@ -196,6 +224,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass quaternionStampedEClass = null;
@@ -203,6 +232,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass transformEClass = null;
@@ -210,6 +240,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass wrenchStampedEClass = null;
@@ -217,20 +248,19 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass wrenchEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the
+	 * package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
+	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes.Geometry_datatypesPackage#eNS_URI
 	 * @see #init()
@@ -243,6 +273,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -250,17 +281,18 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link Geometry_datatypesPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * This method is used to initialize {@link Geometry_datatypesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it
+	 * directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static Geometry_datatypesPackage init() {
-		if (isInited) return (Geometry_datatypesPackage)EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI);
+		if(isInited)
+			return (Geometry_datatypesPackage)EPackage.Registry.INSTANCE.getEPackage(Geometry_datatypesPackage.eNS_URI);
 
 		// Obtain or create and register package
 		Geometry_datatypesPackageImpl theGeometry_datatypesPackage = (Geometry_datatypesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Geometry_datatypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Geometry_datatypesPackageImpl());
@@ -305,7 +337,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 		// Mark meta-data to indicate it can't be changed
 		theGeometry_datatypesPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(Geometry_datatypesPackage.eNS_URI, theGeometry_datatypesPackage);
 		return theGeometry_datatypesPackage;
@@ -314,6 +346,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPoint() {
@@ -323,6 +356,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPoint_X() {
@@ -332,6 +366,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPoint_Y() {
@@ -341,6 +376,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPoint_Z() {
@@ -350,6 +386,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPoint32() {
@@ -359,6 +396,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPoint32_X() {
@@ -368,6 +406,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPoint32_Y() {
@@ -377,6 +416,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPoint32_Z() {
@@ -386,6 +426,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPointStamped() {
@@ -395,6 +436,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPointStamped_Header() {
@@ -404,6 +446,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPointStamped_Point() {
@@ -413,6 +456,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPolygon() {
@@ -422,6 +466,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPolygon_Point() {
@@ -431,6 +476,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPolygonStamped() {
@@ -440,6 +486,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPolygonStamped_Header() {
@@ -449,6 +496,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPolygonStamped_Polygon() {
@@ -458,6 +506,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getVector3() {
@@ -467,6 +516,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getVector3_X() {
@@ -476,6 +526,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getVector3_Y() {
@@ -485,6 +536,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getVector3_Z() {
@@ -494,6 +546,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getVector3Stamped() {
@@ -503,6 +556,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getVector3Stamped_Header() {
@@ -512,6 +566,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getVector3Stamped_Vector() {
@@ -521,6 +576,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getQuaternion() {
@@ -530,6 +586,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getQuaternion_X() {
@@ -539,6 +596,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getQuaternion_Y() {
@@ -548,6 +606,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getQuaternion_Z() {
@@ -557,6 +616,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getQuaternion_W() {
@@ -566,6 +626,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPose() {
@@ -575,6 +636,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPose_Position() {
@@ -584,6 +646,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPose_Orientation() {
@@ -593,6 +656,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPoseStamped() {
@@ -602,6 +666,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPoseStamped_Header() {
@@ -611,6 +676,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPoseStamped_Pose() {
@@ -620,6 +686,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getTwistWithCovariance() {
@@ -629,6 +696,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getTwistWithCovariance_Twist() {
@@ -638,6 +706,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getTwistWithCovariance_Covariance() {
@@ -647,6 +716,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getTwist() {
@@ -656,6 +726,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getTwist_Linear() {
@@ -665,6 +736,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getTwist_Angular() {
@@ -674,6 +746,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getTwistStamped() {
@@ -683,6 +756,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getTwistStamped_Header() {
@@ -692,6 +766,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getTwistStamped_Twist() {
@@ -701,6 +776,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPoseWithCovariance() {
@@ -710,6 +786,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPoseWithCovariance_Pose() {
@@ -719,6 +796,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPoseWithCovariance_Covariance() {
@@ -728,6 +806,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPose2D() {
@@ -737,6 +816,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPose2D_X() {
@@ -746,6 +826,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPose2D_Y() {
@@ -755,6 +836,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPose2D_Theta() {
@@ -764,6 +846,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPoseWithCovarianceStamped() {
@@ -773,6 +856,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPoseArray() {
@@ -782,6 +866,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPoseArray_Header() {
@@ -791,6 +876,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPoseArray_Poses() {
@@ -800,6 +886,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getQuaternionStamped() {
@@ -809,6 +896,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getQuaternionStamped_Header() {
@@ -818,6 +906,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getQuaternionStamped_Quaternion() {
@@ -827,6 +916,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getTransform() {
@@ -836,6 +926,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getTransform_Translation() {
@@ -845,6 +936,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getTransform_Rotation() {
@@ -854,6 +946,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getWrenchStamped() {
@@ -863,6 +956,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getWrenchStamped_Header() {
@@ -872,6 +966,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getWrenchStamped_Wrench() {
@@ -881,6 +976,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getWrench() {
@@ -890,6 +986,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getWrench_Force() {
@@ -899,6 +996,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getWrench_Torque() {
@@ -908,6 +1006,7 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Geometry_datatypesFactory getGeometry_datatypesFactory() {
@@ -917,19 +1016,22 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if(isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -1024,19 +1126,22 @@ public class Geometry_datatypesPackageImpl extends EPackageImpl implements Geome
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if(isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package

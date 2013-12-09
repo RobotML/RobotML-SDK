@@ -1,0 +1,73 @@
+//-----import package-----
+import ("rtt_sensor_msgs")
+import ("rtt_nav_msgs")
+import ("rtt_geometry_msgs")
+import ("rtt_std_msgs")
+
+//-----load components-----
+loadComponent("RMaxControlSystem","Talc::RMaxControlSystem")
+loadComponent("Camera","Talc::Video::Orocos::Camera")
+loadComponent("Obc","Talc::Avionique::Orocos::Obc")
+
+//-----set components activities-----
+var double period = 1.0; //in seconds, period of the activity (0.0 if non periodic)
+var int priority = LowestPriority; //LowestPriority = 1, HighestPriority = 99
+var int scheduler = ORO_SCHED_OTHER; // ORO_SCHED_OTHER = 0, ORO_SCHED_RT = 1
+setActivity("RMaxControlSystem", period, priority, scheduler)
+setActivity("Camera", period, priority, scheduler)
+setActivity("Obc", period, priority, scheduler)
+
+
+
+
+//-----set connections between components-----
+
+	
+
+ stream(CameraMain_002, Camera)
+
+
+ stream(CameraMain_002, Camera)
+
+
+	
+
+ stream(Gyroscope_001, Obc)
+
+
+	
+
+ stream(GPS_001, Obc)
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+ connectPeers(Camera, RMaxControlSystem)
+
+
+	
+
+ connectPeers(Obc, Motion_Controller)
+
+
+ connectPeers(Obc, RMaxControlSystem)
+
+
+
+

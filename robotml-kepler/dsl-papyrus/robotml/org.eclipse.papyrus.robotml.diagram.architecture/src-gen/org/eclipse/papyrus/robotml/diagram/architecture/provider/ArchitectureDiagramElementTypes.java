@@ -1,15 +1,13 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
+ * Copyright (c) 2013 CEA LIST.
  *    
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the CeCILL-C Free Software License v1.0
+ * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
+ * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
- *
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.diagram.architecture.provider;
 
@@ -39,7 +37,7 @@ public class ArchitectureDiagramElementTypes extends AbstractElementTypeEnumerat
 	public static final String CLASS_COMPARTMENT_CLASS_COMPOSITE_HINT = "7073";
 
 	public static final String CLASS_LABEL_COMPOSITE_NAME_HINT = "5156";
-	
+
 	/** CompositeDiagram :: CLASS_CN */
 	public static final IHintedType CLASS_CN = (IHintedType)getElementType("org.eclipse.papyrus.uml.diagram.composite.Class_3085"); //$NON-NLS-1$
 
@@ -78,8 +76,8 @@ public class ArchitectureDiagramElementTypes extends AbstractElementTypeEnumerat
 	public static final IHintedType CONNECTOR = (IHintedType)getElementType("org.eclipse.papyrus.uml.diagram.composite.Connector_4013"); //$NON-NLS-1$
 
 	public static final String CONNECTOR_LABEL_APPLIED_STEREOTYPE_HINT = "6025";
-	
-	
+
+
 	/** CompositeDiagram :: CONSTRAINT_CONSTRAINED_ELEMENT */
 	public static final IHintedType CONSTRAINT_CONSTRAINED_ELEMENT = (IHintedType)getElementType("org.eclipse.papyrus.uml.diagram.composite.ConstraintConstrainedElement_4003"); //$NON-NLS-1$
 

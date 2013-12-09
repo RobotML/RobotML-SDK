@@ -239,6 +239,8 @@ catch(...)
 //transition for each stateset
 [for(stateset : statesetDeclaration | statesets)]
 [for (trans : transitionDeclaration | stateset.transitions)]
+//[trans.sig/]
+//[trans.evt/]
 if ( ([stateset.name/].getRead(icycle) == [trans.from/] ) && event_[trans.evt/](icycle) )
 {
 	[stateset.name/].write(icycle,[trans.to/]);

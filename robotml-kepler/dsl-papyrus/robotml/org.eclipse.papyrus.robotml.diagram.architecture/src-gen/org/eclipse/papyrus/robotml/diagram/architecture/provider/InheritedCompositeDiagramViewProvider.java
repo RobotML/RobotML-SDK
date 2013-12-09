@@ -1,15 +1,13 @@
 /*****************************************************************************
- * Copyright (c) 2012 CEA LIST.
- *
+ * Copyright (c) 2013 CEA LIST.
  *    
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the CeCILL-C Free Software License v1.0
+ * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
- * http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
+ * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia DHOUIB (CEA LIST) - Initial API and implementation
- *
+ *  Saadia Dhouib (CEA LIST) saadia.dhouib@cea.fr - Initial API and implementation
  *****************************************************************************/
 package org.eclipse.papyrus.robotml.diagram.architecture.provider;
 
@@ -76,7 +74,7 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 		if(elementType == ArchitectureDiagramElementTypes.CONNECTOR) {
 			return true;
 		}
-		
+
 		if(elementType == ArchitectureDiagramElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT) {
 			return true;
 		}
@@ -157,28 +155,28 @@ public class InheritedCompositeDiagramViewProvider extends UMLViewProvider {
 
 			}
 			if(domainElement instanceof org.eclipse.uml2.uml.Port) {
-								if(ArchitectureDiagramElementTypes.CLASS_COMPARTMENT_CLASS_COMPOSITE_HINT.equals(containerGraphicalType)) {
-									return false;
-								}
-								if(ArchitectureDiagramElementTypes.PROPERTY_CN_COMPARTMENT_PROPERTY_PART_HINT.equals(containerGraphicalType)) {
-									return false;
-								}
-								if(ArchitectureDiagramElementTypes.PROPERTY_CN.equals(containerGraphicalType)) {
-									return true;
-								}
-								if(ArchitectureDiagramElementTypes.CLASS.equals(containerGraphicalType)) {
-									return true;
-								}
-								
-								if(ArchitectureDiagramElementTypes.CLASS_CN.equals(containerGraphicalType)) {
-									return true;
-								}
-								if(ArchitectureDiagramElementTypes.CLASS_CN_COMPARTMENT_CLASS_COMPOSITE_HINT.equals(containerGraphicalType)) {
-									return true;
-								}
-								return true;
-							
-								
+				if(ArchitectureDiagramElementTypes.CLASS_COMPARTMENT_CLASS_COMPOSITE_HINT.equals(containerGraphicalType)) {
+					return false;
+				}
+				if(ArchitectureDiagramElementTypes.PROPERTY_CN_COMPARTMENT_PROPERTY_PART_HINT.equals(containerGraphicalType)) {
+					return false;
+				}
+				if(ArchitectureDiagramElementTypes.PROPERTY_CN.equals(containerGraphicalType)) {
+					return true;
+				}
+				if(ArchitectureDiagramElementTypes.CLASS.equals(containerGraphicalType)) {
+					return true;
+				}
+
+				if(ArchitectureDiagramElementTypes.CLASS_CN.equals(containerGraphicalType)) {
+					return true;
+				}
+				if(ArchitectureDiagramElementTypes.CLASS_CN_COMPARTMENT_CLASS_COMPOSITE_HINT.equals(containerGraphicalType)) {
+					return true;
+				}
+				return true;
+
+
 
 			}
 			if(domainElement instanceof org.eclipse.uml2.uml.Property) {

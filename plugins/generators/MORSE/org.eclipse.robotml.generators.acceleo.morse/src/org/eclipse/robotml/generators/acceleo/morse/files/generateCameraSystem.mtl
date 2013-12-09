@@ -14,15 +14,17 @@
 
 [template public generateCameraSystem(aClass : Class, aModel : Model)]
 [file (aClass.name+'.py', false, 'UTF-8')]
+from morse.builder import *
+
 class [aClass.name/]:
-	def __init(self, myRobot):
+	def __init(self, myRobot)__:
 		self.sensor = VideoCamera()
 
 		[comment Generate translation command for this sensor /]
-		self.translate([getAttributeValue(aClass, 'localPosition', 'CameraSystem', 'x=0, y=0, z=0')/])
+		self.sensor.translate([getAttributeValue(aClass, 'localPosition', 'CameraSystem', 'x=0, y=0, z=0')/])
 
 		[comment Generate rotation command for this sensor /]
-		self.rotate([getAttributeValue(aClass, 'localOrientation', 'CameraSystem', 'x=0')/])
+		self.sensor.rotate([getAttributeValue(aClass, 'localOrientation', 'CameraSystem', 'x=0')/])
  
 		[comment Used formula here: http://www.openrobots.org/morse/doc/stable/user/sensors/video_camera.html#camera-calibration-matrix /]
 		height = [getAttributeValue(aClass, 'u0', 'CameraSystem', '0')/]*2
@@ -39,7 +41,7 @@ class [aClass.name/]:
 
 		self.sensor.frequency([getAttributeValue(aClass, 'frequency', 'CameraSystem', '25.')/])
 
-		self.sensor.configure_mw('ros')
+		self.sensor.add_stream('ros')
 		myRobot.append(self.sensor)
 [/file]
 [/template]

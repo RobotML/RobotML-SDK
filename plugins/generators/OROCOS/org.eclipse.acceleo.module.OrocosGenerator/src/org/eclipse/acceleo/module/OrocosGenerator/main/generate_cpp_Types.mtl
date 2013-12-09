@@ -34,7 +34,6 @@ typedef std::string String;
 
 struct Header
 {
-	Time stamp;
 	String frame_id;
 	UInt32 seq;
 };

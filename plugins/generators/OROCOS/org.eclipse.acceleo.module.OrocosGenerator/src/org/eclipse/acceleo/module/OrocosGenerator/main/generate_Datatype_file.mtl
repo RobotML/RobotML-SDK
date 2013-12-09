@@ -14,8 +14,7 @@
 [file ( 'src/DataTypes/'+type.name.substitute(' ', '_')+'.hpp', false, 'UTF-8')]
 #ifndef _[type.name.toUpper()/]_H_
 #define _[type.name.toUpper()/]_H_
-[addType(type)/]
-
+[comment]
 [for (elt : Element | getDataTypesInElement(type))]
 [let type: Type = elt] 
 [if(isRobotMLDataType(m, type.name))]
@@ -23,15 +22,14 @@
 #include <[ne.name.replace('_datatypes', '_msgs')/]/[type.name/].hpp>
 [/let]
 [else]
-	[if(not isPrimitiveType(type))]
-#include "[((type.qualifiedName).replaceAll(' ', '_')).replaceAll('::', '/')/].h"	
-	[/if]
-[/if]
+
 [/let]
 [/for]
 
-#include "CppDataTypes.hpp"
-[comment get owner component and modify namespaces hierarchy/]
+
+[/comment]
+
+#include "../DataTypes/CppDataTypes.hpp"
 [let nspace : String = type.qualifiedName.substitute('::'+type.name,'')]
 [let nameSpace : Sequence(String) = nspace.tokenize('::')]
 [for(s : String | nameSpace)]

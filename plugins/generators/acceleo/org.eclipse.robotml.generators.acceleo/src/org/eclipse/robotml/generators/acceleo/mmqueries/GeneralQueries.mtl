@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module GeneralQueries('http://www.eclipse.org/uml2/3.0.0/UML')/]
+[module GeneralQueries('http://www.eclipse.org/uml2/3.0.0/UML', 'http://Papyrus/RobotML/1')/]
 
 [comment] 
 - Déclaration de fonction java permettant d'interroger le modèle

@@ -4,8 +4,9 @@
 [template public Makefiles(project : Project)]
 
 [file ('MakefileLinux-common', false, 'UTF-8')]
-ENV=~/execution_environment
+ENV=~/Proteus/Execution_Environment
 BASE=$(ENV)/athena
+BASE_ATHENA=$(BASE)/base
 GEOLIB=$(BASE)/geolib/
 TARGET=$(ENV)/bin
 BOOST_INCLUDE=-I"/usr/include"
@@ -27,11 +28,11 @@ SOURCES = \
 	TypeDefs.cc TypeDefs_XML.cc instances.cc \
 	processings.cc main.cc
 
-LIBFDIR = -L $(BASE)/base -lfdir
+LIBFDIR = -L $(BASE_ATHENA) -lfdir
 LIBS = -L $(GEOLIB) -lgeolib $(LIBFDIR) $(BOOST_LIB)
 
 OBJS     = $(SOURCES:.cc=.o)
-INCLUDES = -I. -I $(BASE)/base -I $(BASE)/include -I $(GEOLIB) $(BOOST_INCLUDE)
+INCLUDES = -I. -I $(BASE_ATHENA) -I $(BASE)/include -I $(GEOLIB) $(BOOST_INCLUDE)
 
 all: $(OBJS) simu.exe libCPPInterface.so
 

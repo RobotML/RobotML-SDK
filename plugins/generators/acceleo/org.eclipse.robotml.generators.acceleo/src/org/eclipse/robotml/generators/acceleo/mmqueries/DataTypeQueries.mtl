@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module DataTypeQueries('http://www.eclipse.org/uml2/3.0.0/UML')]
+[module DataTypeQueries('http://www.eclipse.org/uml2/3.0.0/UML', 'http://Papyrus/RobotML/1')]
 
 [query public getMetamodelComposedDataTypes(rootelt : Element) : Sequence(DataType) =
 	invoke('org.eclipse.robotml.generators.acceleo.mmqueries.DataTypeQueries', 'getMetamodelComposedDataTypes(org.eclipse.uml2.uml.Element)', Sequence{rootelt})

@@ -4,7 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.xtext.AthenaDSL"/>
 	<classpathentry excluding="**/.svn/**|.svn" kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.robotml.generators.acceleo.alf"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.robotml.generators.acceleo"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.papyrus.robotml.generators.common"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

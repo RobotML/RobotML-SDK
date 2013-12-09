@@ -1,0 +1,3 @@
+<launch>
+<node name="RobotMLModel" pkg="ocl" type="deployer-gnulinux" args="-s $(./connect.ops -linfo --" output="screen"/>
+</launch>

@@ -24,8 +24,12 @@ self:SetLocalPosition([removeBrackets(position)/])
 self:SetLocalRotation([removeBrackets(rotation)/])
 	[/let]
 	[/let]
-[/if]
 
+--[protected (aClass.name + ' common')]
+
+--[/protected]
+
+[/if]
 [comment]-- instanciate subcomponents
 [for (component : NamedElement | getLevel1SubComponentsForComponentWithStereotype(aClass, 'RoboticSystem'))]
 	[let prop : Property = component.oclAsType(Property)]
@@ -33,7 +37,6 @@ self.[prop.name/] = [prop.type.name/]( name..".[prop.name/]")
 self.[prop.name/]:MakeChildOf(self)
 	[/let]
 [/for][/comment]
-
 [/template]
 
 [template public generateSystem(aClass : Class, model : Model)]

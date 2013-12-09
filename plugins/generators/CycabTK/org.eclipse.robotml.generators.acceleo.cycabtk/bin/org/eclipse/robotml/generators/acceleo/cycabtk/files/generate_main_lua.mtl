@@ -4,6 +4,9 @@
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::DeploymentQueries /]
+[import org::eclipse::robotml::generators::acceleo::cycabtk::mmqueries::CycabTKQueries /]
+
+
 
 [template public generateMainLua(model : Model)]
 [file ('scripts/' + model.name + '.lua', false, 'UTF-8')]
@@ -11,12 +14,21 @@
 -- Model [model.name/] --
 ------------------------
 
+--[protected (model.name + ' begin')]
+
+--[/protected]
+
 require "mgLuaCameraViewport"
 require "mgLuaAccurateRenderer"
 require "mgLuaPositionController"
 
 require "LuaCycabTK"
 require "LuaStdPhysicsEngine"
+
+--[protected (model.name + ' requires')]
+
+--[/protected]
+
 
 -- Default Renderer --
 renderer = mge.AccurateRenderer "renderer"
@@ -52,26 +64,62 @@ cont.RotationSpeed = 1.000000
 -- Physics Engine --
 phyEng = cycabtk.StdPhysicsEngine "phyEng"
 
+-- Simulation time
+require "LuaTimeRosInterface"
+timeRos = cycabtk.TimeRosInterface "timeRos"
+
+--[protected (model.name + ' instances')]
+
+--[/protected]
+
 -- Model instances --
-	[for( inst: InstanceSpecification | getInstanceSpecifications(model))]
+
+	[for( inst: InstanceSpecification | getInstanceSpecificationsForPlatform(model, 'cycabTK'))]
 		[comment][inst.name/] : [inst.classifier.name/] [inst.clientDependency.name/][/comment]
 		[let elt : Class =  findClassInModel(model, inst.classifier.name->asSequence()->first())]
-		[if(inheritsFrom(elt, 'Robot'))]
-require "[model.name/]/[inst.classifier.name/]_"
-[inst.name/] = [inst.classifier.name/]_( "[inst.name/]" )
-			[let parentName : String = getParentName(inst)]
-[inst.name/]:MakeChildOf( "[parentName/]" )
-			[/let]
-		[/if]
-		[if(inheritsFrom(elt, 'RoboticSystem'))]
+		[if( getAttributeValue(elt, 'native', getStereotype(elt), 'false' ) = 'false')]
+			[if(inheritsFrom(elt, 'Robot') or inheritsFrom(elt, 'RoboticSystem'))]
 require "[model.name/]/[inst.classifier.name/]"
-[inst.name/] = [inst.classifier.name/]( "[inst.name/]" )
-			[let parentName : String = getParentName(inst)]
-[inst.name/]:MakeChildOf( "[parentName/]" )
+			[let cycabtk_name : String = computeCycabtkInstanceName(model, inst)]
+[cycabtk_name/] = [inst.classifier.name/]( "[cycabtk_name/]" )
+			[let parent : InstanceSpecification = getParentInstanceSpecification(model, inst)]
+				[if( isAllocatedTo(parent, 'cycabTK') )]
+				[let eltp : Class =  findClassInModel(model, parent.classifier.name->asSequence()->first())]
+				[if( inheritsFrom(eltp, 'Robot') or inheritsFrom(eltp, 'RoboticSystem'))]
+[cycabtk_name/]:MakeChildOf( "[computeCycabtkInstanceName(model,parent)/]" )
+				[/if]
+				[/let]
+				[/if]
+			[/let]
+			[/let]
+			[/if]
+		[else]
+			[let cycabtk_name : String = computeCycabtkInstanceName(model, inst)]
+			[let libPath:String=getAttributeValue(elt, 'libraryPath', getStereotype(elt), null )]
+require "[libPath/]"
+			[/let]
+			[let componentName:String=getAttributeValue(elt, 'libraryComponentName', getStereotype(elt), null )]
+[cycabtk_name/] = [componentName/]( "[cycabtk_name/]" )
+			[let parent : InstanceSpecification = getParentInstanceSpecification(model,inst)]
+				[if( isAllocatedTo(parent, 'cycabTK') )]
+				[let eltp : Class =  findClassInModel(model, parent.classifier.name->asSequence()->first())]
+				[if( inheritsFrom(eltp, 'Robot') or inheritsFrom(eltp, 'RoboticSystem'))]
+[cycabtk_name/]:MakeChildOf( "[computeCycabtkInstanceName(model, parent)/]" )
+				[/if]
+				[/let]
+				[/if]
+			[/let]
+			[/let]
 			[/let]
 		[/if]
 		[/let]
+
 	[/for]
+
+--[protected (model.name + ' end')]
+
+--[/protected]
+
 [/file]
 
 

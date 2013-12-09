@@ -3,7 +3,7 @@
 [comment][import org::eclipse::robotml::generators::acceleo::mmqueries::MMQueries /][/comment]
 [import org::eclipse::robotml::generators::acceleo::mmqueries::GeneralQueries /] 
 [import org::eclipse::robotml::generators::acceleo::mmqueries::ArchitectureQueries /]
-[import generate_system/]
+[import generate_system /]
  
 [template public generateCamera(aClass : Class, model : Model)]
 

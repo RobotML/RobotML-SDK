@@ -18,9 +18,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.engine;bundle-version="3.2.1",
  org.eclipse.uml2.uml;bundle-version="4.1.1",
  org.eclipse.papyrus.robotml;bundle-version="0.10.0",
- org.eclipse.papyrus.robotml.generators.common;bundle-version="0.10.1",
+ org.eclipse.papyrus.robotml.generators.common;bundle-version="0.10.0",
  org.eclipse.papyrus.robotml.generators.common
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
+Import-Package: org.eclipse.papyrus.robotml.generators.common.mmqueries
 

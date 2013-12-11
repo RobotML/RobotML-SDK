@@ -184,7 +184,14 @@ public Task[interface.name/]
 	
 	[comment constructor/]// Constructor
 	[c.visibility/]: [c.name/] (const std::string& name)
-		: TaskContext(name) 						//Add Rostopics		
+		: [for (sp : Port | getServicePort())]				
+		[let interface : Interface = sp.type]
+				[if (isAProvidedPort(sp))]
+             Task[interface.name/]((std::string&)"[interface.name/]"),
+				[/if]
+		[/let]
+		[/for]
+		TaskContext(name) 							
 		[let elt : Element = c.oclAsType(Element)]
 		[for (port : Port | getAllPorts(elt))]
 			, [port.name/]("[port.name/]")	

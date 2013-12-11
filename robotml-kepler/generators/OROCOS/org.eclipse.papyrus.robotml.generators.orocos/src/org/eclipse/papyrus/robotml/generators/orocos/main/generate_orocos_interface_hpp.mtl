@@ -190,7 +190,7 @@ public:
 Task[Iname/](std::string& name): 
 TaskContext(name){
 [for (op : Operation | i.getAllOperations())]
-		this->provides("[Iname/]"->addOperation("[Iname/]_[op.name/]", &[Iname/]::[Iname/]_[op.name/], this, RTT::ClientThread)[getOperationSignatureName(op)/]
+		this->addOperation("[Iname/]_[op.name/]", &[Iname/]::[Iname/]_[op.name/], this, RTT::ClientThread)[getOperationSignatureName(op)/]
 			.doc("Description : [op.type.name.toUpper()/]");
 [/for]
 }

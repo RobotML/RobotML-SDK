@@ -42,12 +42,11 @@
 [/comment]
  [for (elt: NamedElement | getComponentModels(model))]	
 	[let c : Class = elt.oclAsType(Class)]
+[for (c: Class | getDefinedComponentsForPlatform(model, 'orocos'))]
 [comment]
-[for (c: Class | getDefinedComponentsForPlatform(model, 'OROCOS'))]
-[/comment]
 		[if (not isActuator(c)) and (not isSensor(c) and (not isEnvironment(c)) and (not isRobot(c)))]
 		
-[comment]
+
 			[if (hasStateMachine(c))]
 				[generateOrocosComponentLua(c, model)/] 
 						
@@ -59,11 +58,11 @@
 					[generateOrocosComponentCpp(c, model)/]				
 	[comment]		[/if] [/comment]
 		[/if]
-		[/if]
-[comment]	
+		[comment]		[/if] [/comment]
+	
 
 [/for]
-[/comment]
+
 [/let]
 [/for]
 

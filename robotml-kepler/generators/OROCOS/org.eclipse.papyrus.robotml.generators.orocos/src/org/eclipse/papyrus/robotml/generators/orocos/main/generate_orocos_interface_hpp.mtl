@@ -11,6 +11,39 @@
 #define __[i.name.toUpperCase()/]_hpp__
 #include <string>
 #include <numeric>
+	[for (op : Operation |getOperations(i))]
+	[if(getOperationInputParameters(op) <> null)]
+		[for (input: Element | getOperationInputParameters(op))]
+			[let p : Parameter = input]
+			[let paramType : Type = p.type]
+			[if(not isPrimitiveType(paramType))]
+				#include "../DataTypes/[paramType.name/].hpp"
+			[/if]
+	
+			[/let]
+[comment /if/]
+			[/let]
+
+			[/for]
+			
+			[for (input: Element | getOperationOutputParameters(op))]
+			[let p : Parameter = input]
+			[let paramType : Type = p.type]
+			[if(not isPrimitiveType(paramType))]
+				#include "../DataTypes/[paramType.name/].hpp"
+			[/if]
+	
+			[/let]
+[comment /if/]
+			[/let]
+
+			[/for]
+
+			
+
+
+    [/if]
+    [/for]
 [setLibraries(i)/]
 
 	class [i.name/] 
@@ -41,7 +74,7 @@
 	[/for]	
   
  	[for (op : Operation |getOperations(i))]
-		[if(op.type = null)] void [interface.name/]_[op.name/]( [/if]		
+		[if(op.type = null)] virtual void [interface.name/]_[op.name/]( [/if]		
 		[let t :Type = op.type]
 
 		[if(op.isStatic)]

@@ -60,15 +60,16 @@ namespace [s/]{
 [/for]
 [/let]
 [/let]
-class [c.name/]:
+class [c.name/]: RTT::TaskContext
+[comment]
 [for (sp : Port | getServicePort())]				
 		[let interface : Interface = sp.type]
 				[if (isAProvidedPort(sp))]
-	public Task[interface.name/],
+public Task[interface.name/]
 				[/if]
 		[/let]
 [/for]
-	public RTT::TaskContext 
+[/comment]
 {   [comment ports and services declaration/]
 	// ports, operations and attributes
 
@@ -173,7 +174,13 @@ class [c.name/]:
 			[/if]		
 		[/for]
 	[/let]
-
+	[for (sp : Port | getServicePort())]				
+		[let interface : Interface = sp.type]
+				[if (isAProvidedPort(sp))]
+             public: Task[interface.name/]* task[interface.name/];
+				[/if]
+		[/let]
+[/for]
 	
 	[comment constructor/]// Constructor
 	[c.visibility/]: [c.name/] (const std::string& name)
@@ -208,7 +215,13 @@ class [c.name/]:
 			[/if]
 		[/for]
 		[/comment]
-		
+		[for (sp : Port | getServicePort())]				
+		[let interface : Interface = sp.type]
+				[if (isAProvidedPort(sp))]
+        task[interface.name/] = new Task[interface.name/](this);
+				[/if]
+		[/let]
+		[/for]
 		[comment adding Properties to the constructor /]	
 		[let elt : Element = c.oclAsType(Element)]
 			[for (property : Property | getProperties(c,elt))]
@@ -236,7 +249,15 @@ class [c.name/]:
 		[/let]
 	}
 	[comment destructor/]// Destructor
-    ~[c.name/]() {}
+    ~[c.name/]() {
+		[for (sp : Port | getServicePort())]				
+		[let interface : Interface = sp.type]
+				[if (isAProvidedPort(sp))]
+        delete task[interface.name/];
+				[/if]
+		[/let]
+		[/for]
+	}
 	[comment components methods/]
 	/**
 	 * This function is for the configuration code.

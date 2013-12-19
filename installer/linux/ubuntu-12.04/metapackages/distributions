@@ -1,7 +1,0 @@
-Origin: Proteus
-Label: Proteus apt repository
-Codename: precise
-Architectures: i386
-Components: stable unstable
-SignWith: yes
-Description: Stable repository of Proteus project.

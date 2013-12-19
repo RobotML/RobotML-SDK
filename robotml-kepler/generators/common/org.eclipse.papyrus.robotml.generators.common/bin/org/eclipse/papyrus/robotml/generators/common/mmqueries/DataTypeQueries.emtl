@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="DataTypeQueries" nsURI="org::eclipse::papyrus::robotml::generators::common::mmqueries::DataTypeQueries" startHeaderPosition="29" endHeaderPosition="375">
+  <mtl:Module name="DataTypeQueries" nsURI="org::eclipse::papyrus::robotml::generators::common::mmqueries::DataTypeQueries" startHeaderPosition="30" endHeaderPosition="380">
     <input>
       <takesTypesFrom href="http://www.eclipse.org/uml2/4.0.0/UML#/"/>
     </input>
@@ -333,18 +333,18 @@
   </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/getMetamodelComposedDataTypes">
-      <details key="start" value="124"/>
-      <details key="end" value="377"/>
+      <details key="start" value="127"/>
+      <details key="end" value="382"/>
       <details key="line" value="4"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/getMetamodelComposedDataTypes/rootelt">
-      <details key="start" value="168"/>
-      <details key="end" value="185"/>
+      <details key="start" value="171"/>
+      <details key="end" value="188"/>
       <details key="line" value="4"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/getMetamodelComposedDataTypes/%">
-      <details key="start" value="211"/>
-      <details key="end" value="374"/>
+      <details key="start" value="215"/>
+      <details key="end" value="378"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/getMetamodelComposedDataTypes/%/self">
@@ -353,43 +353,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/getMetamodelComposedDataTypes/%/%">
-      <details key="start" value="218"/>
-      <details key="end" value="291"/>
+      <details key="start" value="222"/>
+      <details key="end" value="295"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/getMetamodelComposedDataTypes/%/%.1">
-      <details key="start" value="293"/>
-      <details key="end" value="354"/>
+      <details key="start" value="297"/>
+      <details key="end" value="358"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/getMetamodelComposedDataTypes/%/%.2">
-      <details key="start" value="356"/>
-      <details key="end" value="373"/>
+      <details key="start" value="360"/>
+      <details key="end" value="377"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.7" references="/0/getMetamodelComposedDataTypes/%/%.2/%/rootelt">
-      <details key="start" value="365"/>
-      <details key="end" value="372"/>
+      <details key="start" value="369"/>
+      <details key="end" value="376"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.8" references="/0/isRobotMLDataType">
-      <details key="start" value="378"/>
-      <details key="end" value="658"/>
+      <details key="start" value="384"/>
+      <details key="end" value="666"/>
       <details key="line" value="7"/>
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/isRobotMLDataType/root_model">
-      <details key="start" value="410"/>
-      <details key="end" value="430"/>
+      <details key="start" value="416"/>
+      <details key="end" value="436"/>
       <details key="line" value="7"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/isRobotMLDataType/datatype_name">
-      <details key="start" value="432"/>
-      <details key="end" value="454"/>
+      <details key="start" value="438"/>
+      <details key="end" value="460"/>
       <details key="line" value="7"/>
     </eAnnotations>
     <eAnnotations source="positions.11" references="/0/isRobotMLDataType/%">
-      <details key="start" value="469"/>
-      <details key="end" value="655"/>
+      <details key="start" value="476"/>
+      <details key="end" value="662"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.12" references="/0/isRobotMLDataType/%/self">
@@ -398,43 +398,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.13" references="/0/isRobotMLDataType/%/%">
-      <details key="start" value="476"/>
-      <details key="end" value="549"/>
+      <details key="start" value="483"/>
+      <details key="end" value="556"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.14" references="/0/isRobotMLDataType/%/%.1">
-      <details key="start" value="551"/>
-      <details key="end" value="618"/>
+      <details key="start" value="558"/>
+      <details key="end" value="625"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.15" references="/0/isRobotMLDataType/%/%.2">
-      <details key="start" value="620"/>
-      <details key="end" value="654"/>
+      <details key="start" value="627"/>
+      <details key="end" value="661"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.16" references="/0/isRobotMLDataType/%/%.2/%/root_model">
-      <details key="start" value="629"/>
-      <details key="end" value="639"/>
+      <details key="start" value="636"/>
+      <details key="end" value="646"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.17" references="/0/isRobotMLDataType/%/%.2/%.1/datatype_name">
-      <details key="start" value="640"/>
-      <details key="end" value="653"/>
+      <details key="start" value="647"/>
+      <details key="end" value="660"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.18" references="/0/getCppClassForDatatType">
-      <details key="start" value="659"/>
-      <details key="end" value="880"/>
+      <details key="start" value="668"/>
+      <details key="end" value="891"/>
       <details key="line" value="10"/>
     </eAnnotations>
     <eAnnotations source="positions.19" references="/0/getCppClassForDatatType/dt">
-      <details key="start" value="697"/>
-      <details key="end" value="710"/>
+      <details key="start" value="706"/>
+      <details key="end" value="719"/>
       <details key="line" value="10"/>
     </eAnnotations>
     <eAnnotations source="positions.20" references="/0/getCppClassForDatatType/%">
-      <details key="start" value="724"/>
-      <details key="end" value="877"/>
+      <details key="start" value="734"/>
+      <details key="end" value="887"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.21" references="/0/getCppClassForDatatType/%/self">
@@ -443,38 +443,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.22" references="/0/getCppClassForDatatType/%/%">
-      <details key="start" value="731"/>
-      <details key="end" value="804"/>
+      <details key="start" value="741"/>
+      <details key="end" value="814"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.23" references="/0/getCppClassForDatatType/%/%.1">
-      <details key="start" value="806"/>
-      <details key="end" value="862"/>
+      <details key="start" value="816"/>
+      <details key="end" value="872"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.24" references="/0/getCppClassForDatatType/%/%.2">
-      <details key="start" value="864"/>
-      <details key="end" value="876"/>
+      <details key="start" value="874"/>
+      <details key="end" value="886"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.25" references="/0/getCppClassForDatatType/%/%.2/%/dt">
-      <details key="start" value="873"/>
-      <details key="end" value="875"/>
+      <details key="start" value="883"/>
+      <details key="end" value="885"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.26" references="/0/getElementsDataType">
-      <details key="start" value="881"/>
-      <details key="end" value="1106"/>
+      <details key="start" value="893"/>
+      <details key="end" value="1120"/>
       <details key="line" value="13"/>
     </eAnnotations>
     <eAnnotations source="positions.27" references="/0/getElementsDataType/elt">
-      <details key="start" value="915"/>
-      <details key="end" value="926"/>
+      <details key="start" value="927"/>
+      <details key="end" value="938"/>
       <details key="line" value="13"/>
     </eAnnotations>
     <eAnnotations source="positions.28" references="/0/getElementsDataType/%">
-      <details key="start" value="956"/>
-      <details key="end" value="1103"/>
+      <details key="start" value="969"/>
+      <details key="end" value="1116"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.29" references="/0/getElementsDataType/%/self">
@@ -483,38 +483,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.30" references="/0/getElementsDataType/%/%">
-      <details key="start" value="963"/>
-      <details key="end" value="1036"/>
+      <details key="start" value="976"/>
+      <details key="end" value="1049"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.31" references="/0/getElementsDataType/%/%.1">
-      <details key="start" value="1038"/>
-      <details key="end" value="1087"/>
+      <details key="start" value="1051"/>
+      <details key="end" value="1100"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.32" references="/0/getElementsDataType/%/%.2">
-      <details key="start" value="1089"/>
-      <details key="end" value="1102"/>
+      <details key="start" value="1102"/>
+      <details key="end" value="1115"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.33" references="/0/getElementsDataType/%/%.2/%/elt">
-      <details key="start" value="1098"/>
-      <details key="end" value="1101"/>
+      <details key="start" value="1111"/>
+      <details key="end" value="1114"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.34" references="/0/isPrimitiveType">
-      <details key="start" value="1107"/>
-      <details key="end" value="1313"/>
+      <details key="start" value="1122"/>
+      <details key="end" value="1330"/>
       <details key="line" value="16"/>
     </eAnnotations>
     <eAnnotations source="positions.35" references="/0/isPrimitiveType/elt">
-      <details key="start" value="1137"/>
-      <details key="end" value="1150"/>
+      <details key="start" value="1152"/>
+      <details key="end" value="1165"/>
       <details key="line" value="16"/>
     </eAnnotations>
     <eAnnotations source="positions.36" references="/0/isPrimitiveType/%">
-      <details key="start" value="1165"/>
-      <details key="end" value="1310"/>
+      <details key="start" value="1181"/>
+      <details key="end" value="1326"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.37" references="/0/isPrimitiveType/%/self">
@@ -523,23 +523,23 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.38" references="/0/isPrimitiveType/%/%">
-      <details key="start" value="1172"/>
-      <details key="end" value="1245"/>
+      <details key="start" value="1188"/>
+      <details key="end" value="1261"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.39" references="/0/isPrimitiveType/%/%.1">
-      <details key="start" value="1247"/>
-      <details key="end" value="1294"/>
+      <details key="start" value="1263"/>
+      <details key="end" value="1310"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.40" references="/0/isPrimitiveType/%/%.2">
-      <details key="start" value="1296"/>
-      <details key="end" value="1309"/>
+      <details key="start" value="1312"/>
+      <details key="end" value="1325"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.41" references="/0/isPrimitiveType/%/%.2/%/elt">
-      <details key="start" value="1305"/>
-      <details key="end" value="1308"/>
+      <details key="start" value="1321"/>
+      <details key="end" value="1324"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

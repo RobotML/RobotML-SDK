@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="GenerateAthena" name="org.eclipse.robotml.generators.xtext.athena.simu">
-    <property name="ECLIPSE_HOME" value="../../../../../../../../Applications/eclipse_kepler"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../../Workspace"/>
+<project default="GenerateAthena" name="generators.xtext.athena.artemis">
+    <property name="ECLIPSE_HOME" value="C:/Documents and Settings/SCDPRPB/Desktop/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../../Workspace-dvpt"/>
 
     <!-- The classpath with only the dependencies used by the project -->
-    <path id="org.eclipse.robotml.generators.xtext.athena.simu.libraryclasspath">
-        <pathelement location="${ECLIPSE_WORKSPACE}/org.eclipse.robotml.generators.xtext.athena.simu/bin"/>
+    <path id="generators.xtext.athena.artemis.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/generators.xtext.athena.artemis/bin"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.9.0.v20130326-1255.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.9.1.v20130814-1242.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.6.200.v20130402-1505.jar"/>
@@ -43,23 +43,23 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.apache.commons.logging_1.1.1.v201101211721.jar"/>
     </path>
 
-    <path id="org.eclipse.robotml.generators.xtext.athena.simu.classpath">
-        <path refid="org.eclipse.robotml.generators.xtext.athena.simu.libraryclasspath"/>
+    <path id="generators.xtext.athena.artemis.classpath">
+        <path refid="generators.xtext.athena.artemis.libraryclasspath"/>
     </path>
 
     <!-- The classpath with only the jars available in the plugin folder of Eclipse -->
-    <path id="org.eclipse.robotml.generators.xtext.athena.simu.libraryclasspath.alljars">
-        <pathelement location="../org.eclipse.robotml.generators.xtext.athena.simu/bin"/>
+    <path id="generators.xtext.athena.artemis.libraryclasspath.alljars">
+        <pathelement location="../generators.xtext.athena.artemis/bin"/>
         <fileset dir="${ECLIPSE_HOME}/plugins/" includes="*.jar"/>
     </path>
 
-    <path id="org.eclipse.robotml.generators.xtext.athena.simu.classpath.alljars">
-        <path refid="org.eclipse.robotml.generators.xtext.athena.simu.libraryclasspath.alljars"/>
+    <path id="generators.xtext.athena.artemis.classpath.alljars">
+        <path refid="generators.xtext.athena.artemis.libraryclasspath.alljars"/>
     </path>
 
     <!-- The default task with the jars used by this project -->
     <target name="GenerateAthena">
-        <java classname="org.eclipse.robotml.generators.xtext.athena.simu.main.GenerateAthena" classpathref="org.eclipse.robotml.generators.xtext.athena.simu.classpath">
+        <java classname="org.eclipse.robotml.generators.xtext.athena.simu.main.GenerateAthena" classpathref="generators.xtext.athena.artemis.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -70,7 +70,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="GenerateAthena.alljars">
-        <java classname="org.eclipse.robotml.generators.xtext.athena.simu.main.GenerateAthena" classpathref="org.eclipse.robotml.generators.xtext.athena.simu.classpath">
+        <java classname="org.eclipse.robotml.generators.xtext.athena.simu.main.GenerateAthena" classpathref="generators.xtext.athena.artemis.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>

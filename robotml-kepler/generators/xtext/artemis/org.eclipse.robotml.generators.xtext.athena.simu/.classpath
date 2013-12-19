@@ -4,6 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.papyrus.robotml.generators.common"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.xtext.AthenaDSL"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.papyrus.xtext.athenaDSL"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

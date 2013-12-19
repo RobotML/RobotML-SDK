@@ -1,10 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.xtext.AthenaDSL.ui
-Bundle-Vendor: My Company
-Bundle-Version: 1.0.0
-Bundle-SymbolicName: org.xtext.AthenaDSL.ui; singleton:=true
-Bundle-ActivationPolicy: lazy
+Bundle-Name: Athena DSL user interface - syntaxic coloration (incubation)
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-Version: 0.10.0.qualifier
+Bundle-SymbolicName: org.eclipse.papyrus.xtext.athenaDSL.ui;singleton:=true
 Require-Bundle: org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
  org.eclipse.ui.ide;bundle-version="3.5.0",
@@ -14,11 +13,10 @@ Require-Bundle: org.eclipse.xtext.ui,
  org.antlr.runtime,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
- org.eclipse.papyrus.xtext.AthenaDSL;bundle-version="0.10.0"
+ org.eclipse.papyrus.xtext.athenaDSL;bundle-version="[0.10.0.qualifier,0.10.0.qualifier]"
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.xtext.ui.contentassist.antlr,
  org.xtext.ui.internal,
  org.xtext.ui.contentassist
-Bundle-Activator: org.xtext.ui.internal.AthenaDSLActivator

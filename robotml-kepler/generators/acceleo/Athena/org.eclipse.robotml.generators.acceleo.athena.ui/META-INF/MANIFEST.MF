@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Athena Module IDE Plug-in
-Bundle-SymbolicName: org.eclipse.robotml.generators.acceleo.athena.ui;singleton:=true
+Bundle-SymbolicName: org.eclipse.papyrus.robotml.generators.athena.ui;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Activator: org.eclipse.robotml.generators.acceleo.athena.ui.Activator
 Bundle-Vendor: Eclipse Modeling Project
@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.acceleo.engine,
  org.eclipse.gmf.runtime.emf.commands.core;bundle-version="1.4.0",
  org.eclipse.gmf.runtime.common.ui;bundle-version="1.5.0",
- org.eclipse.robotml.generators.acceleo.athena;bundle-version="1.0.0",
+ org.eclipse.papyrus.robotml.generators.athena;bundle-version="1.0.0",
  org.eclipse.papyrus.infra.gmfdiag.commands;bundle-version="0.9.1",
  org.eclipse.papyrus.infra.widgets.toolbox;bundle-version="0.9.1"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

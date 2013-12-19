@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
+   <description>
+      this update site is dedicated to the integration of the dynamic validation of the models created using robotML DSL and its extensions
+   </description>
    <feature url="features/org.eclipse.papyrus.robotml.generators.vle.feature_1.0.0.qualifier.jar" id="org.eclipse.papyrus.robotml.generators.vle.feature" version="1.0.0.qualifier">
       <category name="Dynamic_validation"/>
    </feature>

@@ -3,8 +3,8 @@ package org.eclipse.robotml.generators.xtext.athena.simu.main;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.antlr.runtime.tree.TreeIterator;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.xtext.athenaDSL.DataType;
 import org.xtext.athenaDSL.FuncProc;
 import org.xtext.athenaDSL.Import;

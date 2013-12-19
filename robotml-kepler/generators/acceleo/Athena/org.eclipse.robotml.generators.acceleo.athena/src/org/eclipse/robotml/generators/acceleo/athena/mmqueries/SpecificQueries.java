@@ -479,7 +479,7 @@ public class SpecificQueries {
 	}
 	
 	/**
-	 * Check if funtion is an Athena processing
+	 * Check if funtion is an Athena procapplyExternalsInputsessing
 	 * @param op
 	 * @return check result
 	 */
@@ -500,13 +500,16 @@ public class SpecificQueries {
 				{
 					if(expr instanceof org.eclipse.uml2.uml.OpaqueBehavior && expr.getSpecification() != null)
 					{
-						BehavioralFeature feat = expr.getSpecification();
-						
-						if(feat instanceof org.eclipse.uml2.uml.Operation &&
-								feat.getName().equals(op.getName()))
+						if((expr instanceof FunctionBehavior) == false)
 						{
-							result = true;
-							break;
+							BehavioralFeature feat = expr.getSpecification();
+							
+							if(feat instanceof org.eclipse.uml2.uml.Operation &&
+									feat.getName().equals(op.getName()))
+							{
+								result = true;
+								break;
+							}
 						}
 					}
 				}
@@ -767,7 +770,7 @@ public class SpecificQueries {
 					{
 						String params = "";
 						for(Parameter param : ((Operation)feature).getOwnedParameters())
-							params += param.getName() + ",";
+							params += param.getName().toLowerCase() + ",";
 						
 						result = SpecificQueries._interactionTag + " " + feature.getName() + "(" + params.substring(0, params.length() - 1) + ")";
 					}

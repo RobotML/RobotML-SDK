@@ -129,7 +129,7 @@
       </expression>
       <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
     </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Query" name="getInstance" visibility="Public">
+    <ownedModuleElement xsi:type="mtl:Query" name="getParentInstanceSpecification" visibility="Public">
       <parameter name="elt">
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
       </parameter>
@@ -139,6 +139,41 @@
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/invoke">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/17">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="org.eclipse.robotml.generators.acceleo.mmqueries.DeploymentQueries">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="getParentInstanceSpecification(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.InstanceSpecification)">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:CollectionLiteralExp" eType="/3/Sequence(PackageableElement)" kind="Sequence">
+          <part xsi:type="ocl.ecore:CollectionItem">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+            <item xsi:type="ocl.ecore:VariableExp" name="elt" referredVariable="/0/getParentInstanceSpecification/elt">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+            </item>
+          </part>
+          <part xsi:type="ocl.ecore:CollectionItem">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//InstanceSpecification"/>
+            <item xsi:type="ocl.ecore:VariableExp" name="inst" referredVariable="/0/getParentInstanceSpecification/inst">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//InstanceSpecification"/>
+            </item>
+          </part>
+        </argument>
+      </expression>
+      <type xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//InstanceSpecification"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getInstance" visibility="Public">
+      <parameter name="elt">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </parameter>
+      <parameter name="inst">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//InstanceSpecification"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/invoke">
+        <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/20">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="org.eclipse.papyrus.robotml.generators.common.mmqueries.DeploymentQueries">
@@ -173,7 +208,7 @@
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/invoke">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/20">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/23">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//InstanceSpecification"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="org.eclipse.papyrus.robotml.generators.common.mmqueries.DeploymentQueries">
@@ -205,7 +240,7 @@
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/invoke">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/23">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/26">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//InstanceSpecification"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="org.eclipse.papyrus.robotml.generators.common.mmqueries.DeploymentQueries">
@@ -234,7 +269,7 @@
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/invoke">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/26">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/29">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="org.eclipse.papyrus.robotml.generators.common.mmqueries.DeploymentQueries">
@@ -268,7 +303,7 @@
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/invoke">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/29">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/32">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="org.eclipse.papyrus.robotml.generators.common.mmqueries.DeploymentQueries">
@@ -299,7 +334,7 @@
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/invoke">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/32">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/35">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="org.eclipse.papyrus.robotml.generators.common.mmqueries.DeploymentQueries">
@@ -324,7 +359,7 @@
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/invoke">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/35">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/38">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="org.eclipse.papyrus.robotml.generators.common.mmqueries.DeploymentQueries">
@@ -352,7 +387,7 @@
       </parameter>
       <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/invoke">
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/38">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/41">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="org.eclipse.papyrus.robotml.generators.common.mmqueries.DeploymentQueries">
@@ -437,6 +472,19 @@
         </eAnnotations>
         <eAnnotations source="MTL" references="/0/getParentName"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="inst">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//InstanceSpecification"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getParentInstanceSpecification">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getParentInstanceSpecification"/>
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//InstanceSpecification"/>
+        <eParameters name="elt">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </eParameters>
         <eParameters name="inst">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//InstanceSpecification"/>
         </eParameters>
@@ -639,6 +687,15 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//InstanceSpecification"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -901,374 +958,424 @@
       <details key="end" value="1956"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.37" references="/0/getInstance">
+    <eAnnotations source="positions.37" references="/0/getParentInstanceSpecification">
       <details key="start" value="1962"/>
-      <details key="end" value="2238"/>
+      <details key="end" value="2283"/>
       <details key="line" value="35"/>
     </eAnnotations>
-    <eAnnotations source="positions.38" references="/0/getInstance/elt">
-      <details key="start" value="1988"/>
-      <details key="end" value="1999"/>
+    <eAnnotations source="positions.38" references="/0/getParentInstanceSpecification/elt">
+      <details key="start" value="2007"/>
+      <details key="end" value="2018"/>
       <details key="line" value="35"/>
     </eAnnotations>
-    <eAnnotations source="positions.39" references="/0/getInstance/inst">
-      <details key="start" value="2001"/>
-      <details key="end" value="2029"/>
+    <eAnnotations source="positions.39" references="/0/getParentInstanceSpecification/inst">
+      <details key="start" value="2020"/>
+      <details key="end" value="2048"/>
       <details key="line" value="35"/>
     </eAnnotations>
-    <eAnnotations source="positions.40" references="/0/getInstance/%">
-      <details key="start" value="2045"/>
-      <details key="end" value="2235"/>
+    <eAnnotations source="positions.40" references="/0/getParentInstanceSpecification/%">
+      <details key="start" value="2077"/>
+      <details key="end" value="2280"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.41" references="/0/getInstance/%/self">
+    <eAnnotations source="positions.41" references="/0/getParentInstanceSpecification/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.42" references="/0/getInstance/%/%">
-      <details key="start" value="2052"/>
-      <details key="end" value="2127"/>
+    <eAnnotations source="positions.42" references="/0/getParentInstanceSpecification/%/%">
+      <details key="start" value="2084"/>
+      <details key="end" value="2152"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.43" references="/0/getInstance/%/%.1">
-      <details key="start" value="2129"/>
-      <details key="end" value="2213"/>
+    <eAnnotations source="positions.43" references="/0/getParentInstanceSpecification/%/%.1">
+      <details key="start" value="2154"/>
+      <details key="end" value="2258"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.44" references="/0/getInstance/%/%.2">
-      <details key="start" value="2215"/>
-      <details key="end" value="2234"/>
+    <eAnnotations source="positions.44" references="/0/getParentInstanceSpecification/%/%.2">
+      <details key="start" value="2260"/>
+      <details key="end" value="2279"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.45" references="/0/getInstance/%/%.2/%/elt">
-      <details key="start" value="2224"/>
-      <details key="end" value="2227"/>
+    <eAnnotations source="positions.45" references="/0/getParentInstanceSpecification/%/%.2/%/elt">
+      <details key="start" value="2269"/>
+      <details key="end" value="2272"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.46" references="/0/getInstance/%/%.2/%.1/inst">
-      <details key="start" value="2229"/>
-      <details key="end" value="2233"/>
+    <eAnnotations source="positions.46" references="/0/getParentInstanceSpecification/%/%.2/%.1/inst">
+      <details key="start" value="2274"/>
+      <details key="end" value="2278"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.47" references="/0/isAllocatedTo">
-      <details key="start" value="2239"/>
-      <details key="end" value="2508"/>
+    <eAnnotations source="positions.47" references="/0/getInstance">
+      <details key="start" value="2284"/>
+      <details key="end" value="2560"/>
       <details key="line" value="38"/>
     </eAnnotations>
-    <eAnnotations source="positions.48" references="/0/isAllocatedTo/inst">
-      <details key="start" value="2267"/>
-      <details key="end" value="2295"/>
+    <eAnnotations source="positions.48" references="/0/getInstance/elt">
+      <details key="start" value="2310"/>
+      <details key="end" value="2321"/>
       <details key="line" value="38"/>
     </eAnnotations>
-    <eAnnotations source="positions.49" references="/0/isAllocatedTo/pfn">
-      <details key="start" value="2297"/>
-      <details key="end" value="2308"/>
-      <details key="line" value="38"/>
-    </eAnnotations>
-    <eAnnotations source="positions.50" references="/0/isAllocatedTo/%">
+    <eAnnotations source="positions.49" references="/0/getInstance/inst">
       <details key="start" value="2323"/>
-      <details key="end" value="2505"/>
+      <details key="end" value="2351"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/getInstance/%">
+      <details key="start" value="2367"/>
+      <details key="end" value="2557"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.51" references="/0/isAllocatedTo/%/self">
+    <eAnnotations source="positions.51" references="/0/getInstance/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.52" references="/0/isAllocatedTo/%/%">
-      <details key="start" value="2330"/>
-      <details key="end" value="2405"/>
+    <eAnnotations source="positions.52" references="/0/getInstance/%/%">
+      <details key="start" value="2374"/>
+      <details key="end" value="2449"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.53" references="/0/isAllocatedTo/%/%.1">
-      <details key="start" value="2407"/>
-      <details key="end" value="2483"/>
+    <eAnnotations source="positions.53" references="/0/getInstance/%/%.1">
+      <details key="start" value="2451"/>
+      <details key="end" value="2535"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.54" references="/0/isAllocatedTo/%/%.2">
-      <details key="start" value="2485"/>
-      <details key="end" value="2504"/>
+    <eAnnotations source="positions.54" references="/0/getInstance/%/%.2">
+      <details key="start" value="2537"/>
+      <details key="end" value="2556"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.55" references="/0/isAllocatedTo/%/%.2/%/inst">
-      <details key="start" value="2494"/>
-      <details key="end" value="2498"/>
+    <eAnnotations source="positions.55" references="/0/getInstance/%/%.2/%/elt">
+      <details key="start" value="2546"/>
+      <details key="end" value="2549"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.56" references="/0/isAllocatedTo/%/%.2/%.1/pfn">
-      <details key="start" value="2500"/>
-      <details key="end" value="2503"/>
+    <eAnnotations source="positions.56" references="/0/getInstance/%/%.2/%.1/inst">
+      <details key="start" value="2551"/>
+      <details key="end" value="2555"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.57" references="/0/getAllocationName">
-      <details key="start" value="2509"/>
-      <details key="end" value="2750"/>
+    <eAnnotations source="positions.57" references="/0/isAllocatedTo">
+      <details key="start" value="2561"/>
+      <details key="end" value="2830"/>
       <details key="line" value="41"/>
     </eAnnotations>
-    <eAnnotations source="positions.58" references="/0/getAllocationName/inst">
-      <details key="start" value="2541"/>
-      <details key="end" value="2569"/>
+    <eAnnotations source="positions.58" references="/0/isAllocatedTo/inst">
+      <details key="start" value="2589"/>
+      <details key="end" value="2617"/>
       <details key="line" value="41"/>
     </eAnnotations>
-    <eAnnotations source="positions.59" references="/0/getAllocationName/%">
-      <details key="start" value="2583"/>
-      <details key="end" value="2747"/>
+    <eAnnotations source="positions.59" references="/0/isAllocatedTo/pfn">
+      <details key="start" value="2619"/>
+      <details key="end" value="2630"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/isAllocatedTo/%">
+      <details key="start" value="2645"/>
+      <details key="end" value="2827"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.60" references="/0/getAllocationName/%/self">
+    <eAnnotations source="positions.61" references="/0/isAllocatedTo/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.61" references="/0/getAllocationName/%/%">
-      <details key="start" value="2590"/>
-      <details key="end" value="2665"/>
+    <eAnnotations source="positions.62" references="/0/isAllocatedTo/%/%">
+      <details key="start" value="2652"/>
+      <details key="end" value="2727"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.62" references="/0/getAllocationName/%/%.1">
-      <details key="start" value="2667"/>
-      <details key="end" value="2730"/>
+    <eAnnotations source="positions.63" references="/0/isAllocatedTo/%/%.1">
+      <details key="start" value="2729"/>
+      <details key="end" value="2805"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.63" references="/0/getAllocationName/%/%.2">
-      <details key="start" value="2732"/>
-      <details key="end" value="2746"/>
+    <eAnnotations source="positions.64" references="/0/isAllocatedTo/%/%.2">
+      <details key="start" value="2807"/>
+      <details key="end" value="2826"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.64" references="/0/getAllocationName/%/%.2/%/inst">
-      <details key="start" value="2741"/>
-      <details key="end" value="2745"/>
+    <eAnnotations source="positions.65" references="/0/isAllocatedTo/%/%.2/%/inst">
+      <details key="start" value="2816"/>
+      <details key="end" value="2820"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.65" references="/0/getDefinedComponentsForPlatform">
-      <details key="start" value="2751"/>
-      <details key="end" value="3032"/>
+    <eAnnotations source="positions.66" references="/0/isAllocatedTo/%/%.2/%.1/pfn">
+      <details key="start" value="2822"/>
+      <details key="end" value="2825"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/getAllocationName">
+      <details key="start" value="2831"/>
+      <details key="end" value="3072"/>
       <details key="line" value="44"/>
     </eAnnotations>
-    <eAnnotations source="positions.66" references="/0/getDefinedComponentsForPlatform/elt">
-      <details key="start" value="2797"/>
-      <details key="end" value="2808"/>
+    <eAnnotations source="positions.68" references="/0/getAllocationName/inst">
+      <details key="start" value="2863"/>
+      <details key="end" value="2891"/>
       <details key="line" value="44"/>
     </eAnnotations>
-    <eAnnotations source="positions.67" references="/0/getDefinedComponentsForPlatform/pfn">
-      <details key="start" value="2810"/>
-      <details key="end" value="2821"/>
-      <details key="line" value="44"/>
-    </eAnnotations>
-    <eAnnotations source="positions.68" references="/0/getDefinedComponentsForPlatform/%">
-      <details key="start" value="2845"/>
-      <details key="end" value="3029"/>
+    <eAnnotations source="positions.69" references="/0/getAllocationName/%">
+      <details key="start" value="2905"/>
+      <details key="end" value="3069"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.69" references="/0/getDefinedComponentsForPlatform/%/self">
+    <eAnnotations source="positions.70" references="/0/getAllocationName/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.70" references="/0/getDefinedComponentsForPlatform/%/%">
-      <details key="start" value="2852"/>
-      <details key="end" value="2927"/>
+    <eAnnotations source="positions.71" references="/0/getAllocationName/%/%">
+      <details key="start" value="2912"/>
+      <details key="end" value="2987"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.71" references="/0/getDefinedComponentsForPlatform/%/%.1">
-      <details key="start" value="2929"/>
-      <details key="end" value="3008"/>
+    <eAnnotations source="positions.72" references="/0/getAllocationName/%/%.1">
+      <details key="start" value="2989"/>
+      <details key="end" value="3052"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.72" references="/0/getDefinedComponentsForPlatform/%/%.2">
-      <details key="start" value="3010"/>
-      <details key="end" value="3028"/>
+    <eAnnotations source="positions.73" references="/0/getAllocationName/%/%.2">
+      <details key="start" value="3054"/>
+      <details key="end" value="3068"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.73" references="/0/getDefinedComponentsForPlatform/%/%.2/%/elt">
-      <details key="start" value="3019"/>
-      <details key="end" value="3022"/>
+    <eAnnotations source="positions.74" references="/0/getAllocationName/%/%.2/%/inst">
+      <details key="start" value="3063"/>
+      <details key="end" value="3067"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.74" references="/0/getDefinedComponentsForPlatform/%/%.2/%.1/pfn">
-      <details key="start" value="3024"/>
-      <details key="end" value="3027"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.75" references="/0/getDefinedComponentsForPlatform2">
-      <details key="start" value="3033"/>
-      <details key="end" value="3329"/>
+    <eAnnotations source="positions.75" references="/0/getDefinedComponentsForPlatform">
+      <details key="start" value="3073"/>
+      <details key="end" value="3354"/>
       <details key="line" value="47"/>
     </eAnnotations>
-    <eAnnotations source="positions.76" references="/0/getDefinedComponentsForPlatform2/model">
-      <details key="start" value="3080"/>
-      <details key="end" value="3093"/>
+    <eAnnotations source="positions.76" references="/0/getDefinedComponentsForPlatform/elt">
+      <details key="start" value="3119"/>
+      <details key="end" value="3130"/>
       <details key="line" value="47"/>
     </eAnnotations>
-    <eAnnotations source="positions.77" references="/0/getDefinedComponentsForPlatform2/pfmName">
-      <details key="start" value="3095"/>
-      <details key="end" value="3111"/>
+    <eAnnotations source="positions.77" references="/0/getDefinedComponentsForPlatform/pfn">
+      <details key="start" value="3132"/>
+      <details key="end" value="3143"/>
       <details key="line" value="47"/>
     </eAnnotations>
-    <eAnnotations source="positions.78" references="/0/getDefinedComponentsForPlatform2/%">
-      <details key="start" value="3134"/>
-      <details key="end" value="3325"/>
+    <eAnnotations source="positions.78" references="/0/getDefinedComponentsForPlatform/%">
+      <details key="start" value="3167"/>
+      <details key="end" value="3351"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.79" references="/0/getDefinedComponentsForPlatform2/%/self">
+    <eAnnotations source="positions.79" references="/0/getDefinedComponentsForPlatform/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.80" references="/0/getDefinedComponentsForPlatform2/%/%">
-      <details key="start" value="3141"/>
-      <details key="end" value="3216"/>
+    <eAnnotations source="positions.80" references="/0/getDefinedComponentsForPlatform/%/%">
+      <details key="start" value="3174"/>
+      <details key="end" value="3249"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.81" references="/0/getDefinedComponentsForPlatform2/%/%.1">
-      <details key="start" value="3218"/>
-      <details key="end" value="3298"/>
+    <eAnnotations source="positions.81" references="/0/getDefinedComponentsForPlatform/%/%.1">
+      <details key="start" value="3251"/>
+      <details key="end" value="3330"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.82" references="/0/getDefinedComponentsForPlatform2/%/%.2">
-      <details key="start" value="3300"/>
-      <details key="end" value="3324"/>
+    <eAnnotations source="positions.82" references="/0/getDefinedComponentsForPlatform/%/%.2">
+      <details key="start" value="3332"/>
+      <details key="end" value="3350"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.83" references="/0/getDefinedComponentsForPlatform2/%/%.2/%/model">
-      <details key="start" value="3309"/>
-      <details key="end" value="3314"/>
+    <eAnnotations source="positions.83" references="/0/getDefinedComponentsForPlatform/%/%.2/%/elt">
+      <details key="start" value="3341"/>
+      <details key="end" value="3344"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.84" references="/0/getDefinedComponentsForPlatform2/%/%.2/%.1/pfmName">
-      <details key="start" value="3316"/>
-      <details key="end" value="3323"/>
+    <eAnnotations source="positions.84" references="/0/getDefinedComponentsForPlatform/%/%.2/%.1/pfn">
+      <details key="start" value="3346"/>
+      <details key="end" value="3349"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.85" references="/0/getDeploymentPlansInModel">
-      <details key="start" value="3330"/>
-      <details key="end" value="3576"/>
+    <eAnnotations source="positions.85" references="/0/getDefinedComponentsForPlatform2">
+      <details key="start" value="3355"/>
+      <details key="end" value="3651"/>
       <details key="line" value="50"/>
     </eAnnotations>
-    <eAnnotations source="positions.86" references="/0/getDeploymentPlansInModel/model">
-      <details key="start" value="3370"/>
-      <details key="end" value="3383"/>
+    <eAnnotations source="positions.86" references="/0/getDefinedComponentsForPlatform2/model">
+      <details key="start" value="3402"/>
+      <details key="end" value="3415"/>
       <details key="line" value="50"/>
     </eAnnotations>
-    <eAnnotations source="positions.87" references="/0/getDeploymentPlansInModel/%">
-      <details key="start" value="3415"/>
-      <details key="end" value="3572"/>
+    <eAnnotations source="positions.87" references="/0/getDefinedComponentsForPlatform2/pfmName">
+      <details key="start" value="3417"/>
+      <details key="end" value="3433"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/getDefinedComponentsForPlatform2/%">
+      <details key="start" value="3456"/>
+      <details key="end" value="3647"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.88" references="/0/getDeploymentPlansInModel/%/self">
+    <eAnnotations source="positions.89" references="/0/getDefinedComponentsForPlatform2/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.89" references="/0/getDeploymentPlansInModel/%/%">
-      <details key="start" value="3422"/>
-      <details key="end" value="3497"/>
+    <eAnnotations source="positions.90" references="/0/getDefinedComponentsForPlatform2/%/%">
+      <details key="start" value="3463"/>
+      <details key="end" value="3538"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.90" references="/0/getDeploymentPlansInModel/%/%.1">
-      <details key="start" value="3499"/>
-      <details key="end" value="3554"/>
+    <eAnnotations source="positions.91" references="/0/getDefinedComponentsForPlatform2/%/%.1">
+      <details key="start" value="3540"/>
+      <details key="end" value="3620"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.91" references="/0/getDeploymentPlansInModel/%/%.2">
-      <details key="start" value="3556"/>
-      <details key="end" value="3571"/>
+    <eAnnotations source="positions.92" references="/0/getDefinedComponentsForPlatform2/%/%.2">
+      <details key="start" value="3622"/>
+      <details key="end" value="3646"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.92" references="/0/getDeploymentPlansInModel/%/%.2/%/model">
-      <details key="start" value="3565"/>
-      <details key="end" value="3570"/>
+    <eAnnotations source="positions.93" references="/0/getDefinedComponentsForPlatform2/%/%.2/%/model">
+      <details key="start" value="3631"/>
+      <details key="end" value="3636"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.93" references="/0/getDeploymentPlanPackagesInModel">
-      <details key="start" value="3577"/>
-      <details key="end" value="3830"/>
+    <eAnnotations source="positions.94" references="/0/getDefinedComponentsForPlatform2/%/%.2/%.1/pfmName">
+      <details key="start" value="3638"/>
+      <details key="end" value="3645"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/getDeploymentPlansInModel">
+      <details key="start" value="3652"/>
+      <details key="end" value="3898"/>
       <details key="line" value="53"/>
     </eAnnotations>
-    <eAnnotations source="positions.94" references="/0/getDeploymentPlanPackagesInModel/model">
-      <details key="start" value="3624"/>
-      <details key="end" value="3637"/>
+    <eAnnotations source="positions.96" references="/0/getDeploymentPlansInModel/model">
+      <details key="start" value="3692"/>
+      <details key="end" value="3705"/>
       <details key="line" value="53"/>
     </eAnnotations>
-    <eAnnotations source="positions.95" references="/0/getDeploymentPlanPackagesInModel/%">
-      <details key="start" value="3662"/>
-      <details key="end" value="3826"/>
+    <eAnnotations source="positions.97" references="/0/getDeploymentPlansInModel/%">
+      <details key="start" value="3737"/>
+      <details key="end" value="3894"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.96" references="/0/getDeploymentPlanPackagesInModel/%/self">
+    <eAnnotations source="positions.98" references="/0/getDeploymentPlansInModel/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.97" references="/0/getDeploymentPlanPackagesInModel/%/%">
-      <details key="start" value="3669"/>
-      <details key="end" value="3744"/>
+    <eAnnotations source="positions.99" references="/0/getDeploymentPlansInModel/%/%">
+      <details key="start" value="3744"/>
+      <details key="end" value="3819"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.98" references="/0/getDeploymentPlanPackagesInModel/%/%.1">
-      <details key="start" value="3746"/>
-      <details key="end" value="3808"/>
+    <eAnnotations source="positions.100" references="/0/getDeploymentPlansInModel/%/%.1">
+      <details key="start" value="3821"/>
+      <details key="end" value="3876"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.99" references="/0/getDeploymentPlanPackagesInModel/%/%.2">
-      <details key="start" value="3810"/>
-      <details key="end" value="3825"/>
+    <eAnnotations source="positions.101" references="/0/getDeploymentPlansInModel/%/%.2">
+      <details key="start" value="3878"/>
+      <details key="end" value="3893"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.100" references="/0/getDeploymentPlanPackagesInModel/%/%.2/%/model">
-      <details key="start" value="3819"/>
-      <details key="end" value="3824"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.101" references="/0/getDeploymentPlanInstanceSpecsForPlatform">
-      <details key="start" value="3831"/>
-      <details key="end" value="4183"/>
-      <details key="line" value="56"/>
-    </eAnnotations>
-    <eAnnotations source="positions.102" references="/0/getDeploymentPlanInstanceSpecsForPlatform/deploymentPlan">
+    <eAnnotations source="positions.102" references="/0/getDeploymentPlansInModel/%/%.2/%/model">
       <details key="start" value="3887"/>
-      <details key="end" value="3911"/>
-      <details key="line" value="56"/>
-    </eAnnotations>
-    <eAnnotations source="positions.103" references="/0/getDeploymentPlanInstanceSpecsForPlatform/pfmName">
-      <details key="start" value="3913"/>
-      <details key="end" value="3929"/>
-      <details key="line" value="56"/>
-    </eAnnotations>
-    <eAnnotations source="positions.104" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%">
-      <details key="start" value="3968"/>
-      <details key="end" value="4179"/>
+      <details key="end" value="3892"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.105" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/self">
+    <eAnnotations source="positions.103" references="/0/getDeploymentPlanPackagesInModel">
+      <details key="start" value="3899"/>
+      <details key="end" value="4152"/>
+      <details key="line" value="56"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/getDeploymentPlanPackagesInModel/model">
+      <details key="start" value="3946"/>
+      <details key="end" value="3959"/>
+      <details key="line" value="56"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/getDeploymentPlanPackagesInModel/%">
+      <details key="start" value="3984"/>
+      <details key="end" value="4148"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/getDeploymentPlanPackagesInModel/%/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.106" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%">
-      <details key="start" value="3975"/>
-      <details key="end" value="4050"/>
+    <eAnnotations source="positions.107" references="/0/getDeploymentPlanPackagesInModel/%/%">
+      <details key="start" value="3991"/>
+      <details key="end" value="4066"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.107" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%.1">
-      <details key="start" value="4052"/>
-      <details key="end" value="4143"/>
+    <eAnnotations source="positions.108" references="/0/getDeploymentPlanPackagesInModel/%/%.1">
+      <details key="start" value="4068"/>
+      <details key="end" value="4130"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.108" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%.2">
-      <details key="start" value="4145"/>
-      <details key="end" value="4178"/>
+    <eAnnotations source="positions.109" references="/0/getDeploymentPlanPackagesInModel/%/%.2">
+      <details key="start" value="4132"/>
+      <details key="end" value="4147"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.109" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%.2/%/deploymentPlan">
-      <details key="start" value="4154"/>
-      <details key="end" value="4168"/>
+    <eAnnotations source="positions.110" references="/0/getDeploymentPlanPackagesInModel/%/%.2/%/model">
+      <details key="start" value="4141"/>
+      <details key="end" value="4146"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.110" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%.2/%.1/pfmName">
-      <details key="start" value="4170"/>
-      <details key="end" value="4177"/>
+    <eAnnotations source="positions.111" references="/0/getDeploymentPlanInstanceSpecsForPlatform">
+      <details key="start" value="4153"/>
+      <details key="end" value="4505"/>
+      <details key="line" value="59"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/getDeploymentPlanInstanceSpecsForPlatform/deploymentPlan">
+      <details key="start" value="4209"/>
+      <details key="end" value="4233"/>
+      <details key="line" value="59"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/getDeploymentPlanInstanceSpecsForPlatform/pfmName">
+      <details key="start" value="4235"/>
+      <details key="end" value="4251"/>
+      <details key="line" value="59"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%">
+      <details key="start" value="4290"/>
+      <details key="end" value="4501"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%">
+      <details key="start" value="4297"/>
+      <details key="end" value="4372"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%.1">
+      <details key="start" value="4374"/>
+      <details key="end" value="4465"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%.2">
+      <details key="start" value="4467"/>
+      <details key="end" value="4500"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%.2/%/deploymentPlan">
+      <details key="start" value="4476"/>
+      <details key="end" value="4490"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/getDeploymentPlanInstanceSpecsForPlatform/%/%.2/%.1/pfmName">
+      <details key="start" value="4492"/>
+      <details key="end" value="4499"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

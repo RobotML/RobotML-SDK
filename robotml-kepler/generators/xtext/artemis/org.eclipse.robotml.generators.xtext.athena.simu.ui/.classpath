@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/org.eclipse.robotml.generators.xtext.athena.simu"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.xtext.AthenaDSL"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

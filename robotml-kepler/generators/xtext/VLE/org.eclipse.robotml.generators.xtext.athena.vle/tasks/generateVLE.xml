@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generateVLE" name="org.eclipse.papyrus.generators.xtext.athena.vle">
     <property name="ECLIPSE_HOME" value="C:/Documents and Settings/SCDPRPB/Desktop/eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../../Workspace-dvpt"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../../../developpement/Workspace-eclipse/robotML-generateur-athena"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.eclipse.papyrus.generators.xtext.athena.vle.libraryclasspath">
@@ -59,7 +59,7 @@
 
     <!-- The default task with the jars used by this project -->
     <target name="generateVLE">
-        <java classname="org.eclipse.robotml.generators.xtext.athena.vle.main.GenerateVLE" classpathref="org.eclipse.papyrus.generators.xtext.athena.vle.classpath">
+        <java classname="org.eclipse.papyrus.generators.xtext.athena.vle.main.GenerateVLE" classpathref="org.eclipse.papyrus.generators.xtext.athena.vle.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -70,7 +70,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="generateVLE.alljars">
-        <java classname="org.eclipse.robotml.generators.xtext.athena.vle.main.GenerateVLE" classpathref="org.eclipse.papyrus.generators.xtext.athena.vle.classpath">
+        <java classname="org.eclipse.papyrus.generators.xtext.athena.vle.main.GenerateVLE" classpathref="org.eclipse.papyrus.generators.xtext.athena.vle.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>

@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.robotml.generators.xtext.athena.vle.main;
+package org.eclipse.papyrus.generators.xtext.athena.vle.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -36,7 +36,7 @@ public class GenerateVLE extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/org/eclipse/robotml/generators/xtext/athena/vle/main/generateVLE";
+    public static final String MODULE_FILE_NAME = "/org/eclipse/papyrus/generators/xtext/athena/vle/main/generateVLE";
     
     /**
      * The name of the templates that are to be generated.

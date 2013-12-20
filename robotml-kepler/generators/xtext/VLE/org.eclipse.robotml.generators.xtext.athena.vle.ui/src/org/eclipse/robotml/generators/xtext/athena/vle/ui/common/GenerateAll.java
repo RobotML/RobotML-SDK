@@ -87,7 +87,7 @@ public class GenerateAll {
 		//};
 		//gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		monitor.subTask("Loading...");
-		org.eclipse.robotml.generators.xtext.athena.vle.main.GenerateVLE gen0 = new org.eclipse.robotml.generators.xtext.athena.vle.main.GenerateVLE(modelURI, targetFolder.getLocation().toFile(), arguments);
+		org.eclipse.papyrus.generators.xtext.athena.vle.main.GenerateVLE gen0 = new org.eclipse.papyrus.generators.xtext.athena.vle.main.GenerateVLE(modelURI, targetFolder.getLocation().toFile(), arguments);
 		monitor.worked(1);
 		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("org.eclipse.proteus.generators.xtext.athena.vle", "org.eclipse.proteus.generators.xtext.athena.vle.main.GenerateVLE", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);

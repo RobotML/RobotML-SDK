@@ -1,4 +1,4 @@
-package org.eclipse.robotml.generators.xtext.athena.vle.main;
+package org.eclipse.papyrus.generators.xtext.athena.vle.main;
 
 import org.xtext.athenaDSL.DataType;
 import org.xtext.athenaDSL.LanguageDeclaration;

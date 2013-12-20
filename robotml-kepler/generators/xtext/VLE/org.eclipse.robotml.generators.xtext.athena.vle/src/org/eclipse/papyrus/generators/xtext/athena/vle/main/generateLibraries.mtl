@@ -1,8 +1,8 @@
 [comment encoding = UTF-8 /]
 [module generateLibraries('http://www.xtext.org/AthenaDSL')]
 
-[import org::eclipse::robotml::generators::xtext::athena::vle::main::DSLQueries/]
-[import org::eclipse::robotml::generators::xtext::athena::vle::main::kqueries/]
+[import org::eclipse::papyrus::generators::xtext::athena::vle::main::DSLQueries/]
+[import org::eclipse::papyrus::generators::xtext::athena::vle::main::kqueries/]
 
 [template public generateLibraries(project : Project)]
 [generateCompatibility(project)/]

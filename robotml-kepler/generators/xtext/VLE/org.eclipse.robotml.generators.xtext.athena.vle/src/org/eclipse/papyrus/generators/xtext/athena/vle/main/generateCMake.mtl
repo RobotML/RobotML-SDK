@@ -1,7 +1,7 @@
 [comment encoding = UTF-8 /]
 [module generateCMake('http://www.xtext.org/AthenaDSL')]
 
-[import org::eclipse::robotml::generators::xtext::athena::vle::main::DSLQueries /]
+[import org::eclipse::papyrus::generators::xtext::athena::vle::main::DSLQueries /]
 
 [template public generateCMake(project : Project)]
 [generateCMakePackage(project)/]

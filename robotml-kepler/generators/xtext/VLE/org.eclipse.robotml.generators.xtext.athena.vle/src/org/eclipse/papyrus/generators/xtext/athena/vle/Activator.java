@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.robotml.generators.xtext.athena.vle;
+package org.eclipse.papyrus.generators.xtext.athena.vle;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;

@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Vle Module Runtime Plug-in
 Bundle-SymbolicName: org.eclipse.papyrus.generators.xtext.athena.vle
 Bundle-Version: 1.0.0
-Bundle-Activator: org.eclipse.robotml.generators.xtext.athena.vle.Activator
+Bundle-Activator: org.eclipse.papyrus.generators.xtext.athena.vle.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
@@ -20,7 +20,7 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: org.eclipse.robotml.generators.xtext.athena.vle.main;
+Export-Package: org.eclipse.papyrus.generators.xtext.athena.vle.main;
   uses:="org.eclipse.emf.ecore.resource,
    org.eclipse.emf.ecore,
    org.eclipse.emf.common.util,

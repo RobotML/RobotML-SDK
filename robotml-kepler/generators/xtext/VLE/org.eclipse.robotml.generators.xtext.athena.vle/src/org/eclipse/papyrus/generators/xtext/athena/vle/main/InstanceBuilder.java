@@ -1,4 +1,4 @@
-package org.eclipse.robotml.generators.xtext.athena.vle.main;
+package org.eclipse.papyrus.generators.xtext.athena.vle.main;
 
 import java.awt.Dimension;
 import java.util.Vector;

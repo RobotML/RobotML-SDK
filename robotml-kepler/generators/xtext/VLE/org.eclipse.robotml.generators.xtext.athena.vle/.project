@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>org.eclipse.robotml.generators.xtext.athena.vle</name>
+	<name>org.eclipse.papyrus.generators.xtext.athena.vle</name>
 	<comment></comment>
 	<projects>
 		<project>org.xtext.AthenaDSL</project>

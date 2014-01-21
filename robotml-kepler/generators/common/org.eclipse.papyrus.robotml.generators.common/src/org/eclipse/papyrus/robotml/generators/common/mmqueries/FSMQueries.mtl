@@ -31,3 +31,29 @@
 	invoke('org.eclipse.papyrus.robotml.generators.common.mmqueries.FSMQueries', 'generateOperationStateString(org.eclipse.uml2.uml.Vertex)', Sequence{vertex})
 /]
 
+[query public getBehaviorFromModel(elt : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.papyrus.robotml.generators.common.mmqueries.FSMQueries', 'getBehaviorFromModel(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+[query public getOpaqueBehaviorFromModel(elt : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.papyrus.robotml.generators.common.mmqueries.FSMQueries', 'getOpaqueBehaviorFromModel(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+[query public getUniqueBehaviorFromModel(elt : NamedElement) : Sequence(NamedElement) =
+	invoke('org.eclipse.papyrus.robotml.generators.common.mmqueries.FSMQueries', 'getUniqueBehaviorFromModel(org.eclipse.uml2.uml.NamedElement)', Sequence{elt})
+/]
+
+
+[query public getTransitionBehavior(model : Model, sm : StateMachine) : Sequence(Behavior) =
+	invoke('org.eclipse.papyrus.robotml.generators.common.mmqueries.FSMQueries', 'getTransitionBehavior(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.StateMachine)', Sequence{model, sm})
+/]
+
+
+[query public isStartingState(state : Vertex) : Boolean =
+	invoke('org.eclipse.papyrus.robotml.generators.common.mmqueries.FSMQueries', 'isStartingState(org.eclipse.uml2.uml.Vertex)', Sequence{state})
+/]
+
+
+[query public hasValidFSMDeclaration(class : Class) : Boolean = 
+	invoke('org.eclipse.papyrus.robotml.generators.common.mmqueries.FSMQueries', 'hasValidFSMDeclaration(org.eclipse.uml2.uml.Class)', Sequence{class})
+/]

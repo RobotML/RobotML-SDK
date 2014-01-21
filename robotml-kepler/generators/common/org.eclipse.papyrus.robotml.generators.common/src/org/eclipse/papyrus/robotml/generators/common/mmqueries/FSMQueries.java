@@ -14,15 +14,21 @@
 
 package org.eclipse.papyrus.robotml.generators.common.mmqueries;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-
+import org.eclipse.uml2.uml.Vertex;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.StateMachine;
-import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.util.UMLUtil;
-
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.FunctionBehavior;
+import org.eclipse.uml2.uml.Model;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.OpaqueBehavior;
+import org.eclipse.uml2.uml.PackageImport;
+import org.eclipse.uml2.uml.Transition;
 public class FSMQueries {
 	/**
 	 * Find all states in a state machine.
@@ -102,4 +108,199 @@ public class FSMQueries {
 //		}
 //		return result;
 //	}
+	
+	
+	static private List<NamedElement> getAllBehaviorFromModel(NamedElement ne)
+	{
+		LinkedList<NamedElement> res = new LinkedList<NamedElement>();
+		
+		if(ne != null)
+		{
+			for(Element elt : ne.getOwnedElements())
+			{
+				if(elt instanceof Behavior)
+				{
+					res.add((NamedElement)elt);
+				}
+				else if(elt instanceof PackageImport)
+				{
+					PackageImport imp = (PackageImport)elt;
+					res.addAll(getAllBehaviorFromModel((NamedElement)imp.getImportedPackage()));
+				}
+				else if((elt instanceof org.eclipse.uml2.uml.Class) || 
+						(elt instanceof org.eclipse.uml2.uml.Package))
+				{
+					res.addAll(getAllBehaviorFromModel((NamedElement)elt));
+				}
+			}
+		}
+		
+		return res;
+	}
+	static public List<NamedElement> getBehaviorFromModel(NamedElement ne)
+	{
+		List<NamedElement> res = getAllBehaviorFromModel(ne);
+		FSMQueries query = new FSMQueries();
+		List<StateMachine> sms = query.getStateMachines(ne);
+		
+		for(StateMachine sm : sms)
+		{
+			res.removeAll(getTransitionBehavior((Model)ne, sm));
+		}
+		
+		return res;
+	}
+	
+	static public List<NamedElement> getOpaqueBehaviorFromModel(NamedElement ne)
+	{
+		List<NamedElement> res = getAllBehaviorFromModel(ne);
+		FSMQueries query = new FSMQueries();
+		List<StateMachine> sms = query.getStateMachines(ne);
+		
+		res.removeAll(sms);
+		for(StateMachine sm : sms)
+		{
+			res.removeAll(getTransitionBehavior((Model)ne, sm));
+		}
+		
+		ArrayList<NamedElement> tmp = new ArrayList<NamedElement>();
+		for(NamedElement elem : res)
+		{
+			if(elem instanceof FunctionBehavior)
+				tmp.add(elem);
+		}
+		res.removeAll(tmp);
+		
+		return res;
+	}
+	
+	static public List<NamedElement> getUniqueBehaviorFromModel(NamedElement ne)
+	{
+		List<NamedElement> res = getAllBehaviorFromModel(ne);
+		FSMQueries query = new FSMQueries();
+		List<StateMachine> sms = query.getStateMachines(ne);
+		
+		res.removeAll(sms);
+		for(StateMachine sm : sms)
+		{
+			res.removeAll(getTransitionBehavior((Model)ne, sm));
+		}
+		
+		ArrayList<NamedElement> tmp = new ArrayList<NamedElement>();
+		for(NamedElement elem : res)
+		{
+			if(elem instanceof OpaqueBehavior)
+				tmp.add(elem);
+		}
+		res.removeAll(tmp);
+		return res;
+	}
+	/**
+	 * Return the FSM OpaqueBehavior list
+	 * @param model
+	 * @param sm
+	 * @return
+	 */
+	static public List<Behavior> getTransitionBehavior(Model model, StateMachine sm)
+	{
+		LinkedList<Behavior> res = new LinkedList<Behavior>();
+		
+		FSMQueries query = new FSMQueries();
+
+		List<org.eclipse.papyrus.RobotML.Transition> transitions = query.getTransitions(sm);
+		for(org.eclipse.papyrus.RobotML.Transition transition : transitions)
+		{
+			if(transition.getGuard() != null)
+				res.add(transition.getGuard());
+			if(transition.getEffect() != null)
+				res.add(transition.getEffect());
+		}
+		return res;
+	}
+	
+	
+	/**
+	 * Check if state of statemachine is the initial state
+	 * WARNING !!! The intial state is the first state after the state with INITIAL kind
+	 * @param state
+	 * @return
+	 */
+	static public Boolean isStartingState(Vertex state)
+	{
+		Boolean isInitial = false;
+		for(Transition transition : state.getIncomings())
+		{
+			Vertex src = transition.getSource();
+			if(src != state)
+			{
+				List<Transition> tmp = src.getIncomings();
+				if(tmp.size() == 0)
+					isInitial = true;
+			}
+		}
+		
+		return isInitial;
+	}
+	
+	/**
+	 * Renseigner la superclasse d'une classe
+	 * soit un stéréotype soit la classe dont on hérite
+	 * @param c1
+	 * @return
+	 */
+	
+	static public org.eclipse.uml2.uml.Class getSuperClass(org.eclipse.uml2.uml.Class c1)
+	{
+		if (c1.getSuperClasses().size()>0) {
+			return c1.getSuperClasses().get(0);
+		}
+		else if (c1.getAppliedStereotypes().size()>0) {
+			return c1.getAppliedStereotypes().get(0);
+		}
+		return null;
+	}
+
+	
+	/**
+	 * Check has valid FSM declaration
+	 * @param classe
+	 * @return
+	 */
+	static public Boolean hasValidFSMDeclaration(org.eclipse.uml2.uml.Class classe)
+	{
+		Boolean result = false;
+		
+		FSMQueries fsmQueries = new FSMQueries();
+		LinkedList<StateMachine> list = (LinkedList<StateMachine>) fsmQueries.getStateMachines(classe);
+		
+		//check parents
+		if((list.size() > 0) && (hasFSMInParent(getSuperClass(classe)) == false))
+		{
+			result = true;
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Check has FSM parent
+	 * @param classe
+	 * @return
+	 */
+	static private Boolean hasFSMInParent(org.eclipse.uml2.uml.Class classe)
+	{
+		Boolean result = false;
+		
+		if(classe != null)
+		{
+			//My parent has a FSM?
+			result = hasFSMInParent(getSuperClass(classe));
+			FSMQueries queries = new FSMQueries();
+			LinkedList<StateMachine> list = (LinkedList<StateMachine>) queries.getStateMachines(classe);
+			result |= (list.size() > 0);
+		}
+		
+		return result;
+	}
+
 }

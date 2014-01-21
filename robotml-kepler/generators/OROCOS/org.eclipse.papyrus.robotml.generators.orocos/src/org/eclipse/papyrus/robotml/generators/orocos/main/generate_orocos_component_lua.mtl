@@ -3,13 +3,15 @@
 [import org::eclipse::papyrus::robotml::generators::orocos::mmqueries::OrocosQueries/]
 [import org::eclipse::papyrus::robotml::generators::common::mmqueries::DataTypeQueries /]
 [import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::GeneralQueries /]
+
 [import org::eclipse::papyrus::robotml::generators::orocos::main::generate_Datatype_file /]
 [import org::eclipse::papyrus::robotml::generators::orocos::main::generate_FSM /]
 
 [template public generateOrocosComponentLua(c : Class, root_model : Model)]
 [generate_Datatype_file(c, root_model)/]
 
-[comment]
+
 [for (b : Behavior | c.ownedBehavior )]
 	[if (b.isFSM())]
 	[let sm : StateMachine = b.oclAsType(StateMachine)]
@@ -17,9 +19,8 @@
 	[/let]
 	[/if]
 [/for]
-[/comment]
 
-[file ( 'src/'+c.name+'.lua', false, 'UTF-8')]
+[file ( 'src/'+c.name+'/'+c.name+'.lua', false, 'UTF-8')]
 [comment Library declaration/]----- Library -----
 require "rttlib"
 require "rttros"
@@ -49,13 +50,13 @@ rtt.getTC():addPort([port.name/], "[port.name/]", "A [getNameType(port.type)/] P
 
 [comment Property declaration/]----- Property -----
 [let elt : Element = c.oclAsType(Element)]
-	[for (property : Property | getProperties(c, elt))]
+[for (property : Property | getProperties(c, elt))]
 [if(isRobotMLDataType(root_model, type.name))]
 [property.name/] = rtt.Property("[getLUAType(property.type)/]");
 [else]
 [property.name/] = rtt.Property("[getNameType(property.type)/]");
 [/if]
-rtt.getTC():addProperty([property.name/], "[property.name/]", " A [getNameType(property.type)/] Port in Component [c.namespace.name.substitute(' ', '_')/] ")
+rtt.getTC():addProperty([property.name/], "[property.name/]", " A [getNameType(property.type)/] Property in Component [c.name/]/] ")
  	[/for]
  [/let]
 

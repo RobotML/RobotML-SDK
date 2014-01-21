@@ -14,6 +14,12 @@
 	invoke('org.eclipse.papyrus.robotml.generators.orocos.mmqueries.OrocosQueries', 'isSensor(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]
 
+
+[query public alreadyDefinedDataType(t : String, m:Model) : Boolean =
+	invoke('org.eclipse.papyrus.robotml.generators.orocos.mmqueries.OrocosQueries', 'alreadyDefinedDataType(java.lang.String, org.eclipse.uml2.uml.Model)', Sequence{t,m})
+/]
+
+
 [query public isRobot(c : Class) : Boolean =
 	invoke('org.eclipse.papyrus.robotml.generators.orocos.mmqueries.OrocosQueries', 'isRobot(org.eclipse.uml2.uml.Class)', Sequence{c})
 /]

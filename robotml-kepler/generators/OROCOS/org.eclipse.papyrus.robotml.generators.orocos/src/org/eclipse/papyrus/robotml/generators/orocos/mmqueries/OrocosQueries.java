@@ -501,6 +501,14 @@ public class OrocosQueries {
 		return false;
 	}
 	
+	public Boolean alreadyDefinedDataType(java.lang.String t, org.eclipse.uml2.uml.Model m){
+		Boolean found = false;
+		for(NamedElement x : DataTypeQueries.getElementsDataType(m)){
+			if(x.getName().equals(t))
+				found = true;
+		}
+			return found;
+	}
 	
 	
    /**
@@ -832,6 +840,21 @@ public class OrocosQueries {
 		return state.getBase_State().getEntry()!=null;
 	}
 
+	
+	/**
+	 * Checks whether the component has a state machine inside
+	 * @param c
+	 * @return true, if it contains one or more state machin inside, false if not
+	 */
+	public Boolean hasStateMachine(Class c)
+	{
+		for (NamedElement name : c.getMembers())
+		{
+			if (name instanceof StateMachine)
+				return true;
+		}
+		return false;
+	}
 	/**
 	 * Predicate to know if a state possesses exit function
 	 * @param state the state in which we look

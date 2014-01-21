@@ -17,7 +17,6 @@ import ("rtt_std_msgs")
 		[if (not isActuator(c) and not isSensor(c))]
 		[if (elt.getAllPorts() -> isEmpty() = false)]
 
-[comment]
 		[if (hasStateMachine(c))]
 loadComponent("[c.name/]","OCL::LuaComponent")
 //-----load lua scripts in Lua components
@@ -25,7 +24,6 @@ loadComponent("[c.name/]","OCL::LuaComponent")
 		[else]
 loadComponent("[c.name/]","[c.qualifiedName/]")
 		[/if]
-[/comment]
 
 		[/if]
 		[/if]

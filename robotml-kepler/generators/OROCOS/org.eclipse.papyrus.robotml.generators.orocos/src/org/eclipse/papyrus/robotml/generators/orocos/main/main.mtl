@@ -5,8 +5,8 @@
 
 [import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /]
 [import org::eclipse::papyrus::robotml::generators::common::mmqueries::DataTypeQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::FSMQueries /]
 [import org::eclipse::papyrus::robotml::generators::common::mmqueries::DeploymentQueries /]
-
 [import org::eclipse::papyrus::robotml::generators::orocos::mmqueries::OrocosQueries /]
 [import org::eclipse::papyrus::robotml::generators::orocos::main::generate_orocos_component_hpp /]
 [import org::eclipse::papyrus::robotml::generators::orocos::main::generate_orocos_component_cpp /]
@@ -43,23 +43,16 @@
  [for (elt: NamedElement | getComponentModels(model))]	
 	[let c : Class = elt.oclAsType(Class)]
 [for (c: Class | getDefinedComponentsForPlatform(model, 'orocos'))]
-[comment]
-		[if (not isActuator(c)) and (not isSensor(c) and (not isEnvironment(c)) and (not isRobot(c)))]
 		
-
-			[if (hasStateMachine(c))]
-				[generateOrocosComponentLua(c, model)/] 
-						
-			[else]
-		[/comment]
-	
 			[if(isMacroComponent(c) = false)] 
+					[if (hasStateMachine(c))]
+						[generateOrocosComponentLua(c, model)/]
+					[else]
 					[generateOrocosComponentHpp(c, model)/]
-					[generateOrocosComponentCpp(c, model)/]				
-	[comment]		[/if] [/comment]
-		[/if]
-		[comment]		[/if] [/comment]
-	
+					[generateOrocosComponentCpp(c, model)/]
+					[/if]
+						
+			[/if] 
 
 [/for]
 

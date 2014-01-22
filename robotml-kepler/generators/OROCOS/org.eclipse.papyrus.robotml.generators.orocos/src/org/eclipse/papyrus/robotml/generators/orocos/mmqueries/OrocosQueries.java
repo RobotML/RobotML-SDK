@@ -54,6 +54,28 @@ public class OrocosQueries {
 	LinkedList<NamedElement> addedDataTypes = new LinkedList<NamedElement>();
 
 	boolean includePort= false;
+
+	/**
+	 * Checks whether the data type has already been defined by the user
+	 * @param t
+	 * @param m
+	 * @return
+	 */
+	
+
+	public boolean alreadyDefinedDataType(java.lang.String t, org.eclipse.uml2.uml.Model m){
+		boolean found = false;
+		for(NamedElement x : DataTypeQueries.getElementsDataType(m)){
+			if(x.getName().equals(t))
+				found = true;
+		}
+			return found;
+	}
+	
+	
+	
+	
+	
 	/**
 	 * Returns all the ports used in the model
 	 */
@@ -501,15 +523,6 @@ public class OrocosQueries {
 		return false;
 	}
 	
-	public Boolean alreadyDefinedDataType(java.lang.String t, org.eclipse.uml2.uml.Model m){
-		Boolean found = false;
-		for(NamedElement x : DataTypeQueries.getElementsDataType(m)){
-			if(x.getName().equals(t))
-				found = true;
-		}
-			return found;
-	}
-	
 	
    /**
     * Checks whether the component is a sensor	
@@ -518,10 +531,10 @@ public class OrocosQueries {
 	public Boolean isSensor(Class myClass) {		
 		for (Stereotype st : myClass.getAppliedStereotypes())				
 			if (st.getName().equalsIgnoreCase("Sensor") || 
-					st.getName().equals("SensorSystem") ||
-					st.getName().equals("GPSSystem") ||
-					st.getName().equals("LidarSystem") ||
-					st.getName().equals("CameraSystem") )
+					st.getName().equalsIgnoreCase("SensorSystem") ||
+					st.getName().equalsIgnoreCase("GPSSystem") ||
+					st.getName().equalsIgnoreCase("LidarSystem") ||
+					st.getName().equalsIgnoreCase("CameraSystem") )
 				return true;				
 		return false;
 	}
@@ -846,7 +859,7 @@ public class OrocosQueries {
 	 * @param c
 	 * @return true, if it contains one or more state machin inside, false if not
 	 */
-	public Boolean hasStateMachine(Class c)
+	public boolean hasStateMachine(Class c)
 	{
 		for (NamedElement name : c.getMembers())
 		{

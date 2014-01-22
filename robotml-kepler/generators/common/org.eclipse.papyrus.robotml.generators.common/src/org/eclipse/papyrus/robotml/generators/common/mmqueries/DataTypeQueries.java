@@ -143,7 +143,7 @@ public class DataTypeQueries{
 	 * Get all user-defined datatypes.
 	 * @return A list of datatypes
 	 */
-	public List<NamedElement> getElementsDataType(Model model)
+	static public List<NamedElement> getElementsDataType(Model model)
 	{		
 		LinkedList<NamedElement> found_elts = new LinkedList<NamedElement>();
 		for (NamedElement ne : model.getOwnedMembers())
@@ -160,7 +160,7 @@ public class DataTypeQueries{
 	/**
 	 * Recursive sub-function to browse model and get all user-defined datatypes.
 	 */
-	private void getElementsDataType(Element parent_elt, LinkedList<NamedElement> target_list)
+	static private void getElementsDataType(Element parent_elt, LinkedList<NamedElement> target_list)
 	{
 		for (Element ne : parent_elt.getOwnedElements())
 		{

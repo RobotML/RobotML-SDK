@@ -23,7 +23,7 @@ is imported/]
 [let t: Type = p.type]
 [if(not isInterface(t))]
 [for(s : Connector | getConnectionsFromPort(p))]
-[if (alreadyDefinedDataType(t.name, root_model))] 
+[if (alreadyDefinedDataType(t.qualifiedName, root_model))] 
 	[if((isActuator(getSourceComponentForConnector(s).class)=false) and (isSensor(getSourceComponentForConnector(s).class) = false))]
 #include "../DataTypes/[t.name/].hpp"
 	[elseif((isActuator(getSourceComponentForConnector(s).class)=true) or (isSensor(getSourceComponentForConnector(s).class) = true))]
@@ -35,15 +35,6 @@ is imported/]
 #include <[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]>
 [/if]
 [/for]
-[for(p1 : Port | getConnectedPort(p))]
-[if (isActuator(p1.class) or isSensor(p1.class))]
-#include<[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]> 
-[else]
-#include "../DataTypes/[t.name/].hpp"
-[/if]
-[/for]
-
-
 [/if]
 [/let]
 [/for]
@@ -76,7 +67,7 @@ is imported/]
 [let t: Type = p.type]
 [if(not isInterface(t))]
 [for(s : Connector | getConnectionsFromPort(p))]
-[if (alreadyDefinedDataType(t.name, root_model))] 
+[if (alreadyDefinedDataType(t.qualifiedName, root_model))] 
 	[if((isActuator(getDestComponentForConnector(s).class)=false) and (isSensor(getDestComponentForConnector(s).class) = false))]
 #include "../DataTypes/[t.name/].hpp"
 	[elseif((isActuator(getDestComponentForConnector(s).class)=true) or (isSensor(getDestComponentForConnector(s).class) = true))]
@@ -167,7 +158,6 @@ is imported/]
 #include <math.h>
 
 
-
 using namespace std;
 using namespace RTT;
 
@@ -180,15 +170,6 @@ namespace [s/]{
 [/let]
 [/let]
 class [c.name/]: RTT::TaskContext
-[comment]
-[for (sp : Port | getServicePort())]				
-		[let interface : Interface = sp.type]
-				[if (isAProvidedPort(sp))]
-public Task[interface.name/]
-				[/if]
-		[/let]
-[/for]
-[/comment]
 {   [comment ports and services declaration/]
 	// ports, operations and attributes
 
@@ -272,14 +253,18 @@ public Task[interface.name/]
 [let t: Type = p.type]
 [if(not isInterface(t))]
 [for(s : Connector | getConnectionsFromPort(p))]
-[if (alreadyDefinedDataType(t.name, root_model))] 
+[if (alreadyDefinedDataType(t.qualifiedName, root_model))] 
 	[if((isActuator(getSourceComponentForConnector(s).class)=false) and (isSensor(getDestComponentForConnector(s).class) = false))]
 	[p.visibility/]: InputPort<[t.qualifiedName/]> [p.name/];
 	[else]
 	[p.visibility/]: InputPort<[t._package.name.replace('_datatypes', '_msgs')+'::'+t.name/]> [p.name/];
 	[/if]
 [elseif (isPrimitiveType(t))]
+[if((isActuator(getSourceComponentForConnector(s).class)=true) or (isSensor(getSourceComponentForConnector(s).class) = true))]
+[p.visibility/]: InputPort<[t._package.name.replace('_datatypes', '_msgs')+'::'+t.name/]> [p.name/];
+[else]
 [p.visibility/]: InputPort<[t.name/]> [p.name/];
+[/if]
 [else]
 [p.visibility/]: InputPort<[t._package.name.replace('_datatypes', '_msgs')+'::'+t.name/]> [p.name/];
 [/if]
@@ -288,20 +273,22 @@ public Task[interface.name/]
 [/let]
 [/for]
 
-
-
 [for(p : Port | getOutputPortsForElement(c))]
 [let t: Type = p.type]
 [if(not isInterface(t))]
 [for(s : Connector | getConnectionsFromPort(p))]
-[if (alreadyDefinedDataType(t.name, root_model))] 
+[if (alreadyDefinedDataType(t.qualifiedName, root_model))] 
 	[if((isActuator(getDestComponentForConnector(s).class)=false) and (isSensor(getDestComponentForConnector(s).class) = false))]
 	[p.visibility/]: OutputPort<[t.qualifiedName/]> [p.name/];
-	[else]
+	[elseif((isActuator(getDestComponentForConnector(s).class)=true) or (isSensor(getDestComponentForConnector(s).class) = true))]
 	[p.visibility/]: OutputPort<[t._package.name.replace('_datatypes', '_msgs')+'::'+t.name/]> [p.name/];
 	[/if]
 [elseif (isPrimitiveType(t))]
+[if((isActuator(getDestComponentForConnector(s).class)=true) or (isSensor(getDestComponentForConnector(s).class) = true))]
+[p.visibility/]: OutputPort<[t._package.name.replace('_datatypes', '_msgs')+'::'+t.name/]> [p.name/];
+[else]
 [p.visibility/]: OutputPort<[t.name/]> [p.name/];
+[/if]
 [else]
 [p.visibility/]: OutputPort<[t._package.name.replace('_datatypes', '_msgs')+'::'+t.name/]> [p.name/];
 [/if]

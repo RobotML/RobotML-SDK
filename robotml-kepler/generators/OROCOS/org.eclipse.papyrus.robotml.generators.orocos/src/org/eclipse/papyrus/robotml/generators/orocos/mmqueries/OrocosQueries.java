@@ -66,7 +66,7 @@ public class OrocosQueries {
 	public boolean alreadyDefinedDataType(java.lang.String t, org.eclipse.uml2.uml.Model m){
 		boolean found = false;
 		for(NamedElement x : DataTypeQueries.getElementsDataType(m)){
-			if(x.getName().equals(t))
+			if(x.getQualifiedName().equals(t))
 				found = true;
 		}
 			return found;

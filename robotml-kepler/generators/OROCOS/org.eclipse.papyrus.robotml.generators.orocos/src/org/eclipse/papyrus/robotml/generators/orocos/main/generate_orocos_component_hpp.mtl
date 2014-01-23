@@ -18,37 +18,16 @@
 #include <string>
 [comment To import libraries, we check if the current component is connected to a hardware component. In that case, a ROS library is imported. Else, the user data type library 
 is imported/]
+
 //Libraries related to source components
 [for(p : Port | getInputPortsForElement(c))]
 [let t: Type = p.type]
 [if(not isInterface(t))]
-[for(s : Connector | getConnectionsFromPort(p))]
-[if (alreadyDefinedDataType(t.qualifiedName, root_model))] 
-	[if((isActuator(getSourceComponentForConnector(s).class)=false) and (isSensor(getSourceComponentForConnector(s).class) = false))]
-#include "../DataTypes/[t.name/].hpp"
-	[elseif((isActuator(getSourceComponentForConnector(s).class)=true) or (isSensor(getSourceComponentForConnector(s).class) = true))]
-#include <[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]>
-	[/if]
-[elseif (isPrimitiveType(t) and ((isActuator(getSourceComponentForConnector(s).class)=true) or (isSensor(getSourceComponentForConnector(s).class) = true)))]
-#include <[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]>
-[else]
-#include <[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]>
-[/if]
-[/for]
-[/if]
-[/let]
-[/for]
-
-[comment]
-//Libraries related to target components
-[for(p : Port | getOutputPortsForElement(c))]
-[let t: Type = p.type]
-[if(not isInterface(t))]
 [for(p1 : Port | getConnectedPort(p))]
-[if (alreadyDefinedDataType(t.name, root_model))] 
+[if (alreadyDefinedDataType(t.qualifiedName, root_model))] 
 	[if((isActuator(p1.class)=false) and (isSensor(p1.class) = false))]
 #include "../DataTypes/[t.name/].hpp"
-	[elseif((isActuator(p1.class)=true) or (isSensor(p1.class) = true))]
+	[else]
 #include<[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]>
 	[/if]
 [elseif (isPrimitiveType(t) and ((isActuator(p1.class)=true) or (isSensor(p1.class) = true)))]
@@ -61,19 +40,19 @@ is imported/]
 
 [/let]
 [/for]
-[/comment]
 
+//Libraries related to target components
 [for(p : Port | getOutputPortsForElement(c))]
 [let t: Type = p.type]
 [if(not isInterface(t))]
-[for(s : Connector | getConnectionsFromPort(p))]
+[for(p1 : Port | getConnectedPort(p))]
 [if (alreadyDefinedDataType(t.qualifiedName, root_model))] 
-	[if((isActuator(getDestComponentForConnector(s).class)=false) and (isSensor(getDestComponentForConnector(s).class) = false))]
+	[if((isActuator(p1.class)=false) and (isSensor(p1.class) = false))]
 #include "../DataTypes/[t.name/].hpp"
-	[elseif((isActuator(getDestComponentForConnector(s).class)=true) or (isSensor(getDestComponentForConnector(s).class) = true))]
+	[else]
 #include<[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]>
 	[/if]
-[elseif (isPrimitiveType(t) and ((isActuator(getDestComponentForConnector(s).class)=true) or (isSensor(getDestComponentForConnector(s).class) = true)))]
+[elseif (isPrimitiveType(t) and ((isActuator(p1.class)=true) or (isSensor(p1.class) = true)))]
 #include<[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]>
 [else]
 #include<[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]>
@@ -94,69 +73,8 @@ is imported/]
 [/let]
 [/for]
 
-[comment]
-[for(p : Port | getInputPortsForElement(c))]
-[let t: Type = p.type]
-[if(not isPrimitiveType(t))]
-		[if (isInterface(t))]
-		#include "../[t.name+'/Task'+t.name/].hpp"
-		[elseif(alreadyDefinedDataType(t.name, root_model))]
-		#include "../DataTypes/[t.name/].hpp"
-		[else]
-		#include<[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]>
-		[/if]
-[/if]
-[/let]
-[/for]
-
-
-[for(p1 : Port | getOutputPortsForElement(c))]
-[let t1: Type = p1.type]
-[if(not isPrimitiveType(t1))]
-		[if (isInterface(t1))]
-		#include "../[t1.name+'/Task'+t1.name/].hpp"
-		[elseif(alreadyDefinedDataType(t1.name, root_model))]
-		#include "../DataTypes/[t1.name/].hpp"
-		[else]
-		#include <[t1._package.name.replace('_datatypes', '_msgs')+'/'+t1.name+'.h'/]>
-		[/if]
-[/if]
-[/let]
-[/for]
-
-[/comment]
-[comment]
-[for (elt : Element | getDataTypesInElement(c))]
-[let type: Type = elt]
-[let b: Boolean = alreadyDefinedDataType(type.name, root_model)] 
- result = [b/]
- [/let]
-[/comment]
-[comment]
-[if(isRobotMLDataType(root_model, type.name))]
-[let ne : NamedElement = type.owner]
-#include <[ne.name.replace('_datatypes', '_msgs')/]/[type.name/].h>
-[/let]
-[else]
-[/comment]
-[comment]
-	[if(not isPrimitiveType(type))]
-		[if (isInterface(type))]
-		#include "../[type.name+'/Task'+type.name/].hpp"
-		[else]
-		#include "../DataTypes/[type.name/].hpp"
-		[/if]
-[/comment]
-[comment]#include "[(type.qualifiedName.substitute(' ', '_')).replaceAll('::', '/')/].h"[/comment]	
-	
-[comment]
-[/if]
-[/let]
-[/for]
-[/comment]
 #include <stdlib.h>
 #include <math.h>
-
 
 using namespace std;
 using namespace RTT;
@@ -249,6 +167,60 @@ class [c.name/]: RTT::TaskContext
 		[/let]
 
 
+
+
+//input ports
+[for(p : Port | getInputPortsForElement(c))]
+[let t: Type = p.type]
+[if(not isInterface(t))]
+[for(p1 : Port | getConnectedPort(p))]
+[if (alreadyDefinedDataType(t.qualifiedName, root_model))] 
+	[if((isActuator(p1.class)=false) and (isSensor(p1.class) = false))]
+[p.visibility/]: InputPort<[t.qualifiedName/]> [p.name/];
+	[else]
+[p.visibility/]: InputPort<[t._package.name.replace('_datatypes', '_msgs')+'::'+t.name/]> [p.name/];
+	[/if]
+[elseif (isPrimitiveType(t))]
+[if((isActuator(p1.class)=true) or (isSensor(p1.class) = true))]
+[p.visibility/]: InputPort<[t._package.name.replace('_datatypes', '_msgs')+'::'+t.name/]> [p.name/];
+[else]
+[p.visibility/]: InputPort<[t.name/]> [p.name/];
+[/if]
+[else]
+[p.visibility/]: InputPort<[t._package.name.replace('_datatypes', '_msgs')+'::'+t.name/]> [p.name/];
+[/if]
+[/for]
+[/if]
+
+[/let]
+[/for]
+
+//Output ports
+[for(p : Port | getOutputPortsForElement(c))]
+[let t: Type = p.type]
+[if(not isInterface(t))]
+[for(p1 : Port | getConnectedPort(p))]
+[if (alreadyDefinedDataType(t.qualifiedName, root_model))] 
+	[if((isActuator(p1.class)=false) and (isSensor(p1.class) = false))]
+[p.visibility/]: OutputPort<[t.qualifiedName/]> [p.name/];
+	[else]
+[p.visibility/]: OutputPort<[t._package.name.replace('_datatypes', '_msgs')+'::'+t.name/]> [p.name/];
+	[/if]
+[elseif (isPrimitiveType(t))]
+[if((isActuator(p1.class)=true) or (isSensor(p1.class) = true))]
+[p.visibility/]: OutputPort<[t._package.name.replace('_datatypes', '_msgs')+'::'+t.name/]> [p.name/];
+[else]
+[p.visibility/]: OutputPort<[t.name/]> [p.name/];
+[/if]
+[else]
+[p.visibility/]: OutputPort<[t._package.name.replace('_datatypes', '_msgs')+'::'+t.name/]> [p.name/];
+[/if]
+[/for]
+[/if]
+
+[/let]
+[/for]
+[comment]
 [for(p : Port | getInputPortsForElement(c))]
 [let t: Type = p.type]
 [if(not isInterface(t))]
@@ -296,7 +268,7 @@ class [c.name/]: RTT::TaskContext
 [/if]
 [/let]
 [/for]
-
+[/comment]
 
 [comment old version]
 

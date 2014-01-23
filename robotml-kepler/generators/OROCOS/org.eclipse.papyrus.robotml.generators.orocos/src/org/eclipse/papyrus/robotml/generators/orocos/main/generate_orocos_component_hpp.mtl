@@ -89,8 +89,6 @@ namespace [s/]{
 [/let]
 class [c.name/]: RTT::TaskContext
 {   [comment ports and services declaration/]
-	// ports, operations and attributes
-
 [let elt : Element = c.oclAsType(Element)]
 			[for (sp : Port | getServicePort())]				
 				[let interface : Interface = sp.type]

@@ -32,8 +32,85 @@ require "rfsmpp"
 [for (state : StateMachine | getStateMachines(c))]
 local [state.name/]
 [/for]
+[comment]
+//Libraries related to source components
+[for(p : Port | getInputPortsForElement(c))]
+[let t: Type = p.type]
+[if(not isInterface(t))]
+[for(p1 : Port | getConnectedPort(p))]
+[if (alreadyDefinedDataType(t.qualifiedName, root_model))] 
+	[if((isActuator(p1.class)=false) and (isSensor(p1.class) = false))]
+#include "../DataTypes/[t.name/].hpp"
+	[else]
+#include<[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]>
+	[/if]
+[elseif (isPrimitiveType(t) and ((isActuator(p1.class)=true) or (isSensor(p1.class) = true)))]
+#include<[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]>
+[else]
+#include<[t._package.name.replace('_datatypes', '_msgs')+'/'+t.name+'.h'/]>
+[/if]
+[/for]
+[/if]
 
-[comment Port declaration/]----- Ports -----
+[/let]
+[/for]
+[/comment]
+[let elt : Element = c.oclAsType(Element)]
+
+[for (p : Port | getInputPortsForElement(elt))]
+[let t: Type = p.type]
+[if(not isInterface(t))]
+[for(p1 : Port | getConnectedPort(p))]
+[if (alreadyDefinedDataType(t.qualifiedName, root_model))] 
+	[if((isActuator(p1.class)=false) and (isSensor(p1.class) = false))]
+[p.name/] = rtt.InputPort([t.qualifiedName.replaceAll('::', '/')/])
+	[else]
+[p.name/]= rtt.InputPort([t._package.name.replace('_datatypes', '_msgs')+'/'+t.name/])
+	[/if]
+[elseif (isPrimitiveType(t))]
+[if((isActuator(p1.class)=true) or (isSensor(p1.class) = true))]
+[p.name/]= rtt.InputPort([t._package.name.replace('_datatypes', '_msgs')+'/'+t.name/])
+[else]
+[p.name/]= rtt.InputPort([t.name/])
+[/if]
+[else]
+[p.name/]= rtt.InputPort([t._package.name.replace('_datatypes', '_msgs')+'/'+t.name/])
+[/if]
+[/for]
+[/if]
+[/let]
+[/for]
+
+[for (p : Port | getOutputPortsForElement(elt))]
+[let t: Type = p.type]
+[if(not isInterface(t))]
+[for(p1 : Port | getConnectedPort(p))]
+[if (alreadyDefinedDataType(t.qualifiedName, root_model))] 
+	[if((isActuator(p1.class)=false) and (isSensor(p1.class) = false))]
+[p.name/] = rtt.OutputPort([t.qualifiedName.replace('::', '/')/])
+	[else]
+[p.name/]= rtt.OutputPort([t._package.name.replace('_datatypes', '_msgs')+'/'+t.name/])
+	[/if]
+[elseif (isPrimitiveType(t))]
+[if((isActuator(p1.class)=true) or (isSensor(p1.class) = true))]
+[p.name/]= rtt.OutputPort([t._package.name.replace('_datatypes', '_msgs')+'/'+t.name/])
+[else]
+[p.name/]= rtt.OutputPort([t.name/])
+[/if]
+[else]
+[p.name/]= rtt.OutputPort([t._package.name.replace('_datatypes', '_msgs')+'/'+t.name/])
+[/if]
+[/for]
+[/if]
+[/let]		
+[/for]
+[/let]
+
+
+[comment Port declaration/]
+
+[comment]
+----- Ports -----
 [let elt : Element = c.oclAsType(Element)]
  	[for (port : Port | getInputPortsForElement(elt))]
 [port.name/] = rtt.InputPort("[getLUAType(port.type)/]")			
@@ -42,6 +119,8 @@ local [state.name/]
 [port.name/] = rtt.OutputPort("[getLUAType(port.type)/]")		
 	[/for]
 [/let]
+[/comment]
+
 [let elt : Element = c.oclAsType(Element)]
 	[for (port : Port | getAllPorts(elt))]
 rtt.getTC():addPort([port.name/], "[port.name/]", "A [getNameType(port.type)/] Port in Component [c.name/]");	

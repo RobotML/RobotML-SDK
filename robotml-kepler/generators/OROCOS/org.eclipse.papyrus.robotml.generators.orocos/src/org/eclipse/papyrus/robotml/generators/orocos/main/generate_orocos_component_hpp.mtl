@@ -87,7 +87,7 @@ namespace [s/]{
 [/for]
 [/let]
 [/let]
-class [c.name/]: RTT::TaskContext
+class [c.name/]: public RTT::TaskContext
 {   [comment ports and services declaration/]
 [let elt : Element = c.oclAsType(Element)]
 			[for (sp : Port | getServicePort())]				
@@ -303,13 +303,16 @@ class [c.name/]: RTT::TaskContext
 	
 	[comment constructor/]// Constructor
 	[c.visibility/]: [c.name/] (const std::string& name)
-		: [for (sp : Port | getServicePort())]				
+		: [comment]
+		[for (sp : Port | getServicePort())]				
 		[let interface : Interface = sp.type]
 				[if (isAProvidedPort(sp))]
              Task[interface.name/]((std::string&)"[interface.name/]"),
 				[/if]
 		[/let]
-		[/for]
+		[/for] 
+		[/comment]
+
 		TaskContext(name) 							
 		[let elt : Element = c.oclAsType(Element)]
 		[for (port : Port | getAllPorts(elt))]

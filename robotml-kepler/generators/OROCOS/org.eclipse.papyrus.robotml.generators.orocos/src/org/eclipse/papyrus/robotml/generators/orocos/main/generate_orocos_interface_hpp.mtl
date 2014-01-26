@@ -11,40 +11,18 @@
 #define __[i.name.toUpperCase()/]_hpp__
 #include <string>
 #include <numeric>
+#include "../DataTypes/CppDataTypes.hpp"
 	[for (op : Operation |getOperations(i))]
-	[if(getOperationInputParameters(op) <> null)]
-		[for (input: Element | getOperationInputParameters(op))]
+		[for (input: Element | op.ownedParameter)]
 			[let p : Parameter = input]
 			[let paramType : Type = p.type]
-			[if(not isPrimitiveType(paramType))]
-				#include "../DataTypes/[paramType.name/].hpp"
+[if((isPrimitiveType(paramType) = false) and (alreadyDefinedDataType(paramType.qualifiedName, root_model) = true))]
+#include "../DataTypes/[paramType.name/].hpp"
 			[/if]
-	
 			[/let]
-[comment /if/]
 			[/let]
-
-			[/for]
-			
-			[for (input: Element | getOperationOutputParameters(op))]
-			[let p : Parameter = input]
-			[let paramType : Type = p.type]
-			[if(not isPrimitiveType(paramType))]
-				#include "../DataTypes/[paramType.name/].hpp"
-			[/if]
-	
-			[/let]
-[comment /if/]
-			[/let]
-
-			[/for]
-
-			
-
-
-    [/if]
+		[/for]
     [/for]
-[setLibraries(i)/]
 
 	class [i.name/] 
 	{
@@ -149,62 +127,122 @@
 			[/comment]
 			[/if]
 			[/let]
-					
-		[if(getOperationInputParameters(op) <> null)]
-		[for (input: Element | getOperationInputParameters(op))]
-			[let p : Parameter = input]
-			[let paramType : Type = p.type]
+
+
+
+				
+[if(hasInputParameters(op) = true)]
+[if(getFirstInputParameter(op) <> null)]
+[let paramType : Type = getFirstInputParameter(op).type]
 			[if(isPrimitiveType(paramType))]
 				[if(paramType.name.equalsIgnoreCase('boolean'))]
-				bool [p.name/],
+				bool [getFirstInputParameter(op).name/]
 				[else]
-				[paramType.name/] [p.name/],
+				[paramType.name/] [getFirstInputParameter(op).name/]
 				[/if]
 			[else]
-				[paramType.qualifiedName/] [p.name/],
+				[paramType.qualifiedName/] [getFirstInputParameter(op).name/]
 			[/if]
-			[comment in case of ros datatypes, uncomment]
-			[if(isRobotMLDataType(m, paramType.name))]
-				[let ne : NamedElement = paramType.owner]
-				[ne.name.replace('_datatypes', '_msgs')/]::[paramType.name/] [p.name/], 
-				[/let]
+[/let]
+[for (input: Element | getOperationInputParameters(op))]
+	[let p : Parameter = input]
+	[let paramType : Type = p.type]
+		[if(isPrimitiveType(paramType))]
+			[if(paramType.name.equalsIgnoreCase('boolean'))]
+			,bool [p.name/]
 			[else]
-				[paramType.name/] [p.name/],
-			[/comment] 
-			[/let]
-			[/let]
-		[/for]
+			,[paramType.name/] [p.name/]
+			[/if]
+		[else]
+			,[paramType.qualifiedName/] [p.name/]
 		[/if]
 
-		[if(getOperationOutputParameters (op) <> null)]
-		[for (output: Element | getOperationOutputParameters(op))]
-			[let p : Parameter = output]
-			[let paramType : Type = p.type]
+		[comment in case of ros datatypes uncomment]
+		[if(isRobotMLDataType(m, paramType.name))]
+			[let ne : NamedElement = paramType.owner]
+			,[ne.name.replace('_datatypes', '_msgs')/]::[paramType.name/] [p.name/] 
+			[/let]
+		[else]
+			,[paramType.name/] [p.name/]
+		[/comment] 
+
+		[/let]
+		[/let]
+	[/for]
+	[/if]
+	[/if]
+
+
+	[if(hasOutputParameters (op) = true)]
+	[if(hasInputParameters(op) = true)]
+
+	[for (output: Element | getOperationOutputParameters(op))]
+		[let p : Parameter = output]
+		[let paramType : Type = p.type]
+		[if(isPrimitiveType(paramType))]
+			[if(paramType.name.equalsIgnoreCase('boolean'))]
+			,bool &[p.name/]
+			[else]
+			,[paramType.name/] &[p.name/]
+		[/if]
+		[else]
+	 		,[paramType.qualifiedName/] &[p.name/]
+		[/if]
+		[comment in case of ros datatypes, uncomment]
+		[if(isRobotMLDataType(m, paramType.name))]
+			[let ne : NamedElement = paramType.owner]
+			,[ne.name.replace('_datatypes', '_msgs')/]::[paramType.name/] &[p.name/] 
+			[/let]
+		[else]
+	 		 ,[paramType.name/] &[p.name/]
+		[/comment]
+		[/let]
+		[/let]
+	[/for]
+
+	[elseif (hasInputParameters(op) = false)]
+	[if(getFirstOutputParameter(op) <> null)]
+	[let paramType : Type = getFirstOutputParameter(op).type]
 			[if(isPrimitiveType(paramType))]
 				[if(paramType.name.equalsIgnoreCase('boolean'))]
-				bool &[p.name/],
+				bool [getFirstOutputParameter(op).name/]
 				[else]
-				[paramType.name/] &[p.name/],
+				[paramType.name/] [getFirstOutputParameter(op).name/]
 				[/if]
 			[else]
-		 		[paramType.name/] &[p.name/],
+				[paramType.qualifiedName/] [getFirstOutputParameter(op).name/]
 			[/if]
-			[comment in case of ros datatypes, uncomment]
-			[if(isRobotMLDataType(m, paramType.name))]
-				[let ne : NamedElement = paramType.owner]
-				[ne.name.replace('_datatypes', '_msgs')/]::[paramType.name/] &[p.name/], 
-				[/let]
-			[else]
-		 		 [paramType.name/] &[p.name/],		
-			[/comment]
-			[/let]
-			[/let]
-		[/for]
-		[/if]
-        ) = 0;
-    [/for]
-	};
+	[/let]
 
+	[for (output: Element | getOtherOutputParameters(op))]
+		[let p : Parameter = output]
+		[let paramType : Type = p.type]
+		[if(isPrimitiveType(paramType))]
+			[if(paramType.name.equalsIgnoreCase('boolean'))]
+			,bool &[p.name/]
+			[else]
+			,[paramType.name/] &[p.name/]
+		[/if]
+		[else]
+	 		,[paramType.qualifiedName/] &[p.name/]
+		[/if]
+		[comment in case of ros datatypes, uncomment]
+		[if(isRobotMLDataType(m, paramType.name))]
+			[let ne : NamedElement = paramType.owner]
+			[ne.name.replace('_datatypes', '_msgs')/]::[paramType.name/] &[p.name/], 
+			[/let]
+		[else]
+	 		 ,[paramType.name/] &[p.name/]		
+		[/comment]
+		[/let]
+		[/let]
+	[/for]
+	[/if]
+	[/if]
+	[/if]
+){}
+   [/for]
+};
 #endif
 [/file]
 
@@ -218,13 +256,13 @@
 #include"[i.name/].hpp"
 [let Iname: String = i.name]
 class Task[Iname/] 
-		:  public RTT::TaskContext, public [Iname/]{
+		: public [Iname/]{
 public:
-Task[Iname/](std::string& name): 
-TaskContext(name){
+Task[Iname/](RTT::TaskContext *tc)
+{
 [for (op : Operation | i.getAllOperations())]
-		this->addOperation("[Iname/]_[op.name/]", &[Iname/]::[Iname/]_[op.name/], this, RTT::ClientThread)[getOperationSignatureName(op)/]
-			.doc("Description : [op.type.name.toUpper()/]");
+		tc->addOperation("[Iname/]_[op.name/]", &[Iname/]::[Iname/]_[op.name/], ([Iname/]*)this, RTT::ClientThread)
+.doc("Description : [op.type.name.toUpper()/]")[getOperationSignatureName(op)/];
 [/for]
 }
 [/let]

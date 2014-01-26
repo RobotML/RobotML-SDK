@@ -234,21 +234,137 @@ public class OrocosQueries {
 		return typeName;		
 	}
 	
+	
+	/**
+	 * returns the first output parameter of a given operation
+	 * @param op
+	 * @return
+	 */
+		public Parameter getFirstOutputParameter (Operation op) {
+		Parameter result = null;
+
+		Parameter param = op.getOwnedParameters().get(1);
+		if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.OUT)) {
+				result = param;
+		}
+
+		return result;
+		}	
+	
+	
+	
+	/**
+	 * returns the first input parameter of a given operation
+	 * @param op
+	 * @return
+	 */
+		public Parameter getFirstInputParameter (Operation op) {
+			Parameter result = null;
+			int size = op.getOwnedParameters().size();
+			if(size > 0){
+				for (int i=0; i<size; i++) {
+					Parameter param = op.getOwnedParameters().get(i);
+					if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.IN)) {
+						result = param;
+						break;
+						
+					}
+				}
+			}
+		return result;
+		}	
+	
+		
+		/**
+		 * checks whether the operation has input parameters
+		 * @param op
+		 * @return
+		 */
+			public boolean hasInputParameters (Operation op) {
+			boolean result = false;
+			int size = op.getOwnedParameters().size();
+			if(size > 0){
+				for (int i=0; i<size; i++) {
+					Parameter param = op.getOwnedParameters().get(i);
+					if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.IN)) {
+						result = true;
+					}
+				}
+			}
+			return result;
+			}
+	
+
+			/**
+			 * checks whether the operation has output parameters
+			 * @param op
+			 * @return
+			 */
+				public boolean hasOutputParameters (Operation op) {
+				boolean result = false;
+				int size = op.getOwnedParameters().size();
+				if(size > 0){
+					for (int i=0; i<size; i++) {
+						Parameter param = op.getOwnedParameters().get(i);
+						if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.OUT)) {
+							result = true;
+						}
+					}
+				}
+				return result;
+				}
+		
+				/**
+				 * returns the parameters of a given operation
+				 * @param op
+				 * @return
+				 */
+					public List<Element> getOtherOutputParameters (Operation op) {
+						LinkedList<Element>	allelem =new LinkedList<Element>();
+						int size = op.getOwnedParameters().size();
+						int index = 0;
+						for (int i=0; i<size; i++) {
+							Parameter param = op.getOwnedParameters().get(i);
+							if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.OUT)) {
+								index = i;
+								break;
+								
+							}
+						}
+							for (int i=index+1; i<size; i++) {
+						Parameter param = op.getOwnedParameters().get(i);
+						if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.OUT)) {
+							allelem.add(param);
+						}
+						}
+	
+					return allelem;
+					}
+						
+	
 /**
  * returns the parameters of a given operation
  * @param op
  * @return
  */
 	public List<Element> getOperationInputParameters (Operation op) {
-	LinkedList<Element>	allelem =new LinkedList<Element>();
-	int size = op.getOwnedParameters().size();
-	
-	for (int i=0; i<size; i++) {
+		LinkedList<Element>	allelem =new LinkedList<Element>();
+		int size = op.getOwnedParameters().size();
+		int index = 0;
+		for (int i=0; i<size; i++) {
+			Parameter param = op.getOwnedParameters().get(i);
+			if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.IN)) {
+				index = i;
+				break;
+				
+			}
+		}
+		for (int i=index+1; i<size; i++) {
 		Parameter param = op.getOwnedParameters().get(i);
 		if (param.getDirection() == ParameterDirectionKind.get(ParameterDirectionKind.IN)) {
 			allelem.add(param);
 		}
-	}
+		}
 	return allelem;
 	}
 	
@@ -292,7 +408,6 @@ public class OrocosQueries {
 		int size = op.getOwnedParameters().size();
 		if (size == 0)
 			return res;
-
 		for (int i=0; i<size - 1; i++) {
 			Parameter param = op.getOwnedParameters().get(i);
 			if (param.getDirection() != ParameterDirectionKind.get(ParameterDirectionKind.RETURN)) {

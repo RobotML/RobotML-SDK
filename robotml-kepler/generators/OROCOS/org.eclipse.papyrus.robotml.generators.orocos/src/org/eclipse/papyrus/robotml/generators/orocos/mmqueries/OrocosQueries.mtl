@@ -109,9 +109,33 @@
 	invoke('org.eclipse.papyrus.robotml.generators.orocos.mmqueries.OrocosQueries', 'getTypeServicePort(org.eclipse.uml2.uml.Port)', Sequence{port})
 /]
 
+
+
+
+[query public hasInputParameters(op : Operation) : Boolean = 
+	invoke('org.eclipse.papyrus.robotml.generators.orocos.mmqueries.OrocosQueries', 'hasInputParameters(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
+/]
+
+
+[query public hasOutputParameters(op : Operation) : Boolean = 
+	invoke('org.eclipse.papyrus.robotml.generators.orocos.mmqueries.OrocosQueries', 'hasOutputParameters(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
+/]
+
+[query public getFirstInputParameter(op : Operation) : Parameter = 
+	invoke('org.eclipse.papyrus.robotml.generators.orocos.mmqueries.OrocosQueries', 'getFirstInputParameter(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
+/]
+
+[query public getFirstOutputParameter(op : Operation) : Parameter = 
+	invoke('org.eclipse.papyrus.robotml.generators.orocos.mmqueries.OrocosQueries', 'getFirstOutputParameter(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
+/]
 [query public getOperationInputParameters(op : Operation) : Sequence(NamedElement) = 
 	invoke('org.eclipse.papyrus.robotml.generators.orocos.mmqueries.OrocosQueries', 'getOperationInputParameters(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
 /]
+
+[query public getOtherOutputParameters(op : Operation) : Sequence(NamedElement) = 
+	invoke('org.eclipse.papyrus.robotml.generators.orocos.mmqueries.OrocosQueries', 'getOtherOutputParameters(org.eclipse.uml2.uml.Operation)', Sequence{op}) 
+/]
+
 
 [query public getOperationOutputParameters(op : Operation) : Sequence(NamedElement) = 
 	invoke('org.eclipse.papyrus.robotml.generators.orocos.mmqueries.OrocosQueries', 'getOperationOutputParameters(org.eclipse.uml2.uml.Operation)', Sequence{op}) 

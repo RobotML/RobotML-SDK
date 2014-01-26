@@ -5,6 +5,7 @@
 
 [template public generateOpsFile(model : Model)]
 [file ('/connect.ops', false, 'UTF-8')]
+import("[model.name/]")
 //-----import package-----
 import ("rtt_sensor_msgs")
 import ("rtt_nav_msgs")
@@ -16,15 +17,15 @@ import ("rtt_std_msgs")
 	[let c : Class = elt.oclAsType(Class)]
 		[if (not isActuator(c) and not isSensor(c))]
 		[if (elt.getAllPorts() -> isEmpty() = false)]
-
+		[if(isMacroComponent(c) = false)]
 		[if (hasStateMachine(c))]
 loadComponent("[c.name/]","OCL::LuaComponent")
 //-----load lua scripts in Lua components
-[c.name/].exec_file("src/[c.name/].lua")
+[c.name/].exec_file("src/[c.name/]/[c.name/].lua")
 		[else]
 loadComponent("[c.name/]","[c.qualifiedName/]")
 		[/if]
-
+		[/if]
 		[/if]
 		[/if]
 	[/let]
@@ -38,7 +39,9 @@ var int scheduler = ORO_SCHED_OTHER; // ORO_SCHED_OTHER = 0, ORO_SCHED_RT = 1
 		[let c : Class = elt.oclAsType(Class)]
 [if (isActuator(c) = false and  isSensor(c) = false)]
 		[if (elt.getAllPorts() -> isEmpty() = false)]
+		[if(isMacroComponent(c) = false)]
 setActivity("[c.name/]", period, priority, scheduler)
+		[/if]
 		[/if]
 [/if]
 		[/let]

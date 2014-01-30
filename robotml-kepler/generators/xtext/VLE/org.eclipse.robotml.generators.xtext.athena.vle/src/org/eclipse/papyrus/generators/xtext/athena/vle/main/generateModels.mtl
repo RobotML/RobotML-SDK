@@ -185,14 +185,16 @@ bool guard_[event.name/](const vd::Time& time) const {
 [for(transition : transitionDeclaration | ss.transitions)]
 void transition_[transition.from/]_to_[transition.to/]_for_[ss.name/](const vd::Time& time) {
 	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/]::transition_[transition.from/]_to_[transition.to/]_for_[ss.name/]] - request at time : " + time.toString());
-[if(transition.raise)]
+
 	if(guard_[transition.evt/](time)) {
+[if(transition.raise)]
 		action_[transition.sig/](time);
+[/if]
 		this->_[ss.name/]_state = [transition.to/];
 	}
-[else]
-	this->_[ss.name/]_state = guard_[transition.evt/](time) ? [transition.to/] : [transition.from/];
-[/if]
+	else {
+		this->_[ss.name/]_state = [transition.from/];
+	}
 }
 [/for]
 [/let]

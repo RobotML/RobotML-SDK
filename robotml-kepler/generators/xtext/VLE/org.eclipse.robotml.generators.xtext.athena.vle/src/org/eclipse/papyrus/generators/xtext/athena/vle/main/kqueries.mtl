@@ -116,3 +116,7 @@
 	invoke('org.eclipse.papyrus.generators.xtext.athena.vle.main.JavaService', 'hasStateSet(org.xtext.athenaDSL.prototypeDeclaration)', Sequence{proto}) 
 /]
 
+[query public getSortedDatatypes(project : Project) : Sequence(athenaDSL::DataType) =
+	invoke('org.eclipse.papyrus.generators.xtext.athena.vle.main.DataTypeSorter', 'getSortedDatatypes(org.xtext.athenaDSL.Project)', Sequence{project})
+/]
+

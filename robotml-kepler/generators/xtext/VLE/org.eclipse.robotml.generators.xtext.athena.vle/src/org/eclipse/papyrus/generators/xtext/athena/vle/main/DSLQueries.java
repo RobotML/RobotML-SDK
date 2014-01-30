@@ -51,6 +51,16 @@ public class DSLQueries
 	}
 	
 	/**
+	 * is a VLE include ?
+	 * @param decl
+	 * @return
+	 */
+	public static Boolean isVLEInclude(includeDecl decl)
+	{	
+		return DSLQueries.isVLELanguage(decl.getLang());
+	}
+	
+	/**
 	 * is it cpp language ?
 	 * @param lang
 	 * @return
@@ -721,6 +731,22 @@ public class DSLQueries
 		}
 		
 		return result;
+	}
+	
+	/**
+	 * Return enumeration
+	 * @param type
+	 * @return
+	 */
+	public static String getEnumerationBody(basicType type)
+	{
+		String value = "";
+		for(languageDecl decl : type.getLanguages())
+		{
+			if(DSLQueries.isCPPLanguage(decl.getLang()))
+				value = decl.getTrans();
+		}
+		return value;
 	}
 	
 	/**

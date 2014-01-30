@@ -25,6 +25,10 @@
 	invoke('org.eclipse.papyrus.generators.xtext.athena.vle.main.DSLQueries', 'isCPPInclude(org.xtext.athenaDSL.includeDecl)', Sequence{include}) 
 /]
 
+[query public isVLEInclude(include : includeDecl) : Boolean = 
+	invoke('org.eclipse.papyrus.generators.xtext.athena.vle.main.DSLQueries', 'isVLEInclude(org.xtext.athenaDSL.includeDecl)', Sequence{include}) 
+/]
+
 [query public isCPPLanguage(lang : LanguageDeclaration) : Boolean = 
 	invoke('org.eclipse.papyrus.generators.xtext.athena.vle.main.DSLQueries', 'isCPPLanguage(org.xtext.athenaDSL.LanguageDeclaration)', Sequence{lang}) 
 /]
@@ -191,6 +195,10 @@
 
 [query public getVLELanguageDecl(type : athenaDSL::basicType) : athenaDSL::languageDecl =
 	invoke('org.eclipse.papyrus.generators.xtext.athena.vle.main.DSLQueries', 'getVLELanguageDecl(org.xtext.athenaDSL.basicType)', Sequence{type})
+/]
+
+[query public getEnumerationBody(type : athenaDSL::basicType) : String =
+	invoke('org.eclipse.papyrus.generators.xtext.athena.vle.main.DSLQueries', 'getEnumerationBody(org.xtext.athenaDSL.basicType)', Sequence{type})
 /]
 
 [query public isEnumeration(type : athenaDSL::basicType) : Boolean =

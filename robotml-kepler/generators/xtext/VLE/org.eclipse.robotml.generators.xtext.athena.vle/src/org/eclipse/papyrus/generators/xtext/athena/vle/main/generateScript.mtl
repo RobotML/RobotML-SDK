@@ -10,7 +10,7 @@
 [template private generateScript_sh(project : Project)]
 [file('install.sh', false, 'UTF-8')]
 #!bin/sh
-
+VLE_HOME=~/.vle
 CONFIGURATION_FILE_NAME=config.vpz
 GENERATED_PACKAGE_NAME=generated
 PACKAGES_PATH=$VLE_HOME/pkgs

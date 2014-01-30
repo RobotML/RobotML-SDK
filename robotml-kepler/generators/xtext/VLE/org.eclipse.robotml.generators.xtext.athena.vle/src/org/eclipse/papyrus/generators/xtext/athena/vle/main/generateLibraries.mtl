@@ -164,7 +164,7 @@ __EXPORT__ void [stub.name/]([getProcessingSignature(stub)/])
 
 [template private generateLocalParameters(processing : ProcessingDeclaration)]
 [for(param : localParameterDeclaration | processing.localParameters)]
-[if((param.type = null) =(false))][param.type.name/][/if] [if((param.name = null) =(false))][param.name/][/if][if(param.hasValue and ((param.value = null) =(false)))][param.value/][/if];
+[if((param.type = null) =(false))][param.type.name/][/if] [if((param.name = null) =(false))][param.name.toLower()/][/if][if(param.hasValue and ((param.value = null) =(false)))][param.value/][/if];
 [/for]
 [/template]
 
@@ -200,7 +200,7 @@ try
 {
 [comment]	//boost::function<void ([getFunctorDeclaration(call.fctName)/])> _[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) getUserFunction("[call.fctName.name/]");[/comment]
 	boost::function<void ([getFunctorDeclaration(call.fctName)/])> _[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) FunctionDirectory::getinstance()->getFunction("[call.fctName.name/]");
-	_[call.fctName.name/]([for(argument : farg | call.arguments)][argument.varName/][if(call.arguments->indexOf(argument) < call.arguments->size())], [/if][/for]);
+	_[call.fctName.name/]([for(argument : farg | call.arguments)][argument.varName.toLower()/][if(call.arguments->indexOf(argument) < call.arguments->size())], [/if][/for]);
 }
 catch(...)
 {
@@ -214,7 +214,7 @@ try
 {
 	[comment]boost::function<void ([getFunctorDeclaration(call.name)/])> _[call.name.name/] = (void (*)([getFunctorDeclaration(call.name)/])) getUserFunction("[call.name.name/]");[/comment]
 boost::function<void ([getFunctorDeclaration(call.name)/])> _[call.name.name/] = (void (*)([getFunctorDeclaration(call.name)/])) FunctionDirectory::getInstance()->getFunction("[call.name.name/]");
-	_[call.name.name/]([for(argument : farg | call.arguments)][argument.varName/][if(call.arguments->indexOf(argument) < call.arguments->size())], [/if][/for]);
+	_[call.name.name/]([for(argument : farg | call.arguments)][argument.varName.toLower()/][if(call.arguments->indexOf(argument) < call.arguments->size())], [/if][/for]);
 }
 catch(...)
 {

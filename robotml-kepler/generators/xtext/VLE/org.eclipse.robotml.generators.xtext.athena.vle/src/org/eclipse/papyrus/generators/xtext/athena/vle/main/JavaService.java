@@ -113,7 +113,7 @@ public class JavaService {
 					sig += ", ";
 				if (a.getModifier().toLowerCase().equals("in"))
 					sig += "const ";
-				sig += a.getType().getName() + "& " + a.getName();
+				sig += a.getType().getName() + "& " + a.getName().toLowerCase();
 				first = false;
 			}
 		} catch (Exception e) {

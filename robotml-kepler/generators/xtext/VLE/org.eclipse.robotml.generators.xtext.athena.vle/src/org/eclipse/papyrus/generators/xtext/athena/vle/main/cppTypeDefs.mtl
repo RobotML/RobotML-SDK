@@ -2,6 +2,7 @@
 [module cppTypeDefs('http://www.xtext.org/AthenaDSL')/]
 
 [import org::eclipse::papyrus::generators::xtext::athena::vle::main::DSLQueries/]
+[import org::eclipse::papyrus::generators::xtext::athena::vle::main::kqueries/]
 
 [template public cppTypeDefs(project : Project)]
 
@@ -18,7 +19,14 @@
 #include <vector>
 #include <map>
 #include <boost/multi_array.hpp>
-	[for (type : DataType | project.types)]  
+
+[let types : Sequence(DataType) = getSortedDatatypes(project)]
+/*
+[for (type : DataType | types)]
+[type.name/]
+[/for]
+*/
+	[for (type : DataType | types)]  
 		[if (isBasicType(type))]  
 			[let bt : basicType = type.oclAsType(basicType)]
 					[for (include : includeDecl | bt.includes)]
@@ -29,8 +37,6 @@
 			[/let]
 		[/if]
 	[/for]
-
-
 //
 namespace generated 
 {
@@ -39,7 +45,7 @@ namespace generated
 // Data type definitions ----------------------------------------------------------
 //
 
-	[for (type : DataType | project.types)]
+	[for (type : DataType | types)]
 // -------------------------------------------------------- [type.name/]
 		[if (isBasicType(type))]
 [processBasicType(type.oclAsType(basicType))/]
@@ -62,7 +68,7 @@ namespace generated
 		[/if]
 		
 	[/for]
-
+[/let]
 // 
 // ------------------------------------------------------------------------------------
 //
@@ -78,10 +84,18 @@ namespace generated
 
 
 [template public processBasicType(type : basicType)]
-	[let cpp : languageDecl = getCPPLanguageDecl(type) ]
 // basic type [type.name/]	
+[if(isEnumeration(type))]
+typedef [getEnumerationBody(type)/] [type.name/];
+[comment][elseif(hasVLELanguage(type))]
+[let vle : languageDecl = getVLELanguageDecl(type) ]
+typedef [vle.trans/] [type.name/];
+[/let][/comment]
+[elseif(hasCPPLanguage(type))]
+[let cpp : languageDecl = getCPPLanguageDecl(type) ]
 typedef [cpp.trans/] [type.name/];
-	[/let]
+[/let]
+[/if]
 void init_[type.name/]([type.name/]& data);
 [/template]
 

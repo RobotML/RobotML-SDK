@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generateVLE" name="org.eclipse.papyrus.generators.xtext.athena.vle">
-    <property name="ECLIPSE_HOME" value="C:/Documents and Settings/SCDPRPB/Desktop/eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../../../developpement/Workspace-eclipse/robotML-generateur-athena"/>
+    <property name="ECLIPSE_HOME" value="../../../Applications/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.eclipse.papyrus.generators.xtext.athena.vle.libraryclasspath">
@@ -22,11 +22,11 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.common_1.1.0.v20130531-0544.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.ecore_3.3.0.v20130520-1222.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.common_3.2.2.v20120807-0831.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.parser_3.2.2.v20120807-0831.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.model_3.2.2.v20120807-0831.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.profiler_3.2.2.v20120807-0831.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.engine_3.2.2.v20120807-0831.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.common_3.4.1.201309031307.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.parser_3.4.1.201309031307.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.model_3.4.1.201309031307.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.profiler_3.4.1.201309031307.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.engine_3.4.1.201309031307.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.9.1.v20130902-0605.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.9.0.v20130902-0605.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.xtext_2.4.3.v201309030823.jar"/>

@@ -1,0 +1,267 @@
+[comment encoding = UTF-8 /]
+[comment]
+ Copyright (c) 2013 DASSAULT AVIATION.
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+   Nicolas BRODNAN (Dassault Aviation) nicolas.brodnan@gmail.com - Athena prototype generation
+[/comment]
+
+[module generatePrototypes('http://www.eclipse.org/uml2/3.0.0/UML')/]
+
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /] 
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::FSMQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::GeneralQueries /]
+[import org::eclipse::robotml::generators::acceleo::athena::mmqueries::MMSpecificQueries /]
+
+[comment]
+Search all prototypes in the RobotML model
+[/comment]
+[template public generatePrototypes(model : Model)]
+		
+//
+// Prototypes generiques
+// 
+[generateGenericPrototype(model)/]
+
+//
+// Prototypes specifique
+//
+	[for (nm : NamedElement | getModelClasses(model))]
+[generatePrototype(nm.oclAsType(Class), model) /]
+	[/for]
+[/template]
+
+[comment]
+Generate Athena generic prototypes
+[/comment]
+[template private generateGenericPrototype(model : Model)]
+	[let stereotypes : Sequence(String) = getStereotypeComponentUsedInModel(model)]
+		[for(stereo : String | stereotypes)]
+prototype [stereo/] begin
+end
+		[/for]
+	[/let]
+[/template]
+
+[comment]
+Generate Athena prototype struct
+[/comment]
+[template public generatePrototype(class : Class, model : Model)]
+[comment]If the class are an external librairy, it will be ignored[/comment]
+[if(isExternalLibrairy(class) =(false))]
+// [class.name/]
+[if(class.superClass->isEmpty())]
+prototype [class.name/] begin
+[else]
+[let superClass : Class = getSuperClass(class)]
+prototype [class.name/] is [superClass.name/] begin
+[/let]
+[/if]
+[let ports : Sequence(Port) = class.eAllContents(Port)]	
+[if(ports->isEmpty() =(false))]
+	[generateReferenceFromInputPort(ports, class, model)/]
+	[generateParameterFromOutputPort(ports)/]
+[/if]
+[/let]		
+[let properties : Sequence(Property) = class.eAllContents(Property)]
+[if(properties->isEmpty() =(false))]
+	[generateParameterFromProperties(properties)/]
+	[generateInstancesFromProperties(properties)/]
+[/if]
+[/let]
+[let fsms : Sequence(StateMachine) = class.eAllContents(StateMachine)]
+[if(hasValidFSMDeclaration(class))]
+	[generateFSM(fsms, model)/]
+[/if]
+	[generateInteractions(fsms)/]
+[/let]
+end
+[/if]	
+[/template]
+
+[comment]
+Generate the prototype's reference (input port)
+[/comment]
+[template private generateReferenceFromInputPort(ports : Sequence(Port), class : Class, model : Model)]
+[for(port : Port | ports)]
+[if(isDataFlowPort(port) and (isAnInputPort(port) or isAnInputOutputPort(port)) and not isInheritedPort(class, port) )]
+[if(hasComment(port))]
+[getCommentFromElement(port)/]
+[/if]
+[if(hasObjectInstanceConnection(model, class, port))]
+reference <[port.type.name/]> @[getObjectInstanceConnectionName(model, class, port)/].[port.name.toLower()/]
+[elseif(hasParentInstanceConnection(model, class, port))]
+reference <[port.type.name/]> @[port.name.toLower()/]
+[elseif( not (getChildrenClass(model, class) = null))]
+reference <[port.type.name/]> @[port.name.toLower()/]
+[else]
+[generateParameterFromInputPort(port)/]
+[/if]
+[/if]
+[/for]
+[/template] 
+
+[comment]
+Generate prototype parameters from input port
+[/comment]
+[template private generateParameterFromInputPort(port : Port)]
+//generate parameter from input port (not connected)
+[if(getInstanceMultiplicity(port) = '[]')]
+parameter [port.type.name/]! [port.name.toLower()/][if(hasDefaultValue(port))] = "[port.default/]"[/if]
+[else]
+parameter [port.type.name/] [port.name.toLower()/][if(hasDefaultValue(port))] = "[port.default/]"[/if]
+[/if]
+[/template]
+
+[comment]
+Generate the prototype's parameters (output port)
+[/comment]
+[template private generateParameterFromOutputPort(ports : Sequence(Port))]
+//Generate parameter from Output port
+[for(port : Port | ports)]
+[if(isDataFlowPort(port) and isAnOutputPort(port))]
+[if(hasComment(port))]
+[getCommentFromElement(port)/]
+[/if]
+[if(getInstanceMultiplicity(port) = '[]')]
+parameter [port.type.name/]! [port.name.toLower()/][if(hasDefaultValue(port))] = "[port.default/]"[/if]
+[else]
+parameter [port.type.name/] [port.name.toLower()/][if(hasDefaultValue(port))] = "[port.default/]"[/if]
+[/if]
+[/if]
+[/for]
+[/template]
+
+[comment]
+Generate the prototype's parameters (property)
+[/comment]
+[template private generateParameterFromProperties(properties :Sequence(Property))]
+//Generate parameter from properties
+[for(prop : Property | properties)]
+[if(isDataType(prop.type) and (prop.oclIsKindOf(Port) = false))]
+[if(hasComment(prop))]
+[getCommentFromElement(prop)/]
+[/if]
+[if(prop.getInstanceMultiplicity() = '[]')]
+parameter [prop.type.name/]! [prop.name.toLower()/][if(prop.hasDefaultValue())] = "[prop.default/]"[/if]
+[else]
+parameter [prop.type.name/] [prop.name.toLower()/][if(prop.hasDefaultValue())] = "[prop.default/]"[/if]
+[/if]
+[/if]
+[/for]
+[/template]
+
+[comment]
+Generate the prototype's instance (property)
+[/comment]
+[template private generateInstancesFromProperties(properties : Sequence(Property))]
+[for(prop : Property | properties)]
+[if(isDataType(prop.type) = false)]
+[if(hasComment(prop))]
+[getCommentFromElement(prop)/] 
+[/if]
+instance [prop.type.name/][getInstanceMultiplicity(prop)/] [prop.name.toLower()/]
+[/if]
+[/for]
+[/template]
+
+[comment]
+Generate the prototype's statemachine declaration
+[/comment]
+[template private generateFSM(fsms : Sequence(StateMachine), model : Model)]
+[for (sm : StateMachine | fsms)]
+//[sm.name/]
+[generateFSMGuard(sm, model)/]
+[generateFSMEffect(sm)/]
+[let states : Sequence(Vertex) = getFSMStates(sm)]
+stateset [sm.name/] { [for(state : Vertex | states)][state.name/][if(states->indexOf(state) < states->size())], [/if][/for] } = [for(state : Vertex | states)][if(isStartingState(state))][state.name/][/if][/for] begin
+[/let]
+[let transitions : Sequence(RobotML::Transition) = getTransitions(sm)]
+[for(transition : RobotML::Transition | transitions)]
+[if((transition.guard = null) =(false))]
+[if((transition.effect = null) = (false))]
+	transition from [transition.base_Transition.source.name/] to [transition.base_Transition.target.name/] on [transition.guard.specification.name/] raise [transition.effect.specification.name/]
+	transition from [transition.base_Transition.source.name/] to [transition.base_Transition.target.name/] on [transition.guard.specification.name/]
+[else]
+	transition from [transition.base_Transition.source.name/] to [transition.base_Transition.target.name/] on [transition.guard.specification.name/]
+[/if]
+[/if]
+[/for]
+[/let]
+end
+[/for]
+[/template]
+
+[comment]
+Generate prototype's interactions
+[/comment]
+[template private generateInteractions(fsms : Sequence(StateMachine))]
+[for(sm : StateMachine | fsms)]
+[let states : Sequence(Vertex) = getFSMStates(sm)]
+[for(state : Vertex | states)]
+[let interaction : String = generateInteractionStateString(state)]
+[if(interaction.size() > 0)]
+when ([sm.name/]::[state.name/]) begin
+	[interaction.trim()/]
+end
+[/if]
+[/let]
+[/for]
+[/let]
+[/for]
+[/template]
+
+[comment]
+Generate Athena event
+[/comment]
+[template private generateFSMGuard(fsm : StateMachine, model : Model)]
+[let transitions : Sequence(RobotML::Transition) = getTransitions(fsm)]
+[for(transition : RobotML::Transition | transitions)]
+[let guard : Behavior = transition.guard]
+[if(not (guard.specification = null))]
+event [guard.specification.name/] { [generateGuardBody(guard)/] }
+[/if]
+[/let]
+[/for]
+[/let]
+[/template]
+
+[comment]
+Generate Athena event body
+[/comment]
+[template private generateGuardBody(guard : Behavior)]
+[if(guard.oclIsKindOf(OpaqueBehavior) =(true))]
+[comment]TODO : Detect has body specification or using file[/comment]
+[let eventDecl : OpaqueBehavior = guard.oclAsType(OpaqueBehavior)]
+[for(lng : String | eventDecl.language)]
+[if(lng.toLower().equalsIgnoreCase('athena'))]
+[for(bodyStr : String | eventDecl._body)]
+[bodyStr/]
+[/for]
+[/if]
+[/for]
+[/let]
+[elseif(guard.oclIsKindOf(FunctionBehavior) =(true))]
+[comment]Search the function used[/comment]
+[/if]
+[/template]
+
+[comment]
+Generate Athena signal
+[/comment]
+[template private generateFSMEffect(fsm : StateMachine)]
+[let transitions : Sequence(RobotML::Transition) = getTransitions(fsm)]
+[for(transition : RobotML::Transition | transitions)]
+[let effect : Behavior = transition.effect]
+[if(not (effect.specification = null))] 
+signal [effect.specification.name/]			
+[/if]		
+[/let]
+[/for]
+[/let]
+[/template]

@@ -186,7 +186,6 @@ stateset [sm.name/] { [for(state : Vertex | states)][state.name/][if(states->ind
 [if((transition.guard = null) =(false))]
 [if((transition.effect = null) = (false))]
 	transition from [transition.base_Transition.source.name/] to [transition.base_Transition.target.name/] on [transition.guard.specification.name/] raise [transition.effect.specification.name/]
-	transition from [transition.base_Transition.source.name/] to [transition.base_Transition.target.name/] on [transition.guard.specification.name/]
 [else]
 	transition from [transition.base_Transition.source.name/] to [transition.base_Transition.target.name/] on [transition.guard.specification.name/]
 [/if]

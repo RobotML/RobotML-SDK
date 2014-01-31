@@ -30,7 +30,7 @@
 <config>
 	<user-libraries>
 [for(wrapper : wrapperDeclaration | project.wrappers)]
-	<library>../lib/lib[wrapper.name/].so</library>
+	<library>../lib/[wrapper.name/].so</library>
 [/for]
 	</user-libraries>
 </config>

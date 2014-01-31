@@ -58,6 +58,7 @@ public:
 	[generateInternalTransitionMethod(project, proto)/]
 	[generateExternalTransitionMethod(project, proto)/]
 	[generateObservationMethod(proto)/]
+	[generateTimeAdvance(proto)/]
 };
 }
 DECLARE_DYNAMICS(generated::[proto.name/])
@@ -305,7 +306,7 @@ _[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) Funct
 [/for]
 [/if]
 [/for]
-return vd::Dynamics::init(time);
+return vd::Time(0.0);
 }
 [/template] 
 
@@ -528,3 +529,9 @@ catch(...)
 	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - Problem on loading function pointers.");
 }
 [/template] 
+
+[template private generateTimeAdvance(proto : prototypeDeclaration)]
+virtual vd::Time timeAdvance() {
+	return vd::Time(1.0);
+}
+[/template]

@@ -13,7 +13,7 @@ Require-Bundle: org.eclipse.xtext.ui,
  org.antlr.runtime,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
- org.eclipse.papyrus.xtext.athenaDSL;bundle-version="0.10.0.qualifier"
+ org.eclipse.papyrus.xtext.athenaDSL;bundle-version="0.10.0"
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

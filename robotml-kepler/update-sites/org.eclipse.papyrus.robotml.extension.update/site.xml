@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
    <feature url="features/org.eclipse.papyrus.robotml.extension.feature_1.0.0.jar" id="org.eclipse.papyrus.robotml.extension.feature" version="1.0.0">
-      <category name="Dynamic_validation"/>
+      <category name="RobotML_extension"/>
    </feature>
-   <category-def name="Dynamic_validation" label="Dynamic validation">
+   <category-def name="RobotML_extension" label="RobotML extension">
       <description>
-         this feature groups everything that allows a dynamic validation of those models developed using robotML.
+         this feature groups the elements necessary to the extension of the RobotML meta model. It is used by the dynamic validation components.
       </description>
    </category-def>
 </site>

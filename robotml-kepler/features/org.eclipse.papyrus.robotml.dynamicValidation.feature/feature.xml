@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.papyrus.robotml.generators.vle.feature"
+      id="org.eclipse.papyrus.robotml.dynamicValidation.feature"
       label="Feature"
       version="1.0.0.qualifier">
 
@@ -44,51 +44,47 @@
       <import plugin="org.eclipse.gmf.runtime.common.core"/>
       <import plugin="org.eclipse.papyrus.infra.widgets"/>
       <import plugin="org.eclipse.papyrus.views.modelexplorer"/>
-      <import plugin="org.xtext.AthenaDSL"/>
-      <import plugin="org.eclipse.robotml.generators.xtext.athena.simu"/>
-      <import plugin="org.xtext.AthenaDSL" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.robotml.generators.xtext.athena.vle"/>
    </requires>
 
    <plugin
-         id="org.eclipse.robotml.generators.acceleo.athena"
+         id="org.eclipse.papyrus.generators.xtext.athena.vle"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.papyrus.generators.xtext.athena.vle.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.robotml.generators.acceleo.athena.ui"
+         id="org.eclipse.papyrus.robotml.generators.athena"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.robotml.generators.xtext.athena.simu"
+         id="org.eclipse.papyrus.robotml.generators.athena.ui"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.robotml.generators.xtext.athena.simu.ui"
+         id="org.eclipse.papyrus.xtext.athenaDSL"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.robotml.generators.xtext.athena.vle"
+         id="org.eclipse.papyrus.xtext.athenaDSL.ui"
          download-size="0"
          install-size="0"
-         version="1.0.0"/>
-
-   <plugin
-         id="org.eclipse.robotml.generators.xtext.athena.vle.ui"
-         download-size="0"
-         install-size="0"
-         version="1.0.0"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>

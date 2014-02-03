@@ -54,3 +54,19 @@ plugins/generators/RTMaps/rtmaps_resources/rtmaps_4_sdk_proteus/packages/debug/*
 plugins/robotml/*/*.html
 
 bin
+robotml-kepler/generators/common/org.eclipse.papyrus.robotml.generators.common/bin/org/eclipse/papyrus/robotml/generators/common/mmqueries/ArchitectureQueries.emtl
+robotml-kepler/generators/common/org.eclipse.papyrus.robotml.generators.common/bin/org/eclipse/papyrus/robotml/generators/common/mmqueries/DataTypeQueries.emtl
+robotml-kepler/generators/common/org.eclipse.papyrus.robotml.generators.common/bin/org/eclipse/papyrus/robotml/generators/common/mmqueries/DeploymentQueries.emtl
+robotml-kepler/generators/common/org.eclipse.papyrus.robotml.generators.common/bin/org/eclipse/papyrus/robotml/generators/common/mmqueries/FSMQueries.emtl
+robotml-kepler/generators/common/org.eclipse.papyrus.robotml.generators.common/bin/org/eclipse/papyrus/robotml/generators/common/mmqueries/FSMQueries.mtl
+robotml-kepler/generators/common/org.eclipse.papyrus.robotml.generators.common/bin/org/eclipse/papyrus/robotml/generators/common/mmqueries/GeneralQueries.emtl
+robotml-kepler/generators/xtext/VLE/org.eclipse.robotml.generators.xtext.athena.vle/tasks/generateVLE.xml
+robotml-kepler/dsl-xtext/AthenaDSL/org.eclipse.papyrus.xtext.athenaDSL/xtend-gen/org/xtext/generator/.AthenaDSLGenerator.java._trace
+robotml-kepler/dsl-xtext/AthenaDSL/org.eclipse.papyrus.xtext.athenaDSL/xtend-gen/org/xtext/generator/AthenaDSLGenerator.java
+robotml-kepler/generators/common/org.eclipse.papyrus.robotml.generators.common/bin/org/eclipse/papyrus/robotml/generators/common/mmqueries/GeneralQueries.emtl
+robotml-kepler/update-sites/org.eclipse.papyrus.robotml.dynamicValidation.update/logs.zip
+robotml-kepler/update-sites/org.eclipse.papyrus.robotml.dynamicValidation.update/logs/org.eclipse.papyrus.generators.xtext.athena.vle.ui_1.0.0/@dot.log
+robotml-kepler/update-sites/org.eclipse.papyrus.robotml.dynamicValidation.update/logs/org.eclipse.papyrus.robotml.generators.athena_1.0.0/@dot.log
+robotml-kepler/update-sites/org.eclipse.papyrus.robotml.dynamicValidation.update/logs/org.eclipse.papyrus.robotml.generators.athena.ui_1.0.0/@dot.log
+robotml-kepler/update-sites/org.eclipse.papyrus.robotml.dynamicValidation.update/logs/org.eclipse.papyrus.xtext.athenaDSL_0.10.0.201402031851/@dot.log
+robotml-kepler/update-sites/org.eclipse.papyrus.robotml.dynamicValidation.update/logs/org.eclipse.papyrus.xtext.athenaDSL.ui_0.10.0.201402031851/@dot.log

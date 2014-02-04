@@ -1044,10 +1044,13 @@ public class SpecificQueries {
 		HashSet<Class> classes = getAllModelClasses(ne);
 		for(Class classe : classes)
 		{
-			for(Stereotype stereo : classe.getAppliedStereotypes())
+			if(SpecificQueries.isExternalLibrairy(classe) == false)
 			{
-				if(!result.contains(stereo.getName()))
-					result.add(stereo.getName());
+				for(Stereotype stereo : classe.getAppliedStereotypes())
+				{
+					if(!result.contains(stereo.getName()))
+						result.add(stereo.getName());
+				}
 			}
 		}
 		
@@ -1774,4 +1777,5 @@ public class SpecificQueries {
 		}
 		return result;
 	}
+	
 }

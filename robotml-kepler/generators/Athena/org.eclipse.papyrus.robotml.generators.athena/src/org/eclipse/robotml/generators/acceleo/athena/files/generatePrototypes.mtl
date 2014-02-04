@@ -23,10 +23,10 @@ Search all prototypes in the RobotML model
 [/comment]
 [template public generatePrototypes(model : Model)]
 		
-//
+[comment]//
 // Prototypes generiques
 // 
-[generateGenericPrototype(model)/]
+[generateGenericPrototype(model)/][/comment]
 
 //
 // Prototypes specifique

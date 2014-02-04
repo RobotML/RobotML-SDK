@@ -531,7 +531,8 @@ catch(...)
 [/template] 
 
 [template private generateTimeAdvance(proto : prototypeDeclaration)]
-virtual vd::Time timeAdvance() {
+virtual vd::Time timeAdvance() const {
+	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - timeAdvance");
 	return vd::Time(1.0);
 }
 [/template]

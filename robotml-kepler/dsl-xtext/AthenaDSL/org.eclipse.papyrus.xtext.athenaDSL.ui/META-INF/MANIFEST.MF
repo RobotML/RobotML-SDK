@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Athena DSL user interface - syntaxic coloration (incubation)
+Bundle-Name: Athena DSL user interface - syntaxic coloration (Incubation)
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-Version: 0.10.0.qualifier
 Bundle-SymbolicName: org.eclipse.papyrus.xtext.athenaDSL.ui;singleton:=true

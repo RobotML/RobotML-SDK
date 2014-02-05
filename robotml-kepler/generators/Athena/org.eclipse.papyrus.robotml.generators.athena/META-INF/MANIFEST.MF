@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Acceleo Athena Module Runtime Plug-in
+Bundle-Name: Acceleo Athena Module Runtime Plug-in (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.robotml.generators.athena;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 0.10.0.qualifier
 Bundle-Activator: org.eclipse.robotml.generators.acceleo.athena.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.7.0",

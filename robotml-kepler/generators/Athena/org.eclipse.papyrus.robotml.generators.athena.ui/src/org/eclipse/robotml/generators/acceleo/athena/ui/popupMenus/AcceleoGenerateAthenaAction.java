@@ -12,6 +12,8 @@ package org.eclipse.robotml.generators.acceleo.athena.ui.popupMenus;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
@@ -74,7 +76,13 @@ public class AcceleoGenerateAthenaAction extends ActionDelegate implements IActi
 							IFile model = (IFile)filesIt.next();
 							URI modelURI = URI.createPlatformResourceURI(model.getFullPath().toString(), true);
 							try {
-								IContainer target = model.getProject().getFolder("athena-generated-files");
+								
+								Date date = new Date();
+								SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+								
+								String folderName = model.getProject().getName() + "athenaFiles" + format.format(date);
+								
+								IContainer target = model.getProject().getFolder(folderName);
 								configGenerator.setAutomaticGeneration(true);
 								configGenerator.setAthenaFolder(target.getLocation().toString());
 								GenerateAll generator = new GenerateAll(modelURI, target, getArguments());

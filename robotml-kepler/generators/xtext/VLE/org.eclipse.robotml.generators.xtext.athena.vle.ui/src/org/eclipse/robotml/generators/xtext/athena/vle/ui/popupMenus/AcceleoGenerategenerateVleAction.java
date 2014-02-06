@@ -12,6 +12,8 @@ package org.eclipse.robotml.generators.xtext.athena.vle.ui.popupMenus;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
@@ -71,7 +73,11 @@ public class AcceleoGenerategenerateVleAction extends ActionDelegate implements 
 							IFile model = (IFile)filesIt.next();
 							URI modelURI = URI.createPlatformResourceURI(model.getFullPath().toString(), true);
 							try {
-								IContainer target = model.getProject().getFolder("vle-generated-files");
+								Date date = new Date();
+								SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+								
+								String folderName = model.getProject().getName() + "vleFiles" + format.format(date);
+								IContainer target = model.getProject().getFolder(folderName);
 								GenerateAll generator = new GenerateAll(modelURI, target, getArguments());
 								generator.doGenerate(monitor);
 							} catch (IOException e) {

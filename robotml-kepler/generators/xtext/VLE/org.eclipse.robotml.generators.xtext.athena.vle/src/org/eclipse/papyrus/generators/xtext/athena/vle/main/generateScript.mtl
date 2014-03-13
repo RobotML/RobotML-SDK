@@ -5,6 +5,15 @@
 
 [template public generateScript(project : Project)]
 [generateScript_sh(project)/]
+[generateStartScript_sh(project)/]
+[/template]
+
+[template private generateStartScript_sh(project : Project)]
+[file('~/start_vle.sh', false, 'UTF-8')]
+#!bin/sh
+export LD_LIBRARY_PATH=~/.vle/pkgs/generated/lib
+vle-1.0 -P generated -v 3 config.vpz
+[/file]
 [/template]
 
 [template private generateScript_sh(project : Project)]
@@ -26,11 +35,11 @@ echo "*****************************************"
 echo "*** VLE simulation package deployment ***"
 echo "*****************************************"
 
-echo "*** Remove old VLE simulation package"
-rm -Rf $GENERATED_PACKAGE_PATH
+#echo "*** Remove old VLE simulation package"
+#rm -Rf $GENERATED_PACKAGE_PATH
 
 echo "*** Copy the generated VLE simulation package"
-cp -Rf ./$GENERATED_PACKAGE_NAME $PACKAGES_PATH
+cp -Ru ./$GENERATED_PACKAGE_NAME $PACKAGES_PATH
 mkdir $GENERATED_OUTPUT_PATH
 mkdir $GENERATED_LIB_PATH
 
@@ -42,13 +51,14 @@ cd $GENERATED_PACKAGE_BUILD_PATH
 make install
 if ['['/] $? -eq 0 [']'/]; then
 echo "*** Compilation succesfull!!!"
+export LD_LIBRARY_PATH=$GENERATED_LIB_PATH
 echo "*** Do you want to lauch simulation ?"
 echo "	 - 1 : VLE console"
 echo "	 - 2 : GVLE"
 echo "   - 3 : No i don't"
 read -p "Please choose:" selection
 if ['['/] $selection = "1" [']'/]; then
-vle-1.0 -P $GENERATED_PACKAGE_NAME $CONFIGURATION_FILE_NAME
+vle-1.0 -P $GENERATED_PACKAGE_NAME -v 3 $CONFIGURATION_FILE_NAME
 elif ['['/]$selection = "2" [']'/]; then
 gvle $GENERATED_EXPERIENCE_PATH/$CONFIGURATION_FILE_NAME &
 else

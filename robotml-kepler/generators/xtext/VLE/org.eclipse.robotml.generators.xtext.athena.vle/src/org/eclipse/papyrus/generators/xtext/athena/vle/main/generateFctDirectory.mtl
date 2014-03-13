@@ -6,7 +6,8 @@
 #include "FunctionDirectory.hpp"
 
 using namespace generated;
-FunctionDirectory* FunctionDirectory::_instance = NULL;
+//FunctionDirectory* FunctionDirectory::_instance = NULL;
+FunctionDirectory* _funcDir = new FunctionDirectory();
 
 [/file]
 
@@ -37,8 +38,8 @@ private:
 	std::map<const std::string, void*> functions;
 	static FunctionDirectory* _instance;
 
-	FunctionDirectory() { }
 public:
+	FunctionDirectory() { }
 	__EXPORT__ void addFunction(const std::string& name, void* fct) {
 		if(functions.find(name) == functions.end()) {
 			TraceAlways(vu::DateTime::simpleCurrentDate() + "FunctionDirectory::addFunction - add function \" " + name + " \"");
@@ -57,12 +58,12 @@ public:
 	}
 	__EXPORT__ unsigned int size() { return functions.size(); }
 
-	__EXPORT__ static FunctionDirectory* getInstance() {
+	/*__EXPORT__ static FunctionDirectory* getInstance() {
 		if(FunctionDirectory::_instance == NULL) {
 			FunctionDirectory::_instance = new FunctionDirectory();		
 		}
 		return FunctionDirectory::_instance;
-	}
+	}*/
 };
 
 class LibraryLoader {

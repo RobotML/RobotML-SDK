@@ -35,8 +35,9 @@ namespace vu = vle::utils;
 
 namespace generated {
 
-extern "C++" FunctionDirectory* FunctionDirectory::_instance;
-extern "C++" FunctionLibrary* FunctionLibrary::_instance;
+[comment]FunctionDirectory* FunctionDirectory::_instance;
+FunctionLibrary* FunctionLibrary::_instance;[/comment]
+extern "C" FunctionDirectory* _funcDir;
 
 class [proto.name/] : public vd::Dynamics {
 
@@ -266,8 +267,8 @@ virtual ~[proto.name/]() {
 virtual vd::Time init(const vd::Time& time) {
 	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - Init at time : " + time.toString());
 
-	FunctionLibrary::getInstance();
-	FunctionDirectory::getInstance();
+	//FunctionLibrary::getInstance();
+	//FunctionDirectory::getInstance();
 
 [for (p : prototypeDeclaration | project.prototypes)]
 [if (isAnAncestorOf(proto, p))]
@@ -276,7 +277,7 @@ virtual vd::Time init(const vd::Time& time) {
 [let action : interactionDeclaration = elt.oclAsType(interactionDeclaration)]
 [for(call : interactionCall | action.icalls)]
 [comment]_[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) getUserFunction("[call.fctName.name/]");[/comment]
-_[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) FunctionDirectory::getInstance()->getFunction("[call.fctName.name/]");
+_[call.fctName.name/] = (void (*)([getFunctorDeclaration(call.fctName)/])) _funcDir->getFunction("[call.fctName.name/]");
 [/for]
 [/let]
 [/if]

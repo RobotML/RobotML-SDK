@@ -28,6 +28,9 @@ private:
 	static FunctionLibrary* _instance;
 	vector<LibraryLoader*> _libraries;
 
+
+public:
+
 	FunctionLibrary() {	
 
 		TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionLibrary::FunctionLibrary (BEGIN)"); 
@@ -41,8 +44,6 @@ private:
 		}
 		TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionLibrary::FunctionLibrary (END)");
 	}
-	
-public:
 
 	~FunctionLibrary() {
 		TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionLibrary::~FunctionLibrary (BEGIN)");
@@ -53,7 +54,7 @@ public:
 		TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionLibrary::~FunctionLibrary (END)");
 	}
 
-	__EXPORT__ static FunctionLibrary* getInstance() {
+	/*__EXPORT__ static FunctionLibrary* getInstance() {
 		TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionLibrary::getInstance (BEGIN)");
 		if(FunctionLibrary::_instance == NULL)
 		{
@@ -61,7 +62,7 @@ public:
 		}
 		TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionLibrary::getInstance (END)");
 		return FunctionLibrary::_instance;
-	} 
+	} */
 };
 }
 #endif /* FuntionLibrary_H */
@@ -69,7 +70,8 @@ public:
 [file('generated/src/FunctionLibrary.cpp', false, 'UTF-8')]
 #include "FunctionLibrary.hpp"
 using namespace generated;
-FunctionLibrary* FunctionLibrary::_instance = NULL;
+//FunctionLibrary* FunctionLibrary::_instance = NULL;
+FunctionLibrary* _funcLib = new FunctionLibrary();
 [/file]
 [/template]
 

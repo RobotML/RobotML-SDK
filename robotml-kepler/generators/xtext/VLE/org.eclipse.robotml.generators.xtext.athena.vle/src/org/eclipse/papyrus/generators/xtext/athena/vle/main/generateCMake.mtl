@@ -82,18 +82,20 @@ LINK_DIRECTORIES(
 ADD_LIBRARY(XML STATIC xml.cpp tests.cpp expatpp.cpp xmlparse.c xmlrole.c xmltok.c xmltok_impl.c)
 TARGET_LINK_LIBRARIES(XML ${VLE_LIBRARIES} ${BOOST_LIBRARIES})
 
-ADD_LIBRARY(ExternalFunction SHARED FunctionDirectory.cpp FunctionLibrary.cpp)
-TARGET_LINK_LIBRARIES(ExternalFunction XML ${VLE_LIBRARIES} ${BOOST_LIBRARIES})
+ADD_LIBRARY(TypeDefs SHARED TypeDefs.cpp TypeDefs_Values.cpp)
+TARGET_LINK_LIBRARIES(TypeDefs ${VLE_LIBRARIES} ${BOOST_LIBRARIES})
 
+ADD_LIBRARY(ExternalFunction SHARED FunctionDirectory.cpp FunctionLibrary.cpp)
+TARGET_LINK_LIBRARIES(ExternalFunction TypeDefs XML ${VLE_LIBRARIES} ${BOOST_LIBRARIES})
 
 [for (proto : prototypeDeclaration | project.prototypes)]
-ADD_LIBRARY([proto.name/] SHARED [getPrototypeFileName(proto,'.cpp')/] TypeDefs.cc TypeDefs_Values.cc )
-TARGET_LINK_LIBRARIES([proto.name/] ExternalFunction XML ${VLE_LIBRARIES} ${Boost_LIBRARIES} )
+ADD_LIBRARY([proto.name/] SHARED [getPrototypeFileName(proto,'.cpp')/])
+TARGET_LINK_LIBRARIES([proto.name/] TypeDefs ExternalFunction XML ${VLE_LIBRARIES} ${Boost_LIBRARIES} )
 [/for]
 
 [for (wrapper : wrapperDeclaration | project.wrappers)]
-ADD_LIBRARY(Stub_[wrapper.name/] SHARED Stub_[wrapper.name/].cpp TypeDefs.cc)
-TARGET_LINK_LIBRARIES(Stub_[wrapper.name/] ExternalFunction XML ${VLE_LIBRARIES} ${Boost_LIBRARIES})
+ADD_LIBRARY(Stub_[wrapper.name/] SHARED Stub_[wrapper.name/].cpp)
+TARGET_LINK_LIBRARIES(Stub_[wrapper.name/] TypeDefs ExternalFunction XML ${VLE_LIBRARIES} ${Boost_LIBRARIES})
 [/for]
 
 
@@ -104,6 +106,7 @@ INSTALL(TARGETS
 [for (wrapper : wrapperDeclaration | project.wrappers)]
   Stub_[wrapper.name/]
 [/for]
+  TypeDefs
   ExternalFunction
   XML
   RUNTIME DESTINATION lib

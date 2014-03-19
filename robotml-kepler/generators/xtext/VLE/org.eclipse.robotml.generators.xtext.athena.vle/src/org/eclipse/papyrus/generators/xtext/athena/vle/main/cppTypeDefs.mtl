@@ -19,6 +19,7 @@
 #include <vector>
 #include <map>
 #include <boost/multi_array.hpp>
+#include "Compatibility.hpp"
 
 [let types : Sequence(DataType) = getSortedDatatypes(project)]
 /*
@@ -96,33 +97,33 @@ typedef [vle.trans/] [type.name/];
 typedef [cpp.trans/] [type.name/];
 [/let]
 [/if]
-void init_[type.name/]([type.name/]& data);
+__EXPORT__ void init_[type.name/]([type.name/]& data);
 [/template]
 
 
 [template public processArrayType(array : arrayType)]
 // [array.name/] is an array of [getArrayDatatypeName(array)/]
 	[if (isDynamicArray(array))]
-typedef boost::multi_array<[getArrayDatatypeName(array)/], [getArrayNumberOfDimension(array)/]>* [array.name/];
+__EXPORT__ typedef boost::multi_array<[getArrayDatatypeName(array)/], [getArrayNumberOfDimension(array)/]>* [array.name/];
 [array.name/] [array.name/]_allocate([getDynamicAllocationFunctionArguments(array)/]);	
 	[else]
 typedef [getArrayDatatypeName(array)/] [array.name/][getArrayDimensions()/];	
 	[/if]
-void init_[array.name/]([array.name/]& data);
+__EXPORT__ void init_[array.name/]([array.name/]& data);
 [/template]
 
 
 [template public processVectorType(vector : vectorType)]
 // [vector.name/] is a vector of [getVectorDatatypeName(vector)/]
 typedef std::vector<[getVectorDatatypeName(vector)/]> [vector.name/] ;
-void init_[vector.name/]([vector.name/]& data);
+__EXPORT__ void init_[vector.name/]([vector.name/]& data);
 [/template]
 
 
 [template public processMapType(map : mapType)]
 // [map.name/] is a map with key type [getMapKeyTypeName(map)/] and value type [getMapValueTypeName(map)/]
 typedef std::map <[getMapKeyTypeName(map)/], [getMapValueTypeName(map)/]> [map.name/];
-void init_[map.name/]([map.name/]& data);
+__EXPORT__ void init_[map.name/]([map.name/]& data);
 [/template]
 
 
@@ -136,19 +137,19 @@ public:
 	[if (hasDynamicArrayElements(struct))]
 	[getDynamicAllocationFunctionForStruct(struct)/]
 	[/if]
-	[struct.name/]() { }
-	[struct.name/](const [struct.name/]& _[struct.name/]);
-	[struct.name/]& operator = (const [struct.name/]& _[struct.name/]);
-	void copy(const [struct.name/]& _[struct.name/]);
+	__EXPORT__ [struct.name/]() { }
+	__EXPORT__ [struct.name/](const [struct.name/]& _[struct.name/]);
+	__EXPORT__ [struct.name/]& operator = (const [struct.name/]& _[struct.name/]);
+	__EXPORT__ void copy(const [struct.name/]& _[struct.name/]);
 } ;
-void init_[struct.name/]([struct.name/]& data);
+__EXPORT__ void init_[struct.name/]([struct.name/]& data);
 [/template]
 
 
 [template public processDefineType(define : defineType)]
 // [define.name/] is a [getDefineTypeName(define)/]
 typedef [getDefineTypeName(define)/] [define.name/];
-void init_[define.name/]([define.name/]& data);
+__EXPORT__ void init_[define.name/]([define.name/]& data);
 [/template]
 
 
@@ -164,18 +165,14 @@ public:
 	[union.name/]();
 	[for (type : DataType | union.elements)]
 	static const unsigned int __[type.name/];
-	void set_[type.name/](const [type.name/]& d);
-	const [type.name/]* get_[type.name/]();
-	bool is_[type.name/]() const { return (type == __[type.name/]); }
+	__EXPORT__ void set_[type.name/](const [type.name/]& d);
+	__EXPORT__ const [type.name/]* get_[type.name/]();
+	__EXPORT__ bool is_[type.name/]() const { return (type == __[type.name/]); }
 	[/for]
-	[union.name/](const [union.name/]& _[union.name/]);
-	~[union.name/]();
-	[union.name/]& operator = (const [union.name/]& _[union.name/]);
-	int getDataType() { return type; }
+	__EXPORT__ [union.name/](const [union.name/]& _[union.name/]);
+	__EXPORT__ ~[union.name/]();
+	__EXPORT__ [union.name/]& operator = (const [union.name/]& _[union.name/]);
+	__EXPORT__ int getDataType() { return type; }
 };
-void init_[union.name/]([union.name/]& data);
+__EXPORT__ void init_[union.name/]([union.name/]& data);
 [/template]
-
-
-
-

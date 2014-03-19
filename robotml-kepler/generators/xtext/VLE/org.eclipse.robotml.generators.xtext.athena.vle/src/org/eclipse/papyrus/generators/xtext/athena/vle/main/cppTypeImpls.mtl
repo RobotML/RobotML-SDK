@@ -5,7 +5,7 @@
 
 [template public cppTypeImpls(project : Project)]
 	
-[file ('generated/src/TypeDefs.cc', false, 'UTF-8')] 
+[file ('generated/src/TypeDefs.cpp', false, 'UTF-8')] 
 // 
 // Includes ----------------------------------------------------------------------
 // 
@@ -61,7 +61,7 @@ namespace generated
 
 [template public processBasicType(type : basicType)]
 	[let cpp : languageDecl = getCPPLanguageDecl(type) ]
-void init_[type.name/]([type.name/]& data) {
+__EXPORT__ void init_[type.name/]([type.name/]& data) {
 	data = [cpp.value/];
 }
 	[/let]
@@ -70,33 +70,33 @@ void init_[type.name/]([type.name/]& data) {
 
 [template public processArrayType(array : arrayType)]
 	[if (isDynamicArray(array))]
-[array.name/] [array.name/]_allocate([getDynamicAllocationFunctionArguments(array)/]) {
+__EXPORT__ [array.name/] [array.name/]_allocate([getDynamicAllocationFunctionArguments(array)/]) {
 	return new boost::multi_array<[getArrayDatatypeName(array)/], [getArrayNumberOfDimension(array)/]>(boost::extents [getDynamicAllocationFunctionArgumentsCall(array)/]);
 }
 	[/if]
-void init_[array.name/]([array.name/]& /*data*/) {}
+__EXPORT__ void init_[array.name/]([array.name/]& /*data*/) {}
 [/template]
 
 
 [template public processVectorType(vector : vectorType)]
-void init_[vector.name/]([vector.name/]& /*data*/) {}
+__EXPORT__ void init_[vector.name/]([vector.name/]& /*data*/) {}
 [/template]
 
 
 [template public processMapType(map : mapType)]
-void init_[map.name/]([map.name/]& /*data*/) {}
+__EXPORT__ void init_[map.name/]([map.name/]& /*data*/) {}
 [/template]
 
 
 [template public processStructType(struct : structType)]
-[struct.name/]::[struct.name/](const [struct.name/]& _[struct.name/]) {
+__EXPORT__ [struct.name/]::[struct.name/](const [struct.name/]& _[struct.name/]) {
 	copy(_[struct.name/]);
 }
-[struct.name/]& [struct.name/]::operator = (const [struct.name/]& _[struct.name/]) {
+__EXPORT__ [struct.name/]& [struct.name/]::operator = (const [struct.name/]& _[struct.name/]) {
 	copy(_[struct.name/]);
 	return *this;
 }
-void [struct.name/]::copy(const [struct.name/]& _[struct.name/]) {
+__EXPORT__ void [struct.name/]::copy(const [struct.name/]& _[struct.name/]) {
 	[for (param : structElement | struct.parameters)] 
 		[let type : DataType = getBaseType(param.typename)]
 			[if(isArrayType(type))]
@@ -113,7 +113,7 @@ void [struct.name/]::copy(const [struct.name/]& _[struct.name/]) {
 		[/let]
 	[/for]
 }
-void init_[struct.name/]([struct.name/]& data) { 
+__EXPORT__ void init_[struct.name/]([struct.name/]& data) { 
 	[for (param : structElement | struct.parameters)] 
 	init_[param.typename.name/](data.[param.name/]);
 		[if (isBasicType(param.typename))]
@@ -127,7 +127,7 @@ void init_[struct.name/]([struct.name/]& data) {
 
 
 [template public processDefineType(define : defineType)]
-void init_[define.name/]([define.name/]& data) {
+__EXPORT__ void init_[define.name/]([define.name/]& data) {
 	init_[getDefineTypeName(define)/](data);
 }
 [/template]
@@ -136,31 +136,31 @@ void init_[define.name/]([define.name/]& data) {
 [template public processUnionType(union : unionType)]
 [union.name/]::[union.name/]() {}
 [for (type : DataType | union.elements)]
-const unsigned int [union.name/]::__[type.name/] = [getTypeIndexInUnion(union, type)/]; 
-void [union.name/]::set_[type.name/](const [type.name/]& d) {
+__EXPORT__ const unsigned int [union.name/]::__[type.name/] = [getTypeIndexInUnion(union, type)/]; 
+__EXPORT__ void [union.name/]::set_[type.name/](const [type.name/]& d) {
 	_[type.name/]_ = d;
 	type = __[type.name/];
 }
-const [type.name/]* [union.name/]::get_[type.name/]() {
+__EXPORT__ const [type.name/]* [union.name/]::get_[type.name/]() {
 	if (type==__[type.name/]) return &(_[type.name/]_);
 	else { cerr << "NetworkMessageUserData, bad type asked !" << endl; return NULL; }
 }
 [/for]
-[union.name/]::[union.name/](const [union.name/]& u) {
+__EXPORT__ [union.name/]::[union.name/](const [union.name/]& u) {
 	type=u.type;
 	[for (type : DataType | union.elements)]
 	if (type==__[type.name/]) _[type.name/]_ =  u._[type.name/]_;
 	[/for]
 }
-[union.name/]::~[union.name/]() {  type = 0; }
-[union.name/]& [union.name/]::operator = (const [union.name/]& u) {
+__EXPORT__ [union.name/]::~[union.name/]() {  type = 0; }
+__EXPORT__ [union.name/]& [union.name/]::operator = (const [union.name/]& u) {
 	type=u.type;
 	[for (type : DataType | union.elements)]
 	if (type==__[type.name/]) _[type.name/]_ =  u._[type.name/]_;
 	[/for]
 	return *this;
 }
-void init_[union.name/]([union.name/]& /*data*/) { }
+__EXPORT__ void init_[union.name/]([union.name/]& /*data*/) { }
 [/template]
 
  

@@ -5,7 +5,7 @@
 
 [template public valueTypeImpls(project : Project)]
 	
-[file ('generated/src/TypeDefs_Values.cc', false, 'UTF-8')] 
+[file ('generated/src/TypeDefs_Values.cpp', false, 'UTF-8')] 
 // 
 // Includes ----------------------------------------------------------------------
 // 
@@ -62,7 +62,7 @@ namespace generated
 
 [template public processBasicType(type : basicType)]
 // basic type [type.name/]
-value::Value* [type.name/]_toValue(const [type.name/]& _val) {
+__EXPORT__ value::Value* [type.name/]_toValue(const [type.name/]& _val) {
 	[if(hasVLELanguage(type))]
 		[let lng : languageDecl = getVLELanguageDecl(type) ]
 			[if(needPointerCast(type))]
@@ -79,7 +79,7 @@ value::Value* [type.name/]_toValue(const [type.name/]& _val) {
 	return val;
 }
 
-[type.name/] [type.name/]_fromValue(const value::Value* _node, const [type.name/]& _initialValue) {
+__EXPORT__ [type.name/] [type.name/]_fromValue(const value::Value* _node, const [type.name/]& _initialValue) {
 	[if(hasVLELanguage(type))]
 		[let lng : languageDecl = getVLELanguageDecl(type) ]
 	if(_node != NULL)
@@ -121,7 +121,7 @@ value::Value* [type.name/]_toValue(const [type.name/]& _val) {
 [template public processArrayType(array : arrayType)]
 // [array.name/] is an array of [getArrayDatatypeName(array)/]
 [let type : DataType = getBaseType(array.typename)]
-value::Value* [array.name/]_toValue(const [array.name/]& _val) {	
+__EXPORT__ value::Value* [array.name/]_toValue(const [array.name/]& _val) {	
 	[if (isAOneDimensionArray(array))]
 	value::Set* set = value::Set::create();
 	if(set != NULL) 
@@ -157,7 +157,7 @@ value::Value* [array.name/]_toValue(const [array.name/]& _val) {
 	[/if]
 }
 
-void [array.name/]_fromValue(const value::Value* _node,[array.name/]& _val) {
+__EXPORT__ void [array.name/]_fromValue(const value::Value* _node,[array.name/]& _val) {
 	[if (isAOneDimensionArray(array))]
 	const value::Set& set = _node->toSet();
 	for(unsigned int i = 0; i < [getArraySizeOperator(array)/]; i++) {
@@ -193,7 +193,7 @@ void [array.name/]_fromValue(const value::Value* _node,[array.name/]& _val) {
 
 [template public processVectorType(vector : vectorType)]
 // [vector.name/] is a vector of [getVectorDatatypeName(vector)/]
-value::Value* [vector.name/]_toValue(const [vector.name/]& _val) {
+__EXPORT__ value::Value* [vector.name/]_toValue(const [vector.name/]& _val) {
 	[let typename : String = getVectorDatatypeName(vector)]
 	value::Set* set = value::Set::create();
 	if(set != NULL)
@@ -207,7 +207,7 @@ value::Value* [vector.name/]_toValue(const [vector.name/]& _val) {
 	[/let]
 }
 
-void [vector.name/]_fromValue(const value::Value* _node, [vector.name/]& vect) {
+__EXPORT__ void [vector.name/]_fromValue(const value::Value* _node, [vector.name/]& vect) {
 	[let typename : String = getVectorDatatypeName(vector)]
 	vect.clear();
 	const value::Set& set = _node->toSet();
@@ -219,24 +219,6 @@ void [vector.name/]_fromValue(const value::Value* _node, [vector.name/]& vect) {
 	}
 	[/let]
 }
-
-[comment][vector.name/] [vector.name/]_fromValue(const value::Value* _node) {
-	[let typename : String = getVectorDatatypeName(vector)]
-	[vector.name/] _[vector.name/];
-	const value::Set& _xn = _node->toSet();
-	for (unsigned int _i=0; _i<_xn.size(); _i++) {
-		const value::Value* _n = _xn.get(_i);
-		[typename/] _val;
-		[if (isStructType(vector.typename))]
-		[typename/]_fromValue(_n, _val) ;
-		[else]
-		_val = [typename/]_fromValue(_n) ;
-  		[/if]	
-		_[vector.name/].push_back(_val);
-	}
-	return _[vector.name/];
-	[/let]
-}[/comment]
 [/template]
 
 
@@ -244,7 +226,7 @@ void [vector.name/]_fromValue(const value::Value* _node, [vector.name/]& vect) {
 // [map.name/] is a map with key type [getMapKeyTypeName(map)/] and value type [getMapValueTypeName(map)/]
 	[let keytypename : String = getMapKeyTypeName(map)]
 	[let datatypename : String = getMapValueTypeName(map)]
-value::Value* [map.name/]_toValue(const [map.name/]& _val) {
+__EXPORT__ value::Value* [map.name/]_toValue(const [map.name/]& _val) {
 	value::Map* map = value::Map::create();
 	if(map != NULL)
 	{
@@ -259,8 +241,7 @@ value::Value* [map.name/]_toValue(const [map.name/]& _val) {
 
 }
 
-void [map.name/]_fromValue(const value::Value* _node, [map.name/]& _map) {
-[comment]	[map.name/] _[map.name/];[/comment]
+__EXPORT__ void [map.name/]_fromValue(const value::Value* _node, [map.name/]& _map) {
 	const value::Map& map = _node->toMap();
 	for (value::Map::const_iterator it = map.begin(); it != map.end(); it++) {
 		const [map.keytype.name/]& key = static_cast<[map.keytype.name/]>(map.getInt((*it).first));
@@ -268,25 +249,7 @@ void [map.name/]_fromValue(const value::Value* _node, [map.name/]& _map) {
 
 		[datatypename/]_fromValue(val, _map['['/]key[']'/]);
 	}
-[comment]	return _[map.name/];[/comment]
 }
-
-[comment][map.name/] [map.name/]_fromValue(const value::Value* _node) {
-	[map.name/] _[map.name/];
-	const value::Map& _xn = _node->toMap();
-	for (value::Map::const_iterator it=_xn.begin(); it!=_xn.end(); it++) {
-[comment]		const std::string& key = (*it).first;[/comment]
-		const [map.keytype.name/]& key = static_cast<[map.keytype.name/]>(_xn.getInt((*it).first));
-		const value::Value* _n = (*it).second;
-[comment]		_[map.name/]['['/]key[']'/]=[datatypename/]_fromValue(_n);[/comment]
-		[comment][if(isContainer(map.valtype))]
-		_[map.name/]['['/]key[']'/]=[datatypename/]_fromValue(_n);
-		[else][/comment]
-		[datatypename/]_fromValue(_n, _[map.name/]['['/]key[']'/]);
-		[comment][/if][/comment]
-	}
-	return _[map.name/];
-}[/comment]
 	[/let]
 	[/let]
 [/template]
@@ -294,7 +257,7 @@ void [map.name/]_fromValue(const value::Value* _node, [map.name/]& _map) {
 
 [template public processStructType(struct : structType)]
 // [struct.name/] is a structure
-value::Value* [struct.name/]_toValue(const [struct.name/]& _val) {
+__EXPORT__ value::Value* [struct.name/]_toValue(const [struct.name/]& _val) {
 	value::Map* map = value::Map::create();
 	if(map != NULL)
 	{
@@ -309,7 +272,7 @@ value::Value* [struct.name/]_toValue(const [struct.name/]& _val) {
 	return map;
 }
 
-void [struct.name/]_fromValue(const value::Value* _node, [struct.name/]& _val) {
+__EXPORT__ void [struct.name/]_fromValue(const value::Value* _node, [struct.name/]& _val) {
 	const value::Map& map = _node->toMap();
 	[for (param : structElement | struct.parameters)]
 		[let ptype : DataType = getBaseType(param.typename)]
@@ -334,11 +297,11 @@ void [struct.name/]_fromValue(const value::Value* _node, [struct.name/]& _val) {
 [template public processDefineType(define : defineType)]
 // [define.name/] is a [getDefineTypeName(define)/]
 [let type : DataType = getBaseType(define)]
-value::Value* [define.name/]_toValue(const [define.name/]& _val) {
+__EXPORT__ value::Value* [define.name/]_toValue(const [define.name/]& _val) {
 	return [type.name/]_toValue(_val);
 }
 [if (isStructType(type) or isArrayType(type))]
-void [define.name/]_fromValue(const value::Value* _node, [define.name/]& _val) {
+__EXPORT__ void [define.name/]_fromValue(const value::Value* _node, [define.name/]& _val) {
 	[type.name/]_fromValue(_node, _val);
 [else]
 [define.name/] [define.name/]_fromValue(const value::Value* _node) {
@@ -347,6 +310,3 @@ void [define.name/]_fromValue(const value::Value* _node, [define.name/]& _val) {
 }
 [/let]
 [/template]
-
-
-

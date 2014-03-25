@@ -12,6 +12,7 @@
 [/file]
 [/let]
 [/for]
+[generateBoostFunctorHeader(project)/]
 [/template]
 
 [template private generateHeaderObject(project : Project, proto : prototypeDeclaration)]
@@ -21,7 +22,7 @@
 #include <vle/utils/Trace.hpp>
 #include <TypeDefs.h>
 #include <TypeDefs_Values.h>
-#include <boost/function.hpp>
+#include "boost_function.hpp"
 #include "Compatibility.hpp"
 #include "FunctionDirectory.hpp"
 #include "FunctionLibrary.hpp"
@@ -536,4 +537,36 @@ virtual vd::Time timeAdvance() const {
 	TraceAlways(vu::DateTime::simpleCurrentDate() + " - [proto.name/] - timeAdvance");
 	return vd::Time(1.0);
 }
+[/template]
+
+[template private generateBoostFunctorHeader(project : Project)]
+[file ('generated/src/boost_function.hpp', false, 'UTF-8')]
+#ifndef BOOST_FUNCTION_H
+#define BOOST_FUNCTION_H
+
+#include <functional> // unary_function, binary_function
+
+#include <boost/preprocessor/iterate.hpp>
+#include <boost/detail/workaround.hpp>
+
+#ifndef BOOST_FUNCTION_MAX_ARGS
+#  define BOOST_FUNCTION_MAX_ARGS [getMaxArgumentNumber()/]
+#endif /* BOOST_FUNCTION_MAX_ARGS */
+
+#include <boost/function/detail/prologue.hpp>
+
+// Older Visual Age C++ version do not handle the file iteration well
+#if BOOST_WORKAROUND(__IBMCPP__, >= 500) && BOOST_WORKAROUND(__IBMCPP__, < 800)
+#define BOOST_FUNCTION_NUM_ARGS BOOST_FUNCTION_MAX_ARGS
+#include <boost/function/detail/maybe_include.hpp>
+#undef BOOST_FUNCTION_NUM_ARGS
+#else
+// What is the '3' for?
+#  define BOOST_PP_ITERATION_PARAMS_1 (3,(0,BOOST_FUNCTION_MAX_ARGS,<boost/function/detail/function_iterate.hpp>))
+#  include BOOST_PP_ITERATE()
+#  undef BOOST_PP_ITERATION_PARAMS_1
+#endif
+
+#endif /*BOOST_FUNCTION_H*/
+[/file]
 [/template]

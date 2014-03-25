@@ -9,7 +9,7 @@
 [/template]
 
 [template private generateStartScript_sh(project : Project)]
-[file('~/start_vle.sh', false, 'UTF-8')]
+[file('start_vle.sh', false, 'UTF-8')]
 #!bin/sh
 export LD_LIBRARY_PATH=~/.vle/pkgs/generated/lib
 vle-1.0 -P generated -v 3 config.vpz
@@ -34,7 +34,7 @@ GENERATED_PACKAGE_BUILD_PATH=$GENERATED_PACKAGE_PATH/build
 echo "*****************************************"
 echo "*** VLE simulation package deployment ***"
 echo "*****************************************"
-
+cp start_vle.sh ~
 #echo "*** Remove old VLE simulation package"
 #rm -Rf $GENERATED_PACKAGE_PATH
 

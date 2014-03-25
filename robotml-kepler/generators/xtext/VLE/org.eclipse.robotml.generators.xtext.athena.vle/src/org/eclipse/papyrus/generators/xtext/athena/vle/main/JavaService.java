@@ -40,12 +40,14 @@ import org.xtext.athenaDSL.whileblock;
  */
 public class JavaService {
 
+	private static int MAX_ARGUMENT_NUMBER = 0;
 
 	/**
 	 * Constructor
 	 */
 	public JavaService() {
 //		AthenaDSLFactoryImpl.init();
+		JavaService.MAX_ARGUMENT_NUMBER = 0;
 	}
 
 	/**
@@ -108,6 +110,9 @@ public class JavaService {
 		String sig = "";
 		try {
 			boolean first = true;
+			if(JavaService.MAX_ARGUMENT_NUMBER < decl.getArguments().size())
+				JavaService.MAX_ARGUMENT_NUMBER = decl.getArguments().size();
+			
 			for (arg a : decl.getArguments()) {
 				if (!first)
 					sig += ", ";
@@ -508,4 +513,8 @@ public class JavaService {
 		return result;
 	}
 	
+	public static int getMaxArgumentNumber(Project projet)
+	{
+		return JavaService.MAX_ARGUMENT_NUMBER;
+	}
 }

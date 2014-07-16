@@ -39,7 +39,7 @@ import org.eclipse.ui.actions.ActionDelegate;
 /**
  * generate Vle code generation.
  */
-public class AcceleoGenerategenerateVleAction extends ActionDelegate implements IActionDelegate {
+public class AcceleoGenerateVLEAction extends ActionDelegate implements IActionDelegate {
 	
 	/**
 	 * Selected model files.

@@ -42,7 +42,7 @@ public:
 	FunctionDirectory() { }
 	__EXPORT__ void addFunction(const std::string& name, void* fct) {
 		if(functions.find(name) == functions.end()) {
-			TraceAlways(vu::DateTime::simpleCurrentDate() + "FunctionDirectory::addFunction - add function \" " + name + " \"");
+			TraceAlways(vu::DateTime::currentDate() + "FunctionDirectory::addFunction - add function \" " + name + " \"");
 			functions['['/]name[']'/] = fct;
 		}
 	}
@@ -51,7 +51,7 @@ public:
 		std::map<std::string,void*>::iterator it = functions.find(name);
 	    if (it!=functions.end()) return (*it).second;
 	    else {
-			TraceAlways(vu::DateTime::simpleCurrentDate() + " - FunctionDirectory::getFunction - Failed for " + name); 
+			TraceAlways(vu::DateTime::currentDate() + " - FunctionDirectory::getFunction - Failed for " + name); 
 			/*throw "getUserFunction failed for " + name;*/
 			return NULL;
 		}
@@ -73,12 +73,12 @@ public:
 	__EXPORT__ LibraryLoader(const char* libname) {
 		libhandle = 0;
 #ifdef WIN32
-		TraceAlways(vu::DateTime::simpleCurrentDate() + " - LibraryLoader - loading library " + libname);
+		TraceAlways(vu::DateTime::currentDate() + " - LibraryLoader - loading library " + libname);
     	libhandle = LoadLibrary(libname);
 #else
-    	TraceAlways(vu::DateTime::simpleCurrentDate() + " - LibraryLoader - loading library " + libname);
+    	TraceAlways(vu::DateTime::currentDate() + " - LibraryLoader - loading library " + libname);
     	libhandle = dlopen(libname, RTLD_LAZY);
-    	//TraceAlways(vu::DateTime::simpleCurrentDate() + " - LibraryLoader - handle is " + libhandle);
+    	//TraceAlways(vu::DateTime::currentDate() + " - LibraryLoader - handle is " + libhandle);
 #endif
 
     	if(!libhandle)

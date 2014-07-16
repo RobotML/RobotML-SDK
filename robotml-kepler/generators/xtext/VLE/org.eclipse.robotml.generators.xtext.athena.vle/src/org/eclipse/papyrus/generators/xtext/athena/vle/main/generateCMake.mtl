@@ -51,13 +51,14 @@ ENDIF(UNIX AND NOT WIN32)
 
 FIND_PACKAGE(PkgConfig REQUIRED)
 
-PKG_CHECK_MODULES(VLE vle-1.0)
+PKG_CHECK_MODULES(VLE vle-1.1)
 
 ##
 ## Subdirectory
 ##
 
 ADD_SUBDIRECTORY(src)
+ADD_SUBDIRECTORY(exp)
 
 MESSAGE(STATUS "- - - -")
 MESSAGE(STATUS "package configured successfully.")
@@ -106,12 +107,17 @@ INSTALL(TARGETS
 [for (wrapper : wrapperDeclaration | project.wrappers)]
   Stub_[wrapper.name/]
 [/for]
+  XML
+  RUNTIME DESTINATION plugins/simulator
+  LIBRARY DESTINATION plugins/simulator
+  ARCHIVE DESTINATION plugins/simulator)
+
+INSTALL(TARGETS
   TypeDefs
   ExternalFunction
-  XML
   RUNTIME DESTINATION lib
   LIBRARY DESTINATION lib
-  ARCHIVE DESTINATION lib)
+  ARCHIVE DESTINATION lib) 
 [/file]
 [/template]
 

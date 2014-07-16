@@ -120,3 +120,6 @@
 	invoke('org.eclipse.papyrus.generators.xtext.athena.vle.main.DataTypeSorter', 'getSortedDatatypes(org.xtext.athenaDSL.Project)', Sequence{project})
 /]
 
+[query public getMaxArgumentNumber(project : Project) : Integer =
+	invoke('org.eclipse.papyrus.generators.xtext.athena.vle.main.JavaService', 'getMaxArgumentNumber(org.xtext.athenaDSL.Project)', Sequence{project})
+/]

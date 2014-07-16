@@ -15,7 +15,7 @@
 // 
 
 #include "TypeDefs.h"
-#include <vle/value.hpp>
+#include <vle/value/Value.hpp>
 
 using namespace vle;
 

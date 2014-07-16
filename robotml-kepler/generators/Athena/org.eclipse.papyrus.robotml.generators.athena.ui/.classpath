@@ -4,6 +4,5 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry excluding="**/.svn/**|.svn" kind="src" path="src"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.papyrus.robotml.generators.athena"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.papyrus.robotml.generators.common"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

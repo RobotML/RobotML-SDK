@@ -124,11 +124,11 @@ Stub_[wrapper.name/] Stub_[wrapper.name/]_Obj;
 __EXPORT__ void [stub.name/]([getCPPFunctionSignature(stub)/])
 {
 	// [protected ('wrapper')]
-	TraceAlways(vu::DateTime::simpleCurrentDate() + " [wrapper.name/]::[stub.name/] BEGIN"); 
+	TraceAlways(vu::DateTime::currentDate() + " [wrapper.name/]::[stub.name/] BEGIN"); 
 
 	
 
-	TraceAlways(vu::DateTime::simpleCurrentDate() + " [wrapper.name/]::[stub.name/] END");
+	TraceAlways(vu::DateTime::currentDate() + " [wrapper.name/]::[stub.name/] END");
 	// [/protected]
 }
 [/if]	
@@ -149,13 +149,13 @@ __EXPORT__ void [stub.name/]([getCPPFunctionSignature(stub)/])
 __EXPORT__ void [stub.name/]([getProcessingSignature(stub)/])
 {
 	// [protected ('wrapper')]
-	TraceAlways(vu::DateTime::simpleCurrentDate() + " [wrapper.name/]::[stub.name/] BEGIN");
+	TraceAlways(vu::DateTime::currentDate() + " [wrapper.name/]::[stub.name/] BEGIN");
 	[generateLocalParameters(stub)/]
 	[generateLocalEvents(stub)/]
 [for(bloc : statement | stub.statements)]
 	[generateStatement(bloc)/]
 [/for]
-	TraceAlways(vu::DateTime::simpleCurrentDate() + " [wrapper.name/]::[stub.name/] END");
+	TraceAlways(vu::DateTime::currentDate() + " [wrapper.name/]::[stub.name/] END");
 	// [/protected]
 }
 [/if]
@@ -205,7 +205,7 @@ try
 }
 catch(...)
 {
-	TraceAlways(vu::DateTime::simpleCurrentDate() + " !!!!! Problem on loading function [call.fctName.name/] !!!!!");
+	TraceAlways(vu::DateTime::currentDate() + " !!!!! Problem on loading function [call.fctName.name/] !!!!!");
 }
 [/template]
 
@@ -219,7 +219,7 @@ boost::function<void ([getFunctorDeclaration(call.name)/])> _[call.name.name/] =
 }
 catch(...)
 {
-	TraceAlways(vu::DateTime::simpleCurrentDate() + " !!!!! Problem on loading function [call.name.name/] !!!!!");
+	TraceAlways(vu::DateTime::currentDate() + " !!!!! Problem on loading function [call.name.name/] !!!!!");
 }
 [/template]
 

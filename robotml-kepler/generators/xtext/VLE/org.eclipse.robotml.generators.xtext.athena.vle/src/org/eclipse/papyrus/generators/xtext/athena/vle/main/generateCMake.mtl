@@ -6,7 +6,7 @@
 [template public generateCMake(project : Project)]
 [generateCMakePackage(project)/]
 [generateCMakeModel(project)/]
-[generateCMakeConfig(project)/]
+[comment][generateCMakeConfig(project)/][/comment]
 [generateCMakeFindPackage(project)/]
 [/template]
 
@@ -51,7 +51,7 @@ ENDIF(UNIX AND NOT WIN32)
 
 FIND_PACKAGE(PkgConfig REQUIRED)
 
-PKG_CHECK_MODULES(VLE vle-1.0)
+PKG_CHECK_MODULES(VLE vle-1.1)
 
 ##
 ## Subdirectory
@@ -98,11 +98,16 @@ ADD_LIBRARY(Stub_[wrapper.name/] SHARED Stub_[wrapper.name/].cpp)
 TARGET_LINK_LIBRARIES(Stub_[wrapper.name/] TypeDefs ExternalFunction XML ${VLE_LIBRARIES} ${Boost_LIBRARIES})
 [/for]
 
-
 INSTALL(TARGETS
 [for (proto : prototypeDeclaration | project.prototypes)]
   [proto.name/]
 [/for]
+RUNTIME DESTINATION plugins/simulator
+LIBRARY DESTINATION plugins/simulator
+ARCHIVE DESTINATION plugins/simulator)
+
+
+INSTALL(TARGETS
 [for (wrapper : wrapperDeclaration | project.wrappers)]
   Stub_[wrapper.name/]
 [/for]
@@ -113,11 +118,23 @@ INSTALL(TARGETS
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib)
 [/file]
+
+INSTALL(FILES 
+ ../exp/config.vpz
+ DESTINATION exp)
+
+INSTALL(FILES 
+ ../data/configTemplate.xml
+ DESTINATION data)
+
 [/template]
 
 [template private generateCMakeConfig(project : Project)]
 [file ('generated/exp/CMakeLists.txt', false, 'UTF-8')]
-INSTALL(FILES config.vpz DESTINATION exp)
+INSTALL(FILES 
+ config.vpz
+ configTemplate.xml
+ DESTINATION exp)
 [/file]
 [/template]
 

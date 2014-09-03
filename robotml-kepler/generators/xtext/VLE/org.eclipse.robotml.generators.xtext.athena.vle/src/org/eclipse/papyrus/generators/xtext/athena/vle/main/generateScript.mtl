@@ -9,20 +9,25 @@
 [/template]
 
 [template private generateStartScript_sh(project : Project)]
-[file('start_vle.sh', false, 'UTF-8')]
+[file('start_simulation.sh', false, 'UTF-8')]
 #!bin/sh
-export LD_LIBRARY_PATH=~/.vle/pkgs/generated/lib
-vle-1.0 -P generated -v 3 config.vpz
+VLE_APPLICATION=vle-1.1
+PACKAGE_NAME=generated
+CONFIGURATION_FILE=config.vpz
+LIB_PATH=~/.vle/pkgs-1.1/generated/lib
+
+export LD_LIBRARY_PATH=$LIB_PATH
+$VLE_APPLICATION -P $PACKAGE_NAME -V 3 $CONFIGURATION_FILE
 [/file]
 [/template]
 
 [template private generateScript_sh(project : Project)]
 [file('install.sh', false, 'UTF-8')]
 #!bin/sh
-VLE_HOME=~/.vle
+VLE_APPLICATION=vle-1.1
 CONFIGURATION_FILE_NAME=config.vpz
 GENERATED_PACKAGE_NAME=generated
-PACKAGES_PATH=$VLE_HOME/pkgs
+PACKAGES_PATH=$VLE_HOME/pkgs-1.1
 GENERATED_PACKAGE_PATH=$PACKAGES_PATH/$GENERATED_PACKAGE_NAME
 GENERATED_OUTPUT_PATH=$GENERATED_PACKAGE_PATH/output
 GENERATED_LIB_PATH=$GENERATED_PACKAGE_PATH/lib
@@ -34,39 +39,7 @@ GENERATED_PACKAGE_BUILD_PATH=$GENERATED_PACKAGE_PATH/build
 echo "*****************************************"
 echo "*** VLE simulation package deployment ***"
 echo "*****************************************"
-cp start_vle.sh ~
-#echo "*** Remove old VLE simulation package"
-#rm -Rf $GENERATED_PACKAGE_PATH
+$VLE_APPLICATION -P $GENERATED_PACKAGE_NAME configure build
 
-echo "*** Copy the generated VLE simulation package"
-cp -Ru ./$GENERATED_PACKAGE_NAME $PACKAGES_PATH
-mkdir $GENERATED_OUTPUT_PATH
-mkdir $GENERATED_LIB_PATH
-
-echo "*** VLE simulation package configuration"
-vle-1.0 -P $GENERATED_PACKAGE_NAME configure
-
-echo "*** VLE simulation package compilation"
-cd $GENERATED_PACKAGE_BUILD_PATH
-make install
-if ['['/] $? -eq 0 [']'/]; then
-echo "*** Compilation succesfull!!!"
-export LD_LIBRARY_PATH=$GENERATED_LIB_PATH
-echo "*** Do you want to lauch simulation ?"
-echo "	 - 1 : VLE console"
-echo "	 - 2 : GVLE"
-echo "   - 3 : No i don't"
-read -p "Please choose:" selection
-if ['['/] $selection = "1" [']'/]; then
-vle-1.0 -P $GENERATED_PACKAGE_NAME -v 3 $CONFIGURATION_FILE_NAME
-elif ['['/]$selection = "2" [']'/]; then
-gvle $GENERATED_EXPERIENCE_PATH/$CONFIGURATION_FILE_NAME &
-else
-echo ":-("
-cd ~
-fi
-else
-echo "*** Compilation error correct it and retry! :-("
-fi
 [/file]
 [/template]

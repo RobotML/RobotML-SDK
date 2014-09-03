@@ -1,7 +1,7 @@
 RobotML-SDK
 ===========
 
-Documentation of the project is available here: http://robotml.github.com/
+Documentation of the RobotML project is available here: http://robotml.github.com/
 
 This repository includes every part of the main beanch of RobotML development. It includes:
 

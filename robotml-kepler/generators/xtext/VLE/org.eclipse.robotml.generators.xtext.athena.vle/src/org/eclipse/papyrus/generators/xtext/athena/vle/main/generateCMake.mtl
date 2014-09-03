@@ -58,6 +58,7 @@ PKG_CHECK_MODULES(VLE vle-1.1)
 ##
 
 ADD_SUBDIRECTORY(src)
+ADD_SUBDIRECTORY(exp)
 
 MESSAGE(STATUS "- - - -")
 MESSAGE(STATUS "package configured successfully.")
@@ -111,12 +112,17 @@ INSTALL(TARGETS
 [for (wrapper : wrapperDeclaration | project.wrappers)]
   Stub_[wrapper.name/]
 [/for]
+  XML
+  RUNTIME DESTINATION plugins/simulator
+  LIBRARY DESTINATION plugins/simulator
+  ARCHIVE DESTINATION plugins/simulator)
+
+INSTALL(TARGETS
   TypeDefs
   ExternalFunction
-  XML
   RUNTIME DESTINATION lib
   LIBRARY DESTINATION lib
-  ARCHIVE DESTINATION lib)
+  ARCHIVE DESTINATION lib) 
 [/file]
 
 INSTALL(FILES 

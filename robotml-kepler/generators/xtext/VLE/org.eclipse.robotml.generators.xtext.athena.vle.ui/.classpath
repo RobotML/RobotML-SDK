@@ -5,6 +5,5 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.papyrus.generators.xtext.athena.vle"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.papyrus.xtext.athenaDSL"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.papyrus.robotml.generators.common"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

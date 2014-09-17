@@ -1541,7 +1541,7 @@ void    XmlNode::toXML(ostringstream&   stream,
   {
     unsigned int        pos = name.find('#');
 
-    if (string::npos != pos)
+    if (string::npos != (size_t)pos)
       nm = name.substr(0, pos);
     else
       nm = name;

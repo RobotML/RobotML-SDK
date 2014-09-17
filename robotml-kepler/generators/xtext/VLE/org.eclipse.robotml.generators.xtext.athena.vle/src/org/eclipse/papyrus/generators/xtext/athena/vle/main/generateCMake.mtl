@@ -59,6 +59,7 @@ PKG_CHECK_MODULES(VLE vle-1.1)
 
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(exp)
+ADD_SUBDIRECTORY(data)
 
 MESSAGE(STATUS "- - - -")
 MESSAGE(STATUS "package configured successfully.")
@@ -80,7 +81,7 @@ LINK_DIRECTORIES(
   ${VLE_LIBRARY_DIRS}
   ${Boost_LIBRARY_DIRS})
 
-ADD_LIBRARY(XML STATIC xml.cpp tests.cpp expatpp.cpp xmlparse.c xmlrole.c xmltok.c xmltok_impl.c)
+ADD_LIBRARY(XML SHARED xml.cpp tests.cpp expatpp.cpp xmlparse.c xmlrole.c xmltok.c xmltok_impl.c)
 TARGET_LINK_LIBRARIES(XML ${VLE_LIBRARIES} ${BOOST_LIBRARIES})
 
 ADD_LIBRARY(TypeDefs SHARED TypeDefs.cpp TypeDefs_Values.cpp)
@@ -125,13 +126,17 @@ INSTALL(TARGETS
   ARCHIVE DESTINATION lib) 
 [/file]
 
+[file('generated/exp/CMakelists.txt', false, 'UTF-8')]
 INSTALL(FILES 
- ../exp/config.vpz
- DESTINATION exp)
+	config.vpz
+ 	DESTINATION exp)
+[/file]
 
+[file('generated/data/CMakelists.txt', false,'UTF-8')]
 INSTALL(FILES 
  ../data/configTemplate.xml
  DESTINATION data)
+[/file]
 
 [/template]
 

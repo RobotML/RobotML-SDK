@@ -24,6 +24,7 @@
 #include <vle/value/Matrix.hpp>
 #include <vle/value/Boolean.hpp>
 #include <vle/value/String.hpp>
+#include "VLE_Pointer.hpp"
 
 using namespace std;
 
@@ -73,7 +74,7 @@ __EXPORT__ value::Value* [type.name/]_toValue(const [type.name/]& _val) {
 	[if(hasVLELanguage(type))]
 		[let lng : languageDecl = getVLELanguageDecl(type) ]
 			[if(needPointerCast(type))]
-	value::Value* val = value::[lng.trans/]::create((int)_val);
+	value::Value* val = new VLE_Pointer(_val);
 			[else]
 	value::Value* val = value::[lng.trans/]::create(_val);
 			[/if]
@@ -94,7 +95,7 @@ __EXPORT__ [type.name/] [type.name/]_fromValue(const value::Value* _node, const 
 		return static_cast<[type.name/]>(_node->to[lng.trans/]().value());
 		[else]
 			[if(needPointerCast(type))]
-		return ([type.name/])_node->to[lng.trans/]().value();
+		return ([type.name/])_node->toUser().id();
 			[else]
 		return _node->to[lng.trans/]().value();
 			[/if]

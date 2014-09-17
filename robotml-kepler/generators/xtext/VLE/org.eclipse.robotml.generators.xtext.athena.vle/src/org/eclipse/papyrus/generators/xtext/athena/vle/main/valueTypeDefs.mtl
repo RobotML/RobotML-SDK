@@ -70,7 +70,46 @@ namespace generated
 
 
 [/file]
+
+[file ('generated/src/VLE_Pointer.hpp', false, 'UTF-8')]
+
+#ifndef VLE_POINTER_TYPE
+#define VLE_POINTER_TYPE
+
+/*
+ * Includes
+ */
+#include <vle/value/User.hpp>
+
+namespace vv = vle::value;
+using namespace vv;
+
+namespace generated {
+
+class VLE_Pointer : public User {
+
+public:
+	VLE_Pointer() : User() { _pointer = NULL; }
+	VLE_Pointer(void* ptr) : User() { _pointer = ptr; }
+	VLE_Pointer(const VLE_Pointer& src) : User() { _pointer = (void*)src.id(); }
+
+	virtual size_t id() const { return (size_t)_pointer; }
+
+	virtual Value* clone() const { return new VLE_Pointer(*this); }
+	virtual void writeFile(std::ostream& /*out*/) const { }
+	virtual void writeString(std::ostream& /*out*/) const { }
+	virtual void writeXml(std::ostream& /*out*/) const { }
 	
+private:
+	void* _pointer;
+};
+
+} /* generated */
+
+#endif /* VLE_POINTER_TYPE */
+
+[/file]
+
 [/template]
 
 

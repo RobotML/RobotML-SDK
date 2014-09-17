@@ -131,7 +131,7 @@ public class SpecificQueries {
 			decl = "include MATLAB : \"matrix.h\"\r\n";
 			decl += "language MATLAB : \"mxINT32_CLASS\" = \"NULL\"\r\n";
 			decl += "language CPP : \"void*\" = \"NULL\"\r\n";
-			decl += "language VLE : \"Integer\" = \"NULL\"";
+			decl += "language VLE : \"VLE_Pointer\" = \"NULL\"";
 			SpecificQueries._mapDeclaration.put("Pointer", decl);
 			//Logical
 			decl = "include MATLAB : \"matrix.h\"\r\n";

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.papyrus.robotml.generators.cycabtk.feature"
+      label="CycabTK code generators for RobotML"
+      version="1.0.0.qualifier"
+      provider-name="INRIA">
+
+   <description>
+      CycabTK code generators for RobML DSL from the PROTEUS project.
+   </description>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="org.eclipse.papyrus.robotml.generators.cycabtk"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.robotml.generators.cycabtk.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

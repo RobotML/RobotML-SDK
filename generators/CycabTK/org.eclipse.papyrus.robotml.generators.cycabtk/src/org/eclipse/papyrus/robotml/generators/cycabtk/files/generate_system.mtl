@@ -1,0 +1,75 @@
+[comment encoding = UTF-8 /]
+[comment]
+/*****************************************************************************
+ * Copyright (c) 2013 INRIA / CNRS
+ *
+ * This software is a computer program whose purpose is to transform RobotML models
+ * into CycabTK scripts via source code generation techniques.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Amaury Negre (CNRS) - Initial API and implementation
+ *
+ *****************************************************************************/
+[/comment]
+
+[module generate_system('http://www.eclipse.org/uml2/3.0.0/UML')]
+[comment][import org::eclipse::papyrus::robotml::generators::common::mmqueries::MMQueries /][/comment]
+
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::GeneralQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /]
+
+[template public generateSystemCommonRequires(aClass : Class, model : Model)]
+[for (component : NamedElement | getLevel1SubComponentsForComponentWithStereotype(aClass, 'RoboticSystem'))]
+	[let prop : Property = component.oclAsType(Property)]
+require "[model.name+'/'+prop.type.name/]"
+	[/let]
+[/for]
+[/template]
+
+[template public generateSystemCommon(aClass : Class, model : Model)]
+[if inheritsFrom(aClass, 'RoboticSystem')]
+-- generic system functions
+	[let stname : String = getStereotypeInheritedFrom(aClass, 'RoboticSystem')]
+	[let position : String = getAttributeValue(aClass, 'localPosition', stname)] 
+self:SetLocalPosition([removeBrackets(position)/])
+	[/let]
+	[let rotation : String = getAttributeValue(aClass, 'localOrientation', stname)] 
+self:SetLocalRotation([removeBrackets(rotation)/])
+	[/let]
+	[/let]
+
+--[protected (aClass.name + ' common')]
+
+--[/protected]
+
+[/if]
+[comment]-- instanciate subcomponents
+[for (component : NamedElement | getLevel1SubComponentsForComponentWithStereotype(aClass, 'RoboticSystem'))]
+	[let prop : Property = component.oclAsType(Property)]
+self.[prop.name/] = [prop.type.name/]( name..".[prop.name/]")
+self.[prop.name/]:MakeChildOf(self)
+	[/let]
+[/for][/comment]
+[/template]
+
+[template public generateSystem(aClass : Class, model : Model)]
+[file ('scripts/' + model.name + '/' + aClass.name + '.lua', false, 'UTF-8')]
+require "LuaCycabTK"
+require "mgLuaMeshActor"
+[generateSystemCommonRequires(aClass, model)/]
+
+--Definition of class [aClass.name/]
+class '[aClass.name/]' (mge.MeshActor)
+function [aClass.name/]:__init(name)
+	mge.MeshActor.__init(self, name)
+	
+	[generateSystemCommon(aClass, model)/]
+end
+[/file]
+[/template]
+

@@ -1,0 +1,34 @@
+[comment encoding = UTF-8 /]
+[comment]
+/*****************************************************************************
+ * Copyright (c) 2013 INRIA / CNRS
+ *
+ * This software is a computer program whose purpose is to transform RobotML models
+ * into CycabTK scripts via source code generation techniques.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Amaury Negre (CNRS) - Initial API and implementation
+ *
+ *****************************************************************************/
+[/comment]
+
+[module generate_cycabtk_launch('http://www.eclipse.org/uml2/3.0.0/UML')]
+
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::GeneralQueries /]
+[import org::eclipse::papyrus::robotml::generators::common::mmqueries::ArchitectureQueries /]
+
+[template public generateCycabtkLaunch(model : Model)]
+
+[file (model.name + '.launch', false, 'UTF-8')]
+<launch>
+  <node pkg="CycabTKSimulator" type="cycabtk_simulator" name="[model.name/]_cycabtk" args="-f [getProperty('targetFolder')+'/'+model.name+'.conf'/] -l [getProperty('targetFolder')+'/scripts/'+model.name+'.lua'/]" output="screen" launch-prefix="rlwrap" >
+  </node>
+</launch>
+[/file]
+
+[/template]

@@ -1,0 +1,45 @@
+[comment encoding = UTF-8 /]
+[module generateScript('http://www.xtext.org/AthenaDSL')]
+
+[import org::eclipse::papyrus::generators::xtext::athena::vle::main::DSLQueries /]
+
+[template public generateScript(project : Project)]
+[generateScript_sh(project)/]
+[generateStartScript_sh(project)/]
+[/template]
+
+[template private generateStartScript_sh(project : Project)]
+[file('start_simulation.sh', false, 'UTF-8')]
+#!bin/sh
+VLE_APPLICATION=vle-1.1
+PACKAGE_NAME=generated
+CONFIGURATION_FILE=config.vpz
+LIB_PATH=~/.vle/pkgs-1.1/generated/lib
+
+export LD_LIBRARY_PATH=$LIB_PATH
+$VLE_APPLICATION -P $PACKAGE_NAME -V 3 $CONFIGURATION_FILE
+[/file]
+[/template]
+
+[template private generateScript_sh(project : Project)]
+[file('install.sh', false, 'UTF-8')]
+#!bin/sh
+VLE_APPLICATION=vle-1.1
+CONFIGURATION_FILE_NAME=config.vpz
+GENERATED_PACKAGE_NAME=generated
+PACKAGES_PATH=$VLE_HOME/pkgs-1.1
+GENERATED_PACKAGE_PATH=$PACKAGES_PATH/$GENERATED_PACKAGE_NAME
+GENERATED_OUTPUT_PATH=$GENERATED_PACKAGE_PATH/output
+GENERATED_LIB_PATH=$GENERATED_PACKAGE_PATH/lib
+GENERATED_EXPERIENCE_PATH=$GENERATED_PACKAGE_PATH/exp
+GENERATED_PACKAGE_BUILD_PATH=$GENERATED_PACKAGE_PATH/build
+
+
+
+echo "*****************************************"
+echo "*** VLE simulation package deployment ***"
+echo "*****************************************"
+$VLE_APPLICATION -P $GENERATED_PACKAGE_NAME configure build
+
+[/file]
+[/template]

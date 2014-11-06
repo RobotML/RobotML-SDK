@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://RobotmlExtension_PROFILES/"
+            target="platform:/plugin/org.eclipse.papyrus.robotml.extension/model/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="RobotML extended profil"
+            name="RobotMLExtension"
+            path="pathmap://RobotmlExtension_PROFILES/model.profile.uml"
+            provider="Dassault Aviation">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.uml2.uml.generated_package">
+      <profile
+            location="pathmap://RobotmlExtension_PROFILES/model.profile.uml#_tZec8ELMEeKtKeKgzv7YFw"
+            uri="http://papyrus/RobotML/Extension/1.0">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="RobotMLExtension.RobotMLExtensionPackage"
+            genModel="model/RobotMLExtension.genmodel"
+            uri="http://papyrus/RobotML/Extension/1.0">
+      </package>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated RobotMLExtension -->
+      <package
+            uri="http://papyrus/RobotML/Extension/1.0"
+            class="RobotMLExtension.RobotMLExtensionPackage"
+            genModel="model/RobotMLExtension.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated RobotMLExtension -->
+      <parser
+            type="robotmlextension"
+            class="RobotMLExtension.util.RobotMLExtensionResourceFactoryImpl"/>
+   </extension>
+</plugin>

@@ -1,0 +1,166 @@
+[comment encoding = UTF-8 /]
+[module cppTypeImpls('http://www.xtext.org/AthenaDSL')/]
+
+[import org::eclipse::papyrus::generators::xtext::athena::vle::main::DSLQueries /]
+
+[template public cppTypeImpls(project : Project)]
+	
+[file ('generated/src/TypeDefs.cpp', false, 'UTF-8')] 
+// 
+// Includes ----------------------------------------------------------------------
+// 
+
+#include <iostream>		
+#include <string.h> 	
+
+#include "TypeDefs.h"
+
+using namespace std;
+
+namespace generated
+{
+
+// 
+// Data type implementations ----------------------------------------------------------
+//
+
+	[for (type : DataType | project.types)]
+// -------------------------------------------------------- [type.name/] [comment]([getBaseType(type)/])[/comment]
+		[if (isBasicType(type))]
+[processBasicType(type.oclAsType(basicType))/]
+		[elseif (isArrayType(type))]
+[processArrayType(type.oclAsType(arrayType))/] 
+		[elseif (isVectorType(type))]
+[processVectorType(type.oclAsType(vectorType))/]
+		[elseif (isMapType(type))]
+[processMapType(type.oclAsType(mapType))/]
+		[elseif (isStructType(type))]
+[processStructType(type.oclAsType(structType))/]
+		[elseif (isDefineType(type))]
+[processDefineType(type.oclAsType(defineType))/]
+		[elseif (isUnionType(type))]
+[processUnionType(type.oclAsType(unionType))/]
+		[else]
+///
+/// ERROR [type.name/] is unrecognized by the generator - [type.eClass()/]
+///
+		[/if]
+		
+	[/for]
+
+// 
+// ------------------------------------------------------------------------------------
+//
+
+} // eof namespace generated
+
+[/file]
+	
+[/template]
+
+
+[template public processBasicType(type : basicType)]
+	[let cpp : languageDecl = getCPPLanguageDecl(type) ]
+__EXPORT__ void init_[type.name/]([type.name/]& data) {
+	data = [cpp.value/];
+}
+	[/let]
+[/template]
+
+
+[template public processArrayType(array : arrayType)]
+	[if (isDynamicArray(array))]
+__EXPORT__ [array.name/] [array.name/]_allocate([getDynamicAllocationFunctionArguments(array)/]) {
+	return new boost::multi_array<[getArrayDatatypeName(array)/], [getArrayNumberOfDimension(array)/]>(boost::extents [getDynamicAllocationFunctionArgumentsCall(array)/]);
+}
+	[/if]
+__EXPORT__ void init_[array.name/]([array.name/]& /*data*/) {}
+[/template]
+
+
+[template public processVectorType(vector : vectorType)]
+__EXPORT__ void init_[vector.name/]([vector.name/]& /*data*/) {}
+[/template]
+
+
+[template public processMapType(map : mapType)]
+__EXPORT__ void init_[map.name/]([map.name/]& /*data*/) {}
+[/template]
+
+
+[template public processStructType(struct : structType)]
+__EXPORT__ [struct.name/]::[struct.name/](const [struct.name/]& _[struct.name/]) {
+	copy(_[struct.name/]);
+}
+__EXPORT__ [struct.name/]& [struct.name/]::operator = (const [struct.name/]& _[struct.name/]) {
+	copy(_[struct.name/]);
+	return *this;
+}
+__EXPORT__ void [struct.name/]::copy(const [struct.name/]& _[struct.name/]) {
+	[for (param : structElement | struct.parameters)] 
+		[let type : DataType = getBaseType(param.typename)]
+			[if(isArrayType(type))]
+				[let array: arrayType = type.oclAsType(arrayType)]
+					[if(isDynamicArray(array))]
+	memcpy((void*)[param.name/]->data(), (void*)_[struct.name/].[param.name/]->data(), [param.name/]->num_elements()*sizeof([getArrayDatatypeName(array)/]));	
+					[else]
+	memcpy((void*)[param.name/], (void*)_[struct.name/].[param.name/], sizeof([type.name/]));
+					[/if]
+				[/let]
+			[else]
+	[param.name/] = _[struct.name/].[param.name/];
+			[/if]
+		[/let]
+	[/for]
+}
+__EXPORT__ void init_[struct.name/]([struct.name/]& data) { 
+	[for (param : structElement | struct.parameters)] 
+	init_[param.typename.name/](data.[param.name/]);
+		[if (isBasicType(param.typename))]
+			[if (param.hasInitValue)]
+	data.[param.name/] = [param.initValue/];
+			[/if]
+		[/if]
+	[/for]
+}
+[/template]
+
+
+[template public processDefineType(define : defineType)]
+__EXPORT__ void init_[define.name/]([define.name/]& data) {
+	init_[getDefineTypeName(define)/](data);
+}
+[/template]
+
+
+[template public processUnionType(union : unionType)]
+[union.name/]::[union.name/]() {}
+[for (type : DataType | union.elements)]
+__EXPORT__ const unsigned int [union.name/]::__[type.name/] = [getTypeIndexInUnion(union, type)/]; 
+__EXPORT__ void [union.name/]::set_[type.name/](const [type.name/]& d) {
+	_[type.name/]_ = d;
+	type = __[type.name/];
+}
+__EXPORT__ const [type.name/]* [union.name/]::get_[type.name/]() {
+	if (type==__[type.name/]) return &(_[type.name/]_);
+	else { cerr << "NetworkMessageUserData, bad type asked !" << endl; return NULL; }
+}
+[/for]
+__EXPORT__ [union.name/]::[union.name/](const [union.name/]& u) {
+	type=u.type;
+	[for (type : DataType | union.elements)]
+	if (type==__[type.name/]) _[type.name/]_ =  u._[type.name/]_;
+	[/for]
+}
+__EXPORT__ [union.name/]::~[union.name/]() {  type = 0; }
+__EXPORT__ [union.name/]& [union.name/]::operator = (const [union.name/]& u) {
+	type=u.type;
+	[for (type : DataType | union.elements)]
+	if (type==__[type.name/]) _[type.name/]_ =  u._[type.name/]_;
+	[/for]
+	return *this;
+}
+__EXPORT__ void init_[union.name/]([union.name/]& /*data*/) { }
+[/template]
+
+ 

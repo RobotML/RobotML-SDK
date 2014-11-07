@@ -1,0 +1,39 @@
+[comment encoding = UTF-8 /]
+[module generateConfig('http://www.xtext.org/AthenaDSL')]
+
+[import org::eclipse::papyrus::generators::xtext::athena::vle::main::DSLQueries /]
+
+[template public generateConfig(project : Project)]
+[file ('generated/exp/config.vpz', false, 'UTF-8')]
+<?xml version="1.0" encoding="UTF-8" ?>
+<vle_project version="0.5" date="mar, 18 nov 2008" author="Eric Ramat">
+ <structures>
+  <model name="m" type="coupled" x="0" y="0" width="1000" height="800" >
+[createInstances(project)/]
+  </model>
+ </structures>
+ <dynamics>
+[for (proto : prototypeDeclaration | project.prototypes)]
+  <dynamic name="[proto.name/]" library="[proto.name/]" package="generated" type="local" />
+[/for]
+ </dynamics>
+<experiment name="exp" duration="10.0" begin="0.0" combination="linear" seed="1" >
+<views>
+</views>
+</experiment>
+</vle_project>
+[/file]
+[/template]
+
+[template public generateXMLConfigValue(project : Project)]
+[file('generated/data/configTemplate.xml', false, 'UTF-8')]
+<config>
+	<user-libraries>
+[for(wrapper : wrapperDeclaration | project.wrappers)]
+	<library>libStub_[wrapper.name/].so</library>
+[/for]
+	</user-libraries>
+</config>
+[/file]
+[/template]
+

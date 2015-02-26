@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.papyrus.xtext.AthenaDSL.feature_1.0.0.201502260929.jar" id="org.eclipse.papyrus.xtext.AthenaDSL.feature" version="1.0.0.201502260929">
+      <category name="AthenaDSL"/>
+   </feature>
+   <category-def name="AthenaDSL" label="Athena"/>
+</site>

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RobotML VLE code generator UI
+Bundle-SymbolicName: org.eclipse.papyrus.robotml.vle.codegen.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.papyrus.robotml.vle.codegen.ui.Activator
+Bundle-Vendor: RobotML Team
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.papyrus.robotml.vle.codegen;bundle-version="1.0.0",
+ org.eclipse.uml2.uml;bundle-version="5.1.0",
+ org.eclipse.core.resources;bundle-version="3.10.1",
+ org.eclipse.papyrus.codegen.base;bundle-version="1.1.2",
+ org.eclipse.papyrus.uml.diagram.common;bundle-version="1.1.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

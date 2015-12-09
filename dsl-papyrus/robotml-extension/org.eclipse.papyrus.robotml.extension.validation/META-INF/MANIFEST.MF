@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Validation
-Bundle-SymbolicName: org.eclipse.papyrus.robotml.extension.dev.validation;singleton:=true
+Bundle-SymbolicName: org.eclipse.papyrus.robotml.extension.validation;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.robotml.extension.validation.Activator
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.7.0",

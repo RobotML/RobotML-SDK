@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.papyrus.views.modelexplorer.popup.codegen">
+         <command
+               commandId="org.eclipse.papyrus.robotml.vle.codegen.command"
+               label="Generate RobotML to VLE"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            defaultHandler="handler.GenerateCodeHandler"
+            description="Generate RobotML to VLE"
+            id="org.eclipse.papyrus.robotml.vle.codegen.command"
+            name="Generate RobotML to VLE">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.eclipse.papyrus.infra.core.sasheditor.preferences.generalcategory"
+            class="org.eclipse.papyrus.robotml.vle.codegen.ui.CodeGenPreferencePage"
+            id="org.eclipse.papyrus.robotml.vle.codegen.CodeGenPreferencePage"
+            name="VLE code generation">
+      </page>
+   </extension>
+
+</plugin>

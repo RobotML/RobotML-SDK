@@ -21,10 +21,10 @@ generation.
    </license>
 
    <plugin
-         id="org.eclipse.papyrus.robotml.extension"
+         id="org.eclipse.papyrus.robotml.extension.dev"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>

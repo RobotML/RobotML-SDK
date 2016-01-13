@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Vle generator for RobotML
-Bundle-SymbolicName: org.eclipse.papyrus.generator.xtend.robotml.vle
-Bundle-Version: 1.0.0.qualifier
-Fragment-Host: org.eclipse.papyrus.generator.xtend.robotml;bundle-version="1.0.0"
-Bundle-RequiredExecutionEnvironment: J2SE-1.5

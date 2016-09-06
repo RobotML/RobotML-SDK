@@ -8,12 +8,20 @@ import java.util.List;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.robotml.vle.codegen.xtend.VLEGeneratorUtil;
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.BehavioralFeature;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.StateMachine;
+import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipse.uml2.uml.Vertex;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.Conversions;
 
 @SuppressWarnings("all")
 public class VLEClassHeaderGenerator {
@@ -42,6 +50,22 @@ public class VLEClassHeaderGenerator {
     _builder.append("_HEADER");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
+    {
+      Behavior _classifierBehavior = classElt.getClassifierBehavior();
+      boolean _notEquals = (!Objects.equal(_classifierBehavior, null));
+      if (_notEquals) {
+        _builder.append("#include \"I");
+        String _name_3 = classElt.getName();
+        _builder.append(_name_3, "");
+        _builder.append("_");
+        Behavior _classifierBehavior_1 = classElt.getClassifierBehavior();
+        String _name_4 = _classifierBehavior_1.getName();
+        _builder.append(_name_4, "");
+        _builder.append(".h\"");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
     EList<org.eclipse.uml2.uml.Class> _superClasses = classElt.getSuperClasses();
     CharSequence _generateIncludes = VLEClassHeaderGenerator.generateIncludes(_superClasses);
     _builder.append(_generateIncludes, "");
@@ -50,20 +74,11 @@ public class VLEClassHeaderGenerator {
     _builder.append("namespace generated {");
     _builder.newLine();
     _builder.append("class ");
-    String _name_3 = classElt.getName();
-    _builder.append(_name_3, "");
+    String _name_5 = classElt.getName();
+    _builder.append(_name_5, "");
     _builder.append(" ");
-    {
-      EList<org.eclipse.uml2.uml.Class> _superClasses_1 = classElt.getSuperClasses();
-      boolean _notEquals = (!Objects.equal(_superClasses_1, null));
-      if (_notEquals) {
-        _builder.append(" ");
-        EList<org.eclipse.uml2.uml.Class> _superClasses_2 = classElt.getSuperClasses();
-        CharSequence _generateInheritanceDefinition = VLEClassHeaderGenerator.generateInheritanceDefinition(_superClasses_2);
-        _builder.append(_generateInheritanceDefinition, "");
-        _builder.append(" ");
-      }
-    }
+    CharSequence _generateInheritance = VLEClassHeaderGenerator.generateInheritance(classElt);
+    _builder.append(_generateInheritance, "");
     _builder.append(" ");
     _builder.newLineIfNotEmpty();
     _builder.append("{");
@@ -74,14 +89,14 @@ public class VLEClassHeaderGenerator {
     _builder.append("public:");
     _builder.newLine();
     _builder.append("\t");
-    String _name_4 = classElt.getName();
-    _builder.append(_name_4, "\t");
+    String _name_6 = classElt.getName();
+    _builder.append(_name_6, "\t");
     _builder.append("(const vd::DynamicsInit& init, const vd::InitEventList& events);");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("virtual ~");
-    String _name_5 = classElt.getName();
-    _builder.append(_name_5, "\t");
+    String _name_7 = classElt.getName();
+    _builder.append(_name_7, "\t");
     _builder.append("();");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
@@ -98,6 +113,9 @@ public class VLEClassHeaderGenerator {
     Hashtable<String, List<Operation>> _operationList = VLEGeneratorUtil.getOperationList(_operations);
     CharSequence _generateOperations = VLEClassHeaderGenerator.generateOperations(_operationList);
     _builder.append(_generateOperations, "");
+    _builder.newLineIfNotEmpty();
+    CharSequence _generateStateMachineInterfaceOperation = VLEClassHeaderGenerator.generateStateMachineInterfaceOperation(classElt);
+    _builder.append(_generateStateMachineInterfaceOperation, "");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();
@@ -118,8 +136,8 @@ public class VLEClassHeaderGenerator {
     _builder.append("}");
     _builder.newLine();
     _builder.append("#endif /*");
-    String _name_6 = classElt.getName();
-    String _upperCase_2 = _name_6.toUpperCase();
+    String _name_8 = classElt.getName();
+    String _upperCase_2 = _name_8.toUpperCase();
     _builder.append(_upperCase_2, "");
     _builder.append("_HEADER*/");
     return _builder;
@@ -146,6 +164,37 @@ public class VLEClassHeaderGenerator {
         _builder.newLine();
       }
     }
+    return _builder;
+  }
+  
+  public static CharSequence generateInheritance(final org.eclipse.uml2.uml.Class clazz) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      List<String> _listInheritance = VLEGeneratorUtil.getListInheritance(clazz);
+      int _length = ((Object[])Conversions.unwrapArray(_listInheritance, Object.class)).length;
+      boolean _greaterThan = (_length > 0);
+      if (_greaterThan) {
+        _builder.append(": ");
+        {
+          List<String> _listInheritance_1 = VLEGeneratorUtil.getListInheritance(clazz);
+          for(final String parent : _listInheritance_1) {
+            _builder.append(parent, "");
+            {
+              List<String> _listInheritance_2 = VLEGeneratorUtil.getListInheritance(clazz);
+              int _indexOf = _listInheritance_2.indexOf(parent);
+              List<String> _listInheritance_3 = VLEGeneratorUtil.getListInheritance(clazz);
+              int _length_1 = ((Object[])Conversions.unwrapArray(_listInheritance_3, Object.class)).length;
+              int _minus = (_length_1 - 1);
+              boolean _lessThan = (_indexOf < _minus);
+              if (_lessThan) {
+                _builder.append(",");
+              }
+            }
+          }
+        }
+      }
+    }
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
@@ -178,7 +227,7 @@ public class VLEClassHeaderGenerator {
     Type _type = attr.getType();
     String _name = _type.getName();
     _builder.append(_name, "");
-    _builder.append(" ");
+    _builder.append("* ");
     String _name_1 = attr.getName();
     _builder.append(_name_1, "");
     _builder.append(";");
@@ -191,8 +240,8 @@ public class VLEClassHeaderGenerator {
       {
         VisibilityKind _visibility = attr.getVisibility();
         String visibilityKind = VLEGeneratorUtil.convertVisibility(_visibility);
-        boolean _contains = attrMap.contains(visibilityKind);
-        boolean _equals = (_contains == false);
+        boolean _containsKey = attrMap.containsKey(visibilityKind);
+        boolean _equals = (_containsKey == false);
         if (_equals) {
           ArrayList<Property> _arrayList = new ArrayList<Property>();
           attrMap.put(visibilityKind, _arrayList);
@@ -300,7 +349,7 @@ public class VLEClassHeaderGenerator {
         _builder.append("virtual void doInit(const vd::Time& time) = 0;");
         _builder.newLine();
         _builder.append("\t");
-        _builder.append("virtual void doOuput(const vd::Time& time, vd::ExternalEventList& output) = 0;");
+        _builder.append("virtual void doOutput(const vd::Time& time, vd::ExternalEventList& output) = 0;");
         _builder.newLine();
         _builder.append("\t");
       }
@@ -321,9 +370,61 @@ public class VLEClassHeaderGenerator {
         _builder.append("virtual void doInit(const vd::Time& time);");
         _builder.newLine();
         _builder.append("\t");
-        _builder.append("virtual void doOuput(const vd::Time& time, vd::ExternalEventList& output);");
+        _builder.append("virtual void doOutput(const vd::Time& time, vd::ExternalEventList& output);");
         _builder.newLine();
         _builder.append("\t");
+      }
+    }
+    return _builder;
+  }
+  
+  private static CharSequence generateStateMachineInterfaceOperation(final org.eclipse.uml2.uml.Class classElt) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _HasStateMachine = VLEGeneratorUtil.HasStateMachine(classElt);
+      if (_HasStateMachine) {
+        {
+          StateMachine _GetStateMachine = VLEGeneratorUtil.GetStateMachine(classElt);
+          List<Transition> _transition = VLEGeneratorUtil.getTransition(_GetStateMachine);
+          for(final Transition transition : _transition) {
+            _builder.append("virtual void doTransition_");
+            Vertex _source = transition.getSource();
+            String _name = _source.getName();
+            _builder.append(_name, "");
+            _builder.append("_to_");
+            Vertex _target = transition.getTarget();
+            String _name_1 = _target.getName();
+            _builder.append(_name_1, "");
+            _builder.append("(const vd::Time& time);");
+            _builder.newLineIfNotEmpty();
+            {
+              Constraint _guard = transition.getGuard();
+              boolean _notEquals = (!Objects.equal(_guard, null));
+              if (_notEquals) {
+                _builder.append("virtual bool doGuard_");
+                Constraint _guard_1 = transition.getGuard();
+                ValueSpecification _specification = _guard_1.getSpecification();
+                String _name_2 = _specification.getName();
+                _builder.append(_name_2, "");
+                _builder.append("(const vd::Time& time=);");
+              }
+            }
+            _builder.newLineIfNotEmpty();
+            {
+              Behavior _effect = transition.getEffect();
+              boolean _notEquals_1 = (!Objects.equal(_effect, null));
+              if (_notEquals_1) {
+                _builder.append("virtual void doEffect_");
+                Behavior _effect_1 = transition.getEffect();
+                BehavioralFeature _specification_1 = _effect_1.getSpecification();
+                String _name_3 = _specification_1.getName();
+                _builder.append(_name_3, "");
+                _builder.append("(const vd::Time& time);");
+              }
+            }
+            _builder.newLineIfNotEmpty();
+          }
+        }
       }
     }
     return _builder;

@@ -10,14 +10,21 @@ import org.eclipse.papyrus.codegen.base.ModelElementsCreator;
 import org.eclipse.papyrus.codegen.base.ProjectBasedFileAccess;
 import org.eclipse.papyrus.robotml.vle.codegen.xtend.VLEClassHeaderGenerator;
 import org.eclipse.papyrus.robotml.vle.codegen.xtend.VLEClassImplementationGenerator;
+import org.eclipse.papyrus.robotml.vle.codegen.xtend.VLEDataTypeDefsHeaderGenerator;
+import org.eclipse.papyrus.robotml.vle.codegen.xtend.VLEDataTypeDefsImplementationGenerator;
 import org.eclipse.papyrus.robotml.vle.codegen.xtend.VLEStateMachineHeaderGenerator;
 import org.eclipse.papyrus.robotml.vle.codegen.xtend.VLEStateMachineImplementationGenerator;
+import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.PackageableElement;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StateMachine;
+import org.eclipse.uml2.uml.util.UMLUtil;
+
+import RobotMLExtension.BasicType;
 
 public class VLEModelElementsCreator extends ModelElementsCreator {
 
@@ -29,26 +36,39 @@ public class VLEModelElementsCreator extends ModelElementsCreator {
 
 	@Override
 	protected void createPackageableElementFile(PackageableElement element, IProgressMonitor progressMonitor) {
-		if(element instanceof StateMachine)
-		{
-			
-		}
 		if(element instanceof Class) {
 //			System.out.println(element.getClass().toString());
 			generateClassifier((Class)element);
+			Behavior behavior =((Class)element).getClassifierBehavior();
+			if(behavior != null)
+			{
+				System.out.println(element.getName() + " *** " + behavior.toString());
+				if(behavior instanceof StateMachine)
+				{
+					String prefix = ((Class)element).getName();
+					generateStateMachine((StateMachine)behavior, prefix);
+				}
+			}
 		}
 		else if (element instanceof DataType) {
-			_datatypes.add((DataType) element);
-			System.out.println("Datatypes !!!");
+			generateDataType((DataType)element);
 		}
 	}
 	
-	protected void generateStateMachine(StateMachine smElt)
+	private void generateDataType(DataType elt)
 	{
-		final String fileHeaderName = locStrategy.getFileName((NamedElement) smElt) + ".h";
-		final String fileImplementName = locStrategy.getFileName((NamedElement) smElt) + ".cpp";
-		fileSystemAccess.generateFile(fileHeaderName, VLEStateMachineHeaderGenerator.generateCode(smElt).toString());
-		fileSystemAccess.generateFile(fileImplementName, VLEStateMachineImplementationGenerator.generateCode(smElt).toString());
+		final String fileHeaderName = locStrategy.getFileName((NamedElement) elt) + ".h";
+		final String fileImplementName = locStrategy.getFileName((NamedElement) elt) + ".cpp";
+		fileSystemAccess.generateFile(fileHeaderName, VLEDataTypeDefsHeaderGenerator.generateCode(elt).toString());
+		fileSystemAccess.generateFile(fileImplementName, VLEDataTypeDefsImplementationGenerator.generateCode(elt).toString());
+	}
+	
+	protected void generateStateMachine(StateMachine smElt, String prefix)
+	{
+		final String fileHeaderName = prefix + "_" + locStrategy.getFileName((NamedElement) smElt) + ".h";
+		final String fileImplementName = prefix + "_" + locStrategy.getFileName((NamedElement) smElt) + ".cpp";
+		fileSystemAccess.generateFile(fileHeaderName, VLEStateMachineHeaderGenerator.generateCode(smElt, prefix).toString());
+		fileSystemAccess.generateFile(fileImplementName, VLEStateMachineImplementationGenerator.generateCode(smElt, prefix).toString());
 	}
 
 	protected void generateClassifier(Class classElt) {

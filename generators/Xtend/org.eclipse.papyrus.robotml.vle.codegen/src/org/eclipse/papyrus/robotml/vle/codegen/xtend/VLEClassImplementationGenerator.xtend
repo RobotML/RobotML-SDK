@@ -4,6 +4,9 @@ import org.eclipse.emf.common.util.EList
 import java.util.Hashtable
 import java.util.List
 import org.eclipse.uml2.uml.Operation
+import org.eclipse.uml2.uml.StateMachine
+import org.eclipse.uml2.uml.DataType
+import org.eclipse.papyrus.RobotML.Transition
 
 class VLEClassImplementationGenerator {
 	
@@ -26,6 +29,7 @@ namespace generated {
 	/*Operations*/
 	«generateOperationForBaseClass(classElt)»
 	«generateOperationsForChildClass(classElt)»
+	«generateOperationsForStateMachine(classElt)»
 	«generateOperation(VLEGeneratorUtil.getOperationList(classElt.operations))»
 		
 }	
@@ -81,6 +85,17 @@ namespace generated {
 		TraceAlways(vu::DateTime::currentDate() + " - «classElt.name» - timeAdvance");
 		return vd::Time(1.0);
 	}
+	
+	vd::ExternalEvent* «classElt.name»::GenerateEvent(vv::Value* pValue, std::string portName) {
+		vd::ExternalEvent* pEvent = NULL
+		if(pValue != NULL)
+		{
+			pEvent = new ExternalEvent(portName);
+			pEvent << vd::attribute(portName, pValue);
+			TraceModel(vu::DateTime::currentDate() + " - Output port " + portName + " is changed to " + pValue->writeToString();
+		}
+		return pEvent;
+	}
 	«ENDIF»
 	''' 
 	
@@ -88,12 +103,41 @@ namespace generated {
 	«IF classElt.superClasses.isEmpty == false»
 	void «classElt.name»::doInit(const vd::Time& time)
 	{
-		
+		«FOR attr : classElt.attributes»
+			«IF attr.type instanceof DataType»init_«attr.type.name»(«attr.name»);«ENDIF»
+		«ENDFOR»
 	}
 	
-	void «classElt.name»::doOuput(const vd::Time& time, vd::ExternalEventList& output)
+	void «classElt.name»::doOutput(const vd::Time& time, vd::ExternalEventList& output)
 	{
-		
+		«FOR attr : classElt.attributes»
+		vd::ExternalEvent* pEvent = GenerateEvent(«attr.name», "«attr.name»");
+		if(pEvent != NULL)
+			ouput.push_back(pEvent);
+		«ENDFOR»
 	}
+	«ENDIF»'''
+	
+	static def generateOperationsForStateMachine(org.eclipse.uml2.uml.Class classElt)'''
+	«IF classElt.classifierBehavior != null»
+	«FOR transition : VLEGeneratorUtil.getTransition(classElt.classifierBehavior as StateMachine)»
+	void «classElt.name»::doTransition_«transition.source.name»_to_«transition.target.name»(const vd::Time& time) {
+		«IF VLEGeneratorUtil.HasStereotype(transition, Transition)»
+			«IF (VLEGeneratorUtil.GetStereotype(transition, Transition) as Transition).guard != null»if(Guard_«(VLEGeneratorUtil.GetStereotype(transition, Transition) as Transition).guard.specification.name») {
+			}
+			«ENDIF»
+			«IF (VLEGeneratorUtil.GetStereotype(transition, Transition) as Transition).effect != null»Effect_«(VLEGeneratorUtil.GetStereotype(transition, Transition) as Transition).effect.specification.name»;
+			«ENDIF»
+		«ENDIF»
+	}
+	«IF VLEGeneratorUtil.HasStereotype(transition, Transition)»
+		«IF (VLEGeneratorUtil.GetStereotype(transition, Transition) as Transition).guard != null»bool «classElt.name»::doGuard_«(VLEGeneratorUtil.GetStereotype(transition, Transition) as Transition).guard.specification.name»(const vd::Time& time) {		
+		}
+		«ENDIF»
+		«IF (VLEGeneratorUtil.GetStereotype(transition, Transition) as Transition).effect != null»void «classElt.name»::doEffect_«(VLEGeneratorUtil.GetStereotype(transition, Transition) as Transition).effect.specification.name»(const vd::Time& time) {
+		}
+		«ENDIF»
+	«ENDIF»
+	«ENDFOR»
 	«ENDIF»'''
 }

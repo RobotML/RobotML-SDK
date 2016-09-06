@@ -7,6 +7,7 @@ import java.util.List
 import java.util.ArrayList
 
 import org.eclipse.papyrus.robotml.vle.codegen.xtend.VLEGeneratorUtil;
+import org.eclipse.uml2.uml.StateMachine
 
 class VLEClassHeaderGenerator {
 	static def generateCode(org.eclipse.uml2.uml.Class classElt) '''
@@ -17,10 +18,15 @@ class VLEClassHeaderGenerator {
 	#ifndef «classElt.name.toUpperCase()»_HEADER 
 	#define «classElt.name.toUpperCase()»_HEADER
 	
+	«IF classElt.classifierBehavior != null»
+	#include "I«classElt.name»_«classElt.classifierBehavior.name».h"
+	«ENDIF»
+	
 	«generateIncludes(classElt.superClasses)»
 	
 	namespace generated {
-	class «classElt.name» «IF classElt.superClasses != null» «generateInheritanceDefinition(classElt.superClasses)» «ENDIF» 
+«««		«IF classElt.superClasses != null» «generateInheritanceDefinition(classElt.superClasses)» «ENDIF»
+	class «classElt.name» «generateInheritance(classElt)» 
 	{
 		/*Constructor*/
 	public:
@@ -31,6 +37,7 @@ class VLEClassHeaderGenerator {
 	«generationOperationForBaseClass(classElt)»
 	«generateOpeartionsForChildClass(classElt)»
 	«generateOperations(VLEGeneratorUtil.getOperationList(classElt.operations))»
+	«generateStateMachineInterfaceOperation(classElt)»
 		
 		/*ATTRIBUTES MEMBERS*/
 	«generateAttributes(getAttributeList(classElt.attributes))»
@@ -50,6 +57,9 @@ class VLEClassHeaderGenerator {
 namespace vd = vle::devs;
 	«ENDIF»
 	'''
+	static def generateInheritance(org.eclipse.uml2.uml.Class clazz) '''
+	«IF VLEGeneratorUtil.getListInheritance(clazz).length > 0»: «FOR parent : VLEGeneratorUtil.getListInheritance(clazz)»«parent»«IF VLEGeneratorUtil.getListInheritance(clazz).indexOf(parent) < (VLEGeneratorUtil.getListInheritance(clazz).length - 1)»,«ENDIF»«ENDFOR»«ENDIF»
+	'''
 	
 	static def generateInheritanceDefinition(EList<org.eclipse.uml2.uml.Class> clazzList) '''
 	«IF clazzList.isEmpty() == false»
@@ -59,13 +69,13 @@ namespace vd = vle::devs;
 	«ENDIF»'''
 	
 	static def generateAttribute(org.eclipse.uml2.uml.Property attr) '''
-	«attr.type.name» «attr.name»;'''
+		«attr.type.name»* «attr.name»;'''
 	
 	static def Hashtable<String, List<org.eclipse.uml2.uml.Property>> getAttributeList(EList<org.eclipse.uml2.uml.Property> attrs) {
 		var attrMap = new Hashtable<String, List<org.eclipse.uml2.uml.Property>>();
 		for(attr : attrs) {
 			var visibilityKind = VLEGeneratorUtil.convertVisibility(attr.visibility);
-			if(attrMap.contains(visibilityKind) == false) {
+			if(attrMap.containsKey(visibilityKind) == false) {
 				attrMap.put(visibilityKind, new ArrayList<org.eclipse.uml2.uml.Property>());
 			}
 			attrMap.get(visibilityKind).add(attr);
@@ -106,14 +116,23 @@ public:
 	
 protected:
 	virtual void doInit(const vd::Time& time) = 0;
-	virtual void doOuput(const vd::Time& time, vd::ExternalEventList& output) = 0;
+	virtual void doOutput(const vd::Time& time, vd::ExternalEventList& output) = 0;
 	«ENDIF»'''
 	
 	static def generateOpeartionsForChildClass(org.eclipse.uml2.uml.Class classElt)'''
 	«IF classElt.superClasses.isEmpty == false»
 protected:
 	virtual void doInit(const vd::Time& time);
-	virtual void doOuput(const vd::Time& time, vd::ExternalEventList& output);
+	virtual void doOutput(const vd::Time& time, vd::ExternalEventList& output);
 	«ENDIF»'''
-	
+
+	private static def generateStateMachineInterfaceOperation(org.eclipse.uml2.uml.Class classElt) '''
+	«IF VLEGeneratorUtil.HasStateMachine(classElt)»
+		«FOR transition : VLEGeneratorUtil.getTransition(VLEGeneratorUtil.GetStateMachine(classElt))»
+	virtual void doTransition_«transition.source.name»_to_«transition.target.name»(const vd::Time& time);
+	«IF transition.guard != null»virtual bool doGuard_«transition.guard.specification.name»(const vd::Time& time=);«ENDIF»
+	«IF transition.effect != null»virtual void doEffect_«transition.effect.specification.name»(const vd::Time& time);«ENDIF»
+		«ENDFOR»
+	«ENDIF»
+	'''	
 }

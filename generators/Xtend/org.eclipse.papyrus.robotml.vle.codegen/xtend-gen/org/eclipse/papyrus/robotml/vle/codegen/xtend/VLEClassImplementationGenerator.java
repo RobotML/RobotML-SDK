@@ -1,12 +1,22 @@
 package org.eclipse.papyrus.robotml.vle.codegen.xtend;
 
+import com.google.common.base.Objects;
 import java.util.Collection;
 import java.util.Hashtable;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.robotml.vle.codegen.xtend.VLEGeneratorUtil;
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.BehavioralFeature;
+import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.StateMachine;
+import org.eclipse.uml2.uml.Transition;
+import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.Vertex;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
@@ -76,6 +86,10 @@ public class VLEClassImplementationGenerator {
     _builder.append("\t");
     CharSequence _generateOperationsForChildClass = VLEClassImplementationGenerator.generateOperationsForChildClass(classElt);
     _builder.append(_generateOperationsForChildClass, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    CharSequence _generateOperationsForStateMachine = VLEClassImplementationGenerator.generateOperationsForStateMachine(classElt);
+    _builder.append(_generateOperationsForStateMachine, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     EList<Operation> _operations = classElt.getOperations();
@@ -280,6 +294,38 @@ public class VLEClassImplementationGenerator {
         _builder.newLine();
         _builder.append("}");
         _builder.newLine();
+        _builder.newLine();
+        _builder.append("vd::ExternalEvent* ");
+        String _name_12 = classElt.getName();
+        _builder.append(_name_12, "");
+        _builder.append("::GenerateEvent(vv::Value* pValue, std::string portName) {");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("vd::ExternalEvent* pEvent = NULL");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("if(pValue != NULL)");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("{");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("pEvent = new ExternalEvent(portName);");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("pEvent << vd::attribute(portName, pValue);");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("TraceModel(vu::DateTime::currentDate() + \" - Output port \" + portName + \" is changed to \" + pValue->writeToString();");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("}");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("return pEvent;");
+        _builder.newLine();
+        _builder.append("}");
+        _builder.newLine();
       }
     }
     return _builder;
@@ -299,22 +345,176 @@ public class VLEClassImplementationGenerator {
         _builder.newLineIfNotEmpty();
         _builder.append("{");
         _builder.newLine();
-        _builder.append("\t");
-        _builder.newLine();
+        {
+          EList<Property> _attributes = classElt.getAttributes();
+          for(final Property attr : _attributes) {
+            _builder.append("\t");
+            {
+              Type _type = attr.getType();
+              if ((_type instanceof DataType)) {
+                _builder.append("init_");
+                Type _type_1 = attr.getType();
+                String _name_1 = _type_1.getName();
+                _builder.append(_name_1, "\t");
+                _builder.append("(");
+                String _name_2 = attr.getName();
+                _builder.append(_name_2, "\t");
+                _builder.append(");");
+              }
+            }
+            _builder.newLineIfNotEmpty();
+          }
+        }
         _builder.append("}");
         _builder.newLine();
         _builder.newLine();
         _builder.append("void ");
-        String _name_1 = classElt.getName();
-        _builder.append(_name_1, "");
-        _builder.append("::doOuput(const vd::Time& time, vd::ExternalEventList& output)");
+        String _name_3 = classElt.getName();
+        _builder.append(_name_3, "");
+        _builder.append("::doOutput(const vd::Time& time, vd::ExternalEventList& output)");
         _builder.newLineIfNotEmpty();
         _builder.append("{");
         _builder.newLine();
-        _builder.append("\t");
-        _builder.newLine();
+        {
+          EList<Property> _attributes_1 = classElt.getAttributes();
+          for(final Property attr_1 : _attributes_1) {
+            _builder.append("\t");
+            _builder.append("vd::ExternalEvent* pEvent = GenerateEvent(");
+            String _name_4 = attr_1.getName();
+            _builder.append(_name_4, "\t");
+            _builder.append(", \"");
+            String _name_5 = attr_1.getName();
+            _builder.append(_name_5, "\t");
+            _builder.append("\");");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("if(pEvent != NULL)");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("\t");
+            _builder.append("ouput.push_back(pEvent);");
+            _builder.newLine();
+          }
+        }
         _builder.append("}");
         _builder.newLine();
+      }
+    }
+    return _builder;
+  }
+  
+  public static CharSequence generateOperationsForStateMachine(final org.eclipse.uml2.uml.Class classElt) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      Behavior _classifierBehavior = classElt.getClassifierBehavior();
+      boolean _notEquals = (!Objects.equal(_classifierBehavior, null));
+      if (_notEquals) {
+        {
+          Behavior _classifierBehavior_1 = classElt.getClassifierBehavior();
+          List<Transition> _transition = VLEGeneratorUtil.getTransition(((StateMachine) _classifierBehavior_1));
+          for(final Transition transition : _transition) {
+            _builder.append("void ");
+            String _name = classElt.getName();
+            _builder.append(_name, "");
+            _builder.append("::doTransition_");
+            Vertex _source = transition.getSource();
+            String _name_1 = _source.getName();
+            _builder.append(_name_1, "");
+            _builder.append("_to_");
+            Vertex _target = transition.getTarget();
+            String _name_2 = _target.getName();
+            _builder.append(_name_2, "");
+            _builder.append("(const vd::Time& time) {");
+            _builder.newLineIfNotEmpty();
+            {
+              boolean _HasStereotype = VLEGeneratorUtil.HasStereotype(transition, org.eclipse.papyrus.RobotML.Transition.class);
+              if (_HasStereotype) {
+                _builder.append("\t");
+                {
+                  EObject _GetStereotype = VLEGeneratorUtil.GetStereotype(transition, org.eclipse.papyrus.RobotML.Transition.class);
+                  Behavior _guard = ((org.eclipse.papyrus.RobotML.Transition) _GetStereotype).getGuard();
+                  boolean _notEquals_1 = (!Objects.equal(_guard, null));
+                  if (_notEquals_1) {
+                    _builder.append("if(Guard_");
+                    EObject _GetStereotype_1 = VLEGeneratorUtil.GetStereotype(transition, org.eclipse.papyrus.RobotML.Transition.class);
+                    Behavior _guard_1 = ((org.eclipse.papyrus.RobotML.Transition) _GetStereotype_1).getGuard();
+                    BehavioralFeature _specification = _guard_1.getSpecification();
+                    String _name_3 = _specification.getName();
+                    _builder.append(_name_3, "\t");
+                    _builder.append(") {");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("}");
+                    _builder.newLine();
+                  }
+                }
+                _builder.append("\t");
+                {
+                  EObject _GetStereotype_2 = VLEGeneratorUtil.GetStereotype(transition, org.eclipse.papyrus.RobotML.Transition.class);
+                  Behavior _effect = ((org.eclipse.papyrus.RobotML.Transition) _GetStereotype_2).getEffect();
+                  boolean _notEquals_2 = (!Objects.equal(_effect, null));
+                  if (_notEquals_2) {
+                    _builder.append("Effect_");
+                    EObject _GetStereotype_3 = VLEGeneratorUtil.GetStereotype(transition, org.eclipse.papyrus.RobotML.Transition.class);
+                    Behavior _effect_1 = ((org.eclipse.papyrus.RobotML.Transition) _GetStereotype_3).getEffect();
+                    BehavioralFeature _specification_1 = _effect_1.getSpecification();
+                    String _name_4 = _specification_1.getName();
+                    _builder.append(_name_4, "\t");
+                    _builder.append(";");
+                    _builder.newLineIfNotEmpty();
+                  }
+                }
+              }
+            }
+            _builder.append("}");
+            _builder.newLine();
+            {
+              boolean _HasStereotype_1 = VLEGeneratorUtil.HasStereotype(transition, org.eclipse.papyrus.RobotML.Transition.class);
+              if (_HasStereotype_1) {
+                {
+                  EObject _GetStereotype_4 = VLEGeneratorUtil.GetStereotype(transition, org.eclipse.papyrus.RobotML.Transition.class);
+                  Behavior _guard_2 = ((org.eclipse.papyrus.RobotML.Transition) _GetStereotype_4).getGuard();
+                  boolean _notEquals_3 = (!Objects.equal(_guard_2, null));
+                  if (_notEquals_3) {
+                    _builder.append("bool ");
+                    String _name_5 = classElt.getName();
+                    _builder.append(_name_5, "");
+                    _builder.append("::doGuard_");
+                    EObject _GetStereotype_5 = VLEGeneratorUtil.GetStereotype(transition, org.eclipse.papyrus.RobotML.Transition.class);
+                    Behavior _guard_3 = ((org.eclipse.papyrus.RobotML.Transition) _GetStereotype_5).getGuard();
+                    BehavioralFeature _specification_2 = _guard_3.getSpecification();
+                    String _name_6 = _specification_2.getName();
+                    _builder.append(_name_6, "");
+                    _builder.append("(const vd::Time& time) {\t\t");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("}");
+                    _builder.newLine();
+                  }
+                }
+                {
+                  EObject _GetStereotype_6 = VLEGeneratorUtil.GetStereotype(transition, org.eclipse.papyrus.RobotML.Transition.class);
+                  Behavior _effect_2 = ((org.eclipse.papyrus.RobotML.Transition) _GetStereotype_6).getEffect();
+                  boolean _notEquals_4 = (!Objects.equal(_effect_2, null));
+                  if (_notEquals_4) {
+                    _builder.append("void ");
+                    String _name_7 = classElt.getName();
+                    _builder.append(_name_7, "");
+                    _builder.append("::doEffect_");
+                    EObject _GetStereotype_7 = VLEGeneratorUtil.GetStereotype(transition, org.eclipse.papyrus.RobotML.Transition.class);
+                    Behavior _effect_3 = ((org.eclipse.papyrus.RobotML.Transition) _GetStereotype_7).getEffect();
+                    BehavioralFeature _specification_3 = _effect_3.getSpecification();
+                    String _name_8 = _specification_3.getName();
+                    _builder.append(_name_8, "");
+                    _builder.append("(const vd::Time& time) {");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("}");
+                    _builder.newLine();
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
     return _builder;
